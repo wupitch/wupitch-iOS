@@ -9,11 +9,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+//        setColor()
+//        setFont()
     }
 
+//    func setColor() {
+//        onBoardingView.backgroundColor = UIColor.gray04
+//    }
+//    
+//    func setFont() {
+//        skipBtn.tintColor = UIColor.gray01
+//        skipBtn.titleLabel?.font = UIFont.SDGothicRegular(size: 14)
+//    }
 
 }
 
