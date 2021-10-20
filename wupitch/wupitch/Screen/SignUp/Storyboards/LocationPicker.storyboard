@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Location PickerVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="LocationPickerVC" id="Y6W-OH-hqX" customClass="LocationPickerVC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1XB-9l-2K9">
+                                <rect key="frame" x="0.0" y="440" width="414" height="456"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S16-OT-Ibd">
+                                        <rect key="frame" x="20" y="24" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ST-6T-V2k">
+                                        <rect key="frame" x="370" y="22.5" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="nRu-9h-aot"/>
+                                            <constraint firstAttribute="width" constant="24" id="sNE-sf-EmP"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="close" title=""/>
+                                    </button>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hb5-K0-KlS">
+                                        <rect key="frame" x="0.0" y="69" width="414" height="269"/>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTJ-YX-F5A">
+                                        <rect key="frame" x="20" y="360" width="375" height="52"/>
+                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="Z0H-xG-NVj"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="touchUpSelectBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1MZ-Yb-XhX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Hb5-K0-KlS" firstAttribute="leading" secondItem="1XB-9l-2K9" secondAttribute="leading" id="0Yc-ee-DxN"/>
+                                    <constraint firstItem="S16-OT-Ibd" firstAttribute="leading" secondItem="1XB-9l-2K9" secondAttribute="leading" constant="20" id="EaB-KX-LhS"/>
+                                    <constraint firstItem="Hb5-K0-KlS" firstAttribute="top" secondItem="S16-OT-Ibd" secondAttribute="bottom" constant="24" id="EpT-HN-jve"/>
+                                    <constraint firstAttribute="trailing" secondItem="4ST-6T-V2k" secondAttribute="trailing" constant="20" id="Fq6-ph-Ood"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hb5-K0-KlS" secondAttribute="trailing" id="OEE-Ca-aKN"/>
+                                    <constraint firstItem="TTJ-YX-F5A" firstAttribute="top" secondItem="Hb5-K0-KlS" secondAttribute="bottom" constant="22" id="Qz8-xC-0Bi"/>
+                                    <constraint firstItem="TTJ-YX-F5A" firstAttribute="leading" secondItem="1XB-9l-2K9" secondAttribute="leading" constant="20" id="ZXM-tP-QFg"/>
+                                    <constraint firstAttribute="bottom" secondItem="TTJ-YX-F5A" secondAttribute="bottom" constant="44" id="miW-eD-s79"/>
+                                    <constraint firstItem="S16-OT-Ibd" firstAttribute="top" secondItem="1XB-9l-2K9" secondAttribute="top" constant="24" id="o8M-mn-laF"/>
+                                    <constraint firstAttribute="trailing" secondItem="TTJ-YX-F5A" secondAttribute="trailing" constant="19" id="rmq-JT-KFm"/>
+                                    <constraint firstItem="4ST-6T-V2k" firstAttribute="centerY" secondItem="S16-OT-Ibd" secondAttribute="centerY" id="vkO-jf-rWz"/>
+                                    <constraint firstAttribute="height" constant="456" id="xan-jz-Phv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <constraints>
+                            <constraint firstItem="1XB-9l-2K9" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Ou0-oh-whU"/>
+                            <constraint firstItem="1XB-9l-2K9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="PUh-6Y-U9a"/>
+                            <constraint firstAttribute="bottom" secondItem="1XB-9l-2K9" secondAttribute="bottom" id="lJe-sI-HUF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeBtn" destination="4ST-6T-V2k" id="Vy2-8O-NdL"/>
+                        <outlet property="pickerBgView" destination="1XB-9l-2K9" id="bzg-fS-eBu"/>
+                        <outlet property="pickerView" destination="Hb5-K0-KlS" id="kPg-CS-ijy"/>
+                        <outlet property="selectBtn" destination="TTJ-YX-F5A" id="cMA-Fm-WD9"/>
+                        <outlet property="titleLabel" destination="S16-OT-Ibd" id="F5h-dx-Id4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35" y="63"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,19 +1,19 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "filename" : "kakao.png",
       "scale" : "1x",
-      "filename" : "imgOnbd04.png"
+      "idiom" : "universal"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "imgOnbd04@2x.png"
+      "filename" : "kakao@2x.png"
     },
     {
       "idiom" : "universal",
-      "filename" : "imgOnbd04@3x.png",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "kakao@3x.png"
     }
   ],
   "info" : {
