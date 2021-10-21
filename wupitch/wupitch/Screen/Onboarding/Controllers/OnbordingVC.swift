@@ -6,17 +6,17 @@
 //
 
 // 온보딩에서 해야할 것
-// 1. 페이지연결
-// 2. 폰 오토 맞추기 -> 작은 화면에서는 이상하게 나와 (런치스크린도하자-> 런치스크린 아이콘이 작아져야 함)
-// 3. 건너뛰기 로직짜기
-// 4. 건너뛰기 할 때 인디케이터 같이 움직이게 하기
+// 1. 폰 오토 맞추기 -> 작은 화면에서는 좀 안맞음 (런치스크린도하자-> 런치스크린 아이콘이 작아져야 함)
+// 2. 컬렉션 뷰 안에 있는 특정 글자 색 변경하기
+// 3. 카카오, 애플 로그인 연결
 
 import UIKit
+import KakaoSDKAuth
+import KakaoSDKUser
 
 class OnbordingVC: UIViewController {
     
     // MARK: - IBOulets
-    
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var kakaoBtn: UIButton!
     @IBOutlet weak var appleBtn: UIButton!
@@ -31,22 +31,23 @@ class OnbordingVC: UIViewController {
 
         setStyle()
         setDelegate()
-        skipBtn.addTarget(self, action: #selector(moveToLast), for: .touchUpInside)
         
     }
     
     // MARK: - Function
     func setStyle() {
-       
+        // 처음에는 버튼 & 라벨 안보이게
         kakaoBtn.alpha = 0.0
         appleBtn.alpha = 0.0
         descriptionLabel.alpha = 0.0
-
-        descriptionLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12)
-        descriptionLabel.setTextWithLineHeight(text: "애플로 가입시 별도의 신분증 인증이 필요합니다.", lineHeight: 20)
         
+        // 설명라벨 폰트 및 lineheight 설정
+        descriptionLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+        descriptionLabel.setTextWithLineHeight(text: "애플로 가입시 별도의 신분증 인증이 필요합니다.", lineHeight: 20.adjusted)
+        
+        // skipBtn 폰트 및 lineheight 설정
         skipBtn.setTitle("건너뛰기", for: .normal)
-        skipBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14)
+        skipBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         skipBtn.tintColor = UIColor.gray02
         
         // 페이지 컨트롤 색상 조정
@@ -68,17 +69,7 @@ class OnbordingVC: UIViewController {
         onboardingCV.register(OnbordingCVCell.nib(), forCellWithReuseIdentifier: OnbordingCVCell.identifier)
     }
     
-//    func setSkipBtn() {
-//        skipBtn.addTarget(self, action: #selector(moveToLast), for: .touchUpInside)
-//    }
-    
-    @objc
-    private func moveToLast() {
-        onboardingCV.isPagingEnabled = false
-        onboardingCV.scrollToItem(at: IndexPath(item: 3, section: 0), at: .centeredHorizontally, animated: true)
-        onboardingCV.isPagingEnabled = true
-    }
-    
+    // 스크롤 페이지 설정
     private func definePage(_ scrollView: UIScrollView) {
         let page = Int(round(scrollView.contentOffset.x / UIScreen.main.bounds.width))
         print("current page>>>>>\(page)")
@@ -97,6 +88,62 @@ class OnbordingVC: UIViewController {
             descriptionLabel.alpha = 0.0
         }
     }
+    
+    // MARK: - IBActions
+    @IBAction func touchUpSkipBtn(_ sender: Any) {
+        onboardingCV.isPagingEnabled = false
+        onboardingCV.scrollToItem(at: IndexPath(item: 3, section: 0), at: .centeredHorizontally, animated: true)
+        onboardingCV.isPagingEnabled = true
+    }
+    
+    @IBAction func touchUpKakaoBtn(_ sender: Any) {
+        
+        // 카카오톡 설치 여부 확인
+        if (UserApi.isKakaoTalkLoginAvailable()) {
+            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoTalk() success.")
+                    
+                    // 로그인 성공 후 회원가입 루트로 이동
+                    let storyboard = UIStoryboard.init(name: "SignUpFirst", bundle: nil)
+                    
+                    guard let dvc = storyboard.instantiateViewController(identifier: "SignUpFirstVC") as? SignUpFirstVC else {return}
+                    self.navigationController?.pushViewController(dvc, animated: true)
+
+                    //do something
+                    _ = oauthToken
+                }
+            }
+        }
+        
+        // 카카오 계정으로 로그인
+        else { UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoAccount() success.")
+                    
+                    
+                    // 로그인 성공 후 회원가입 루트로 이동
+                    let storyboard = UIStoryboard.init(name: "SignUpFirst", bundle: nil)
+                    
+                    guard let dvc = storyboard.instantiateViewController(identifier: "SignUpFirstVC") as? SignUpFirstVC else {return}
+                    self.navigationController?.pushViewController(dvc, animated: true)
+                    
+                    _ = oauthToken
+                }
+            }
+        }
+        
+    }
+    
+    @IBAction func touchUpAppleBtn(_ sender: Any) {
+        
+    }
 }
 
 // MARK: - DataSource & Delegate
@@ -114,11 +161,15 @@ extension OnbordingVC : UICollectionViewDelegate, UICollectionViewDataSource, UI
         cell.setCell(title: onboardingData[indexPath.row].titleLabelName, description: onboardingData[indexPath.row].descriptionLabelName, imageName: onboardingData[indexPath.row].onboardingImageName)
         onboardingPageControl.numberOfPages = onboardingData.count
         
-        cell.titleLabel.setTextWithLineHeight(text: onboardingData[indexPath.row].titleLabelName, lineHeight: 38)
+        cell.titleLabel.setTextWithLineHeight(text: onboardingData[indexPath.row].titleLabelName, lineHeight: 38.adjusted)
         cell.titleLabel.textAlignment = .center
         
-        cell.descriptionLabel.setTextWithLineHeight(text: onboardingData[indexPath.row].descriptionLabelName, lineHeight: 20)
+        cell.descriptionLabel.setTextWithLineHeight(text: onboardingData[indexPath.row].descriptionLabelName, lineHeight: 20.adjusted)
         cell.descriptionLabel.textAlignment = .center
+        
+        //cell.titleLabel.asColor(targetString: "동호회", color: .main)
+        //cell.titleLabel.asColor(targetString: onboardingData[0].titleLabelName, color: .main)
+        
         
         return cell
     }

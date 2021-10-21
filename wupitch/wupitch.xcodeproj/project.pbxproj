@@ -7,10 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F15D777CDE3D3EAF16D99BE /* Pods_wupitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB4C56BB582DE4383EC8ED5 /* Pods_wupitch.framework */; };
 		DD295DA027181E3B008CFC64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD295D9F27181E3B008CFC64 /* AppDelegate.swift */; };
 		DD295DA227181E3B008CFC64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD295DA127181E3B008CFC64 /* SceneDelegate.swift */; };
 		DD295DA927181E3D008CFC64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD295DA827181E3D008CFC64 /* Assets.xcassets */; };
 		DD295DAC27181E3D008CFC64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD295DAA27181E3D008CFC64 /* LaunchScreen.storyboard */; };
+		DD3ACBB52720FFC600EBC201 /* TermsOfUse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACBB42720FFC600EBC201 /* TermsOfUse.storyboard */; };
+		DD3ACBB7272104D300EBC201 /* TermsOfUseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACBB6272104D300EBC201 /* TermsOfUseVC.swift */; };
+		DD3ACBB92721073E00EBC201 /* SignUpThird.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACBB82721073E00EBC201 /* SignUpThird.storyboard */; };
+		DD3ACBBB2721075500EBC201 /* SignUpThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACBBA2721075500EBC201 /* SignUpThirdVC.swift */; };
+		DD3ACBBD2721082300EBC201 /* SignUpFourth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACBBC2721082300EBC201 /* SignUpFourth.storyboard */; };
+		DD3ACBBF2721083700EBC201 /* SignUpFourthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACBBE2721083700EBC201 /* SignUpFourthVC.swift */; };
+		DD3ACBC227216D2500EBC201 /* SignUpFifth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACBC127216D2500EBC201 /* SignUpFifth.storyboard */; };
+		DD3ACBC427216D4400EBC201 /* SignUpFifthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACBC327216D4400EBC201 /* SignUpFifthVC.swift */; };
+		DD3ACBC62721709200EBC201 /* SignUpSixth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACBC52721709100EBC201 /* SignUpSixth.storyboard */; };
+		DD3ACBC8272170A800EBC201 /* SignUpSixthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACBC7272170A800EBC201 /* SignUpSixthVC.swift */; };
+		DD3ACBCC27218A1700EBC201 /* SignUpSecondNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACBCB27218A1700EBC201 /* SignUpSecondNC.swift */; };
 		DD61E4B9271D7E50007504DE /* SignUpFirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4B8271D7E50007504DE /* SignUpFirstVC.swift */; };
 		DD61E4BB271D856E007504DE /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4BA271D856E007504DE /* UILabel.swift */; };
 		DD61E4BD271D8EB8007504DE /* SignUpSecond.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD61E4BC271D8EB8007504DE /* SignUpSecond.storyboard */; };
@@ -29,12 +41,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2AB4C56BB582DE4383EC8ED5 /* Pods_wupitch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wupitch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BBA2CAF355DA28C0E7FE086 /* Pods-wupitch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wupitch.debug.xcconfig"; path = "Target Support Files/Pods-wupitch/Pods-wupitch.debug.xcconfig"; sourceTree = "<group>"; };
+		A68E2DF78A46E1593F236A27 /* Pods-wupitch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wupitch.release.xcconfig"; path = "Target Support Files/Pods-wupitch/Pods-wupitch.release.xcconfig"; sourceTree = "<group>"; };
 		DD295D9C27181E3B008CFC64 /* wupitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wupitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD295D9F27181E3B008CFC64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD295DA127181E3B008CFC64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DD295DA827181E3D008CFC64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD295DAB27181E3D008CFC64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD295DAD27181E3D008CFC64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD3ACBB42720FFC600EBC201 /* TermsOfUse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsOfUse.storyboard; sourceTree = "<group>"; };
+		DD3ACBB6272104D300EBC201 /* TermsOfUseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseVC.swift; sourceTree = "<group>"; };
+		DD3ACBB82721073E00EBC201 /* SignUpThird.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpThird.storyboard; sourceTree = "<group>"; };
+		DD3ACBBA2721075500EBC201 /* SignUpThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpThirdVC.swift; sourceTree = "<group>"; };
+		DD3ACBBC2721082300EBC201 /* SignUpFourth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpFourth.storyboard; sourceTree = "<group>"; };
+		DD3ACBBE2721083700EBC201 /* SignUpFourthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFourthVC.swift; sourceTree = "<group>"; };
+		DD3ACBC127216D2500EBC201 /* SignUpFifth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpFifth.storyboard; sourceTree = "<group>"; };
+		DD3ACBC327216D4400EBC201 /* SignUpFifthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFifthVC.swift; sourceTree = "<group>"; };
+		DD3ACBC52721709100EBC201 /* SignUpSixth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpSixth.storyboard; sourceTree = "<group>"; };
+		DD3ACBC7272170A800EBC201 /* SignUpSixthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSixthVC.swift; sourceTree = "<group>"; };
+		DD3ACBCB27218A1700EBC201 /* SignUpSecondNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSecondNC.swift; sourceTree = "<group>"; };
 		DD61E4B8271D7E50007504DE /* SignUpFirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFirstVC.swift; sourceTree = "<group>"; };
 		DD61E4BA271D856E007504DE /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		DD61E4BC271D8EB8007504DE /* SignUpSecond.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpSecond.storyboard; sourceTree = "<group>"; };
@@ -57,17 +83,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F15D777CDE3D3EAF16D99BE /* Pods_wupitch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5109939557E70AB9AD100BA3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8BBA2CAF355DA28C0E7FE086 /* Pods-wupitch.debug.xcconfig */,
+				A68E2DF78A46E1593F236A27 /* Pods-wupitch.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C879896602DD98042F67A0EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2AB4C56BB582DE4383EC8ED5 /* Pods_wupitch.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DD295D9327181E3B008CFC64 = {
 			isa = PBXGroup;
 			children = (
 				DD295D9E27181E3B008CFC64 /* wupitch */,
 				DD295D9D27181E3B008CFC64 /* Products */,
+				5109939557E70AB9AD100BA3 /* Pods */,
+				C879896602DD98042F67A0EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +185,13 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		DD3ACBC027213ED500EBC201 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		DDED00F52719CB4200C2C343 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +253,7 @@
 		DDED0126271C0DD600C2C343 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				DD3ACBC027213ED500EBC201 /* Cells */,
 				DDED0129271C0DFB00C2C343 /* Controllers */,
 				DDED0127271C0DE800C2C343 /* Storyboards */,
 			);
@@ -210,8 +264,13 @@
 			isa = PBXGroup;
 			children = (
 				DDED012A271C0E5300C2C343 /* SignUpFirst.storyboard */,
+				DD3ACBB42720FFC600EBC201 /* TermsOfUse.storyboard */,
 				DD61E4BC271D8EB8007504DE /* SignUpSecond.storyboard */,
 				DD61E4C3271EBAF5007504DE /* LocationPicker.storyboard */,
+				DD3ACBB82721073E00EBC201 /* SignUpThird.storyboard */,
+				DD3ACBBC2721082300EBC201 /* SignUpFourth.storyboard */,
+				DD3ACBC127216D2500EBC201 /* SignUpFifth.storyboard */,
+				DD3ACBC52721709100EBC201 /* SignUpSixth.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -220,8 +279,14 @@
 			isa = PBXGroup;
 			children = (
 				DD61E4B8271D7E50007504DE /* SignUpFirstVC.swift */,
+				DD3ACBB6272104D300EBC201 /* TermsOfUseVC.swift */,
 				DD61E4BE271D8ECA007504DE /* SignUpSecondVC.swift */,
+				DD3ACBCB27218A1700EBC201 /* SignUpSecondNC.swift */,
 				DD61E4C5271EBCE6007504DE /* LocationPickerVC.swift */,
+				DD3ACBBA2721075500EBC201 /* SignUpThirdVC.swift */,
+				DD3ACBBE2721083700EBC201 /* SignUpFourthVC.swift */,
+				DD3ACBC327216D4400EBC201 /* SignUpFifthVC.swift */,
+				DD3ACBC7272170A800EBC201 /* SignUpSixthVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -233,9 +298,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD295DB027181E3D008CFC64 /* Build configuration list for PBXNativeTarget "wupitch" */;
 			buildPhases = (
+				7E37BFCCAA6563D17A8F66A9 /* [CP] Check Pods Manifest.lock */,
 				DD295D9827181E3B008CFC64 /* Sources */,
 				DD295D9927181E3B008CFC64 /* Frameworks */,
 				DD295D9A27181E3B008CFC64 /* Resources */,
+				6F2F7FCC1E64DCE570B6DDEF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -285,10 +352,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDED0125271BDCD700C2C343 /* OnbordingCVCell.xib in Resources */,
+				DD3ACBB52720FFC600EBC201 /* TermsOfUse.storyboard in Resources */,
+				DD3ACBBD2721082300EBC201 /* SignUpFourth.storyboard in Resources */,
+				DD3ACBC62721709200EBC201 /* SignUpSixth.storyboard in Resources */,
 				DD295DAC27181E3D008CFC64 /* LaunchScreen.storyboard in Resources */,
 				DDED011F271BD96D00C2C343 /* Onboarding.storyboard in Resources */,
+				DD3ACBC227216D2500EBC201 /* SignUpFifth.storyboard in Resources */,
 				DD295DA927181E3D008CFC64 /* Assets.xcassets in Resources */,
 				DD61E4BD271D8EB8007504DE /* SignUpSecond.storyboard in Resources */,
+				DD3ACBB92721073E00EBC201 /* SignUpThird.storyboard in Resources */,
 				DDED012B271C0E5300C2C343 /* SignUpFirst.storyboard in Resources */,
 				DD61E4C4271EBAF5007504DE /* LocationPicker.storyboard in Resources */,
 			);
@@ -296,22 +368,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6F2F7FCC1E64DCE570B6DDEF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-wupitch/Pods-wupitch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-wupitch/Pods-wupitch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-wupitch/Pods-wupitch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E37BFCCAA6563D17A8F66A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-wupitch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DD295D9827181E3B008CFC64 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DD61E4BB271D856E007504DE /* UILabel.swift in Sources */,
+				DD3ACBB7272104D300EBC201 /* TermsOfUseVC.swift in Sources */,
 				DDED00F82719D02900C2C343 /* UIColor.swift in Sources */,
 				DDED01062719E2D400C2C343 /* UIFont.swift in Sources */,
+				DD3ACBBB2721075500EBC201 /* SignUpThirdVC.swift in Sources */,
 				DD61E4C6271EBCE6007504DE /* LocationPickerVC.swift in Sources */,
 				DDED011B271B33F800C2C343 /* OnboardingData.swift in Sources */,
 				DDED0124271BDCD700C2C343 /* OnbordingCVCell.swift in Sources */,
+				DD3ACBBF2721083700EBC201 /* SignUpFourthVC.swift in Sources */,
 				DD295DA027181E3B008CFC64 /* AppDelegate.swift in Sources */,
 				DD61E4B9271D7E50007504DE /* SignUpFirstVC.swift in Sources */,
+				DD3ACBC8272170A800EBC201 /* SignUpSixthVC.swift in Sources */,
 				DDED0121271BD98400C2C343 /* OnbordingVC.swift in Sources */,
 				DD61E4C2271EB81D007504DE /* Adjusted.swift in Sources */,
 				DD295DA227181E3B008CFC64 /* SceneDelegate.swift in Sources */,
+				DD3ACBC427216D4400EBC201 /* SignUpFifthVC.swift in Sources */,
+				DD3ACBCC27218A1700EBC201 /* SignUpSecondNC.swift in Sources */,
 				DD61E4BF271D8ECA007504DE /* SignUpSecondVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,6 +568,7 @@
 		};
 		DD295DB127181E3D008CFC64 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BBA2CAF355DA28C0E7FE086 /* Pods-wupitch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -478,6 +599,7 @@
 		};
 		DD295DB227181E3D008CFC64 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A68E2DF78A46E1593F236A27 /* Pods-wupitch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

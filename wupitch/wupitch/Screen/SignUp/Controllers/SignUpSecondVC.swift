@@ -18,8 +18,6 @@ class SignUpSecondVC: UIViewController {
     @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
     
-    let loc = ["1","2","3","4"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

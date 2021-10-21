@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XWm-5Y-ZJl">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -10,6 +10,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="tRl-tf-IYS">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="XWm-5Y-ZJl" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8hF-eo-Cek">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="Hte-0J-VIB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jcK-sQ-LPk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-712" y="76"/>
+        </scene>
         <!--OnbordingVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
@@ -42,6 +57,9 @@
                                 <rect key="frame" x="313" y="831" width="67" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="touchUpSkipBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="DXq-wZ-Ivd"/>
+                                </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="7Z7-p7-X6l">
                                 <rect key="frame" x="121" y="88" width="172.5" height="26"/>
@@ -54,6 +72,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="kakao" title=""/>
+                                <connections>
+                                    <action selector="touchUpKakaoBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="aBX-cJ-GcJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWW-kn-5bu">
                                 <rect key="frame" x="57" y="755" width="300" height="44"/>
@@ -63,11 +84,14 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="apple" title=""/>
+                                <connections>
+                                    <action selector="touchUpAppleBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mAV-mS-Z4N"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5X-vh-1dd">
                                 <rect key="frame" x="186" y="807" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -90,6 +114,7 @@
                             <constraint firstItem="Y5X-vh-1dd" firstAttribute="top" secondItem="SWW-kn-5bu" secondAttribute="bottom" constant="8" id="zBK-Sg-zIm"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="6w0-1Y-xLe"/>
                     <connections>
                         <outlet property="appleBtn" destination="SWW-kn-5bu" id="Etv-Gw-epQ"/>
                         <outlet property="descriptionLabel" destination="Y5X-vh-1dd" id="88g-n1-oF4"/>

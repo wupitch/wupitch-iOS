@@ -8,7 +8,7 @@
 import UIKit
 
 class SignUpFirstVC: UIViewController {
-
+    
     @IBOutlet weak var allAgreeBtn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
@@ -17,10 +17,10 @@ class SignUpFirstVC: UIViewController {
     @IBOutlet weak var secMoreBtn: UIButton!
     @IBOutlet weak var firstMoreBtn: UIButton!
     @IBOutlet var agreeBtn: [UIButton]!
-    @IBOutlet weak var agreeLabel: UILabel!
-    @IBOutlet weak var pushLabel: UILabel!
-    @IBOutlet weak var privacyLabel: UILabel!
-    @IBOutlet weak var useLabel: UILabel!
+    //    @IBOutlet weak var agreeLabel: UILabel!
+    //    @IBOutlet weak var pushLabel: UILabel!
+    //    @IBOutlet weak var privacyLabel: UILabel!
+    //    @IBOutlet weak var useLabel: UILabel!
     @IBOutlet weak var nextBtn: UIButton!
     
     // 약관동의 배열
@@ -31,32 +31,34 @@ class SignUpFirstVC: UIViewController {
         super.viewDidLoad()
         
         setStyle()
-
+        
     }
     
     func setStyle() {
+        // titleLabel
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24.adjusted)
-        //titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 30)
-        descriptionLabel.setTextWithLineHeight(text: descriptionLabel.text, lineHeight: 20)
+        titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 30)
+        titleLabel.asColor(targetString: "우피치", color: .main)
+        
+        // descriptionLabel
         descriptionLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+        descriptionLabel.setTextWithLineHeight(text: descriptionLabel.text, lineHeight: 20)
         
-        firstMoreBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12)
-        secMoreBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12)
-        thirdMoreBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12)
+        // btns
+        //allAgreeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        //agreeBtn[0].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        //agreeBtn[1].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        //agreeBtn[2].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
         
+        // moreBtns
+        //firstMoreBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+        //secMoreBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+        //thirdMoreBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+        
+        // nextBtn
         nextBtn.layer.cornerRadius = 8
+        //nextBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
         
-        
-        // NSMutableAttributedString Type으로 바꾼 text를 저장
-        let attributedStr = NSMutableAttributedString(string: titleLabel.text!)
-
-        // text의 range 중에서 "Bonus"라는 글자는 UIColor를 blue로 변경
-        attributedStr.addAttribute(.foregroundColor, value: UIColor.main, range: (titleLabel.text! as NSString).range(of: "우피치"))
-        // text의 range 중에서 "Point"라는 글자는 UIColor를 orange로 변경
-        attributedStr.addAttribute(.foregroundColor, value: UIColor.bk, range: (titleLabel.text! as NSString).range(of: "에 오신 것을\n환영합니다."))
-
-        // 설정이 적용된 text를 label의 attributedText에 저장
-        titleLabel.attributedText = attributedStr
     }
     
     // 약관동의 나머지 버튼들 클릭시 호출
@@ -84,8 +86,26 @@ class SignUpFirstVC: UIViewController {
     }
     
     
-    @IBAction func touchUpNextBtn(_ sender: Any) {
-        // 다음페이지로이동
+    @IBAction func touchUpNextBtn(_ sender: UIButton) {
+        print("ㅜㄹ리다")
+        
+        //        let storyBoard: UIStoryboard = UIStoryboard(name: "SignUpSecond", bundle: nil)
+        //        if let dvc = storyBoard.instantiateViewController(withIdentifier: "SignUpSecondNC") as? SignUpSecondNC
+        //        {
+        //            navigationController?.pushViewController(dvc, animated: true)
+        //
+        //        }
+        //
+        let storyboard = UIStoryboard.init(name: "SignUpSecond", bundle: nil)
+        
+        guard let dvc = storyboard.instantiateViewController(identifier: "SignUpSecondNC") as? SignUpSecondNC else {return}
+        self.navigationController?.pushViewController(dvc, animated: true)
+        
+        //        let storyBoard = UIStoryboard.init(name: "SignUpSecond", bundle: nil)
+        //        guard let dvc = storyBoard.instantiateViewController(identifier: "SignUpSecondVC") as? SignUpSecondVC  else { return }
+        //        let signUpScondNC = UINavigationController(rootViewController: SignUpSecondVC())
+        //        self.navigationController?.pushViewController(signUpScondNC, animated: true)
+        
     }
     
     @IBAction func allAgreeBtnTap(_ sender: Any) {
@@ -113,5 +133,12 @@ class SignUpFirstVC: UIViewController {
     @IBAction func thirdBtnTap(_ sender: Any) {
         checkAgree(2)
     }
+    
+    
+    @IBAction func touchUpTOU(_ sender: Any) {
+        
+    }
+    
+    
 }
 

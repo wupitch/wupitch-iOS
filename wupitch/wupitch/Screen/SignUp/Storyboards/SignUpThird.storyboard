@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign Up ThirdVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="SignUpThirdVC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEB-lu-yAw">
+                                <rect key="frame" x="16" y="54" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="oBG-ng-E4l"/>
+                                    <constraint firstAttribute="width" constant="24" id="oEf-CX-gdE"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="left" title=""/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4c-eN-3XA">
+                                <rect key="frame" x="335" y="54" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="7jQ-Td-HVE"/>
+                                    <constraint firstAttribute="width" constant="24" id="LvR-Af-fUF"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="close" title=""/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관심 스포츠를 선택해주세요." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74s-ZL-Q1z">
+                                <rect key="frame" x="20" y="120.00000000000001" width="93" height="40.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(최소1개 이상 선택)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1x-0h-Aww">
+                                <rect key="frame" x="20" y="164.66666666666666" width="131.33333333333334" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kq7-dq-KNl">
+                                <rect key="frame" x="20" y="682" width="336" height="52"/>
+                                <color key="backgroundColor" red="0.70980392156862748" green="0.70980392156862748" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="Afu-VP-Hcn"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="다음 (3/4)"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bDq-S9-eUK">
+                                <rect key="frame" x="20" y="207.33333333333337" width="336" height="112"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="r9g-Uz-o3M">
+                                        <rect key="frame" x="0.0" y="0.0" width="336" height="48"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iO9-bE-QK4">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="48"/>
+                                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="Tzn-PV-9cH"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="축구/풋살"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0B-eD-LCr">
+                                                <rect key="frame" x="176" y="0.0" width="160" height="48"/>
+                                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.58431372550000005" green="0.58431372550000005" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="배드민턴"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="apV-L9-3l3">
+                                        <rect key="frame" x="0.0" y="63.999999999999972" width="336" height="48"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGy-tl-BLa">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="48"/>
+                                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.58431372550000005" green="0.58431372550000005" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="배구"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqF-6G-f2I">
+                                                <rect key="frame" x="176" y="0.0" width="160" height="48"/>
+                                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.58431372550000005" green="0.58431372550000005" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="야구"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="LlN-YA-OLL"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYu-gy-ueP">
+                                <rect key="frame" x="20" y="335.33333333333331" width="160" height="48"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.58431372550000005" green="0.58431372550000005" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="기타"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zZI-rq-bjq">
+                                <rect key="frame" x="20" y="432.33333333333331" width="336" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VEB-lu-yAw" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="12Y-Xj-61Z"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kq7-dq-KNl" secondAttribute="trailing" constant="19" id="3gc-rN-7Zz"/>
+                            <constraint firstItem="r1x-0h-Aww" firstAttribute="top" secondItem="74s-ZL-Q1z" secondAttribute="bottom" constant="4" id="4zr-7u-vXS"/>
+                            <constraint firstItem="zZI-rq-bjq" firstAttribute="top" secondItem="BYu-gy-ueP" secondAttribute="bottom" constant="49" id="7PA-ut-b09"/>
+                            <constraint firstItem="zZI-rq-bjq" firstAttribute="trailing" secondItem="bDq-S9-eUK" secondAttribute="trailing" id="AEc-Ck-zdI"/>
+                            <constraint firstItem="BYu-gy-ueP" firstAttribute="top" secondItem="RGy-tl-BLa" secondAttribute="bottom" constant="16" id="Aig-fL-kq5"/>
+                            <constraint firstItem="zZI-rq-bjq" firstAttribute="leading" secondItem="bDq-S9-eUK" secondAttribute="leading" id="Lgu-Lv-TpS"/>
+                            <constraint firstItem="74s-ZL-Q1z" firstAttribute="top" secondItem="VEB-lu-yAw" secondAttribute="bottom" constant="42" id="LzM-KL-5nm"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bDq-S9-eUK" secondAttribute="trailing" constant="19" id="Mq1-AC-yq3"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="kq7-dq-KNl" secondAttribute="bottom" constant="44" id="ORv-ES-zob"/>
+                            <constraint firstItem="kq7-dq-KNl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Sar-d5-6ca"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="v4c-eN-3XA" secondAttribute="trailing" constant="16" id="URC-ZO-vpK"/>
+                            <constraint firstItem="74s-ZL-Q1z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="WYO-jY-owB"/>
+                            <constraint firstItem="BYu-gy-ueP" firstAttribute="width" secondItem="RGy-tl-BLa" secondAttribute="width" id="YoR-Pj-SAP"/>
+                            <constraint firstItem="VEB-lu-yAw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="c8l-RC-VJb"/>
+                            <constraint firstItem="r1x-0h-Aww" firstAttribute="leading" secondItem="74s-ZL-Q1z" secondAttribute="leading" id="c8r-x8-2sz"/>
+                            <constraint firstItem="BYu-gy-ueP" firstAttribute="leading" secondItem="RGy-tl-BLa" secondAttribute="leading" id="fJe-xU-quT"/>
+                            <constraint firstItem="v4c-eN-3XA" firstAttribute="centerY" secondItem="VEB-lu-yAw" secondAttribute="centerY" id="iBz-pZ-hCT"/>
+                            <constraint firstItem="bDq-S9-eUK" firstAttribute="top" secondItem="r1x-0h-Aww" secondAttribute="bottom" constant="22.333333333333314" id="r4c-De-ZZq"/>
+                            <constraint firstItem="bDq-S9-eUK" firstAttribute="leading" secondItem="r1x-0h-Aww" secondAttribute="leading" id="zMI-m0-1dC"/>
+                            <constraint firstItem="BYu-gy-ueP" firstAttribute="height" secondItem="RGy-tl-BLa" secondAttribute="height" id="zu1-e8-Yiy"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.399999999999999" y="62.807881773399018"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close" width="24" height="24"/>
+        <image name="left" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

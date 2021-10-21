@@ -31,7 +31,7 @@ class LocationPickerVC: UIViewController {
     }
     
     @IBAction func touchUpSelectBtn(_ sender: Any) {
-        
+        resignFirstResponder()
         dismiss(animated: true, completion: nil)
     }
 }
@@ -53,6 +53,8 @@ extension LocationPickerVC: UITextFieldDelegate, UIPickerViewDelegate, UIPickerV
         //dogBreedTextField.text = loc[row]
         
     }
+    
+    
     
     //    func createPickerView() {
     //        //let pickerView = UIPickerView()
