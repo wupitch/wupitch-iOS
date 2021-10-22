@@ -8,11 +8,12 @@
 // 온보딩에서 해야할 것
 // 1. 폰 오토 맞추기 -> 작은 화면에서는 좀 안맞음 (런치스크린도하자-> 런치스크린 아이콘이 작아져야 함)
 // 2. 컬렉션 뷰 안에 있는 특정 글자 색 변경하기
-// 3. 카카오, 애플 로그인 연결
+// 3. 컬렉션 뷰 이미지 사이즈 때문에 글자 잘 안보이는거 해결하기
 
 import UIKit
 import KakaoSDKAuth
 import KakaoSDKUser
+import AuthenticationServices
 
 class OnbordingVC: UIViewController {
     
@@ -141,8 +142,13 @@ class OnbordingVC: UIViewController {
         
     }
     
-    @IBAction func touchUpAppleBtn(_ sender: Any) {
-        
+    @IBAction func touchUpAppleBtn(_ sender: ASAuthorizationAppleIDButton) {
+        let request = ASAuthorizationAppleIDProvider().createRequest()
+        request.requestedScopes = [.email, .fullName]
+        let controller = ASAuthorizationController(authorizationRequests: [request])
+        controller.delegate = self
+        controller.presentationContextProvider = self
+        controller.performRequests()
     }
 }
 
@@ -201,4 +207,55 @@ extension OnbordingVC : UICollectionViewDelegate, UICollectionViewDataSource, UI
         definePage(scrollView)
     }
 }
+
+// MARK: Apple Login
+extension OnbordingVC: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+    
+//    func appleLogin(_ sender: ASAuthorizationAppleIDButton) {
+//        let request = ASAuthorizationAppleIDProvider().createRequest()
+//        request.requestedScopes = [.email, .fullName]
+//        let controller = ASAuthorizationController(authorizationRequests: [request])
+//        controller.delegate = self
+//        controller.presentationContextProvider = self
+//        controller.performRequests()
+//    }
+    
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let credential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            let userIdentifier = credential.user
+            let email = credential.email
+            let familyName = credential.fullName?.familyName ?? ""
+            let givenName = credential.fullName?.givenName ?? ""
+            let fullName = familyName + givenName
+            
+//            self.presentAlert(
+//                title: "애플로그인 성공",
+//                message: """
+//                    userIdentifier : \(userIdentifier)
+//                    email : \(email ?? "불러오지 못함")
+//                    fullName : \((fullName.count > 0) ? fullName : "불러오지 못함")
+//                """
+//            )
+            
+            print("애플로그인성공", userIdentifier, email ?? "불러오지못함", fullName)
+            
+            // 로그인 성공 후 회원가입 루트로 이동
+            let storyboard = UIStoryboard.init(name: "SignUpFirst", bundle: nil)
+            
+            guard let dvc = storyboard.instantiateViewController(identifier: "SignUpFirstVC") as? SignUpFirstVC else {return}
+            self.navigationController?.pushViewController(dvc, animated: true)
+            
+            // 자동로그인을 위해 토근 저장
+            // UserDefaults.standard.set(userIdentifier, forKey: "AppleLoginUserIdentifier")
+        } else {
+            // self.presentAlert(title: "애플로그인 실패")
+            print("로그인실패")
+        }
+    }
+}
+
 

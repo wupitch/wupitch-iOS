@@ -61,6 +61,7 @@
 		DD3ACBC52721709100EBC201 /* SignUpSixth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpSixth.storyboard; sourceTree = "<group>"; };
 		DD3ACBC7272170A800EBC201 /* SignUpSixthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSixthVC.swift; sourceTree = "<group>"; };
 		DD3ACBCB27218A1700EBC201 /* SignUpSecondNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSecondNC.swift; sourceTree = "<group>"; };
+		DD3ACBCF2721A8AE00EBC201 /* wupitch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wupitch.entitlements; sourceTree = "<group>"; };
 		DD61E4B8271D7E50007504DE /* SignUpFirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFirstVC.swift; sourceTree = "<group>"; };
 		DD61E4BA271D856E007504DE /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		DD61E4BC271D8EB8007504DE /* SignUpSecond.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpSecond.storyboard; sourceTree = "<group>"; };
@@ -128,6 +129,7 @@
 		DD295D9E27181E3B008CFC64 /* wupitch */ = {
 			isa = PBXGroup;
 			children = (
+				DD3ACBCF2721A8AE00EBC201 /* wupitch.entitlements */,
 				DD295DB3271839B8008CFC64 /* Global */,
 				DD295DB827183BDF008CFC64 /* Network */,
 				DD295DB4271839C9008CFC64 /* Screen */,
@@ -572,6 +574,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = wupitch/wupitch.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -603,6 +606,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = wupitch/wupitch.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
