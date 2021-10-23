@@ -35,7 +35,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgIdcard" translatesAutoresizingMaskIntoConstraints="NO" id="KEE-L2-y4z">
                                 <rect key="frame" x="20" y="184.66666666666663" width="336" height="242"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="242" id="Rq1-NH-lk2"/>
+                                    <constraint firstAttribute="width" secondItem="KEE-L2-y4z" secondAttribute="height" multiplier="168:121" id="5Z5-Te-u7E"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DED-cT-FpI">
@@ -63,6 +63,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="신분증 촬영"/>
+                                <connections>
+                                    <action selector="touchUpPhotoBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="raQ-0W-ZTU"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신분증 원본으로 촬영해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZs-jN-0aY">
                                 <rect key="frame" x="52.000000000000014" y="462.33333333333331" width="169.33333333333337" height="17"/>

@@ -7,9 +7,7 @@
 
 import UIKit
 
-class SignUpSecondVC: UIViewController {
-    
-    var delegate : sendUpdateDelegate?
+class SignUpSecondVC: UIViewController, SignUpPickerDelegate {
     
     @IBOutlet weak var modalBgView: UIView!
     @IBOutlet weak var nextBtn: UIButton!
@@ -20,27 +18,68 @@ class SignUpSecondVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        modalBgView.alpha = 0.0
+        selectTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .touchDown)
         
+    }
+    
+    // 뷰가 나타날 것이다.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("뷰윌어피어 >> \(#function) ")
+        
+        
+    }
+    
+    // 뷰가 나타났다.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("DEBUG VC1 >> \(#function) ")
+        
+    }
+    
+    // 뷰가 사라질 것이다.
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("DEBUG VC1 >> \(#function) ")
+        
+        
+    }
+    
+    // 뷰가 사라졌다.
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("DEBUG VC1 >> \(#function) ")
+        
+    }
+    
+    func modalViewDismiss() {
         modalBgView.alpha = 0.0
         
-        
-        selectTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .allEditingEvents)
+    }
+    
+    func textFieldData() {
+        selectTextField.text = locationPickerData[0].locationName
+        selectTextField.text = locationPickerData[1].locationName
+        selectTextField.text = locationPickerData[2].locationName
+        selectTextField.text = locationPickerData[3].locationName
         
     }
     
-   
+        @objc func textFieldDidChange(_ textField:UITextField) {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "LocationPicker", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "LocationPickerVC") as? LocationPickerVC {
+                dvc.modalPresentationStyle = .overFullScreen
     
-    @objc func textFieldDidChange(_ textField:UITextField) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "LocationPicker", bundle: nil)
-        if let dvc = storyBoard.instantiateViewController(withIdentifier: "LocationPickerVC") as? LocationPickerVC {
-            dvc.modalPresentationStyle = .overFullScreen
-            
-            modalBgView.alpha = 1
-            self.present(dvc, animated: true, completion: nil)
+                modalBgView.alpha = 1
+    
+                self.present(dvc, animated: true, completion: nil)
+            }
+    
         }
-        
-    }
     
     
     
 }
+
+

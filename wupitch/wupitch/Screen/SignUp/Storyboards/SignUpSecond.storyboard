@@ -75,10 +75,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V7G-1k-BgM">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jjr-hg-ThM">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -87,23 +86,27 @@
                             <constraint firstItem="3NI-Pc-ZlU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="2Ik-EP-KGw"/>
                             <constraint firstItem="nCe-YZ-Fc7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="83O-hB-o0k"/>
                             <constraint firstItem="rYN-pi-Pkf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Ltr-TM-S1b"/>
+                            <constraint firstItem="Jjr-hg-ThM" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="NLr-oA-8kh"/>
                             <constraint firstItem="Oc2-qY-tXX" firstAttribute="centerY" secondItem="nCe-YZ-Fc7" secondAttribute="centerY" id="T2B-Hq-laj"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rYN-pi-Pkf" secondAttribute="trailing" constant="19" id="TGQ-fc-ia1"/>
                             <constraint firstItem="QWf-hv-pFY" firstAttribute="leading" secondItem="3NI-Pc-ZlU" secondAttribute="leading" id="WgC-2U-kly"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Oc2-qY-tXX" secondAttribute="trailing" constant="16" id="b6I-OB-T1i"/>
+                            <constraint firstAttribute="bottom" secondItem="Jjr-hg-ThM" secondAttribute="bottom" id="ccM-hw-9gf"/>
                             <constraint firstItem="3NI-Pc-ZlU" firstAttribute="top" secondItem="nCe-YZ-Fc7" secondAttribute="bottom" constant="42" id="jYr-dU-MpO"/>
+                            <constraint firstItem="Jjr-hg-ThM" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="lUQ-Wu-wbm"/>
                             <constraint firstItem="QWf-hv-pFY" firstAttribute="top" secondItem="3NI-Pc-ZlU" secondAttribute="bottom" constant="48" id="m2B-z4-r4g"/>
                             <constraint firstItem="nCe-YZ-Fc7" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="miV-bb-cVg"/>
                             <constraint firstAttribute="bottom" secondItem="rYN-pi-Pkf" secondAttribute="bottom" constant="78" id="niW-RE-1AO"/>
+                            <constraint firstItem="Jjr-hg-ThM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="uqw-Uj-EG3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="W8s-6u-Mqe"/>
                     <connections>
                         <outlet property="backBtn" destination="nCe-YZ-Fc7" id="9wg-Jb-ZV7"/>
                         <outlet property="closeBtn" destination="Oc2-qY-tXX" id="fzJ-If-iuK"/>
-                        <outlet property="modalBgView" destination="V7G-1k-BgM" id="XCN-aO-UjK"/>
+                        <outlet property="modalBgView" destination="Jjr-hg-ThM" id="zvx-mW-yOu"/>
                         <outlet property="nextBtn" destination="rYN-pi-Pkf" id="9sR-xT-y4a"/>
-                        <outlet property="selectTextField" destination="QWf-hv-pFY" id="7oq-Se-Z5P"/>
+                        <outlet property="selectTextField" destination="QWf-hv-pFY" id="r3L-PG-Gqo"/>
                         <outlet property="titleLabel" destination="3NI-Pc-ZlU" id="pVA-FL-JFA"/>
                     </connections>
                 </viewController>

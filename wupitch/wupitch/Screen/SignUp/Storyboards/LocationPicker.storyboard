@@ -34,6 +34,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="close" title=""/>
+                                        <connections>
+                                            <action selector="cancelBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TLp-6f-IXL"/>
+                                        </connections>
                                     </button>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hb5-K0-KlS">
                                         <rect key="frame" x="0.0" y="69" width="414" height="269"/>

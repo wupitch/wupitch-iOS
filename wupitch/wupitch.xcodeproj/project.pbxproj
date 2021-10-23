@@ -30,6 +30,7 @@
 		DD61E4C2271EB81D007504DE /* Adjusted.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4C1271EB81C007504DE /* Adjusted.swift */; };
 		DD61E4C4271EBAF5007504DE /* LocationPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD61E4C3271EBAF5007504DE /* LocationPicker.storyboard */; };
 		DD61E4C6271EBCE6007504DE /* LocationPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4C5271EBCE6007504DE /* LocationPickerVC.swift */; };
+		DD6728352723E582001E1355 /* LocationPickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6728342723E582001E1355 /* LocationPickerData.swift */; };
 		DDED00F82719D02900C2C343 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED00F72719D02900C2C343 /* UIColor.swift */; };
 		DDED01062719E2D400C2C343 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED01052719E2D400C2C343 /* UIFont.swift */; };
 		DDED011B271B33F800C2C343 /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED011A271B33F800C2C343 /* OnboardingData.swift */; };
@@ -69,6 +70,7 @@
 		DD61E4C1271EB81C007504DE /* Adjusted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adjusted.swift; sourceTree = "<group>"; };
 		DD61E4C3271EBAF5007504DE /* LocationPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationPicker.storyboard; sourceTree = "<group>"; };
 		DD61E4C5271EBCE6007504DE /* LocationPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerVC.swift; sourceTree = "<group>"; };
+		DD6728342723E582001E1355 /* LocationPickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerData.swift; sourceTree = "<group>"; };
 		DDED00F72719D02900C2C343 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		DDED01052719E2D400C2C343 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		DDED011A271B33F800C2C343 /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				DDED011A271B33F800C2C343 /* OnboardingData.swift */,
+				DD6728342723E582001E1355 /* LocationPickerData.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				DDED0121271BD98400C2C343 /* OnbordingVC.swift in Sources */,
 				DD61E4C2271EB81D007504DE /* Adjusted.swift in Sources */,
 				DD295DA227181E3B008CFC64 /* SceneDelegate.swift in Sources */,
+				DD6728352723E582001E1355 /* LocationPickerData.swift in Sources */,
 				DD3ACBC427216D4400EBC201 /* SignUpFifthVC.swift in Sources */,
 				DD3ACBCC27218A1700EBC201 /* SignUpSecondNC.swift in Sources */,
 				DD61E4BF271D8ECA007504DE /* SignUpSecondVC.swift in Sources */,
