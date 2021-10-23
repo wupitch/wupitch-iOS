@@ -18,39 +18,26 @@ class SignUpSecondVC: UIViewController, SignUpPickerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setStyle()
         modalBgView.alpha = 0.0
         selectTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .touchDown)
         
     }
-    
-    // 뷰가 나타날 것이다.
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("뷰윌어피어 >> \(#function) ")
+    func setStyle() {
+        titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24.adjusted)
+        titleLabel.tintColor = .bk
+        titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 30.adjusted)
         
+        selectTextField.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
+        //selectTextField.textColor = .gray02
+        selectTextField.attributedPlaceholder = NSAttributedString(string: "지역구 선택", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray02])
+        selectTextField.layer.borderColor = UIColor.gray02.cgColor
+        selectTextField.layer.borderWidth = 1
+        selectTextField.layer.cornerRadius = 8
         
-    }
-    
-    // 뷰가 나타났다.
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print("DEBUG VC1 >> \(#function) ")
-        
-    }
-    
-    // 뷰가 사라질 것이다.
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        print("DEBUG VC1 >> \(#function) ")
-        
-        
-    }
-    
-    // 뷰가 사라졌다.
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        print("DEBUG VC1 >> \(#function) ")
-        
+        nextBtn.layer.cornerRadius = 8
+        nextBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
     }
     
     func modalViewDismiss() {
