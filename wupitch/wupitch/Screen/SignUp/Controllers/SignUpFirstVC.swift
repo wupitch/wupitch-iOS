@@ -5,6 +5,9 @@
 //  Created by 김수정 on 2021/10/18.
 //
 
+// 해야할 것
+// 1. 버튼에 사이즈와 폰트를 주면 눌렸을 땐 다르게 나옴
+
 import UIKit
 
 class SignUpFirstVC: UIViewController {
@@ -87,26 +90,17 @@ class SignUpFirstVC: UIViewController {
     
     
     @IBAction func touchUpNextBtn(_ sender: UIButton) {
-        print("ㅜㄹ리다")
         
-        //        let storyBoard: UIStoryboard = UIStoryboard(name: "SignUpSecond", bundle: nil)
-        //        if let dvc = storyBoard.instantiateViewController(withIdentifier: "SignUpSecondNC") as? SignUpSecondNC
-        //        {
-        //            navigationController?.pushViewController(dvc, animated: true)
-        //
-        //        }
-        //
         let storyboard = UIStoryboard.init(name: "SignUpSecond", bundle: nil)
         
-        guard let dvc = storyboard.instantiateViewController(identifier: "SignUpSecondNC") as? SignUpSecondNC else {return}
+        guard let dvc = storyboard.instantiateViewController(identifier: "SignUpSecondVC") as? SignUpSecondVC else {return}
         self.navigationController?.pushViewController(dvc, animated: true)
-        
-        //        let storyBoard = UIStoryboard.init(name: "SignUpSecond", bundle: nil)
-        //        guard let dvc = storyBoard.instantiateViewController(identifier: "SignUpSecondVC") as? SignUpSecondVC  else { return }
-        //        let signUpScondNC = UINavigationController(rootViewController: SignUpSecondVC())
-        //        self.navigationController?.pushViewController(signUpScondNC, animated: true)
-        
     }
+    
+    @IBAction func touchUpBackBtn(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     
     @IBAction func allAgreeBtnTap(_ sender: Any) {
         if terms.allSatisfy({$0}){
@@ -135,10 +129,24 @@ class SignUpFirstVC: UIViewController {
     }
     
     
-    @IBAction func touchUpTOU(_ sender: Any) {
+    @IBAction func touchUpFirstMoreBtn(_ sender: Any) {
+        let storyboard = UIStoryboard.init(name: "TermsOfUse", bundle: nil)
         
+        guard let dvc = storyboard.instantiateViewController(identifier: "TermsOfUseVC") as? TermsOfUseVC else {return}
+        self.navigationController?.pushViewController(dvc, animated: true)
     }
     
+    @IBAction func touchUpSecondMoreBtn(_ sender: Any) {
+        
+        let storyboard = UIStoryboard.init(name: "TermsOfUse", bundle: nil)
+        
+        guard let dvc = storyboard.instantiateViewController(identifier: "AgreeVC") as? AgreeVC else {return}
+        self.navigationController?.pushViewController(dvc, animated: true)
+    }
+    
+    @IBAction func touchUpThirdMoreBtn(_ sender: Any) {
+        
+    }
     
 }
 

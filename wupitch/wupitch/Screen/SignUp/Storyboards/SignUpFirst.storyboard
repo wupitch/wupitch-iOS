@@ -25,6 +25,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="left" title=""/>
+                                <connections>
+                                    <action selector="touchUpBackBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="btk-3J-0Vf"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우피치에 오신 것을 환영합니다." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjd-AK-Vjq">
                                 <rect key="frame" x="20" y="120" width="126.5" height="41"/>
@@ -88,7 +91,7 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="touchUpTOU:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EIz-9T-C7D"/>
+                                            <action selector="touchUpFirstMoreBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dfv-I4-eL0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAC-cq-HHS">
@@ -102,6 +105,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="보기">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="touchUpSecondMoreBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="IuN-XN-i1g"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjj-AD-mHu">
                                         <rect key="frame" x="374" y="143" width="21" height="20"/>
@@ -114,6 +120,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="보기">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="touchUpThirdMoreBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cqd-z3-a7Z"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>

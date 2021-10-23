@@ -1,13 +1,13 @@
 //
-//  TermsOfUseVC.swift
+//  AgreeVC.swift
 //  wupitch
 //
-//  Created by 김수정 on 2021/10/21.
+//  Created by 김수정 on 2021/10/23.
 //
 
 import UIKit
 
-class TermsOfUseVC: UIViewController {
+class AgreeVC: UIViewController {
     
     @IBOutlet weak var contentCV: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -15,7 +15,7 @@ class TermsOfUseVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setDelegate()
         setStyle()
     }
@@ -23,7 +23,7 @@ class TermsOfUseVC: UIViewController {
     func setDelegate() {
         contentCV.delegate = self
         contentCV.dataSource = self
-        contentCV.register(TouCVCell.nib(), forCellWithReuseIdentifier: TouCVCell.identifier)
+        contentCV.register(AgreeCVCell.nib(), forCellWithReuseIdentifier: AgreeCVCell.identifier)
     }
     
     func setStyle() {
@@ -31,14 +31,14 @@ class TermsOfUseVC: UIViewController {
         titleLabel.tintColor = .bk
         titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 20.adjusted)
     }
-
+    
     @IBAction func touchUpBackBtn(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     
 }
 
-extension TermsOfUseVC : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension AgreeVC : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
@@ -46,7 +46,7 @@ extension TermsOfUseVC : UICollectionViewDataSource, UICollectionViewDelegate, U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TouCVCell.identifier, for: indexPath) as? TouCVCell else{
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AgreeCVCell.identifier, for: indexPath) as? AgreeCVCell else{
             return UICollectionViewCell()
         }
         return cell
@@ -69,3 +69,4 @@ extension TermsOfUseVC : UICollectionViewDataSource, UICollectionViewDelegate, U
     
     
 }
+

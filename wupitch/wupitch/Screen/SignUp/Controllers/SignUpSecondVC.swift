@@ -80,6 +80,22 @@ class SignUpSecondVC: UIViewController, SignUpPickerDelegate {
     
     
     
+    @IBAction func touchUpBackBtn(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func touchUpCancelBtn(_ sender: Any) {
+        
+    }
+    
+    @IBAction func touchUpNextBtn(_ sender: Any) {
+        
+        let storyboard = UIStoryboard.init(name: "SignUpThird", bundle: nil)
+        
+        guard let dvc = storyboard.instantiateViewController(identifier: "SignUpThirdVC") as? SignUpThirdVC else {return}
+        self.navigationController?.pushViewController(dvc, animated: true)
+    }
+    
 }
 
 
