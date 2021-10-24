@@ -81,6 +81,9 @@
                                                 <color key="tintColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="축구/풋살"/>
+                                                <connections>
+                                                    <action selector="touchUpSoccerBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="FBr-Er-NqK"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0B-eD-LCr">
                                                 <rect key="frame" x="176" y="0.0" width="160" height="48"/>
@@ -88,6 +91,9 @@
                                                 <color key="tintColor" red="0.58431372550000005" green="0.58431372550000005" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="배드민턴"/>
+                                                <connections>
+                                                    <action selector="touchUpBadmintonBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="iEe-yU-FU5"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -100,6 +106,9 @@
                                                 <color key="tintColor" red="0.58431372550000005" green="0.58431372550000005" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="배구"/>
+                                                <connections>
+                                                    <action selector="touchUpVolleyBallBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="B2c-1g-zsX"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqF-6G-f2I">
                                                 <rect key="frame" x="176" y="0.0" width="160" height="48"/>
@@ -107,6 +116,9 @@
                                                 <color key="tintColor" red="0.58431372550000005" green="0.58431372550000005" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="야구"/>
+                                                <connections>
+                                                    <action selector="touchUpBaseballBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mPs-0D-GC8"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>

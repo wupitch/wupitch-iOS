@@ -8,7 +8,7 @@
 import UIKit
 
 class SignUpThirdVC: UIViewController {
-
+    
     @IBOutlet weak var textView: UIView!
     @IBOutlet var sportBtns: [UIButton]!
     @IBOutlet weak var etcTextField: UITextField!
@@ -17,14 +17,19 @@ class SignUpThirdVC: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
-    
     @IBOutlet weak var textCount: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        etcTextField.delegate = self
         setStyle()
         
+        
     }
+    
+    
+    
     
     func setStyle() {
         
@@ -62,11 +67,7 @@ class SignUpThirdVC: UIViewController {
         textCount.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
     }
     
-    @IBAction func etcBtn(_ sender: Any) {
-        etcTextField.alpha = 1
-        textCount.alpha = 1
-        textView.alpha = 1
-    }
+    
     
     @IBAction func touchUpBackBtn(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -79,9 +80,104 @@ class SignUpThirdVC: UIViewController {
     @IBAction func touchUpNextBtn(_ sender: Any) {
         
         let storyboard = UIStoryboard.init(name: "SignUpFourth", bundle: nil)
-                
-                guard let dvc = storyboard.instantiateViewController(identifier: "SignUpFourthVC") as? SignUpFourthVC else {return}
-                
+        
+        guard let dvc = storyboard.instantiateViewController(identifier: "SignUpFourthVC") as? SignUpFourthVC else {return}
+        
         self.navigationController?.pushViewController(dvc, animated: true)
+    }
+    
+    @IBAction func touchUpSoccerBtn(_ sender: UIButton) {
+        if sender.isSelected == false {
+            sender.isSelected = true
+            sportBtns[0].backgroundColor = .mainDisabled20
+            sportBtns[0].tintColor = .main
+        }
+        else {
+            sender.isSelected = false
+            sportBtns[0].backgroundColor = .gray04
+            sportBtns[0].tintColor = .gray02
+        }
+    }
+    
+    @IBAction func touchUpBadmintonBtn(_ sender: UIButton) {
+        if sender.isSelected == false {
+            sender.isSelected = true
+            sportBtns[1].backgroundColor = .mainDisabled20
+            sportBtns[1].tintColor = .main
+        }
+        else {
+            sender.isSelected = false
+            sportBtns[1].backgroundColor = .gray04
+            sportBtns[1].tintColor = .gray02
+        }
+    }
+    
+    
+    @IBAction func touchUpVolleyBallBtn(_ sender: UIButton) {
+        if sender.isSelected == false {
+            sender.isSelected = true
+            sportBtns[2].backgroundColor = .mainDisabled20
+            sportBtns[2].tintColor = .main
+        }
+        else {
+            sender.isSelected = false
+            sportBtns[2].backgroundColor = .gray04
+            sportBtns[2].tintColor = .gray02
+        }
+    }
+    
+    @IBAction func touchUpBaseballBtn(_ sender: UIButton) {
+        if sender.isSelected == false {
+            sender.isSelected = true
+            sportBtns[3].backgroundColor = .mainDisabled20
+            sportBtns[3].tintColor = .main
+        }
+        else {
+            sender.isSelected = false
+            sportBtns[3].backgroundColor = .gray04
+            sportBtns[3].tintColor = .gray02
+        }
+    }
+    
+    @IBAction func etcBtn(_ sender: UIButton) {
+        if sender.isSelected == false {
+            sender.isSelected = true
+            sportBtns[4].backgroundColor = .mainDisabled20
+            sportBtns[4].tintColor = .main
+            etcTextField.alpha = 1
+            textCount.alpha = 1
+            textView.alpha = 1
+        }
+        else {
+            sender.isSelected = false
+            sportBtns[4].backgroundColor = .gray04
+            sportBtns[4].tintColor = .gray02
+            etcTextField.alpha = 0.0
+            textCount.alpha = 0.0
+            textView.alpha = 0.0
+        }
+    }
+    
+    
+}
+
+extension SignUpThirdVC: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // backspace 감지하기
+        if let char = string.cString(using: String.Encoding.utf8) {
+            let isBackSpace = strcmp(char, "\\b")
+            if isBackSpace == -92 {
+                return true
+            }
+        }
+        // 글자수제한
+        guard textField.text!.count < 20
+        
+        else {
+            return false
+        }
+        textCount.text = "\(textField.text?.count)" + "/20"
+        
+        return true
     }
 }
