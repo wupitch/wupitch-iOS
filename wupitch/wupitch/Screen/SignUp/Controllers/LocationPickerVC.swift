@@ -6,19 +6,16 @@
 //
 
 import UIKit
+import Alamofire
 
-// 1. 프로토콜을 만든다.
-protocol SignUpPickerDelegate: AnyObject {
-    
-    // 2. 메소드를 만든다.
-    func modalViewDismiss()
-    func textFieldData()
+protocol ModalDelegate {
+    func modalDismiss()
+    func textFieldData(data: String)
 }
 
 class LocationPickerVC: UIViewController {
     
-    // 3. 델리게이트
-    weak var signUpDelegate: SignUpPickerDelegate?
+    var modalDelegate : ModalDelegate?
     
     @IBOutlet weak var selectBtn: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
@@ -26,58 +23,34 @@ class LocationPickerVC: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var pickerBgView: UIView!
     
-    //let loc = ["1","2","3","4"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setStyle()
+        setDelegate()
+        
+    }
+    
+    func setStyle() {
+        
+        titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18.adjusted)
+        titleLabel.tintColor = .bk
+        selectBtn.layer.cornerRadius = 8
+        pickerBgView.makeRounded(cornerRadius: 20)
+    }
+    
+    func setDelegate() {
         pickerView.delegate = self
         pickerView.dataSource = self
-        
-        //signUpDelegate?.modalViewDismiss()
-        
     }
-    
-    // 뷰가 나타날 것이다.
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("DEBUG VC3 >> \(#function) ")
-        
-        //signUpDelegate?.modalViewDismiss()
-    }
-    
-    // 뷰가 나타났다.
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print("DEBUG VC3 >> \(#function) ")
-        
-        //signUpDelegate?.modalViewDismiss()
-    }
-    
-    // 뷰가 사라질 것이다.
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        print("DEBUG VC3 >> \(#function) ")
-        
-        
-    }
-    
-    // 뷰가 사라졌다.
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        print("DEBUG VC3 >> \(#function) ")
-        //signUpDelegate?.modalViewDismiss()
-    }
-    
     
     @IBAction func touchUpSelectBtn(_ sender: Any) {
-        
-        self.signUpDelegate?.modalViewDismiss()
+        modalDelegate?.modalDismiss()
         self.dismiss(animated: true, completion: nil)
-        
     }
-   
+    
     @IBAction func cancelBtn(_ sender: Any) {
+        modalDelegate?.modalDismiss()
         dismiss(animated: true, completion: nil)
     }
 }
@@ -92,34 +65,52 @@ extension LocationPickerVC: UITextFieldDelegate, UIPickerViewDelegate, UIPickerV
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+
         return locationPickerData[row].locationName
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        signUpDelegate?.textFieldData()
-        
+        modalDelegate?.textFieldData(data: locationPickerData[row].locationName)
     }
     
     
+//    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+//        var color: UIColor!
+//        if pickerView.selectedRow(inComponent: component) == row {
+//            color = UIColor.blue
+//        } else {
+//            color = UIColor.black
+//        }
+//
+//        let attributes: [NSAttributedString.Key: Any] = [
+//            NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): color as Any,
+//            NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue): UIFont.systemFont(ofSize: 15)
+//        ]
+//
+//        return NSAttributedString(string: locationPickerData[row].locationName, attributes: attributes)
+//    }
+//
     
-        func createPickerView() {
-            pickerView = UIPickerView()
-            pickerView.delegate = self
-            //dogBreedTextField.inputView = pickerView
-            signUpDelegate?.textFieldData()
+
+    // 특정 선택된 글자만 굵게가 안돼
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+
+        pickerView.subviews.forEach {
+            $0.backgroundColor = .clear
         }
-    //
-    //    func dismissPickerView() {
-    //        let toolBar = UIToolbar()
-    //        toolBar.sizeToFit()
-    //        let button = UIBarButtonItem(title: "선택", style: .plain, target: self, action: #selector(self.action))
-    //        toolBar.setItems([button], animated: true)
-    //        toolBar.isUserInteractionEnabled = true
-    //        dogBreedTextField.inputAccessoryView = toolBar
-    //    }
-    //    @objc func action() {
-    //        dogBreedTextField.resignFirstResponder()
-    //    }
-    
-    
+
+        let numberLabel = UILabel()
+        numberLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 22.adjusted)
+        numberLabel.tintColor = .bk
+        numberLabel.text = locationPickerData[row].locationName
+        numberLabel.textAlignment = .center
+
+        return numberLabel
+    }
 }
+
+
+
+
+
+

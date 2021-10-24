@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpSecondVC: UIViewController, SignUpPickerDelegate {
+class SignUpSecondVC: UIViewController {
     
     @IBOutlet weak var modalBgView: UIView!
     @IBOutlet weak var nextBtn: UIButton!
@@ -22,9 +22,10 @@ class SignUpSecondVC: UIViewController, SignUpPickerDelegate {
         setStyle()
         modalBgView.alpha = 0.0
         selectTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .touchDown)
-        
     }
     func setStyle() {
+        selectTextField.tintColor = .clear
+        
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24.adjusted)
         titleLabel.tintColor = .bk
         titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 30.adjusted)
@@ -40,32 +41,19 @@ class SignUpSecondVC: UIViewController, SignUpPickerDelegate {
         nextBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
     }
     
-    func modalViewDismiss() {
-        modalBgView.alpha = 0.0
-        
-    }
-    
-    func textFieldData() {
-        selectTextField.text = locationPickerData[0].locationName
-        selectTextField.text = locationPickerData[1].locationName
-        selectTextField.text = locationPickerData[2].locationName
-        selectTextField.text = locationPickerData[3].locationName
-        
-    }
-    
-        @objc func textFieldDidChange(_ textField:UITextField) {
-            let storyBoard: UIStoryboard = UIStoryboard(name: "LocationPicker", bundle: nil)
-            if let dvc = storyBoard.instantiateViewController(withIdentifier: "LocationPickerVC") as? LocationPickerVC {
-                dvc.modalPresentationStyle = .overFullScreen
-    
-                modalBgView.alpha = 1
-    
-                self.present(dvc, animated: true, completion: nil)
-            }
-    
+    @objc func textFieldDidChange(_ textField:UITextField) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "LocationPicker", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "LocationPickerVC") as? LocationPickerVC {
+            dvc.modalPresentationStyle = .overFullScreen
+            
+            modalBgView.alpha = 1
+            dvc.modalDelegate = self
+            
+            self.present(dvc, animated: true, completion: nil)
+            
         }
-    
-    
+        
+    }
     
     @IBAction func touchUpBackBtn(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -86,3 +74,13 @@ class SignUpSecondVC: UIViewController, SignUpPickerDelegate {
 }
 
 
+extension SignUpSecondVC: ModalDelegate {
+    
+    func modalDismiss() {
+        modalBgView.alpha = 0.0
+    }
+    
+    func textFieldData(data: String) {
+        selectTextField.text = data
+    }
+}

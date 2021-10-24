@@ -12,7 +12,7 @@
         <!--Location PickerVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="LocationPickerVC" id="Y6W-OH-hqX" customClass="LocationPickerVC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LocationPickerVC" modalPresentationStyle="overCurrentContext" id="Y6W-OH-hqX" customClass="LocationPickerVC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,8 +20,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1XB-9l-2K9">
                                 <rect key="frame" x="0.0" y="440" width="414" height="456"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S16-OT-Ibd">
-                                        <rect key="frame" x="20" y="24" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지역을 선택해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S16-OT-Ibd">
+                                        <rect key="frame" x="20" y="24" width="142" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -43,12 +43,13 @@
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTJ-YX-F5A">
                                         <rect key="frame" x="20" y="360" width="375" height="52"/>
-                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                        <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="Z0H-xG-NVj"/>
                                         </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="선택하기"/>
                                         <connections>
                                             <action selector="touchUpSelectBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1MZ-Yb-XhX"/>
                                         </connections>
@@ -60,6 +61,7 @@
                                     <constraint firstItem="S16-OT-Ibd" firstAttribute="leading" secondItem="1XB-9l-2K9" secondAttribute="leading" constant="20" id="EaB-KX-LhS"/>
                                     <constraint firstItem="Hb5-K0-KlS" firstAttribute="top" secondItem="S16-OT-Ibd" secondAttribute="bottom" constant="24" id="EpT-HN-jve"/>
                                     <constraint firstAttribute="trailing" secondItem="4ST-6T-V2k" secondAttribute="trailing" constant="20" id="Fq6-ph-Ood"/>
+                                    <constraint firstAttribute="width" secondItem="1XB-9l-2K9" secondAttribute="height" multiplier="69:76" id="Ht8-WC-rwF"/>
                                     <constraint firstAttribute="trailing" secondItem="Hb5-K0-KlS" secondAttribute="trailing" id="OEE-Ca-aKN"/>
                                     <constraint firstItem="TTJ-YX-F5A" firstAttribute="top" secondItem="Hb5-K0-KlS" secondAttribute="bottom" constant="22" id="Qz8-xC-0Bi"/>
                                     <constraint firstItem="TTJ-YX-F5A" firstAttribute="leading" secondItem="1XB-9l-2K9" secondAttribute="leading" constant="20" id="ZXM-tP-QFg"/>
@@ -67,7 +69,6 @@
                                     <constraint firstItem="S16-OT-Ibd" firstAttribute="top" secondItem="1XB-9l-2K9" secondAttribute="top" constant="24" id="o8M-mn-laF"/>
                                     <constraint firstAttribute="trailing" secondItem="TTJ-YX-F5A" secondAttribute="trailing" constant="19" id="rmq-JT-KFm"/>
                                     <constraint firstItem="4ST-6T-V2k" firstAttribute="centerY" secondItem="S16-OT-Ibd" secondAttribute="centerY" id="vkO-jf-rWz"/>
-                                    <constraint firstAttribute="height" constant="456" id="xan-jz-Phv"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -95,9 +96,6 @@
         <image name="close" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
