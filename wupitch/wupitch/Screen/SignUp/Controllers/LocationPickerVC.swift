@@ -11,6 +11,7 @@ import Alamofire
 protocol ModalDelegate {
     func modalDismiss()
     func textFieldData(data: String)
+    func selectBtnToNextBtn()
 }
 
 class LocationPickerVC: UIViewController {
@@ -46,6 +47,7 @@ class LocationPickerVC: UIViewController {
     
     @IBAction func touchUpSelectBtn(_ sender: Any) {
         modalDelegate?.modalDismiss()
+        modalDelegate?.selectBtnToNextBtn()
         self.dismiss(animated: true, completion: nil)
     }
     

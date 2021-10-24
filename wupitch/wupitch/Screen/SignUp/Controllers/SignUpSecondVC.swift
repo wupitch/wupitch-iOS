@@ -31,7 +31,6 @@ class SignUpSecondVC: UIViewController {
         titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 30.adjusted)
         
         selectTextField.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
-        //selectTextField.textColor = .gray02
         selectTextField.attributedPlaceholder = NSAttributedString(string: "지역구 선택", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray02])
         selectTextField.layer.borderColor = UIColor.gray02.cgColor
         selectTextField.layer.borderWidth = 1
@@ -45,6 +44,9 @@ class SignUpSecondVC: UIViewController {
         let storyBoard: UIStoryboard = UIStoryboard(name: "LocationPicker", bundle: nil)
         if let dvc = storyBoard.instantiateViewController(withIdentifier: "LocationPickerVC") as? LocationPickerVC {
             dvc.modalPresentationStyle = .overFullScreen
+            selectTextField.textColor = .main
+            selectTextField.attributedPlaceholder = NSAttributedString(string: "지역구 선택", attributes: [NSAttributedString.Key.foregroundColor : UIColor.main])
+            selectTextField.layer.borderColor = UIColor.main.cgColor
             
             modalBgView.alpha = 1
             dvc.modalDelegate = self
@@ -75,6 +77,10 @@ class SignUpSecondVC: UIViewController {
 
 
 extension SignUpSecondVC: ModalDelegate {
+    
+    func selectBtnToNextBtn() {
+        nextBtn.backgroundColor = .main
+    }
     
     func modalDismiss() {
         modalBgView.alpha = 0.0
