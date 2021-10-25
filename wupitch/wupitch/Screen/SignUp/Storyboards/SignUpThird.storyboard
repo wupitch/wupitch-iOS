@@ -155,6 +155,10 @@
                                     <constraint firstAttribute="height" constant="1" id="sHh-j4-7EF"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ia-dp-UX1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -177,11 +181,15 @@
                             <constraint firstItem="VEB-lu-yAw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="c8l-RC-VJb"/>
                             <constraint firstItem="r1x-0h-Aww" firstAttribute="leading" secondItem="74s-ZL-Q1z" secondAttribute="leading" id="c8r-x8-2sz"/>
                             <constraint firstItem="BYu-gy-ueP" firstAttribute="leading" secondItem="RGy-tl-BLa" secondAttribute="leading" id="fJe-xU-quT"/>
+                            <constraint firstAttribute="bottom" secondItem="6Ia-dp-UX1" secondAttribute="bottom" id="gEE-a1-9Uh"/>
+                            <constraint firstItem="6Ia-dp-UX1" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="gGW-2B-rek"/>
                             <constraint firstItem="NtI-55-mhR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="hmh-3m-gzy"/>
                             <constraint firstItem="v4c-eN-3XA" firstAttribute="centerY" secondItem="VEB-lu-yAw" secondAttribute="centerY" id="iBz-pZ-hCT"/>
                             <constraint firstItem="c3J-rk-7Or" firstAttribute="trailing" secondItem="NtI-55-mhR" secondAttribute="trailing" id="p4S-7A-GZG"/>
+                            <constraint firstItem="6Ia-dp-UX1" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="qmV-bj-fT9"/>
                             <constraint firstItem="bDq-S9-eUK" firstAttribute="top" secondItem="r1x-0h-Aww" secondAttribute="bottom" constant="22.333333333333314" id="r4c-De-ZZq"/>
                             <constraint firstItem="c3J-rk-7Or" firstAttribute="top" secondItem="NtI-55-mhR" secondAttribute="bottom" constant="2" id="rwz-eL-4vR"/>
+                            <constraint firstItem="6Ia-dp-UX1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="t1D-jt-nHS"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="NtI-55-mhR" secondAttribute="trailing" constant="19" id="vFu-9A-qrz"/>
                             <constraint firstItem="bDq-S9-eUK" firstAttribute="leading" secondItem="r1x-0h-Aww" secondAttribute="leading" id="zMI-m0-1dC"/>
                             <constraint firstItem="BYu-gy-ueP" firstAttribute="height" secondItem="RGy-tl-BLa" secondAttribute="height" id="zu1-e8-Yiy"/>
@@ -192,6 +200,7 @@
                         <outlet property="cancelBtn" destination="v4c-eN-3XA" id="5pg-KH-eo3"/>
                         <outlet property="descriptionLabel" destination="r1x-0h-Aww" id="CI3-AR-t6y"/>
                         <outlet property="etcTextField" destination="zZI-rq-bjq" id="btg-Cc-4nd"/>
+                        <outlet property="modalBgView" destination="6Ia-dp-UX1" id="jIS-zQ-z4c"/>
                         <outlet property="nextBtn" destination="kq7-dq-KNl" id="RY8-xs-nFw"/>
                         <outlet property="textCount" destination="c3J-rk-7Or" id="KMi-1l-Glj"/>
                         <outlet property="textView" destination="NtI-55-mhR" id="2lT-ZS-2Bs"/>

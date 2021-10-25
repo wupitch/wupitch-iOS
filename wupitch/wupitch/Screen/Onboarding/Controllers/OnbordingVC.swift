@@ -52,9 +52,15 @@ class OnbordingVC: UIViewController {
         skipBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         skipBtn.tintColor = UIColor.gray02
         
+        
+        kakaoBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
+        appleBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
+        kakaoBtn.layer.cornerRadius = 8
+        appleBtn.layer.cornerRadius = 8
+        
         // 페이지 컨트롤 색상 조정
         onboardingPageControl.pageIndicatorTintColor = .gray04
-        onboardingPageControl.currentPageIndicatorTintColor = .main
+        onboardingPageControl.currentPageIndicatorTintColor = .bk
         
         // 컬렉션 뷰 페이징 효과 부드럽게
         onboardingCV.isPagingEnabled = true
@@ -166,21 +172,9 @@ extension OnbordingVC : UICollectionViewDelegate, UICollectionViewDataSource, UI
             return UICollectionViewCell()
         }
         
-        
         cell.setCell(title: onboardingData[indexPath.row].titleLabelName, description: onboardingData[indexPath.row].descriptionLabelName, imageName: onboardingData[indexPath.row].onboardingImageName)
         
         onboardingPageControl.numberOfPages = onboardingData.count
-        
-        cell.titleLabel.setTextWithLineHeight(text: onboardingData[indexPath.row].titleLabelName, lineHeight: 38.adjusted)
-        cell.titleLabel.textAlignment = .center
-        
-        cell.descriptionLabel.setTextWithLineHeight(text: onboardingData[indexPath.row].descriptionLabelName, lineHeight: 20.adjusted)
-        cell.descriptionLabel.textAlignment = .center
-        
-        //        cell.titleLabel.asColor(targetString: "동호회", color: .main)
-        //cell.titleLabel.asColor(targetString: onboardingData[0].titleLabelName, color: .main)
-        
-        
         
         return cell
     }

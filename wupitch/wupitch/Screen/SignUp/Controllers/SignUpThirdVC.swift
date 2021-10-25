@@ -9,6 +9,7 @@ import UIKit
 
 class SignUpThirdVC: UIViewController {
     
+    @IBOutlet weak var modalBgView: UIView!
     @IBOutlet weak var textView: UIView!
     @IBOutlet var sportBtns: [UIButton]!
     @IBOutlet weak var etcTextField: UITextField!
@@ -24,13 +25,10 @@ class SignUpThirdVC: UIViewController {
         
         etcTextField.delegate = self
         setStyle()
-        
+        modalBgView.alpha = 0.0
         
     }
-    
-    
-    
-    
+
     func setStyle() {
         
         etcTextField.alpha = 0.0
@@ -89,8 +87,18 @@ class SignUpThirdVC: UIViewController {
     @IBAction func touchUpSoccerBtn(_ sender: UIButton) {
         if sender.isSelected == false {
             sender.isSelected = true
-            sportBtns[0].backgroundColor = .mainDisabled20
+            sportBtns[0].backgroundColor = .main20
             sportBtns[0].tintColor = .main
+            
+            let storyBoard: UIStoryboard = UIStoryboard(name: "LevelModal", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "LevelModalVC") as? LevelModalVC {
+                dvc.modalPresentationStyle = .overFullScreen
+                
+                modalBgView.alpha = 1
+               dvc.levelModalDelegate = self
+                
+                self.present(dvc, animated: true, completion: nil)
+            }
         }
         else {
             sender.isSelected = false
@@ -102,8 +110,19 @@ class SignUpThirdVC: UIViewController {
     @IBAction func touchUpBadmintonBtn(_ sender: UIButton) {
         if sender.isSelected == false {
             sender.isSelected = true
-            sportBtns[1].backgroundColor = .mainDisabled20
+            sportBtns[1].backgroundColor = .main20
             sportBtns[1].tintColor = .main
+            
+            let storyBoard: UIStoryboard = UIStoryboard(name: "LevelModal", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "LevelModalVC") as? LevelModalVC {
+                dvc.modalPresentationStyle = .overFullScreen
+                
+                modalBgView.alpha = 1
+                dvc.levelModalDelegate = self
+                
+                self.present(dvc, animated: true, completion: nil)
+            }
+            
         }
         else {
             sender.isSelected = false
@@ -116,8 +135,19 @@ class SignUpThirdVC: UIViewController {
     @IBAction func touchUpVolleyBallBtn(_ sender: UIButton) {
         if sender.isSelected == false {
             sender.isSelected = true
-            sportBtns[2].backgroundColor = .mainDisabled20
+            sportBtns[2].backgroundColor = .main20
             sportBtns[2].tintColor = .main
+            
+            let storyBoard: UIStoryboard = UIStoryboard(name: "LevelModal", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "LevelModalVC") as? LevelModalVC {
+                dvc.modalPresentationStyle = .overFullScreen
+                
+                modalBgView.alpha = 1
+                dvc.levelModalDelegate = self
+                
+                self.present(dvc, animated: true, completion: nil)
+            }
+            
         }
         else {
             sender.isSelected = false
@@ -129,8 +159,19 @@ class SignUpThirdVC: UIViewController {
     @IBAction func touchUpBaseballBtn(_ sender: UIButton) {
         if sender.isSelected == false {
             sender.isSelected = true
-            sportBtns[3].backgroundColor = .mainDisabled20
+            sportBtns[3].backgroundColor = .main20
             sportBtns[3].tintColor = .main
+            
+            let storyBoard: UIStoryboard = UIStoryboard(name: "LevelModal", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "LevelModalVC") as? LevelModalVC {
+                dvc.modalPresentationStyle = .overFullScreen
+                
+                modalBgView.alpha = 1
+                dvc.levelModalDelegate = self
+                
+                self.present(dvc, animated: true, completion: nil)
+            }
+            
         }
         else {
             sender.isSelected = false
@@ -142,7 +183,7 @@ class SignUpThirdVC: UIViewController {
     @IBAction func etcBtn(_ sender: UIButton) {
         if sender.isSelected == false {
             sender.isSelected = true
-            sportBtns[4].backgroundColor = .mainDisabled20
+            sportBtns[4].backgroundColor = .main20
             sportBtns[4].tintColor = .main
             etcTextField.alpha = 1
             textCount.alpha = 1
@@ -181,3 +222,16 @@ extension SignUpThirdVC: UITextFieldDelegate {
         return true
     }
 }
+
+extension SignUpThirdVC: LevelModalDelegate {
+    func levelModalDismiss() {
+        modalBgView.alpha = 0.0
+    }
+    
+    func completeBtnToNextBtn() {
+        nextBtn.backgroundColor = .main
+    }
+    
+    
+}
+

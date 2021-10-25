@@ -17,7 +17,7 @@ extension UIColor {
     return UIColor(white: 1.0, alpha: 1.0)
   }
 
-  @nonobjc class var mainDisabled20: UIColor {
+  @nonobjc class var main20: UIColor {
     return UIColor(red: 236.0 / 255.0, green: 133.0 / 255.0, blue: 65.0 / 255.0, alpha: 0.2)
   }
 
@@ -42,7 +42,7 @@ extension UIColor {
   }
 
   @nonobjc class var main: UIColor {
-    return UIColor(red: 236.0 / 255.0, green: 133.0 / 255.0, blue: 65.0 / 255.0, alpha: 1.0)
+    return UIColor(red: 1.0, green: 130.0 / 255.0, blue: 0.0, alpha: 1.0)
   }
 
 }

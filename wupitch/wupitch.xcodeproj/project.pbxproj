@@ -12,6 +12,8 @@
 		DD295DA227181E3B008CFC64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD295DA127181E3B008CFC64 /* SceneDelegate.swift */; };
 		DD295DA927181E3D008CFC64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD295DA827181E3D008CFC64 /* Assets.xcassets */; };
 		DD295DAC27181E3D008CFC64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD295DAA27181E3D008CFC64 /* LaunchScreen.storyboard */; };
+		DD2D63B027268A1A007CEC57 /* LevelModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD2D63AF27268A1A007CEC57 /* LevelModal.storyboard */; };
+		DD2D63B227268A34007CEC57 /* LevelModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D63B127268A34007CEC57 /* LevelModalVC.swift */; };
 		DD3ACBB52720FFC600EBC201 /* TermsOfUse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACBB42720FFC600EBC201 /* TermsOfUse.storyboard */; };
 		DD3ACBB7272104D300EBC201 /* TermsOfUseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACBB6272104D300EBC201 /* TermsOfUseVC.swift */; };
 		DD3ACBB92721073E00EBC201 /* SignUpThird.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACBB82721073E00EBC201 /* SignUpThird.storyboard */; };
@@ -56,6 +58,8 @@
 		DD295DA827181E3D008CFC64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD295DAB27181E3D008CFC64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD295DAD27181E3D008CFC64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD2D63AF27268A1A007CEC57 /* LevelModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LevelModal.storyboard; sourceTree = "<group>"; };
+		DD2D63B127268A34007CEC57 /* LevelModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModalVC.swift; sourceTree = "<group>"; };
 		DD3ACBB42720FFC600EBC201 /* TermsOfUse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsOfUse.storyboard; sourceTree = "<group>"; };
 		DD3ACBB6272104D300EBC201 /* TermsOfUseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseVC.swift; sourceTree = "<group>"; };
 		DD3ACBB82721073E00EBC201 /* SignUpThird.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpThird.storyboard; sourceTree = "<group>"; };
@@ -162,6 +166,8 @@
 		DD295DB4271839C9008CFC64 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				DD2D63AB27268960007CEC57 /* TermsOfUse */,
+				DD2D63A827268910007CEC57 /* Modal */,
 				DDED0126271C0DD600C2C343 /* SignUp */,
 				DDED00F52719CB4200C2C343 /* Onboarding */,
 			);
@@ -200,7 +206,61 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		DD3ACBC027213ED500EBC201 /* Cells */ = {
+		DD2D63A827268910007CEC57 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				DD2D63AA27268934007CEC57 /* Controllers */,
+				DD2D63A927268924007CEC57 /* Storyboards */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		DD2D63A927268924007CEC57 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DD61E4C3271EBAF5007504DE /* LocationPicker.storyboard */,
+				DD2D63AF27268A1A007CEC57 /* LevelModal.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DD2D63AA27268934007CEC57 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DD61E4C5271EBCE6007504DE /* LocationPickerVC.swift */,
+				DD2D63B127268A34007CEC57 /* LevelModalVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DD2D63AB27268960007CEC57 /* TermsOfUse */ = {
+			isa = PBXGroup;
+			children = (
+				DD2D63AE272689C5007CEC57 /* Cells */,
+				DD2D63AD2726898D007CEC57 /* Controllers */,
+				DD2D63AC27268980007CEC57 /* Storyboards */,
+			);
+			path = TermsOfUse;
+			sourceTree = "<group>";
+		};
+		DD2D63AC27268980007CEC57 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DD3ACBB42720FFC600EBC201 /* TermsOfUse.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DD2D63AD2726898D007CEC57 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DD3ACBB6272104D300EBC201 /* TermsOfUseVC.swift */,
+				DD67283A27244CE3001E1355 /* AgreeVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DD2D63AE272689C5007CEC57 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				DD6728362724430C001E1355 /* TouCVCell.swift */,
@@ -273,7 +333,6 @@
 		DDED0126271C0DD600C2C343 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				DD3ACBC027213ED500EBC201 /* Cells */,
 				DDED0129271C0DFB00C2C343 /* Controllers */,
 				DDED0127271C0DE800C2C343 /* Storyboards */,
 			);
@@ -284,9 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				DDED012A271C0E5300C2C343 /* SignUpFirst.storyboard */,
-				DD3ACBB42720FFC600EBC201 /* TermsOfUse.storyboard */,
 				DD61E4BC271D8EB8007504DE /* SignUpSecond.storyboard */,
-				DD61E4C3271EBAF5007504DE /* LocationPicker.storyboard */,
 				DD3ACBB82721073E00EBC201 /* SignUpThird.storyboard */,
 				DD3ACBBC2721082300EBC201 /* SignUpFourth.storyboard */,
 				DD3ACBC127216D2500EBC201 /* SignUpFifth.storyboard */,
@@ -299,10 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				DD61E4B8271D7E50007504DE /* SignUpFirstVC.swift */,
-				DD3ACBB6272104D300EBC201 /* TermsOfUseVC.swift */,
-				DD67283A27244CE3001E1355 /* AgreeVC.swift */,
 				DD61E4BE271D8ECA007504DE /* SignUpSecondVC.swift */,
-				DD61E4C5271EBCE6007504DE /* LocationPickerVC.swift */,
 				DD3ACBBA2721075500EBC201 /* SignUpThirdVC.swift */,
 				DD3ACBBE2721083700EBC201 /* SignUpFourthVC.swift */,
 				DD3ACBC327216D4400EBC201 /* SignUpFifthVC.swift */,
@@ -379,6 +433,7 @@
 				DD295DAC27181E3D008CFC64 /* LaunchScreen.storyboard in Resources */,
 				DDED011F271BD96D00C2C343 /* Onboarding.storyboard in Resources */,
 				DD3ACBC227216D2500EBC201 /* SignUpFifth.storyboard in Resources */,
+				DD2D63B027268A1A007CEC57 /* LevelModal.storyboard in Resources */,
 				DD295DA927181E3D008CFC64 /* Assets.xcassets in Resources */,
 				DD61E4BD271D8EB8007504DE /* SignUpSecond.storyboard in Resources */,
 				DD3ACBB92721073E00EBC201 /* SignUpThird.storyboard in Resources */,
@@ -444,6 +499,7 @@
 				DDED01062719E2D400C2C343 /* UIFont.swift in Sources */,
 				DD3ACBBB2721075500EBC201 /* SignUpThirdVC.swift in Sources */,
 				DD61E4C6271EBCE6007504DE /* LocationPickerVC.swift in Sources */,
+				DD2D63B227268A34007CEC57 /* LevelModalVC.swift in Sources */,
 				DDED011B271B33F800C2C343 /* OnboardingData.swift in Sources */,
 				DDED0124271BDCD700C2C343 /* OnbordingCVCell.swift in Sources */,
 				DD3ACBBF2721083700EBC201 /* SignUpFourthVC.swift in Sources */,
