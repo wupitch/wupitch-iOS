@@ -27,7 +27,6 @@ class OnbordingCVCell: UICollectionViewCell {
         titleLabel.textColor = .bk
         titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 38.adjusted)
         titleLabel.textAlignment = .center
-        
         descriptionLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         descriptionLabel.textColor = .gray02
         descriptionLabel.setTextWithLineHeight(text: descriptionLabel.text, lineHeight: 22.adjusted)

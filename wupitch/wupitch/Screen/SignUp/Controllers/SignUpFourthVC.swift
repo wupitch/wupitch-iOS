@@ -8,22 +8,97 @@
 import UIKit
 
 class SignUpFourthVC: UIViewController {
-
+    
+    @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var cancelBtn: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var nickNameTextField: UITextField!
+    @IBOutlet weak var infoTextView: UITextView!
+    @IBOutlet weak var startBtn: UIButton!
+    @IBOutlet weak var textCountLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        setStyle()
+        placeholderSetting()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func placeholderSetting() {
+        infoTextView.delegate = self // txtvReview가 유저가 선언한 outlet
+        infoTextView.text = "자기소개를 입력해주세요."
+        infoTextView.textColor = .gray02
     }
-    */
-
+    
+    
+    func setStyle() {
+        
+        // titleLabel Style
+        titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24.adjusted)
+        titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 30.adjusted)
+        
+        // nicknameTextField Style
+        nickNameTextField.backgroundColor = .gray05
+        nickNameTextField.borderStyle = .none
+        nickNameTextField.layer.cornerRadius = 8
+        nickNameTextField.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        nickNameTextField.textColor = .gray02
+        nickNameTextField.addLeftPadding()
+        
+        // textView Style
+        infoTextView.backgroundColor = .gray05
+        infoTextView.layer.cornerRadius = 8
+        infoTextView.textContainerInset = UIEdgeInsets(top: 12, left: 16, bottom: 12, right: 16)
+        infoTextView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        
+        // textcountLabel Style
+        textCountLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12)
+        
+        // startBtn Style
+        startBtn.layer.cornerRadius = 8
+        startBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
+        
+        
+    }
+    
+    // backBtn
+    @IBAction func touchUpBackBtn(_ sender: Any) {
+        print("뒤로가기")
+        navigationController?.popViewController(animated: true)
+    }
+    
+    // cancelBtn
+    @IBAction func touchUpCancelBtn(_ sender: Any) {
+        
+        
+        
+    }
+    
+    // startBtn
+    @IBAction func touchUpStartBtn(_ sender: Any) {
+        
+    }
+    
+    
 }
+
+extension SignUpFourthVC: UITextViewDelegate {
+    
+    // TextView Place Holder
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if infoTextView.textColor == .gray02 {
+            infoTextView.text = nil
+            infoTextView.textColor = .gray02
+        }
+    }
+    // TextView Place Holder
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if infoTextView.text.isEmpty {
+            infoTextView.text = "자기소개를 입력해주세요."
+            infoTextView.textColor = .gray02
+        }
+    }
+}
+
+
+

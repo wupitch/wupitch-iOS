@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dDc-RM-xqJ">
-                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="633"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xp3-p4-WLj">
                                     <size key="itemSize" width="128" height="128"/>
@@ -79,7 +79,7 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
-                                <state key="normal" title=" Apple로 계속하기" image="group148"/>
+                                <state key="normal" title=" Apple로 시작하기" image="group148"/>
                                 <connections>
                                     <action selector="touchUpAppleBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uL2-Ag-wDL"/>
                                 </connections>
@@ -93,7 +93,7 @@
                                 </constraints>
                                 <color key="tintColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
-                                <state key="normal" title=" 카카오로 계속하기" image="vector"/>
+                                <state key="normal" title=" 카카오로 시작하기" image="vector"/>
                                 <connections>
                                     <action selector="touchUpKakaoBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CeS-VW-qo1"/>
                                 </connections>
@@ -106,6 +106,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Y5X-vh-1dd" secondAttribute="bottom" constant="44" id="3vm-Wu-Tns"/>
                             <constraint firstItem="Wob-da-soE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="38" id="994-e1-hOq"/>
                             <constraint firstItem="Y5X-vh-1dd" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Hxs-fS-YoB"/>
+                            <constraint firstItem="xpf-HI-pzh" firstAttribute="top" secondItem="dDc-RM-xqJ" secondAttribute="bottom" constant="58" id="Oeb-tc-ljM"/>
                             <constraint firstItem="9JP-qO-43B" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="38" id="Sdr-Ja-SrM"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xpf-HI-pzh" secondAttribute="trailing" constant="34" id="VIW-VA-REy"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Wob-da-soE" secondAttribute="trailing" constant="36" id="VP6-7F-LX7"/>
@@ -117,7 +118,6 @@
                             <constraint firstItem="dDc-RM-xqJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="lv3-7g-cM3"/>
                             <constraint firstItem="7Z7-p7-X6l" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="44" id="mgX-Zu-KXD"/>
                             <constraint firstItem="7Z7-p7-X6l" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="u6d-SL-3mn"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="dDc-RM-xqJ" secondAttribute="bottom" id="y9H-fF-10U"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6w0-1Y-xLe"/>

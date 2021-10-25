@@ -146,6 +146,9 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="UNs-57-ZVR" secondAttribute="bottom" constant="44" id="xQI-M5-arc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backBtn" destination="lfp-OE-Mma" id="SxE-My-gUY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

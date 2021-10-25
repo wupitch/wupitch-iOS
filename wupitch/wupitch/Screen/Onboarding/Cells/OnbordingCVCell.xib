@@ -32,7 +32,7 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="heW-9m-c1k">
                         <rect key="frame" x="0.0" y="75" width="373" height="443.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="heW-9m-c1k" secondAttribute="height" multiplier="375:446" id="leM-Lj-5E8"/>
+                            <constraint firstAttribute="width" secondItem="heW-9m-c1k" secondAttribute="height" multiplier="375:446" id="2GM-br-qKU"/>
                         </constraints>
                     </imageView>
                 </subviews>
