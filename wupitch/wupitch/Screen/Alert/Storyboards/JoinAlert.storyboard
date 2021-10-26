@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Join AlertVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="JoinAlertVC" modalPresentationStyle="overFullScreen" id="Y6W-OH-hqX" customClass="JoinAlertVC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DNW-Rl-m8f">
+                                <rect key="frame" x="61" y="334" width="292" height="228"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32D-8v-D59">
+                                        <rect key="frame" x="256" y="16" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="2te-XI-GUD"/>
+                                            <constraint firstAttribute="height" constant="24" id="jNo-kZ-xqz"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="close" title=""/>
+                                        <connections>
+                                            <action selector="touchUpCancelBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="iAO-VN-F8d"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image54" translatesAutoresizingMaskIntoConstraints="NO" id="u2Q-NT-hbR">
+                                        <rect key="frame" x="134" y="36" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="IAo-PA-RWj"/>
+                                            <constraint firstAttribute="height" constant="24" id="mbz-nC-boB"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsI-6p-wRu">
+                                        <rect key="frame" x="34" y="80" width="224" height="43.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="작성한 모든 기입정보가 삭제됩니다. 회원가입을 그만두시겠습니까?">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="16" name="AppleSDGothicNeo-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="63q-TO-JFi">
+                                        <rect key="frame" x="24" y="155.5" width="244" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJg-Wz-1uA">
+                                                <rect key="frame" x="0.0" y="0.0" width="116" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="et7-xB-rgW"/>
+                                                    <constraint firstAttribute="width" constant="116" id="fJv-UH-Ewl"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="그만둘래요">
+                                                            <attributes>
+                                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Bold"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchUpStopBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="T5e-hf-us4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0K-vw-dFY">
+                                                <rect key="frame" x="128" y="0.0" width="116" height="40"/>
+                                                <color key="backgroundColor" red="1" green="0.50980392156862742" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="계속 할래요">
+                                                            <attributes>
+                                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Bold"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchUpContinueBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NRi-kp-Cgm"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="PsI-6p-wRu" firstAttribute="top" secondItem="u2Q-NT-hbR" secondAttribute="bottom" constant="20" id="4pB-7G-m1x"/>
+                                    <constraint firstItem="63q-TO-JFi" firstAttribute="leading" secondItem="DNW-Rl-m8f" secondAttribute="leading" constant="24" id="5qt-wM-Fhj"/>
+                                    <constraint firstItem="PsI-6p-wRu" firstAttribute="centerX" secondItem="u2Q-NT-hbR" secondAttribute="centerX" id="97X-NB-bEL"/>
+                                    <constraint firstItem="u2Q-NT-hbR" firstAttribute="top" secondItem="DNW-Rl-m8f" secondAttribute="top" constant="36" id="EDc-pr-XPQ"/>
+                                    <constraint firstItem="63q-TO-JFi" firstAttribute="top" secondItem="PsI-6p-wRu" secondAttribute="bottom" constant="32" id="MjI-BF-0z7"/>
+                                    <constraint firstItem="u2Q-NT-hbR" firstAttribute="centerX" secondItem="DNW-Rl-m8f" secondAttribute="centerX" id="ZJk-pL-AnM"/>
+                                    <constraint firstAttribute="trailing" secondItem="32D-8v-D59" secondAttribute="trailing" constant="12" id="cdD-SJ-hvz"/>
+                                    <constraint firstAttribute="height" constant="228" id="fAg-nL-TwT"/>
+                                    <constraint firstAttribute="trailing" secondItem="63q-TO-JFi" secondAttribute="trailing" constant="24" id="lmm-Iz-ZwV"/>
+                                    <constraint firstItem="32D-8v-D59" firstAttribute="top" secondItem="DNW-Rl-m8f" secondAttribute="top" constant="16" id="n9r-SP-JX9"/>
+                                    <constraint firstItem="63q-TO-JFi" firstAttribute="centerX" secondItem="PsI-6p-wRu" secondAttribute="centerX" id="wFj-H5-9Ye"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="DNW-Rl-m8f" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="12r-pW-2YD"/>
+                            <constraint firstItem="DNW-Rl-m8f" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="n8Y-dk-Ro6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelBtn" destination="32D-8v-D59" id="nVj-9c-42W"/>
+                        <outlet property="continueBtn" destination="h0K-vw-dFY" id="lX5-nj-LQW"/>
+                        <outlet property="popUpView" destination="DNW-Rl-m8f" id="dlz-Vv-KQQ"/>
+                        <outlet property="stopBtn" destination="fJg-Wz-1uA" id="M5M-wQ-iz6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="76.339285714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close" width="24" height="24"/>
+        <image name="image54" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

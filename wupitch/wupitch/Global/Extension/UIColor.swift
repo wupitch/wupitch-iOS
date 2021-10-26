@@ -9,16 +9,20 @@ import UIKit
 
 extension UIColor {
 
+  @nonobjc class var main: UIColor {
+    return UIColor(red: 1.0, green: 130.0 / 255.0, blue: 0.0, alpha: 1.0)
+  }
+
+  @nonobjc class var main20: UIColor {
+    return UIColor(red: 1.0, green: 130.0 / 255.0, blue: 0.0, alpha: 0.2)
+  }
+
   @nonobjc class var bk: UIColor {
     return UIColor(white: 34.0 / 255.0, alpha: 1.0)
   }
 
   @nonobjc class var wht: UIColor {
     return UIColor(white: 1.0, alpha: 1.0)
-  }
-
-  @nonobjc class var main20: UIColor {
-    return UIColor(red: 236.0 / 255.0, green: 133.0 / 255.0, blue: 65.0 / 255.0, alpha: 0.2)
   }
 
   @nonobjc class var gray01: UIColor {
@@ -41,8 +45,20 @@ extension UIColor {
     return UIColor(white: 245.0 / 255.0, alpha: 1.0)
   }
 
-  @nonobjc class var main: UIColor {
-    return UIColor(red: 1.0, green: 130.0 / 255.0, blue: 0.0, alpha: 1.0)
+  @nonobjc class var sub01: UIColor {
+    return UIColor(red: 1.0, green: 155.0 / 255.0, blue: 190.0 / 255.0, alpha: 1.0)
+  }
+
+  @nonobjc class var sub02: UIColor {
+    return UIColor(red: 92.0 / 255.0, green: 138.0 / 255.0, blue: 1.0, alpha: 1.0)
+  }
+
+  @nonobjc class var sub03: UIColor {
+    return UIColor(red: 100.0 / 255.0, green: 203.0 / 255.0, blue: 163.0 / 255.0, alpha: 1.0)
+  }
+
+  @nonobjc class var sub04: UIColor {
+    return UIColor(red: 239.0 / 255.0, green: 108.0 / 255.0, blue: 90.0 / 255.0, alpha: 1.0)
   }
 
 }

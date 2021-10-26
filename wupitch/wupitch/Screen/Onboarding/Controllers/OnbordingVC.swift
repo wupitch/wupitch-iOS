@@ -6,9 +6,8 @@
 //
 
 // 온보딩에서 해야할 것
-// 1. 폰 오토 맞추기 -> 작은 화면에서는 좀 안맞음 (런치스크린도하자-> 런치스크린 아이콘이 작아져야 함)
-// 2. 컬렉션 뷰 안에 있는 특정 글자 색 변경하기
-// 3. 실제 폰으로 했을 때 온보딩 페이지 컨트롤이 이상함
+// 1. 실제 폰으로 했을 때 온보딩 페이지 컨트롤이 이상함
+// 2. 애플 로그인 했을 때 바텀이 좀 이상하게 보임
 
 import UIKit
 import KakaoSDKAuth
@@ -25,18 +24,15 @@ class OnbordingVC: UIViewController {
     @IBOutlet weak var onboardingCV: UICollectionView!
     @IBOutlet weak var skipBtn: UIButton!
     
-    var highlightSentence: String = "동호회"
-    
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setStyle()
         setDelegate()
-        
     }
     
     // MARK: - Function
+    // style 관련된 것
     func setStyle() {
         // 처음에는 버튼 & 라벨 안보이게
         kakaoBtn.alpha = 0.0
@@ -52,7 +48,7 @@ class OnbordingVC: UIViewController {
         skipBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         skipBtn.tintColor = UIColor.gray02
         
-        
+        // kakaoBtn 폰트 및 cornerRadius
         kakaoBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
         appleBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
         kakaoBtn.layer.cornerRadius = 8
@@ -70,8 +66,8 @@ class OnbordingVC: UIViewController {
         view.backgroundColor = .gray05
     }
     
+    // dataSource & Delegate & Register
     func setDelegate() {
-        // dataSource & Delegate & Register
         onboardingCV.delegate = self
         onboardingCV.dataSource = self
         onboardingCV.register(OnbordingCVCell.nib(), forCellWithReuseIdentifier: OnbordingCVCell.identifier)
@@ -98,12 +94,14 @@ class OnbordingVC: UIViewController {
     }
     
     // MARK: - IBActions
+    // 건너뛰기 버튼
     @IBAction func touchUpSkipBtn(_ sender: Any) {
         onboardingCV.isPagingEnabled = false
         onboardingCV.scrollToItem(at: IndexPath(item: 3, section: 0), at: .centeredHorizontally, animated: true)
         onboardingCV.isPagingEnabled = true
     }
     
+    // 카카오 로그인 버튼
     @IBAction func touchUpKakaoBtn(_ sender: Any) {
         
         // 카카오톡 설치 여부 확인
@@ -119,6 +117,9 @@ class OnbordingVC: UIViewController {
                     let storyboard = UIStoryboard.init(name: "SignUpFirst", bundle: nil)
                     
                     guard let dvc = storyboard.instantiateViewController(identifier: "SignUpFirstVC") as? SignUpFirstVC else {return}
+                    
+                    // 카카오 로그인으로 진입 시, 버튼 라벨 (1/5)으로 변경
+                    dvc.nextBtnLabel = "다음 (1/5)"
                     self.navigationController?.pushViewController(dvc, animated: true)
                     
                     //do something
@@ -140,15 +141,18 @@ class OnbordingVC: UIViewController {
                 let storyboard = UIStoryboard.init(name: "SignUpFirst", bundle: nil)
                 
                 guard let dvc = storyboard.instantiateViewController(identifier: "SignUpFirstVC") as? SignUpFirstVC else {return}
+                
+                // 카카오 로그인으로 진입 시, 버튼 라벨 (1/5)으로 변경
+                dvc.nextBtnLabel = "다음 (1/5)"
                 self.navigationController?.pushViewController(dvc, animated: true)
                 
                 _ = oauthToken
             }
         }
         }
-        
     }
     
+    // 애플 로그인 버튼
     @IBAction func touchUpAppleBtn(_ sender: ASAuthorizationAppleIDButton) {
         let request = ASAuthorizationAppleIDProvider().createRequest()
         request.requestedScopes = [.email, .fullName]
@@ -207,17 +211,8 @@ extension OnbordingVC : UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
 }
 
-// MARK: Apple Login
+// MARK: - Apple Login
 extension OnbordingVC: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
-    
-    //    func appleLogin(_ sender: ASAuthorizationAppleIDButton) {
-    //        let request = ASAuthorizationAppleIDProvider().createRequest()
-    //        request.requestedScopes = [.email, .fullName]
-    //        let controller = ASAuthorizationController(authorizationRequests: [request])
-    //        controller.delegate = self
-    //        controller.presentationContextProvider = self
-    //        controller.performRequests()
-    //    }
     
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return self.view.window!
@@ -246,6 +241,9 @@ extension OnbordingVC: ASAuthorizationControllerDelegate, ASAuthorizationControl
             let storyboard = UIStoryboard.init(name: "SignUpFirst", bundle: nil)
             
             guard let dvc = storyboard.instantiateViewController(identifier: "SignUpFirstVC") as? SignUpFirstVC else {return}
+            
+            // 애플 로그인으로 진입 시, 버튼 라벨 (1/6)으로 변경
+            dvc.nextBtnLabel = "다음 (1/6)"
             self.navigationController?.pushViewController(dvc, animated: true)
             
             // 자동로그인을 위해 토근 저장
