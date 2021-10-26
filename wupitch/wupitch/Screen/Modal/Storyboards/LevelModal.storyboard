@@ -27,7 +27,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="ERy-ST-mf6">
-                                        <rect key="frame" x="83" y="110.5" width="248" height="48"/>
+                                        <rect key="frame" x="83" y="84.5" width="248" height="48"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brY-Xh-02y">
                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
@@ -37,20 +37,23 @@
                                                     <constraint firstAttribute="height" constant="48" id="s3c-IU-Dxu"/>
                                                 </constraints>
                                                 <color key="tintColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="상"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="상"/>
+                                                <connections>
+                                                    <action selector="touchUpHighBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sf0-S5-XZD"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Nc-O4-Y7M">
                                                 <rect key="frame" x="100" y="0.0" width="48" height="48"/>
                                                 <color key="tintColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="중"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="중"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIJ-fc-2Uv">
                                                 <rect key="frame" x="200" y="0.0" width="48" height="48"/>
                                                 <color key="tintColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="하"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="하"/>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -61,8 +64,8 @@
                                             <constraint firstAttribute="height" constant="52" id="RkV-CS-oXz"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="완료"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="완료"/>
                                         <connections>
                                             <action selector="touchUpCompleteBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uXc-PN-YiI"/>
                                         </connections>
@@ -73,23 +76,32 @@
                                             <constraint firstAttribute="width" constant="24" id="OH4-Jy-UD3"/>
                                             <constraint firstAttribute="height" constant="24" id="pmG-lt-8Wl"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="close" title=""/>
+                                        <color key="tintColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="" image="close"/>
                                         <connections>
                                             <action selector="touchUpCancelBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fSk-eG-VfH"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가나다라마바사아자차카가나다라가 나다라마바사아자차카가나다라마바" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjD-3o-bhv">
+                                        <rect key="frame" x="89.5" y="154.5" width="235.5" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="B31-yv-UVH" firstAttribute="leading" secondItem="MDS-PI-4od" secondAttribute="leading" constant="20" id="2uf-di-cCG"/>
                                     <constraint firstItem="ERy-ST-mf6" firstAttribute="centerX" secondItem="MDS-PI-4od" secondAttribute="centerX" id="8xw-s6-cFn"/>
-                                    <constraint firstItem="ERy-ST-mf6" firstAttribute="top" secondItem="kqh-8r-NMV" secondAttribute="bottom" constant="66" id="A5K-yG-4eI"/>
+                                    <constraint firstItem="ERy-ST-mf6" firstAttribute="top" secondItem="kqh-8r-NMV" secondAttribute="bottom" constant="40" id="A5K-yG-4eI"/>
                                     <constraint firstAttribute="height" constant="320" id="M2R-S8-xMy"/>
                                     <constraint firstItem="kqh-8r-NMV" firstAttribute="leading" secondItem="MDS-PI-4od" secondAttribute="leading" constant="20" id="QAB-bg-BI7"/>
                                     <constraint firstAttribute="bottom" secondItem="B31-yv-UVH" secondAttribute="bottom" constant="44" id="Vha-q0-XY0"/>
+                                    <constraint firstItem="xjD-3o-bhv" firstAttribute="centerX" secondItem="ERy-ST-mf6" secondAttribute="centerX" id="Yaq-K3-G8n"/>
                                     <constraint firstItem="Zm4-xX-d7m" firstAttribute="centerY" secondItem="kqh-8r-NMV" secondAttribute="centerY" id="a28-h1-EgX"/>
                                     <constraint firstItem="kqh-8r-NMV" firstAttribute="top" secondItem="MDS-PI-4od" secondAttribute="top" constant="24" id="bG3-kT-uAl"/>
+                                    <constraint firstItem="xjD-3o-bhv" firstAttribute="top" secondItem="ERy-ST-mf6" secondAttribute="bottom" constant="22" id="g5g-6y-xEC"/>
                                     <constraint firstAttribute="trailing" secondItem="B31-yv-UVH" secondAttribute="trailing" constant="19" id="kde-oB-j05"/>
                                     <constraint firstAttribute="trailing" secondItem="Zm4-xX-d7m" secondAttribute="trailing" constant="20" id="vW1-NV-w4C"/>
                                 </constraints>
@@ -105,6 +117,7 @@
                     <connections>
                         <outlet property="cancelBtn" destination="Zm4-xX-d7m" id="HdB-y5-YeD"/>
                         <outlet property="completeBtn" destination="B31-yv-UVH" id="8W8-Zd-ANp"/>
+                        <outlet property="contentsLabel" destination="xjD-3o-bhv" id="IeZ-Pb-QFh"/>
                         <outlet property="highBtn" destination="brY-Xh-02y" id="7A8-9X-eAc"/>
                         <outlet property="lowBtn" destination="MIJ-fc-2Uv" id="X2V-OV-2WI"/>
                         <outlet property="middleBtn" destination="2Nc-O4-Y7M" id="OK2-so-rv3"/>

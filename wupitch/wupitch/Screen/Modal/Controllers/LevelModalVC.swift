@@ -16,6 +16,7 @@ class LevelModalVC: UIViewController {
     
     var levelModalDelegate : LevelModalDelegate?
 
+    @IBOutlet weak var contentsLabel: UILabel!
     @IBOutlet weak var completeBtn: UIButton!
     @IBOutlet weak var lowBtn: UIButton!
     @IBOutlet weak var middleBtn: UIButton!
@@ -30,6 +31,8 @@ class LevelModalVC: UIViewController {
     }
     
     func setStyle() {
+        // 컨텐츠 라벨 초기값은 안보이게
+        contentsLabel.alpha = 0.0
         
         // titleLabel Style
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18.adjusted)
@@ -69,5 +72,14 @@ class LevelModalVC: UIViewController {
         levelModalDelegate?.completeBtnToNextBtn()
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func touchUpHighBtn(_ sender: Any) {
+        contentsLabel.alpha = 1
+        highBtn.layer.borderWidth = 1
+        highBtn.layer.borderColor = UIColor.bk.cgColor
+        highBtn.backgroundColor = UIColor(red: 34/255, green: 34/255, blue: 34/255, alpha: 0.2)
+        highBtn.setTitleColor(.black, for: .normal)
+    }
+    
     
 }
