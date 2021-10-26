@@ -41,6 +41,8 @@
 		DD6728432725563A001E1355 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6728422725563A001E1355 /* UIView.swift */; };
 		DDE0EE582728163900C46821 /* JoinAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE572728163900C46821 /* JoinAlert.storyboard */; };
 		DDE0EE5A2728164E00C46821 /* JoinAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0EE592728164E00C46821 /* JoinAlertVC.swift */; };
+		DDE0EE5C272873EC00C46821 /* SignUpCompleteFirst.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE5B272873EB00C46821 /* SignUpCompleteFirst.storyboard */; };
+		DDE0EE5E2728740400C46821 /* SignUpCompleteFirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0EE5D2728740400C46821 /* SignUpCompleteFirstVC.swift */; };
 		DDED00F82719D02900C2C343 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED00F72719D02900C2C343 /* UIColor.swift */; };
 		DDED01062719E2D400C2C343 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED01052719E2D400C2C343 /* UIFont.swift */; };
 		DDED011B271B33F800C2C343 /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED011A271B33F800C2C343 /* OnboardingData.swift */; };
@@ -91,6 +93,8 @@
 		DD6728422725563A001E1355 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		DDE0EE572728163900C46821 /* JoinAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinAlert.storyboard; sourceTree = "<group>"; };
 		DDE0EE592728164E00C46821 /* JoinAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinAlertVC.swift; sourceTree = "<group>"; };
+		DDE0EE5B272873EB00C46821 /* SignUpCompleteFirst.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpCompleteFirst.storyboard; sourceTree = "<group>"; };
+		DDE0EE5D2728740400C46821 /* SignUpCompleteFirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompleteFirstVC.swift; sourceTree = "<group>"; };
 		DDED00F72719D02900C2C343 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		DDED01052719E2D400C2C343 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		DDED011A271B33F800C2C343 /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
@@ -373,6 +377,7 @@
 				DD3ACBBC2721082300EBC201 /* SignUpFourth.storyboard */,
 				DD3ACBC127216D2500EBC201 /* SignUpFifth.storyboard */,
 				DD3ACBC52721709100EBC201 /* SignUpSixth.storyboard */,
+				DDE0EE5B272873EB00C46821 /* SignUpCompleteFirst.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -386,6 +391,7 @@
 				DD3ACBBE2721083700EBC201 /* SignUpFourthVC.swift */,
 				DD3ACBC327216D4400EBC201 /* SignUpFifthVC.swift */,
 				DD3ACBC7272170A800EBC201 /* SignUpSixthVC.swift */,
+				DDE0EE5D2728740400C46821 /* SignUpCompleteFirstVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -462,6 +468,7 @@
 				DD2D63B027268A1A007CEC57 /* LevelModal.storyboard in Resources */,
 				DD295DA927181E3D008CFC64 /* Assets.xcassets in Resources */,
 				DD61E4BD271D8EB8007504DE /* SignUpSecond.storyboard in Resources */,
+				DDE0EE5C272873EC00C46821 /* SignUpCompleteFirst.storyboard in Resources */,
 				DD3ACBB92721073E00EBC201 /* SignUpThird.storyboard in Resources */,
 				DD67283F27244D9D001E1355 /* AgreeCVCell.xib in Resources */,
 				DDED012B271C0E5300C2C343 /* SignUpFirst.storyboard in Resources */,
@@ -532,6 +539,7 @@
 				DD2D63B42726A8A0007CEC57 /* UITextField.swift in Sources */,
 				DD295DA027181E3B008CFC64 /* AppDelegate.swift in Sources */,
 				DD67283B27244CE3001E1355 /* AgreeVC.swift in Sources */,
+				DDE0EE5E2728740400C46821 /* SignUpCompleteFirstVC.swift in Sources */,
 				DDE0EE5A2728164E00C46821 /* JoinAlertVC.swift in Sources */,
 				DD61E4B9271D7E50007504DE /* SignUpFirstVC.swift in Sources */,
 				DD3ACBC8272170A800EBC201 /* SignUpSixthVC.swift in Sources */,

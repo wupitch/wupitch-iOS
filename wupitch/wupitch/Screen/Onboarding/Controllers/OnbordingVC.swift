@@ -119,7 +119,7 @@ class OnbordingVC: UIViewController {
                     guard let dvc = storyboard.instantiateViewController(identifier: "SignUpFirstVC") as? SignUpFirstVC else {return}
                     
                     // 카카오 로그인으로 진입 시, 버튼 라벨 (1/5)으로 변경
-                    dvc.nextBtnLabel = "다음 (1/5)"
+                    dvc.nextBtnLabel?.setTitle("다음 (1/5)", for: .normal)
                     self.navigationController?.pushViewController(dvc, animated: true)
                     
                     //do something
@@ -143,7 +143,7 @@ class OnbordingVC: UIViewController {
                 guard let dvc = storyboard.instantiateViewController(identifier: "SignUpFirstVC") as? SignUpFirstVC else {return}
                 
                 // 카카오 로그인으로 진입 시, 버튼 라벨 (1/5)으로 변경
-                dvc.nextBtnLabel = "다음 (1/5)"
+                dvc.nextBtnLabel?.setTitle("다음 (1/5)", for: .normal)
                 self.navigationController?.pushViewController(dvc, animated: true)
                 
                 _ = oauthToken
@@ -243,7 +243,7 @@ extension OnbordingVC: ASAuthorizationControllerDelegate, ASAuthorizationControl
             guard let dvc = storyboard.instantiateViewController(identifier: "SignUpFirstVC") as? SignUpFirstVC else {return}
             
             // 애플 로그인으로 진입 시, 버튼 라벨 (1/6)으로 변경
-            dvc.nextBtnLabel = "다음 (1/6)"
+            dvc.nextBtnLabel?.setTitle("다음 (1/6)", for: .normal)
             self.navigationController?.pushViewController(dvc, animated: true)
             
             // 자동로그인을 위해 토근 저장

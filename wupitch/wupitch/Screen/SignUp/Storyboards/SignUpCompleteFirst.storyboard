@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign Up Complete FirstVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SignUpCompleteFirstVC" id="Y6W-OH-hqX" customClass="SignUpCompleteFirstVC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMj-OH-MRp">
+                                <rect key="frame" x="186" y="140" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우피치와 함께 신나고 건강하게 땀흘려봐요! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivz-xK-qSt">
+                                <rect key="frame" x="61" y="165" width="292" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chrt01" translatesAutoresizingMaskIntoConstraints="NO" id="aP5-qn-8tz">
+                                <rect key="frame" x="107" y="325" width="200" height="246"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sb7-y3-5Wq">
+                                <rect key="frame" x="20" y="766" width="375" height="52"/>
+                                <color key="backgroundColor" red="1" green="0.50980392156862742" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="cUv-Z9-QaU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="동호회를 둘러보러 가볼까요?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="sb7-y3-5Wq" secondAttribute="bottom" constant="44" id="4Y0-GW-mML"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="sb7-y3-5Wq" secondAttribute="trailing" constant="19" id="5xy-DY-4dt"/>
+                            <constraint firstItem="ivz-xK-qSt" firstAttribute="centerX" secondItem="rMj-OH-MRp" secondAttribute="centerX" id="8oX-cd-09Z"/>
+                            <constraint firstItem="aP5-qn-8tz" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="9Jb-gj-DaP"/>
+                            <constraint firstItem="ivz-xK-qSt" firstAttribute="top" secondItem="rMj-OH-MRp" secondAttribute="bottom" constant="4" id="BAm-jh-D0M"/>
+                            <constraint firstItem="aP5-qn-8tz" firstAttribute="centerX" secondItem="ivz-xK-qSt" secondAttribute="centerX" id="L6n-qS-bdf"/>
+                            <constraint firstItem="rMj-OH-MRp" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="96" id="LO8-oh-mVn"/>
+                            <constraint firstItem="sb7-y3-5Wq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="SQR-Oh-npY"/>
+                            <constraint firstItem="rMj-OH-MRp" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="oMg-JG-IXE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="ivz-xK-qSt" id="5ul-tq-ISI"/>
+                        <outlet property="imageView" destination="aP5-qn-8tz" id="8Ex-sP-FSu"/>
+                        <outlet property="startBtn" destination="sb7-y3-5Wq" id="APL-Xp-fjw"/>
+                        <outlet property="titleLabel" destination="rMj-OH-MRp" id="om5-4z-OoZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35" y="77"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chrt01" width="200" height="246"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

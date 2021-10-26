@@ -155,8 +155,8 @@
                                     <constraint firstAttribute="height" constant="1" id="sHh-j4-7EF"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ia-dp-UX1">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ia-dp-UX1">
+                                <rect key="frame" x="0.0" y="621" width="375" height="191"/>
                                 <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             </view>
                         </subviews>

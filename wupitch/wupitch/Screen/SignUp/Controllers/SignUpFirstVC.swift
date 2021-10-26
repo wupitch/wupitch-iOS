@@ -11,7 +11,7 @@ class SignUpFirstVC: UIViewController {
     
     // MARK: - Properties
     // 카카오 & 애플 로그인 시 버튼 라벨을 바꿔줘야 해서 변수 선언
-    var nextBtnLabel : String?
+    var nextBtnLabel : UIButton?
     
     // 약관동의 배열
     var terms = Array(repeating: false, count: 5)
@@ -78,11 +78,12 @@ class SignUpFirstVC: UIViewController {
         // nextBtn
         nextBtn.layer.cornerRadius = 8
         nextBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
+        nextBtn.setTitle("다음", for: .normal)
     }
     
     // 카카오 & 애플 로그인 시 버튼 라벨을 바꿔줘야 하기 때문에!
     func setBtnNameToDVC() {
-        nextBtn.titleLabel?.text = nextBtnLabel
+        nextBtn = nextBtnLabel
     }
     
     // 약관동의 나머지 버튼들 클릭시 호출
@@ -93,19 +94,19 @@ class SignUpFirstVC: UIViewController {
         // 약관동의 배열이 전부 True라면
         if terms.allSatisfy({$0}) {
             // 전체 동의 체크 및 이미지 변경
-            allAgreeBtn.setImage(UIImage(named: "check.png"), for: .normal)
+            allAgreeBtn.setImage(UIImage(named: "check"), for: .normal)
         }
         else {
-            allAgreeBtn.setImage(UIImage(named: "grayCheck.png"), for: .normal)
+            allAgreeBtn.setImage(UIImage(named: "grayCheck"), for: .normal)
         }
     }
     
     // 나머지 버튼의 체크 이미지 변경
     func setAgreeImage(_ idx: Int) {
         if terms[idx] {
-            agreeBtn[idx].setImage(UIImage(named: "check.png"), for: .normal)
+            agreeBtn[idx].setImage(UIImage(named: "check"), for: .normal)
         } else {
-            agreeBtn[idx].setImage(UIImage(named: "grayCheck.png"), for: .normal)
+            agreeBtn[idx].setImage(UIImage(named: "grayCheck"), for: .normal)
         }
     }
     
@@ -131,11 +132,11 @@ class SignUpFirstVC: UIViewController {
     // 전체동의 버튼
     @IBAction func allAgreeBtnTap(_ sender: Any) {
         if terms.allSatisfy({$0}){
-            allAgreeBtn.setImage(UIImage(named: "grayCheck.png"), for: .normal)
+            allAgreeBtn.setImage(UIImage(named: "grayCheck"), for: .normal)
             terms = Array(repeating: false, count: 3)
         }
         else {
-            allAgreeBtn.setImage(UIImage(named: "check.png"), for: .normal)
+            allAgreeBtn.setImage(UIImage(named: "check"), for: .normal)
             terms = Array(repeating: true, count: 3)
         }
         for idx in 0..<terms.count {
