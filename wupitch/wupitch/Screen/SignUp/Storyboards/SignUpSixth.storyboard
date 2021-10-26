@@ -17,39 +17,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3h-z1-JxM">
-                                <rect key="frame" x="335" y="54" width="24" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="4V4-kX-iz4"/>
-                                    <constraint firstAttribute="width" constant="24" id="KXN-Ss-J3V"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="close" title=""/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인증 요청이 완료되었습니다." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvi-8M-z4g">
-                                <rect key="frame" x="20.000000000000007" y="110.00000000000001" width="107.66666666666669" height="40.666666666666671"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인증 요청이 완료됐습니다." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvi-8M-z4g">
+                                <rect key="frame" x="20" y="120.00000000000001" width="93" height="40.666666666666671"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEh-BQ-DG8">
                                 <rect key="frame" x="20" y="682" width="336" height="52"/>
-                                <color key="backgroundColor" red="0.92549019607843142" green="0.52156862745098043" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.50980392156862742" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="sXA-Z7-fSB"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="확인"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="확인"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlC-jv-0AE">
-                                <rect key="frame" x="20" y="158.66666666666666" width="282" height="40.666666666666657"/>
+                                <rect key="frame" x="20" y="168.66666666666666" width="282" height="40.666666666666657"/>
                                 <string key="text">신분증 인증 승인은 24시간 이내 처리되며,
 푸쉬알림을 통해 확인할 수 있습니다.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chrt01" translatesAutoresizingMaskIntoConstraints="NO" id="dVN-bf-G8e">
+                                <rect key="frame" x="92" y="259.66666666666669" width="191" height="293.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="191" id="DHl-jb-gF1"/>
+                                    <constraint firstAttribute="height" constant="293" id="ehF-w2-nqa"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -57,14 +55,19 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="xEh-BQ-DG8" secondAttribute="bottom" constant="44" id="58C-w2-EfT"/>
                             <constraint firstItem="xEh-BQ-DG8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="BvE-RT-nBu"/>
                             <constraint firstItem="LlC-jv-0AE" firstAttribute="top" secondItem="Gvi-8M-z4g" secondAttribute="bottom" constant="8" id="KN4-C6-mps"/>
-                            <constraint firstItem="Gvi-8M-z4g" firstAttribute="top" secondItem="A3h-z1-JxM" secondAttribute="bottom" constant="32" id="QuW-WS-GQ7"/>
+                            <constraint firstItem="Gvi-8M-z4g" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="76" id="MJH-CF-Ymg"/>
+                            <constraint firstItem="dVN-bf-G8e" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="UhF-I6-9ib"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xEh-BQ-DG8" secondAttribute="trailing" constant="19" id="gyP-c4-zm7"/>
-                            <constraint firstAttribute="trailing" secondItem="A3h-z1-JxM" secondAttribute="trailing" constant="16" id="jBN-eH-NXe"/>
+                            <constraint firstItem="dVN-bf-G8e" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="n7B-BG-Yf4"/>
                             <constraint firstItem="LlC-jv-0AE" firstAttribute="leading" secondItem="Gvi-8M-z4g" secondAttribute="leading" id="rcQ-iA-DIY"/>
-                            <constraint firstItem="A3h-z1-JxM" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="tG8-Bt-NzH"/>
                             <constraint firstItem="Gvi-8M-z4g" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="uQk-Da-g44"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="LlC-jv-0AE" id="fdU-OD-o01"/>
+                        <outlet property="startBtn" destination="xEh-BQ-DG8" id="Ire-dO-Og1"/>
+                        <outlet property="titleLabel" destination="Gvi-8M-z4g" id="cjy-eZ-0eA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -72,7 +75,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="close" width="24" height="24"/>
+        <image name="chrt01" width="191" height="293"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

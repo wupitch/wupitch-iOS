@@ -30,7 +30,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chrt01" translatesAutoresizingMaskIntoConstraints="NO" id="aP5-qn-8tz">
-                                <rect key="frame" x="107" y="325" width="200" height="246"/>
+                                <rect key="frame" x="111.5" y="301.5" width="191" height="293"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sb7-y3-5Wq">
                                 <rect key="frame" x="20" y="766" width="375" height="52"/>
@@ -72,7 +72,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chrt01" width="200" height="246"/>
+        <image name="chrt01" width="191" height="293"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
