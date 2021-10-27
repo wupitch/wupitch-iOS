@@ -24,11 +24,14 @@ class OnbordingVC: UIViewController {
     @IBOutlet weak var onboardingCV: UICollectionView!
     @IBOutlet weak var skipBtn: UIButton!
     
+    lazy var dataManager: KakaoLoginService = KakaoLoginService()
+    
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
         setDelegate()
+        dataManager.getKakaoLogin(delegate: self)
     }
     
     // MARK: - Function
@@ -114,12 +117,12 @@ class OnbordingVC: UIViewController {
                     print("loginWithKakaoTalk() success.")
                     
                     // 로그인 성공 후 회원가입 루트로 이동
-                    let storyboard = UIStoryboard.init(name: "SignUpFirst", bundle: nil)
+                    let storyboard = UIStoryboard.init(name: "SignUpTerms", bundle: nil)
                     
-                    guard let dvc = storyboard.instantiateViewController(identifier: "SignUpFirstVC") as? SignUpFirstVC else {return}
+                    guard let dvc = storyboard.instantiateViewController(identifier: "SignUpTermsVC") as? SignUpTermsVC else {return}
                     
                     // 카카오 로그인으로 진입 시, 버튼 라벨 (1/5)으로 변경
-                    dvc.nextBtnLabel?.setTitle("다음 (1/5)", for: .normal)
+                    // dvc.nextBtnLabel?.setTitle("다음 (1/5)", for: .normal)
                     self.navigationController?.pushViewController(dvc, animated: true)
                     
                     //do something
@@ -138,12 +141,12 @@ class OnbordingVC: UIViewController {
                 
                 
                 // 로그인 성공 후 회원가입 루트로 이동
-                let storyboard = UIStoryboard.init(name: "SignUpFirst", bundle: nil)
+                let storyboard = UIStoryboard.init(name: "SignUpTerms", bundle: nil)
                 
-                guard let dvc = storyboard.instantiateViewController(identifier: "SignUpFirstVC") as? SignUpFirstVC else {return}
+                guard let dvc = storyboard.instantiateViewController(identifier: "SignUpTermsVC") as? SignUpTermsVC else {return}
                 
                 // 카카오 로그인으로 진입 시, 버튼 라벨 (1/5)으로 변경
-                dvc.nextBtnLabel?.setTitle("다음 (1/5)", for: .normal)
+                // dvc.nextBtnLabel?.setTitle("다음 (1/5)", for: .normal)
                 self.navigationController?.pushViewController(dvc, animated: true)
                 
                 _ = oauthToken
@@ -238,12 +241,12 @@ extension OnbordingVC: ASAuthorizationControllerDelegate, ASAuthorizationControl
             print("애플로그인성공", userIdentifier, email ?? "불러오지못함", fullName)
             
             // 로그인 성공 후 회원가입 루트로 이동
-            let storyboard = UIStoryboard.init(name: "SignUpFirst", bundle: nil)
+            let storyboard = UIStoryboard.init(name: "SignUpTerms", bundle: nil)
             
-            guard let dvc = storyboard.instantiateViewController(identifier: "SignUpFirstVC") as? SignUpFirstVC else {return}
+            guard let dvc = storyboard.instantiateViewController(identifier: "SignUpTermsVC") as? SignUpTermsVC else {return}
             
             // 애플 로그인으로 진입 시, 버튼 라벨 (1/6)으로 변경
-            dvc.nextBtnLabel?.setTitle("다음 (1/6)", for: .normal)
+            // dvc.nextBtnLabel?.setTitle("다음 (1/6)", for: .normal)
             self.navigationController?.pushViewController(dvc, animated: true)
             
             // 자동로그인을 위해 토근 저장
@@ -256,3 +259,14 @@ extension OnbordingVC: ASAuthorizationControllerDelegate, ASAuthorizationControl
 }
 
 
+extension OnbordingVC {
+    
+    func didSuccessKakaoLogin(result: KakaoLoginResult) {
+        print("성공했음", result.accountID, result.jwt, result.oauthID)
+    }
+    
+    func failedToRequest(message: String) {
+        //self.presentAlert(title: message)
+        print("땡 데이터안옴")
+    }
+}

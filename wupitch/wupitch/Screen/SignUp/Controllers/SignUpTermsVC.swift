@@ -5,17 +5,19 @@
 //  Created by 김수정 on 2021/10/18.
 //
 
+// 해야할 것
+// 1. 카카오랑 애플 로직 나누기
+
 import UIKit
 
-class SignUpFirstVC: UIViewController {
+class SignUpTermsVC: UIViewController {
     
     // MARK: - Properties
     // 카카오 & 애플 로그인 시 버튼 라벨을 바꿔줘야 해서 변수 선언
-    var nextBtnLabel : UIButton?
+    // var nextBtnLabel : UIButton?
     
     // 약관동의 배열
-    var terms = Array(repeating: false, count: 5)
-    let switchToDigit = [true: 1,false: 0]
+    var terms = Array(repeating: false, count: 3)
     
     // MARK: - IBOutlets
     // 라벨
@@ -34,8 +36,8 @@ class SignUpFirstVC: UIViewController {
     @IBOutlet weak var thirdMoreBtn: UIButton!
     
     // 동의 버튼
-    @IBOutlet weak var allAgreeBtn: UIButton!
-    @IBOutlet var agreeBtn: [UIButton]!
+    @IBOutlet weak var allAgreeBtn: CheckBtn!
+    @IBOutlet var agreeBtn: [CheckBtn]!
     
     // 뒤로가기 버튼
     @IBOutlet weak var backBtn: UIButton!
@@ -49,11 +51,21 @@ class SignUpFirstVC: UIViewController {
         
         setStyle()
         setBtnNameToDVC()
+        allAgreeBtn.checkDelegate = self
+        agreeBtn[0].checkDelegate = self
+        agreeBtn[1].checkDelegate = self
+        agreeBtn[2].checkDelegate = self
+        
     }
     
     // MARK: - Function
     // style
     func setStyle() {
+        // titleLabel
+        titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24.adjusted)
+        titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 30.adjusted)
+        titleLabel.asColor(targetString: "우피치", color: .main)
+        
         // descriptionLabel
         descriptionLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         descriptionLabel.setTextWithLineHeight(text: descriptionLabel.text, lineHeight: 20.adjusted)
@@ -83,80 +95,33 @@ class SignUpFirstVC: UIViewController {
     
     // 카카오 & 애플 로그인 시 버튼 라벨을 바꿔줘야 하기 때문에!
     func setBtnNameToDVC() {
-        nextBtn = nextBtnLabel
-    }
-    
-    // 약관동의 나머지 버튼들 클릭시 호출
-    func checkAgree(_ idx: Int) {
-        terms[idx] = !terms[idx]
-        setAgreeImage(idx)
-        
-        // 약관동의 배열이 전부 True라면
-        if terms.allSatisfy({$0}) {
-            // 전체 동의 체크 및 이미지 변경
-            allAgreeBtn.setImage(UIImage(named: "check"), for: .normal)
-        }
-        else {
-            allAgreeBtn.setImage(UIImage(named: "grayCheck"), for: .normal)
-        }
-    }
-    
-    // 나머지 버튼의 체크 이미지 변경
-    func setAgreeImage(_ idx: Int) {
-        if terms[idx] {
-            agreeBtn[idx].setImage(UIImage(named: "check"), for: .normal)
-        } else {
-            agreeBtn[idx].setImage(UIImage(named: "grayCheck"), for: .normal)
-        }
+        // nextBtn = nextBtnLabel
     }
     
     // MARK: - IBActions
     // 다음 버튼
     @IBAction func touchUpNextBtn(_ sender: UIButton) {
-        
-        // 버튼 클릭 시, 다음 스토리보드로 이동
-        let storyboard = UIStoryboard.init(name: "SignUpSecond", bundle: nil)
-        
-        guard let dvc = storyboard.instantiateViewController(identifier: "SignUpSecondVC") as? SignUpSecondVC else {return}
-        
-        // 여기에서 카카오인지 애플인지 if else로 나누고 버튼 값이 다르게 들어가야 함
-        
-        self.navigationController?.pushViewController(dvc, animated: true)
+        // 전체동의와 이용약관 개인정보 수집 및 이용 버튼이 눌렸을 때 다음 버튼 활성화
+        if  nextBtn.backgroundColor == .main {
+            
+            // 버튼 클릭 시, 다음 스토리보드로 이동
+            let storyboard = UIStoryboard.init(name: "SignUpCity", bundle: nil)
+            
+            guard let dvc = storyboard.instantiateViewController(identifier: "SignUpCityVC") as? SignUpCityVC else {return}
+            
+            // 여기에서 카카오인지 애플인지 if else로 나누고 버튼 값이 다르게 들어가야 함
+            
+            self.navigationController?.pushViewController(dvc, animated: true)
+        }
+        else {
+            nextBtn.backgroundColor = .gray03
+        }
     }
     
     // 뒤로가기 버튼
     @IBAction func touchUpBackBtn(_ sender: Any) {
+        // 여기서 데이터가 저장되어있으면 팝업창뜨게하고, 아니면 그대로 뒤로가게하자
         navigationController?.popViewController(animated: true)
-    }
-    
-    // 전체동의 버튼
-    @IBAction func allAgreeBtnTap(_ sender: Any) {
-        if terms.allSatisfy({$0}){
-            allAgreeBtn.setImage(UIImage(named: "grayCheck"), for: .normal)
-            terms = Array(repeating: false, count: 3)
-        }
-        else {
-            allAgreeBtn.setImage(UIImage(named: "check"), for: .normal)
-            terms = Array(repeating: true, count: 3)
-        }
-        for idx in 0..<terms.count {
-            setAgreeImage(idx)
-        }
-    }
-    
-    // 이용약관 버튼
-    @IBAction func firstBtnTap(_ sender: Any) {
-        checkAgree(0)
-    }
-    
-    // 개인정보 수집 및 이용 버튼
-    @IBAction func secBtnTap(_ sender: Any) {
-        checkAgree(1)
-    }
-    
-    // 푸시 알람 동의 (선택) 버튼
-    @IBAction func thirdBtnTap(_ sender: Any) {
-        checkAgree(2)
     }
     
     // 이용약관 '보기' 버튼
@@ -182,3 +147,39 @@ class SignUpFirstVC: UIViewController {
     }
 }
 
+extension SignUpTermsVC : CheckDelegate {
+    func pushNext(btn: CheckBtn) {
+        switch btn {
+        // '전체동의' 버튼이 눌릴 때
+        case allAgreeBtn:
+            // 버튼을 다 동의 버튼으로 만드세요!!
+            btn.allAgreeBtnImg()
+            for idx in 0..<terms.count {
+                agreeBtn[idx].allAgreeBtnImg()
+            }
+        default:
+            // 나머지 버튼들
+            btn.changeBtnImg()
+            if allAgreeBtn.status {
+                // 나머지 버튼이 bool값인게 1이상 일 때
+                if agreeBtn.filter({!$0.status}).count >= 1 {
+                    allAgreeBtn.changeBtnImg()
+                }
+            }
+            // 전체동의 버튼의 상태가 false 일 때
+            else {
+                // 나머지 버튼이 다 true일 때
+                if agreeBtn[0].status && agreeBtn[1].status && agreeBtn[2].status {
+                    allAgreeBtn.changeBtnImg()
+                }
+            }
+        }
+        
+        if agreeBtn[0].status && agreeBtn[1].status {
+            nextBtn.backgroundColor = .main
+        }
+        else {
+            nextBtn.backgroundColor = .gray03
+        }
+    }
+}

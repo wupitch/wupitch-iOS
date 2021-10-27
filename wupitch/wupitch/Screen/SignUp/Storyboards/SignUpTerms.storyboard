@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sign Up FirstVC-->
+        <!--Sign Up TermsVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="SignUpFirstVC" id="Y6W-OH-hqX" customClass="SignUpFirstVC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpTermsVC" id="Y6W-OH-hqX" customClass="SignUpTermsVC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +26,6 @@
                                 <color key="tintColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="" image="left"/>
-                                <buttonConfiguration key="configuration" style="plain" image="left" title=""/>
                                 <connections>
                                     <action selector="touchUpBackBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="btk-3J-0Vf"/>
                                 </connections>
@@ -48,7 +47,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27l-Gv-4V1">
                                 <rect key="frame" x="0.0" y="324" width="414" height="572"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pb5-mL-xMo">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pb5-mL-xMo" customClass="CheckBtn" customModule="wupitch" customModuleProvider="target">
                                         <rect key="frame" x="20" y="26" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="bh2-eL-3Rw"/>
@@ -56,9 +55,6 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="" image="grayCheck"/>
-                                        <connections>
-                                            <action selector="firstBtnTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="BZN-Xc-dgI"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이용약관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXh-CD-HBY">
                                         <rect key="frame" x="52" y="27.5" width="59" height="21"/>
@@ -76,7 +72,7 @@
                                             <action selector="touchUpFirstMoreBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dfv-I4-eL0"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eef-7l-IxS">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eef-7l-IxS" customClass="CheckBtn" customModule="wupitch" customModuleProvider="target">
                                         <rect key="frame" x="20" y="66" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="Iqa-ND-IFn"/>
@@ -84,9 +80,6 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="" image="grayCheck"/>
-                                        <connections>
-                                            <action selector="secBtnTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="FMm-xh-4V1"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인정보 수집 및 이용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMm-zc-F7B">
                                         <rect key="frame" x="52" y="67.5" width="146" height="21"/>
@@ -104,7 +97,7 @@
                                             <action selector="touchUpSecondMoreBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="IuN-XN-i1g"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9s-fq-TCs">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9s-fq-TCs" customClass="CheckBtn" customModule="wupitch" customModuleProvider="target">
                                         <rect key="frame" x="20" y="106" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="IRV-PI-vCb"/>
@@ -112,9 +105,6 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="" image="grayCheck"/>
-                                        <connections>
-                                            <action selector="thirdBtnTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zGV-U7-TzY"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="푸시 알람 동의 (선택)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2JV-AA-vGA">
                                         <rect key="frame" x="52" y="107.5" width="143" height="21"/>
@@ -156,19 +146,19 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ol7-iP-bZt">
                                 <rect key="frame" x="20" y="766" width="375" height="52"/>
-                                <color key="backgroundColor" red="1" green="0.50980392156862742" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.70980392156862748" green="0.70980392156862748" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="Pdc-BT-9rp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="label"/>
+                                <state key="normal" title="다음 (1/5)"/>
                                 <connections>
                                     <action selector="touchUpNextBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mJC-ab-86f"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9U-rh-g9c">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9U-rh-g9c" customClass="CheckBtn" customModule="wupitch" customModuleProvider="target">
                                 <rect key="frame" x="20" y="290.5" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="V6M-Ga-SXR"/>
@@ -176,9 +166,6 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="" image="grayCheck"/>
-                                <connections>
-                                    <action selector="allAgreeBtnTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Cjg-y2-MMO"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체동의" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HM5-6j-zjx">
                                 <rect key="frame" x="52" y="292" width="59" height="21"/>

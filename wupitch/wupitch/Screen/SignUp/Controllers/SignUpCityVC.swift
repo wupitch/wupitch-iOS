@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpSecondVC: UIViewController {
+class SignUpCityVC: UIViewController {
     
     // MARK: - IBOulets
     @IBOutlet weak var modalBgView: UIView!
@@ -72,11 +72,6 @@ class SignUpSecondVC: UIViewController {
         if let dvc = storyBoard.instantiateViewController(withIdentifier: "LocationPickerVC") as? LocationPickerVC {
             dvc.modalPresentationStyle = .overFullScreen
             
-            // 모달 화면 띄울 때 textField 색상 변경
-            selectTextField.textColor = .main
-            selectTextField.attributedPlaceholder = NSAttributedString(string: "지역구 선택", attributes: [NSAttributedString.Key.foregroundColor : UIColor.main])
-            selectTextField.layer.borderColor = UIColor.main.cgColor
-            
             // 모달 백그라운드 색 보이게
             modalBgView.alpha = 1
             
@@ -110,22 +105,33 @@ class SignUpSecondVC: UIViewController {
     
     // 다음 버튼
     @IBAction func touchUpNextBtn(_ sender: Any) {
-        // 다음 버튼 클릭 시, 다음 스토리보드로 이동
-        let storyboard = UIStoryboard.init(name: "SignUpThird", bundle: nil)
         
-        guard let dvc = storyboard.instantiateViewController(identifier: "SignUpThirdVC") as? SignUpThirdVC else {return}
-        
-        // 여기서 카카오 & 애플 로그인인지 확인하고 라벨 값 다르게 넘겨줘야함
-        
-        self.navigationController?.pushViewController(dvc, animated: true)
+        if nextBtn.backgroundColor == .main {
+            // 다음 버튼 클릭 시, 다음 스토리보드로 이동
+            let storyboard = UIStoryboard.init(name: "SignUpSports", bundle: nil)
+            
+            guard let dvc = storyboard.instantiateViewController(identifier: "SignUpSportsVC") as? SignUpSportsVC else {return}
+            
+            // 여기서 카카오 & 애플 로그인인지 확인하고 라벨 값 다르게 넘겨줘야함
+            
+            self.navigationController?.pushViewController(dvc, animated: true)
+        }
+        else {
+            nextBtn.backgroundColor = .gray03
+        }
     }
 }
 
 // MARK: - Extension (Modal Delegate)
-extension SignUpSecondVC: ModalDelegate {
+extension SignUpCityVC: ModalDelegate {
     
     // 모달에서 확인 버튼 눌렀을 때 다음 버튼에 생기는 색 변화
     func selectBtnToNextBtn() {
+        // 선택되면 textField 색상 변경
+        selectTextField.textColor = .main
+        selectTextField.attributedPlaceholder = NSAttributedString(string: "지역구 선택", attributes: [NSAttributedString.Key.foregroundColor : UIColor.main])
+        selectTextField.layer.borderColor = UIColor.main.cgColor
+        // 선택버튼도 변경
         nextBtn.backgroundColor = .main
     }
     

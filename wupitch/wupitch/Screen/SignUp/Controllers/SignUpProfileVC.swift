@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpFourthVC: UIViewController {
+class SignUpProfileVC: UIViewController {
     
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var cancelBtn: UIButton!
@@ -89,7 +89,7 @@ class SignUpFourthVC: UIViewController {
     
 }
 
-extension SignUpFourthVC: UITextViewDelegate {
+extension SignUpProfileVC: UITextViewDelegate {
     
     // TextView Place Holder
     func textViewDidBeginEditing(_ textView: UITextView) {

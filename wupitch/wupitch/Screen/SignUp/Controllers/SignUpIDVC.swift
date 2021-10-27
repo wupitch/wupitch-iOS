@@ -7,8 +7,11 @@
 
 import UIKit
 
-class SignUpFifthVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SignUpIDVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var thirdContentsLabel: UILabel!
+    @IBOutlet weak var secondContentsLabel: UILabel!
+    @IBOutlet weak var firstContentsLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var backBtn: UIButton!
@@ -31,6 +34,11 @@ class SignUpFifthVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
         photoBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
         photoBtn.layer.cornerRadius = 8
+        
+        firstContentsLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
+        secondContentsLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
+        thirdContentsLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
+        
     }
     
     @IBAction func touchUpPhotoBtn(_ sender: Any) {

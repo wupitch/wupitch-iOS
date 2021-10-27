@@ -37,7 +37,8 @@ class LocationPickerVC: UIViewController {
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18.adjusted)
         titleLabel.tintColor = .bk
         selectBtn.layer.cornerRadius = 8
-        pickerBgView.makeRounded(cornerRadius: 20)
+        pickerBgView.makeRounded(cornerRadius: 16)
+        selectBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
     }
     
     func setDelegate() {
@@ -45,7 +46,7 @@ class LocationPickerVC: UIViewController {
         pickerView.dataSource = self
     }
     
-    @IBAction func touchUpSelectBtn(_ sender: Any) {
+    @IBAction func touchUpSelectBtn(_ sender: UIButton) {
         modalDelegate?.modalDismiss()
         modalDelegate?.selectBtnToNextBtn()
         self.dismiss(animated: true, completion: nil)
@@ -72,6 +73,7 @@ extension LocationPickerVC: UITextFieldDelegate, UIPickerViewDelegate, UIPickerV
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
         modalDelegate?.textFieldData(data: locationPickerData[row].locationName)
     }
     

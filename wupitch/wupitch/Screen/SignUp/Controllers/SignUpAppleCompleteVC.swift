@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpSixthVC: UIViewController {
+class SignUpAppleCompleteVC: UIViewController {
 
     @IBOutlet weak var startBtn: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!

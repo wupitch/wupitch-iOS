@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sign Up SecondVC-->
+        <!--Sign Up CityVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="SignUpSecondVC" id="Y6W-OH-hqX" customClass="SignUpSecondVC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpCityVC" id="Y6W-OH-hqX" customClass="SignUpCityVC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,6 +23,7 @@
                                     <constraint firstAttribute="width" constant="24" id="9Ee-Mh-Qnm"/>
                                     <constraint firstAttribute="height" constant="24" id="rEF-iy-Rh5"/>
                                 </constraints>
+                                <color key="tintColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="" image="left"/>
                                 <connections>
@@ -35,6 +36,7 @@
                                     <constraint firstAttribute="width" constant="24" id="0Aw-S4-fnf"/>
                                     <constraint firstAttribute="height" constant="24" id="Iqw-DP-BaU"/>
                                 </constraints>
+                                <color key="tintColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="" image="close"/>
                                 <connections>
@@ -55,6 +57,7 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="다음 (2/5)"/>
                                 <connections>
                                     <action selector="touchUpNextBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="geG-af-GiM"/>
                                 </connections>

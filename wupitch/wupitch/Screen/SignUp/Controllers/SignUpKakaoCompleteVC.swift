@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpCompleteFirstVC: UIViewController {
+class SignUpKakaoCompleteVC: UIViewController {
 
     @IBOutlet weak var startBtn: UIButton!
     @IBOutlet weak var imageView: UIImageView!
