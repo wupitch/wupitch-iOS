@@ -26,21 +26,21 @@ class SignUpAgeVC: UIViewController {
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24.adjusted)
         titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 30.adjusted)
         
-//        ageBtns[0].layer.cornerRadius = 8.adjusted
-//        ageBtns[0].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
-//
-//        ageBtns[1].layer.cornerRadius = 8.adjusted
-//        ageBtns[1].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
-//
-//
-//        ageBtns[3].layer.cornerRadius = 8.adjusted
-//        ageBtns[3].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
-//
-//        ageBtns[4].layer.cornerRadius = 8.adjusted
-//        ageBtns[4].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
-//
-//        ageBtns[5].layer.cornerRadius = 8.adjusted
-//        ageBtns[5].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
+        ageBtns[0].layer.cornerRadius = 8.adjusted
+        ageBtns[0].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
+
+        ageBtns[1].layer.cornerRadius = 8.adjusted
+        ageBtns[1].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
+
+
+        ageBtns[2].layer.cornerRadius = 8.adjusted
+        ageBtns[2].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
+
+        ageBtns[3].layer.cornerRadius = 8.adjusted
+        ageBtns[3].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
+
+        ageBtns[4].layer.cornerRadius = 8.adjusted
+        ageBtns[4].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
         
         nextBtn.layer.cornerRadius = 8.adjusted
         nextBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)

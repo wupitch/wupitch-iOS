@@ -5,6 +5,9 @@
 //  Created by 김수정 on 2021/10/26.
 //
 
+// 해야할 것
+// 1. 팝업창에서 '그만둘래요' 누르면 싱글톤에 있는 데이터 싹 없애주기
+
 import UIKit
 
 class JoinAlertVC: UIViewController {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -14,7 +14,7 @@
             <objects>
                 <viewController storyboardIdentifier="SignUpAgeVC" id="Y6W-OH-hqX" customClass="SignUpAgeVC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tj-w3-Yyf">
@@ -28,7 +28,7 @@
                                 <state key="normal" image="left"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEB-fJ-kAX">
-                                <rect key="frame" x="374" y="54" width="24" height="24"/>
+                                <rect key="frame" x="335" y="54" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="YEg-4O-to5"/>
                                     <constraint firstAttribute="height" constant="24" id="aQh-N0-8oz"/>
@@ -38,13 +38,13 @@
                                 <state key="normal" image="close"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연령대를 선택해주세요." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sa-p2-c3a">
-                                <rect key="frame" x="20" y="120" width="93" height="41"/>
+                                <rect key="frame" x="20" y="120.00000000000001" width="93" height="40.666666666666671"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVp-kp-fTk">
-                                <rect key="frame" x="20" y="766" width="375" height="52"/>
+                                <rect key="frame" x="20" y="682" width="336" height="52"/>
                                 <color key="backgroundColor" red="0.70980392156862748" green="0.70980392156862748" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="d7C-ED-5hr"/>
@@ -54,6 +54,68 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="yap-oK-yQ2">
+                                <rect key="frame" x="20" y="208.66666666666663" width="336" height="112"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="iZg-Z2-Ufl">
+                                        <rect key="frame" x="0.0" y="0.0" width="336" height="48"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvD-Km-1CW">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="48"/>
+                                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="160" id="WOh-nZ-cLv"/>
+                                                    <constraint firstAttribute="height" constant="48" id="lEk-yA-7Hk"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="10대"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0EK-Iv-eAl">
+                                                <rect key="frame" x="176" y="0.0" width="160" height="48"/>
+                                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="tintColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="20대"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="aDN-9c-CGG">
+                                        <rect key="frame" x="0.0" y="64.000000000000028" width="336" height="48"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfC-Ff-lDD">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="48"/>
+                                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="160" id="g4b-fT-XmC"/>
+                                                    <constraint firstAttribute="height" constant="48" id="pml-eI-irC"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="30대"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIZ-Uf-B2t">
+                                                <rect key="frame" x="176" y="0.0" width="160" height="48"/>
+                                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="tintColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="40대"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WzD-HR-7Ru">
+                                <rect key="frame" x="20" y="336.66666666666669" width="160" height="48"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="DnN-Yu-ueC"/>
+                                    <constraint firstAttribute="height" constant="48" id="Lf2-0r-kRA"/>
+                                </constraints>
+                                <color key="tintColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="50대 이상"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -62,11 +124,18 @@
                             <constraint firstItem="yVp-kp-fTk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="2vy-ud-gjG"/>
                             <constraint firstItem="1Sa-p2-c3a" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="56o-6B-6a8"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="yVp-kp-fTk" secondAttribute="bottom" constant="44" id="GcB-sE-8yA"/>
+                            <constraint firstItem="yap-oK-yQ2" firstAttribute="leading" secondItem="1Sa-p2-c3a" secondAttribute="leading" id="P5e-dO-iQO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="yap-oK-yQ2" secondAttribute="trailing" constant="19" id="Qlc-b4-ZWJ"/>
                             <constraint firstItem="wEB-fJ-kAX" firstAttribute="centerY" secondItem="5tj-w3-Yyf" secondAttribute="centerY" id="Ruk-H1-NY7"/>
+                            <constraint firstItem="WzD-HR-7Ru" firstAttribute="leading" secondItem="cfC-Ff-lDD" secondAttribute="leading" id="TRe-Jq-8ee"/>
                             <constraint firstItem="1Sa-p2-c3a" firstAttribute="top" secondItem="5tj-w3-Yyf" secondAttribute="bottom" constant="42" id="Tpv-Xg-VKA"/>
+                            <constraint firstItem="WzD-HR-7Ru" firstAttribute="width" secondItem="cfC-Ff-lDD" secondAttribute="width" id="jdA-hg-6mf"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="yVp-kp-fTk" secondAttribute="trailing" constant="19" id="moj-4I-Ttx"/>
+                            <constraint firstItem="WzD-HR-7Ru" firstAttribute="height" secondItem="cfC-Ff-lDD" secondAttribute="height" id="mxf-7S-GR5"/>
                             <constraint firstItem="5tj-w3-Yyf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="of1-RE-AT7"/>
+                            <constraint firstItem="yap-oK-yQ2" firstAttribute="top" secondItem="1Sa-p2-c3a" secondAttribute="bottom" constant="48" id="rTz-DA-yLp"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wEB-fJ-kAX" secondAttribute="trailing" constant="16" id="xkU-4z-WJI"/>
+                            <constraint firstItem="WzD-HR-7Ru" firstAttribute="top" secondItem="cfC-Ff-lDD" secondAttribute="bottom" constant="16" id="zPU-Wp-LAb"/>
                         </constraints>
                     </view>
                     <connections>
@@ -74,6 +143,11 @@
                         <outlet property="cancelBtn" destination="wEB-fJ-kAX" id="SVI-CQ-AJN"/>
                         <outlet property="nextBtn" destination="yVp-kp-fTk" id="yOi-Ua-rdu"/>
                         <outlet property="titleLabel" destination="1Sa-p2-c3a" id="jwz-IC-9Rm"/>
+                        <outletCollection property="ageBtns" destination="OvD-Km-1CW" collectionClass="NSMutableArray" id="fiL-cF-val"/>
+                        <outletCollection property="ageBtns" destination="0EK-Iv-eAl" collectionClass="NSMutableArray" id="V4R-CD-Ik9"/>
+                        <outletCollection property="ageBtns" destination="cfC-Ff-lDD" collectionClass="NSMutableArray" id="qz1-RW-0Kr"/>
+                        <outletCollection property="ageBtns" destination="fIZ-Uf-B2t" collectionClass="NSMutableArray" id="V43-Bs-1cU"/>
+                        <outletCollection property="ageBtns" destination="WzD-HR-7Ru" collectionClass="NSMutableArray" id="KYo-xz-X4h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -5,6 +5,9 @@
 //  Created by 김수정 on 2021/10/18.
 //
 
+// 해야할 것
+// 1. picker didselectrow 부분에 텍스트 넣지 않고 눌렀을 때만 선택되도록하기
+
 import UIKit
 
 class SignUpCityVC: UIViewController {
