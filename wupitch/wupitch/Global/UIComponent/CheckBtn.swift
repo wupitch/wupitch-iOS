@@ -14,22 +14,22 @@ class CheckBtn : UIButton {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        layout()
+        defaultCheckStyle()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        layout()
+        defaultCheckStyle()
     }
     
     init() {
         super.init(frame: .zero)
-        layout()
+        defaultCheckStyle()
     }
 }
 
 extension CheckBtn {
-    private func layout() {
+    private func defaultCheckStyle() {
         self.setImage(UIImage(named: "grayCheck"), for: .normal)
         self.addTarget(self, action: #selector(touchUp), for: .touchUpInside)
     }

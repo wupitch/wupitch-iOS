@@ -119,6 +119,7 @@
                     <connections>
                         <outlet property="backBtn" destination="Gkb-al-uT2" id="F3p-XU-TRJ"/>
                         <outlet property="cancelBtn" destination="XTS-qh-LFU" id="m9C-Cb-r1W"/>
+                        <outlet property="correctLabel" destination="sjY-eA-bGf" id="Xwr-gd-AfX"/>
                         <outlet property="infoTextView" destination="hmD-D4-Lwj" id="cdV-tf-YCa"/>
                         <outlet property="nickNameTextField" destination="zyS-24-d10" id="fIf-C5-NQ6"/>
                         <outlet property="startBtn" destination="pS2-8b-mOs" id="koO-VM-2H2"/>

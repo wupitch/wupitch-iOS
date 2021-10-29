@@ -92,12 +92,21 @@ class SignUpTermsVC: UIViewController {
         // nextBtn
         nextBtn.layer.cornerRadius = 8
         nextBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
-        nextBtn.setTitle("다음", for: .normal)
+        
+        if let loginMethod = SignUpUserInfo.shared.loginMethod {
+            switch loginMethod {
+            case .kakao:
+                nextBtn.setTitle("다음 (1/5)", for: .normal)
+            case .apple:
+                nextBtn.setTitle("다음 (1/6)", for: .normal)
+            }
+        }
+        
     }
     
     // 카카오 & 애플 로그인 시 버튼 라벨을 바꿔줘야 하기 때문에!
     func setBtnNameToDVC() {
-        // nextBtn = nextBtnLabel
+       // nextBtn = nextBtnLabel
     }
     
     // MARK: - IBActions
@@ -123,7 +132,23 @@ class SignUpTermsVC: UIViewController {
     // 뒤로가기 버튼
     @IBAction func touchUpBackBtn(_ sender: Any) {
         // 여기서 데이터가 저장되어있으면 팝업창뜨게하고, 아니면 그대로 뒤로가게하자
-        navigationController?.popViewController(animated: true)
+        if ((SignUpUserInfo.shared.region) != nil) {
+            // 팝업 창 띄워줌
+            let storyBoard: UIStoryboard = UIStoryboard(name: "JoinAlert", bundle: nil)
+            
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinAlertVC") as? JoinAlertVC {
+                dvc.modalPresentationStyle = .overFullScreen
+                dvc.modalTransitionStyle = .crossDissolve
+                
+                dvc.alertDelegate = self
+                
+                // present 형태로 띄우기
+                self.present(dvc, animated: true, completion: nil)
+            }
+        }
+        else {
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     // 이용약관 '보기' 버튼
@@ -182,6 +207,18 @@ extension SignUpTermsVC : CheckDelegate {
         }
         else {
             nextBtn.backgroundColor = .gray03
+        }
+    }
+}
+
+extension SignUpTermsVC : AlertDelegate {
+    func alertDismiss() {
+        guard let viewControllerStack = self.navigationController?.viewControllers else { return }
+        
+        // 뷰 스택에서 OnbordingVC를 찾아서 거기까지 pop 합니다.
+        for viewController in viewControllerStack {
+            if let onboardingVC = viewController as? OnbordingVC { self.navigationController?.popToViewController(onboardingVC, animated: true)
+            }
         }
     }
 }

@@ -5,9 +5,6 @@
 //  Created by 김수정 on 2021/10/18.
 //
 
-// 해야할 것
-// 1. picker didselectrow 부분에 텍스트 넣지 않고 눌렀을 때만 선택되도록하기
-
 import UIKit
 
 class SignUpCityVC: UIViewController {
@@ -21,7 +18,7 @@ class SignUpCityVC: UIViewController {
     @IBOutlet weak var backBtn: UIButton!
     
     // MARK: - Propertise
-    // 카카오 &. 애플 로그인 시 버튼 라벨을 바꿔줘야 해서 변수 선언
+    // 카카오 & 애플 로그인 시 버튼 라벨을 바꿔줘야 해서 변수 선언
     var nextBtnLabel : String?
     
     // MARK: - LifeCycle
@@ -54,6 +51,15 @@ class SignUpCityVC: UIViewController {
         // 다음 버튼 Style
         nextBtn.layer.cornerRadius = 8
         nextBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
+        
+        if let loginMethod = SignUpUserInfo.shared.loginMethod {
+            switch loginMethod {
+            case .kakao:
+                nextBtn.setTitle("다음 (2/5)", for: .normal)
+            case .apple:
+                nextBtn.setTitle("다음 (2/6)", for: .normal)
+            }
+        }
     }
     
     // 카카오 & 애플 로그인 시 버튼 라벨을 바꿔줘야 하기 때문에!
@@ -101,6 +107,8 @@ class SignUpCityVC: UIViewController {
             dvc.modalPresentationStyle = .overFullScreen
             dvc.modalTransitionStyle = .crossDissolve
             
+            dvc.alertDelegate = self
+            
             // present 형태로 띄우기
             self.present(dvc, animated: true, completion: nil)
         }
@@ -108,7 +116,7 @@ class SignUpCityVC: UIViewController {
     
     // 다음 버튼
     @IBAction func touchUpNextBtn(_ sender: Any) {
-        
+        // 버튼 색이 .main일 때만 동작
         if nextBtn.backgroundColor == .main {
             // 다음 버튼 클릭 시, 다음 스토리보드로 이동
             let storyboard = UIStoryboard.init(name: "SignUpSports", bundle: nil)
@@ -146,5 +154,17 @@ extension SignUpCityVC: ModalDelegate {
     // textField에 모달에서 선택했던 피커 값 넣어주기
     func textFieldData(data: String) {
         selectTextField.text = data
+    }
+}
+
+extension SignUpCityVC : AlertDelegate {
+    func alertDismiss() {
+        guard let viewControllerStack = self.navigationController?.viewControllers else { return }
+        
+        // 뷰 스택에서 OnbordingVC를 찾아서 거기까지 pop 합니다.
+        for viewController in viewControllerStack {
+            if let onboardingVC = viewController as? OnbordingVC { self.navigationController?.popToViewController(onboardingVC, animated: true)
+            }
+        }
     }
 }

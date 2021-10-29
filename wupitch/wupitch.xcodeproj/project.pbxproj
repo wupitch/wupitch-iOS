@@ -16,6 +16,9 @@
 		DD2D63B227268A34007CEC57 /* LevelModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D63B127268A34007CEC57 /* LevelModalVC.swift */; };
 		DD2D63B42726A8A0007CEC57 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D63B32726A8A0007CEC57 /* UITextField.swift */; };
 		DD3A30BB2729AB1400D711C6 /* CheckBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30BA2729AB1400D711C6 /* CheckBtn.swift */; };
+		DD3A30BF272A821A00D711C6 /* SportsBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30BE272A821A00D711C6 /* SportsBtn.swift */; };
+		DD3A30C1272AA94100D711C6 /* ModalSportsBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30C0272AA94100D711C6 /* ModalSportsBtn.swift */; };
+		DD3A30C4272ADF6200D711C6 /* SignUpUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30C3272ADF6200D711C6 /* SignUpUserInfo.swift */; };
 		DD3ACBB52720FFC600EBC201 /* TermsOfUse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACBB42720FFC600EBC201 /* TermsOfUse.storyboard */; };
 		DD3ACBB7272104D300EBC201 /* TermsOfUseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACBB6272104D300EBC201 /* TermsOfUseVC.swift */; };
 		DD3ACBB92721073E00EBC201 /* SignUpSports.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACBB82721073E00EBC201 /* SignUpSports.storyboard */; };
@@ -68,6 +71,9 @@
 		DD2D63B127268A34007CEC57 /* LevelModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModalVC.swift; sourceTree = "<group>"; };
 		DD2D63B32726A8A0007CEC57 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		DD3A30BA2729AB1400D711C6 /* CheckBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBtn.swift; sourceTree = "<group>"; };
+		DD3A30BE272A821A00D711C6 /* SportsBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsBtn.swift; sourceTree = "<group>"; };
+		DD3A30C0272AA94100D711C6 /* ModalSportsBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSportsBtn.swift; sourceTree = "<group>"; };
+		DD3A30C3272ADF6200D711C6 /* SignUpUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUserInfo.swift; sourceTree = "<group>"; };
 		DD3ACBB42720FFC600EBC201 /* TermsOfUse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsOfUse.storyboard; sourceTree = "<group>"; };
 		DD3ACBB6272104D300EBC201 /* TermsOfUseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseVC.swift; sourceTree = "<group>"; };
 		DD3ACBB82721073E00EBC201 /* SignUpSports.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpSports.storyboard; sourceTree = "<group>"; };
@@ -278,8 +284,18 @@
 			isa = PBXGroup;
 			children = (
 				DD3A30BA2729AB1400D711C6 /* CheckBtn.swift */,
+				DD3A30BE272A821A00D711C6 /* SportsBtn.swift */,
+				DD3A30C0272AA94100D711C6 /* ModalSportsBtn.swift */,
 			);
 			path = UIComponent;
+			sourceTree = "<group>";
+		};
+		DD3A30C2272ADF2000D711C6 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				DD3A30C3272ADF6200D711C6 /* SignUpUserInfo.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		DDE0EE54272815FD00C46821 /* Alert */ = {
@@ -369,6 +385,7 @@
 		DDED0118271B33C200C2C343 /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
+				DD3A30C2272ADF2000D711C6 /* SignUp */,
 				DDE0EE65272932A000C46821 /* SignIn */,
 				DDED0119271B33DD00C2C343 /* Onboarding */,
 			);
@@ -567,11 +584,14 @@
 				DD2D63B42726A8A0007CEC57 /* UITextField.swift in Sources */,
 				DD295DA027181E3B008CFC64 /* AppDelegate.swift in Sources */,
 				DD67283B27244CE3001E1355 /* AgreeVC.swift in Sources */,
+				DD3A30C4272ADF6200D711C6 /* SignUpUserInfo.swift in Sources */,
 				DDE0EE5E2728740400C46821 /* SignUpKakaoCompleteVC.swift in Sources */,
 				DDE0EE5A2728164E00C46821 /* JoinAlertVC.swift in Sources */,
 				DD61E4B9271D7E50007504DE /* SignUpTermsVC.swift in Sources */,
 				DD3ACBC8272170A800EBC201 /* SignUpAppleCompleteVC.swift in Sources */,
+				DD3A30C1272AA94100D711C6 /* ModalSportsBtn.swift in Sources */,
 				DDED0121271BD98400C2C343 /* OnbordingVC.swift in Sources */,
+				DD3A30BF272A821A00D711C6 /* SportsBtn.swift in Sources */,
 				DD61E4C2271EB81D007504DE /* Adjusted.swift in Sources */,
 				DDE0EE692729335000C46821 /* KakaoLoginData.swift in Sources */,
 				DD295DA227181E3B008CFC64 /* SceneDelegate.swift in Sources */,

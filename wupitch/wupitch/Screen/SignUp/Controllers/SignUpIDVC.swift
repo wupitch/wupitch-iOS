@@ -9,6 +9,7 @@ import UIKit
 
 class SignUpIDVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var thirdContentsLabel: UILabel!
     @IBOutlet weak var secondContentsLabel: UILabel!
     @IBOutlet weak var firstContentsLabel: UILabel!
@@ -40,6 +41,25 @@ class SignUpIDVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         thirdContentsLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
         
     }
+    @IBAction func touchUpCancelBtn(_ sender: Any) {
+        // 취소 버튼 클릭 시, 팝업 창 띄워줌
+        let storyBoard: UIStoryboard = UIStoryboard(name: "JoinAlert", bundle: nil)
+        
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinAlertVC") as? JoinAlertVC {
+            dvc.modalPresentationStyle = .overFullScreen
+            dvc.modalTransitionStyle = .crossDissolve
+            
+            dvc.alertDelegate = self
+            
+            // present 형태로 띄우기
+            self.present(dvc, animated: true, completion: nil)
+        }
+        
+    }
+    
+    @IBAction func touchUpBackbtn(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func touchUpPhotoBtn(_ sender: Any) {
         let camera = UIImagePickerController()
@@ -57,10 +77,20 @@ class SignUpIDVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         
         
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
+            
+            SignUpUserInfo.shared.idImg = image
             //myImageView.image = image
         }
         
         picker.dismiss(animated: true, completion: nil)
+        
+        if SignUpUserInfo.shared.idImg != nil {
+            let storyboard = UIStoryboard.init(name: "SignUpAppleComplete", bundle: nil)
+            
+            guard let dvc = storyboard.instantiateViewController(identifier: "SignUpAppleCompleteVC") as? SignUpAppleCompleteVC else {return}
+            
+            self.navigationController?.pushViewController(dvc, animated: true)
+        }
     }
     
     
@@ -70,3 +100,14 @@ class SignUpIDVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
 }
 
+extension SignUpIDVC : AlertDelegate {
+    func alertDismiss() {
+        guard let viewControllerStack = self.navigationController?.viewControllers else { return }
+        
+        // 뷰 스택에서 OnbordingVC를 찾아서 거기까지 pop 합니다.
+        for viewController in viewControllerStack {
+            if let onboardingVC = viewController as? OnbordingVC { self.navigationController?.popToViewController(onboardingVC, animated: true)
+            }
+        }
+    }
+}

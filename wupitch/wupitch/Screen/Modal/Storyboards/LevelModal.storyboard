@@ -29,7 +29,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="ERy-ST-mf6">
                                         <rect key="frame" x="83" y="84.5" width="248" height="48"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brY-Xh-02y">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brY-Xh-02y" customClass="ModalSportsBtn" customModule="wupitch" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="brY-Xh-02y" secondAttribute="height" multiplier="1:1" id="715-Ah-8hd"/>
@@ -43,17 +43,23 @@
                                                     <action selector="touchUpHighBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sf0-S5-XZD"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Nc-O4-Y7M">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Nc-O4-Y7M" customClass="ModalSportsBtn" customModule="wupitch" customModuleProvider="target">
                                                 <rect key="frame" x="100" y="0.0" width="48" height="48"/>
                                                 <color key="tintColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="중"/>
+                                                <connections>
+                                                    <action selector="touchUpMiddleBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="PgG-I4-QZb"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIJ-fc-2Uv">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIJ-fc-2Uv" customClass="ModalSportsBtn" customModule="wupitch" customModuleProvider="target">
                                                 <rect key="frame" x="200" y="0.0" width="48" height="48"/>
                                                 <color key="tintColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="하"/>
+                                                <connections>
+                                                    <action selector="touchUpLowBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="c7k-5L-KkB"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -118,10 +124,11 @@
                         <outlet property="cancelBtn" destination="Zm4-xX-d7m" id="HdB-y5-YeD"/>
                         <outlet property="completeBtn" destination="B31-yv-UVH" id="8W8-Zd-ANp"/>
                         <outlet property="contentsLabel" destination="xjD-3o-bhv" id="IeZ-Pb-QFh"/>
-                        <outlet property="highBtn" destination="brY-Xh-02y" id="7A8-9X-eAc"/>
-                        <outlet property="lowBtn" destination="MIJ-fc-2Uv" id="X2V-OV-2WI"/>
-                        <outlet property="middleBtn" destination="2Nc-O4-Y7M" id="OK2-so-rv3"/>
+                        <outlet property="modalView" destination="MDS-PI-4od" id="R6V-Lx-3fg"/>
                         <outlet property="titleLabel" destination="kqh-8r-NMV" id="kSK-3g-Oz0"/>
+                        <outletCollection property="levelBtns" destination="brY-Xh-02y" collectionClass="NSMutableArray" id="dHI-eF-10H"/>
+                        <outletCollection property="levelBtns" destination="2Nc-O4-Y7M" collectionClass="NSMutableArray" id="tzx-bI-31u"/>
+                        <outletCollection property="levelBtns" destination="MIJ-fc-2Uv" collectionClass="NSMutableArray" id="1LY-PW-0du"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

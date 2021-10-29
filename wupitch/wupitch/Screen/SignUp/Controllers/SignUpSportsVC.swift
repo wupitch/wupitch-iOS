@@ -5,21 +5,14 @@
 //  Created by 김수정 on 2021/10/21.
 //
 
-// 해야할 것
-// 1. 로직짜기 (중복선택가능)
-// - 버튼 선택 시 색 메인 컬러로 변경 되면서 모달창 올라오기
-// -> (x 눌렀을 경우) 버튼 색 다시 원래대로 / 선택 눌렀을 경우 dismiss되면서 버튼 색 메인 컬러로 변경
-// - 상중하를 눌렀을 경우에만 버튼이 활성화
-// 눌린 버튼을 한번 더 터치하면, 색 없어짐
-// 기타 부분 텍스트 필드 눌렀을 때 화면 올라가게하기
-
 import UIKit
 
 class SignUpSportsVC: UIViewController {
     
+    // MARK: - IBOulets
     @IBOutlet weak var modalBgView: UIView!
     @IBOutlet weak var textView: UIView!
-    @IBOutlet var sportBtns: [UIButton]!
+    @IBOutlet var sportBtns: [SportsBtn]!
     @IBOutlet weak var etcTextField: UITextField!
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -28,199 +21,295 @@ class SignUpSportsVC: UIViewController {
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var textCount: UILabel!
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //etcTextField.delegate = self
-        //setStyle()
+        etcTextField.delegate = self
+        setStyle()
         modalBgView.alpha = 0.0
         
+        // 키보드
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    // 키보드 올라가는거
+    @objc
+    func keyboardWillShow(_ sender: Notification) {
+        self.view.frame.origin.y = -100 // Move view 150 points upward
+    }
+    
+    // 키보드 내리는거 (원래 상태로 복귀)
+    @objc
+    func keyboardWillHide(_ sender: Notification) {
+        self.view.frame.origin.y = 0 // Move view to original position
+    }
+    
+    // set style
     func setStyle() {
-
+        // textField Style
         etcTextField.alpha = 0.0
+        etcTextField.attributedPlaceholder = NSAttributedString(string: "기타 스포츠를 입력해주세요. (선택)", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray03])
+        etcTextField.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        
+        // textCount
         textCount.alpha = 0.0
+        textCount.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+        
+        // textView
         textView.alpha = 0.0
-
+        
+        // titleLabel Style
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24.adjusted)
         titleLabel.tintColor = .bk
         titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 30.adjusted)
-
+        
+        // description Style
         descriptionLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
         descriptionLabel.setTextWithLineHeight(text: descriptionLabel.text, lineHeight: 20.adjusted)
-
-        sportBtns[0].layer.cornerRadius = 8
-        sportBtns[0].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
-
-        sportBtns[1].layer.cornerRadius = 8
-        sportBtns[1].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
-
-        sportBtns[2].layer.cornerRadius = 8
-        sportBtns[2].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
-
-        sportBtns[3].layer.cornerRadius = 8
-        sportBtns[3].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
-
-        sportBtns[4].layer.cornerRadius = 8
-        sportBtns[4].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
-
-        sportBtns[5].layer.cornerRadius = 8
-        sportBtns[5].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
-
-        sportBtns[6].layer.cornerRadius = 8
-        sportBtns[6].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
-
+        
+        // nextBtn
         nextBtn.layer.cornerRadius = 8
         nextBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
-
-        etcTextField.attributedPlaceholder = NSAttributedString(string: "기타 스포츠를 입력해주세요. (선택)", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray03])
-
-        textCount.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+        
+        if let loginMethod = SignUpUserInfo.shared.loginMethod {
+            switch loginMethod {
+            case .kakao:
+                nextBtn.setTitle("다음 (3/5)", for: .normal)
+            case .apple:
+                nextBtn.setTitle("다음 (3/6)", for: .normal)
+            }
+        }
     }
-
-
-
+    
+    // 뒤로가기 버튼
     @IBAction func touchUpBackBtn(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-
+    
+    // x 버튼
     @IBAction func touchUpCancelBtn(_ sender: Any) {
         // 취소 버튼 클릭 시, 팝업 창 띄워줌
         let storyBoard: UIStoryboard = UIStoryboard(name: "JoinAlert", bundle: nil)
-
+        
         if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinAlertVC") as? JoinAlertVC {
             dvc.modalPresentationStyle = .overFullScreen
             dvc.modalTransitionStyle = .crossDissolve
-
+            
+            dvc.alertDelegate = self
+            
             // present 형태로 띄우기
             self.present(dvc, animated: true, completion: nil)
         }
     }
     
+    // 다음 버튼
     @IBAction func touchUpNextBtn(_ sender: Any) {
-        
-     
+        if nextBtn.backgroundColor == .main {
             let storyboard = UIStoryboard.init(name: "SignUpAge", bundle: nil)
             
             guard let dvc = storyboard.instantiateViewController(identifier: "SignUpAgeVC") as? SignUpAgeVC else {return}
             
             self.navigationController?.pushViewController(dvc, animated: true)
         }
-
+        else {
+            nextBtn.backgroundColor = .gray03
+        }
+    }
     
+    // 축구 버튼
     @IBAction func touchUpSoccerBtn(_ sender: UIButton) {
-
-        sportBtns[0].backgroundColor = .main20
-        sportBtns[0].layer.borderWidth = 1
-        sportBtns[0].layer.borderColor = UIColor.main.cgColor
-        sportBtns[0].tintColor = .main
-
-        let storyBoard: UIStoryboard = UIStoryboard(name: "LevelModal", bundle: nil)
-        if let dvc = storyBoard.instantiateViewController(withIdentifier: "LevelModalVC") as? LevelModalVC {
-            dvc.modalPresentationStyle = .overFullScreen
-
-            modalBgView.alpha = 1
-            dvc.levelModalDelegate = self
-
-            self.present(dvc, animated: true, completion: nil)
-
+        // 축구 버튼의 색이 default 값일 때
+        if sportBtns[0].backgroundColor == .gray04 {
+            // 색으로 변경
+            sportBtns[0].colorSportsBtn()
+            // 모달창 올라오삼
+            let storyBoard: UIStoryboard = UIStoryboard(name: "LevelModal", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "LevelModalVC") as? LevelModalVC {
+                dvc.modalPresentationStyle = .overFullScreen
+                // 모달 백그라운드
+                modalBgView.alpha = 1
+                dvc.levelModalDelegate = self
+                dvc.btnIndex = 0
+                self.present(dvc, animated: true, completion: nil)
+            }
+        }
+        // 축구 버튼의 색이 컬러 일 때
+        else {
+            // 축구 버튼 색 기본색으로 변경
+            sportBtns[0].defaultSportsBtn()
+            if sportBtns.filter({$0.status}).count < 1 {
+                nextBtn.backgroundColor = .gray03
+            }
         }
     }
-
+    
+    // 배드민턴 버튼
     @IBAction func touchUpBadmintonBtn(_ sender: UIButton) {
-        if sender.isSelected == false {
-            sender.isSelected = true
-            sportBtns[1].backgroundColor = .main20
-            sportBtns[1].tintColor = .main
-
+        sportBtns[1].tag = 2
+        // 배드민턴 버튼의 색이 default 값일 때
+        if sportBtns[1].backgroundColor == .gray04 {
+            // 색으로 변경
+            sportBtns[1].colorSportsBtn()
+            // 모달창 올라오삼
             let storyBoard: UIStoryboard = UIStoryboard(name: "LevelModal", bundle: nil)
             if let dvc = storyBoard.instantiateViewController(withIdentifier: "LevelModalVC") as? LevelModalVC {
                 dvc.modalPresentationStyle = .overFullScreen
-
+                // 모달 백그라운드
                 modalBgView.alpha = 1
+                dvc.btnIndex = 1
                 dvc.levelModalDelegate = self
-
                 self.present(dvc, animated: true, completion: nil)
             }
-
         }
+        // 배드민턴 버튼의 색이 컬러 일 때
         else {
-            sender.isSelected = false
-            sportBtns[1].backgroundColor = .gray04
-            sportBtns[1].tintColor = .gray02
+            // 배드민턴 버튼 색 기본색으로 변경
+            sportBtns[1].defaultSportsBtn()
+            if sportBtns.filter({$0.status}).count < 1 {
+                nextBtn.backgroundColor = .gray03
+            }
         }
     }
-
-
+    
+    // 배구 버튼
     @IBAction func touchUpVolleyBallBtn(_ sender: UIButton) {
-        if sender.isSelected == false {
-            sender.isSelected = true
-            sportBtns[2].backgroundColor = .main20
-            sportBtns[2].tintColor = .main
-
+        sportBtns[2].tag = 3
+        // 버튼의 색이 default 값일 때
+        if sportBtns[2].backgroundColor == .gray04 {
+            // 색으로 변경
+            sportBtns[2].colorSportsBtn()
+            // 모달창 올라오삼
             let storyBoard: UIStoryboard = UIStoryboard(name: "LevelModal", bundle: nil)
             if let dvc = storyBoard.instantiateViewController(withIdentifier: "LevelModalVC") as? LevelModalVC {
                 dvc.modalPresentationStyle = .overFullScreen
-
+                // 모달 백그라운드
                 modalBgView.alpha = 1
+                dvc.btnIndex = 2
                 dvc.levelModalDelegate = self
-
                 self.present(dvc, animated: true, completion: nil)
             }
-
         }
+        // 버튼의 색이 컬러 일 때
         else {
-            sender.isSelected = false
-            sportBtns[2].backgroundColor = .gray04
-            sportBtns[2].tintColor = .gray02
+            // 버튼 색 기본색으로 변경
+            sportBtns[2].defaultSportsBtn()
+            if sportBtns.filter({$0.status}).count < 1 {
+                nextBtn.backgroundColor = .gray03
+            }
         }
     }
-
-    @IBAction func touchUpBaseballBtn(_ sender: UIButton) {
-        if sender.isSelected == false {
-            sender.isSelected = true
-            sportBtns[3].backgroundColor = .main20
-            sportBtns[3].tintColor = .main
-
+    
+    // 농구 버튼
+    @IBAction func touchUpBasketBallBtn(_ sender: Any) {
+        sportBtns[3].tag = 4
+        // 버튼의 색이 default 값일 때
+        if sportBtns[3].backgroundColor == .gray04 {
+            // 색으로 변경
+            sportBtns[3].colorSportsBtn()
+            // 모달창 올라오삼
             let storyBoard: UIStoryboard = UIStoryboard(name: "LevelModal", bundle: nil)
             if let dvc = storyBoard.instantiateViewController(withIdentifier: "LevelModalVC") as? LevelModalVC {
                 dvc.modalPresentationStyle = .overFullScreen
-
+                // 모달 백그라운드
                 modalBgView.alpha = 1
+                dvc.btnIndex = 3
                 dvc.levelModalDelegate = self
-
                 self.present(dvc, animated: true, completion: nil)
             }
-
         }
+        // 버튼의 색이 컬러 일 때
         else {
-            sender.isSelected = false
-            sportBtns[3].backgroundColor = .gray04
-            sportBtns[3].tintColor = .gray02
+            // 버튼 색 기본색으로 변경
+            sportBtns[3].defaultSportsBtn()
+            if sportBtns.filter({$0.status}).count < 1 {
+                nextBtn.backgroundColor = .gray03
+            }
         }
     }
-
+    
+    // 등산 버튼
+    @IBAction func touchUpMountainBtn(_ sender: Any) {
+        sportBtns[4].tag = 5
+        // 버튼의 색이 default 값일 때
+        if sportBtns[4].backgroundColor == .gray04 {
+            // 색으로 변경
+            sportBtns[4].colorSportsBtn()
+            // 모달창 올라오삼
+            let storyBoard: UIStoryboard = UIStoryboard(name: "LevelModal", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "LevelModalVC") as? LevelModalVC {
+                dvc.modalPresentationStyle = .overFullScreen
+                // 모달 백그라운드
+                modalBgView.alpha = 1
+                dvc.btnIndex = 4
+                dvc.levelModalDelegate = self
+                self.present(dvc, animated: true, completion: nil)
+            }
+        }
+        // 버튼의 색이 컬러 일 때
+        else {
+            // 버튼 색 기본색으로 변경
+            sportBtns[4].defaultSportsBtn()
+            if sportBtns.filter({$0.status}).count < 1 {
+                nextBtn.backgroundColor = .gray03
+            }
+        }
+    }
+    
+    // 런닝 버튼
+    @IBAction func touchUpRunningBtn(_ sender: Any) {
+        sportBtns[5].tag = 6
+        // 버튼의 색이 default 값일 때
+        if sportBtns[5].backgroundColor == .gray04 {
+            // 색으로 변경
+            sportBtns[5].colorSportsBtn()
+            // 모달창 올라오삼
+            let storyBoard: UIStoryboard = UIStoryboard(name: "LevelModal", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "LevelModalVC") as? LevelModalVC {
+                dvc.modalPresentationStyle = .overFullScreen
+                // 모달 백그라운드
+                modalBgView.alpha = 1
+                dvc.levelModalDelegate = self
+                dvc.btnIndex = 5
+                self.present(dvc, animated: true, completion: nil)
+            }
+        }
+        // 버튼의 색이 컬러 일 때
+        else {
+            // 버튼 색 기본색으로 변경
+            sportBtns[5].defaultSportsBtn()
+            if sportBtns.filter({$0.status}).count < 1 {
+                nextBtn.backgroundColor = .gray03
+            }
+        }
+    }
+    
+    // 기타 버튼
     @IBAction func etcBtn(_ sender: UIButton) {
-        if sender.isSelected == false {
-            sender.isSelected = true
-            sportBtns[4].backgroundColor = .main20
-            sportBtns[4].tintColor = .main
+        sportBtns[6].tag = 7
+        // 버튼의 색이 default 값일 때
+        if sportBtns[6].backgroundColor == .gray04 {
+            // 색으로 변경
+            sportBtns[6].colorSportsBtn()
             etcTextField.alpha = 1
             textCount.alpha = 1
             textView.alpha = 1
+            nextBtn.backgroundColor = .main
         }
         else {
-            sender.isSelected = false
-            sportBtns[4].backgroundColor = .gray04
-            sportBtns[4].tintColor = .gray02
+            // 버튼 색 기본색으로 변경
+            sportBtns[6].defaultSportsBtn()
             etcTextField.alpha = 0.0
             textCount.alpha = 0.0
             textView.alpha = 0.0
+            // 버튼이 몇개가 눌려있나 점검 -> 한개도 없으면 다음 버튼 비활성화
+            if sportBtns.filter({$0.status}).count < 1 {
+                nextBtn.backgroundColor = .gray03
+            }
         }
     }
-
-
 }
 
 extension SignUpSportsVC: UITextFieldDelegate {
@@ -233,34 +322,43 @@ extension SignUpSportsVC: UITextFieldDelegate {
             }
         }
         // 글자수제한
-        guard textField.text!.count < 20
-
+        guard textField.text!.count < 21
+                
         else {
             return false
         }
-        textCount.text = "\(textField.text?.count)" + "/20"
-
+        textCount.text = "\(textField.text?.count ?? 0)" + "/20"
+        
+        return true
+    }
+    // 리턴버튼 누르면 키보드 사라짐
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        etcTextField.resignFirstResponder()
         return true
     }
 }
 
 extension SignUpSportsVC: LevelModalDelegate {
-    func levelModalDismiss() {
+    func levelModalDismiss(index: Int) {
         modalBgView.alpha = 0.0
-        sportBtns[0].backgroundColor = .gray04
-        sportBtns[0].tintColor = .gray02
-        sportBtns[0].layer.borderWidth = 0
-
+        sportBtns[index].defaultSportsBtn()
     }
-
+    
     func completeBtnToNextBtn() {
         nextBtn.backgroundColor = .main
-        sportBtns[0].backgroundColor = .main20
-        sportBtns[0].layer.borderWidth = 1
-        sportBtns[0].layer.borderColor = UIColor.main.cgColor
-        sportBtns[0].tintColor = .main
+        modalBgView.alpha = 0.0
+
     }
-
-
 }
 
+extension SignUpSportsVC : AlertDelegate {
+    func alertDismiss() {
+        guard let viewControllerStack = self.navigationController?.viewControllers else { return }
+        
+        // 뷰 스택에서 OnbordingVC를 찾아서 거기까지 pop 합니다.
+        for viewController in viewControllerStack {
+            if let onboardingVC = viewController as? OnbordingVC { self.navigationController?.popToViewController(onboardingVC, animated: true)
+            }
+        }
+    }
+}

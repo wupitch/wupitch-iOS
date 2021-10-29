@@ -26,6 +26,9 @@
                                 <color key="tintColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="left"/>
+                                <connections>
+                                    <action selector="touchUpBackbtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dza-It-q1c"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신분증을 인증해주세요." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMd-xB-0HQ">
                                 <rect key="frame" x="20" y="120.00000000000001" width="93" height="40.666666666666671"/>
@@ -54,6 +57,9 @@
                                 <color key="tintColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="touchUpCancelBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="kxE-3m-qB4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNs-57-ZVR">
                                 <rect key="frame" x="20" y="682" width="336" height="52"/>
@@ -62,8 +68,8 @@
                                     <constraint firstAttribute="height" constant="52" id="nb4-ek-UOd"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="신분증 촬영"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="신분증 촬영"/>
                                 <connections>
                                     <action selector="touchUpPhotoBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="raQ-0W-ZTU"/>
                                 </connections>
@@ -141,6 +147,7 @@
                     </view>
                     <connections>
                         <outlet property="backBtn" destination="lfp-OE-Mma" id="SxE-My-gUY"/>
+                        <outlet property="cancelBtn" destination="DED-cT-FpI" id="YYJ-Yz-bJb"/>
                         <outlet property="descriptionLabel" destination="7lv-BE-kM3" id="Tef-Ny-d2h"/>
                         <outlet property="firstContentsLabel" destination="Sya-Ip-hOw" id="Rbd-5U-9kK"/>
                         <outlet property="imageView" destination="KEE-L2-y4z" id="iFB-HS-OBN"/>

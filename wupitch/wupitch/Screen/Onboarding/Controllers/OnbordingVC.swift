@@ -5,10 +5,6 @@
 //  Created by 김수정 on 2021/10/17.
 //
 
-// 온보딩에서 해야할 것
-// 1. 실제 폰으로 했을 때 온보딩 페이지 컨트롤이 이상함
-// 2. 애플 로그인 했을 때 바텀이 좀 이상하게 보임
-
 import UIKit
 import KakaoSDKAuth
 import KakaoSDKUser
@@ -79,7 +75,7 @@ class OnbordingVC: UIViewController {
     // 스크롤 페이지 설정
     private func definePage(_ scrollView: UIScrollView) {
         let page = Int(round(scrollView.contentOffset.x / UIScreen.main.bounds.width))
-        print("current page>>>>>\(page)")
+//        print("current page>>>>>\(page)")
         self.onboardingPageControl.currentPage = page
         
         if page == 3 {
@@ -121,8 +117,8 @@ class OnbordingVC: UIViewController {
                     
                     guard let dvc = storyboard.instantiateViewController(identifier: "SignUpTermsVC") as? SignUpTermsVC else {return}
                     
-                    // 카카오 로그인으로 진입 시, 버튼 라벨 (1/5)으로 변경
-                    // dvc.nextBtnLabel?.setTitle("다음 (1/5)", for: .normal)
+                     // 카카오 로그인으로 진입 시, 버튼 라벨 (1/5)으로 변경
+                    SignUpUserInfo.shared.loginMethod = .kakao
                     self.navigationController?.pushViewController(dvc, animated: true)
                     
                     //do something
@@ -146,13 +142,34 @@ class OnbordingVC: UIViewController {
                 guard let dvc = storyboard.instantiateViewController(identifier: "SignUpTermsVC") as? SignUpTermsVC else {return}
                 
                 // 카카오 로그인으로 진입 시, 버튼 라벨 (1/5)으로 변경
-                // dvc.nextBtnLabel?.setTitle("다음 (1/5)", for: .normal)
+                SignUpUserInfo.shared.loginMethod = .kakao
                 self.navigationController?.pushViewController(dvc, animated: true)
+                
+                // 토큰 받기 전 임의로 싱글톤에 유저 저장
+                //SignUpUserInfo.shared.kakaoUser =
                 
                 _ = oauthToken
             }
         }
         }
+        // 카카오 로그인을 통해 사용자 토큰을 발급 받은 후 사용자 관리 API 호출
+        UserApi.shared.me() {(user, error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                // 사용자 정보 가져옴
+                print("me() success.")
+                
+                _ = user
+                // 사용자의 성별을 받아 싱글톤에 넣어줌
+                SignUpUserInfo.shared.kakaoUser = user?.kakaoAccount?.gender
+                
+                // 사용자의 정보를 싱글톤으로 선언한 구조체에 넣어주어 어디든 접근 가능하게 함
+                //userMainData.shared.loginUser = user?.kakaoAccount?.profile?.nickname
+            }
+        }
+        
     }
     
     // 애플 로그인 버튼
@@ -209,7 +226,8 @@ extension OnbordingVC : UICollectionViewDelegate, UICollectionViewDataSource, UI
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         definePage(scrollView)
     }
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         definePage(scrollView)
     }
 }
@@ -246,7 +264,8 @@ extension OnbordingVC: ASAuthorizationControllerDelegate, ASAuthorizationControl
             guard let dvc = storyboard.instantiateViewController(identifier: "SignUpTermsVC") as? SignUpTermsVC else {return}
             
             // 애플 로그인으로 진입 시, 버튼 라벨 (1/6)으로 변경
-            // dvc.nextBtnLabel?.setTitle("다음 (1/6)", for: .normal)
+            SignUpUserInfo.shared.loginMethod = .apple
+            
             self.navigationController?.pushViewController(dvc, animated: true)
             
             // 자동로그인을 위해 토근 저장
