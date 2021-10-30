@@ -19,8 +19,9 @@ class OnbordingVC: UIViewController {
     @IBOutlet weak var onboardingCV: UICollectionView!
     @IBOutlet weak var skipBtn: UIButton!
     
-    // Kakao SignIn Api 연동
-    lazy var dataManager: KakaoLoginService = KakaoLoginService()
+    // Kakao, Apple SignIn Api 연동
+    lazy var kakaoDataManager: KakaoLoginService = KakaoLoginService()
+    lazy var appleDataManager: AppleLoginService = AppleLoginService()
     
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
@@ -133,7 +134,7 @@ class OnbordingVC: UIViewController {
                     
                             _ = user
                             // 유저의 정보를 서버에 보냄
-                            dataManager.postKakaoLogin(KakaoLoginRequest(email: userEmail, genderType: userGender.uppercased(), id: userId, nickname: userNickname), delegate: self)
+                            kakaoDataManager.postKakaoLogin(KakaoLoginRequest(email: userEmail, genderType: userGender.uppercased(), id: userId, nickname: userNickname), delegate: self)
                             
                             // 이동
                             self.navigationController?.pushViewController(dvc, animated: true)
@@ -173,7 +174,7 @@ class OnbordingVC: UIViewController {
                         _ = user
                         
                         // 유저의 정보를 서버에 보냄
-                        dataManager.postKakaoLogin(KakaoLoginRequest(email: userEmail, genderType: userGender.uppercased(), id: userId, nickname: userNickname), delegate: self)
+                        kakaoDataManager.postKakaoLogin(KakaoLoginRequest(email: userEmail, genderType: userGender.uppercased(), id: userId, nickname: userNickname), delegate: self)
                         
                         // 이동
                         self.navigationController?.pushViewController(dvc, animated: true)
@@ -254,7 +255,7 @@ extension OnbordingVC: ASAuthorizationControllerDelegate, ASAuthorizationControl
         if let credential = authorization.credential as? ASAuthorizationAppleIDCredential {
             let userIdentifier = credential.user
             let identityToken = credential.identityToken
-            let email = credential.email
+            let email = credential.email ?? ""
             let familyName = credential.fullName?.familyName ?? ""
             let givenName = credential.fullName?.givenName ?? ""
             let fullName = familyName + givenName
@@ -268,11 +269,8 @@ extension OnbordingVC: ASAuthorizationControllerDelegate, ASAuthorizationControl
             //                """
             //            )
             
-            print("애플로그인성공", userIdentifier, email ?? "불러오지못함", fullName)
-            print("identityToken :", identityToken ?? "토큰을 불러오지 못함")
-            print("유저 식별자 : ", userIdentifier)
-            print("이메일 : ", email ?? "이메일을 불러오지 못함")
-            print("이름 : ", fullName)
+            // 서버에게 사용자 정보 전달
+            appleDataManager.postKakaoLogin(AppleLoginRequest(email: email, nickname: fullName), delegate: self)
             
             // 로그인 성공 후 회원가입 루트로 이동
             let storyboard = UIStoryboard.init(name: "SignUpTerms", bundle: nil)
@@ -293,13 +291,20 @@ extension OnbordingVC: ASAuthorizationControllerDelegate, ASAuthorizationControl
     }
 }
 
-// 카카오 api 연결
+// 카카오, 애플 api 연결
 extension OnbordingVC {
     func didSuccessKakaoLogin(result: KakaoLoginResult) {
         print("데이터가 성공적으로 들어왔습니다.")
         print("유저아이디: ", result.accountID, "jwt: ", result.jwt, "oauthID: ", result.oauthID)
     }
+    
+    func didSuccessAppleLogin(result: AppleLoginResult) {
+        print("데이터가 성공적으로 들어왔습니다.")
+        print("유저아이디: ", result.accountID, "jwt: ", result.jwt, "oauthID: ", result.oauthID)
+    }
+    
     func failedToRequest(message: String) {
         print("데이터가 들어오지 않았습니다.")
     }
 }
+

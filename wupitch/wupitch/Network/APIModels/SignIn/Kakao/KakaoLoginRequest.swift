@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import KakaoSDKUser
 
 struct KakaoLoginRequest: Codable {
     var email: String
