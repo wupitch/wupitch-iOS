@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Join CompleteVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="JoinCompleteVC" id="Y6W-OH-hqX" customClass="JoinCompleteVC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9V-2n-kiQ">
+                                <rect key="frame" x="28" y="288" width="320" height="236"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image54" translatesAutoresizingMaskIntoConstraints="NO" id="c1V-yp-XZu">
+                                        <rect key="frame" x="148" y="36" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="DzF-tA-yul"/>
+                                            <constraint firstAttribute="width" constant="24" id="ajP-P7-xLn"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가입 신청이 완료됐습니다! 크루의 수락은 알림을 통해 확인하세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khH-70-Xzq">
+                                        <rect key="frame" x="31.333333333333343" y="80" width="257.33333333333326" height="40.666666666666657"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIw-Ty-pHY">
+                                        <rect key="frame" x="30" y="160" width="260" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="8Bh-dT-ejf"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="확인"/>
+                                        <connections>
+                                            <action selector="touchUpCompleteBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NfT-Qb-e5Z"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="HIw-Ty-pHY" secondAttribute="trailing" constant="30" id="L7X-Q2-n6w"/>
+                                    <constraint firstAttribute="bottom" secondItem="HIw-Ty-pHY" secondAttribute="bottom" constant="28" id="PO1-f2-luh"/>
+                                    <constraint firstItem="khH-70-Xzq" firstAttribute="top" secondItem="c1V-yp-XZu" secondAttribute="bottom" constant="20" id="RBO-pG-ETt"/>
+                                    <constraint firstItem="c1V-yp-XZu" firstAttribute="centerX" secondItem="U9V-2n-kiQ" secondAttribute="centerX" id="UYD-r9-zFI"/>
+                                    <constraint firstItem="c1V-yp-XZu" firstAttribute="top" secondItem="U9V-2n-kiQ" secondAttribute="top" constant="36" id="VjG-aE-FYn"/>
+                                    <constraint firstItem="HIw-Ty-pHY" firstAttribute="leading" secondItem="U9V-2n-kiQ" secondAttribute="leading" constant="30" id="peY-Ke-pim"/>
+                                    <constraint firstItem="khH-70-Xzq" firstAttribute="centerX" secondItem="c1V-yp-XZu" secondAttribute="centerX" id="s2q-8h-Twg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="U9V-2n-kiQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="28" id="AXq-D6-Y2Y"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="U9V-2n-kiQ" secondAttribute="trailing" constant="27" id="ROA-Ov-h8j"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="U9V-2n-kiQ" secondAttribute="bottom" constant="254" id="YTO-s0-Pi8"/>
+                            <constraint firstItem="U9V-2n-kiQ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="244" id="Z5e-oK-4cW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alertView" destination="U9V-2n-kiQ" id="M10-AP-16s"/>
+                        <outlet property="completeBtn" destination="HIw-Ty-pHY" id="wun-DK-BZu"/>
+                        <outlet property="contentLabel" destination="khH-70-Xzq" id="s3d-eT-6dw"/>
+                        <outlet property="iconImageView" destination="c1V-yp-XZu" id="c4s-Tn-6Vh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="77.678571428571431"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="image54" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
