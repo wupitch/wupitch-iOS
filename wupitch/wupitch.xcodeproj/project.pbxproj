@@ -23,6 +23,18 @@
 		DD3A30CA272DA33600D711C6 /* AppleLoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30C9272DA33600D711C6 /* AppleLoginData.swift */; };
 		DD3A30CC272DA37100D711C6 /* AppleLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30CB272DA37100D711C6 /* AppleLoginRequest.swift */; };
 		DD3A30CE272DA3BD00D711C6 /* AppleLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30CD272DA3BD00D711C6 /* AppleLoginService.swift */; };
+		DD3A30D3272DA6E300D711C6 /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3A30D2272DA6E300D711C6 /* Tabbar.storyboard */; };
+		DD3A30D5272DA75400D711C6 /* TabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30D4272DA75400D711C6 /* TabbarVC.swift */; };
+		DD3A30DC272DAB7B00D711C6 /* Crew.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3A30DB272DAB7B00D711C6 /* Crew.storyboard */; };
+		DD3A30DE272DAB9400D711C6 /* CrewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30DD272DAB9400D711C6 /* CrewVC.swift */; };
+		DD3A30E0272DABC000D711C6 /* ImpromptuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30DF272DABC000D711C6 /* ImpromptuVC.swift */; };
+		DD3A30E2272DABCC00D711C6 /* Impromptu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3A30E1272DABCC00D711C6 /* Impromptu.storyboard */; };
+		DD3A30E4272DABE900D711C6 /* MyActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3A30E3272DABE900D711C6 /* MyActivity.storyboard */; };
+		DD3A30E6272DAC0300D711C6 /* MyActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30E5272DAC0300D711C6 /* MyActivityVC.swift */; };
+		DD3A30E8272DAC2000D711C6 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30E7272DAC2000D711C6 /* FeedVC.swift */; };
+		DD3A30EA272DAC2700D711C6 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3A30E9272DAC2700D711C6 /* Feed.storyboard */; };
+		DD3A30EC272DAC3E00D711C6 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3A30EB272DAC3E00D711C6 /* Profile.storyboard */; };
+		DD3A30EE272DAC4F00D711C6 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30ED272DAC4F00D711C6 /* ProfileVC.swift */; };
 		DD3ACBB52720FFC600EBC201 /* TermsOfUse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACBB42720FFC600EBC201 /* TermsOfUse.storyboard */; };
 		DD3ACBB7272104D300EBC201 /* TermsOfUseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACBB6272104D300EBC201 /* TermsOfUseVC.swift */; };
 		DD3ACBB92721073E00EBC201 /* SignUpSports.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACBB82721073E00EBC201 /* SignUpSports.storyboard */; };
@@ -82,6 +94,18 @@
 		DD3A30C9272DA33600D711C6 /* AppleLoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginData.swift; sourceTree = "<group>"; };
 		DD3A30CB272DA37100D711C6 /* AppleLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginRequest.swift; sourceTree = "<group>"; };
 		DD3A30CD272DA3BD00D711C6 /* AppleLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginService.swift; sourceTree = "<group>"; };
+		DD3A30D2272DA6E300D711C6 /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
+		DD3A30D4272DA75400D711C6 /* TabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarVC.swift; sourceTree = "<group>"; };
+		DD3A30DB272DAB7B00D711C6 /* Crew.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Crew.storyboard; sourceTree = "<group>"; };
+		DD3A30DD272DAB9400D711C6 /* CrewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewVC.swift; sourceTree = "<group>"; };
+		DD3A30DF272DABC000D711C6 /* ImpromptuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpromptuVC.swift; sourceTree = "<group>"; };
+		DD3A30E1272DABCC00D711C6 /* Impromptu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Impromptu.storyboard; sourceTree = "<group>"; };
+		DD3A30E3272DABE900D711C6 /* MyActivity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyActivity.storyboard; sourceTree = "<group>"; };
+		DD3A30E5272DAC0300D711C6 /* MyActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyActivityVC.swift; sourceTree = "<group>"; };
+		DD3A30E7272DAC2000D711C6 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		DD3A30E9272DAC2700D711C6 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
+		DD3A30EB272DAC3E00D711C6 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		DD3A30ED272DAC4F00D711C6 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		DD3ACBB42720FFC600EBC201 /* TermsOfUse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsOfUse.storyboard; sourceTree = "<group>"; };
 		DD3ACBB6272104D300EBC201 /* TermsOfUseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseVC.swift; sourceTree = "<group>"; };
 		DD3ACBB82721073E00EBC201 /* SignUpSports.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpSports.storyboard; sourceTree = "<group>"; };
@@ -192,6 +216,12 @@
 		DD295DB4271839C9008CFC64 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				DD3A30DA272DAB1200D711C6 /* Profile */,
+				DD3A30D9272DAB0000D711C6 /* Feed */,
+				DD3A30D8272DAA7E00D711C6 /* MyActivity */,
+				DD3A30D7272DAA4C00D711C6 /* Impromptu */,
+				DD3A30D6272DAA1800D711C6 /* Crew */,
+				DD3A30CF272DA64300D711C6 /* Tabbar */,
 				DDE0EE54272815FD00C46821 /* Alert */,
 				DD2D63AB27268960007CEC57 /* TermsOfUse */,
 				DD2D63A827268910007CEC57 /* Modal */,
@@ -322,6 +352,76 @@
 				DD3A30CB272DA37100D711C6 /* AppleLoginRequest.swift */,
 			);
 			path = Apple;
+			sourceTree = "<group>";
+		};
+		DD3A30CF272DA64300D711C6 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				DD3A30D1272DA6B000D711C6 /* Controllers */,
+				DD3A30D0272DA69E00D711C6 /* Storyboards */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		DD3A30D0272DA69E00D711C6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DD3A30D2272DA6E300D711C6 /* Tabbar.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DD3A30D1272DA6B000D711C6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DD3A30D4272DA75400D711C6 /* TabbarVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DD3A30D6272DAA1800D711C6 /* Crew */ = {
+			isa = PBXGroup;
+			children = (
+				DD3A30DB272DAB7B00D711C6 /* Crew.storyboard */,
+				DD3A30DD272DAB9400D711C6 /* CrewVC.swift */,
+			);
+			path = Crew;
+			sourceTree = "<group>";
+		};
+		DD3A30D7272DAA4C00D711C6 /* Impromptu */ = {
+			isa = PBXGroup;
+			children = (
+				DD3A30DF272DABC000D711C6 /* ImpromptuVC.swift */,
+				DD3A30E1272DABCC00D711C6 /* Impromptu.storyboard */,
+			);
+			path = Impromptu;
+			sourceTree = "<group>";
+		};
+		DD3A30D8272DAA7E00D711C6 /* MyActivity */ = {
+			isa = PBXGroup;
+			children = (
+				DD3A30E3272DABE900D711C6 /* MyActivity.storyboard */,
+				DD3A30E5272DAC0300D711C6 /* MyActivityVC.swift */,
+			);
+			path = MyActivity;
+			sourceTree = "<group>";
+		};
+		DD3A30D9272DAB0000D711C6 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				DD3A30E7272DAC2000D711C6 /* FeedVC.swift */,
+				DD3A30E9272DAC2700D711C6 /* Feed.storyboard */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		DD3A30DA272DAB1200D711C6 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DD3A30EB272DAC3E00D711C6 /* Profile.storyboard */,
+				DD3A30ED272DAC4F00D711C6 /* ProfileVC.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		DDE0EE54272815FD00C46821 /* Alert */ = {
@@ -536,14 +636,20 @@
 				DD295DAC27181E3D008CFC64 /* LaunchScreen.storyboard in Resources */,
 				DDED011F271BD96D00C2C343 /* Onboarding.storyboard in Resources */,
 				DD3ACBC227216D2500EBC201 /* SignUpID.storyboard in Resources */,
+				DD3A30EA272DAC2700D711C6 /* Feed.storyboard in Resources */,
 				DD2D63B027268A1A007CEC57 /* LevelModal.storyboard in Resources */,
+				DD3A30DC272DAB7B00D711C6 /* Crew.storyboard in Resources */,
 				DD295DA927181E3D008CFC64 /* Assets.xcassets in Resources */,
+				DD3A30EC272DAC3E00D711C6 /* Profile.storyboard in Resources */,
 				DD61E4BD271D8EB8007504DE /* SignUpCity.storyboard in Resources */,
 				DDE0EE5C272873EC00C46821 /* SignUpKakaoComplete.storyboard in Resources */,
+				DD3A30D3272DA6E300D711C6 /* Tabbar.storyboard in Resources */,
 				DD3ACBB92721073E00EBC201 /* SignUpSports.storyboard in Resources */,
+				DD3A30E4272DABE900D711C6 /* MyActivity.storyboard in Resources */,
 				DDE0EE6B2729907600C46821 /* SignUpAge.storyboard in Resources */,
 				DDED012B271C0E5300C2C343 /* SignUpTerms.storyboard in Resources */,
 				DD61E4C4271EBAF5007504DE /* LocationPicker.storyboard in Resources */,
+				DD3A30E2272DABCC00D711C6 /* Impromptu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,8 +702,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD3A30E6272DAC0300D711C6 /* MyActivityVC.swift in Sources */,
 				DD61E4BB271D856E007504DE /* UILabel.swift in Sources */,
 				DD3ACBB7272104D300EBC201 /* TermsOfUseVC.swift in Sources */,
+				DD3A30D5272DA75400D711C6 /* TabbarVC.swift in Sources */,
 				DD6728432725563A001E1355 /* UIView.swift in Sources */,
 				DDED00F82719D02900C2C343 /* UIColor.swift in Sources */,
 				DD3A30CA272DA33600D711C6 /* AppleLoginData.swift in Sources */,
@@ -606,18 +714,22 @@
 				DD61E4C6271EBCE6007504DE /* LocationPickerVC.swift in Sources */,
 				DDE0EE672729333300C46821 /* KakaoLoginService.swift in Sources */,
 				DD2D63B227268A34007CEC57 /* LevelModalVC.swift in Sources */,
+				DD3A30E8272DAC2000D711C6 /* FeedVC.swift in Sources */,
 				DD3A30BB2729AB1400D711C6 /* CheckBtn.swift in Sources */,
 				DDED011B271B33F800C2C343 /* OnboardingData.swift in Sources */,
 				DD3A30CC272DA37100D711C6 /* AppleLoginRequest.swift in Sources */,
 				DDED0124271BDCD700C2C343 /* OnbordingCVCell.swift in Sources */,
 				DD3ACBBF2721083700EBC201 /* SignUpProfileVC.swift in Sources */,
+				DD3A30DE272DAB9400D711C6 /* CrewVC.swift in Sources */,
 				DD2D63B42726A8A0007CEC57 /* UITextField.swift in Sources */,
 				DD295DA027181E3B008CFC64 /* AppDelegate.swift in Sources */,
 				DD67283B27244CE3001E1355 /* AgreeVC.swift in Sources */,
 				DD3A30C4272ADF6200D711C6 /* SignUpUserInfo.swift in Sources */,
+				DD3A30EE272DAC4F00D711C6 /* ProfileVC.swift in Sources */,
 				DDE0EE5E2728740400C46821 /* SignUpKakaoCompleteVC.swift in Sources */,
 				DDE0EE5A2728164E00C46821 /* JoinAlertVC.swift in Sources */,
 				DD61E4B9271D7E50007504DE /* SignUpTermsVC.swift in Sources */,
+				DD3A30E0272DABC000D711C6 /* ImpromptuVC.swift in Sources */,
 				DD3ACBC8272170A800EBC201 /* SignUpAppleCompleteVC.swift in Sources */,
 				DD3A30C1272AA94100D711C6 /* ModalSportsBtn.swift in Sources */,
 				DDED0121271BD98400C2C343 /* OnbordingVC.swift in Sources */,
