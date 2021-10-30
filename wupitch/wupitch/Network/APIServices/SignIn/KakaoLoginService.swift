@@ -8,13 +8,17 @@
 import Foundation
 import Alamofire
 
-class KakaoLoginService {
+struct KakaoLoginService {
+    static let shared = KakaoLoginService()
     
-    func getKakaoLogin(delegate: OnbordingVC) {
+    let url = "https://prod.wupitch.site/app/account/kakao"
+    
+    func postKakaoLogin(_ parameters: KakaoLoginRequest, delegate: OnbordingVC) {
         
-        let url = "https://kauth.kakao.com/oauth/authorize?client_id=9adf7b0734541aa03e830d55e6ac785b&redirect_uri=https://prod.wupitch.site/app/account/kakao/callback&response_type=code"
-        
-        AF.request(url, method: .get, encoding: JSONEncoding.default, headers: [ "Content-Type":"application/json"])
+        AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: ["Content-Type":"application/json"])
+//                    .responseString(completionHandler: { response in
+//                        print("response",response.result)
+//                                        }
             .responseDecodable(of: KakaoLoginData.self, emptyResponseCodes: [200, 204, 205]) { response in
                 print("response",response)
                 switch response.result {
@@ -28,5 +32,6 @@ class KakaoLoginService {
                     delegate.failedToRequest(message: "오류가났습니다.")
                 }
             }
+       // )
     }
 }

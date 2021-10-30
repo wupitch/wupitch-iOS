@@ -19,6 +19,7 @@
 		DD3A30BF272A821A00D711C6 /* SportsBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30BE272A821A00D711C6 /* SportsBtn.swift */; };
 		DD3A30C1272AA94100D711C6 /* ModalSportsBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30C0272AA94100D711C6 /* ModalSportsBtn.swift */; };
 		DD3A30C4272ADF6200D711C6 /* SignUpUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30C3272ADF6200D711C6 /* SignUpUserInfo.swift */; };
+		DD3A30C6272D1E1400D711C6 /* KakaoLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30C5272D1E1400D711C6 /* KakaoLoginRequest.swift */; };
 		DD3ACBB52720FFC600EBC201 /* TermsOfUse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACBB42720FFC600EBC201 /* TermsOfUse.storyboard */; };
 		DD3ACBB7272104D300EBC201 /* TermsOfUseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACBB6272104D300EBC201 /* TermsOfUseVC.swift */; };
 		DD3ACBB92721073E00EBC201 /* SignUpSports.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACBB82721073E00EBC201 /* SignUpSports.storyboard */; };
@@ -74,6 +75,7 @@
 		DD3A30BE272A821A00D711C6 /* SportsBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsBtn.swift; sourceTree = "<group>"; };
 		DD3A30C0272AA94100D711C6 /* ModalSportsBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSportsBtn.swift; sourceTree = "<group>"; };
 		DD3A30C3272ADF6200D711C6 /* SignUpUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUserInfo.swift; sourceTree = "<group>"; };
+		DD3A30C5272D1E1400D711C6 /* KakaoLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginRequest.swift; sourceTree = "<group>"; };
 		DD3ACBB42720FFC600EBC201 /* TermsOfUse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsOfUse.storyboard; sourceTree = "<group>"; };
 		DD3ACBB6272104D300EBC201 /* TermsOfUseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseVC.swift; sourceTree = "<group>"; };
 		DD3ACBB82721073E00EBC201 /* SignUpSports.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpSports.storyboard; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				DDE0EE682729335000C46821 /* KakaoLoginData.swift */,
+				DD3A30C5272D1E1400D711C6 /* KakaoLoginRequest.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				DD61E4C2271EB81D007504DE /* Adjusted.swift in Sources */,
 				DDE0EE692729335000C46821 /* KakaoLoginData.swift in Sources */,
 				DD295DA227181E3B008CFC64 /* SceneDelegate.swift in Sources */,
+				DD3A30C6272D1E1400D711C6 /* KakaoLoginRequest.swift in Sources */,
 				DD6728352723E582001E1355 /* LocationPickerData.swift in Sources */,
 				DD3ACBC427216D4400EBC201 /* SignUpIDVC.swift in Sources */,
 				DDE0EE6D2729908B00C46821 /* SignUpAgeVC.swift in Sources */,

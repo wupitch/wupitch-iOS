@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - KakaoLoginData
-struct KakaoLoginData: Decodable {
+struct KakaoLoginData: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String
@@ -16,7 +16,7 @@ struct KakaoLoginData: Decodable {
 }
 
 // MARK: - KakaoLoginResult
-struct KakaoLoginResult: Decodable {
+struct KakaoLoginResult: Codable {
     let accountID: Int
     let jwt, oauthID: String
 
@@ -26,4 +26,3 @@ struct KakaoLoginResult: Decodable {
         case oauthID = "oauthId"
     }
 }
-
