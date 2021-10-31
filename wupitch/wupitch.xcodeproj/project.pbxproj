@@ -30,8 +30,8 @@
 		DD3A30D5272DA75400D711C6 /* TabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30D4272DA75400D711C6 /* TabbarVC.swift */; };
 		DD3A30DC272DAB7B00D711C6 /* Crew.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3A30DB272DAB7B00D711C6 /* Crew.storyboard */; };
 		DD3A30DE272DAB9400D711C6 /* CrewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30DD272DAB9400D711C6 /* CrewVC.swift */; };
-		DD3A30E0272DABC000D711C6 /* ImpromptuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30DF272DABC000D711C6 /* ImpromptuVC.swift */; };
-		DD3A30E2272DABCC00D711C6 /* Impromptu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3A30E1272DABCC00D711C6 /* Impromptu.storyboard */; };
+		DD3A30E0272DABC000D711C6 /* BungaeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30DF272DABC000D711C6 /* BungaeVC.swift */; };
+		DD3A30E2272DABCC00D711C6 /* Bungae.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3A30E1272DABCC00D711C6 /* Bungae.storyboard */; };
 		DD3A30E4272DABE900D711C6 /* MyActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3A30E3272DABE900D711C6 /* MyActivity.storyboard */; };
 		DD3A30E6272DAC0300D711C6 /* MyActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30E5272DAC0300D711C6 /* MyActivityVC.swift */; };
 		DD3A30E8272DAC2000D711C6 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30E7272DAC2000D711C6 /* FeedVC.swift */; };
@@ -111,8 +111,8 @@
 		DD3A30D4272DA75400D711C6 /* TabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarVC.swift; sourceTree = "<group>"; };
 		DD3A30DB272DAB7B00D711C6 /* Crew.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Crew.storyboard; sourceTree = "<group>"; };
 		DD3A30DD272DAB9400D711C6 /* CrewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewVC.swift; sourceTree = "<group>"; };
-		DD3A30DF272DABC000D711C6 /* ImpromptuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpromptuVC.swift; sourceTree = "<group>"; };
-		DD3A30E1272DABCC00D711C6 /* Impromptu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Impromptu.storyboard; sourceTree = "<group>"; };
+		DD3A30DF272DABC000D711C6 /* BungaeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeVC.swift; sourceTree = "<group>"; };
+		DD3A30E1272DABCC00D711C6 /* Bungae.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bungae.storyboard; sourceTree = "<group>"; };
 		DD3A30E3272DABE900D711C6 /* MyActivity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyActivity.storyboard; sourceTree = "<group>"; };
 		DD3A30E5272DAC0300D711C6 /* MyActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyActivityVC.swift; sourceTree = "<group>"; };
 		DD3A30E7272DAC2000D711C6 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
@@ -239,7 +239,7 @@
 				DD3A30DA272DAB1200D711C6 /* Profile */,
 				DD3A30D9272DAB0000D711C6 /* Feed */,
 				DD3A30D8272DAA7E00D711C6 /* MyActivity */,
-				DD3A30D7272DAA4C00D711C6 /* Impromptu */,
+				DD3A30D7272DAA4C00D711C6 /* Bungae */,
 				DD3A30D6272DAA1800D711C6 /* Crew */,
 				DD3A30CF272DA64300D711C6 /* Tabbar */,
 				DDE0EE54272815FD00C46821 /* Alert */,
@@ -410,13 +410,13 @@
 			path = Crew;
 			sourceTree = "<group>";
 		};
-		DD3A30D7272DAA4C00D711C6 /* Impromptu */ = {
+		DD3A30D7272DAA4C00D711C6 /* Bungae */ = {
 			isa = PBXGroup;
 			children = (
-				DD3A30DF272DABC000D711C6 /* ImpromptuVC.swift */,
-				DD3A30E1272DABCC00D711C6 /* Impromptu.storyboard */,
+				DD3A30DF272DABC000D711C6 /* BungaeVC.swift */,
+				DD3A30E1272DABCC00D711C6 /* Bungae.storyboard */,
 			);
-			path = Impromptu;
+			path = Bungae;
 			sourceTree = "<group>";
 		};
 		DD3A30D8272DAA7E00D711C6 /* MyActivity */ = {
@@ -684,7 +684,7 @@
 				DDED012B271C0E5300C2C343 /* SignUpTerms.storyboard in Resources */,
 				DD61E4C4271EBAF5007504DE /* LocationPicker.storyboard in Resources */,
 				DD3A30F8272E7C4800D711C6 /* CrewApplication.storyboard in Resources */,
-				DD3A30E2272DABCC00D711C6 /* Impromptu.storyboard in Resources */,
+				DD3A30E2272DABCC00D711C6 /* Bungae.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,7 +768,7 @@
 				DDE0EE5E2728740400C46821 /* SignUpKakaoCompleteVC.swift in Sources */,
 				DDE0EE5A2728164E00C46821 /* JoinAlertVC.swift in Sources */,
 				DD61E4B9271D7E50007504DE /* SignUpTermsVC.swift in Sources */,
-				DD3A30E0272DABC000D711C6 /* ImpromptuVC.swift in Sources */,
+				DD3A30E0272DABC000D711C6 /* BungaeVC.swift in Sources */,
 				DD3ACBC8272170A800EBC201 /* SignUpAppleCompleteVC.swift in Sources */,
 				DD3A30C1272AA94100D711C6 /* ModalSportsBtn.swift in Sources */,
 				DDED0121271BD98400C2C343 /* OnbordingVC.swift in Sources */,
