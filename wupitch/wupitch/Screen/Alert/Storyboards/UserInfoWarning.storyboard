@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--User Info WarningVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="UserInfoWarningVC" id="Y6W-OH-hqX" customClass="UserInfoWarningVC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ar-OW-GRM">
+                                <rect key="frame" x="47" y="314" width="320" height="268"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xI8-jR-c8h">
+                                        <rect key="frame" x="284" y="16" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="QRw-p5-Qq0"/>
+                                            <constraint firstAttribute="width" constant="24" id="nw9-QH-Nfb"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="" image="close"/>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sadIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mUt-Xq-Y9W">
+                                        <rect key="frame" x="148" y="36" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="G5O-Qb-LlH"/>
+                                            <constraint firstAttribute="height" constant="24" id="iLL-Dk-yTv"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="잠깐만요! 프로필 정보가 부족해요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgQ-e9-MCO">
+                                        <rect key="frame" x="45.5" y="80" width="229" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GE5-dI-qJH">
+                                        <rect key="frame" x="30" y="192" width="260" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="bNU-aU-FuP"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="프로필 작성하러 가기"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmt-BS-wXd">
+                                        <rect key="frame" x="58" y="109" width="204.5" height="41"/>
+                                        <string key="text">모든 프로필 정보가 기입되어야
+크루에 신청할 수 있습니다.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="GE5-dI-qJH" secondAttribute="trailing" constant="30" id="2mn-zg-bqn"/>
+                                    <constraint firstAttribute="width" constant="320" id="B37-qr-B35"/>
+                                    <constraint firstAttribute="height" constant="268" id="GQZ-bF-ge1"/>
+                                    <constraint firstItem="dmt-BS-wXd" firstAttribute="centerX" secondItem="VgQ-e9-MCO" secondAttribute="centerX" id="HjU-EQ-quM"/>
+                                    <constraint firstItem="mUt-Xq-Y9W" firstAttribute="top" secondItem="5ar-OW-GRM" secondAttribute="top" constant="36" id="U74-xH-suP"/>
+                                    <constraint firstItem="VgQ-e9-MCO" firstAttribute="centerX" secondItem="mUt-Xq-Y9W" secondAttribute="centerX" id="XS4-8h-urw"/>
+                                    <constraint firstAttribute="trailing" secondItem="xI8-jR-c8h" secondAttribute="trailing" constant="12" id="YQt-vO-t09"/>
+                                    <constraint firstItem="mUt-Xq-Y9W" firstAttribute="centerX" secondItem="5ar-OW-GRM" secondAttribute="centerX" id="bhk-BO-eUO"/>
+                                    <constraint firstAttribute="bottom" secondItem="GE5-dI-qJH" secondAttribute="bottom" constant="28" id="h9k-Lc-uMH"/>
+                                    <constraint firstItem="GE5-dI-qJH" firstAttribute="leading" secondItem="5ar-OW-GRM" secondAttribute="leading" constant="30" id="m2M-Bb-ucd"/>
+                                    <constraint firstItem="xI8-jR-c8h" firstAttribute="top" secondItem="5ar-OW-GRM" secondAttribute="top" constant="16" id="oQV-XV-iBB"/>
+                                    <constraint firstItem="VgQ-e9-MCO" firstAttribute="top" secondItem="mUt-Xq-Y9W" secondAttribute="bottom" constant="20" id="orz-XP-3rJ"/>
+                                    <constraint firstItem="dmt-BS-wXd" firstAttribute="top" secondItem="VgQ-e9-MCO" secondAttribute="bottom" constant="8" id="plf-p6-fHO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="5ar-OW-GRM" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="A8M-rE-88r"/>
+                            <constraint firstItem="5ar-OW-GRM" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="no2-rm-wUS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alertView" destination="5ar-OW-GRM" id="y5i-q8-Llu"/>
+                        <outlet property="cancelBtn" destination="xI8-jR-c8h" id="Cup-IO-gdf"/>
+                        <outlet property="completeBtn" destination="GE5-dI-qJH" id="aGc-WG-Xw0"/>
+                        <outlet property="contentLabel" destination="VgQ-e9-MCO" id="AgM-q1-Rr4"/>
+                        <outlet property="contentSubLabel" destination="dmt-BS-wXd" id="6Tp-Z4-dNy"/>
+                        <outlet property="iconImageView" destination="mUt-Xq-Y9W" id="ENQ-XP-5Ld"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="77.678571428571431"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close" width="24" height="24"/>
+        <image name="sadIcon" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
