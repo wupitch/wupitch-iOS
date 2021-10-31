@@ -15,6 +15,8 @@
 		DD2D63B027268A1A007CEC57 /* LevelModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD2D63AF27268A1A007CEC57 /* LevelModal.storyboard */; };
 		DD2D63B227268A34007CEC57 /* LevelModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D63B127268A34007CEC57 /* LevelModalVC.swift */; };
 		DD2D63B42726A8A0007CEC57 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D63B32726A8A0007CEC57 /* UITextField.swift */; };
+		DD342207272ED4EB005DF6CA /* GuestComplete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD342206272ED4EB005DF6CA /* GuestComplete.storyboard */; };
+		DD342209272ED504005DF6CA /* GuestCompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD342208272ED504005DF6CA /* GuestCompleteVC.swift */; };
 		DD3A30BB2729AB1400D711C6 /* CheckBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30BA2729AB1400D711C6 /* CheckBtn.swift */; };
 		DD3A30BF272A821A00D711C6 /* SportsBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30BE272A821A00D711C6 /* SportsBtn.swift */; };
 		DD3A30C1272AA94100D711C6 /* ModalSportsBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30C0272AA94100D711C6 /* ModalSportsBtn.swift */; };
@@ -92,6 +94,8 @@
 		DD2D63AF27268A1A007CEC57 /* LevelModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LevelModal.storyboard; sourceTree = "<group>"; };
 		DD2D63B127268A34007CEC57 /* LevelModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModalVC.swift; sourceTree = "<group>"; };
 		DD2D63B32726A8A0007CEC57 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		DD342206272ED4EB005DF6CA /* GuestComplete.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GuestComplete.storyboard; sourceTree = "<group>"; };
+		DD342208272ED504005DF6CA /* GuestCompleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCompleteVC.swift; sourceTree = "<group>"; };
 		DD3A30BA2729AB1400D711C6 /* CheckBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBtn.swift; sourceTree = "<group>"; };
 		DD3A30BE272A821A00D711C6 /* SportsBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsBtn.swift; sourceTree = "<group>"; };
 		DD3A30C0272AA94100D711C6 /* ModalSportsBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSportsBtn.swift; sourceTree = "<group>"; };
@@ -453,6 +457,7 @@
 				DDE0EE572728163900C46821 /* JoinAlert.storyboard */,
 				DD3A30EF272DB02900D711C6 /* JoinComplete.storyboard */,
 				DD3A30F3272E61EB00D711C6 /* AddCrew.storyboard */,
+				DD342206272ED4EB005DF6CA /* GuestComplete.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 				DDE0EE592728164E00C46821 /* JoinAlertVC.swift */,
 				DD3A30F1272DB07500D711C6 /* JoinCompleteVC.swift */,
 				DD3A30F5272E620B00D711C6 /* AddCrewVC.swift */,
+				DD342208272ED504005DF6CA /* GuestCompleteVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -660,6 +666,7 @@
 				DD295DA927181E3D008CFC64 /* Assets.xcassets in Resources */,
 				DD3A30F0272DB02900D711C6 /* JoinComplete.storyboard in Resources */,
 				DD3A30EC272DAC3E00D711C6 /* Profile.storyboard in Resources */,
+				DD342207272ED4EB005DF6CA /* GuestComplete.storyboard in Resources */,
 				DD61E4BD271D8EB8007504DE /* SignUpCity.storyboard in Resources */,
 				DDE0EE5C272873EC00C46821 /* SignUpKakaoComplete.storyboard in Resources */,
 				DD3A30D3272DA6E300D711C6 /* Tabbar.storyboard in Resources */,
@@ -759,6 +766,7 @@
 				DDED0121271BD98400C2C343 /* OnbordingVC.swift in Sources */,
 				DD3A30BF272A821A00D711C6 /* SportsBtn.swift in Sources */,
 				DD61E4C2271EB81D007504DE /* Adjusted.swift in Sources */,
+				DD342209272ED504005DF6CA /* GuestCompleteVC.swift in Sources */,
 				DDE0EE692729335000C46821 /* KakaoLoginData.swift in Sources */,
 				DD295DA227181E3B008CFC64 /* SceneDelegate.swift in Sources */,
 				DD3A30C6272D1E1400D711C6 /* KakaoLoginRequest.swift in Sources */,

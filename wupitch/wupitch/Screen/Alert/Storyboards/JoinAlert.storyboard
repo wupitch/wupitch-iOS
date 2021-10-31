@@ -32,7 +32,7 @@
                                             <action selector="touchUpCancelBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="iAO-VN-F8d"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image54" translatesAutoresizingMaskIntoConstraints="NO" id="u2Q-NT-hbR">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warning" translatesAutoresizingMaskIntoConstraints="NO" id="u2Q-NT-hbR">
                                         <rect key="frame" x="134" y="36" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="IAo-PA-RWj"/>
@@ -134,7 +134,7 @@
     </scenes>
     <resources>
         <image name="close" width="24" height="24"/>
-        <image name="image54" width="24" height="24"/>
+        <image name="warning" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

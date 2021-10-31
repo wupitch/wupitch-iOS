@@ -1,19 +1,19 @@
 {
   "images" : [
     {
-      "scale" : "1x",
       "idiom" : "universal",
-      "filename" : "radio.png"
+      "filename" : "bungae.png",
+      "scale" : "1x"
     },
     {
-      "filename" : "radio@2x.png",
       "idiom" : "universal",
+      "filename" : "bungae@2x.png",
       "scale" : "2x"
     },
     {
-      "filename" : "radio@3x.png",
-      "scale" : "3x",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "bungae@3x.png",
+      "scale" : "3x"
     }
   ],
   "info" : {

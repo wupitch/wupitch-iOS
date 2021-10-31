@@ -97,23 +97,26 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bn7-oH-igO">
-                                        <rect key="frame" x="53" y="256" width="141" height="68"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bn7-oH-igO">
+                                        <rect key="frame" x="53" y="256" width="149" height="88"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="HGY-rw-S7z">
-                                                <rect key="frame" x="0.0" y="0.0" width="141" height="16"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="149" height="24"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3U7-Ix-vpU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="16" id="3Hi-dC-ijW"/>
-                                                            <constraint firstAttribute="width" constant="16" id="n0S-8F-98s"/>
+                                                            <constraint firstAttribute="height" constant="24" id="3Hi-dC-ijW"/>
+                                                            <constraint firstAttribute="width" constant="24" id="n0S-8F-98s"/>
                                                         </constraints>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="" image="circlebadge" catalog="system"/>
+                                                        <state key="normal" title="" image="grayRadio"/>
+                                                        <connections>
+                                                            <action selector="touchUpFirstCircleBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="O9I-Bv-vAO"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21.00.00 수요일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRL-0U-nKc">
-                                                        <rect key="frame" x="27" y="0.0" width="114" height="16"/>
+                                                        <rect key="frame" x="35" y="0.0" width="114" height="24"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -121,19 +124,22 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="GiZ-4a-1R6">
-                                                <rect key="frame" x="0.0" y="26" width="141" height="16"/>
+                                                <rect key="frame" x="0.0" y="32" width="149" height="24"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5T-as-ob2">
-                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="16" id="Q7F-to-jZl"/>
-                                                            <constraint firstAttribute="width" constant="16" id="YBW-2w-U1V"/>
+                                                            <constraint firstAttribute="height" constant="24" id="Q7F-to-jZl"/>
+                                                            <constraint firstAttribute="width" constant="24" id="YBW-2w-U1V"/>
                                                         </constraints>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="" image="circlebadge" catalog="system"/>
+                                                        <state key="normal" title="" image="grayRadio"/>
+                                                        <connections>
+                                                            <action selector="touchUpSecondCircleBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="OTr-Ps-hPp"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21.00.00 수요일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ass-bh-Bc5">
-                                                        <rect key="frame" x="27" y="0.0" width="114" height="16"/>
+                                                        <rect key="frame" x="35" y="0.0" width="114" height="24"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -141,19 +147,22 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="m22-0e-yZl">
-                                                <rect key="frame" x="0.0" y="52" width="141" height="16"/>
+                                                <rect key="frame" x="0.0" y="64" width="149" height="24"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jdg-i5-7gq">
-                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="16" id="tQd-3l-qss"/>
-                                                            <constraint firstAttribute="width" constant="16" id="xD1-QJ-iVS"/>
+                                                            <constraint firstAttribute="height" constant="24" id="tQd-3l-qss"/>
+                                                            <constraint firstAttribute="width" constant="24" id="xD1-QJ-iVS"/>
                                                         </constraints>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="" image="circlebadge" catalog="system"/>
+                                                        <state key="normal" title="" image="grayRadio"/>
+                                                        <connections>
+                                                            <action selector="touchUpThirdCircleBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="c40-mi-KGA"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21.00.00 수요일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqT-5H-xC3">
-                                                        <rect key="frame" x="27" y="0.0" width="114" height="16"/>
+                                                        <rect key="frame" x="35" y="0.0" width="114" height="24"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -226,8 +235,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="circlebadge" catalog="system" width="128" height="120"/>
         <image name="close" width="24" height="24"/>
+        <image name="grayRadio" width="24" height="24"/>
         <image name="no1" width="23" height="23"/>
         <image name="no2" width="23" height="23"/>
         <image name="no3" width="23" height="23"/>

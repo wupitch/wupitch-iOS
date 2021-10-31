@@ -39,7 +39,7 @@
                                             <constraint firstAttribute="width" constant="24" id="dwH-3O-ehV"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="image54"/>
+                                        <state key="normal" image="completeCheck"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="크루 등록방법에 대해 알려드려요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxw-wF-mJB">
                                         <rect key="frame" x="48" y="80" width="224" height="21"/>
@@ -204,10 +204,10 @@
     </scenes>
     <resources>
         <image name="close" width="24" height="24"/>
+        <image name="completeCheck" width="24" height="24"/>
         <image name="firstBtn" width="23" height="23"/>
         <image name="frame16" width="23" height="23"/>
         <image name="frame17" width="23" height="23"/>
-        <image name="image54" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -68,12 +68,18 @@ class CrewApplicationVC: UIViewController {
         btnsDateLabel[2].font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         btnsDateLabel[2].setTextWithLineHeight(text: btnsDateLabel[2].text, lineHeight: 22.adjusted)
         btnsDateLabel[2].textColor = .bk
-        
-        circleBtns[0].tintColor = .gray03
-        circleBtns[1].tintColor = .gray03
-        circleBtns[2].tintColor = .gray03
-        
-        
     }
-   
+    
+    @IBAction func touchUpFirstCircleBtn(_ sender: Any) {
+        circleBtns[0].setImage(UIImage(named: "radio"), for: .normal)
+    }
+    
+    @IBAction func touchUpSecondCircleBtn(_ sender: Any) {
+        circleBtns[1].setImage(UIImage(named: "radio"), for: .normal)
+    }
+    
+    @IBAction func touchUpThirdCircleBtn(_ sender: Any) {
+        circleBtns[2].setImage(UIImage(named: "radio"), for: .normal)
+    }
+    
 }

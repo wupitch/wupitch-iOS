@@ -1,19 +1,19 @@
 {
   "images" : [
     {
-      "scale" : "1x",
       "idiom" : "universal",
-      "filename" : "radio.png"
+      "filename" : "image54.png",
+      "scale" : "1x"
     },
     {
-      "filename" : "radio@2x.png",
       "idiom" : "universal",
+      "filename" : "image54@2x.png",
       "scale" : "2x"
     },
     {
-      "filename" : "radio@3x.png",
+      "idiom" : "universal",
       "scale" : "3x",
-      "idiom" : "universal"
+      "filename" : "image54@3x.png"
     }
   ],
   "info" : {
