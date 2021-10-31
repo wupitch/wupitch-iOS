@@ -39,6 +39,8 @@
 		DD3A30F2272DB07500D711C6 /* JoinCompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30F1272DB07500D711C6 /* JoinCompleteVC.swift */; };
 		DD3A30F4272E61EB00D711C6 /* AddCrew.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3A30F3272E61EB00D711C6 /* AddCrew.storyboard */; };
 		DD3A30F6272E620B00D711C6 /* AddCrewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30F5272E620B00D711C6 /* AddCrewVC.swift */; };
+		DD3A30F8272E7C4800D711C6 /* CrewApplication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3A30F7272E7C4800D711C6 /* CrewApplication.storyboard */; };
+		DD3A30FA272E7C5F00D711C6 /* CrewApplicationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A30F9272E7C5F00D711C6 /* CrewApplicationVC.swift */; };
 		DD3ACBB52720FFC600EBC201 /* TermsOfUse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACBB42720FFC600EBC201 /* TermsOfUse.storyboard */; };
 		DD3ACBB7272104D300EBC201 /* TermsOfUseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACBB6272104D300EBC201 /* TermsOfUseVC.swift */; };
 		DD3ACBB92721073E00EBC201 /* SignUpSports.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACBB82721073E00EBC201 /* SignUpSports.storyboard */; };
@@ -114,6 +116,8 @@
 		DD3A30F1272DB07500D711C6 /* JoinCompleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinCompleteVC.swift; sourceTree = "<group>"; };
 		DD3A30F3272E61EB00D711C6 /* AddCrew.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddCrew.storyboard; sourceTree = "<group>"; };
 		DD3A30F5272E620B00D711C6 /* AddCrewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCrewVC.swift; sourceTree = "<group>"; };
+		DD3A30F7272E7C4800D711C6 /* CrewApplication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CrewApplication.storyboard; sourceTree = "<group>"; };
+		DD3A30F9272E7C5F00D711C6 /* CrewApplicationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewApplicationVC.swift; sourceTree = "<group>"; };
 		DD3ACBB42720FFC600EBC201 /* TermsOfUse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsOfUse.storyboard; sourceTree = "<group>"; };
 		DD3ACBB6272104D300EBC201 /* TermsOfUseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseVC.swift; sourceTree = "<group>"; };
 		DD3ACBB82721073E00EBC201 /* SignUpSports.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpSports.storyboard; sourceTree = "<group>"; };
@@ -287,6 +291,7 @@
 			children = (
 				DD61E4C3271EBAF5007504DE /* LocationPicker.storyboard */,
 				DD2D63AF27268A1A007CEC57 /* LevelModal.storyboard */,
+				DD3A30F7272E7C4800D711C6 /* CrewApplication.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 			children = (
 				DD61E4C5271EBCE6007504DE /* LocationPickerVC.swift */,
 				DD2D63B127268A34007CEC57 /* LevelModalVC.swift */,
+				DD3A30F9272E7C5F00D711C6 /* CrewApplicationVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -663,6 +669,7 @@
 				DDE0EE6B2729907600C46821 /* SignUpAge.storyboard in Resources */,
 				DDED012B271C0E5300C2C343 /* SignUpTerms.storyboard in Resources */,
 				DD61E4C4271EBAF5007504DE /* LocationPicker.storyboard in Resources */,
+				DD3A30F8272E7C4800D711C6 /* CrewApplication.storyboard in Resources */,
 				DD3A30E2272DABCC00D711C6 /* Impromptu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -736,6 +743,7 @@
 				DDED0124271BDCD700C2C343 /* OnbordingCVCell.swift in Sources */,
 				DD3A30F2272DB07500D711C6 /* JoinCompleteVC.swift in Sources */,
 				DD3ACBBF2721083700EBC201 /* SignUpProfileVC.swift in Sources */,
+				DD3A30FA272E7C5F00D711C6 /* CrewApplicationVC.swift in Sources */,
 				DD3A30DE272DAB9400D711C6 /* CrewVC.swift in Sources */,
 				DD2D63B42726A8A0007CEC57 /* UITextField.swift in Sources */,
 				DD295DA027181E3B008CFC64 /* AppDelegate.swift in Sources */,
