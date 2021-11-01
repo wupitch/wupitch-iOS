@@ -55,6 +55,8 @@
 		DD3ACBC62721709200EBC201 /* SignUpAppleComplete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACBC52721709100EBC201 /* SignUpAppleComplete.storyboard */; };
 		DD3ACBC8272170A800EBC201 /* SignUpAppleCompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACBC7272170A800EBC201 /* SignUpAppleCompleteVC.swift */; };
 		DD3E37B6272F432A00C4192E /* UserInfoWarningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E37B5272F432A00C4192E /* UserInfoWarningVC.swift */; };
+		DD3E37C6272F928E00C4192E /* CrewCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E37C4272F928E00C4192E /* CrewCVCell.swift */; };
+		DD3E37C7272F928E00C4192E /* CrewCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD3E37C5272F928E00C4192E /* CrewCVCell.xib */; };
 		DD61E4B9271D7E50007504DE /* SignUpTermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */; };
 		DD61E4BB271D856E007504DE /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4BA271D856E007504DE /* UILabel.swift */; };
 		DD61E4BD271D8EB8007504DE /* SignUpCity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */; };
@@ -137,6 +139,8 @@
 		DD3ACBC7272170A800EBC201 /* SignUpAppleCompleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAppleCompleteVC.swift; sourceTree = "<group>"; };
 		DD3ACBCF2721A8AE00EBC201 /* wupitch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wupitch.entitlements; sourceTree = "<group>"; };
 		DD3E37B5272F432A00C4192E /* UserInfoWarningVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoWarningVC.swift; sourceTree = "<group>"; };
+		DD3E37C4272F928E00C4192E /* CrewCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewCVCell.swift; sourceTree = "<group>"; };
+		DD3E37C5272F928E00C4192E /* CrewCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrewCVCell.xib; sourceTree = "<group>"; };
 		DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTermsVC.swift; sourceTree = "<group>"; };
 		DD61E4BA271D856E007504DE /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpCity.storyboard; sourceTree = "<group>"; };
@@ -236,17 +240,17 @@
 		DD295DB4271839C9008CFC64 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				DD3A30DA272DAB1200D711C6 /* Profile */,
-				DD3A30D9272DAB0000D711C6 /* Feed */,
-				DD3A30D8272DAA7E00D711C6 /* MyActivity */,
-				DD3A30D7272DAA4C00D711C6 /* Bungae */,
-				DD3A30D6272DAA1800D711C6 /* Crew */,
-				DD3A30CF272DA64300D711C6 /* Tabbar */,
-				DDE0EE54272815FD00C46821 /* Alert */,
-				DD2D63A827268910007CEC57 /* Modal */,
-				DD2D63AB27268960007CEC57 /* TermsOfUse */,
-				DDED0126271C0DD600C2C343 /* SignUp */,
 				DDED00F52719CB4200C2C343 /* Onboarding */,
+				DDED0126271C0DD600C2C343 /* SignUp */,
+				DD3A30CF272DA64300D711C6 /* Tabbar */,
+				DD3A30D6272DAA1800D711C6 /* Crew */,
+				DD3A30D7272DAA4C00D711C6 /* Bungae */,
+				DD3A30D8272DAA7E00D711C6 /* MyActivity */,
+				DD3A30D9272DAB0000D711C6 /* Feed */,
+				DD3A30DA272DAB1200D711C6 /* Profile */,
+				DDE0EE54272815FD00C46821 /* PopupAlert */,
+				DD2D63A827268910007CEC57 /* BottomSheet */,
+				DD2D63AB27268960007CEC57 /* TermsOfUse */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -285,13 +289,13 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		DD2D63A827268910007CEC57 /* Modal */ = {
+		DD2D63A827268910007CEC57 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
 				DD2D63AA27268934007CEC57 /* Controllers */,
 				DD2D63A927268924007CEC57 /* Storyboards */,
 			);
-			path = Modal;
+			path = BottomSheet;
 			sourceTree = "<group>";
 		};
 		DD2D63A927268924007CEC57 /* Storyboards */ = {
@@ -404,8 +408,9 @@
 		DD3A30D6272DAA1800D711C6 /* Crew */ = {
 			isa = PBXGroup;
 			children = (
-				DD3A30DB272DAB7B00D711C6 /* Crew.storyboard */,
-				DD3A30DD272DAB9400D711C6 /* CrewVC.swift */,
+				DD3E37C1272F924300C4192E /* Cells */,
+				DD3E37B8272F49BD00C4192E /* Controllers */,
+				DD3E37B7272F49B300C4192E /* Storyboards */,
 			);
 			path = Crew;
 			sourceTree = "<group>";
@@ -413,8 +418,8 @@
 		DD3A30D7272DAA4C00D711C6 /* Bungae */ = {
 			isa = PBXGroup;
 			children = (
-				DD3A30DF272DABC000D711C6 /* BungaeVC.swift */,
-				DD3A30E1272DABCC00D711C6 /* Bungae.storyboard */,
+				DD3E37BA272F49F100C4192E /* Controllers */,
+				DD3E37B9272F49E300C4192E /* Storyboards */,
 			);
 			path = Bungae;
 			sourceTree = "<group>";
@@ -422,8 +427,8 @@
 		DD3A30D8272DAA7E00D711C6 /* MyActivity */ = {
 			isa = PBXGroup;
 			children = (
-				DD3A30E3272DABE900D711C6 /* MyActivity.storyboard */,
-				DD3A30E5272DAC0300D711C6 /* MyActivityVC.swift */,
+				DD3E37BC272F4A1500C4192E /* Controllers */,
+				DD3E37BB272F4A0D00C4192E /* Storyboards */,
 			);
 			path = MyActivity;
 			sourceTree = "<group>";
@@ -431,8 +436,8 @@
 		DD3A30D9272DAB0000D711C6 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				DD3A30E7272DAC2000D711C6 /* FeedVC.swift */,
-				DD3A30E9272DAC2700D711C6 /* Feed.storyboard */,
+				DD3E37BE272F4A3000C4192E /* Controllers */,
+				DD3E37BD272F4A2800C4192E /* Storyboards */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -440,19 +445,108 @@
 		DD3A30DA272DAB1200D711C6 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				DD3A30EB272DAC3E00D711C6 /* Profile.storyboard */,
-				DD3A30ED272DAC4F00D711C6 /* ProfileVC.swift */,
+				DD3E37C0272F4A4900C4192E /* Controllers */,
+				DD3E37BF272F4A4000C4192E /* Storyboards */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		DDE0EE54272815FD00C46821 /* Alert */ = {
+		DD3E37B7272F49B300C4192E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DD3A30DB272DAB7B00D711C6 /* Crew.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DD3E37B8272F49BD00C4192E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DD3A30DD272DAB9400D711C6 /* CrewVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DD3E37B9272F49E300C4192E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DD3A30E1272DABCC00D711C6 /* Bungae.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DD3E37BA272F49F100C4192E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DD3A30DF272DABC000D711C6 /* BungaeVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DD3E37BB272F4A0D00C4192E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DD3A30E3272DABE900D711C6 /* MyActivity.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DD3E37BC272F4A1500C4192E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DD3A30E5272DAC0300D711C6 /* MyActivityVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DD3E37BD272F4A2800C4192E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DD3A30E9272DAC2700D711C6 /* Feed.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DD3E37BE272F4A3000C4192E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DD3A30E7272DAC2000D711C6 /* FeedVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DD3E37BF272F4A4000C4192E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DD3A30EB272DAC3E00D711C6 /* Profile.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DD3E37C0272F4A4900C4192E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DD3A30ED272DAC4F00D711C6 /* ProfileVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DD3E37C1272F924300C4192E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DD3E37C4272F928E00C4192E /* CrewCVCell.swift */,
+				DD3E37C5272F928E00C4192E /* CrewCVCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DDE0EE54272815FD00C46821 /* PopupAlert */ = {
 			isa = PBXGroup;
 			children = (
 				DDE0EE562728161600C46821 /* Controllers */,
 				DDE0EE552728160700C46821 /* Storyboards */,
 			);
-			path = Alert;
+			path = PopupAlert;
 			sourceTree = "<group>";
 		};
 		DDE0EE552728160700C46821 /* Storyboards */ = {
@@ -683,6 +777,7 @@
 				DD34220B272F418A005DF6CA /* UserInfoWarning.storyboard in Resources */,
 				DDED012B271C0E5300C2C343 /* SignUpTerms.storyboard in Resources */,
 				DD61E4C4271EBAF5007504DE /* LocationPicker.storyboard in Resources */,
+				DD3E37C7272F928E00C4192E /* CrewCVCell.xib in Resources */,
 				DD3A30F8272E7C4800D711C6 /* CrewApplication.storyboard in Resources */,
 				DD3A30E2272DABCC00D711C6 /* Bungae.storyboard in Resources */,
 			);
@@ -747,6 +842,7 @@
 				DD3A30CA272DA33600D711C6 /* AppleLoginData.swift in Sources */,
 				DDED01062719E2D400C2C343 /* UIFont.swift in Sources */,
 				DD3ACBBB2721075500EBC201 /* SignUpSportsVC.swift in Sources */,
+				DD3E37C6272F928E00C4192E /* CrewCVCell.swift in Sources */,
 				DD61E4C6271EBCE6007504DE /* LocationPickerVC.swift in Sources */,
 				DDE0EE672729333300C46821 /* KakaoLoginService.swift in Sources */,
 				DD2D63B227268A34007CEC57 /* LevelModalVC.swift in Sources */,
