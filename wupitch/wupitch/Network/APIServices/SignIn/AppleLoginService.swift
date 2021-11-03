@@ -11,7 +11,7 @@ import Alamofire
 struct AppleLoginService {
     static let shared = AppleLoginService()
     
-    let url = "https://prod.wupitch.site/app/account/apple"
+    let url = "https://prod.wupitch.site/app/accounts/apple"
     
     func postKakaoLogin(_ parameters: AppleLoginRequest, delegate: OnbordingVC) {
         

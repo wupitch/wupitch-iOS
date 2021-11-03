@@ -15,7 +15,7 @@
             <objects>
                 <viewController storyboardIdentifier="CrewVC" id="Y6W-OH-hqX" customClass="CrewVC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1c-4V-kdV">
@@ -50,7 +50,7 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Yz-Qs-KVB">
-                                <rect key="frame" x="20" y="118" width="374" height="695"/>
+                                <rect key="frame" x="20" y="118" width="374" height="744"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ngi-kF-7Yh">
                                     <size key="itemSize" width="128" height="128"/>
@@ -70,7 +70,7 @@
                                 </cells>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BX5-8L-KDi">
-                                <rect key="frame" x="330" y="732" width="56" height="56"/>
+                                <rect key="frame" x="330" y="781" width="56" height="56"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn06Add" translatesAutoresizingMaskIntoConstraints="NO" id="uga-dg-aAA">
                                         <rect key="frame" x="16" y="16" width="24" height="24"/>
@@ -105,7 +105,6 @@
                             <constraint firstItem="4Yz-Qs-KVB" firstAttribute="top" secondItem="Q1c-4V-kdV" secondAttribute="bottom" constant="40" id="vym-RY-Pvc"/>
                         </constraints>
                     </view>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="alertBtn" destination="N9J-kG-B2v" id="nE9-oB-2Bs"/>
                         <outlet property="crewCV" destination="4Yz-Qs-KVB" id="JaJ-Hb-S7G"/>
