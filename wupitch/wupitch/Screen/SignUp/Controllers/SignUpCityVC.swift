@@ -11,28 +11,23 @@ class SignUpCityVC: UIViewController {
     
     // MARK: - IBOulets
     @IBOutlet weak var modalBgView: UIView!
-    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var nextBtn: NextBtn!
     @IBOutlet weak var selectTextField: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
     
-    // MARK: - Propertise
-    // 카카오 & 애플 로그인 시 버튼 라벨을 바꿔줘야 해서 변수 선언
-    var nextBtnLabel : String?
-    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setStyle()
-        setBtnNameToDVC()
+        kakaoAppleLoginLogic()
         textFieldToAddTarget()
     }
     
     // MARK: - Function
     // Style
-    func setStyle() {
+    private func setStyle() {
         // 모달뷰 처음에는 안보이게
         modalBgView.alpha = 0.0
         
@@ -41,17 +36,16 @@ class SignUpCityVC: UIViewController {
         selectTextField.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
         selectTextField.attributedPlaceholder = NSAttributedString(string: "지역구 선택", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray02])
         selectTextField.layer.borderColor = UIColor.gray02.cgColor
-        selectTextField.layer.borderWidth = 1
-        selectTextField.layer.cornerRadius = 8
+        selectTextField.layer.borderWidth = 1.adjusted
+        selectTextField.layer.cornerRadius = 8.adjusted
         
         // titleLabel Style
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24.adjusted)
         titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 30.adjusted)
-        
-        // 다음 버튼 Style
-        nextBtn.layer.cornerRadius = 8
-        nextBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
-        
+    }
+    
+    // 카카오, 애플 로그인 로직 나누기
+    private func kakaoAppleLoginLogic() {
         if let loginMethod = SignUpUserInfo.shared.loginMethod {
             switch loginMethod {
             case .kakao:
@@ -62,13 +56,8 @@ class SignUpCityVC: UIViewController {
         }
     }
     
-    // 카카오 & 애플 로그인 시 버튼 라벨을 바꿔줘야 하기 때문에!
-    func setBtnNameToDVC() {
-        nextBtn.titleLabel?.text = nextBtnLabel
-    }
-    
     // 텍스트 필드 눌렀을 때 addTarget주기
-    func textFieldToAddTarget() {
+    private func textFieldToAddTarget() {
         selectTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .touchDown)
     }
     
@@ -118,12 +107,14 @@ class SignUpCityVC: UIViewController {
     @IBAction func touchUpNextBtn(_ sender: Any) {
         // 버튼 색이 .main일 때만 동작
         if nextBtn.backgroundColor == .main {
+            
+            print("<<<<<<<<싱글톤 값이 잘 들어가나 확인>>>>>>>>>>")
+            print("내가 선택한 지역은? : ", SignUpUserInfo.shared.region ?? "아무 값도 없습니다.")
+            
             // 다음 버튼 클릭 시, 다음 스토리보드로 이동
             let storyboard = UIStoryboard.init(name: "SignUpSports", bundle: nil)
             
             guard let dvc = storyboard.instantiateViewController(identifier: "SignUpSportsVC") as? SignUpSportsVC else {return}
-            
-            // 여기서 카카오 & 애플 로그인인지 확인하고 라벨 값 다르게 넘겨줘야함
             
             self.navigationController?.pushViewController(dvc, animated: true)
         }
@@ -154,9 +145,11 @@ extension SignUpCityVC: ModalDelegate {
     // textField에 모달에서 선택했던 피커 값 넣어주기
     func textFieldData(data: String) {
         selectTextField.text = data
+        SignUpUserInfo.shared.region = data
     }
 }
 
+// 팝업창
 extension SignUpCityVC : AlertDelegate {
     func alertDismiss() {
         guard let viewControllerStack = self.navigationController?.viewControllers else { return }
@@ -164,6 +157,7 @@ extension SignUpCityVC : AlertDelegate {
         // 뷰 스택에서 OnbordingVC를 찾아서 거기까지 pop 합니다.
         for viewController in viewControllerStack {
             if let onboardingVC = viewController as? OnbordingVC { self.navigationController?.popToViewController(onboardingVC, animated: true)
+                SignUpUserInfo.shared.dispose()
             }
         }
     }

@@ -55,7 +55,7 @@
                                 <color key="textColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kq7-dq-KNl">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kq7-dq-KNl" customClass="NextBtn" customModule="wupitch" customModuleProvider="target">
                                 <rect key="frame" x="20" y="682" width="336" height="52"/>
                                 <color key="backgroundColor" red="0.70980392156862748" green="0.70980392156862748" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -191,10 +191,6 @@
                                 <color key="textColor" red="0.70980392156862748" green="0.70980392156862748" blue="0.70980392156862748" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ia-dp-UX1">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -221,12 +217,8 @@
                             <constraint firstItem="VEB-lu-yAw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="c8l-RC-VJb"/>
                             <constraint firstItem="r1x-0h-Aww" firstAttribute="leading" secondItem="74s-ZL-Q1z" secondAttribute="leading" id="c8r-x8-2sz"/>
                             <constraint firstItem="c3J-rk-7Or" firstAttribute="trailing" secondItem="NtI-55-mhR" secondAttribute="trailing" id="ePh-bE-Xst"/>
-                            <constraint firstAttribute="bottom" secondItem="6Ia-dp-UX1" secondAttribute="bottom" id="gEE-a1-9Uh"/>
-                            <constraint firstItem="6Ia-dp-UX1" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="gGW-2B-rek"/>
                             <constraint firstItem="v4c-eN-3XA" firstAttribute="centerY" secondItem="VEB-lu-yAw" secondAttribute="centerY" id="iBz-pZ-hCT"/>
-                            <constraint firstItem="6Ia-dp-UX1" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="qmV-bj-fT9"/>
                             <constraint firstItem="bDq-S9-eUK" firstAttribute="top" secondItem="r1x-0h-Aww" secondAttribute="bottom" constant="22.333333333333314" id="r4c-De-ZZq"/>
-                            <constraint firstItem="6Ia-dp-UX1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="t1D-jt-nHS"/>
                             <constraint firstItem="NtI-55-mhR" firstAttribute="trailing" secondItem="gC4-TP-oHM" secondAttribute="trailing" id="tSg-o3-T2K"/>
                             <constraint firstItem="bDq-S9-eUK" firstAttribute="leading" secondItem="r1x-0h-Aww" secondAttribute="leading" id="zMI-m0-1dC"/>
                         </constraints>
@@ -236,7 +228,6 @@
                         <outlet property="cancelBtn" destination="v4c-eN-3XA" id="02p-tN-XH3"/>
                         <outlet property="descriptionLabel" destination="r1x-0h-Aww" id="p8J-rp-bpZ"/>
                         <outlet property="etcTextField" destination="zZI-rq-bjq" id="IPc-UV-O4F"/>
-                        <outlet property="modalBgView" destination="6Ia-dp-UX1" id="jIS-zQ-z4c"/>
                         <outlet property="nextBtn" destination="kq7-dq-KNl" id="Npa-W3-Vna"/>
                         <outlet property="textCount" destination="c3J-rk-7Or" id="xiv-gz-E9Z"/>
                         <outlet property="textView" destination="NtI-55-mhR" id="owx-vo-2W3"/>

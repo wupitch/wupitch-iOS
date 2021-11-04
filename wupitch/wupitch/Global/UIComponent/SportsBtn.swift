@@ -7,6 +7,7 @@
 
 import UIKit
 
+// 스포츠 버튼
 class SportsBtn : UIButton {
     
     var status : Bool = false
@@ -48,38 +49,5 @@ extension SportsBtn {
         status = true
     }
 }
-
-
-//extension CheckBtn {
-//    private func layout() {
-//        self.setImage(UIImage(named: "grayCheck"), for: .normal)
-//        self.addTarget(self, action: #selector(touchUp), for: .touchUpInside)
-//    }
-//
-//    func changeBtnImg() {
-//        if let checkImg = self.image(for: .normal) {
-//            switch checkImg {
-//            case UIImage(named: "grayCheck"):
-//                status = true
-//                self.setImage(UIImage(named: "check"), for: .normal)
-//            case UIImage(named: "check"):
-//                status = false
-//                self.setImage(UIImage(named: "grayCheck"), for: .normal)
-//            default:
-//                break
-//            }
-//        }
-//    }
-//
-//    func allAgreeBtnImg() {
-//        self.setImage(UIImage(named: "check"), for: .normal)
-//        status = true
-//    }
-//
-//    @objc func touchUp() {
-//        checkDelegate?.pushNext(btn: self)
-//    }
-//}
-
 
 

@@ -31,7 +31,7 @@ class OnbordingVC: UIViewController {
     }
     
     // MARK: - Function
-    // style 관련된 것
+    // style
     func setStyle() {
         // 처음에는 버튼 & 라벨 안보이게
         kakaoBtn.alpha = 0.0
@@ -40,7 +40,9 @@ class OnbordingVC: UIViewController {
         
         // 설명라벨 폰트 및 lineheight 설정
         descriptionLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+        descriptionLabel.textColor = .gray02
         descriptionLabel.setTextWithLineHeight(text: "애플로 가입시 별도의 신분증 인증이 필요합니다.", lineHeight: 20.adjusted)
+        descriptionLabel.textAlignment = .center
         
         // skipBtn 폰트 및 lineheight 설정
         skipBtn.setTitle("건너뛰기", for: .normal)
@@ -49,9 +51,11 @@ class OnbordingVC: UIViewController {
         
         // kakaoBtn 폰트 및 cornerRadius
         kakaoBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
+        kakaoBtn.backgroundColor = UIColor(red: 254/255, green: 229/255, blue: 0/255, alpha: 1)
+        kakaoBtn.makeRounded(cornerRadius: 8.adjusted)
         appleBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
-        kakaoBtn.layer.cornerRadius = 8
-        appleBtn.layer.cornerRadius = 8
+        appleBtn.backgroundColor = .black
+        appleBtn.makeRounded(cornerRadius: 8.adjusted)
         
         // 페이지 컨트롤 색상 조정
         onboardingPageControl.pageIndicatorTintColor = .gray04

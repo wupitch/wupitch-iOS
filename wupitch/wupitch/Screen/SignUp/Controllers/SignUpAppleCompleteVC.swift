@@ -16,6 +16,8 @@ class SignUpAppleCompleteVC: UIViewController {
         super.viewDidLoad()
 
         setStyle()
+        print("<<<<<<<<<<<<<싱글톤데이터잘들어가있나확인>>>>>>>>>>>>>>>")
+        print("사진", SignUpUserInfo.shared.idImg ?? "값없어")
     }
     
     func setStyle() {
@@ -28,11 +30,8 @@ class SignUpAppleCompleteVC: UIViewController {
         descriptionLabel.textColor = .gray02
         
         startBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
-        startBtn.layer.cornerRadius = 8
+        startBtn.makeRounded(cornerRadius: 8.adjusted)
     }
-
-  
-
 }
 
 

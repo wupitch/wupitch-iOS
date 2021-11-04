@@ -7,8 +7,8 @@
 
 import UIKit
 
-class CrewVC: UIViewController {
-
+class CrewVC: BaseVC {
+    
     @IBOutlet weak var floatingView: UIView!
     @IBOutlet weak var crewCV: UICollectionView!
     @IBOutlet weak var alertBtn: UIButton!
@@ -32,6 +32,28 @@ class CrewVC: UIViewController {
         crewCV.dataSource = self
         crewCV.register(CrewCVCell.nib(), forCellWithReuseIdentifier: CrewCVCell.identifier)
     }
+    
+    // MARK: FloatingView tap gesture
+    private func tapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action:#selector(self.screenDidTap(_:)))
+        self.floatingView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func screenDidTap(_ gesture: UITapGestureRecognizer) {
+       
+    }
+    
+    @IBAction func touchUpRegionBtn(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "LocationPicker", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "LocationPickerVC") as? LocationPickerVC {
+            dvc.modalPresentationStyle = .overFullScreen
+            
+            dvc.modalDelegate = self
+            
+            // present 형태로 띄우기
+            self.present(dvc, animated: true, completion: nil)
+        }
+    }
 }
 
 extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -54,6 +76,16 @@ extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // cell 누르면 해당 디테일 페이지로 이동
+        let storyboard = UIStoryboard.init(name: "CrewDetail", bundle: nil)
+        
+        guard let dvc = storyboard.instantiateViewController(identifier: "CrewDetailVC") as? CrewDetailVC else {return}
+        
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.pushViewController(dvc, animated: true)
+    }
+    
     // MARK: - collectionView size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -69,4 +101,24 @@ extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         return UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
     }
     
+}
+
+
+// MARK: - Extension (Modal Delegate)
+extension CrewVC: ModalDelegate {
+    
+    // 모달에서 확인 버튼 눌렀을 때 다음 버튼에 생기는 색 변화
+    func selectBtnToNextBtn() {
+    }
+    
+    // 모달이 dismiss되면서 모달백그라운드 색도 없어짐
+    func modalDismiss() {
+        //modalBgView.alpha = 0.0
+    }
+    
+    // textField에 모달에서 선택했던 피커 값 넣어주기
+    func textFieldData(data: String) {
+        //selectTextField.text = data
+        //SignUpUserInfo.shared.region = data
+    }
 }

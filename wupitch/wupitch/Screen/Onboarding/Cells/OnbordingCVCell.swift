@@ -22,11 +22,13 @@ class OnbordingCVCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        // titleLabel Style
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 28.adjusted)
         titleLabel.textColor = .bk
         titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 38.adjusted)
         titleLabel.textAlignment = .center
+        
+        // descriptionLabel Style
         descriptionLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         descriptionLabel.textColor = .gray02
         descriptionLabel.setTextWithLineHeight(text: descriptionLabel.text, lineHeight: 22.adjusted)

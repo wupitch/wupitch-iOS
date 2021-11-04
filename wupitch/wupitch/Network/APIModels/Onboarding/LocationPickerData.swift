@@ -23,5 +23,18 @@ let locationPickerData: [LocationPicker] = [
     LocationPicker(locationName: "광진구"),
     LocationPicker(locationName: "마포구"),
     LocationPicker(locationName: "용산구"),
-    LocationPicker(locationName: "양천구")
+    LocationPicker(locationName: "양천구"),
+    LocationPicker(locationName: "구로구"),
+    LocationPicker(locationName: "영등포구"),
+    LocationPicker(locationName: "관악구"),
+    LocationPicker(locationName: "금천구"),
+    LocationPicker(locationName: "서초구"),
+    LocationPicker(locationName: "송파구"),
+    LocationPicker(locationName: "강동구"),
+    LocationPicker(locationName: "강북구"),
+    LocationPicker(locationName: "동대문구"),
+    LocationPicker(locationName: "성동구"),
+    LocationPicker(locationName: "강서구"),
+    LocationPicker(locationName: "동작구"),
+    LocationPicker(locationName: "강남구")
 ]

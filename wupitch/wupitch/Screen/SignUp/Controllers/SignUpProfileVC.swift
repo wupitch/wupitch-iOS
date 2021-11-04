@@ -15,9 +15,11 @@ class SignUpProfileVC: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var nickNameTextField: UITextField!
     @IBOutlet weak var infoTextView: UITextView!
-    @IBOutlet weak var startBtn: UIButton!
+    @IBOutlet weak var startBtn: NextBtn!
     @IBOutlet weak var textCountLabel: UILabel!
     
+    var state : Bool?
+    var textViewState : Bool?
     let maxLength = 6
     
     override func viewDidLoad() {
@@ -25,13 +27,13 @@ class SignUpProfileVC: UIViewController {
         
         setStyle()
         placeholderSetting()
-        
-        nickNameTextField.delegate = self
+        kakaoAppleLoginLogic()
+        setDelegate()
         
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(textDidChange(_:)),
-                                               name: UITextField.textDidChangeNotification,
-                                               object: nickNameTextField)
+            selector: #selector(textDidChange(_:)),
+            name: UITextField.textDidChangeNotification,
+            object: nickNameTextField)
     }
     
     @objc private func textDidChange(_ notification: Notification) {
@@ -39,35 +41,57 @@ class SignUpProfileVC: UIViewController {
             if let text = nickNameTextField.text {
                 
                 if text.count > maxLength {
-                    // 8글자 넘어가면 자동으로 키보드 내려감
+                    // 6글자 넘어가면 자동으로 키보드 내려감
                     nickNameTextField.resignFirstResponder()
                 }
                 
                 // 초과되는 텍스트 제거
-                if text.count >= maxLength {
+                if text.count > maxLength {
                     let index = text.index(text.startIndex, offsetBy: maxLength)
                     let newString = text[text.startIndex..<index]
                     nickNameTextField.text = String(newString)
                 }
                 
-                // 2글자 이상 8글자 이하로 입력해주세요
-                // 중복검사해야함 뭘로해? api?받나?
+                // 2글자 이상 6글자 이하로 입력해주세요
+                // 여기서 중복검사
                 else if text.count < 2 {
+                    state = false
                     correctLabel.alpha = 1
                     correctLabel.text = "사용 불가능한 닉네임입니다."
                     correctLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
                     correctLabel.textColor = UIColor(red: 241/255, green: 0/255, blue: 0/255, alpha: 1)
-                    startBtn.backgroundColor = .gray03
+                        startBtn.backgroundColor = .gray03
+                    // 싱글톤 초기화
+                    SignUpUserInfo.shared.nickName = nil
                     
                 }
                 else {
+                    state = true
                     correctLabel.alpha = 1
                     correctLabel.text = "사용 가능한 닉네임입니다."
                     correctLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
                     correctLabel.textColor = UIColor(red: 72/255, green: 190/255, blue: 0/255, alpha: 1)
-                    startBtn.backgroundColor = .main
+                    
+                    if textViewState == true {
+                        startBtn.backgroundColor = .main
+                    }
+                    // 텍스트 싱글톤에 저장
+                    SignUpUserInfo.shared.nickName = nickNameTextField.text
                 }
             }
+        }
+    }
+    
+    func setDelegate() {
+        nickNameTextField.delegate = self
+    }
+    
+    func changeStartBtnColor() {
+        if nickNameTextField.resignFirstResponder() && infoTextView.text == nil {
+            startBtn.backgroundColor = .gray03
+        }
+        else {
+            startBtn.backgroundColor = .main
         }
     }
     
@@ -76,7 +100,6 @@ class SignUpProfileVC: UIViewController {
         infoTextView.text = "자기소개를 입력해주세요."
         infoTextView.textColor = .gray03
     }
-    
     
     func setStyle() {
         // 확인 라벨 처음엔 안보이게
@@ -103,21 +126,19 @@ class SignUpProfileVC: UIViewController {
         // textcountLabel Style
         textCountLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12)
         textCountLabel.textColor = .gray03
-        
-        // startBtn Style
-        startBtn.layer.cornerRadius = 8
-        startBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
-        
-        if let loginMethod = SignUpUserInfo.shared.loginMethod {
-            switch loginMethod {
-            case .kakao:
-                startBtn.setTitle("완료", for: .normal)
-            case .apple:
-                startBtn.setTitle("다음 (5/6)", for: .normal)
-            }
-        }
-        
     }
+    
+    // 카카오, 애플 로그인 로직 나누기
+       private func kakaoAppleLoginLogic() {
+           if let loginMethod = SignUpUserInfo.shared.loginMethod {
+               switch loginMethod {
+               case .kakao:
+                   startBtn.setTitle("완료", for: .normal)
+               case .apple:
+                   startBtn.setTitle("다음 (5/6)", for: .normal)
+               }
+           }
+       }
     
     // backBtn
     @IBAction func touchUpBackBtn(_ sender: Any) {
@@ -143,10 +164,14 @@ class SignUpProfileVC: UIViewController {
     
     // startBtn
     @IBAction func touchUpStartBtn(_ sender: Any) {
-        // 카카오 로그인 루트로 들어왔을 때
         if startBtn.backgroundColor == .main {
+            print("<<<<<<<<싱글톤잘들어오나확인>>>>>>>>>")
+            print("닉네임",SignUpUserInfo.shared.nickName ?? "값이 없습니다.")
+            print("자기소개", SignUpUserInfo.shared.userIntroduce ?? "값이 없습니다.")
+            
             if let loginMethod = SignUpUserInfo.shared.loginMethod {
                 switch loginMethod {
+                // 카카오 로그인 루트로 들어왔을 때
                 case .kakao:
                     startBtn.setTitle("완료", for: .normal)
                     let storyboard = UIStoryboard.init(name: "SignUpKakaoComplete", bundle: nil)
@@ -176,18 +201,33 @@ extension SignUpProfileVC: UITextViewDelegate, UITextFieldDelegate, AlertDelegat
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == .gray03 {
+            textViewState = true
             textView.text = nil
             textView.textColor = .gray02
+            
+            if state == true {
+                startBtn.backgroundColor = .main
+            }
+            else {
+                startBtn.backgroundColor = .gray03
+            }
         }
       }
 
       func textViewDidEndEditing(_ textView: UITextView) {
+          // 텍스트 싱글톤에 저장
+          SignUpUserInfo.shared.userIntroduce = infoTextView.text
+          
         if textView.text.isEmpty {
+            textViewState = false
           textView.text = "내용을 입력해주세요."
             textView.textColor = .gray03
+            startBtn.backgroundColor = .gray03
+            
+            // 받은 값 초기화
+            SignUpUserInfo.shared.userIntroduce = nil
         }
       }
-    
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         // 최대 100자
@@ -197,47 +237,30 @@ extension SignUpProfileVC: UITextViewDelegate, UITextFieldDelegate, AlertDelegat
         textCountLabel.textColor = .gray03
         textCountLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
         
+        // 엔터버튼 키보드 내려가기
+        if text == "\n" {
+            textView.resignFirstResponder()
+           }
+        
         return true
     }
     
     // UITextField
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        // backspace 감지하기
-//        if let char = string.cString(using: String.Encoding.utf8) {
-//            let isBackSpace = strcmp(char, "\\b")
-//            if isBackSpace == -92 {
-//                return true
-//            }
-//        }
         
-        // 글자수제한 (최대 6자)
-        guard nickNameTextField.text!.count <= 5 else { return false }
-        
-        return true
+        let currentCharacterCount = textField.text?.count ?? 0
+               if (range.length + range.location > currentCharacterCount){
+                   return false
+               }
+               let newLength = currentCharacterCount + string.count - range.length
+               
+                return newLength <= 6
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         nickNameTextField.resignFirstResponder()
         return true
     }
-    
-   
-    
-    
-//    // UITextView Placeholder
-//    func textViewDidBeginEditing(_ textView: UITextView) {
-//        if infoTextView.textColor == .gray02 {
-//            infoTextView.text = nil
-//            infoTextView.textColor = .gray02
-//        }
-//    }
-//    // TextView Place Holder
-//    func textViewDidEndEditing(_ textView: UITextView) {
-//        if infoTextView.text.isEmpty {
-//            infoTextView.text = "자기소개를 입력해주세요."
-//            infoTextView.textColor = .gray02
-//        }
-//    }
     
     // AlertDelegate
     func alertDismiss() {
@@ -246,6 +269,7 @@ extension SignUpProfileVC: UITextViewDelegate, UITextFieldDelegate, AlertDelegat
         // 뷰 스택에서 OnbordingVC를 찾아서 거기까지 pop 합니다.
         for viewController in viewControllerStack {
             if let onboardingVC = viewController as? OnbordingVC { self.navigationController?.popToViewController(onboardingVC, animated: true)
+                SignUpUserInfo.shared.dispose()
             }
         }
     }

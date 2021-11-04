@@ -18,7 +18,7 @@ class SignUpKakaoCompleteVC: UIViewController {
         super.viewDidLoad()
 
         setStyle()
-       
+        changeTitleLabelToNickname()
     }
     
     func setStyle() {
@@ -27,12 +27,26 @@ class SignUpKakaoCompleteVC: UIViewController {
         
         descriptionLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         descriptionLabel.setTextWithLineHeight(text: descriptionLabel.text, lineHeight: 22.adjusted)
+        descriptionLabel.textAlignment = .center
         descriptionLabel.textColor = .gray02
         
         startBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
-        startBtn.layer.cornerRadius = 8
+        startBtn.backgroundColor = .main
+        startBtn.titleLabel?.textColor = .wht
+        startBtn.makeRounded(cornerRadius: 8.adjusted)
     }
     
-
-
+    func changeTitleLabelToNickname() {
+        titleLabel.text = (SignUpUserInfo.shared.nickName ?? "닉네임없음") + " 님, 환영합니다"
+    }
+    
+    // 홈으로 이동
+    @IBAction func touchUpStartBtn(_ sender: Any) {
+        
+        let storyboard = UIStoryboard.init(name: "Tabbar", bundle: nil)
+        
+        guard let dvc = storyboard.instantiateViewController(identifier: "TabbarVC") as? TabbarVC else {return}
+        
+        self.navigationController?.pushViewController(dvc, animated: true)
+    }
 }

@@ -5,19 +5,11 @@
 //  Created by 김수정 on 2021/10/18.
 //
 
-// 해야할 것
-// 1. 카카오랑 애플 로직 나누기
-// 2. 싱글톤으로 데이터 받기
-// 3. 뒤로가기 버튼에서 싱글톤에 데이터 있으면 모달창 없으면 바로 뒤로 이동
-
 import UIKit
 
 class SignUpTermsVC: UIViewController {
     
-    // MARK: - Properties
-    // 카카오 & 애플 로그인 시 버튼 라벨을 바꿔줘야 해서 변수 선언
-    // var nextBtnLabel : UIButton?
-    
+    // MARK: - Variable
     // 약관동의 배열
     var terms = Array(repeating: false, count: 3)
     
@@ -45,24 +37,22 @@ class SignUpTermsVC: UIViewController {
     @IBOutlet weak var backBtn: UIButton!
     
     // 다음 버튼
-    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var nextBtn: NextBtn!
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setStyle()
-        setBtnNameToDVC()
+        kakaoAppleLoginLogic()
         allAgreeBtn.checkDelegate = self
         agreeBtn[0].checkDelegate = self
         agreeBtn[1].checkDelegate = self
         agreeBtn[2].checkDelegate = self
-        
     }
     
     // MARK: - Function
     // style
-    func setStyle() {
+    private func setStyle() {
         // titleLabel
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24.adjusted)
         titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 30.adjusted)
@@ -88,11 +78,10 @@ class SignUpTermsVC: UIViewController {
         firstMoreBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
         secMoreBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
         thirdMoreBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
-        
-        // nextBtn
-        nextBtn.layer.cornerRadius = 8
-        nextBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
-        
+    }
+    
+    // 카카오, 애플 로그인 로직 나누기
+    private func kakaoAppleLoginLogic() {
         if let loginMethod = SignUpUserInfo.shared.loginMethod {
             switch loginMethod {
             case .kakao:
@@ -101,12 +90,6 @@ class SignUpTermsVC: UIViewController {
                 nextBtn.setTitle("다음 (1/6)", for: .normal)
             }
         }
-        
-    }
-    
-    // 카카오 & 애플 로그인 시 버튼 라벨을 바꿔줘야 하기 때문에!
-    func setBtnNameToDVC() {
-       // nextBtn = nextBtnLabel
     }
     
     // MARK: - IBActions
@@ -115,12 +98,15 @@ class SignUpTermsVC: UIViewController {
         // 전체동의와 이용약관 개인정보 수집 및 이용 버튼이 눌렸을 때 다음 버튼 활성화
         if  nextBtn.backgroundColor == .main {
             
+            print("<<<<<<<<<싱글톤에 누른 값들이 잘 저장되었는지 확인>>>>>>>>>>>")
+            print("약관동의:", SignUpUserInfo.shared.termsOfUse ?? "값이 없어요")
+            print("개인정보 수집:", SignUpUserInfo.shared.privacyInfo ?? "값이 없어요")
+            print("푸시알림:", SignUpUserInfo.shared.pushAlert ?? "값이 없어요")
+            
             // 버튼 클릭 시, 다음 스토리보드로 이동
             let storyboard = UIStoryboard.init(name: "SignUpCity", bundle: nil)
             
             guard let dvc = storyboard.instantiateViewController(identifier: "SignUpCityVC") as? SignUpCityVC else {return}
-            
-            // 여기에서 카카오인지 애플인지 if else로 나누고 버튼 값이 다르게 들어가야 함
             
             self.navigationController?.pushViewController(dvc, animated: true)
         }
@@ -131,7 +117,7 @@ class SignUpTermsVC: UIViewController {
     
     // 뒤로가기 버튼
     @IBAction func touchUpBackBtn(_ sender: Any) {
-        // 여기서 데이터가 저장되어있으면 팝업창뜨게하고, 아니면 그대로 뒤로가게하자
+        // 데이터가 저장되어있으면 팝업창뜨게하고, 아니면 그냥 뒤로 이동
         if ((SignUpUserInfo.shared.region) != nil) {
             // 팝업 창 띄워줌
             let storyBoard: UIStoryboard = UIStoryboard(name: "JoinAlert", bundle: nil)
@@ -174,16 +160,22 @@ class SignUpTermsVC: UIViewController {
     }
 }
 
+// 동의 버튼 로직 delegate
 extension SignUpTermsVC : CheckDelegate {
     func pushNext(btn: CheckBtn) {
         switch btn {
-        // '전체동의' 버튼이 눌릴 때
+            // '전체동의' 버튼이 눌릴 때
         case allAgreeBtn:
+            
+            // 전체 동의 버튼을 누르면 모든 약관의 상태가 true로 싱글톤에 저장
+            SignUpUserInfo.shared.pushAlert = true
+            
             // 버튼을 다 동의 버튼으로 만드세요!!
             btn.allAgreeBtnImg()
             for idx in 0..<terms.count {
                 agreeBtn[idx].allAgreeBtnImg()
             }
+            
         default:
             // 나머지 버튼들
             btn.changeBtnImg()
@@ -204,13 +196,17 @@ extension SignUpTermsVC : CheckDelegate {
         
         if agreeBtn[0].status && agreeBtn[1].status {
             nextBtn.backgroundColor = .main
+            // 버튼 두개가 눌리면 싱글톤에 저장
         }
         else {
             nextBtn.backgroundColor = .gray03
+            // 버튼 두개 중 하나라도 해제시, 초기화
+            
         }
     }
 }
 
+// 팝업창 Delegate
 extension SignUpTermsVC : AlertDelegate {
     func alertDismiss() {
         guard let viewControllerStack = self.navigationController?.viewControllers else { return }
@@ -218,6 +214,7 @@ extension SignUpTermsVC : AlertDelegate {
         // 뷰 스택에서 OnbordingVC를 찾아서 거기까지 pop 합니다.
         for viewController in viewControllerStack {
             if let onboardingVC = viewController as? OnbordingVC { self.navigationController?.popToViewController(onboardingVC, animated: true)
+                SignUpUserInfo.shared.dispose()
             }
         }
     }

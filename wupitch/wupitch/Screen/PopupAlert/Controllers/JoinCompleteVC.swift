@@ -32,6 +32,6 @@ class JoinCompleteVC: UIViewController {
     }
 
     @IBAction func touchUpCompleteBtn(_ sender: Any) {
-        
+        dismiss(animated: true, completion: nil)
     }
 }

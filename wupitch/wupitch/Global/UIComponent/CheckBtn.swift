@@ -7,6 +7,7 @@
 
 import UIKit
 
+// 약관 동의버튼
 class CheckBtn : UIButton {
     
     var checkDelegate : CheckDelegate?

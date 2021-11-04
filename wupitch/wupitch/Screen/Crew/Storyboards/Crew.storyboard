@@ -24,6 +24,9 @@
                                 <state key="normal" title="지역구 " image="down">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="touchUpRegionBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="9gQ-GL-8nU"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tR0-Ci-nA5">
                                 <rect key="frame" x="290" y="54" width="104" height="24"/>

@@ -7,6 +7,7 @@
 
 import UIKit
 
+// 스포츠 바텀 시트
 class ModalSportsBtn : UIButton {
     
     var status : Bool = false

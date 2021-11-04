@@ -34,12 +34,11 @@ class SignUpIDVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         descriptionLabel.textColor = .gray02
         
         photoBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
-        photoBtn.layer.cornerRadius = 8
+        photoBtn.makeRounded(cornerRadius: 8.adjusted)
         
         firstContentsLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
         secondContentsLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
         thirdContentsLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
-        
     }
     @IBAction func touchUpCancelBtn(_ sender: Any) {
         // 취소 버튼 클릭 시, 팝업 창 띄워줌
@@ -107,6 +106,7 @@ extension SignUpIDVC : AlertDelegate {
         // 뷰 스택에서 OnbordingVC를 찾아서 거기까지 pop 합니다.
         for viewController in viewControllerStack {
             if let onboardingVC = viewController as? OnbordingVC { self.navigationController?.popToViewController(onboardingVC, animated: true)
+                SignUpUserInfo.shared.dispose()
             }
         }
     }

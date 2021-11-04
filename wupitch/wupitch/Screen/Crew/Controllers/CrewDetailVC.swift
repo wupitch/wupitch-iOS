@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class CrewDetailVC: UIViewController {
+class CrewDetailVC: BaseVC {
     
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var guestBtn: UIButton!
@@ -59,6 +59,36 @@ class CrewDetailVC: UIViewController {
         detailCV.register(DetailCrewTitleCVCell.nib(), forCellWithReuseIdentifier: DetailCrewTitleCVCell.identifier)
         detailCV.register(DetailCrewIntroduceCVCell.nib(), forCellWithReuseIdentifier: DetailCrewIntroduceCVCell.identifier)
         detailCV.register(DtailCrewContentCVCell.nib(), forCellWithReuseIdentifier: DtailCrewContentCVCell.identifier)
+    }
+    
+    @IBAction func touchUpRegisterBtn(_ sender: Any) {
+        // 가입 완료 팝업 창 띄워줌
+        let storyBoard: UIStoryboard = UIStoryboard(name: "JoinComplete", bundle: nil)
+        
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinCompleteVC") as? JoinCompleteVC {
+            dvc.modalPresentationStyle = .overFullScreen
+            dvc.modalTransitionStyle = .crossDissolve
+            
+            // present 형태로 띄우기
+            self.present(dvc, animated: true, completion: nil)
+        }
+    }
+    // 뒤로가기 버튼
+    @IBAction func touchUpBackBtn(_ sender: Any) {
+        self.tabBarController?.tabBar.isHidden = false
+        self.navigationController?.popViewController(animated: true)
+    }
+    // 손님
+    @IBAction func touchUpGuestRegisterBtn(_ sender: Any) {
+        // 손님신청 바텀시트
+        let storyBoard: UIStoryboard = UIStoryboard(name: "CrewApplication", bundle: nil)
+        
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "CrewApplicationVC") as? CrewApplicationVC {
+            dvc.modalPresentationStyle = .overFullScreen
+            
+            // present 형태로 띄우기
+            self.present(dvc, animated: true, completion: nil)
+        }
     }
 }
 
@@ -214,5 +244,11 @@ extension CrewDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
                         UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+}
+
+extension CrewDetailVC: UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+
     }
 }

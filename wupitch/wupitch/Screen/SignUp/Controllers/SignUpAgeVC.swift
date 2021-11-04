@@ -12,24 +12,22 @@ class SignUpAgeVC: UIViewController {
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var nextBtn: NextBtn!
     @IBOutlet var ageBtns: [SportsBtn]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setStyle()
+        kakaoAppleLoginLogic()
     }
     
     func setStyle() {
-        
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24.adjusted)
         titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 30.adjusted)
-        
-        nextBtn.layer.cornerRadius = 8.adjusted
-        nextBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
-        nextBtn.backgroundColor = .gray03
-        
+    }
+    
+    // 카카오, 애플 로그인 로직 나누기
+    private func kakaoAppleLoginLogic() {
         if let loginMethod = SignUpUserInfo.shared.loginMethod {
             switch loginMethod {
             case .kakao:
@@ -42,6 +40,10 @@ class SignUpAgeVC: UIViewController {
     
     @IBAction func touchUpNextBtn(_ sender: Any) {
         if nextBtn.backgroundColor == .main {
+            
+            print("<<<<<<<<<싱글톤 값 잘 받아와지나 확인>>>>>>>>>")
+            print("연령대 : ", SignUpUserInfo.shared.age ?? "값이 없습니다.") 
+            
             let storyboard = UIStoryboard.init(name: "SignUpProfile", bundle: nil)
             
             guard let dvc = storyboard.instantiateViewController(identifier: "SignUpProfileVC") as? SignUpProfileVC else {return}
@@ -81,6 +83,7 @@ class SignUpAgeVC: UIViewController {
             ageBtns[2].defaultSportsBtn()
             ageBtns[3].defaultSportsBtn()
             ageBtns[4].defaultSportsBtn()
+            SignUpUserInfo.shared.age = 0
         }
     }
     
@@ -92,6 +95,7 @@ class SignUpAgeVC: UIViewController {
             ageBtns[2].defaultSportsBtn()
             ageBtns[3].defaultSportsBtn()
             ageBtns[4].defaultSportsBtn()
+            SignUpUserInfo.shared.age = 1
         }
     }
     
@@ -103,6 +107,7 @@ class SignUpAgeVC: UIViewController {
             ageBtns[1].defaultSportsBtn()
             ageBtns[3].defaultSportsBtn()
             ageBtns[4].defaultSportsBtn()
+            SignUpUserInfo.shared.age = 2
         }
     }
     
@@ -114,6 +119,7 @@ class SignUpAgeVC: UIViewController {
             ageBtns[1].defaultSportsBtn()
             ageBtns[2].defaultSportsBtn()
             ageBtns[4].defaultSportsBtn()
+            SignUpUserInfo.shared.age = 3
         }
     }
     
@@ -125,6 +131,7 @@ class SignUpAgeVC: UIViewController {
             ageBtns[1].defaultSportsBtn()
             ageBtns[2].defaultSportsBtn()
             ageBtns[3].defaultSportsBtn()
+            SignUpUserInfo.shared.age = 4
         }
     }
 }
@@ -136,6 +143,7 @@ extension SignUpAgeVC : AlertDelegate {
         // 뷰 스택에서 OnbordingVC를 찾아서 거기까지 pop 합니다.
         for viewController in viewControllerStack {
             if let onboardingVC = viewController as? OnbordingVC { self.navigationController?.popToViewController(onboardingVC, animated: true)
+                SignUpUserInfo.shared.dispose()
             }
         }
     }
