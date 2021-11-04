@@ -274,7 +274,7 @@
 		DD295DB4271839C9008CFC64 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				DDC3B517273403B900FF4959 /* BaseViewController */,
+				DDC3B517273403B900FF4959 /* BaseVC */,
 				DDED00F52719CB4200C2C343 /* Onboarding */,
 				DDED0126271C0DD600C2C343 /* SignUp */,
 				DD3A30CF272DA64300D711C6 /* Tabbar */,
@@ -599,12 +599,12 @@
 			path = ReusableViewCell;
 			sourceTree = "<group>";
 		};
-		DDC3B517273403B900FF4959 /* BaseViewController */ = {
+		DDC3B517273403B900FF4959 /* BaseVC */ = {
 			isa = PBXGroup;
 			children = (
 				DDC3B5182734041500FF4959 /* BaseVC.swift */,
 			);
-			path = BaseViewController;
+			path = BaseVC;
 			sourceTree = "<group>";
 		};
 		DDE0EE54272815FD00C46821 /* PopupAlert */ = {

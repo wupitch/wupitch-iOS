@@ -140,6 +140,9 @@ class OnbordingVC: UIViewController {
                             // 유저의 정보를 서버에 보냄
                             kakaoDataManager.postKakaoLogin(KakaoLoginRequest(email: userEmail, genderType: userGender.uppercased(), id: userId, nickname: userNickname), delegate: self)
                             
+                            // 자동로그인을 위해 토큰 저장
+                            UserDefaults.standard.string(forKey: "userToken")
+                            
                             // 이동
                             self.navigationController?.pushViewController(dvc, animated: true)
                         }
@@ -179,6 +182,9 @@ class OnbordingVC: UIViewController {
                         
                         // 유저의 정보를 서버에 보냄
                         kakaoDataManager.postKakaoLogin(KakaoLoginRequest(email: userEmail, genderType: userGender.uppercased(), id: userId, nickname: userNickname), delegate: self)
+                        
+                        // 자동로그인을 위해 토큰 저장
+                        UserDefaults.standard.string(forKey: "userToken")
                         
                         // 이동
                         self.navigationController?.pushViewController(dvc, animated: true)
@@ -286,8 +292,8 @@ extension OnbordingVC: ASAuthorizationControllerDelegate, ASAuthorizationControl
             
             self.navigationController?.pushViewController(dvc, animated: true)
             
-            // 자동로그인을 위해 토근 저장
-            // UserDefaults.standard.set(userIdentifier, forKey: "AppleLoginUserIdentifier")
+            // 자동로그인을 위해 토큰 저장
+            UserDefaults.standard.string(forKey: "userToken")
         } else {
             // self.presentAlert(title: "애플로그인 실패")
             print("로그인실패")
@@ -300,15 +306,20 @@ extension OnbordingVC {
     func didSuccessKakaoLogin(result: KakaoLoginResult) {
         print("데이터가 성공적으로 들어왔습니다.")
         print("유저아이디: ", result.accountID, "jwt: ", result.jwt, "oauthID: ", result.oauthID)
+        // 유저 토큰 저장
+        UserDefaults.standard.set(result.jwt, forKey: "userToken")
     }
     
     func didSuccessAppleLogin(result: AppleLoginResult) {
         print("데이터가 성공적으로 들어왔습니다.")
         print("유저아이디: ", result.accountID, "jwt: ", result.jwt, "oauthID: ", result.oauthID)
+        // 유저 토큰 저장
+        UserDefaults.standard.set(result.jwt, forKey: "userToken")
     }
     
     func failedToRequest(message: String) {
         print("데이터가 들어오지 않았습니다.")
+        UserDefaults.standard.removeObject(forKey: "userToken")
     }
 }
 
