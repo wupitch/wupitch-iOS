@@ -84,6 +84,7 @@
 		DDC3B5142733C4D600FF4959 /* VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC3B5132733C4D600FF4959 /* VC.swift */; };
 		DDC3B5162733C86800FF4959 /* NextBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC3B5152733C86800FF4959 /* NextBtn.swift */; };
 		DDC3B5192734041500FF4959 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC3B5182734041500FF4959 /* BaseVC.swift */; };
+		DDC3B51B2735565C00FF4959 /* MainLocationPickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC3B51A2735565B00FF4959 /* MainLocationPickerData.swift */; };
 		DDE0EE582728163900C46821 /* JoinAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE572728163900C46821 /* JoinAlert.storyboard */; };
 		DDE0EE5A2728164E00C46821 /* JoinAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0EE592728164E00C46821 /* JoinAlertVC.swift */; };
 		DDE0EE5C272873EC00C46821 /* SignUpKakaoComplete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */; };
@@ -185,6 +186,7 @@
 		DDC3B5132733C4D600FF4959 /* VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC.swift; sourceTree = "<group>"; };
 		DDC3B5152733C86800FF4959 /* NextBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextBtn.swift; sourceTree = "<group>"; };
 		DDC3B5182734041500FF4959 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		DDC3B51A2735565B00FF4959 /* MainLocationPickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLocationPickerData.swift; sourceTree = "<group>"; };
 		DDE0EE572728163900C46821 /* JoinAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinAlert.storyboard; sourceTree = "<group>"; };
 		DDE0EE592728164E00C46821 /* JoinAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinAlertVC.swift; sourceTree = "<group>"; };
 		DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpKakaoComplete.storyboard; sourceTree = "<group>"; };
@@ -716,6 +718,7 @@
 			children = (
 				DDED011A271B33F800C2C343 /* OnboardingData.swift */,
 				DD6728342723E582001E1355 /* LocationPickerData.swift */,
+				DDC3B51A2735565B00FF4959 /* MainLocationPickerData.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -959,6 +962,7 @@
 				DDC3B5142733C4D600FF4959 /* VC.swift in Sources */,
 				DD3A30C6272D1E1400D711C6 /* KakaoLoginRequest.swift in Sources */,
 				DD6728352723E582001E1355 /* LocationPickerData.swift in Sources */,
+				DDC3B51B2735565C00FF4959 /* MainLocationPickerData.swift in Sources */,
 				DD3ACBC427216D4400EBC201 /* SignUpIDVC.swift in Sources */,
 				DDE0EE6D2729908B00C46821 /* SignUpAgeVC.swift in Sources */,
 				DD3A30CE272DA3BD00D711C6 /* AppleLoginService.swift in Sources */,

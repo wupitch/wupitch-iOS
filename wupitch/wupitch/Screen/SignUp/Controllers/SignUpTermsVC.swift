@@ -103,6 +103,9 @@ class SignUpTermsVC: UIViewController {
             print("개인정보 수집:", SignUpUserInfo.shared.privacyInfo ?? "값이 없어요")
             print("푸시알림:", SignUpUserInfo.shared.pushAlert ?? "값이 없어요")
             
+            // 푸시알림관련해서 물어보기
+            SignUpUserInfo.shared.pushAlert = agreeBtn[2].status
+            
             // 버튼 클릭 시, 다음 스토리보드로 이동
             let storyboard = UIStoryboard.init(name: "SignUpCity", bundle: nil)
             
@@ -167,8 +170,7 @@ extension SignUpTermsVC : CheckDelegate {
             // '전체동의' 버튼이 눌릴 때
         case allAgreeBtn:
             
-            // 전체 동의 버튼을 누르면 모든 약관의 상태가 true로 싱글톤에 저장
-            SignUpUserInfo.shared.pushAlert = true
+            
             
             // 버튼을 다 동의 버튼으로 만드세요!!
             btn.allAgreeBtnImg()

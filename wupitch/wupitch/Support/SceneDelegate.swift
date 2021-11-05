@@ -32,16 +32,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let storyboard = UIStoryboard.init(name: "Crew", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "CrewVC")
             vc.navigationController?.pushViewController(vc, animated: true)
-            self.window?.rootViewController = vc
-            self.window?.makeKeyAndVisible()
+            //self.window?.rootViewController = vc
+            //self.window?.makeKeyAndVisible()
         }
         // 없을 때, 온보딩으로 이동
         else {
             let storyboard = UIStoryboard.init(name: "Onboarding", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "OnbordingVC")
             vc.navigationController?.pushViewController(vc, animated: true)
-            self.window?.rootViewController = vc
-            self.window?.makeKeyAndVisible()
+            //self.window?.rootViewController = vc
+            //self.window?.makeKeyAndVisible()
         }
     }
 

@@ -7,6 +7,7 @@
 
 import Foundation
 
+// 회원가입에서 나오는 바텀시트 배열
 struct LocationPicker {
     let locationName : String
 }

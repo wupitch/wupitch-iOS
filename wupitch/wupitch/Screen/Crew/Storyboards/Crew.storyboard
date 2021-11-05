@@ -19,9 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1c-4V-kdV">
-                                <rect key="frame" x="20" y="54" width="76" height="24"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="지역구 " image="down">
+                                <rect key="frame" x="20" y="54" width="71" height="24"/>
+                                <fontDescription key="fontDescription" name=".AppleSDGothicNeoI-Regular" family=".Apple SD Gothic NeoI" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="8" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="지역구" image="down">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
@@ -92,17 +93,25 @@
                                     <constraint firstItem="uga-dg-aAA" firstAttribute="centerX" secondItem="BX5-8L-KDi" secondAttribute="centerX" id="PYH-jw-a7p"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aol-rE-3gJ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="aol-rE-3gJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="1JN-ur-R5t"/>
                             <constraint firstItem="4Yz-Qs-KVB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Ezy-CJ-Gcw"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BX5-8L-KDi" secondAttribute="trailing" constant="28" id="JpQ-24-TB8"/>
+                            <constraint firstAttribute="bottom" secondItem="aol-rE-3gJ" secondAttribute="bottom" id="P6b-YA-rtA"/>
                             <constraint firstItem="tR0-Ci-nA5" firstAttribute="centerY" secondItem="Q1c-4V-kdV" secondAttribute="centerY" id="TXm-x1-zm2"/>
+                            <constraint firstItem="aol-rE-3gJ" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="W9p-3n-w0N"/>
                             <constraint firstItem="Q1c-4V-kdV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="dHS-kD-shT"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="BX5-8L-KDi" secondAttribute="bottom" constant="25" id="fjK-rf-mhr"/>
                             <constraint firstItem="Q1c-4V-kdV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="glJ-pi-Rg0"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="4Yz-Qs-KVB" secondAttribute="bottom" id="m8K-jU-OOc"/>
+                            <constraint firstItem="aol-rE-3gJ" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="noG-ZH-6pJ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tR0-Ci-nA5" secondAttribute="trailing" constant="20" id="pl8-bN-EnR"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4Yz-Qs-KVB" secondAttribute="trailing" constant="20" id="rrH-Mq-PE5"/>
                             <constraint firstItem="4Yz-Qs-KVB" firstAttribute="top" secondItem="Q1c-4V-kdV" secondAttribute="bottom" constant="40" id="vym-RY-Pvc"/>
@@ -113,6 +122,7 @@
                         <outlet property="crewCV" destination="4Yz-Qs-KVB" id="JaJ-Hb-S7G"/>
                         <outlet property="filterBtn" destination="5aN-jk-q3g" id="3ab-Jg-0vU"/>
                         <outlet property="floatingView" destination="BX5-8L-KDi" id="RY0-Ey-Zev"/>
+                        <outlet property="modalView" destination="aol-rE-3gJ" id="eGj-UW-ecD"/>
                         <outlet property="searchBtn" destination="p3r-gW-hOP" id="cUf-KN-qB1"/>
                         <outlet property="selectRegionBtn" destination="Q1c-4V-kdV" id="gza-OQ-Q6L"/>
                     </connections>

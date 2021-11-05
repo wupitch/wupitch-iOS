@@ -289,11 +289,11 @@ extension OnbordingVC: ASAuthorizationControllerDelegate, ASAuthorizationControl
             
             // 애플 로그인으로 진입 시, 버튼 라벨 (1/6)으로 변경
             SignUpUserInfo.shared.loginMethod = .apple
-            
-            self.navigationController?.pushViewController(dvc, animated: true)
-            
+        
             // 자동로그인을 위해 토큰 저장
             UserDefaults.standard.string(forKey: "userToken")
+            self.navigationController?.pushViewController(dvc, animated: true)
+        
         } else {
             // self.presentAlert(title: "애플로그인 실패")
             print("로그인실패")

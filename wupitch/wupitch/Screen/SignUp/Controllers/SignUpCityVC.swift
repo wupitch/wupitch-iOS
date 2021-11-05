@@ -67,6 +67,8 @@ class SignUpCityVC: UIViewController {
         // 텍스트필드 눌렀을 때 모달 화면 띄워주기
         let storyBoard: UIStoryboard = UIStoryboard(name: "LocationPicker", bundle: nil)
         
+        SignUpUserInfo.shared.bottomSheetMethod = .signUp
+        
         if let dvc = storyBoard.instantiateViewController(withIdentifier: "LocationPickerVC") as? LocationPickerVC {
             dvc.modalPresentationStyle = .overFullScreen
             

@@ -32,6 +32,19 @@ class SignUpAppleCompleteVC: UIViewController {
         startBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
         startBtn.makeRounded(cornerRadius: 8.adjusted)
     }
+    
+    @IBAction func touchUpCompleteBtn(_ sender: Any) {
+        
+        guard let viewControllerStack = self.navigationController?.viewControllers else { return }
+        
+        // 뷰 스택에서 OnbordingVC를 찾아서 거기까지 pop 합니다.
+        for viewController in viewControllerStack {
+            if let onboardingVC = viewController as? OnbordingVC { self.navigationController?.popToViewController(onboardingVC, animated: true)
+                print("닉네임 있어?",SignUpUserInfo.shared.nickName ?? "값이 없습니다.")
+            }
+        }
+    }
+    
 }
 
 

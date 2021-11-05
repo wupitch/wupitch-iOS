@@ -9,12 +9,15 @@ import UIKit
 
 class CrewVC: BaseVC {
     
+    @IBOutlet weak var modalView: UIView!
     @IBOutlet weak var floatingView: UIView!
     @IBOutlet weak var crewCV: UICollectionView!
     @IBOutlet weak var alertBtn: UIButton!
     @IBOutlet weak var filterBtn: UIButton!
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var selectRegionBtn: UIButton!
+    
+    var pickerViewData : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,7 @@ class CrewVC: BaseVC {
     }
     
     private func setStyle() {
+        modalView.alpha = 0.0
         selectRegionBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 22.adjusted)
         floatingView.makeRounded(cornerRadius: nil)
     }
@@ -47,7 +51,10 @@ class CrewVC: BaseVC {
         let storyBoard: UIStoryboard = UIStoryboard(name: "LocationPicker", bundle: nil)
         if let dvc = storyBoard.instantiateViewController(withIdentifier: "LocationPickerVC") as? LocationPickerVC {
             dvc.modalPresentationStyle = .overFullScreen
+            modalView.alpha = 1
+            SignUpUserInfo.shared.bottomSheetMethod = .main
             
+            // delegate
             dvc.modalDelegate = self
             
             // present 형태로 띄우기
@@ -100,7 +107,6 @@ extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         
         return UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
     }
-    
 }
 
 
@@ -109,16 +115,17 @@ extension CrewVC: ModalDelegate {
     
     // 모달에서 확인 버튼 눌렀을 때 다음 버튼에 생기는 색 변화
     func selectBtnToNextBtn() {
+        
     }
     
     // 모달이 dismiss되면서 모달백그라운드 색도 없어짐
     func modalDismiss() {
-        //modalBgView.alpha = 0.0
+        modalView.alpha = 0.0
     }
     
     // textField에 모달에서 선택했던 피커 값 넣어주기
     func textFieldData(data: String) {
-        //selectTextField.text = data
+        selectRegionBtn.setTitle(data, for: .normal)
         //SignUpUserInfo.shared.region = data
     }
 }

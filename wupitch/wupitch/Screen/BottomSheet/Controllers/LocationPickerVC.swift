@@ -69,8 +69,14 @@ class LocationPickerVC: UIViewController {
         
         // 선택 버튼 누를 시, textField의 데이터가 변경되도록
         let i = self.pickerView.selectedRow(inComponent: 0)
-        modalDelegate?.textFieldData(data: locationPickerData[i].locationName)
-        
+        if let bottomSheetMethod = SignUpUserInfo.shared.bottomSheetMethod {
+            switch bottomSheetMethod {
+            case .signUp:
+                modalDelegate?.textFieldData(data: locationPickerData[i].locationName)
+            case .main:
+                modalDelegate?.textFieldData(data: mainLocationPickerData[i].locationName)
+            }
+        }
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -89,12 +95,17 @@ extension LocationPickerVC: UITextFieldDelegate, UIPickerViewDelegate, UIPickerV
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return locationPickerData.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-
-        return locationPickerData[row].locationName
+        if let bottomSheetMethod = SignUpUserInfo.shared.bottomSheetMethod {
+            print("log>>>", bottomSheetMethod)
+            switch bottomSheetMethod {
+            case .signUp:
+                return locationPickerData.count
+            case .main:
+                print(mainLocationPickerData.count)
+                return mainLocationPickerData.count
+            }
+        }
+        return 0
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -110,13 +121,20 @@ extension LocationPickerVC: UITextFieldDelegate, UIPickerViewDelegate, UIPickerV
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
 
         pickerView.subviews.forEach {
-            $0.backgroundColor = .clear
+            $0.backgroundColor = .none
         }
 
         let numberLabel = UILabel()
         numberLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 22.adjusted)
         numberLabel.tintColor = .bk
-        numberLabel.text = locationPickerData[row].locationName
+        if let bottomSheetMethod = SignUpUserInfo.shared.bottomSheetMethod {
+            switch bottomSheetMethod {
+            case .signUp:
+                numberLabel.text = locationPickerData[row].locationName
+            case .main:
+                numberLabel.text = mainLocationPickerData[row].locationName
+            }
+        }
         numberLabel.textAlignment = .center
 
         return numberLabel
