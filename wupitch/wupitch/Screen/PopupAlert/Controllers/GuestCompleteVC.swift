@@ -36,4 +36,7 @@ class GuestCompleteVC: UIViewController {
         contentSubLabel.setTextWithLineHeight(text: contentSubLabel.text, lineHeight: 20.adjusted)
     }
 
+    @IBAction func touchUpCompleteBtn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

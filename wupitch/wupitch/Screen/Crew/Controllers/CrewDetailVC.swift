@@ -10,6 +10,7 @@ import Alamofire
 
 class CrewDetailVC: BaseVC {
     
+    @IBOutlet weak var modalView: UIView!
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var guestBtn: UIButton!
     @IBOutlet weak var bottomLineView: UIView!
@@ -26,6 +27,8 @@ class CrewDetailVC: BaseVC {
     }
     
     private func setStyle() {
+        modalView.alpha = 0.0
+        
         titleLabel.text = "크루"
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
         
@@ -85,6 +88,9 @@ class CrewDetailVC: BaseVC {
         
         if let dvc = storyBoard.instantiateViewController(withIdentifier: "CrewApplicationVC") as? CrewApplicationVC {
             dvc.modalPresentationStyle = .overFullScreen
+            
+            modalView.alpha = 1
+            dvc.guestModalDelegate = self
             
             // present 형태로 띄우기
             self.present(dvc, animated: true, completion: nil)
@@ -247,8 +253,21 @@ extension CrewDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
 }
 
-extension CrewDetailVC: UIScrollViewDelegate {
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-
+extension CrewDetailVC: GuestModalDelegate {
+    func modalDismiss() {
+        modalView.alpha = 0.0
     }
+    
+    func selectBtnToOpenPopup() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "GuestComplete", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "GuestCompleteVC") as? GuestCompleteVC {
+            dvc.modalPresentationStyle = .overFullScreen
+            dvc.modalTransitionStyle = .crossDissolve
+
+            // present 형태로 띄우기
+            self.present(dvc, animated: true, completion: nil)
+    }
+    
+    
+}
 }

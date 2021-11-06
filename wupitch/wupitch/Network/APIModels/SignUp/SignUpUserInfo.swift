@@ -24,10 +24,6 @@ class SignUpUserInfo {
     var loginMethod: LoginMethod?
     // 바텀시트 로그인, 메인 나누기
     var bottomSheetMethod: BottomSheetMethod?
-    // 약관동의
-    var termsOfUse : Bool?
-    var privacyInfo : Bool?
-    var pushAlert : Bool?
     // 지역선택
     var region : String?
     // 관심 스포츠 선택
@@ -47,9 +43,6 @@ class SignUpUserInfo {
     var idImg : UIImage?
     
     func dispose() {
-        SignUpUserInfo.shared.termsOfUse = nil
-        SignUpUserInfo.shared.privacyInfo = nil
-        SignUpUserInfo.shared.pushAlert = nil
         SignUpUserInfo.shared.region = nil
         SignUpUserInfo.shared.soccer = nil
         SignUpUserInfo.shared.badminton = nil

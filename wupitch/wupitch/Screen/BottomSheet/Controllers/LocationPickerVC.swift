@@ -9,7 +9,6 @@
 // 1. uipicker의 특정 글자만 굵게 안된다.
 
 import UIKit
-import Alamofire
 
 // MARK: - ModalDelegate
 protocol ModalDelegate {

@@ -107,6 +107,11 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vsn-vW-pAc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -136,13 +141,14 @@
                         <outlet property="detailCV" destination="maU-Wh-7kp" id="jhM-US-PW9"/>
                         <outlet property="guestBtn" destination="t0I-bC-77F" id="LrE-WS-EF0"/>
                         <outlet property="lineView" destination="ojs-Pn-Mqb" id="DWZ-IT-lrP"/>
+                        <outlet property="modalView" destination="Vsn-vW-pAc" id="nxb-dL-0R6"/>
                         <outlet property="registerBtn" destination="BsO-M4-KkP" id="Lvb-ls-AyB"/>
                         <outlet property="titleLabel" destination="Ly1-A4-A7I" id="ImQ-Va-GZe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="44.927536231884062" y="77.678571428571431"/>
+            <point key="canvasLocation" x="44" y="77.58620689655173"/>
         </scene>
     </scenes>
     <resources>

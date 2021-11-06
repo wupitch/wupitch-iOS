@@ -12,6 +12,7 @@ class SignUpTermsVC: UIViewController {
     // MARK: - Variable
     // 약관동의 배열
     var terms = Array(repeating: false, count: 3)
+    var colorBtn : Int?
     
     // MARK: - IBOutlets
     // 라벨
@@ -97,14 +98,9 @@ class SignUpTermsVC: UIViewController {
     @IBAction func touchUpNextBtn(_ sender: UIButton) {
         // 전체동의와 이용약관 개인정보 수집 및 이용 버튼이 눌렸을 때 다음 버튼 활성화
         if  nextBtn.backgroundColor == .main {
-            
-            print("<<<<<<<<<싱글톤에 누른 값들이 잘 저장되었는지 확인>>>>>>>>>>>")
-            print("약관동의:", SignUpUserInfo.shared.termsOfUse ?? "값이 없어요")
-            print("개인정보 수집:", SignUpUserInfo.shared.privacyInfo ?? "값이 없어요")
-            print("푸시알림:", SignUpUserInfo.shared.pushAlert ?? "값이 없어요")
-            
-            // 푸시알림관련해서 물어보기
-            SignUpUserInfo.shared.pushAlert = agreeBtn[2].status
+            print("유저디폴트에 푸시알림동의버튼", UserDefaults.standard.string(forKey: "pushAlertStatus") ?? "값없음")
+            // 유저디폴트에 푸시알림동의버튼
+//            UserDefaults.standard.set(agreeBtn[2]., forKey: "pushAlertStatus")
             
             // 버튼 클릭 시, 다음 스토리보드로 이동
             let storyboard = UIStoryboard.init(name: "SignUpCity", bundle: nil)
@@ -169,9 +165,6 @@ extension SignUpTermsVC : CheckDelegate {
         switch btn {
             // '전체동의' 버튼이 눌릴 때
         case allAgreeBtn:
-            
-            
-            
             // 버튼을 다 동의 버튼으로 만드세요!!
             btn.allAgreeBtnImg()
             for idx in 0..<terms.count {
@@ -198,12 +191,9 @@ extension SignUpTermsVC : CheckDelegate {
         
         if agreeBtn[0].status && agreeBtn[1].status {
             nextBtn.backgroundColor = .main
-            // 버튼 두개가 눌리면 싱글톤에 저장
         }
         else {
             nextBtn.backgroundColor = .gray03
-            // 버튼 두개 중 하나라도 해제시, 초기화
-            
         }
     }
 }
