@@ -39,5 +39,12 @@ class UserInfoWarningVC: UIViewController {
            contentSubLabel.textAlignment = .center
        }
 
-
+    @IBAction func touchUpCancelBtn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func touchUpSelectBtn(_ sender: Any) {
+        // 이 팝업 dismiss 후 프로필 작성하러가는 페이지로 이동
+    }
+    
 }

@@ -30,7 +30,6 @@ class CrewApplicationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setStyle()
     }
     
@@ -112,18 +111,13 @@ class CrewApplicationVC: UIViewController {
     @IBAction func touchUpSelectBtn(_ sender: Any) {
         if selectBtn.backgroundColor == .bk {
             guestModalDelegate?.modalDismiss()
+            // 디스미스되고 손님신청완료 팝업 나옴
             dismiss(animated: true, completion: {
                 self.guestModalDelegate?.selectBtnToOpenPopup()
-                
             }
-                    
             )}
-        
-        // 디스미스되고 손님신청으로 누르기
-        
         else {
             selectBtn.backgroundColor = .gray03
         }
     }
-    
 }
