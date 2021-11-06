@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6F15D777CDE3D3EAF16D99BE /* Pods_wupitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB4C56BB582DE4383EC8ED5 /* Pods_wupitch.framework */; };
+		DD1BFC20273663450042C51F /* NicknameValidationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC1F273663450042C51F /* NicknameValidationData.swift */; };
+		DD1BFC23273664970042C51F /* NicknameValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC22273664970042C51F /* NicknameValidationService.swift */; };
+		DD1BFC25273665990042C51F /* NicknameValidationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC24273665990042C51F /* NicknameValidationRequest.swift */; };
 		DD295DA027181E3B008CFC64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD295D9F27181E3B008CFC64 /* AppDelegate.swift */; };
 		DD295DA227181E3B008CFC64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD295DA127181E3B008CFC64 /* SceneDelegate.swift */; };
 		DD295DA927181E3D008CFC64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD295DA827181E3D008CFC64 /* Assets.xcassets */; };
@@ -108,6 +111,9 @@
 		2AB4C56BB582DE4383EC8ED5 /* Pods_wupitch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wupitch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BBA2CAF355DA28C0E7FE086 /* Pods-wupitch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wupitch.debug.xcconfig"; path = "Target Support Files/Pods-wupitch/Pods-wupitch.debug.xcconfig"; sourceTree = "<group>"; };
 		A68E2DF78A46E1593F236A27 /* Pods-wupitch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wupitch.release.xcconfig"; path = "Target Support Files/Pods-wupitch/Pods-wupitch.release.xcconfig"; sourceTree = "<group>"; };
+		DD1BFC1F273663450042C51F /* NicknameValidationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameValidationData.swift; sourceTree = "<group>"; };
+		DD1BFC22273664970042C51F /* NicknameValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameValidationService.swift; sourceTree = "<group>"; };
+		DD1BFC24273665990042C51F /* NicknameValidationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameValidationRequest.swift; sourceTree = "<group>"; };
 		DD295D9C27181E3B008CFC64 /* wupitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wupitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD295D9F27181E3B008CFC64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD295DA127181E3B008CFC64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -234,6 +240,23 @@
 				2AB4C56BB582DE4383EC8ED5 /* Pods_wupitch.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD1BFC1E273663230042C51F /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				DD1BFC1F273663450042C51F /* NicknameValidationData.swift */,
+				DD1BFC24273665990042C51F /* NicknameValidationRequest.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		DD1BFC212736644D0042C51F /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				DD1BFC22273664970042C51F /* NicknameValidationService.swift */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 		DD295D9327181E3B008CFC64 = {
@@ -648,6 +671,7 @@
 		DDE0EE632729317C00C46821 /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				DD1BFC212736644D0042C51F /* Account */,
 				DDE0EE64272931AC00C46821 /* SignIn */,
 			);
 			path = APIServices;
@@ -709,6 +733,7 @@
 		DDED0118271B33C200C2C343 /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
+				DD1BFC1E273663230042C51F /* Account */,
 				DD3A30C2272ADF2000D711C6 /* SignUp */,
 				DDE0EE65272932A000C46821 /* SignIn */,
 				DDED0119271B33DD00C2C343 /* Onboarding */,
@@ -932,6 +957,7 @@
 				DDE0EE672729333300C46821 /* KakaoLoginService.swift in Sources */,
 				DD2D63B227268A34007CEC57 /* LevelModalVC.swift in Sources */,
 				DD3A30E8272DAC2000D711C6 /* FeedVC.swift in Sources */,
+				DD1BFC20273663450042C51F /* NicknameValidationData.swift in Sources */,
 				DD3A30BB2729AB1400D711C6 /* CheckBtn.swift in Sources */,
 				DD3A30F6272E620B00D711C6 /* AddCrewVC.swift in Sources */,
 				DDED011B271B33F800C2C343 /* OnboardingData.swift in Sources */,
@@ -963,7 +989,9 @@
 				DDE0EE692729335000C46821 /* KakaoLoginData.swift in Sources */,
 				DDC3B50C27327A0000FF4959 /* DetailCrewHeaderCRV.swift in Sources */,
 				DD295DA227181E3B008CFC64 /* SceneDelegate.swift in Sources */,
+				DD1BFC25273665990042C51F /* NicknameValidationRequest.swift in Sources */,
 				DDC3B5142733C4D600FF4959 /* VC.swift in Sources */,
+				DD1BFC23273664970042C51F /* NicknameValidationService.swift in Sources */,
 				DD3A30C6272D1E1400D711C6 /* KakaoLoginRequest.swift in Sources */,
 				DD6728352723E582001E1355 /* LocationPickerData.swift in Sources */,
 				DDC3B51B2735565C00FF4959 /* MainLocationPickerData.swift in Sources */,

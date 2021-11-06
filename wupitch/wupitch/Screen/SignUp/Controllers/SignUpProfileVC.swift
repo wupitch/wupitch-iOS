@@ -18,9 +18,10 @@ class SignUpProfileVC: UIViewController {
     @IBOutlet weak var startBtn: NextBtn!
     @IBOutlet weak var textCountLabel: UILabel!
     
-    var state : Bool?
     var textViewState : Bool?
     let maxLength = 6
+    var resultIsSuccess : Bool = false
+    lazy var nicknameValidationManage = NicknameValidationService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,58 +30,62 @@ class SignUpProfileVC: UIViewController {
         placeholderSetting()
         kakaoAppleLoginLogic()
         setDelegate()
-        
-        NotificationCenter.default.addObserver(self,
-            selector: #selector(textDidChange(_:)),
-            name: UITextField.textDidChangeNotification,
-            object: nickNameTextField)
+//        NotificationCenter.default.addObserver(self,
+//                                               selector: #selector(textDidChange(_:)),
+//                                               name: UITextField.textDidChangeNotification,
+//                                               object: nickNameTextField)
     }
     
-    @objc private func textDidChange(_ notification: Notification) {
-        if let textField = notification.object as? UITextField {
-            if let text = nickNameTextField.text {
-                
-                if text.count > maxLength {
-                    // 6글자 넘어가면 자동으로 키보드 내려감
-                    nickNameTextField.resignFirstResponder()
-                }
-                
-                // 초과되는 텍스트 제거
-                if text.count > maxLength {
-                    let index = text.index(text.startIndex, offsetBy: maxLength)
-                    let newString = text[text.startIndex..<index]
-                    nickNameTextField.text = String(newString)
-                }
-                
-                // 2글자 이상 6글자 이하로 입력해주세요
-                // 여기서 중복검사
-                else if text.count < 2 {
-                    state = false
-                    correctLabel.alpha = 1
-                    correctLabel.text = "사용 불가능한 닉네임입니다."
-                    correctLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
-                    correctLabel.textColor = UIColor(red: 241/255, green: 0/255, blue: 0/255, alpha: 1)
-                        startBtn.backgroundColor = .gray03
-                    // 싱글톤 초기화
-                    SignUpUserInfo.shared.nickName = nil
-                    
-                }
-                else {
-                    state = true
-                    correctLabel.alpha = 1
-                    correctLabel.text = "사용 가능한 닉네임입니다."
-                    correctLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
-                    correctLabel.textColor = UIColor(red: 72/255, green: 190/255, blue: 0/255, alpha: 1)
-                    
-                    if textViewState == true {
-                        startBtn.backgroundColor = .main
-                    }
-                    // 텍스트 싱글톤에 저장
-                    SignUpUserInfo.shared.nickName = nickNameTextField.text
-                }
-            }
-        }
-    }
+//    @objc private func textDidChange(_ notification: Notification) {
+//        if let textField = notification.object as? UITextField {
+//            if let text = nickNameTextField.text {
+//
+//
+//
+//                //                // 여기서 중복검사
+//                //                if resultIsSuccess == false {
+//                //                    print("resultIsSuccess",resultIsSuccess)
+//                //                    correctLabel.alpha = 1
+//                //                    correctLabel.text = "사용 불가능한 닉네임입니다."
+//                //                    correctLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+//                //                    correctLabel.textColor = UIColor(red: 241/255, green: 0/255, blue: 0/255, alpha: 1)
+//                //                    startBtn.backgroundColor = .gray03
+//                //                    // 싱글톤 초기화
+//                //                    // SignUpUserInfo.shared.nickName = nil
+//                ////                    let input = NicknameValidationRequest(nickname: text)
+//                ////                    nicknameValidationManage.postNicknameValidation(input, delegate: self)
+//                //
+//                //                }
+//                //                else {
+//                //                    print("resultIsSuccess",resultIsSuccess)
+//                //                    correctLabel.alpha = 1
+//                //                    correctLabel.text = "사용 가능한 닉네임입니다."
+//                //                    correctLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+//                //                    correctLabel.textColor = UIColor(red: 72/255, green: 190/255, blue: 0/255, alpha: 1)
+//                ////                    let input = NicknameValidationRequest(nickname: text)
+//                ////                    nicknameValidationManage.postNicknameValidation(input, delegate: self)
+//                //
+//                //                    if textViewState == true {
+//                //                        startBtn.backgroundColor = .main
+//                //                    }
+//                //                    // 텍스트 싱글톤에 저장
+//                //                    // SignUpUserInfo.shared.nickName = nickNameTextField.text
+//                //                }
+//
+//                //                if text.count > maxLength {
+//                //                    // 6글자 넘어가면 자동으로 키보드 내려감
+//                //                    nickNameTextField.resignFirstResponder()
+//                //                }
+//                //
+//                //                // 초과되는 텍스트 제거
+//                //                if text.count > maxLength {
+//                //                    let index = text.index(text.startIndex, offsetBy: maxLength)
+//                //                    let newString = text[text.startIndex..<index]
+//                //                    nickNameTextField.text = String(newString)
+//                //                }
+//            }
+//        }
+//    }
     
     func setDelegate() {
         nickNameTextField.delegate = self
@@ -129,16 +134,46 @@ class SignUpProfileVC: UIViewController {
     }
     
     // 카카오, 애플 로그인 로직 나누기
-       private func kakaoAppleLoginLogic() {
-           if let loginMethod = SignUpUserInfo.shared.loginMethod {
-               switch loginMethod {
-               case .kakao:
-                   startBtn.setTitle("완료", for: .normal)
-               case .apple:
-                   startBtn.setTitle("다음 (5/6)", for: .normal)
-               }
-           }
-       }
+    private func kakaoAppleLoginLogic() {
+        if let loginMethod = SignUpUserInfo.shared.loginMethod {
+            switch loginMethod {
+            case .kakao:
+                startBtn.setTitle("완료", for: .normal)
+            case .apple:
+                startBtn.setTitle("다음 (5/6)", for: .normal)
+            }
+        }
+    }
+    
+    private func nicknameTF(_ textField: UITextField) {
+        
+        
+        //        // 여기서 중복검사
+        //        if resultIsSuccess == false {
+        //            print("resultIsSuccess",resultIsSuccess)
+        //            correctLabel.alpha = 1
+        //            correctLabel.text = "사용 불가능한 닉네임입니다."
+        //            correctLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+        //            correctLabel.textColor = UIColor(red: 241/255, green: 0/255, blue: 0/255, alpha: 1)
+        //                startBtn.backgroundColor = .gray03
+        //            // 싱글톤 초기화
+        //            SignUpUserInfo.shared.nickName = nil
+        //
+        //        }
+        //        else {
+        //            print("resultIsSuccess",resultIsSuccess)
+        //            correctLabel.alpha = 1
+        //            correctLabel.text = "사용 가능한 닉네임입니다."
+        //            correctLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+        //            correctLabel.textColor = UIColor(red: 72/255, green: 190/255, blue: 0/255, alpha: 1)
+        //
+        //            if textViewState == true {
+        //                startBtn.backgroundColor = .main
+        //            }
+        //            // 텍스트 싱글톤에 저장
+        //            SignUpUserInfo.shared.nickName = nickNameTextField.text
+        //        }
+    }
     
     // backBtn
     @IBAction func touchUpBackBtn(_ sender: Any) {
@@ -171,7 +206,7 @@ class SignUpProfileVC: UIViewController {
             
             if let loginMethod = SignUpUserInfo.shared.loginMethod {
                 switch loginMethod {
-                // 카카오 로그인 루트로 들어왔을 때
+                    // 카카오 로그인 루트로 들어왔을 때
                 case .kakao:
                     startBtn.setTitle("완료", for: .normal)
                     let storyboard = UIStoryboard.init(name: "SignUpKakaoComplete", bundle: nil)
@@ -205,29 +240,29 @@ extension SignUpProfileVC: UITextViewDelegate, UITextFieldDelegate, AlertDelegat
             textView.text = nil
             textView.textColor = .gray02
             
-            if state == true {
+            if resultIsSuccess == true {
                 startBtn.backgroundColor = .main
             }
             else {
                 startBtn.backgroundColor = .gray03
             }
         }
-      }
-
-      func textViewDidEndEditing(_ textView: UITextView) {
-          // 텍스트 싱글톤에 저장
-          SignUpUserInfo.shared.userIntroduce = infoTextView.text
-          
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        // 텍스트 싱글톤에 저장
+        SignUpUserInfo.shared.userIntroduce = infoTextView.text
+        
         if textView.text.isEmpty {
             textViewState = false
-          textView.text = "내용을 입력해주세요."
+            textView.text = "내용을 입력해주세요."
             textView.textColor = .gray03
             startBtn.backgroundColor = .gray03
             
             // 받은 값 초기화
             SignUpUserInfo.shared.userIntroduce = nil
         }
-      }
+    }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         // 최대 100자
@@ -240,21 +275,26 @@ extension SignUpProfileVC: UITextViewDelegate, UITextFieldDelegate, AlertDelegat
         // 엔터버튼 키보드 내려가기
         if text == "\n" {
             textView.resignFirstResponder()
-           }
+        }
         
         return true
     }
     
     // UITextField
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
         let currentCharacterCount = textField.text?.count ?? 0
-               if (range.length + range.location > currentCharacterCount){
-                   return false
-               }
-               let newLength = currentCharacterCount + string.count - range.length
-               
-                return newLength <= 6
+        if (range.length + range.location > currentCharacterCount){
+            return false
+        }
+        let newLength = currentCharacterCount + string.count - range.length
+        
+        return newLength <= 6
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        nicknameValidationManage.postNicknameValidation(NicknameValidationRequest(nickname: nickNameTextField.text ?? "값없음"), delegate: self)
+        // 텍스트 싱글톤에 저장
+        SignUpUserInfo.shared.nickName = nickNameTextField.text
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -275,6 +315,35 @@ extension SignUpProfileVC: UITextViewDelegate, UITextFieldDelegate, AlertDelegat
     }
 }
 
-
+// 닉네임 중복 api 연결
+extension SignUpProfileVC {
+    func didSuccessNicknameValidation(result: NicknameValidationData) {
+        print("데이터가 성공적으로 들어왔습니다.")
+        print(result.isSuccess)
+        
+        resultIsSuccess = result.isSuccess
+        
+        if result.isSuccess == false {
+            correctLabel.alpha = 1
+            correctLabel.text = "사용 불가능한 닉네임입니다."
+            correctLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+            correctLabel.textColor = UIColor(red: 241/255, green: 0/255, blue: 0/255, alpha: 1)
+            startBtn.backgroundColor = .gray03
+        }
+        else {
+            correctLabel.alpha = 1
+            correctLabel.text = "사용 가능한 닉네임입니다."
+            correctLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+            correctLabel.textColor = UIColor(red: 72/255, green: 190/255, blue: 0/255, alpha: 1)
+            if textViewState == true {
+                startBtn.backgroundColor = .main
+            }
+        }
+    }
+    func failedToRequest(message: String) {
+        print("데이터가 들어오지 않았습니다.")
+        
+    }
+}
 
 
