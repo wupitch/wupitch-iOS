@@ -25,27 +25,27 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="iJj-uv-JAL">
-                        <rect key="frame" x="16" y="46.5" width="41.5" height="47"/>
+                        <rect key="frame" x="16" y="46.5" width="41.5" height="43"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7O-wq-lgy">
-                                <rect key="frame" x="0.0" y="0.0" width="41.5" height="24.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIV-Vd-bcG">
-                                <rect key="frame" x="0.0" y="26.5" width="41.5" height="20.5"/>
+                                <rect key="frame" x="0.0" y="22.5" width="41.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                     </stackView>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ebp-SJ-zHI">
-                        <rect key="frame" x="16" y="113.5" width="209" height="60"/>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ebp-SJ-zHI">
+                        <rect key="frame" x="16" y="109.5" width="265" height="120"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="60" id="ci2-HQ-fzX"/>
+                            <constraint firstAttribute="height" constant="120" id="ci2-HQ-fzX"/>
                         </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PYH-Ay-McT">
                             <size key="itemSize" width="128" height="128"/>
@@ -55,8 +55,8 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="200" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zrc-Rm-edE">
-                        <rect key="frame" x="16" y="197.5" width="265" height="568.5"/>
-                        <mutableString key="text">동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르</mutableString>
+                        <rect key="frame" x="16" y="253.5" width="265" height="568.5"/>
+                        <string key="text">동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르</string>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -72,12 +72,14 @@
                 <constraint firstItem="iJj-uv-JAL" firstAttribute="top" secondItem="wRl-FD-xKt" secondAttribute="bottom" constant="6" id="MI8-5f-w7X"/>
                 <constraint firstItem="Zrc-Rm-edE" firstAttribute="top" secondItem="ebp-SJ-zHI" secondAttribute="bottom" constant="24" id="WYE-W0-TEX"/>
                 <constraint firstItem="Zrc-Rm-edE" firstAttribute="leading" secondItem="ebp-SJ-zHI" secondAttribute="leading" id="X2v-ev-HFh"/>
-                <constraint firstAttribute="trailing" secondItem="ebp-SJ-zHI" secondAttribute="trailing" constant="76" id="gWL-rq-FBk"/>
-                <constraint firstAttribute="bottom" secondItem="Zrc-Rm-edE" secondAttribute="bottom" constant="24" id="qMf-ab-2aw"/>
+                <constraint firstAttribute="trailing" secondItem="ebp-SJ-zHI" secondAttribute="trailing" constant="20" id="gWL-rq-FBk"/>
                 <constraint firstItem="ebp-SJ-zHI" firstAttribute="leading" secondItem="iJj-uv-JAL" secondAttribute="leading" id="sOm-QH-oDR"/>
                 <constraint firstItem="wRl-FD-xKt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="xYM-Lk-t56"/>
             </constraints>
             <size key="customSize" width="301" height="790"/>
+            <connections>
+                <outlet property="tagSelectCV" destination="ebp-SJ-zHI" id="iua-sR-VhX"/>
+            </connections>
             <point key="canvasLocation" x="319.56521739130437" y="334.82142857142856"/>
         </collectionViewCell>
     </objects>

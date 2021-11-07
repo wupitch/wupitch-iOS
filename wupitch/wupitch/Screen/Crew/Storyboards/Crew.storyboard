@@ -54,7 +54,7 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Yz-Qs-KVB">
-                                <rect key="frame" x="20" y="118" width="374" height="744"/>
+                                <rect key="frame" x="20" y="98" width="374" height="764"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ngi-kF-7Yh">
                                     <size key="itemSize" width="128" height="128"/>
@@ -93,8 +93,8 @@
                                     <constraint firstItem="uga-dg-aAA" firstAttribute="centerX" secondItem="BX5-8L-KDi" secondAttribute="centerX" id="PYH-jw-a7p"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aol-rE-3gJ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aol-rE-3gJ">
+                                <rect key="frame" x="0.0" y="289" width="414" height="607"/>
                                 <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
@@ -114,7 +114,7 @@
                             <constraint firstItem="aol-rE-3gJ" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="noG-ZH-6pJ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tR0-Ci-nA5" secondAttribute="trailing" constant="20" id="pl8-bN-EnR"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4Yz-Qs-KVB" secondAttribute="trailing" constant="20" id="rrH-Mq-PE5"/>
-                            <constraint firstItem="4Yz-Qs-KVB" firstAttribute="top" secondItem="Q1c-4V-kdV" secondAttribute="bottom" constant="40" id="vym-RY-Pvc"/>
+                            <constraint firstItem="4Yz-Qs-KVB" firstAttribute="top" secondItem="Q1c-4V-kdV" secondAttribute="bottom" constant="20" id="vym-RY-Pvc"/>
                         </constraints>
                     </view>
                     <connections>

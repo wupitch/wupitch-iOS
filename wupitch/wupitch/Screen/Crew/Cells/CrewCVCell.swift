@@ -38,13 +38,9 @@ class CrewCVCell: UICollectionViewCell {
         dayLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         subLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         
-        contentView.makeRounded(cornerRadius: 16.adjusted)
+        bgView.makeRounded(cornerRadius: 16.adjusted)
         bgView.backgroundColor = .gray05
         bgView.layer.borderWidth = 1.adjusted
         bgView.layer.borderColor = UIColor.gray04.cgColor
-        
-        
-        
     }
-
 }

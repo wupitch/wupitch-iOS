@@ -105,7 +105,7 @@ extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
                         UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
+        return UIEdgeInsets(top: 21, left: 0, bottom: 16, right: 0)
     }
 }
 

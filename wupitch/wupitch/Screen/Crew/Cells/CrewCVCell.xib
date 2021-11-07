@@ -12,17 +12,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CrewCVCell" id="gTV-IL-0wX" customClass="CrewCVCell" customModule="wupitch" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="332" height="129"/>
+            <rect key="frame" x="0.0" y="0.0" width="332" height="125"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="332" height="129"/>
+                <rect key="frame" x="0.0" y="0.0" width="332" height="125"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4M-JI-uXA">
-                        <rect key="frame" x="0.0" y="0.0" width="332" height="129"/>
+                        <rect key="frame" x="0.0" y="0.0" width="332" height="125"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgBasket" translatesAutoresizingMaskIntoConstraints="NO" id="EZM-tH-r4C">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="129"/>
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="xsw-KT-EMM"/>
                                 </constraints>
@@ -128,7 +128,7 @@
                 <constraint firstItem="D4M-JI-uXA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="XcR-iw-vlt"/>
                 <constraint firstItem="D4M-JI-uXA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jqw-gh-oot"/>
             </constraints>
-            <size key="customSize" width="332" height="129"/>
+            <size key="customSize" width="332" height="125"/>
             <connections>
                 <outlet property="bgView" destination="D4M-JI-uXA" id="TEJ-n2-Vel"/>
                 <outlet property="circleView" destination="XeR-mQ-qTr" id="qgS-Pd-1ag"/>
@@ -140,7 +140,7 @@
                 <outlet property="tagNameView" destination="0kG-wR-iOO" id="og0-AS-gBH"/>
                 <outlet property="titleLabel" destination="ZEp-Cj-1bh" id="Zwg-RC-h0G"/>
             </connections>
-            <point key="canvasLocation" x="281.15942028985512" y="46.540178571428569"/>
+            <point key="canvasLocation" x="281.15942028985512" y="45.200892857142854"/>
         </collectionViewCell>
     </objects>
     <resources>
