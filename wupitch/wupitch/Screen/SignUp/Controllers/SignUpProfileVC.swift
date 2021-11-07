@@ -89,36 +89,6 @@ class SignUpProfileVC: UIViewController {
         }
     }
     
-    private func nicknameTF(_ textField: UITextField) {
-        
-        
-        //        // 여기서 중복검사
-        //        if resultIsSuccess == false {
-        //            print("resultIsSuccess",resultIsSuccess)
-        //            correctLabel.alpha = 1
-        //            correctLabel.text = "사용 불가능한 닉네임입니다."
-        //            correctLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
-        //            correctLabel.textColor = UIColor(red: 241/255, green: 0/255, blue: 0/255, alpha: 1)
-        //                startBtn.backgroundColor = .gray03
-        //            // 싱글톤 초기화
-        //            SignUpUserInfo.shared.nickName = nil
-        //
-        //        }
-        //        else {
-        //            print("resultIsSuccess",resultIsSuccess)
-        //            correctLabel.alpha = 1
-        //            correctLabel.text = "사용 가능한 닉네임입니다."
-        //            correctLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
-        //            correctLabel.textColor = UIColor(red: 72/255, green: 190/255, blue: 0/255, alpha: 1)
-        //
-        //            if textViewState == true {
-        //                startBtn.backgroundColor = .main
-        //            }
-        //            // 텍스트 싱글톤에 저장
-        //            SignUpUserInfo.shared.nickName = nickNameTextField.text
-        //        }
-    }
-    
     // backBtn
     @IBAction func touchUpBackBtn(_ sender: Any) {
         print("뒤로가기")
@@ -182,7 +152,7 @@ extension SignUpProfileVC: UITextViewDelegate, UITextFieldDelegate, AlertDelegat
         if textView.textColor == .gray03 {
             textViewState = true
             textView.text = nil
-            textView.textColor = .gray02
+            textView.textColor = .bk
             
             if resultIsSuccess == true {
                 startBtn.backgroundColor = .main
@@ -233,6 +203,10 @@ extension SignUpProfileVC: UITextViewDelegate, UITextFieldDelegate, AlertDelegat
         let newLength = currentCharacterCount + string.count - range.length
         
         return newLength <= 6
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        nickNameTextField.textColor = .bk
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {

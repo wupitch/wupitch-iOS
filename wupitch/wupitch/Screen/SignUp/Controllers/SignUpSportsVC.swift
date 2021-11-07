@@ -44,19 +44,6 @@ class SignUpSportsVC: UIViewController {
                                                object: etcTextField)
     }
     
-//    func set() {
-//        if etcBtnState == true {
-//            if etcTextFieldState == true {
-//                nextBtn.backgroundColor = .main
-//            }
-//            else {
-//                nextBtn.backgroundColor = .gray03
-//            }
-//        }else {
-//            nextBtn.backgroundColor = .main
-//        }
-//    }
-    
     // 텍스트필드
     @objc private func textDidChange(_ notification: Notification) {
         if let textField = notification.object as? UITextField {
@@ -355,8 +342,7 @@ extension SignUpSportsVC: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         print("뭐라고나오나보자",etcTextField.text ?? "값없음")
-        //etcTextFieldState = true
-        //nextBtn.backgroundColor = .main
+        etcTextField.textColor = .bk
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
