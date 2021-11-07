@@ -11,6 +11,9 @@
 		DD1BFC20273663450042C51F /* NicknameValidationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC1F273663450042C51F /* NicknameValidationData.swift */; };
 		DD1BFC23273664970042C51F /* NicknameValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC22273664970042C51F /* NicknameValidationService.swift */; };
 		DD1BFC25273665990042C51F /* NicknameValidationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC24273665990042C51F /* NicknameValidationRequest.swift */; };
+		DD1BFC272736DC8C0042C51F /* InformationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC262736DC8C0042C51F /* InformationService.swift */; };
+		DD1BFC2B2736DCCA0042C51F /* InformationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC2A2736DCCA0042C51F /* InformationData.swift */; };
+		DD1BFC2D2736DCDC0042C51F /* InformationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC2C2736DCDC0042C51F /* InformationRequest.swift */; };
 		DD295DA027181E3B008CFC64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD295D9F27181E3B008CFC64 /* AppDelegate.swift */; };
 		DD295DA227181E3B008CFC64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD295DA127181E3B008CFC64 /* SceneDelegate.swift */; };
 		DD295DA927181E3D008CFC64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD295DA827181E3D008CFC64 /* Assets.xcassets */; };
@@ -114,6 +117,9 @@
 		DD1BFC1F273663450042C51F /* NicknameValidationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameValidationData.swift; sourceTree = "<group>"; };
 		DD1BFC22273664970042C51F /* NicknameValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameValidationService.swift; sourceTree = "<group>"; };
 		DD1BFC24273665990042C51F /* NicknameValidationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameValidationRequest.swift; sourceTree = "<group>"; };
+		DD1BFC262736DC8C0042C51F /* InformationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationService.swift; sourceTree = "<group>"; };
+		DD1BFC2A2736DCCA0042C51F /* InformationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationData.swift; sourceTree = "<group>"; };
+		DD1BFC2C2736DCDC0042C51F /* InformationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationRequest.swift; sourceTree = "<group>"; };
 		DD295D9C27181E3B008CFC64 /* wupitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wupitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD295D9F27181E3B008CFC64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD295DA127181E3B008CFC64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -245,8 +251,8 @@
 		DD1BFC1E273663230042C51F /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				DD1BFC1F273663450042C51F /* NicknameValidationData.swift */,
-				DD1BFC24273665990042C51F /* NicknameValidationRequest.swift */,
+				DD1BFC292736DCB30042C51F /* Information */,
+				DD1BFC282736DCA60042C51F /* Nickname */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -255,8 +261,27 @@
 			isa = PBXGroup;
 			children = (
 				DD1BFC22273664970042C51F /* NicknameValidationService.swift */,
+				DD1BFC262736DC8C0042C51F /* InformationService.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		DD1BFC282736DCA60042C51F /* Nickname */ = {
+			isa = PBXGroup;
+			children = (
+				DD1BFC1F273663450042C51F /* NicknameValidationData.swift */,
+				DD1BFC24273665990042C51F /* NicknameValidationRequest.swift */,
+			);
+			path = Nickname;
+			sourceTree = "<group>";
+		};
+		DD1BFC292736DCB30042C51F /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				DD1BFC2A2736DCCA0042C51F /* InformationData.swift */,
+				DD1BFC2C2736DCDC0042C51F /* InformationRequest.swift */,
+			);
+			path = Information;
 			sourceTree = "<group>";
 		};
 		DD295D9327181E3B008CFC64 = {
@@ -941,6 +966,7 @@
 				DD7BEBC727315D7000DB2F60 /* DetailCrewTitleCVCell.swift in Sources */,
 				DD61E4BB271D856E007504DE /* UILabel.swift in Sources */,
 				DD3E37B6272F432A00C4192E /* UserInfoWarningVC.swift in Sources */,
+				DD1BFC272736DC8C0042C51F /* InformationService.swift in Sources */,
 				DDC3B5192734041500FF4959 /* BaseVC.swift in Sources */,
 				DD7BEBCB27315DF800DB2F60 /* DetailCrewIntroduceCVCell.swift in Sources */,
 				DD3ACBB7272104D300EBC201 /* TermsOfUseVC.swift in Sources */,
@@ -981,9 +1007,11 @@
 				DD3ACBC8272170A800EBC201 /* SignUpAppleCompleteVC.swift in Sources */,
 				DD3A30C1272AA94100D711C6 /* ModalSportsBtn.swift in Sources */,
 				DDC3B5102732A68A00FF4959 /* DetailCrewFooterCRV.swift in Sources */,
+				DD1BFC2D2736DCDC0042C51F /* InformationRequest.swift in Sources */,
 				DDED0121271BD98400C2C343 /* OnbordingVC.swift in Sources */,
 				DD3A30BF272A821A00D711C6 /* SportsBtn.swift in Sources */,
 				DD61E4C2271EB81D007504DE /* Adjusted.swift in Sources */,
+				DD1BFC2B2736DCCA0042C51F /* InformationData.swift in Sources */,
 				DD342209272ED504005DF6CA /* GuestCompleteVC.swift in Sources */,
 				DDC3B51D2736373500FF4959 /* GuestDateBtn.swift in Sources */,
 				DDE0EE692729335000C46821 /* KakaoLoginData.swift in Sources */,

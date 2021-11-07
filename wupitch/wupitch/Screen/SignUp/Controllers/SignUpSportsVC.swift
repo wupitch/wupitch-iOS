@@ -156,20 +156,20 @@ class SignUpSportsVC: UIViewController {
     // 다음 버튼
     @IBAction func touchUpNextBtn(_ sender: Any) {
         if nextBtn.backgroundColor == .main {
+            //SignUpUserInfo.shared.sportsList
             let storyboard = UIStoryboard.init(name: "SignUpAge", bundle: nil)
-            
             guard let dvc = storyboard.instantiateViewController(identifier: "SignUpAgeVC") as? SignUpAgeVC else {return}
-            
             self.navigationController?.pushViewController(dvc, animated: true)
             
             print("<<<<<<<<<<<싱글톤 값 잘 들어가나 확인>>>>>>>>>>>")
-            print("축구버튼:", SignUpUserInfo.shared.soccer ?? "값이 없습니다.")
-            print("배드민턴버튼:", SignUpUserInfo.shared.badminton ?? "값이 없습니다.")
-            print("배구버튼:", SignUpUserInfo.shared.volleyball ?? "값이 없습니다.")
-            print("농구버튼:", SignUpUserInfo.shared.basketball ?? "값이 없습니다.")
-            print("등산버튼:", SignUpUserInfo.shared.mountain ?? "값이 없습니다.")
-            print("런닝버튼:", SignUpUserInfo.shared.running ?? "값이 없습니다.")
-            print("기타버튼:", SignUpUserInfo.shared.etcText ?? "값이 없습니다.")
+//            print("축구버튼:", SignUpUserInfo.shared.sportsList[0])
+//            print("배드민턴버튼:", SignUpUserInfo.shared.sportsList[1])
+//            print("배구버튼:", SignUpUserInfo.shared.sportsList[2])
+//            print("농구버튼:", SignUpUserInfo.shared.sportsList[3])
+//            print("등산버튼:", SignUpUserInfo.shared.sportsList[4])
+//            print("런닝버튼:", SignUpUserInfo.shared.sportsList[5])
+//            print("기타버튼:", SignUpUserInfo.shared.sportsList[6])
+            print("기타글씨:", SignUpUserInfo.shared.etcText ?? "값없음")
         }
         else {
             nextBtn.backgroundColor = .gray03
@@ -184,14 +184,13 @@ class SignUpSportsVC: UIViewController {
             sportBtns[0].colorSportsBtn()
             nextBtn.backgroundColor = .main
             // 싱글톤에 값 0으로 저장
-            SignUpUserInfo.shared.soccer = 0
+//            SignUpUserInfo.shared.sportsList[0]
         }
         // 축구 버튼의 색이 컬러 일 때
         else {
             // 축구 버튼 색 기본색으로 변경
             sportBtns[0].defaultSportsBtn()
             // 싱글톤에 값 초기화
-            SignUpUserInfo.shared.soccer = nil
             if sportBtns.filter({$0.status}).count < 1 {
                 nextBtn.backgroundColor = .gray03
             }
@@ -207,14 +206,13 @@ class SignUpSportsVC: UIViewController {
             sportBtns[1].colorSportsBtn()
             nextBtn.backgroundColor = .main
             // 싱글톤에 값 1으로 저장
-            SignUpUserInfo.shared.badminton = 1
+//            SignUpUserInfo.shared.sportsList[1]
         }
         // 배드민턴 버튼의 색이 컬러 일 때
         else {
             // 배드민턴 버튼 색 기본색으로 변경
             sportBtns[1].defaultSportsBtn()
             // 싱글톤에 값 초기화
-            SignUpUserInfo.shared.badminton = nil
             if sportBtns.filter({$0.status}).count < 1 {
                 nextBtn.backgroundColor = .gray03
             }
@@ -230,14 +228,13 @@ class SignUpSportsVC: UIViewController {
             sportBtns[2].colorSportsBtn()
             nextBtn.backgroundColor = .main
             // 싱글톤에 값 2으로 저장
-            SignUpUserInfo.shared.volleyball = 2
+//            SignUpUserInfo.shared.sportsList[2]
         }
         // 버튼의 색이 컬러 일 때
         else {
             // 버튼 색 기본색으로 변경
             sportBtns[2].defaultSportsBtn()
             // 싱글톤에 값 초기화
-            SignUpUserInfo.shared.volleyball = nil
             if sportBtns.filter({$0.status}).count < 1 {
                 nextBtn.backgroundColor = .gray03
             }
@@ -253,14 +250,13 @@ class SignUpSportsVC: UIViewController {
             sportBtns[3].colorSportsBtn()
             nextBtn.backgroundColor = .main
             // 싱글톤에 값 3으로 저장
-            SignUpUserInfo.shared.basketball = 3
+//            SignUpUserInfo.shared.sportsList[3]
         }
         // 버튼의 색이 컬러 일 때
         else {
             // 버튼 색 기본색으로 변경
             sportBtns[3].defaultSportsBtn()
             // 싱글톤에 값 초기화
-            SignUpUserInfo.shared.basketball = nil
             if sportBtns.filter({$0.status}).count < 1 {
                 nextBtn.backgroundColor = .gray03
             }
@@ -276,14 +272,13 @@ class SignUpSportsVC: UIViewController {
             sportBtns[4].colorSportsBtn()
             nextBtn.backgroundColor = .main
             // 싱글톤에 값 4으로 저장
-            SignUpUserInfo.shared.mountain = 4
+//            SignUpUserInfo.shared.sportsList[4]
         }
         // 버튼의 색이 컬러 일 때
         else {
             // 버튼 색 기본색으로 변경
             sportBtns[4].defaultSportsBtn()
             // 싱글톤에 값 초기화
-            SignUpUserInfo.shared.mountain = nil
             if sportBtns.filter({$0.status}).count < 1 {
                 nextBtn.backgroundColor = .gray03
             }
@@ -299,14 +294,13 @@ class SignUpSportsVC: UIViewController {
             sportBtns[5].colorSportsBtn()
             nextBtn.backgroundColor = .main
             // 싱글톤에 값 5로 저장
-            SignUpUserInfo.shared.running = 5
+//            SignUpUserInfo.shared.sportsList[5]
         }
         // 버튼의 색이 컬러 일 때
         else {
             // 버튼 색 기본색으로 변경
             sportBtns[5].defaultSportsBtn()
             // 싱글톤에 값 초기화
-            SignUpUserInfo.shared.running = nil
             if sportBtns.filter({$0.status}).count < 1 {
                 nextBtn.backgroundColor = .gray03
             }

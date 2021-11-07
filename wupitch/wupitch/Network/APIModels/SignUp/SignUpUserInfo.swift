@@ -25,14 +25,9 @@ class SignUpUserInfo {
     // 바텀시트 로그인, 메인 나누기
     var bottomSheetMethod: BottomSheetMethod?
     // 지역선택
-    var region : String?
+    var region : Int?
     // 관심 스포츠 선택
-    var soccer : Int?
-    var badminton : Int?
-    var volleyball : Int?
-    var basketball : Int?
-    var mountain : Int?
-    var running : Int?
+    // var sportsList : [Int]
     var etcText : String?
     // 연령대 선택
     var age : Int?
@@ -44,12 +39,6 @@ class SignUpUserInfo {
     
     func dispose() {
         SignUpUserInfo.shared.region = nil
-        SignUpUserInfo.shared.soccer = nil
-        SignUpUserInfo.shared.badminton = nil
-        SignUpUserInfo.shared.volleyball = nil
-        SignUpUserInfo.shared.basketball = nil
-        SignUpUserInfo.shared.mountain = nil
-        SignUpUserInfo.shared.running = nil
         SignUpUserInfo.shared.etcText = nil
         SignUpUserInfo.shared.age = nil
         SignUpUserInfo.shared.nickName = nil
@@ -59,5 +48,3 @@ class SignUpUserInfo {
     
     private init(){}
 }
-
-

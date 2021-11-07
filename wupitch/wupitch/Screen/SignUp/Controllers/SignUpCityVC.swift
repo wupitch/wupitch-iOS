@@ -147,7 +147,7 @@ extension SignUpCityVC: ModalDelegate {
     // textField에 모달에서 선택했던 피커 값 넣어주기
     func textFieldData(data: String) {
         selectTextField.text = data
-        SignUpUserInfo.shared.region = data
+        //SignUpUserInfo.shared.region = data
     }
 }
 
