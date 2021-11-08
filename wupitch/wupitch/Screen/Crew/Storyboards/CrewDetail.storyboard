@@ -37,7 +37,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SoD-bV-GCl">
-                                <rect key="frame" x="0.0" y="710" width="375" height="68"/>
+                                <rect key="frame" x="0.0" y="706" width="375" height="72"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="UBZ-Rr-3uL">
                                         <rect key="frame" x="20" y="12" width="336" height="48"/>
@@ -67,14 +67,15 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="UBZ-Rr-3uL" secondAttribute="bottom" constant="8" id="79M-zM-dGb"/>
+                                    <constraint firstAttribute="bottom" secondItem="UBZ-Rr-3uL" secondAttribute="bottom" constant="12" id="79M-zM-dGb"/>
                                     <constraint firstAttribute="trailing" secondItem="UBZ-Rr-3uL" secondAttribute="trailing" constant="19" id="I9X-nv-vi9"/>
                                     <constraint firstItem="UBZ-Rr-3uL" firstAttribute="leading" secondItem="SoD-bV-GCl" secondAttribute="leading" constant="20" id="WBv-YX-DCz"/>
-                                    <constraint firstAttribute="height" constant="68" id="t4l-eR-6x7"/>
+                                    <constraint firstItem="UBZ-Rr-3uL" firstAttribute="top" secondItem="SoD-bV-GCl" secondAttribute="top" constant="12" id="pdr-6m-5dO"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="68" id="t4l-eR-6x7"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fGt-xF-vq2">
-                                <rect key="frame" x="0.0" y="709" width="375" height="1"/>
+                                <rect key="frame" x="0.0" y="705" width="375" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="dke-WU-DV9"/>
@@ -88,7 +89,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="maU-Wh-7kp">
-                                <rect key="frame" x="0.0" y="87.333333333333314" width="375" height="621.66666666666674"/>
+                                <rect key="frame" x="0.0" y="87.333333333333314" width="375" height="617.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QiI-nh-qIV">
                                     <size key="itemSize" width="128" height="128"/>
@@ -108,7 +109,7 @@
                                 </cells>
                             </collectionView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vsn-vW-pAc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="659"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             </view>

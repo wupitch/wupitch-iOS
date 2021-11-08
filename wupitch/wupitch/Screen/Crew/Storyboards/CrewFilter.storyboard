@@ -37,16 +37,16 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OaW-VU-UdF">
                                 <rect key="frame" x="0.0" y="88" width="414" height="1"/>
-                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="F6r-Rs-7Gg"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fa1-Gm-e0e">
-                                <rect key="frame" x="0.0" y="898" width="414" height="68"/>
+                                <rect key="frame" x="0.0" y="894" width="414" height="72"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cgq-iw-ocZ">
-                                        <rect key="frame" x="40" y="19" width="39" height="30"/>
+                                        <rect key="frame" x="40" y="21" width="39" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="초기화"/>
                                         <connections>
@@ -55,6 +55,9 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgX-MI-MHC" customClass="NextBtn" customModule="wupitch" customModuleProvider="target">
                                         <rect key="frame" x="108" y="12" width="287" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="pna-BY-ihJ"/>
+                                        </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="적용하기"/>
                                         <connections>
@@ -69,19 +72,19 @@
                                     <constraint firstAttribute="trailing" secondItem="GgX-MI-MHC" secondAttribute="trailing" constant="19" id="BkA-Rv-1KR"/>
                                     <constraint firstItem="Cgq-iw-ocZ" firstAttribute="centerY" secondItem="Fa1-Gm-e0e" secondAttribute="centerY" id="NLr-vc-XcQ"/>
                                     <constraint firstItem="Cgq-iw-ocZ" firstAttribute="leading" secondItem="Fa1-Gm-e0e" secondAttribute="leading" constant="40" id="Qws-Lf-Ie4"/>
-                                    <constraint firstAttribute="bottom" secondItem="GgX-MI-MHC" secondAttribute="bottom" constant="8" id="n8a-wF-95A"/>
+                                    <constraint firstAttribute="bottom" secondItem="GgX-MI-MHC" secondAttribute="bottom" constant="12" id="n8a-wF-95A"/>
                                     <constraint firstItem="GgX-MI-MHC" firstAttribute="top" secondItem="Fa1-Gm-e0e" secondAttribute="top" constant="12" id="yxs-2J-cTo"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHr-H2-8Z2">
-                                <rect key="frame" x="0.0" y="897" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="893" width="414" height="1"/>
                                 <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="jXj-rK-c4L"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIE-y1-ZP1">
-                                <rect key="frame" x="0.0" y="89" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="89" width="414" height="804"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4DZ-yb-6rr">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="832"/>
@@ -115,13 +118,13 @@
                                                                         <rect key="frame" x="129" y="0.0" width="117" height="48"/>
                                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="축구/풋살"/>
+                                                                        <state key="normal" title="배드민턴"/>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P15-mt-sXV" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="258" y="0.0" width="117" height="48"/>
                                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="축구/풋살"/>
+                                                                        <state key="normal" title="배구"/>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -135,19 +138,19 @@
                                                                             <constraint firstAttribute="height" constant="48" id="9dx-Ze-RHp"/>
                                                                         </constraints>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="축구/풋살"/>
+                                                                        <state key="normal" title="농구"/>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GmK-it-04y" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="129" y="0.0" width="117" height="48"/>
                                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="축구/풋살"/>
+                                                                        <state key="normal" title="등산"/>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJM-oK-DmM" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="258" y="0.0" width="117" height="48"/>
                                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="축구/풋살"/>
+                                                                        <state key="normal" title="런닝"/>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -192,25 +195,25 @@
                                                                         <rect key="frame" x="60" y="0.0" width="48" height="48"/>
                                                                         <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="월"/>
+                                                                        <state key="normal" title="화"/>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDW-7v-ovV" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="120" y="0.0" width="48" height="48"/>
                                                                         <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="월"/>
+                                                                        <state key="normal" title="수"/>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8r-Dh-FB7" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="180" y="0.0" width="48" height="48"/>
                                                                         <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="월"/>
+                                                                        <state key="normal" title="목"/>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rrd-zm-qJO" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="240" y="0.0" width="48" height="48"/>
                                                                         <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="월"/>
+                                                                        <state key="normal" title="금"/>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -221,13 +224,13 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
                                                                         <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="월"/>
+                                                                        <state key="normal" title="토"/>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmI-I8-iHW" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="60" y="0.0" width="48" height="48"/>
                                                                         <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="월"/>
+                                                                        <state key="normal" title="일"/>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mgf-kC-Hxt">
                                                                         <rect key="frame" x="120" y="0.0" width="48" height="48"/>
@@ -326,19 +329,19 @@
                                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="R4Z-Sx-8WE" secondAttribute="height" multiplier="104:48" id="YVS-fy-Pu4"/>
                                                                         </constraints>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="축구/풋살"/>
+                                                                        <state key="normal" title="10명 이하"/>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQm-z5-RXh" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="129" y="0.0" width="117" height="48"/>
                                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="축구/풋살"/>
+                                                                        <state key="normal" title="11~30명"/>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykU-FK-LIE" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="258" y="0.0" width="117" height="48"/>
                                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="축구/풋살"/>
+                                                                        <state key="normal" title="31~50명"/>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -353,13 +356,13 @@
                                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="03P-lG-PFU" secondAttribute="height" multiplier="104:48" id="sP7-Ik-wGd"/>
                                                                         </constraints>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="축구/풋살"/>
+                                                                        <state key="normal" title="51~70명"/>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AkI-40-v6o" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="129" y="0.0" width="117" height="48"/>
                                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="축구/풋살"/>
+                                                                        <state key="normal" title="70명 초과"/>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCy-sm-vWh">
                                                                         <rect key="frame" x="258" y="0.0" width="117" height="48"/>
@@ -400,19 +403,19 @@
                                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="ufN-pg-5ey"/>
                                                                         </constraints>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="축구/풋살"/>
+                                                                        <state key="normal" title="10대"/>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kw-TA-FEH" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="129" y="0.0" width="117" height="48"/>
                                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="축구/풋살"/>
+                                                                        <state key="normal" title="20대"/>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zK6-3E-jM5" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="258" y="0.0" width="117" height="48"/>
                                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="축구/풋살"/>
+                                                                        <state key="normal" title="30대"/>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -426,19 +429,19 @@
                                                                             <constraint firstAttribute="height" constant="48" id="VDc-59-oPK"/>
                                                                         </constraints>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="축구/풋살"/>
+                                                                        <state key="normal" title="40대"/>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5P-wR-urD" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="129" y="0.0" width="117" height="48"/>
                                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="축구/풋살"/>
+                                                                        <state key="normal" title="50대 이상"/>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SI2-NK-WSB" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="258" y="0.0" width="117" height="48"/>
                                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="축구/풋살"/>
+                                                                        <state key="normal" title="연령무관"/>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>

@@ -32,4 +32,15 @@ extension LabelFontSize {
         self.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
         self.textColor = .bk
     }
+    
+    func makeCrewTitleLabel() {
+        self.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 22.adjusted)
+        self.setTextWithLineHeight(text: self.text, lineHeight: 32.adjusted)
+        self.textColor = .bk
+    }
+    
+    func makeCrewSubTitleLabel() {
+        self.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+        self.textColor = .gray02
+    }
 }

@@ -43,6 +43,7 @@ class CrewFilterVC: UIViewController {
         // textfield placeholder default color
         startTimeTextField.attributedPlaceholder = NSAttributedString(string: "00:00", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray02])
         endTImeTextField.attributedPlaceholder = NSAttributedString(string: "00:00", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray02])
+        betweenLabel.textColor = .gray02
         
         // applyBtn default
         applyBtn.colorNextBtnStyle()

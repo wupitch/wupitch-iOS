@@ -9,21 +9,21 @@ import UIKit
 
 class MakeCrewSportsVC: UIViewController {
 
+    @IBOutlet weak var nextBtn: NextBtn!
+    @IBOutlet var sportsBtns: [SportsBtn]!
+    @IBOutlet weak var titleLabel: LabelFontSize!
+    @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var makeCrewLabel: LabelFontSize!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setStyle()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setStyle() {
+        // titleLabel Style
+        titleLabel.makeCrewTitleLabel()
     }
-    */
+
 
 }

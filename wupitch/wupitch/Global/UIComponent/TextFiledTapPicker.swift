@@ -41,4 +41,12 @@ extension tapTextField {
         self.textColor = .main
         self.layer.borderColor = UIColor.main.cgColor
     }
+    
+    func regionTextFieldStyle() {
+        self.tintColor = .clear
+        self.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
+        self.layer.borderColor = UIColor.gray02.cgColor
+        self.layer.borderWidth = 1.adjusted
+        self.makeRounded(cornerRadius: 8.adjusted)
+    }
 }

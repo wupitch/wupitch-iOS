@@ -9,21 +9,29 @@ import UIKit
 
 class MakeCrewInfoVC: UIViewController {
 
+    @IBOutlet weak var addSubTitleLabel: LabelFontSize!
+    @IBOutlet weak var subTitleLabel: LabelFontSize!
+    @IBOutlet weak var addInfoLabel: LabelFontSize!
+    @IBOutlet weak var ageLabel: LabelFontSize!
+    @IBOutlet weak var crewCountLabel: LabelFontSize!
+    @IBOutlet weak var crewNameLabel: LabelFontSize!
+    @IBOutlet weak var titleLabel: LabelFontSize!
+    @IBOutlet weak var cancelBtn: UIButton!
+    @IBOutlet weak var makeCrewLabel: LabelFontSize!
+    @IBOutlet weak var backBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setStyle()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setStyle() {
+        // titleLabel Style
+        titleLabel.makeCrewTitleLabel()
+        // subTitleStyle
+        subTitleLabel.makeCrewSubTitleLabel()
+        addSubTitleLabel.makeCrewSubTitleLabel()
     }
-    */
+
 
 }

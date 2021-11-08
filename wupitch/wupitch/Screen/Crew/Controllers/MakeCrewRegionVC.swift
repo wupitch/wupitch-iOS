@@ -9,21 +9,26 @@ import UIKit
 
 class MakeCrewRegionVC: UIViewController {
 
+    @IBOutlet weak var titleLabel: LabelFontSize!
+    
+    @IBOutlet weak var placeTextField: UITextField!
+    @IBOutlet weak var dongTextField: tapTextField!
+    @IBOutlet weak var regionTextField: tapTextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setStyle()
+        
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setStyle() {
+        // titleLabel Style
+        titleLabel.makeCrewTitleLabel()
+        // textField Style
+        regionTextField.attributedPlaceholder = NSAttributedString(string: "지역구 선택", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray02])
+        dongTextField.attributedPlaceholder = NSAttributedString(string: "동 선택", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray02])
+        regionTextField.regionTextFieldStyle()
+        dongTextField.regionTextFieldStyle()
     }
-    */
-
 }

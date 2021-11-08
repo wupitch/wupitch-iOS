@@ -29,7 +29,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="left"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="크루만들기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAu-vG-tic">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="크루만들기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAu-vG-tic" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
                                         <rect key="frame" x="170" y="12" width="74" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -52,82 +52,83 @@
                                     <constraint firstAttribute="height" constant="1" id="7a9-hh-mNr"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="크루의 종목을 서택해주세요." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1H-tU-PMW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="크루의 종목을 선택해주세요." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1H-tU-PMW" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
                                 <rect key="frame" x="20" y="121" width="93" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Gk8-Kb-NgQ">
-                                <rect key="frame" x="20" y="213" width="375" height="108"/>
+                                <rect key="frame" x="20" y="194" width="375" height="108"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="MHy-lT-TrO">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99B-2A-oSL">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99B-2A-oSL" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="117" height="48"/>
                                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="99B-2A-oSL" secondAttribute="height" multiplier="104:48" id="BSY-hc-kIz"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="gvd-Qt-Wfh"/>
                                                 </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="축구/풋살"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="축구/풋살"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLJ-1G-SIT">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLJ-1G-SIT" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                 <rect key="frame" x="129" y="0.0" width="117" height="48"/>
                                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="배드민턴"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="배드민턴"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbw-Bp-0Nt">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbw-Bp-0Nt" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                 <rect key="frame" x="258" y="0.0" width="117" height="48"/>
                                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="배구"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="배구"/>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="jaw-vq-gac">
                                         <rect key="frame" x="0.0" y="60" width="375" height="48"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l34-Rg-qzu">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l34-Rg-qzu" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="117" height="48"/>
                                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="농구"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="농구"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scD-su-Yz6">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scD-su-Yz6" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                 <rect key="frame" x="129" y="0.0" width="117" height="48"/>
                                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="등산"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="등산"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1j2-Q6-xyc">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1j2-Q6-xyc" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                 <rect key="frame" x="258" y="0.0" width="117" height="48"/>
                                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="런닝"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="런닝"/>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztv-ci-nEK">
-                                <rect key="frame" x="20" y="766" width="375" height="52"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztv-ci-nEK" customClass="NextBtn" customModule="wupitch" customModuleProvider="target">
+                                <rect key="frame" x="20" y="798" width="375" height="52"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="Z7h-1p-UKf"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="Z7h-1p-UKf"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="ztv-ci-nEK" secondAttribute="height" multiplier="336:52" id="xtv-0e-uTW"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="다음 (1/7)"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="K9o-9x-Pet" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="4CZ-82-Cmf"/>
-                            <constraint firstItem="Gk8-Kb-NgQ" firstAttribute="top" secondItem="C1H-tU-PMW" secondAttribute="bottom" constant="51" id="8QJ-UO-ZQ9"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ztv-ci-nEK" secondAttribute="bottom" constant="44" id="JtO-1D-xRI"/>
+                            <constraint firstItem="Gk8-Kb-NgQ" firstAttribute="top" secondItem="C1H-tU-PMW" secondAttribute="bottom" constant="32" id="8QJ-UO-ZQ9"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ztv-ci-nEK" secondAttribute="bottom" constant="12" id="JtO-1D-xRI"/>
                             <constraint firstItem="Gk8-Kb-NgQ" firstAttribute="leading" secondItem="C1H-tU-PMW" secondAttribute="leading" id="NYU-Lu-G7Z"/>
                             <constraint firstItem="K9o-9x-Pet" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Nfm-bu-6LL"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Gk8-Kb-NgQ" secondAttribute="trailing" constant="19" id="Pam-23-1Lx"/>
@@ -141,6 +142,18 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="K9o-9x-Pet" secondAttribute="trailing" id="yNP-1T-4c3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backBtn" destination="1us-A7-ALb" id="6Ir-6N-LVE"/>
+                        <outlet property="makeCrewLabel" destination="VAu-vG-tic" id="D9P-iI-qOQ"/>
+                        <outlet property="nextBtn" destination="ztv-ci-nEK" id="dqE-pJ-Lna"/>
+                        <outlet property="titleLabel" destination="C1H-tU-PMW" id="wrl-UW-D5r"/>
+                        <outletCollection property="sportsBtns" destination="99B-2A-oSL" collectionClass="NSMutableArray" id="HKw-rj-gP3"/>
+                        <outletCollection property="sportsBtns" destination="ZLJ-1G-SIT" collectionClass="NSMutableArray" id="fW8-dJ-DFm"/>
+                        <outletCollection property="sportsBtns" destination="qbw-Bp-0Nt" collectionClass="NSMutableArray" id="kA2-Qa-X9p"/>
+                        <outletCollection property="sportsBtns" destination="l34-Rg-qzu" collectionClass="NSMutableArray" id="LED-xs-dQB"/>
+                        <outletCollection property="sportsBtns" destination="scD-su-Yz6" collectionClass="NSMutableArray" id="wx5-RQ-O2j"/>
+                        <outletCollection property="sportsBtns" destination="1j2-Q6-xyc" collectionClass="NSMutableArray" id="e91-ic-bkO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
