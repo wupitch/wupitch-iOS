@@ -36,6 +36,8 @@
 		DD1BFC552738E9530042C51F /* MakeCrewMoneyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC542738E9530042C51F /* MakeCrewMoneyVC.swift */; };
 		DD1BFC572738E9A70042C51F /* SignUpPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD1BFC562738E9A70042C51F /* SignUpPhone.storyboard */; };
 		DD1BFC592738E9C40042C51F /* SignUpPhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC582738E9C40042C51F /* SignUpPhoneVC.swift */; };
+		DD1BFC5B273927200042C51F /* MakeCrewGuest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD1BFC5A273927200042C51F /* MakeCrewGuest.storyboard */; };
+		DD1BFC5D273927370042C51F /* MakceCrewGuestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC5C273927370042C51F /* MakceCrewGuestVC.swift */; };
 		DD295DA027181E3B008CFC64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD295D9F27181E3B008CFC64 /* AppDelegate.swift */; };
 		DD295DA227181E3B008CFC64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD295DA127181E3B008CFC64 /* SceneDelegate.swift */; };
 		DD295DA927181E3D008CFC64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD295DA827181E3D008CFC64 /* Assets.xcassets */; };
@@ -164,6 +166,8 @@
 		DD1BFC542738E9530042C51F /* MakeCrewMoneyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCrewMoneyVC.swift; sourceTree = "<group>"; };
 		DD1BFC562738E9A70042C51F /* SignUpPhone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpPhone.storyboard; sourceTree = "<group>"; };
 		DD1BFC582738E9C40042C51F /* SignUpPhoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPhoneVC.swift; sourceTree = "<group>"; };
+		DD1BFC5A273927200042C51F /* MakeCrewGuest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MakeCrewGuest.storyboard; sourceTree = "<group>"; };
+		DD1BFC5C273927370042C51F /* MakceCrewGuestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakceCrewGuestVC.swift; sourceTree = "<group>"; };
 		DD295D9C27181E3B008CFC64 /* wupitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wupitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD295D9F27181E3B008CFC64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD295DA127181E3B008CFC64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -601,6 +605,7 @@
 				DD1BFC4A2738E8DA0042C51F /* MakeCrewDate.storyboard */,
 				DD1BFC4E2738E90D0042C51F /* MakeCrewPhoto.storyboard */,
 				DD1BFC522738E9420042C51F /* MakeCrewMoney.storyboard */,
+				DD1BFC5A273927200042C51F /* MakeCrewGuest.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -618,6 +623,7 @@
 				DD1BFC4C2738E8EC0042C51F /* MakeCrewDateVC.swift */,
 				DD1BFC502738E91E0042C51F /* MakeCrewPhotoVC.swift */,
 				DD1BFC542738E9530042C51F /* MakeCrewMoneyVC.swift */,
+				DD1BFC5C273927370042C51F /* MakceCrewGuestVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -955,6 +961,7 @@
 				DD1BFC472738E8AD0042C51F /* MakeCrewInfo.storyboard in Resources */,
 				DD3A30EA272DAC2700D711C6 /* Feed.storyboard in Resources */,
 				DD1BFC4F2738E90D0042C51F /* MakeCrewPhoto.storyboard in Resources */,
+				DD1BFC5B273927200042C51F /* MakeCrewGuest.storyboard in Resources */,
 				DD2D63B027268A1A007CEC57 /* LevelModal.storyboard in Resources */,
 				DD7BEBCC27315DF800DB2F60 /* DetailCrewIntroduceCVCell.xib in Resources */,
 				DD3A30DC272DAB7B00D711C6 /* Crew.storyboard in Resources */,
@@ -1092,6 +1099,7 @@
 				DD3ACBC8272170A800EBC201 /* SignUpAppleCompleteVC.swift in Sources */,
 				DD3A30C1272AA94100D711C6 /* ModalSportsBtn.swift in Sources */,
 				DDC3B5102732A68A00FF4959 /* DetailCrewFooterCRV.swift in Sources */,
+				DD1BFC5D273927370042C51F /* MakceCrewGuestVC.swift in Sources */,
 				DD1BFC2D2736DCDC0042C51F /* InformationRequest.swift in Sources */,
 				DDED0121271BD98400C2C343 /* OnbordingVC.swift in Sources */,
 				DD3A30BF272A821A00D711C6 /* SportsBtn.swift in Sources */,
