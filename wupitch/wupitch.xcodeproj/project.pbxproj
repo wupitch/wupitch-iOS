@@ -22,6 +22,20 @@
 		DD1BFC3927380C920042C51F /* CrewFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC3827380C920042C51F /* CrewFilterVC.swift */; };
 		DD1BFC3B2738B2790042C51F /* TextFiledTapPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC3A2738B2790042C51F /* TextFiledTapPicker.swift */; };
 		DD1BFC3D2738B7ED0042C51F /* LabelFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC3C2738B7ED0042C51F /* LabelFontSize.swift */; };
+		DD1BFC3F2738E6C90042C51F /* MakeCrewSports.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD1BFC3E2738E6C90042C51F /* MakeCrewSports.storyboard */; };
+		DD1BFC412738E6DD0042C51F /* MakeCrewSportsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC402738E6DD0042C51F /* MakeCrewSportsVC.swift */; };
+		DD1BFC432738E86E0042C51F /* MakeCrewRegion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD1BFC422738E86E0042C51F /* MakeCrewRegion.storyboard */; };
+		DD1BFC452738E8820042C51F /* MakeCrewRegionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC442738E8820042C51F /* MakeCrewRegionVC.swift */; };
+		DD1BFC472738E8AD0042C51F /* MakeCrewInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD1BFC462738E8AD0042C51F /* MakeCrewInfo.storyboard */; };
+		DD1BFC492738E8BB0042C51F /* MakeCrewInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC482738E8BB0042C51F /* MakeCrewInfoVC.swift */; };
+		DD1BFC4B2738E8DA0042C51F /* MakeCrewDate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD1BFC4A2738E8DA0042C51F /* MakeCrewDate.storyboard */; };
+		DD1BFC4D2738E8EC0042C51F /* MakeCrewDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC4C2738E8EC0042C51F /* MakeCrewDateVC.swift */; };
+		DD1BFC4F2738E90D0042C51F /* MakeCrewPhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD1BFC4E2738E90D0042C51F /* MakeCrewPhoto.storyboard */; };
+		DD1BFC512738E91E0042C51F /* MakeCrewPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC502738E91E0042C51F /* MakeCrewPhotoVC.swift */; };
+		DD1BFC532738E9420042C51F /* MakeCrewMoney.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD1BFC522738E9420042C51F /* MakeCrewMoney.storyboard */; };
+		DD1BFC552738E9530042C51F /* MakeCrewMoneyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC542738E9530042C51F /* MakeCrewMoneyVC.swift */; };
+		DD1BFC572738E9A70042C51F /* SignUpPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD1BFC562738E9A70042C51F /* SignUpPhone.storyboard */; };
+		DD1BFC592738E9C40042C51F /* SignUpPhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC582738E9C40042C51F /* SignUpPhoneVC.swift */; };
 		DD295DA027181E3B008CFC64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD295D9F27181E3B008CFC64 /* AppDelegate.swift */; };
 		DD295DA227181E3B008CFC64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD295DA127181E3B008CFC64 /* SceneDelegate.swift */; };
 		DD295DA927181E3D008CFC64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD295DA827181E3D008CFC64 /* Assets.xcassets */; };
@@ -136,6 +150,20 @@
 		DD1BFC3827380C920042C51F /* CrewFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewFilterVC.swift; sourceTree = "<group>"; };
 		DD1BFC3A2738B2790042C51F /* TextFiledTapPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFiledTapPicker.swift; sourceTree = "<group>"; };
 		DD1BFC3C2738B7ED0042C51F /* LabelFontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFontSize.swift; sourceTree = "<group>"; };
+		DD1BFC3E2738E6C90042C51F /* MakeCrewSports.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MakeCrewSports.storyboard; sourceTree = "<group>"; };
+		DD1BFC402738E6DD0042C51F /* MakeCrewSportsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCrewSportsVC.swift; sourceTree = "<group>"; };
+		DD1BFC422738E86E0042C51F /* MakeCrewRegion.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MakeCrewRegion.storyboard; sourceTree = "<group>"; };
+		DD1BFC442738E8820042C51F /* MakeCrewRegionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCrewRegionVC.swift; sourceTree = "<group>"; };
+		DD1BFC462738E8AD0042C51F /* MakeCrewInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MakeCrewInfo.storyboard; sourceTree = "<group>"; };
+		DD1BFC482738E8BB0042C51F /* MakeCrewInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCrewInfoVC.swift; sourceTree = "<group>"; };
+		DD1BFC4A2738E8DA0042C51F /* MakeCrewDate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MakeCrewDate.storyboard; sourceTree = "<group>"; };
+		DD1BFC4C2738E8EC0042C51F /* MakeCrewDateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCrewDateVC.swift; sourceTree = "<group>"; };
+		DD1BFC4E2738E90D0042C51F /* MakeCrewPhoto.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MakeCrewPhoto.storyboard; sourceTree = "<group>"; };
+		DD1BFC502738E91E0042C51F /* MakeCrewPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCrewPhotoVC.swift; sourceTree = "<group>"; };
+		DD1BFC522738E9420042C51F /* MakeCrewMoney.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MakeCrewMoney.storyboard; sourceTree = "<group>"; };
+		DD1BFC542738E9530042C51F /* MakeCrewMoneyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCrewMoneyVC.swift; sourceTree = "<group>"; };
+		DD1BFC562738E9A70042C51F /* SignUpPhone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpPhone.storyboard; sourceTree = "<group>"; };
+		DD1BFC582738E9C40042C51F /* SignUpPhoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPhoneVC.swift; sourceTree = "<group>"; };
 		DD295D9C27181E3B008CFC64 /* wupitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wupitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD295D9F27181E3B008CFC64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD295DA127181E3B008CFC64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -567,6 +595,12 @@
 				DD3E37C82730180100C4192E /* CrewDetail.storyboard */,
 				DD1BFC322737FFB50042C51F /* CrewSearch.storyboard */,
 				DD1BFC3627380C760042C51F /* CrewFilter.storyboard */,
+				DD1BFC3E2738E6C90042C51F /* MakeCrewSports.storyboard */,
+				DD1BFC422738E86E0042C51F /* MakeCrewRegion.storyboard */,
+				DD1BFC462738E8AD0042C51F /* MakeCrewInfo.storyboard */,
+				DD1BFC4A2738E8DA0042C51F /* MakeCrewDate.storyboard */,
+				DD1BFC4E2738E90D0042C51F /* MakeCrewPhoto.storyboard */,
+				DD1BFC522738E9420042C51F /* MakeCrewMoney.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -578,6 +612,12 @@
 				DD3E37CA2730182C00C4192E /* CrewDetailVC.swift */,
 				DD1BFC342737FFEB0042C51F /* CrewSearchVC.swift */,
 				DD1BFC3827380C920042C51F /* CrewFilterVC.swift */,
+				DD1BFC402738E6DD0042C51F /* MakeCrewSportsVC.swift */,
+				DD1BFC442738E8820042C51F /* MakeCrewRegionVC.swift */,
+				DD1BFC482738E8BB0042C51F /* MakeCrewInfoVC.swift */,
+				DD1BFC4C2738E8EC0042C51F /* MakeCrewDateVC.swift */,
+				DD1BFC502738E91E0042C51F /* MakeCrewPhotoVC.swift */,
+				DD1BFC542738E9530042C51F /* MakeCrewMoneyVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -818,6 +858,7 @@
 				DDE0EE6A2729907600C46821 /* SignUpAge.storyboard */,
 				DD3ACBBC2721082300EBC201 /* SignUpProfile.storyboard */,
 				DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */,
+				DD1BFC562738E9A70042C51F /* SignUpPhone.storyboard */,
 				DD3ACBC127216D2500EBC201 /* SignUpID.storyboard */,
 				DD3ACBC52721709100EBC201 /* SignUpAppleComplete.storyboard */,
 			);
@@ -833,6 +874,7 @@
 				DDE0EE6C2729908B00C46821 /* SignUpAgeVC.swift */,
 				DD3ACBBE2721083700EBC201 /* SignUpProfileVC.swift */,
 				DDE0EE5D2728740400C46821 /* SignUpKakaoCompleteVC.swift */,
+				DD1BFC582738E9C40042C51F /* SignUpPhoneVC.swift */,
 				DD3ACBC327216D4400EBC201 /* SignUpIDVC.swift */,
 				DD3ACBC7272170A800EBC201 /* SignUpAppleCompleteVC.swift */,
 			);
@@ -910,7 +952,9 @@
 				DDC3B5112732A68A00FF4959 /* DetailCrewFooterCRV.xib in Resources */,
 				DD3ACBC227216D2500EBC201 /* SignUpID.storyboard in Resources */,
 				DD7BEBC827315D7000DB2F60 /* DetailCrewTitleCVCell.xib in Resources */,
+				DD1BFC472738E8AD0042C51F /* MakeCrewInfo.storyboard in Resources */,
 				DD3A30EA272DAC2700D711C6 /* Feed.storyboard in Resources */,
+				DD1BFC4F2738E90D0042C51F /* MakeCrewPhoto.storyboard in Resources */,
 				DD2D63B027268A1A007CEC57 /* LevelModal.storyboard in Resources */,
 				DD7BEBCC27315DF800DB2F60 /* DetailCrewIntroduceCVCell.xib in Resources */,
 				DD3A30DC272DAB7B00D711C6 /* Crew.storyboard in Resources */,
@@ -918,12 +962,16 @@
 				DD3A30F0272DB02900D711C6 /* JoinComplete.storyboard in Resources */,
 				DD3A30EC272DAC3E00D711C6 /* Profile.storyboard in Resources */,
 				DD342207272ED4EB005DF6CA /* GuestComplete.storyboard in Resources */,
+				DD1BFC432738E86E0042C51F /* MakeCrewRegion.storyboard in Resources */,
 				DD1BFC332737FFB50042C51F /* CrewSearch.storyboard in Resources */,
 				DD7BEBD027315E1900DB2F60 /* DtailCrewContentCVCell.xib in Resources */,
 				DDC3B50D27327A0000FF4959 /* DetailCrewHeaderCRV.xib in Resources */,
+				DD1BFC3F2738E6C90042C51F /* MakeCrewSports.storyboard in Resources */,
+				DD1BFC4B2738E8DA0042C51F /* MakeCrewDate.storyboard in Resources */,
 				DD61E4BD271D8EB8007504DE /* SignUpCity.storyboard in Resources */,
 				DDE0EE5C272873EC00C46821 /* SignUpKakaoComplete.storyboard in Resources */,
 				DD3A30D3272DA6E300D711C6 /* Tabbar.storyboard in Resources */,
+				DD1BFC572738E9A70042C51F /* SignUpPhone.storyboard in Resources */,
 				DD3ACBB92721073E00EBC201 /* SignUpSports.storyboard in Resources */,
 				DD3A30E4272DABE900D711C6 /* MyActivity.storyboard in Resources */,
 				DD3E37C92730180100C4192E /* CrewDetail.storyboard in Resources */,
@@ -936,6 +984,7 @@
 				DD3A30F8272E7C4800D711C6 /* CrewApplication.storyboard in Resources */,
 				DD1BFC3727380C760042C51F /* CrewFilter.storyboard in Resources */,
 				DD3A30E2272DABCC00D711C6 /* Bungae.storyboard in Resources */,
+				DD1BFC532738E9420042C51F /* MakeCrewMoney.storyboard in Resources */,
 				DD1BFC31273788360042C51F /* TagCVCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -993,14 +1042,18 @@
 				DD3A30E6272DAC0300D711C6 /* MyActivityVC.swift in Sources */,
 				DD7BEBC727315D7000DB2F60 /* DetailCrewTitleCVCell.swift in Sources */,
 				DD61E4BB271D856E007504DE /* UILabel.swift in Sources */,
+				DD1BFC552738E9530042C51F /* MakeCrewMoneyVC.swift in Sources */,
 				DD3E37B6272F432A00C4192E /* UserInfoWarningVC.swift in Sources */,
 				DD1BFC272736DC8C0042C51F /* InformationService.swift in Sources */,
+				DD1BFC492738E8BB0042C51F /* MakeCrewInfoVC.swift in Sources */,
 				DDC3B5192734041500FF4959 /* BaseVC.swift in Sources */,
+				DD1BFC512738E91E0042C51F /* MakeCrewPhotoVC.swift in Sources */,
 				DD7BEBCB27315DF800DB2F60 /* DetailCrewIntroduceCVCell.swift in Sources */,
 				DD3ACBB7272104D300EBC201 /* TermsOfUseVC.swift in Sources */,
 				DD7BEBCF27315E1900DB2F60 /* DtailCrewContentCVCell.swift in Sources */,
 				DD3A30D5272DA75400D711C6 /* TabbarVC.swift in Sources */,
 				DD6728432725563A001E1355 /* UIView.swift in Sources */,
+				DD1BFC4D2738E8EC0042C51F /* MakeCrewDateVC.swift in Sources */,
 				DDED00F82719D02900C2C343 /* UIColor.swift in Sources */,
 				DD3A30CA272DA33600D711C6 /* AppleLoginData.swift in Sources */,
 				DDC3B5162733C86800FF4959 /* NextBtn.swift in Sources */,
@@ -1010,8 +1063,10 @@
 				DD61E4C6271EBCE6007504DE /* LocationPickerVC.swift in Sources */,
 				DDE0EE672729333300C46821 /* KakaoLoginService.swift in Sources */,
 				DD2D63B227268A34007CEC57 /* LevelModalVC.swift in Sources */,
+				DD1BFC452738E8820042C51F /* MakeCrewRegionVC.swift in Sources */,
 				DD3A30E8272DAC2000D711C6 /* FeedVC.swift in Sources */,
 				DD1BFC20273663450042C51F /* NicknameValidationData.swift in Sources */,
+				DD1BFC592738E9C40042C51F /* SignUpPhoneVC.swift in Sources */,
 				DD3A30BB2729AB1400D711C6 /* CheckBtn.swift in Sources */,
 				DD3A30F6272E620B00D711C6 /* AddCrewVC.swift in Sources */,
 				DDED011B271B33F800C2C343 /* OnboardingData.swift in Sources */,
@@ -1021,6 +1076,7 @@
 				DD3A30F2272DB07500D711C6 /* JoinCompleteVC.swift in Sources */,
 				DD3ACBBF2721083700EBC201 /* SignUpProfileVC.swift in Sources */,
 				DD3A30FA272E7C5F00D711C6 /* CrewApplicationVC.swift in Sources */,
+				DD1BFC412738E6DD0042C51F /* MakeCrewSportsVC.swift in Sources */,
 				DD3A30DE272DAB9400D711C6 /* CrewVC.swift in Sources */,
 				DD2D63B42726A8A0007CEC57 /* UITextField.swift in Sources */,
 				DD295DA027181E3B008CFC64 /* AppDelegate.swift in Sources */,
