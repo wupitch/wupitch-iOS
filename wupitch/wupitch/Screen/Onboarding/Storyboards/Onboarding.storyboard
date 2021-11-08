@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dDc-RM-xqJ">
-                                <rect key="frame" x="0.0" y="140" width="414" height="634"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="635"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xp3-p4-WLj">
                                     <size key="itemSize" width="128" height="128"/>
@@ -54,7 +54,7 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpf-HI-pzh">
-                                <rect key="frame" x="334" y="832" width="46" height="30"/>
+                                <rect key="frame" x="334" y="808" width="46" height="30"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -104,7 +104,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Y5X-vh-1dd" secondAttribute="bottom" constant="44" id="3vm-Wu-Tns"/>
                             <constraint firstItem="Wob-da-soE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="38" id="994-e1-hOq"/>
                             <constraint firstItem="Y5X-vh-1dd" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Hxs-fS-YoB"/>
-                            <constraint firstItem="xpf-HI-pzh" firstAttribute="top" secondItem="dDc-RM-xqJ" secondAttribute="bottom" constant="58" id="Oeb-tc-ljM"/>
+                            <constraint firstItem="xpf-HI-pzh" firstAttribute="top" secondItem="dDc-RM-xqJ" secondAttribute="bottom" constant="33" id="Oeb-tc-ljM"/>
                             <constraint firstItem="9JP-qO-43B" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="38" id="Sdr-Ja-SrM"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xpf-HI-pzh" secondAttribute="trailing" constant="34" id="VIW-VA-REy"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Wob-da-soE" secondAttribute="trailing" constant="36" id="VP6-7F-LX7"/>
@@ -112,7 +112,7 @@
                             <constraint firstItem="dDc-RM-xqJ" firstAttribute="top" secondItem="7Z7-p7-X6l" secondAttribute="bottom" constant="26" id="dvf-R0-SHE"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="9JP-qO-43B" secondAttribute="trailing" constant="36" id="eds-Ch-txL"/>
                             <constraint firstItem="Wob-da-soE" firstAttribute="top" secondItem="9JP-qO-43B" secondAttribute="bottom" constant="16" id="he7-A6-aQ0"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="xpf-HI-pzh" secondAttribute="bottom" id="i2O-fO-mHd"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="xpf-HI-pzh" secondAttribute="bottom" constant="24" id="i2O-fO-mHd"/>
                             <constraint firstItem="dDc-RM-xqJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="lv3-7g-cM3"/>
                             <constraint firstItem="7Z7-p7-X6l" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="44" id="mgX-Zu-KXD"/>
                             <constraint firstItem="7Z7-p7-X6l" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="u6d-SL-3mn"/>
