@@ -31,14 +31,14 @@ extension NextBtn {
     private func defaultNextBtnStyle() {
         self.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
         self.backgroundColor = .gray03
-        self.titleLabel?.textColor = .wht
+        self.tintColor = .wht
         self.makeRounded(cornerRadius: 8.adjusted)
     }
     
     func colorNextBtnStyle() {
         self.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
         self.backgroundColor = .main
-        self.titleLabel?.textColor = .wht
+        self.tintColor = .wht
         self.makeRounded(cornerRadius: 8.adjusted)
     }
 }

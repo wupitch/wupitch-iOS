@@ -35,7 +35,7 @@ extension SportsBtn {
         self.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
         self.layer.borderWidth = 0
         self.layer.borderColor = .none
-        self.layer.cornerRadius = 8.adjusted
+        self.makeRounded(cornerRadius: 8.adjusted)
         status = false
     }
     
@@ -45,7 +45,7 @@ extension SportsBtn {
         self.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.main.cgColor
-        self.layer.cornerRadius = 8.adjusted
+        self.makeRounded(cornerRadius: 8.adjusted)
         status = true
     }
 }

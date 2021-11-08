@@ -16,6 +16,12 @@
 		DD1BFC2D2736DCDC0042C51F /* InformationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC2C2736DCDC0042C51F /* InformationRequest.swift */; };
 		DD1BFC30273788360042C51F /* TagCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC2E273788360042C51F /* TagCVCell.swift */; };
 		DD1BFC31273788360042C51F /* TagCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD1BFC2F273788360042C51F /* TagCVCell.xib */; };
+		DD1BFC332737FFB50042C51F /* CrewSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD1BFC322737FFB50042C51F /* CrewSearch.storyboard */; };
+		DD1BFC352737FFEB0042C51F /* CrewSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC342737FFEB0042C51F /* CrewSearchVC.swift */; };
+		DD1BFC3727380C760042C51F /* CrewFilter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD1BFC3627380C760042C51F /* CrewFilter.storyboard */; };
+		DD1BFC3927380C920042C51F /* CrewFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC3827380C920042C51F /* CrewFilterVC.swift */; };
+		DD1BFC3B2738B2790042C51F /* TextFiledTapPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC3A2738B2790042C51F /* TextFiledTapPicker.swift */; };
+		DD1BFC3D2738B7ED0042C51F /* LabelFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1BFC3C2738B7ED0042C51F /* LabelFontSize.swift */; };
 		DD295DA027181E3B008CFC64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD295D9F27181E3B008CFC64 /* AppDelegate.swift */; };
 		DD295DA227181E3B008CFC64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD295DA127181E3B008CFC64 /* SceneDelegate.swift */; };
 		DD295DA927181E3D008CFC64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD295DA827181E3D008CFC64 /* Assets.xcassets */; };
@@ -124,6 +130,12 @@
 		DD1BFC2C2736DCDC0042C51F /* InformationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationRequest.swift; sourceTree = "<group>"; };
 		DD1BFC2E273788360042C51F /* TagCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCVCell.swift; sourceTree = "<group>"; };
 		DD1BFC2F273788360042C51F /* TagCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCVCell.xib; sourceTree = "<group>"; };
+		DD1BFC322737FFB50042C51F /* CrewSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CrewSearch.storyboard; sourceTree = "<group>"; };
+		DD1BFC342737FFEB0042C51F /* CrewSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewSearchVC.swift; sourceTree = "<group>"; };
+		DD1BFC3627380C760042C51F /* CrewFilter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CrewFilter.storyboard; sourceTree = "<group>"; };
+		DD1BFC3827380C920042C51F /* CrewFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewFilterVC.swift; sourceTree = "<group>"; };
+		DD1BFC3A2738B2790042C51F /* TextFiledTapPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFiledTapPicker.swift; sourceTree = "<group>"; };
+		DD1BFC3C2738B7ED0042C51F /* LabelFontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFontSize.swift; sourceTree = "<group>"; };
 		DD295D9C27181E3B008CFC64 /* wupitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wupitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD295D9F27181E3B008CFC64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD295DA127181E3B008CFC64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -444,6 +456,8 @@
 				DD3A30BE272A821A00D711C6 /* SportsBtn.swift */,
 				DD3A30C0272AA94100D711C6 /* ModalSportsBtn.swift */,
 				DDC3B5152733C86800FF4959 /* NextBtn.swift */,
+				DD1BFC3A2738B2790042C51F /* TextFiledTapPicker.swift */,
+				DD1BFC3C2738B7ED0042C51F /* LabelFontSize.swift */,
 			);
 			path = UIComponent;
 			sourceTree = "<group>";
@@ -551,6 +565,8 @@
 			children = (
 				DD3A30DB272DAB7B00D711C6 /* Crew.storyboard */,
 				DD3E37C82730180100C4192E /* CrewDetail.storyboard */,
+				DD1BFC322737FFB50042C51F /* CrewSearch.storyboard */,
+				DD1BFC3627380C760042C51F /* CrewFilter.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -560,6 +576,8 @@
 			children = (
 				DD3A30DD272DAB9400D711C6 /* CrewVC.swift */,
 				DD3E37CA2730182C00C4192E /* CrewDetailVC.swift */,
+				DD1BFC342737FFEB0042C51F /* CrewSearchVC.swift */,
+				DD1BFC3827380C920042C51F /* CrewFilterVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -900,6 +918,7 @@
 				DD3A30F0272DB02900D711C6 /* JoinComplete.storyboard in Resources */,
 				DD3A30EC272DAC3E00D711C6 /* Profile.storyboard in Resources */,
 				DD342207272ED4EB005DF6CA /* GuestComplete.storyboard in Resources */,
+				DD1BFC332737FFB50042C51F /* CrewSearch.storyboard in Resources */,
 				DD7BEBD027315E1900DB2F60 /* DtailCrewContentCVCell.xib in Resources */,
 				DDC3B50D27327A0000FF4959 /* DetailCrewHeaderCRV.xib in Resources */,
 				DD61E4BD271D8EB8007504DE /* SignUpCity.storyboard in Resources */,
@@ -915,6 +934,7 @@
 				DD61E4C4271EBAF5007504DE /* LocationPicker.storyboard in Resources */,
 				DD3E37C7272F928E00C4192E /* CrewCVCell.xib in Resources */,
 				DD3A30F8272E7C4800D711C6 /* CrewApplication.storyboard in Resources */,
+				DD1BFC3727380C760042C51F /* CrewFilter.storyboard in Resources */,
 				DD3A30E2272DABCC00D711C6 /* Bungae.storyboard in Resources */,
 				DD1BFC31273788360042C51F /* TagCVCell.xib in Resources */,
 			);
@@ -969,6 +989,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD1BFC3B2738B2790042C51F /* TextFiledTapPicker.swift in Sources */,
 				DD3A30E6272DAC0300D711C6 /* MyActivityVC.swift in Sources */,
 				DD7BEBC727315D7000DB2F60 /* DetailCrewTitleCVCell.swift in Sources */,
 				DD61E4BB271D856E007504DE /* UILabel.swift in Sources */,
@@ -1010,6 +1031,7 @@
 				DDE0EE5E2728740400C46821 /* SignUpKakaoCompleteVC.swift in Sources */,
 				DDE0EE5A2728164E00C46821 /* JoinAlertVC.swift in Sources */,
 				DD61E4B9271D7E50007504DE /* SignUpTermsVC.swift in Sources */,
+				DD1BFC3927380C920042C51F /* CrewFilterVC.swift in Sources */,
 				DD3A30E0272DABC000D711C6 /* BungaeVC.swift in Sources */,
 				DD3ACBC8272170A800EBC201 /* SignUpAppleCompleteVC.swift in Sources */,
 				DD3A30C1272AA94100D711C6 /* ModalSportsBtn.swift in Sources */,
@@ -1021,6 +1043,7 @@
 				DD1BFC2B2736DCCA0042C51F /* InformationData.swift in Sources */,
 				DD342209272ED504005DF6CA /* GuestCompleteVC.swift in Sources */,
 				DDC3B51D2736373500FF4959 /* GuestDateBtn.swift in Sources */,
+				DD1BFC352737FFEB0042C51F /* CrewSearchVC.swift in Sources */,
 				DDE0EE692729335000C46821 /* KakaoLoginData.swift in Sources */,
 				DDC3B50C27327A0000FF4959 /* DetailCrewHeaderCRV.swift in Sources */,
 				DD295DA227181E3B008CFC64 /* SceneDelegate.swift in Sources */,
@@ -1030,6 +1053,7 @@
 				DD1BFC23273664970042C51F /* NicknameValidationService.swift in Sources */,
 				DD3A30C6272D1E1400D711C6 /* KakaoLoginRequest.swift in Sources */,
 				DD6728352723E582001E1355 /* LocationPickerData.swift in Sources */,
+				DD1BFC3D2738B7ED0042C51F /* LabelFontSize.swift in Sources */,
 				DDC3B51B2735565C00FF4959 /* MainLocationPickerData.swift in Sources */,
 				DD3ACBC427216D4400EBC201 /* SignUpIDVC.swift in Sources */,
 				DDE0EE6D2729908B00C46821 /* SignUpAgeVC.swift in Sources */,

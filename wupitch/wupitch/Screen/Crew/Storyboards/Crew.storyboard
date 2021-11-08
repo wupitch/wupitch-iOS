@@ -40,16 +40,25 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="search"/>
+                                        <connections>
+                                            <action selector="touchUpSearchBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="pgm-9T-dAE"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5aN-jk-q3g">
                                         <rect key="frame" x="40" y="0.0" width="24" height="24"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="filter"/>
+                                        <connections>
+                                            <action selector="touchUpFilterBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0jm-KO-mge"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9J-kG-B2v">
                                         <rect key="frame" x="80" y="0.0" width="24" height="24"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="bell"/>
+                                        <connections>
+                                            <action selector="touchUpAlertBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="nbl-wK-g9P"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -93,8 +102,8 @@
                                     <constraint firstItem="uga-dg-aAA" firstAttribute="centerX" secondItem="BX5-8L-KDi" secondAttribute="centerX" id="PYH-jw-a7p"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aol-rE-3gJ">
-                                <rect key="frame" x="0.0" y="289" width="414" height="607"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aol-rE-3gJ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             </view>
                         </subviews>

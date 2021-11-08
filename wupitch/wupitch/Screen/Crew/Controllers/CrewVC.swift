@@ -47,6 +47,17 @@ class CrewVC: BaseVC {
        
     }
     
+    @IBAction func touchUpSearchBtn(_ sender: Any) {
+        
+    }
+    
+    @IBAction func touchUpFilterBtn(_ sender: Any) {
+    }
+    
+    @IBAction func touchUpAlertBtn(_ sender: Any) {
+    }
+    
+    
     @IBAction func touchUpRegionBtn(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "LocationPicker", bundle: nil)
         if let dvc = storyBoard.instantiateViewController(withIdentifier: "LocationPickerVC") as? LocationPickerVC {
