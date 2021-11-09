@@ -43,4 +43,10 @@ extension LabelFontSize {
         self.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
         self.textColor = .gray02
     }
+    
+    func CrewAlertTitleLabel() {
+        self.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        self.textColor = .bk
+    }
+    
 }
