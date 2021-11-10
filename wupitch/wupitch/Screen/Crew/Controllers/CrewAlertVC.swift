@@ -26,6 +26,11 @@ class CrewAlertVC: UIViewController {
         // tableview의 기본 선 제거
         alertTV.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
     }
+    
+    @IBAction func touchUpBackBtn(_ sender: Any) {
+        self.tabBarController?.tabBar.isHidden = false
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 extension CrewAlertVC : UITableViewDelegate, UITableViewDataSource {

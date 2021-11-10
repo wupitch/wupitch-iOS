@@ -330,18 +330,27 @@
                                                                         </constraints>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="10명 이하"/>
+                                                                        <connections>
+                                                                            <action selector="touchUpCrewCountFirst:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="52P-Wj-VnK"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQm-z5-RXh" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="129" y="0.0" width="117" height="48"/>
                                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="11~30명"/>
+                                                                        <connections>
+                                                                            <action selector="touchUpCrewCountSecond:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EJV-sK-Zdf"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykU-FK-LIE" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="258" y="0.0" width="117" height="48"/>
                                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="31~50명"/>
+                                                                        <connections>
+                                                                            <action selector="touchUpCrewCountThird:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Vm7-7C-GJn"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -357,12 +366,18 @@
                                                                         </constraints>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="51~70명"/>
+                                                                        <connections>
+                                                                            <action selector="touchUpCrewCountFourth:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fX3-7O-hwq"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AkI-40-v6o" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="129" y="0.0" width="117" height="48"/>
                                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="70명 초과"/>
+                                                                        <connections>
+                                                                            <action selector="touchUpCrewCountFifth:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="nEE-c1-lr0"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCy-sm-vWh">
                                                                         <rect key="frame" x="258" y="0.0" width="117" height="48"/>
@@ -533,6 +548,26 @@
                         <outletCollection property="dateBtns" destination="IkJ-Ha-Q0k" collectionClass="NSMutableArray" id="KCc-Oh-YsF"/>
                         <outletCollection property="crewCountBtns" destination="R4Z-Sx-8WE" collectionClass="NSMutableArray" id="dO9-ZJ-62d"/>
                         <outletCollection property="ageBtns" destination="R4R-4D-a9g" collectionClass="NSMutableArray" id="lYU-hB-i5j"/>
+                        <outletCollection property="sportsBtns" destination="4TB-hp-HvQ" collectionClass="NSMutableArray" id="9k5-Aq-pnj"/>
+                        <outletCollection property="sportsBtns" destination="P15-mt-sXV" collectionClass="NSMutableArray" id="2lS-tm-yls"/>
+                        <outletCollection property="sportsBtns" destination="fj5-ru-35W" collectionClass="NSMutableArray" id="vy5-UC-M2J"/>
+                        <outletCollection property="sportsBtns" destination="GmK-it-04y" collectionClass="NSMutableArray" id="4jI-vb-4oo"/>
+                        <outletCollection property="sportsBtns" destination="SJM-oK-DmM" collectionClass="NSMutableArray" id="at8-A5-33z"/>
+                        <outletCollection property="dateBtns" destination="LzB-mJ-WZn" collectionClass="NSMutableArray" id="VVL-MG-GW1"/>
+                        <outletCollection property="dateBtns" destination="rDW-7v-ovV" collectionClass="NSMutableArray" id="hNZ-M8-sgI"/>
+                        <outletCollection property="dateBtns" destination="v8r-Dh-FB7" collectionClass="NSMutableArray" id="msb-4f-BQn"/>
+                        <outletCollection property="dateBtns" destination="Rrd-zm-qJO" collectionClass="NSMutableArray" id="Uco-k0-XjA"/>
+                        <outletCollection property="dateBtns" destination="e3a-6s-RWv" collectionClass="NSMutableArray" id="VY8-1O-yph"/>
+                        <outletCollection property="dateBtns" destination="gmI-I8-iHW" collectionClass="NSMutableArray" id="rod-hY-uls"/>
+                        <outletCollection property="crewCountBtns" destination="yQm-z5-RXh" collectionClass="NSMutableArray" id="akr-48-i1D"/>
+                        <outletCollection property="crewCountBtns" destination="ykU-FK-LIE" collectionClass="NSMutableArray" id="iUg-CQ-lwi"/>
+                        <outletCollection property="crewCountBtns" destination="03P-lG-PFU" collectionClass="NSMutableArray" id="QN1-0x-gjt"/>
+                        <outletCollection property="crewCountBtns" destination="AkI-40-v6o" collectionClass="NSMutableArray" id="S72-fW-e7X"/>
+                        <outletCollection property="ageBtns" destination="9kw-TA-FEH" collectionClass="NSMutableArray" id="bf1-Es-nGi"/>
+                        <outletCollection property="ageBtns" destination="zK6-3E-jM5" collectionClass="NSMutableArray" id="2DP-al-rKC"/>
+                        <outletCollection property="ageBtns" destination="tXu-rC-Uxz" collectionClass="NSMutableArray" id="xxK-PQ-oCd"/>
+                        <outletCollection property="ageBtns" destination="m5P-wR-urD" collectionClass="NSMutableArray" id="xq6-kn-RDX"/>
+                        <outletCollection property="ageBtns" destination="SI2-NK-WSB" collectionClass="NSMutableArray" id="phR-3R-GD6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

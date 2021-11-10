@@ -11,6 +11,8 @@ import UIKit
 // 눌렀을 때 피커 올라오는 텍스트필드
 class tapTextField : UITextField {
     
+    var status : Bool = false
+    
     required init?(coder aDecoder: NSCoder) {
           super.init(coder: aDecoder)
         defaultTapTextFiledStyle()
@@ -28,7 +30,7 @@ class tapTextField : UITextField {
 }
 
 extension tapTextField {
-    private func defaultTapTextFiledStyle() {
+    func defaultTapTextFiledStyle() {
         // placehoder 색은 각자 주자
         self.tintColor = .clear
         self.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
@@ -40,6 +42,7 @@ extension tapTextField {
     func colorTapTextFiledStyle() {
         self.textColor = .main
         self.layer.borderColor = UIColor.main.cgColor
+        status = true
     }
     
     func regionTextFieldStyle() {

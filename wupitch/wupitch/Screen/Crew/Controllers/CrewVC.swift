@@ -48,13 +48,27 @@ class CrewVC: BaseVC {
     }
     
     @IBAction func touchUpSearchBtn(_ sender: Any) {
-        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "CrewSearch", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "CrewSearchVC") as? CrewSearchVC {
+            self.tabBarController?.tabBar.isHidden = true
+            navigationController?.pushViewController(dvc, animated: true)
+        }
     }
     
     @IBAction func touchUpFilterBtn(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "CrewFilter", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "CrewFilterVC") as? CrewFilterVC {
+            self.tabBarController?.tabBar.isHidden = true
+            navigationController?.pushViewController(dvc, animated: true)
+        }
     }
     
     @IBAction func touchUpAlertBtn(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "CrewAlert", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "CrewAlertVC") as? CrewAlertVC {
+            self.tabBarController?.tabBar.isHidden = true
+            navigationController?.pushViewController(dvc, animated: true)
+        }
     }
     
     

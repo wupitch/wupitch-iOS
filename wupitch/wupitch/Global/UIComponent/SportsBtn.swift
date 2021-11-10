@@ -48,6 +48,32 @@ extension SportsBtn {
         self.makeRounded(cornerRadius: 8.adjusted)
         status = true
     }
+    
+    // 중복 가능한 버튼
+    func graySportsBtn() {
+        self.backgroundColor = .gray04
+        self.tintColor = .gray02
+        self.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
+        self.layer.borderWidth = 0
+        self.layer.borderColor = .none
+        self.makeRounded(cornerRadius: 8.adjusted)
+        status = false
+        self.addTarget(self, action: #selector(touchUpBtn), for: .touchUpInside)
+    }
+    
+    @objc func touchUpBtn() {
+        changeBtn()
+    }
+    
+    // 중복 가능한 버튼
+    func changeBtn() {
+        if self.status == false {
+            self.colorSportsBtn()
+        }
+        else {
+            self.defaultSportsBtn()
+        }
+        
+    }
+    
 }
-
-

@@ -106,7 +106,7 @@ class OnbordingVC: UIViewController {
     
     // 카카오 로그인 버튼
     @IBAction func touchUpKakaoBtn(_ sender: Any) {
-        
+        print("카카오 로그인 버튼 눌림")
         // 카카오톡 설치 여부 확인
         if (UserApi.isKakaoTalkLoginAvailable()) {
             UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
