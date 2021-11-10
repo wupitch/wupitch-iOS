@@ -33,5 +33,18 @@ class MakeCrewInfoVC: UIViewController {
         addSubTitleLabel.makeCrewSubTitleLabel()
     }
 
-
+    @IBAction func touchUpBackBtn(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func touchUpCancelBtn(_ sender: Any) {
+        
+    }
+    
+    @IBAction func touchUpNextBtn(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewDate", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewDateVC") as? MakeCrewDateVC {
+            navigationController?.pushViewController(dvc, animated: true)
+        }
+    }
 }

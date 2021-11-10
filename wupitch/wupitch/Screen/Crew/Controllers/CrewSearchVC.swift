@@ -28,6 +28,4 @@ class CrewSearchVC: UIViewController, UISearchBarDelegate {
         self.tabBarController?.tabBar.isHidden = false
         navigationController?.popViewController(animated: true)
     }
-    
-
 }

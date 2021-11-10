@@ -23,6 +23,7 @@ class CrewVC: BaseVC {
         super.viewDidLoad()
         setStyle()
         setCVDelegate()
+        tapGesture()
     }
     
     private func setStyle() {
@@ -44,7 +45,11 @@ class CrewVC: BaseVC {
     }
     
     @objc private func screenDidTap(_ gesture: UITapGestureRecognizer) {
-       
+        let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewSports", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewSportsVC") as? MakeCrewSportsVC {
+            self.tabBarController?.tabBar.isHidden = true
+            navigationController?.pushViewController(dvc, animated: true)
+        }
     }
     
     @IBAction func touchUpSearchBtn(_ sender: Any) {
@@ -114,6 +119,8 @@ extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         
         guard let dvc = storyboard.instantiateViewController(identifier: "CrewDetailVC") as? CrewDetailVC else {return}
         
+        
+        
         self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.pushViewController(dvc, animated: true)
     }
@@ -154,3 +161,12 @@ extension CrewVC: ModalDelegate {
         //SignUpUserInfo.shared.region = data
     }
 }
+
+//extension CrewVC : CrewDelegate {
+//    func makeCrewToPopPresentPage() {
+//        let storyBoard: UIStoryboard = UIStoryboard(name: "CrewDetail", bundle: nil)
+//        if let dvc = storyBoard.instantiateViewController(withIdentifier: "CrewDetailVC") as? CrewDetailVC {
+//            navigationController?.pushViewController(dvc, animated: true)
+//        }
+//    }
+//}

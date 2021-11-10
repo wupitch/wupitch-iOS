@@ -28,6 +28,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="left"/>
+                                        <connections>
+                                            <action selector="touchUpBackBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="q6k-di-Pq7"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="크루만들기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOK-lI-GrL" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
                                         <rect key="frame" x="170.33333333333334" y="11.999999999999998" width="73.666666666666657" height="20.333333333333329"/>
@@ -43,6 +46,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="close"/>
+                                        <connections>
+                                            <action selector="touchUpCancelBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tPd-98-566"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -71,6 +77,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="다음 (3/7)"/>
+                                <connections>
+                                    <action selector="touchUpNextBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="HAm-nx-eeU"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J4S-5s-lNK">
                                 <rect key="frame" x="0.0" y="701" width="414" height="1"/>

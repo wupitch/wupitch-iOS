@@ -28,6 +28,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="left"/>
+                                        <connections>
+                                            <action selector="touchUpBackBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KKM-pN-3i0"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="크루만들기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LkT-Lc-1MU" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
                                         <rect key="frame" x="170" y="12" width="74" height="20.5"/>
@@ -43,6 +46,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="close"/>
+                                        <connections>
+                                            <action selector="touchUpCancelBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="egn-aj-DAy"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -113,6 +119,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="다음 (2/7)"/>
+                                        <connections>
+                                            <action selector="touchUpNextBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2he-fb-Xe9"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

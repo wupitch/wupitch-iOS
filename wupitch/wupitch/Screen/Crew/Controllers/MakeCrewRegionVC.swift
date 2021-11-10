@@ -31,4 +31,20 @@ class MakeCrewRegionVC: UIViewController {
         regionTextField.regionTextFieldStyle()
         dongTextField.regionTextFieldStyle()
     }
+    
+    @IBAction func touchUpBackBtn(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func touchUpCancelBtn(_ sender: Any) {
+        
+    }
+    
+    @IBAction func touchUpNextBtn(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewInfo", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewInfoVC") as? MakeCrewInfoVC {
+            navigationController?.pushViewController(dvc, animated: true)
+        }
+    }
+    
 }

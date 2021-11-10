@@ -23,6 +23,7 @@ class CrewDetailVC: BaseVC {
         super.viewDidLoad()
         setStyle()
         setCVDelegate()
+        tabBarController?.tabBar.isHidden = true
     }
     
     private func setStyle() {

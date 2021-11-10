@@ -108,9 +108,8 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vsn-vW-pAc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="659"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vsn-vW-pAc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
@@ -118,7 +117,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ojs-Pn-Mqb" firstAttribute="top" secondItem="Ly1-A4-A7I" secondAttribute="bottom" constant="10" id="Cdr-D9-gX1"/>
+                            <constraint firstItem="Vsn-vW-pAc" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Dgw-Ht-C6Q"/>
                             <constraint firstItem="Fby-hV-0z1" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="Ehq-6A-bux"/>
+                            <constraint firstAttribute="bottom" secondItem="Vsn-vW-pAc" secondAttribute="bottom" id="FPA-R0-e1c"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="maU-Wh-7kp" secondAttribute="trailing" id="FpD-UM-6QK"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="SoD-bV-GCl" secondAttribute="bottom" id="L2A-ov-5hM"/>
                             <constraint firstItem="maU-Wh-7kp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="QVJ-8z-7k3"/>
@@ -127,8 +128,10 @@
                             <constraint firstItem="SoD-bV-GCl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="W2d-vq-bEb"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fGt-xF-vq2" secondAttribute="trailing" id="ZiY-Wf-M45"/>
                             <constraint firstItem="Fby-hV-0z1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="cgr-bF-8uF"/>
+                            <constraint firstItem="Vsn-vW-pAc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dN5-ql-oPM"/>
                             <constraint firstItem="SoD-bV-GCl" firstAttribute="top" secondItem="fGt-xF-vq2" secondAttribute="bottom" id="gIV-Nc-2nU"/>
                             <constraint firstItem="ojs-Pn-Mqb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nUx-1l-oEw"/>
+                            <constraint firstItem="Vsn-vW-pAc" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="o00-O6-n6N"/>
                             <constraint firstItem="SoD-bV-GCl" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="qe5-C5-uD0"/>
                             <constraint firstItem="fGt-xF-vq2" firstAttribute="top" secondItem="maU-Wh-7kp" secondAttribute="bottom" id="sCw-rf-enT"/>
                             <constraint firstItem="Ly1-A4-A7I" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="siy-DZ-7c5"/>
