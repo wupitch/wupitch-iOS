@@ -65,6 +65,7 @@ class LocationPickerVC: UIViewController {
         // 선택 버튼 누를 시, delegate
         modalDelegate?.modalDismiss()
         modalDelegate?.selectBtnToNextBtn()
+
         
         // 선택 버튼 누를 시, textField의 데이터가 변경되도록
         let i = self.pickerView.selectedRow(inComponent: 0)

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1XB-9l-2K9">
-                                <rect key="frame" x="0.0" y="440" width="414" height="456"/>
+                                <rect key="frame" x="0.0" y="406" width="414" height="490"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지역을 선택해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S16-OT-Ibd">
                                         <rect key="frame" x="20" y="24" width="142" height="21"/>
@@ -61,11 +61,11 @@
                                     <constraint firstItem="S16-OT-Ibd" firstAttribute="leading" secondItem="1XB-9l-2K9" secondAttribute="leading" constant="20" id="EaB-KX-LhS"/>
                                     <constraint firstItem="Hb5-K0-KlS" firstAttribute="top" secondItem="S16-OT-Ibd" secondAttribute="bottom" constant="24" id="EpT-HN-jve"/>
                                     <constraint firstAttribute="trailing" secondItem="4ST-6T-V2k" secondAttribute="trailing" constant="20" id="Fq6-ph-Ood"/>
-                                    <constraint firstAttribute="width" secondItem="1XB-9l-2K9" secondAttribute="height" multiplier="69:76" id="Ht8-WC-rwF"/>
                                     <constraint firstAttribute="trailing" secondItem="Hb5-K0-KlS" secondAttribute="trailing" id="OEE-Ca-aKN"/>
                                     <constraint firstItem="TTJ-YX-F5A" firstAttribute="top" secondItem="Hb5-K0-KlS" secondAttribute="bottom" constant="22" id="Qz8-xC-0Bi"/>
+                                    <constraint firstAttribute="height" constant="490" id="XKs-Or-XES"/>
                                     <constraint firstItem="TTJ-YX-F5A" firstAttribute="leading" secondItem="1XB-9l-2K9" secondAttribute="leading" constant="20" id="ZXM-tP-QFg"/>
-                                    <constraint firstAttribute="bottom" secondItem="TTJ-YX-F5A" secondAttribute="bottom" constant="44" id="miW-eD-s79"/>
+                                    <constraint firstAttribute="bottom" secondItem="TTJ-YX-F5A" secondAttribute="bottom" constant="78" id="miW-eD-s79"/>
                                     <constraint firstItem="S16-OT-Ibd" firstAttribute="top" secondItem="1XB-9l-2K9" secondAttribute="top" constant="24" id="o8M-mn-laF"/>
                                     <constraint firstAttribute="trailing" secondItem="TTJ-YX-F5A" secondAttribute="trailing" constant="19" id="rmq-JT-KFm"/>
                                     <constraint firstItem="4ST-6T-V2k" firstAttribute="centerY" secondItem="S16-OT-Ibd" secondAttribute="centerY" id="vkO-jf-rWz"/>

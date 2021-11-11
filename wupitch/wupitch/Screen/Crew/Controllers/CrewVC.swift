@@ -145,9 +145,10 @@ extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
 // MARK: - Extension (Modal Delegate)
 extension CrewVC: ModalDelegate {
     
+    
     // 모달에서 확인 버튼 눌렀을 때 다음 버튼에 생기는 색 변화
     func selectBtnToNextBtn() {
-        
+        //
     }
     
     // 모달이 dismiss되면서 모달백그라운드 색도 없어짐
@@ -162,11 +163,4 @@ extension CrewVC: ModalDelegate {
     }
 }
 
-//extension CrewVC : CrewDelegate {
-//    func makeCrewToPopPresentPage() {
-//        let storyBoard: UIStoryboard = UIStoryboard(name: "CrewDetail", bundle: nil)
-//        if let dvc = storyBoard.instantiateViewController(withIdentifier: "CrewDetailVC") as? CrewDetailVC {
-//            navigationController?.pushViewController(dvc, animated: true)
-//        }
-//    }
-//}
+

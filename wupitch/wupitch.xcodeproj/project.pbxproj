@@ -110,6 +110,8 @@
 		DD9EEDBB273A491300E02396 /* CrewAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9EEDBA273A491300E02396 /* CrewAlert.storyboard */; };
 		DD9EEDBD273A492D00E02396 /* CrewAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EEDBC273A492D00E02396 /* CrewAlertVC.swift */; };
 		DD9EEDC3273A667D00E02396 /* CrewAlertTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EEDC2273A667D00E02396 /* CrewAlertTVCell.swift */; };
+		DD9EEDC7273D095E00E02396 /* DongPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9EEDC6273D095E00E02396 /* DongPicker.storyboard */; };
+		DD9EEDC9273D097600E02396 /* DongPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EEDC8273D097600E02396 /* DongPickerVC.swift */; };
 		DDC3B50C27327A0000FF4959 /* DetailCrewHeaderCRV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC3B50A27327A0000FF4959 /* DetailCrewHeaderCRV.swift */; };
 		DDC3B50D27327A0000FF4959 /* DetailCrewHeaderCRV.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDC3B50B27327A0000FF4959 /* DetailCrewHeaderCRV.xib */; };
 		DDC3B5102732A68A00FF4959 /* DetailCrewFooterCRV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC3B50E2732A68A00FF4959 /* DetailCrewFooterCRV.swift */; };
@@ -246,6 +248,8 @@
 		DD9EEDBA273A491300E02396 /* CrewAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CrewAlert.storyboard; sourceTree = "<group>"; };
 		DD9EEDBC273A492D00E02396 /* CrewAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewAlertVC.swift; sourceTree = "<group>"; };
 		DD9EEDC2273A667D00E02396 /* CrewAlertTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewAlertTVCell.swift; sourceTree = "<group>"; };
+		DD9EEDC6273D095E00E02396 /* DongPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DongPicker.storyboard; sourceTree = "<group>"; };
+		DD9EEDC8273D097600E02396 /* DongPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongPickerVC.swift; sourceTree = "<group>"; };
 		DDC3B50A27327A0000FF4959 /* DetailCrewHeaderCRV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCrewHeaderCRV.swift; sourceTree = "<group>"; };
 		DDC3B50B27327A0000FF4959 /* DetailCrewHeaderCRV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCrewHeaderCRV.xib; sourceTree = "<group>"; };
 		DDC3B50E2732A68A00FF4959 /* DetailCrewFooterCRV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCrewFooterCRV.swift; sourceTree = "<group>"; };
@@ -446,6 +450,7 @@
 				DD61E4C3271EBAF5007504DE /* LocationPicker.storyboard */,
 				DD2D63AF27268A1A007CEC57 /* LevelModal.storyboard */,
 				DD3A30F7272E7C4800D711C6 /* CrewApplication.storyboard */,
+				DD9EEDC6273D095E00E02396 /* DongPicker.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -456,6 +461,7 @@
 				DD61E4C5271EBCE6007504DE /* LocationPickerVC.swift */,
 				DD2D63B127268A34007CEC57 /* LevelModalVC.swift */,
 				DD3A30F9272E7C5F00D711C6 /* CrewApplicationVC.swift */,
+				DD9EEDC8273D097600E02396 /* DongPickerVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -991,6 +997,7 @@
 				DD1BFC572738E9A70042C51F /* SignUpPhone.storyboard in Resources */,
 				DD3ACBB92721073E00EBC201 /* SignUpSports.storyboard in Resources */,
 				DD3A30E4272DABE900D711C6 /* MyActivity.storyboard in Resources */,
+				DD9EEDC7273D095E00E02396 /* DongPicker.storyboard in Resources */,
 				DD3E37C92730180100C4192E /* CrewDetail.storyboard in Resources */,
 				DD3A30F4272E61EB00D711C6 /* AddCrew.storyboard in Resources */,
 				DDE0EE6B2729907600C46821 /* SignUpAge.storyboard in Resources */,
@@ -1064,6 +1071,7 @@
 				DD1BFC272736DC8C0042C51F /* InformationService.swift in Sources */,
 				DD1BFC492738E8BB0042C51F /* MakeCrewInfoVC.swift in Sources */,
 				DDC3B5192734041500FF4959 /* BaseVC.swift in Sources */,
+				DD9EEDC9273D097600E02396 /* DongPickerVC.swift in Sources */,
 				DD1BFC512738E91E0042C51F /* MakeCrewPhotoVC.swift in Sources */,
 				DD7BEBCB27315DF800DB2F60 /* DetailCrewIntroduceCVCell.swift in Sources */,
 				DD3ACBB7272104D300EBC201 /* TermsOfUseVC.swift in Sources */,
