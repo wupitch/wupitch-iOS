@@ -9,6 +9,7 @@ import UIKit
 
 class CrewFilterVC: UIViewController {
 
+    @IBOutlet weak var endTimeBtn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var titleLabel: LabelFontSize!
     
@@ -19,9 +20,10 @@ class CrewFilterVC: UIViewController {
     @IBOutlet var dateBtns: [SportsBtn]!
     
     @IBOutlet weak var timeLabel: LabelFontSize!
-    @IBOutlet weak var startTimeTextField: tapTextField!
-    @IBOutlet weak var betweenLabel: UILabel!
-    @IBOutlet weak var endTImeTextField: tapTextField!
+    
+   
+    @IBOutlet weak var startTectField: UITextField!
+    
     
     @IBOutlet weak var crewCountLabel: LabelFontSize!
     @IBOutlet var crewCountBtns: [SportsBtn]!
@@ -38,15 +40,24 @@ class CrewFilterVC: UIViewController {
         super.viewDidLoad()
 
         setStyle()
-        showStartDatePicker()
-        showEndDatePicker()
+        textFieldToAddTarget()
+        //startTectField.tintColor = .clear
+        //startTectField.selectedTextRange = nil
     }
-    
     private func setStyle() {
         // textfield placeholder default color
-        startTimeTextField.attributedPlaceholder = NSAttributedString(string: "00:00", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray02])
-        endTImeTextField.attributedPlaceholder = NSAttributedString(string: "00:00", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray02])
-        betweenLabel.textColor = .gray02
+        //startTimeTextField.attributedPlaceholder = NSAttributedString(string: "00:00", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray02])
+//        endTImeTextField.attributedPlaceholder = NSAttributedString(string: "00:00", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray02])
+        
+        // textField Style
+        startTectField.tintColor = .clear
+        startTectField.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
+        startTectField.attributedPlaceholder = NSAttributedString(string: "지역구 선택", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray02])
+        startTectField.layer.borderColor = UIColor.gray02.cgColor
+//        test.layer.borderWidth = 1.adjusted
+//        test.layer.cornerRadius = 8.adjusted
+//
+//        betweenLabel.textColor = .gray02
         
         // applyBtn default
         applyBtn.colorNextBtnStyle()
@@ -66,96 +77,126 @@ class CrewFilterVC: UIViewController {
         }
     }
     
-    func showStartDatePicker(){
-        //Formate Date
-        timePicker.datePickerMode = .time
+
+    // 텍스트 필드 눌렀을 때 addTarget주기
+    func textFieldToAddTarget() {
+        startTectField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .touchDown)
+    }
+    
+    // textFieldToAddTarget()의 addTarget
+    @objc func textFieldDidChange(_ textField:UITextField) {
+        
+        let alertVC = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .time
         if #available(iOS 13.4, *) {
-            timePicker.preferredDatePickerStyle = .wheels
+            datePicker.preferredDatePickerStyle = .wheels
         } else {
             // Fallback on earlier versions
         }
-        timePicker.locale = Locale(identifier: "ko-KR")
-        
-        //ToolBar
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "확인", style: .plain, target: self, action: #selector(donedatePicker));
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "취소", style: .plain, target: self, action: #selector(cancelDatePicker));
-        
-        toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
-        
-        startTimeTextField.inputAccessoryView = toolbar
-        startTimeTextField.inputView = timePicker
+        datePicker.locale = Locale(identifier: "ko-KR")
+        alertVC.view.addSubview(datePicker)
+        alertVC.view.heightAnchor.constraint(equalToConstant: 350).isActive = true
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
+        datePicker.leadingAnchor.constraint(equalTo: alertVC.view.leadingAnchor).isActive = true
+        datePicker.trailingAnchor.constraint(equalTo: alertVC.view.trailingAnchor).isActive = true
+        datePicker.topAnchor.constraint(equalTo: alertVC.view.topAnchor, constant: 10).isActive = true
+        datePicker.bottomAnchor.constraint(equalTo: alertVC.view.bottomAnchor, constant: -120).isActive = true
+
+        let okAction = UIAlertAction(title: "확인", style: .default) { _ in
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
+            let dateString = dateFormatter.string(from: datePicker.date)
+            self.startTectField.text = dateString
+        }
+        alertVC.addAction(okAction)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        alertVC.addAction(cancelAction)
+
+        present(alertVC, animated: true, completion: nil)
+       
     }
     
-    // 확인
-    @objc func donedatePicker(){
-        let formatter = DateFormatter()
-        formatter.timeStyle = .short
-        formatter.dateStyle = .none
-        formatter.dateFormat = "HH:mm"
-        startTimeTextField.text = formatter.string(from: timePicker.date)
-        startTimeTextField.colorTapTextFiledStyle()
-        self.view.endEditing(true)
-    }
     
-    // 취소
-    @objc func cancelDatePicker(){
-        self.view.endEditing(true)
-    }
-    
-    func showEndDatePicker(){
-        //Formate Date
-        timePicker.datePickerMode = .time
+    @IBAction func touchUpTimePicker(_ sender: Any) {
+        let alertVC = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .time
         if #available(iOS 13.4, *) {
-            timePicker.preferredDatePickerStyle = .wheels
+            datePicker.preferredDatePickerStyle = .wheels
         } else {
             // Fallback on earlier versions
         }
-        timePicker.locale = Locale(identifier: "ko-KR")
-        
-        //ToolBar
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        let doneBtn = UIBarButtonItem(title: "확인", style: .plain, target: self, action: #selector(doneBtn));
-        let spaceBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelBtn = UIBarButtonItem(title: "취소", style: .plain, target: self, action: #selector(cancelBtn));
-        
-        toolbar.setItems([cancelBtn,spaceBtn,doneBtn], animated: false)
-        
-        endTImeTextField.inputAccessoryView = toolbar
-        endTImeTextField.inputView = timePicker
-    }
-    
-    // 확인
-    @objc func doneBtn(){
-        let formatter = DateFormatter()
-        formatter.timeStyle = .short
-        formatter.dateStyle = .none
-        formatter.dateFormat = "HH:mm"
-        endTImeTextField.text = formatter.string(from: timePicker.date)
-        endTImeTextField.colorTapTextFiledStyle()
-        betweenLabel.textColor = .main
-        self.view.endEditing(true)
-    }
-    
-    // 취소
-    @objc func cancelBtn(){
-        self.view.endEditing(true)
+        datePicker.locale = Locale(identifier: "ko-KR")
+        alertVC.view.addSubview(datePicker)
+        alertVC.view.heightAnchor.constraint(equalToConstant: 350).isActive = true
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
+        datePicker.leadingAnchor.constraint(equalTo: alertVC.view.leadingAnchor).isActive = true
+        datePicker.trailingAnchor.constraint(equalTo: alertVC.view.trailingAnchor).isActive = true
+        datePicker.topAnchor.constraint(equalTo: alertVC.view.topAnchor, constant: 10).isActive = true
+        datePicker.bottomAnchor.constraint(equalTo: alertVC.view.bottomAnchor, constant: -120).isActive = true
+
+        let okAction = UIAlertAction(title: "확인", style: .default) { _ in
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
+            let dateString = dateFormatter.string(from: datePicker.date)
+            self.endTimeBtn.setTitle(dateString, for: .normal)
+            //self.startTimeTextField.text = dateString
+        }
+        alertVC.addAction(okAction)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        alertVC.addAction(cancelAction)
+
+        present(alertVC, animated: true, completion: nil)
     }
     
     @IBAction func touchUpCrewCountFirst(_ sender: Any) {
-        if crewCountBtns[0].status == false {
-            crewCountBtns[0].colorSportsBtn()
-            crewCountBtns[1].defaultSportsBtn()
-            crewCountBtns[2].defaultSportsBtn()
-            crewCountBtns[3].defaultSportsBtn()
-            crewCountBtns[4].defaultSportsBtn()
+        
+        let alertVC = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .time
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        } else {
+            // Fallback on earlier versions
         }
-        else {
-            crewCountBtns[0].defaultSportsBtn()
+        datePicker.locale = Locale(identifier: "ko-KR")
+        alertVC.view.addSubview(datePicker)
+        alertVC.view.heightAnchor.constraint(equalToConstant: 350).isActive = true
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
+        datePicker.leadingAnchor.constraint(equalTo: alertVC.view.leadingAnchor).isActive = true
+        datePicker.trailingAnchor.constraint(equalTo: alertVC.view.trailingAnchor).isActive = true
+        datePicker.topAnchor.constraint(equalTo: alertVC.view.topAnchor, constant: 10).isActive = true
+        datePicker.bottomAnchor.constraint(equalTo: alertVC.view.bottomAnchor, constant: -120).isActive = true
+        
+        let okAction = UIAlertAction(title: "확인", style: .default) { _ in
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
+            let dateString = dateFormatter.string(from: datePicker.date)
+            self.ageLabel.text = dateString
         }
+        alertVC.addAction(okAction)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        alertVC.addAction(cancelAction)
+        
+        
+        self.present(alertVC, animated: true, completion: nil)
+             
+
+        
+        
+        
+        
+//        if crewCountBtns[0].status == false {
+//            crewCountBtns[0].colorSportsBtn()
+//            crewCountBtns[1].defaultSportsBtn()
+//            crewCountBtns[2].defaultSportsBtn()
+//            crewCountBtns[3].defaultSportsBtn()
+//            crewCountBtns[4].defaultSportsBtn()
+//        }
+//        else {
+//            crewCountBtns[0].defaultSportsBtn()
+//        }
     }
     @IBAction func touchUpCrewCountSecond(_ sender: Any) {
         if crewCountBtns[1].status == false {
@@ -229,11 +270,11 @@ class CrewFilterVC: UIViewController {
                 crewCountBtns[i].defaultSportsBtn()
             }
         }
-        startTimeTextField.defaultTapTextFiledStyle()
-        startTimeTextField.textColor = .gray02
-        endTImeTextField.defaultTapTextFiledStyle()
-        endTImeTextField.textColor = .gray02
-        betweenLabel.textColor = .gray02
+        //startTimeTextField.defaultTapTextFiledStyle()
+        //startTimeTextField.textColor = .gray02
+        //endTImeTextField.defaultTapTextFiledStyle()
+        //endTImeTextField.textColor = .gray02
+        //betweenLabel.textColor = .gray02
     }
     
     @IBAction func touchUpApplyBtn(_ sender: Any) {
@@ -268,3 +309,41 @@ class CrewFilterVC: UIViewController {
 }
 
 
+//extension CrewFilterVC: UITextFieldDelegate {
+//    func start() {
+//        startTimeTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+//    }
+//
+//    @objc func textFieldDidChange() {
+//        let alertVC = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
+//        let datePicker = UIDatePicker()
+//        datePicker.datePickerMode = .time
+//        if #available(iOS 13.4, *) {
+//            datePicker.preferredDatePickerStyle = .wheels
+//        } else {
+//            // Fallback on earlier versions
+//        }
+//        datePicker.locale = Locale(identifier: "ko-KR")
+//        alertVC.view.addSubview(datePicker)
+//        alertVC.view.heightAnchor.constraint(equalToConstant: 350).isActive = true
+//        datePicker.translatesAutoresizingMaskIntoConstraints = false
+//        datePicker.leadingAnchor.constraint(equalTo: alertVC.view.leadingAnchor).isActive = true
+//        datePicker.trailingAnchor.constraint(equalTo: alertVC.view.trailingAnchor).isActive = true
+//        datePicker.topAnchor.constraint(equalTo: alertVC.view.topAnchor, constant: 10).isActive = true
+//        datePicker.bottomAnchor.constraint(equalTo: alertVC.view.bottomAnchor, constant: -120).isActive = true
+//
+//        let okAction = UIAlertAction(title: "확인", style: .default) { _ in
+//            let dateFormatter = DateFormatter()
+//            dateFormatter.dateFormat = "HH:mm"
+//            let dateString = dateFormatter.string(from: datePicker.date)
+//            self.startTimeTextField.text = dateString
+//        }
+//        alertVC.addAction(okAction)
+//        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+//        alertVC.addAction(cancelAction)
+//
+//        //startTimeTextField.inputView = datePicker
+//        present(alertVC, animated: true, completion: nil)
+//
+//    }
+//}

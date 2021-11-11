@@ -66,18 +66,18 @@ class SignUpCityVC: UIViewController {
         
         // 텍스트필드 눌렀을 때 모달 화면 띄워주기
         let storyBoard: UIStoryboard = UIStoryboard(name: "LocationPicker", bundle: nil)
-        
+
         SignUpUserInfo.shared.bottomSheetMethod = .signUp
-        
+
         if let dvc = storyBoard.instantiateViewController(withIdentifier: "LocationPickerVC") as? LocationPickerVC {
             dvc.modalPresentationStyle = .overFullScreen
-            
+
             // 모달 백그라운드 색 보이게
             modalBgView.alpha = 1
-            
+
             // 모달 딜리게이트 할당
             dvc.modalDelegate = self
-            
+
             // present 형태로 띄우기
             self.present(dvc, animated: true, completion: nil)
         }

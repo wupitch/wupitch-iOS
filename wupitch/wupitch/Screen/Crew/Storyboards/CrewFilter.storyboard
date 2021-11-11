@@ -269,41 +269,17 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="LnA-bM-acx">
-                                                        <rect key="frame" x="20" y="64.5" width="222" height="48"/>
-                                                        <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00:00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lWo-Hn-3eR" customClass="tapTextField" customModule="wupitch" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="104" height="48"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="1z4-2T-fCE"/>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="lWo-Hn-3eR" secondAttribute="height" multiplier="104:48" id="u3P-fZ-ijv"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5RP-Hk-jvD">
-                                                                <rect key="frame" x="107" y="0.0" width="8" height="48"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00:00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h61-Q8-0ba" customClass="tapTextField" customModule="wupitch" customModuleProvider="target">
-                                                                <rect key="frame" x="118" y="0.0" width="104" height="48"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="h61-Q8-0ba" secondAttribute="height" multiplier="104:48" id="DMx-0b-TNw"/>
-                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="DgA-eL-67j"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
-                                                        </subviews>
-                                                    </stackView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TLb-FY-wO3">
+                                                        <rect key="frame" x="20" y="60" width="32" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="LnA-bM-acx" firstAttribute="top" secondItem="Uqa-RB-sKV" secondAttribute="bottom" constant="12" id="7gd-kk-w8g"/>
+                                                    <constraint firstItem="TLb-FY-wO3" firstAttribute="top" secondItem="Uqa-RB-sKV" secondAttribute="bottom" constant="7.5" id="CaN-Ku-3rF"/>
                                                     <constraint firstAttribute="height" constant="113" id="Yhc-CA-k6g"/>
                                                     <constraint firstItem="Uqa-RB-sKV" firstAttribute="top" secondItem="Lu2-m6-Adj" secondAttribute="top" constant="32" id="a3U-sE-fzx"/>
-                                                    <constraint firstItem="LnA-bM-acx" firstAttribute="leading" secondItem="Uqa-RB-sKV" secondAttribute="leading" id="jvU-Cn-2rV"/>
+                                                    <constraint firstItem="TLb-FY-wO3" firstAttribute="leading" secondItem="Uqa-RB-sKV" secondAttribute="leading" id="vlx-eE-RWy"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9R2-Qt-bqo">
@@ -475,13 +451,13 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="h73-3F-tDu" secondAttribute="trailing" id="2Kf-Yg-EsA"/>
                                             <constraint firstItem="Lu2-m6-Adj" firstAttribute="top" secondItem="h73-3F-tDu" secondAttribute="bottom" id="4vp-Wv-aKj"/>
+                                            <constraint firstItem="Whg-K0-QHh" firstAttribute="leading" secondItem="TLb-FY-wO3" secondAttribute="leading" id="8ow-PT-Gfd"/>
                                             <constraint firstItem="DZc-81-WaW" firstAttribute="leading" secondItem="txe-5M-vaR" secondAttribute="leading" id="CSd-i1-fhy"/>
                                             <constraint firstItem="Lu2-m6-Adj" firstAttribute="leading" secondItem="4DZ-yb-6rr" secondAttribute="leading" id="DRh-nJ-X8e"/>
                                             <constraint firstItem="aPf-YM-9iF" firstAttribute="leading" secondItem="KBJ-0N-XLK" secondAttribute="leading" id="EPZ-sF-s18"/>
                                             <constraint firstItem="vid-qT-RH4" firstAttribute="trailing" secondItem="KBJ-0N-XLK" secondAttribute="trailing" id="Lvz-F5-nes"/>
                                             <constraint firstItem="Uqa-RB-sKV" firstAttribute="leading" secondItem="cID-eY-cav" secondAttribute="leading" id="NOw-Ql-rQi"/>
                                             <constraint firstAttribute="trailing" secondItem="caa-Ta-DzB" secondAttribute="trailing" id="SGP-i5-Y07"/>
-                                            <constraint firstItem="Whg-K0-QHh" firstAttribute="leading" secondItem="lWo-Hn-3eR" secondAttribute="leading" id="Tqv-BB-ljK"/>
                                             <constraint firstItem="caa-Ta-DzB" firstAttribute="leading" secondItem="4DZ-yb-6rr" secondAttribute="leading" id="YqY-gn-jQy"/>
                                             <constraint firstAttribute="trailing" secondItem="9R2-Qt-bqo" secondAttribute="trailing" id="dm8-2I-e6u"/>
                                             <constraint firstItem="caa-Ta-DzB" firstAttribute="top" secondItem="4DZ-yb-6rr" secondAttribute="top" id="e6E-2v-cah"/>
@@ -535,13 +511,11 @@
                         <outlet property="ageLabel" destination="aPf-YM-9iF" id="hVe-BR-Y3i"/>
                         <outlet property="applyBtn" destination="GgX-MI-MHC" id="JhD-ry-mDP"/>
                         <outlet property="backBtn" destination="4aQ-UG-JO9" id="WxM-d5-aPf"/>
-                        <outlet property="betweenLabel" destination="5RP-Hk-jvD" id="HpI-6h-p5Q"/>
                         <outlet property="crewCountLabel" destination="Whg-K0-QHh" id="gL9-ED-xoE"/>
                         <outlet property="dateLabel" destination="DZc-81-WaW" id="NwP-K1-2DZ"/>
-                        <outlet property="endTImeTextField" destination="h61-Q8-0ba" id="cyr-av-7bA"/>
                         <outlet property="resetBtn" destination="Cgq-iw-ocZ" id="ioM-UY-KZy"/>
                         <outlet property="sportsLabel" destination="yb3-AR-a1j" id="2a7-iP-oCx"/>
-                        <outlet property="startTimeTextField" destination="lWo-Hn-3eR" id="f0k-Df-hJl"/>
+                        <outlet property="startTectField" destination="TLb-FY-wO3" id="UBK-Cx-Gnl"/>
                         <outlet property="timeLabel" destination="Uqa-RB-sKV" id="86t-de-WWE"/>
                         <outlet property="titleLabel" destination="lJm-pT-VBh" id="sfe-wP-Ru6"/>
                         <outletCollection property="sportsBtns" destination="pAx-pp-xx3" collectionClass="NSMutableArray" id="tob-iB-Xb3"/>

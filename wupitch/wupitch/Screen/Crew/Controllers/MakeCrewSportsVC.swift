@@ -25,15 +25,116 @@ class MakeCrewSportsVC: UIViewController {
         titleLabel.makeCrewTitleLabel()
     }
     
+    @IBAction func touchUpSoccerBtn(_ sender: Any) {
+        if sportsBtns[0].status == false {
+            sportsBtns[0].colorSportsBtn()
+            sportsBtns[1].defaultSportsBtn()
+            sportsBtns[2].defaultSportsBtn()
+            sportsBtns[3].defaultSportsBtn()
+            sportsBtns[4].defaultSportsBtn()
+            sportsBtns[5].defaultSportsBtn()
+            nextBtn.colorNextBtnStyle()
+        }
+        else {
+            sportsBtns[0].defaultSportsBtn()
+            nextBtn.defaultNextBtnStyle()
+        }
+    }
+    
+    @IBAction func touchUpBadmintonBtn(_ sender: Any) {
+        if sportsBtns[1].status == false {
+            sportsBtns[1].colorSportsBtn()
+            sportsBtns[0].defaultSportsBtn()
+            sportsBtns[2].defaultSportsBtn()
+            sportsBtns[3].defaultSportsBtn()
+            sportsBtns[4].defaultSportsBtn()
+            sportsBtns[5].defaultSportsBtn()
+            nextBtn.colorNextBtnStyle()
+        }
+        else {
+            sportsBtns[1].defaultSportsBtn()
+            nextBtn.defaultNextBtnStyle()
+        }
+    }
+    
+    @IBAction func touchUpVolleyBallBtn(_ sender: Any) {
+        if sportsBtns[2].status == false {
+            sportsBtns[2].colorSportsBtn()
+            sportsBtns[0].defaultSportsBtn()
+            sportsBtns[1].defaultSportsBtn()
+            sportsBtns[3].defaultSportsBtn()
+            sportsBtns[4].defaultSportsBtn()
+            sportsBtns[5].defaultSportsBtn()
+            nextBtn.colorNextBtnStyle()
+        }
+        else {
+            sportsBtns[2].defaultSportsBtn()
+            nextBtn.defaultNextBtnStyle()
+        }
+    }
+    
+    @IBAction func touchUpBasketBallBtn(_ sender: Any) {
+        if sportsBtns[3].status == false {
+            sportsBtns[3].colorSportsBtn()
+            sportsBtns[0].defaultSportsBtn()
+            sportsBtns[1].defaultSportsBtn()
+            sportsBtns[2].defaultSportsBtn()
+            sportsBtns[4].defaultSportsBtn()
+            sportsBtns[5].defaultSportsBtn()
+            nextBtn.colorNextBtnStyle()
+        }
+        else {
+            sportsBtns[3].defaultSportsBtn()
+            nextBtn.defaultNextBtnStyle()
+        }
+    }
+    
+    @IBAction func touchUpHikingBtn(_ sender: Any) {
+        if sportsBtns[4].status == false {
+            sportsBtns[4].colorSportsBtn()
+            sportsBtns[0].defaultSportsBtn()
+            sportsBtns[1].defaultSportsBtn()
+            sportsBtns[2].defaultSportsBtn()
+            sportsBtns[3].defaultSportsBtn()
+            sportsBtns[5].defaultSportsBtn()
+            nextBtn.colorNextBtnStyle()
+        }
+        else {
+            sportsBtns[4].defaultSportsBtn()
+            nextBtn.defaultNextBtnStyle()
+        }
+    }
+    
+    @IBAction func touchUpRunningBtn(_ sender: Any) {
+        if sportsBtns[5].status == false {
+            sportsBtns[5].colorSportsBtn()
+            sportsBtns[0].defaultSportsBtn()
+            sportsBtns[1].defaultSportsBtn()
+            sportsBtns[2].defaultSportsBtn()
+            sportsBtns[3].defaultSportsBtn()
+            sportsBtns[4].defaultSportsBtn()
+            nextBtn.colorNextBtnStyle()
+        }
+        else {
+            sportsBtns[5].defaultSportsBtn()
+            nextBtn.defaultNextBtnStyle()
+        }
+    }
+    
     @IBAction func touchUpBackBtn(_ sender: Any) {
         self.tabBarController?.tabBar.isHidden = false
         navigationController?.popViewController(animated: true)
     }
     
     @IBAction func touchUpNextBtn(_ sender: Any) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewRegion", bundle: nil)
-        if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewRegionVC") as? MakeCrewRegionVC {
-            navigationController?.pushViewController(dvc, animated: true)
+        if nextBtn.backgroundColor == .main {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewRegion", bundle: nil)
+            guard let dvc = storyBoard.instantiateViewController(identifier: "MakeCrewRegionVC") as? MakeCrewRegionVC else {return}
+            self.navigationController?.pushViewController(dvc, animated: true)
+            
+        }
+        else {
+            nextBtn.backgroundColor = .gray03
         }
     }
 }

@@ -28,7 +28,7 @@ class NextBtn : UIButton {
 }
 
 extension NextBtn {
-    private func defaultNextBtnStyle() {
+    func defaultNextBtnStyle() {
         self.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
         self.backgroundColor = .gray03
         self.tintColor = .wht

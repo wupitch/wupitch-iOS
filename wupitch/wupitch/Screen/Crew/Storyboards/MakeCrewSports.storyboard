@@ -76,18 +76,27 @@
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="축구/풋살"/>
+                                                <connections>
+                                                    <action selector="touchUpSoccerBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="AKu-Z4-LLu"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLJ-1G-SIT" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                 <rect key="frame" x="129" y="0.0" width="117" height="48"/>
                                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="배드민턴"/>
+                                                <connections>
+                                                    <action selector="touchUpBadmintonBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EHB-UL-n0t"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbw-Bp-0Nt" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                 <rect key="frame" x="258" y="0.0" width="117" height="48"/>
                                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="배구"/>
+                                                <connections>
+                                                    <action selector="touchUpVolleyBallBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hgM-ek-GXc"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -99,18 +108,27 @@
                                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="농구"/>
+                                                <connections>
+                                                    <action selector="touchUpBasketBallBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ZZ2-Da-DFQ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scD-su-Yz6" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                 <rect key="frame" x="129" y="0.0" width="117" height="48"/>
                                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="등산"/>
+                                                <connections>
+                                                    <action selector="touchUpHikingBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xBl-Va-REr"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1j2-Q6-xyc" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                 <rect key="frame" x="258" y="0.0" width="117" height="48"/>
                                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="런닝"/>
+                                                <connections>
+                                                    <action selector="touchUpRunningBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6Uc-dY-8On"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
