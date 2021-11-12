@@ -72,7 +72,7 @@ class MakeCrewMoneyVC: UIViewController {
 
 }
 
-extension MakeCrewMoneyVC: UITextViewDelegate, UITextFieldDelegate {
+extension MakeCrewMoneyVC : UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         titleTextField.textColor = .bk
