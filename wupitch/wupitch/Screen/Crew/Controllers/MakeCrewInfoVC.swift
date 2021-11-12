@@ -9,6 +9,11 @@ import UIKit
 
 class MakeCrewInfoVC: UIViewController {
 
+    @IBOutlet var addInfoBtns: [SportsBtn]!
+    @IBOutlet var ageBtns: [SportsBtn]!
+    @IBOutlet var bgView: UIView!
+    @IBOutlet weak var crewCountTextField: UITextField!
+    @IBOutlet weak var crewNameTextField: UITextField!
     @IBOutlet weak var addSubTitleLabel: LabelFontSize!
     @IBOutlet weak var subTitleLabel: LabelFontSize!
     @IBOutlet weak var addInfoLabel: LabelFontSize!
@@ -19,10 +24,15 @@ class MakeCrewInfoVC: UIViewController {
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var makeCrewLabel: LabelFontSize!
     @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var nextBtn: NextBtn!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setStyle()
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        bgView.endEditing(true)
     }
     
     private func setStyle() {
@@ -31,20 +41,135 @@ class MakeCrewInfoVC: UIViewController {
         // subTitleStyle
         subTitleLabel.makeCrewSubTitleLabel()
         addSubTitleLabel.makeCrewSubTitleLabel()
+        
+        crewNameTextField.backgroundColor = .gray05
+        crewNameTextField.borderStyle = .none
+        crewNameTextField.makeRounded(cornerRadius: 8.adjusted)
+        crewNameTextField.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        crewNameTextField.textColor = .gray03
+        crewNameTextField.addLeftPadding()
+        crewNameTextField.delegate = self
+        
+        crewCountTextField.backgroundColor = .gray05
+        crewCountTextField.borderStyle = .none
+        crewCountTextField.makeRounded(cornerRadius: 8.adjusted)
+        crewCountTextField.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        crewCountTextField.textColor = .gray03
+        crewCountTextField.addLeftPadding()
+        crewCountTextField.delegate = self
+        
+        // 종목, 연령대 중복 선택 가능
+        for i in 0...7 {
+            addInfoBtns[i].graySportsBtn()
+        }
     }
-
+    
+    @IBAction func touchUpFirstBtn(_ sender: Any) {
+        if ageBtns[0].status == false {
+            ageBtns[0].colorSportsBtn()
+            ageBtns[1].defaultSportsBtn()
+            ageBtns[2].defaultSportsBtn()
+            ageBtns[3].defaultSportsBtn()
+            ageBtns[4].defaultSportsBtn()
+        }
+        else {
+            ageBtns[0].defaultSportsBtn()
+        }
+    }
+    
+    @IBAction func touchUpSecondBtn(_ sender: Any) {
+        if ageBtns[1].status == false {
+            ageBtns[1].colorSportsBtn()
+            ageBtns[0].defaultSportsBtn()
+            ageBtns[2].defaultSportsBtn()
+            ageBtns[3].defaultSportsBtn()
+            ageBtns[4].defaultSportsBtn()
+        }
+        else {
+            ageBtns[1].defaultSportsBtn()
+        }
+    }
+    
+    @IBAction func touchUpThirdBtn(_ sender: Any) {
+        if ageBtns[2].status == false {
+            ageBtns[2].colorSportsBtn()
+            ageBtns[0].defaultSportsBtn()
+            ageBtns[1].defaultSportsBtn()
+            ageBtns[3].defaultSportsBtn()
+            ageBtns[4].defaultSportsBtn()
+        }
+        else {
+            ageBtns[2].defaultSportsBtn()
+        }
+    }
+    
+    @IBAction func touchUpFourthBtn(_ sender: Any) {
+        if ageBtns[3].status == false {
+            ageBtns[3].colorSportsBtn()
+            ageBtns[0].defaultSportsBtn()
+            ageBtns[1].defaultSportsBtn()
+            ageBtns[2].defaultSportsBtn()
+            ageBtns[4].defaultSportsBtn()
+        }
+        else {
+            ageBtns[3].defaultSportsBtn()
+        }
+    }
+    
+    @IBAction func touchUpFifthBtn(_ sender: Any) {
+        if ageBtns[4].status == false {
+            ageBtns[4].colorSportsBtn()
+            ageBtns[0].defaultSportsBtn()
+            ageBtns[1].defaultSportsBtn()
+            ageBtns[2].defaultSportsBtn()
+            ageBtns[3].defaultSportsBtn()
+        }
+        else {
+            ageBtns[4].defaultSportsBtn()
+        }
+    }
+    
     @IBAction func touchUpBackBtn(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     
     @IBAction func touchUpCancelBtn(_ sender: Any) {
-        
     }
     
     @IBAction func touchUpNextBtn(_ sender: Any) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewDate", bundle: nil)
-        if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewDateVC") as? MakeCrewDateVC {
-            navigationController?.pushViewController(dvc, animated: true)
+        if nextBtn.backgroundColor == .main {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewDate", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewDateVC") as? MakeCrewDateVC {
+                navigationController?.pushViewController(dvc, animated: true)
+            }
         }
+        else {
+            nextBtn.backgroundColor = .gray03
+        }
+    }
+}
+
+extension MakeCrewInfoVC : UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        crewNameTextField.textColor = .bk
+        crewCountTextField.textColor = .bk
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        crewNameTextField.resignFirstResponder()
+        crewCountTextField.resignFirstResponder()
+        return true
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if crewCountTextField.isEditing == true {
+            let currentCharacterCount = textField.text?.count ?? 0
+            if (range.length + range.location > currentCharacterCount){
+                return false
+            }
+            let newLength = currentCharacterCount + string.count - range.length
+            
+            return newLength <= 3
+        }
+        return true
     }
 }

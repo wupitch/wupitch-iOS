@@ -167,13 +167,13 @@
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="gggg" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZEP-jq-VHb">
                                                         <rect key="frame" x="20" y="24" width="375" height="132"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="132" id="Idb-SJ-QcL"/>
                                                         </constraints>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8MW-cG-uMa">
                                                         <rect key="frame" x="349" y="160" width="46" height="21"/>
@@ -194,21 +194,21 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yWB-I8-hAv">
                                                 <rect key="frame" x="0.0" y="461" width="414" height="240"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="준비물" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IK-bN-wnx" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
-                                                        <rect key="frame" x="20" y="48" width="45" height="21"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="준비물(선택)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IK-bN-wnx" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="48" width="86" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ggg" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rz8-sz-SRc">
                                                         <rect key="frame" x="20" y="81" width="375" height="132"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="132" id="dI6-Hi-gWQ"/>
                                                         </constraints>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7n-Kb-l56">
                                                         <rect key="frame" x="351" y="217" width="44" height="21"/>
@@ -238,13 +238,13 @@
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ggg" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h4w-8h-eUK">
                                                         <rect key="frame" x="20" y="41" width="375" height="132"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="132" id="esh-k3-ztG"/>
                                                         </constraints>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Lx-aA-sHG">
                                                         <rect key="frame" x="351" y="177" width="44" height="21"/>
@@ -330,6 +330,20 @@
                         </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="1000"/>
+                    <connections>
+                        <outlet property="addPhotoLabel" destination="HRb-fA-q3y" id="Win-3F-7DT"/>
+                        <outlet property="crewInfoTextCountLabel" destination="8MW-cG-uMa" id="zwJ-4r-l2w"/>
+                        <outlet property="crewInfoTextView" destination="ZEP-jq-VHb" id="lnR-TO-4PT"/>
+                        <outlet property="materialsLabel" destination="6IK-bN-wnx" id="Rj9-dB-deL"/>
+                        <outlet property="materialsTextCountLabel" destination="E7n-Kb-l56" id="K4p-EU-IXa"/>
+                        <outlet property="materialsTextView" destination="Rz8-sz-SRc" id="vax-ZV-Wuj"/>
+                        <outlet property="photoView" destination="yH9-UE-8cg" id="beH-WX-jDA"/>
+                        <outlet property="questionLabel" destination="nvu-fe-SAc" id="9sD-q3-y40"/>
+                        <outlet property="questionTextCountLabel" destination="9Lx-aA-sHG" id="S4H-lo-emJ"/>
+                        <outlet property="questionTextView" destination="h4w-8h-eUK" id="yEc-xp-y3c"/>
+                        <outlet property="scrollView" destination="OPs-Sw-awn" id="Kd3-1b-Icz"/>
+                        <outlet property="titleTextField" destination="Xkf-XM-XZ1" id="ufn-ZK-Hpj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

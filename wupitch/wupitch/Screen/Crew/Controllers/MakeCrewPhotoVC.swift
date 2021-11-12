@@ -9,26 +9,167 @@ import UIKit
 
 class MakeCrewPhotoVC: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var addPhotoLabel: UILabel!
+    @IBOutlet weak var questionTextCountLabel: UILabel!
+    @IBOutlet weak var questionLabel: LabelFontSize!
+    @IBOutlet weak var materialsTextCountLabel: UILabel!
+    @IBOutlet weak var materialsLabel: LabelFontSize!
+    @IBOutlet weak var crewInfoTextCountLabel: UILabel!
+    @IBOutlet weak var photoView: UIView!
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var crewInfoTextView: UITextView!
+    @IBOutlet weak var materialsTextView: UITextView!
+    @IBOutlet weak var questionTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setStyle()
+        placeholderSetting()
+      
+    }
+   
+    
+    private func setStyle() {
+        titleTextField.delegate = self
+        
+        photoView.makeRounded(cornerRadius: 8.adjusted)
+        addPhotoLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+        
+        titleTextField.backgroundColor = .gray05
+        titleTextField.borderStyle = .none
+        titleTextField.makeRounded(cornerRadius: 8.adjusted)
+        titleTextField.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        titleTextField.textColor = .gray03
+        titleTextField.addLeftPadding()
+        
+        crewInfoTextView.makeRounded(cornerRadius: 8.adjusted)
+        crewInfoTextView.textContainerInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+        crewInfoTextView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        
+        materialsTextView.makeRounded(cornerRadius: 8.adjusted)
+        materialsTextView.textContainerInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+        materialsTextView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        
+        questionTextView.makeRounded(cornerRadius: 8.adjusted)
+        questionTextView.textContainerInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+        questionTextView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        
+        crewInfoTextCountLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+        crewInfoTextCountLabel.textColor = .gray03
+        
+        materialsTextCountLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+        materialsTextCountLabel.textColor = .gray03
+        
+        questionTextCountLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+        questionTextCountLabel.textColor = .gray03
+    }
+    
+    func placeholderSetting() {
+        crewInfoTextView.delegate = self
+        crewInfoTextView.text = "어떤 크루인지 소개해주세요"
+        crewInfoTextView.textColor = .gray03
+        
+        materialsTextView.delegate = self
+        materialsTextView.text = "활동에 꼭 필요한 준비물을 입력해주세요."
+        materialsTextView.textColor = .gray03
+        
+        questionTextView.delegate = self
+        questionTextView.text = "문의할 수 있는 연락수단을 입력해주세요. (예: 카카오톡 아이디, 인스타그램 아이디, 휴대폰번호 등)"
+        questionTextView.textColor = .gray03
     }
     
     @IBAction func touchUpBackBtn(_ sender: Any) {
-            navigationController?.popViewController(animated: true)
-        }
-        
-        @IBAction func touchUpCancelBtn(_ sender: Any) {
-            
-        }
-        
-        @IBAction func touchUpNextBtn(_ sender: Any) {
-            let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewMoney", bundle: nil)
-            if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewMoneyVC") as? MakeCrewMoneyVC {
-                navigationController?.pushViewController(dvc, animated: true)
-            }
-        }
+        navigationController?.popViewController(animated: true)
+    }
     
-  
+    @IBAction func touchUpCancelBtn(_ sender: Any) {
+        
+    }
+    
+    @IBAction func touchUpNextBtn(_ sender: Any) {
+        // 다 확인하고 값이 잇으면 다음버튼 활성화
+        let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewMoney", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewMoneyVC") as? MakeCrewMoneyVC {
+            navigationController?.pushViewController(dvc, animated: true)
+        }
+    }
+}
+
+extension MakeCrewPhotoVC: UITextViewDelegate, UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        titleTextField.textColor = .bk
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == .gray03 {
+            //textViewState = true
+            textView.text = nil
+            textView.textColor = .bk
+            
+//            if resultIsSuccess == true {
+//                startBtn.backgroundColor = .main
+//            }
+//            else {
+//                startBtn.backgroundColor = .gray03
+//            }
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        // 텍스트 싱글톤에 저장
+        //SignUpUserInfo.shared.userIntroduce = infoTextView.text
+        
+        if crewInfoTextView.text.isEmpty {
+            //textViewState = false
+            crewInfoTextView.text = "어떤 크루인지 소개해주세요"
+            crewInfoTextView.textColor = .gray03
+        }
+        
+        if materialsTextView.text.isEmpty {
+            materialsTextView.text = "활동에 꼭 필요한 준비물을 입력해주세요"
+            materialsTextView.textColor = .gray03
+        }
+        
+        if questionTextView.text.isEmpty {
+            questionTextView.text = "문의할 수 있는 연락수단을 입력해주세요. (예: 카카오톡 아이디, 인스타그램 아이디, 휴대폰번호 등)"
+            questionTextView.textColor = .gray03
+        }
+        
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
+        if crewInfoTextView.isEditable == true {
+            guard textView.text!.count <= 500 else { return false }
+            
+            crewInfoTextCountLabel.text = "\(textView.text?.count ?? 0)" + "/500"
+            crewInfoTextCountLabel.textColor = .gray03
+            crewInfoTextCountLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+        }
+        
+        if materialsTextView.isEditable == true {
+            guard textView.text!.count <= 100 else { return false }
+            
+            materialsTextCountLabel.text = "\(textView.text?.count ?? 0)" + "/100"
+            materialsTextCountLabel.textColor = .gray03
+            materialsTextCountLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+        }
+        
+        if questionTextView.isEditable == true {
+            guard textView.text!.count <= 100 else { return false }
+            
+            questionTextCountLabel.text = "\(textView.text?.count ?? 0)" + "/100"
+            questionTextCountLabel.textColor = .gray03
+            questionTextCountLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+        }
+       
+        // 엔터버튼 키보드 내려가기
+        if text == "\n" {
+            textView.resignFirstResponder()
+        }
+        
+        return true
+    }
 }

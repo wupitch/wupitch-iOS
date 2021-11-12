@@ -116,7 +116,7 @@
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="rPo-8v-fTI"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 크루원 수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9x-cx-D1l" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="218.33333333333331" width="97" height="20.333333333333343"/>
@@ -131,7 +131,7 @@
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="pi5-cv-Nbm" secondAttribute="height" multiplier="63:44" id="hhx-c9-lSM"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1k-J0-rBU">
                                                 <rect key="frame" x="95" y="265.66666666666669" width="15" height="20.333333333333314"/>
@@ -166,18 +166,27 @@
                                                                 </constraints>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="10대"/>
+                                                                <connections>
+                                                                    <action selector="touchUpFirstBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vWV-cY-hQb"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ax-fj-Hak" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                                 <rect key="frame" x="129" y="0.0" width="117" height="48"/>
                                                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="20대"/>
+                                                                <connections>
+                                                                    <action selector="touchUpSecondBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Of1-gK-wQb"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AdM-Y4-Mv3" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                                 <rect key="frame" x="258" y="0.0" width="117" height="48"/>
                                                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="30대"/>
+                                                                <connections>
+                                                                    <action selector="touchUpThirdBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zCG-3P-aef"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -189,12 +198,18 @@
                                                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="40대"/>
+                                                                <connections>
+                                                                    <action selector="touchUpFourthBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ovJ-W7-toh"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYs-h4-KLu" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
                                                                 <rect key="frame" x="129" y="0.0" width="117" height="48"/>
                                                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="50대 이상"/>
+                                                                <connections>
+                                                                    <action selector="touchUpFifthBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="qnA-ty-kOi"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5o-ZQ-ppz">
                                                                 <rect key="frame" x="258" y="0.0" width="117" height="48"/>
@@ -379,12 +394,29 @@
                         <outlet property="addSubTitleLabel" destination="hU4-ay-8cJ" id="CwQ-up-lrt"/>
                         <outlet property="ageLabel" destination="JQB-l4-qib" id="4k9-Fu-UWk"/>
                         <outlet property="backBtn" destination="DV8-f1-Rhp" id="3J9-Va-20P"/>
+                        <outlet property="bgView" destination="5EZ-qb-Rvc" id="ySL-qX-Uvd"/>
                         <outlet property="cancelBtn" destination="y4v-LF-kVi" id="HoF-eD-I1I"/>
                         <outlet property="crewCountLabel" destination="s9x-cx-D1l" id="NLF-Gf-Tx1"/>
+                        <outlet property="crewCountTextField" destination="pi5-cv-Nbm" id="Joy-A2-mxS"/>
                         <outlet property="crewNameLabel" destination="6h1-yK-2TP" id="kDj-lB-0hF"/>
+                        <outlet property="crewNameTextField" destination="8De-Jr-8vh" id="1dK-MQ-86X"/>
                         <outlet property="makeCrewLabel" destination="uOK-lI-GrL" id="QIS-Ix-BVa"/>
+                        <outlet property="nextBtn" destination="iSE-BO-p1O" id="XWb-u7-9ta"/>
                         <outlet property="subTitleLabel" destination="UFy-Sh-dFv" id="w2z-4S-DEq"/>
                         <outlet property="titleLabel" destination="Slu-JO-I6x" id="NMd-v4-nEU"/>
+                        <outletCollection property="ageBtns" destination="9Gw-IM-xwP" collectionClass="NSMutableArray" id="9Tm-7i-SCP"/>
+                        <outletCollection property="ageBtns" destination="6Ax-fj-Hak" collectionClass="NSMutableArray" id="rLl-Yf-Ghd"/>
+                        <outletCollection property="ageBtns" destination="AdM-Y4-Mv3" collectionClass="NSMutableArray" id="0kd-wr-UJ2"/>
+                        <outletCollection property="ageBtns" destination="H0W-1N-RPi" collectionClass="NSMutableArray" id="TDj-M8-A9f"/>
+                        <outletCollection property="ageBtns" destination="uYs-h4-KLu" collectionClass="NSMutableArray" id="FRC-fm-TNm"/>
+                        <outletCollection property="addInfoBtns" destination="iFA-01-7pf" collectionClass="NSMutableArray" id="Eaa-es-6no"/>
+                        <outletCollection property="addInfoBtns" destination="cZd-jM-lcE" collectionClass="NSMutableArray" id="4uo-gw-x0U"/>
+                        <outletCollection property="addInfoBtns" destination="29V-Wq-CsE" collectionClass="NSMutableArray" id="KhS-w0-xph"/>
+                        <outletCollection property="addInfoBtns" destination="PXw-5O-lwE" collectionClass="NSMutableArray" id="9ab-Oe-Jyc"/>
+                        <outletCollection property="addInfoBtns" destination="dFa-Tl-7wT" collectionClass="NSMutableArray" id="kzJ-pq-2IR"/>
+                        <outletCollection property="addInfoBtns" destination="Q9G-QF-IC8" collectionClass="NSMutableArray" id="nKi-GY-6zo"/>
+                        <outletCollection property="addInfoBtns" destination="Oz7-aR-eUh" collectionClass="NSMutableArray" id="wLF-Pu-Ecr"/>
+                        <outletCollection property="addInfoBtns" destination="Odj-MT-TUV" collectionClass="NSMutableArray" id="xwB-fa-YRR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

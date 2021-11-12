@@ -386,6 +386,7 @@
 			children = (
 				DDC3B517273403B900FF4959 /* BaseVC */,
 				DDED00F52719CB4200C2C343 /* Onboarding */,
+				DD9EEDCA273D614300E02396 /* SignIn */,
 				DDED0126271C0DD600C2C343 /* SignUp */,
 				DD3A30CF272DA64300D711C6 /* Tabbar */,
 				DD3A30D6272DAA1800D711C6 /* Crew */,
@@ -724,6 +725,13 @@
 				DD9EEDC2273A667D00E02396 /* CrewAlertTVCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		DD9EEDCA273D614300E02396 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 		DDC3B5122732ACBB00FF4959 /* ReusableViewCell */ = {
