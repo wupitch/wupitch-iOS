@@ -133,6 +133,18 @@
                                     <constraint firstAttribute="trailing" secondItem="ocF-kH-9bK" secondAttribute="trailing" constant="19" id="zeQ-RS-v7e"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2f-Fw-zGO">
+                                <rect key="frame" x="20" y="362.5" width="202" height="17"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="* 공란 시 ‘장소 미정’으로 표기됩니다.">
+                                        <attributes>
+                                            <color key="NSColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="AppleSDGothicNeo-Medium"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eoY-7b-r1N">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
@@ -143,6 +155,7 @@
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qTM-29-NCj" secondAttribute="trailing" constant="19" id="1bT-WZ-lly"/>
                             <constraint firstItem="CFx-g9-ahd" firstAttribute="leading" secondItem="aUq-Bb-CUL" secondAttribute="leading" id="33M-3L-Zia"/>
+                            <constraint firstItem="R2f-Fw-zGO" firstAttribute="leading" secondItem="CFx-g9-ahd" secondAttribute="leading" id="4ln-vX-qS2"/>
                             <constraint firstItem="CFx-g9-ahd" firstAttribute="top" secondItem="aUq-Bb-CUL" secondAttribute="bottom" constant="12" id="57e-bl-0u4"/>
                             <constraint firstItem="qTM-29-NCj" firstAttribute="top" secondItem="ghC-iy-Hzn" secondAttribute="bottom" constant="32" id="86u-uS-a74"/>
                             <constraint firstItem="aUq-Bb-CUL" firstAttribute="leading" secondItem="qTM-29-NCj" secondAttribute="leading" id="9Gc-vp-5Px"/>
@@ -157,6 +170,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="flr-WN-XIU" secondAttribute="trailing" id="SWB-Xb-wNq"/>
                             <constraint firstItem="KQY-Ax-NbQ" firstAttribute="top" secondItem="flr-WN-XIU" secondAttribute="bottom" id="a4H-aO-n91"/>
                             <constraint firstItem="rSS-6Y-LGy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="bQ3-hH-uWu"/>
+                            <constraint firstItem="R2f-Fw-zGO" firstAttribute="top" secondItem="CFx-g9-ahd" secondAttribute="bottom" constant="12" id="dqC-Yk-HFR"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="rSS-6Y-LGy" secondAttribute="bottom" id="edT-a0-J5f"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rSS-6Y-LGy" secondAttribute="trailing" id="hG6-hx-Ie5"/>
                             <constraint firstItem="KQY-Ax-NbQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="iCa-6V-G6F"/>
