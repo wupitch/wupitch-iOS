@@ -112,6 +112,9 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yH9-UE-8cg">
                                                         <rect key="frame" x="20" y="24" width="375" height="189"/>
                                                         <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cyF-6L-YAs">
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="189"/>
+                                                            </imageView>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="Thg-8l-OPu">
                                                                 <rect key="frame" x="175.5" y="82.5" width="24" height="24"/>
                                                                 <constraints>
@@ -131,9 +134,13 @@
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="yH9-UE-8cg" secondAttribute="height" multiplier="336:189" id="Hfx-5c-Jut"/>
                                                             <constraint firstItem="Thg-8l-OPu" firstAttribute="centerX" secondItem="yH9-UE-8cg" secondAttribute="centerX" id="NVA-1T-Cln"/>
                                                             <constraint firstItem="HRb-fA-q3y" firstAttribute="centerX" secondItem="Thg-8l-OPu" secondAttribute="centerX" id="Sq7-SC-REZ"/>
+                                                            <constraint firstItem="cyF-6L-YAs" firstAttribute="leading" secondItem="yH9-UE-8cg" secondAttribute="leading" id="Sr4-d7-t4j"/>
+                                                            <constraint firstItem="cyF-6L-YAs" firstAttribute="top" secondItem="yH9-UE-8cg" secondAttribute="top" id="YAY-tv-CZf"/>
+                                                            <constraint firstAttribute="trailing" secondItem="cyF-6L-YAs" secondAttribute="trailing" id="dUQ-Xw-8Gn"/>
                                                             <constraint firstItem="HRb-fA-q3y" firstAttribute="top" secondItem="Thg-8l-OPu" secondAttribute="bottom" constant="5" id="ibI-F7-OXD"/>
                                                             <constraint firstItem="Thg-8l-OPu" firstAttribute="centerY" secondItem="yH9-UE-8cg" secondAttribute="centerY" id="k9m-5l-ZdU"/>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="189" id="rC8-KJ-FnQ"/>
+                                                            <constraint firstAttribute="bottom" secondItem="cyF-6L-YAs" secondAttribute="bottom" id="uZ0-JA-ENO"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -334,10 +341,14 @@
                         <outlet property="addPhotoLabel" destination="HRb-fA-q3y" id="Win-3F-7DT"/>
                         <outlet property="crewInfoTextCountLabel" destination="8MW-cG-uMa" id="zwJ-4r-l2w"/>
                         <outlet property="crewInfoTextView" destination="ZEP-jq-VHb" id="lnR-TO-4PT"/>
+                        <outlet property="imageLabel" destination="HRb-fA-q3y" id="b2g-V4-vf5"/>
                         <outlet property="materialsLabel" destination="6IK-bN-wnx" id="Rj9-dB-deL"/>
                         <outlet property="materialsTextCountLabel" destination="E7n-Kb-l56" id="K4p-EU-IXa"/>
                         <outlet property="materialsTextView" destination="Rz8-sz-SRc" id="vax-ZV-Wuj"/>
+                        <outlet property="nextBtn" destination="9xY-Kn-JMQ" id="Aan-8f-haH"/>
+                        <outlet property="photoImageView" destination="cyF-6L-YAs" id="peF-Ac-Vca"/>
                         <outlet property="photoView" destination="yH9-UE-8cg" id="beH-WX-jDA"/>
+                        <outlet property="plusImageVIew" destination="Thg-8l-OPu" id="4lx-NU-g8I"/>
                         <outlet property="questionLabel" destination="nvu-fe-SAc" id="9sD-q3-y40"/>
                         <outlet property="questionTextCountLabel" destination="9Lx-aA-sHG" id="S4H-lo-emJ"/>
                         <outlet property="questionTextView" destination="h4w-8h-eUK" id="yEc-xp-y3c"/>

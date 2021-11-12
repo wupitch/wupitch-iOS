@@ -43,6 +43,13 @@ class SignUpUserInfo {
     var ageBtn : Int?
     var addInfo : Int?
     
+    // 크루만들기 포토부분
+    var photo : UIImage?
+    var title : String?
+    var crewInfo : String?
+    var materials : String?
+    var question : String?
+    
     func dispose() {
         SignUpUserInfo.shared.region = nil
         SignUpUserInfo.shared.etcText = nil
