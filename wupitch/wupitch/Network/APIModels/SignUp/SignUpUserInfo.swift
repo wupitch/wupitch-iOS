@@ -37,6 +37,12 @@ class SignUpUserInfo {
     // 신분증 사진
     var idImg : UIImage?
     
+    // 크루만들기 기본 정보
+    var crewName : String?
+    var crewCount : String?
+    var ageBtn : Int?
+    var addInfo : Int?
+    
     func dispose() {
         SignUpUserInfo.shared.region = nil
         SignUpUserInfo.shared.etcText = nil

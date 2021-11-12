@@ -58,9 +58,18 @@ class MakeCrewInfoVC: UIViewController {
         crewCountTextField.addLeftPadding()
         crewCountTextField.delegate = self
         
-        // 종목, 연령대 중복 선택 가능
+        // 추가정보 중복 선택 가능
         for i in 0...7 {
             addInfoBtns[i].graySportsBtn()
+        }
+    }
+    
+    func test() {
+        if SignUpUserInfo.shared.crewName != nil && SignUpUserInfo.shared.crewCount != nil && SignUpUserInfo.shared.ageBtn != nil {
+            nextBtn.backgroundColor = .main
+        }
+        else {
+            nextBtn?.backgroundColor = .gray03
         }
     }
     
@@ -71,9 +80,15 @@ class MakeCrewInfoVC: UIViewController {
             ageBtns[2].defaultSportsBtn()
             ageBtns[3].defaultSportsBtn()
             ageBtns[4].defaultSportsBtn()
+            SignUpUserInfo.shared.ageBtn = 0
+            if SignUpUserInfo.shared.crewName != nil && SignUpUserInfo.shared.crewCount != nil {
+                nextBtn.backgroundColor = .main
+            }
         }
         else {
             ageBtns[0].defaultSportsBtn()
+            SignUpUserInfo.shared.ageBtn = nil
+            nextBtn.backgroundColor = .gray03
         }
     }
     
@@ -84,9 +99,16 @@ class MakeCrewInfoVC: UIViewController {
             ageBtns[2].defaultSportsBtn()
             ageBtns[3].defaultSportsBtn()
             ageBtns[4].defaultSportsBtn()
+            SignUpUserInfo.shared.ageBtn = 1
+            if SignUpUserInfo.shared.crewName != nil && SignUpUserInfo.shared.crewCount != nil {
+                nextBtn.backgroundColor = .main
+            }
+            
         }
         else {
             ageBtns[1].defaultSportsBtn()
+            SignUpUserInfo.shared.ageBtn = nil
+            nextBtn.backgroundColor = .gray03
         }
     }
     
@@ -97,9 +119,15 @@ class MakeCrewInfoVC: UIViewController {
             ageBtns[1].defaultSportsBtn()
             ageBtns[3].defaultSportsBtn()
             ageBtns[4].defaultSportsBtn()
+            SignUpUserInfo.shared.ageBtn = 2
+            if SignUpUserInfo.shared.crewName != nil && SignUpUserInfo.shared.crewCount != nil {
+                           nextBtn.backgroundColor = .main
+                       }
         }
         else {
             ageBtns[2].defaultSportsBtn()
+            SignUpUserInfo.shared.ageBtn = nil
+            nextBtn.backgroundColor = .gray03
         }
     }
     
@@ -110,9 +138,15 @@ class MakeCrewInfoVC: UIViewController {
             ageBtns[1].defaultSportsBtn()
             ageBtns[2].defaultSportsBtn()
             ageBtns[4].defaultSportsBtn()
+            SignUpUserInfo.shared.ageBtn = 3
+            if SignUpUserInfo.shared.crewName != nil && SignUpUserInfo.shared.crewCount != nil {
+                           nextBtn.backgroundColor = .main
+                       }
         }
         else {
             ageBtns[3].defaultSportsBtn()
+            SignUpUserInfo.shared.ageBtn = nil
+            nextBtn.backgroundColor = .gray03
         }
     }
     
@@ -123,9 +157,17 @@ class MakeCrewInfoVC: UIViewController {
             ageBtns[1].defaultSportsBtn()
             ageBtns[2].defaultSportsBtn()
             ageBtns[3].defaultSportsBtn()
+            SignUpUserInfo.shared.ageBtn = 4
+            if SignUpUserInfo.shared.crewName != nil && SignUpUserInfo.shared.crewCount != nil {
+                           nextBtn.backgroundColor = .main
+                       }
+            
+            
         }
         else {
             ageBtns[4].defaultSportsBtn()
+            SignUpUserInfo.shared.ageBtn = nil
+            nextBtn.backgroundColor = .gray03
         }
     }
     
@@ -153,6 +195,21 @@ extension MakeCrewInfoVC : UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         crewNameTextField.textColor = .bk
         crewCountTextField.textColor = .bk
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if crewNameTextField.text?.isEmpty == false && crewCountTextField.text?.isEmpty == false {
+            SignUpUserInfo.shared.crewName = crewNameTextField.text
+            SignUpUserInfo.shared.crewCount = crewCountTextField.text
+            if SignUpUserInfo.shared.ageBtn != nil {
+                nextBtn.backgroundColor = .main
+            }
+        }
+        else {
+            SignUpUserInfo.shared.crewName = nil
+            SignUpUserInfo.shared.crewCount = nil
+            nextBtn.backgroundColor = .gray03
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
