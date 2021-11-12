@@ -58,6 +58,15 @@ extension CheckBtn {
     @objc func touchUp() {
         checkDelegate?.pushNext(btn: self)
     }
+    
+    func grayCheck() {
+        self.setImage(UIImage(named: "grayCheck"), for: .normal)
+        status = false
+    }
+    func colorCheck() {
+        self.setImage(UIImage(named: "check"), for: .normal)
+        status = true
+    }
 }
 
 protocol CheckDelegate {

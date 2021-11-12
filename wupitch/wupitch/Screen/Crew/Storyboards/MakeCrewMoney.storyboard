@@ -82,7 +82,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="buu-mO-eMj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEy-nD-BKe">
                                 <rect key="frame" x="126" y="183.5" width="15" height="21"/>
@@ -90,11 +90,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NU5-na-saS">
+                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NU5-na-saS" customClass="CheckBtn" customModule="wupitch" customModuleProvider="target">
                                 <rect key="frame" x="20" y="234" width="116" height="24"/>
                                 <state key="normal" title=" 회비 없어요." image="grayCheck">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="touchUpNoMoneyBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Suk-mP-guy"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8O-hg-95b">
                                 <rect key="frame" x="0.0" y="786" width="414" height="76"/>
@@ -144,7 +147,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nextBtn" destination="2io-8N-xZY" id="aVs-yI-9R3"/>
+                        <outlet property="noMoneyLabel" destination="NU5-na-saS" id="7mV-M0-2q1"/>
                         <outlet property="titleLabel" destination="jsI-eA-FB8" id="q9U-fk-0a6"/>
+                        <outlet property="titleTextField" destination="3oU-hD-dso" id="Ur0-5D-iWR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
