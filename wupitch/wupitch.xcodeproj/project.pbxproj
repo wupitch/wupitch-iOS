@@ -114,6 +114,8 @@
 		DD9EEDC9273D097600E02396 /* DongPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EEDC8273D097600E02396 /* DongPickerVC.swift */; };
 		DD9EEDCC273EC6E700E02396 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9EEDCB273EC6E700E02396 /* SignIn.storyboard */; };
 		DD9EEDD0273EC71E00E02396 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EEDCF273EC71E00E02396 /* SignInVC.swift */; };
+		DD9EEDD2273F77BE00E02396 /* SignUpEmailPw.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9EEDD1273F77BE00E02396 /* SignUpEmailPw.storyboard */; };
+		DD9EEDD4273F77E700E02396 /* SignUpEmailPwVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EEDD3273F77E700E02396 /* SignUpEmailPwVC.swift */; };
 		DDC3B50C27327A0000FF4959 /* DetailCrewHeaderCRV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC3B50A27327A0000FF4959 /* DetailCrewHeaderCRV.swift */; };
 		DDC3B50D27327A0000FF4959 /* DetailCrewHeaderCRV.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDC3B50B27327A0000FF4959 /* DetailCrewHeaderCRV.xib */; };
 		DDC3B5102732A68A00FF4959 /* DetailCrewFooterCRV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC3B50E2732A68A00FF4959 /* DetailCrewFooterCRV.swift */; };
@@ -254,6 +256,8 @@
 		DD9EEDC8273D097600E02396 /* DongPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongPickerVC.swift; sourceTree = "<group>"; };
 		DD9EEDCB273EC6E700E02396 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		DD9EEDCF273EC71E00E02396 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		DD9EEDD1273F77BE00E02396 /* SignUpEmailPw.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpEmailPw.storyboard; sourceTree = "<group>"; };
+		DD9EEDD3273F77E700E02396 /* SignUpEmailPwVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailPwVC.swift; sourceTree = "<group>"; };
 		DDC3B50A27327A0000FF4959 /* DetailCrewHeaderCRV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCrewHeaderCRV.swift; sourceTree = "<group>"; };
 		DDC3B50B27327A0000FF4959 /* DetailCrewHeaderCRV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCrewHeaderCRV.xib; sourceTree = "<group>"; };
 		DDC3B50E2732A68A00FF4959 /* DetailCrewFooterCRV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCrewFooterCRV.swift; sourceTree = "<group>"; };
@@ -912,6 +916,7 @@
 				DD1BFC562738E9A70042C51F /* SignUpPhone.storyboard */,
 				DD3ACBC127216D2500EBC201 /* SignUpID.storyboard */,
 				DD3ACBC52721709100EBC201 /* SignUpAppleComplete.storyboard */,
+				DD9EEDD1273F77BE00E02396 /* SignUpEmailPw.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -928,6 +933,7 @@
 				DD1BFC582738E9C40042C51F /* SignUpPhoneVC.swift */,
 				DD3ACBC327216D4400EBC201 /* SignUpIDVC.swift */,
 				DD3ACBC7272170A800EBC201 /* SignUpAppleCompleteVC.swift */,
+				DD9EEDD3273F77E700E02396 /* SignUpEmailPwVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1007,6 +1013,7 @@
 				DD3A30EA272DAC2700D711C6 /* Feed.storyboard in Resources */,
 				DD1BFC4F2738E90D0042C51F /* MakeCrewPhoto.storyboard in Resources */,
 				DD1BFC5B273927200042C51F /* MakeCrewGuest.storyboard in Resources */,
+				DD9EEDD2273F77BE00E02396 /* SignUpEmailPw.storyboard in Resources */,
 				DD2D63B027268A1A007CEC57 /* LevelModal.storyboard in Resources */,
 				DD7BEBCC27315DF800DB2F60 /* DetailCrewIntroduceCVCell.xib in Resources */,
 				DD3A30DC272DAB7B00D711C6 /* Crew.storyboard in Resources */,
@@ -1135,6 +1142,7 @@
 				DD3ACBBF2721083700EBC201 /* SignUpProfileVC.swift in Sources */,
 				DD9EEDD0273EC71E00E02396 /* SignInVC.swift in Sources */,
 				DD3A30FA272E7C5F00D711C6 /* CrewApplicationVC.swift in Sources */,
+				DD9EEDD4273F77E700E02396 /* SignUpEmailPwVC.swift in Sources */,
 				DD1BFC412738E6DD0042C51F /* MakeCrewSportsVC.swift in Sources */,
 				DD3A30DE272DAB9400D711C6 /* CrewVC.swift in Sources */,
 				DD2D63B42726A8A0007CEC57 /* UITextField.swift in Sources */,
