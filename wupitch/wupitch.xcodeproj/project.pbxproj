@@ -116,6 +116,8 @@
 		DD9EEDD0273EC71E00E02396 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EEDCF273EC71E00E02396 /* SignInVC.swift */; };
 		DD9EEDD2273F77BE00E02396 /* SignUpEmailPw.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9EEDD1273F77BE00E02396 /* SignUpEmailPw.storyboard */; };
 		DD9EEDD4273F77E700E02396 /* SignUpEmailPwVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EEDD3273F77E700E02396 /* SignUpEmailPwVC.swift */; };
+		DD9EEDDA273FFE9B00E02396 /* CrewSearchCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EEDD8273FFE9B00E02396 /* CrewSearchCVCell.swift */; };
+		DD9EEDDB273FFE9B00E02396 /* CrewSearchCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD9EEDD9273FFE9B00E02396 /* CrewSearchCVCell.xib */; };
 		DDC3B50C27327A0000FF4959 /* DetailCrewHeaderCRV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC3B50A27327A0000FF4959 /* DetailCrewHeaderCRV.swift */; };
 		DDC3B50D27327A0000FF4959 /* DetailCrewHeaderCRV.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDC3B50B27327A0000FF4959 /* DetailCrewHeaderCRV.xib */; };
 		DDC3B5102732A68A00FF4959 /* DetailCrewFooterCRV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC3B50E2732A68A00FF4959 /* DetailCrewFooterCRV.swift */; };
@@ -258,6 +260,8 @@
 		DD9EEDCF273EC71E00E02396 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		DD9EEDD1273F77BE00E02396 /* SignUpEmailPw.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpEmailPw.storyboard; sourceTree = "<group>"; };
 		DD9EEDD3273F77E700E02396 /* SignUpEmailPwVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailPwVC.swift; sourceTree = "<group>"; };
+		DD9EEDD8273FFE9B00E02396 /* CrewSearchCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewSearchCVCell.swift; sourceTree = "<group>"; };
+		DD9EEDD9273FFE9B00E02396 /* CrewSearchCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrewSearchCVCell.xib; sourceTree = "<group>"; };
 		DDC3B50A27327A0000FF4959 /* DetailCrewHeaderCRV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCrewHeaderCRV.swift; sourceTree = "<group>"; };
 		DDC3B50B27327A0000FF4959 /* DetailCrewHeaderCRV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCrewHeaderCRV.xib; sourceTree = "<group>"; };
 		DDC3B50E2732A68A00FF4959 /* DetailCrewFooterCRV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCrewFooterCRV.swift; sourceTree = "<group>"; };
@@ -732,6 +736,8 @@
 				DD1BFC2E273788360042C51F /* TagCVCell.swift */,
 				DD1BFC2F273788360042C51F /* TagCVCell.xib */,
 				DD9EEDC2273A667D00E02396 /* CrewAlertTVCell.swift */,
+				DD9EEDD8273FFE9B00E02396 /* CrewSearchCVCell.swift */,
+				DD9EEDD9273FFE9B00E02396 /* CrewSearchCVCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1029,6 +1035,7 @@
 				DD7BEBC427315D3A00DB2F60 /* DetailCrewImgCVCell.xib in Resources */,
 				DD3ACBC62721709200EBC201 /* SignUpAppleComplete.storyboard in Resources */,
 				DD295DAC27181E3D008CFC64 /* LaunchScreen.storyboard in Resources */,
+				DD9EEDDB273FFE9B00E02396 /* CrewSearchCVCell.xib in Resources */,
 				DDED011F271BD96D00C2C343 /* Onboarding.storyboard in Resources */,
 				DDC3B5112732A68A00FF4959 /* DetailCrewFooterCRV.xib in Resources */,
 				DD3ACBC227216D2500EBC201 /* SignUpID.storyboard in Resources */,
@@ -1181,6 +1188,7 @@
 				DD1BFC3927380C920042C51F /* CrewFilterVC.swift in Sources */,
 				DD3A30E0272DABC000D711C6 /* BungaeVC.swift in Sources */,
 				DD3ACBC8272170A800EBC201 /* SignUpAppleCompleteVC.swift in Sources */,
+				DD9EEDDA273FFE9B00E02396 /* CrewSearchCVCell.swift in Sources */,
 				DD3A30C1272AA94100D711C6 /* ModalSportsBtn.swift in Sources */,
 				DDC3B5102732A68A00FF4959 /* DetailCrewFooterCRV.swift in Sources */,
 				DD1BFC5D273927370042C51F /* MakeCrewGuestVC.swift in Sources */,

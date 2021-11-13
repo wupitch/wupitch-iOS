@@ -20,6 +20,8 @@ class CrewCVCell: UICollectionViewCell {
     @IBOutlet weak var tagNameView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     
+    
+    
     static let identifier = "CrewCVCell"
     
     static func nib() -> UINib {
