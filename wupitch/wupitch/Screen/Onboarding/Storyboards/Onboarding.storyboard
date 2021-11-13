@@ -25,16 +25,16 @@
             </objects>
             <point key="canvasLocation" x="-712" y="76"/>
         </scene>
-        <!--OnbordingVC-->
+        <!--OnboardingVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="OnbordingVC" id="Y6W-OH-hqX" customClass="OnbordingVC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingVC" id="Y6W-OH-hqX" customClass="OnboardingVC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dDc-RM-xqJ">
-                                <rect key="frame" x="0.0" y="140" width="414" height="635"/>
+                                <rect key="frame" x="0.0" y="134" width="414" height="649"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xp3-p4-WLj">
                                     <size key="itemSize" width="128" height="128"/>
@@ -58,74 +58,41 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="touchUpSkipBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="DXq-wZ-Ivd"/>
+                                    <action selector="touchUpSkipBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uMs-5r-1So"/>
                                 </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="7Z7-p7-X6l">
                                 <rect key="frame" x="121" y="88" width="172.5" height="26"/>
                             </pageControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5X-vh-1dd">
-                                <rect key="frame" x="186" y="797" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wob-da-soE">
-                                <rect key="frame" x="38" y="745" width="340" height="44"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ef-cC-WPW">
+                                <rect key="frame" x="0.0" y="783" width="414" height="1"/>
+                                <color key="backgroundColor" red="1" green="0.50980392156862742" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="vnj-65-dcu"/>
+                                    <constraint firstAttribute="height" constant="1" id="9YD-Bq-NfP"/>
                                 </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
-                                <state key="normal" title=" Apple로 시작하기" image="group148"/>
-                                <connections>
-                                    <action selector="touchUpAppleBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uL2-Ag-wDL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JP-qO-43B">
-                                <rect key="frame" x="38" y="685" width="340" height="44"/>
-                                <color key="backgroundColor" red="0.99607843137254903" green="0.89803921568627454" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="sJ5-Wt-OLI"/>
-                                </constraints>
-                                <color key="tintColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
-                                <state key="normal" title=" 카카오로 시작하기" image="vector"/>
-                                <connections>
-                                    <action selector="touchUpKakaoBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CeS-VW-qo1"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dDc-RM-xqJ" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="3lH-Ol-UQY"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Y5X-vh-1dd" secondAttribute="bottom" constant="44" id="3vm-Wu-Tns"/>
-                            <constraint firstItem="Wob-da-soE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="38" id="994-e1-hOq"/>
-                            <constraint firstItem="Y5X-vh-1dd" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Hxs-fS-YoB"/>
-                            <constraint firstItem="xpf-HI-pzh" firstAttribute="top" secondItem="dDc-RM-xqJ" secondAttribute="bottom" constant="33" id="Oeb-tc-ljM"/>
-                            <constraint firstItem="9JP-qO-43B" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="38" id="Sdr-Ja-SrM"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0Ef-cC-WPW" secondAttribute="trailing" id="5h0-94-HkE"/>
+                            <constraint firstItem="0Ef-cC-WPW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="8IH-gl-99m"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xpf-HI-pzh" secondAttribute="trailing" constant="34" id="VIW-VA-REy"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Wob-da-soE" secondAttribute="trailing" constant="36" id="VP6-7F-LX7"/>
-                            <constraint firstItem="Y5X-vh-1dd" firstAttribute="top" secondItem="Wob-da-soE" secondAttribute="bottom" constant="8" id="Yeg-Mf-dTQ"/>
-                            <constraint firstItem="dDc-RM-xqJ" firstAttribute="top" secondItem="7Z7-p7-X6l" secondAttribute="bottom" constant="26" id="dvf-R0-SHE"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="9JP-qO-43B" secondAttribute="trailing" constant="36" id="eds-Ch-txL"/>
-                            <constraint firstItem="Wob-da-soE" firstAttribute="top" secondItem="9JP-qO-43B" secondAttribute="bottom" constant="16" id="he7-A6-aQ0"/>
+                            <constraint firstItem="dDc-RM-xqJ" firstAttribute="top" secondItem="7Z7-p7-X6l" secondAttribute="bottom" constant="20" id="dvf-R0-SHE"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="xpf-HI-pzh" secondAttribute="bottom" constant="24" id="i2O-fO-mHd"/>
                             <constraint firstItem="dDc-RM-xqJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="lv3-7g-cM3"/>
                             <constraint firstItem="7Z7-p7-X6l" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="44" id="mgX-Zu-KXD"/>
                             <constraint firstItem="7Z7-p7-X6l" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="u6d-SL-3mn"/>
+                            <constraint firstItem="xpf-HI-pzh" firstAttribute="top" secondItem="0Ef-cC-WPW" secondAttribute="bottom" constant="24" id="veP-m3-zsn"/>
+                            <constraint firstItem="0Ef-cC-WPW" firstAttribute="top" secondItem="dDc-RM-xqJ" secondAttribute="bottom" id="xvL-ah-iKW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6w0-1Y-xLe"/>
                     <connections>
-                        <outlet property="appleBtn" destination="Wob-da-soE" id="cgl-61-BY1"/>
-                        <outlet property="descriptionLabel" destination="Y5X-vh-1dd" id="88g-n1-oF4"/>
-                        <outlet property="kakaoBtn" destination="9JP-qO-43B" id="IYT-Vr-J1x"/>
-                        <outlet property="onboardingCV" destination="dDc-RM-xqJ" id="mcL-r7-E7m"/>
-                        <outlet property="onboardingPageControl" destination="7Z7-p7-X6l" id="jur-xb-S77"/>
-                        <outlet property="skipBtn" destination="xpf-HI-pzh" id="Taj-oi-kzg"/>
+                        <outlet property="onboardingCV" destination="dDc-RM-xqJ" id="Awa-W7-eeV"/>
+                        <outlet property="onboardingPageControl" destination="7Z7-p7-X6l" id="ZRP-ow-wAt"/>
+                        <outlet property="skipBtn" destination="xpf-HI-pzh" id="1mZ-gn-j3I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -134,8 +101,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="group148" width="15" height="18"/>
-        <image name="vector" width="18" height="17"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -118,6 +118,7 @@
 		DD9EEDD4273F77E700E02396 /* SignUpEmailPwVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EEDD3273F77E700E02396 /* SignUpEmailPwVC.swift */; };
 		DD9EEDDA273FFE9B00E02396 /* CrewSearchCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EEDD8273FFE9B00E02396 /* CrewSearchCVCell.swift */; };
 		DD9EEDDB273FFE9B00E02396 /* CrewSearchCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD9EEDD9273FFE9B00E02396 /* CrewSearchCVCell.xib */; };
+		DD9EEDE12740354200E02396 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EEDE02740354200E02396 /* OnboardingVC.swift */; };
 		DDC3B50C27327A0000FF4959 /* DetailCrewHeaderCRV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC3B50A27327A0000FF4959 /* DetailCrewHeaderCRV.swift */; };
 		DDC3B50D27327A0000FF4959 /* DetailCrewHeaderCRV.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDC3B50B27327A0000FF4959 /* DetailCrewHeaderCRV.xib */; };
 		DDC3B5102732A68A00FF4959 /* DetailCrewFooterCRV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC3B50E2732A68A00FF4959 /* DetailCrewFooterCRV.swift */; };
@@ -139,9 +140,9 @@
 		DDED01062719E2D400C2C343 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED01052719E2D400C2C343 /* UIFont.swift */; };
 		DDED011B271B33F800C2C343 /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED011A271B33F800C2C343 /* OnboardingData.swift */; };
 		DDED011F271BD96D00C2C343 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDED011E271BD96C00C2C343 /* Onboarding.storyboard */; };
-		DDED0121271BD98400C2C343 /* OnbordingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED0120271BD98400C2C343 /* OnbordingVC.swift */; };
-		DDED0124271BDCD700C2C343 /* OnbordingCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED0122271BDCD700C2C343 /* OnbordingCVCell.swift */; };
-		DDED0125271BDCD700C2C343 /* OnbordingCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDED0123271BDCD700C2C343 /* OnbordingCVCell.xib */; };
+		DDED0121271BD98400C2C343 /* OnbordingSocialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED0120271BD98400C2C343 /* OnbordingSocialVC.swift */; };
+		DDED0124271BDCD700C2C343 /* OnboardingCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED0122271BDCD700C2C343 /* OnboardingCVCell.swift */; };
+		DDED0125271BDCD700C2C343 /* OnboardingCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDED0123271BDCD700C2C343 /* OnboardingCVCell.xib */; };
 		DDED012B271C0E5300C2C343 /* SignUpTerms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDED012A271C0E5300C2C343 /* SignUpTerms.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -262,6 +263,7 @@
 		DD9EEDD3273F77E700E02396 /* SignUpEmailPwVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailPwVC.swift; sourceTree = "<group>"; };
 		DD9EEDD8273FFE9B00E02396 /* CrewSearchCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewSearchCVCell.swift; sourceTree = "<group>"; };
 		DD9EEDD9273FFE9B00E02396 /* CrewSearchCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrewSearchCVCell.xib; sourceTree = "<group>"; };
+		DD9EEDE02740354200E02396 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		DDC3B50A27327A0000FF4959 /* DetailCrewHeaderCRV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCrewHeaderCRV.swift; sourceTree = "<group>"; };
 		DDC3B50B27327A0000FF4959 /* DetailCrewHeaderCRV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCrewHeaderCRV.xib; sourceTree = "<group>"; };
 		DDC3B50E2732A68A00FF4959 /* DetailCrewFooterCRV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCrewFooterCRV.swift; sourceTree = "<group>"; };
@@ -283,9 +285,9 @@
 		DDED01052719E2D400C2C343 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		DDED011A271B33F800C2C343 /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
 		DDED011E271BD96C00C2C343 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
-		DDED0120271BD98400C2C343 /* OnbordingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordingVC.swift; sourceTree = "<group>"; };
-		DDED0122271BDCD700C2C343 /* OnbordingCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordingCVCell.swift; sourceTree = "<group>"; };
-		DDED0123271BDCD700C2C343 /* OnbordingCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnbordingCVCell.xib; sourceTree = "<group>"; };
+		DDED0120271BD98400C2C343 /* OnbordingSocialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordingSocialVC.swift; sourceTree = "<group>"; };
+		DDED0122271BDCD700C2C343 /* OnboardingCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCVCell.swift; sourceTree = "<group>"; };
+		DDED0123271BDCD700C2C343 /* OnboardingCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCVCell.xib; sourceTree = "<group>"; };
 		DDED012A271C0E5300C2C343 /* SignUpTerms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpTerms.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -791,6 +793,7 @@
 		DD9EEDD7273F881600E02396 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DDED0120271BD98400C2C343 /* OnbordingSocialVC.swift */,
 				DD61E4BE271D8ECA007504DE /* SignUpCityVC.swift */,
 				DD3ACBBA2721075500EBC201 /* SignUpSportsVC.swift */,
 				DDE0EE6C2729908B00C46821 /* SignUpAgeVC.swift */,
@@ -900,7 +903,7 @@
 		DDED00FC2719D7BA00C2C343 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DDED0120271BD98400C2C343 /* OnbordingVC.swift */,
+				DD9EEDE02740354200E02396 /* OnboardingVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -908,8 +911,8 @@
 		DDED010B271AC36200C2C343 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				DDED0122271BDCD700C2C343 /* OnbordingCVCell.swift */,
-				DDED0123271BDCD700C2C343 /* OnbordingCVCell.xib */,
+				DDED0122271BDCD700C2C343 /* OnboardingCVCell.swift */,
+				DDED0123271BDCD700C2C343 /* OnboardingCVCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1028,7 +1031,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDED0125271BDCD700C2C343 /* OnbordingCVCell.xib in Resources */,
+				DDED0125271BDCD700C2C343 /* OnboardingCVCell.xib in Resources */,
 				DD3ACBB52720FFC600EBC201 /* TermsOfUse.storyboard in Resources */,
 				DD3ACBBD2721082300EBC201 /* SignUpProfile.storyboard in Resources */,
 				DDE0EE582728163900C46821 /* JoinAlert.storyboard in Resources */,
@@ -1138,6 +1141,7 @@
 				DD1BFC552738E9530042C51F /* MakeCrewMoneyVC.swift in Sources */,
 				DD3E37B6272F432A00C4192E /* UserInfoWarningVC.swift in Sources */,
 				DD1BFC272736DC8C0042C51F /* InformationService.swift in Sources */,
+				DD9EEDE12740354200E02396 /* OnboardingVC.swift in Sources */,
 				DD1BFC492738E8BB0042C51F /* MakeCrewInfoVC.swift in Sources */,
 				DDC3B5192734041500FF4959 /* BaseVC.swift in Sources */,
 				DD9EEDC9273D097600E02396 /* DongPickerVC.swift in Sources */,
@@ -1168,7 +1172,7 @@
 				DDED011B271B33F800C2C343 /* OnboardingData.swift in Sources */,
 				DD7BEBC327315D3A00DB2F60 /* DetailCrewImgCVCell.swift in Sources */,
 				DD3A30CC272DA37100D711C6 /* AppleLoginRequest.swift in Sources */,
-				DDED0124271BDCD700C2C343 /* OnbordingCVCell.swift in Sources */,
+				DDED0124271BDCD700C2C343 /* OnboardingCVCell.swift in Sources */,
 				DD3A30F2272DB07500D711C6 /* JoinCompleteVC.swift in Sources */,
 				DD3ACBBF2721083700EBC201 /* SignUpProfileVC.swift in Sources */,
 				DD9EEDD0273EC71E00E02396 /* SignInVC.swift in Sources */,
@@ -1193,7 +1197,7 @@
 				DDC3B5102732A68A00FF4959 /* DetailCrewFooterCRV.swift in Sources */,
 				DD1BFC5D273927370042C51F /* MakeCrewGuestVC.swift in Sources */,
 				DD1BFC2D2736DCDC0042C51F /* InformationRequest.swift in Sources */,
-				DDED0121271BD98400C2C343 /* OnbordingVC.swift in Sources */,
+				DDED0121271BD98400C2C343 /* OnbordingSocialVC.swift in Sources */,
 				DD3A30BF272A821A00D711C6 /* SportsBtn.swift in Sources */,
 				DD61E4C2271EB81D007504DE /* Adjusted.swift in Sources */,
 				DD1BFC2B2736DCCA0042C51F /* InformationData.swift in Sources */,

@@ -73,7 +73,7 @@ class OnbordingVC: UIViewController {
     func setDelegate() {
         onboardingCV.delegate = self
         onboardingCV.dataSource = self
-        onboardingCV.register(OnbordingCVCell.nib(), forCellWithReuseIdentifier: OnbordingCVCell.identifier)
+        onboardingCV.register(OnboardingCVCell.nib(), forCellWithReuseIdentifier: OnboardingCVCell.identifier)
     }
     
     // 스크롤 페이지 설정
@@ -214,7 +214,7 @@ extension OnbordingVC : UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnbordingCVCell.identifier, for: indexPath) as? OnbordingCVCell else{
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnboardingCVCell.identifier, for: indexPath) as? OnboardingCVCell else{
             return UICollectionViewCell()
         }
         

@@ -7,12 +7,12 @@
 
 import UIKit
 
-class OnbordingCVCell: UICollectionViewCell {
+class OnboardingCVCell: UICollectionViewCell {
     
-    static let identifier = "OnbordingCVCell"
+    static let identifier = "OnboardingCVCell"
     
     static func nib() -> UINib {
-        return UINib(nibName: "OnbordingCVCell", bundle: nil)
+        return UINib(nibName: "OnboardingCVCell", bundle: nil)
     }
     
     //@IBOutlet weak var bgView: UIView!
@@ -23,15 +23,14 @@ class OnbordingCVCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // titleLabel Style
-        titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 28.adjusted)
+        titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24.adjusted)
         titleLabel.textColor = .bk
-        titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 38.adjusted)
+        titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 34.adjusted)
         titleLabel.textAlignment = .center
         
         // descriptionLabel Style
         descriptionLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         descriptionLabel.textColor = .gray02
-        descriptionLabel.setTextWithLineHeight(text: descriptionLabel.text, lineHeight: 22.adjusted)
         descriptionLabel.textAlignment = .center
     }
     
