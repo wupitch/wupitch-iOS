@@ -405,6 +405,7 @@
 				DDE0EE54272815FD00C46821 /* PopupAlert */,
 				DD2D63A827268910007CEC57 /* BottomSheet */,
 				DD2D63AB27268960007CEC57 /* TermsOfUse */,
+				DD9EEDD5273F87DD00E02396 /* etc */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -760,6 +761,39 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		DD9EEDD5273F87DD00E02396 /* etc */ = {
+			isa = PBXGroup;
+			children = (
+				DD9EEDD7273F881600E02396 /* Controllers */,
+				DD9EEDD6273F880200E02396 /* Storyboards */,
+			);
+			path = etc;
+			sourceTree = "<group>";
+		};
+		DD9EEDD6273F880200E02396 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */,
+				DD3ACBB82721073E00EBC201 /* SignUpSports.storyboard */,
+				DDE0EE6A2729907600C46821 /* SignUpAge.storyboard */,
+				DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */,
+				DD1BFC562738E9A70042C51F /* SignUpPhone.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DD9EEDD7273F881600E02396 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DD61E4BE271D8ECA007504DE /* SignUpCityVC.swift */,
+				DD3ACBBA2721075500EBC201 /* SignUpSportsVC.swift */,
+				DDE0EE6C2729908B00C46821 /* SignUpAgeVC.swift */,
+				DDE0EE5D2728740400C46821 /* SignUpKakaoCompleteVC.swift */,
+				DD1BFC582738E9C40042C51F /* SignUpPhoneVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		DDC3B5122732ACBB00FF4959 /* ReusableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -908,15 +942,10 @@
 			isa = PBXGroup;
 			children = (
 				DDED012A271C0E5300C2C343 /* SignUpTerms.storyboard */,
-				DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */,
-				DD3ACBB82721073E00EBC201 /* SignUpSports.storyboard */,
-				DDE0EE6A2729907600C46821 /* SignUpAge.storyboard */,
+				DD9EEDD1273F77BE00E02396 /* SignUpEmailPw.storyboard */,
 				DD3ACBBC2721082300EBC201 /* SignUpProfile.storyboard */,
-				DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */,
-				DD1BFC562738E9A70042C51F /* SignUpPhone.storyboard */,
 				DD3ACBC127216D2500EBC201 /* SignUpID.storyboard */,
 				DD3ACBC52721709100EBC201 /* SignUpAppleComplete.storyboard */,
-				DD9EEDD1273F77BE00E02396 /* SignUpEmailPw.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -925,15 +954,10 @@
 			isa = PBXGroup;
 			children = (
 				DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */,
-				DD61E4BE271D8ECA007504DE /* SignUpCityVC.swift */,
-				DD3ACBBA2721075500EBC201 /* SignUpSportsVC.swift */,
-				DDE0EE6C2729908B00C46821 /* SignUpAgeVC.swift */,
+				DD9EEDD3273F77E700E02396 /* SignUpEmailPwVC.swift */,
 				DD3ACBBE2721083700EBC201 /* SignUpProfileVC.swift */,
-				DDE0EE5D2728740400C46821 /* SignUpKakaoCompleteVC.swift */,
-				DD1BFC582738E9C40042C51F /* SignUpPhoneVC.swift */,
 				DD3ACBC327216D4400EBC201 /* SignUpIDVC.swift */,
 				DD3ACBC7272170A800EBC201 /* SignUpAppleCompleteVC.swift */,
-				DD9EEDD3273F77E700E02396 /* SignUpEmailPwVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
