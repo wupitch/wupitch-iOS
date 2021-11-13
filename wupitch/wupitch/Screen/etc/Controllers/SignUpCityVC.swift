@@ -21,7 +21,7 @@ class SignUpCityVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
-        kakaoAppleLoginLogic()
+        //kakaoAppleLoginLogic()
         textFieldToAddTarget()
     }
     
@@ -45,16 +45,16 @@ class SignUpCityVC: UIViewController {
     }
     
     // 카카오, 애플 로그인 로직 나누기
-    private func kakaoAppleLoginLogic() {
-        if let loginMethod = SignUpUserInfo.shared.loginMethod {
-            switch loginMethod {
-            case .kakao:
-                nextBtn.setTitle("다음 (2/5)", for: .normal)
-            case .apple:
-                nextBtn.setTitle("다음 (2/6)", for: .normal)
-            }
-        }
-    }
+//    private func kakaoAppleLoginLogic() {
+//        if let loginMethod = SignUpUserInfo.shared.loginMethod {
+//            switch loginMethod {
+//            case .kakao:
+//                nextBtn.setTitle("다음 (2/5)", for: .normal)
+//            case .apple:
+//                nextBtn.setTitle("다음 (2/6)", for: .normal)
+//            }
+//        }
+//    }
     
     // 텍스트 필드 눌렀을 때 addTarget주기
     private func textFieldToAddTarget() {

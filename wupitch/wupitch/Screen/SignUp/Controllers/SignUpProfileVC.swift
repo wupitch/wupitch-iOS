@@ -9,6 +9,7 @@ import UIKit
 
 class SignUpProfileVC: UIViewController {
     
+    // MARK: - IBOulets
     @IBOutlet weak var correctLabel: UILabel!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var cancelBtn: UIButton!
@@ -18,19 +19,21 @@ class SignUpProfileVC: UIViewController {
     @IBOutlet weak var startBtn: NextBtn!
     @IBOutlet weak var textCountLabel: UILabel!
     
+    // MARK: - Variable
     var textViewState : Bool?
     let maxLength = 6
     var resultIsSuccess : Bool = false
     lazy var nicknameValidationManage = NicknameValidationService()
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
         placeholderSetting()
-        kakaoAppleLoginLogic()
         setDelegate()
     }
-
+    
+    // MARK: - Funtion
     func setDelegate() {
         nickNameTextField.delegate = self
     }
@@ -77,22 +80,10 @@ class SignUpProfileVC: UIViewController {
         textCountLabel.textColor = .gray03
     }
     
-    // 카카오, 애플 로그인 로직 나누기
-    private func kakaoAppleLoginLogic() {
-        if let loginMethod = SignUpUserInfo.shared.loginMethod {
-            switch loginMethod {
-            case .kakao:
-                startBtn.setTitle("완료", for: .normal)
-            case .apple:
-                startBtn.setTitle("다음 (5/6)", for: .normal)
-            }
-        }
-    }
-    
+    // MARK: - IBActions
     // backBtn
     @IBAction func touchUpBackBtn(_ sender: Any) {
-        print("뒤로가기")
-        navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     // cancelBtn
@@ -114,39 +105,18 @@ class SignUpProfileVC: UIViewController {
     // startBtn
     @IBAction func touchUpStartBtn(_ sender: Any) {
         if startBtn.backgroundColor == .main {
-            print("<<<<<<<<싱글톤잘들어오나확인>>>>>>>>>")
-            print("닉네임",SignUpUserInfo.shared.nickName ?? "값이 없습니다.")
-            print("자기소개", SignUpUserInfo.shared.userIntroduce ?? "값이 없습니다.")
-            
-            if let loginMethod = SignUpUserInfo.shared.loginMethod {
-                switch loginMethod {
-                    // 카카오 로그인 루트로 들어왔을 때
-                case .kakao:
-                    startBtn.setTitle("완료", for: .normal)
-                    let storyboard = UIStoryboard.init(name: "SignUpKakaoComplete", bundle: nil)
-                    
-                    guard let dvc = storyboard.instantiateViewController(identifier: "SignUpKakaoCompleteVC") as? SignUpKakaoCompleteVC else {return}
-                    
-                    self.navigationController?.pushViewController(dvc, animated: true)
-                    
-                case .apple:
-                    startBtn.setTitle("다음 (5/6)", for: .normal)
-                    // 애플 루트로 들어왔을 때
-                    let storyboard = UIStoryboard.init(name: "SignUpID", bundle: nil)
-                    
-                    guard let dvc = storyboard.instantiateViewController(identifier: "SignUpIDVC") as? SignUpIDVC else {return}
-                    
-                    self.navigationController?.pushViewController(dvc, animated: true)
-                }
-            }
-            else {
-                startBtn.backgroundColor = .gray03
-            }
+            // 다음 스토리 보드로 이동
+            let storyboard = UIStoryboard.init(name: "SignUpID", bundle: nil)
+            guard let dvc = storyboard.instantiateViewController(identifier: "SignUpIDVC") as? SignUpIDVC else {return}
+            self.navigationController?.pushViewController(dvc, animated: true)
+        }
+        else {
+            startBtn.backgroundColor = .gray03
         }
     }
 }
 
-extension SignUpProfileVC: UITextViewDelegate, UITextFieldDelegate, AlertDelegate {
+extension SignUpProfileVC: UITextViewDelegate, UITextFieldDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == .gray03 {
@@ -219,14 +189,16 @@ extension SignUpProfileVC: UITextViewDelegate, UITextFieldDelegate, AlertDelegat
         nickNameTextField.resignFirstResponder()
         return true
     }
-    
-    // AlertDelegate
+}
+
+extension SignUpProfileVC : AlertDelegate {
     func alertDismiss() {
         guard let viewControllerStack = self.navigationController?.viewControllers else { return }
         
-        // 뷰 스택에서 OnbordingVC를 찾아서 거기까지 pop 합니다.
+        // 뷰 스택에서 SignInVC를 찾아서 거기까지 pop 합니다.
         for viewController in viewControllerStack {
-            if let onboardingVC = viewController as? OnbordingVC { self.navigationController?.popToViewController(onboardingVC, animated: true)
+            if let signInVC = viewController as? SignInVC { self.navigationController?.popToViewController(signInVC, animated: true)
+                // pop되면서 모든 정보 nil로 초기화
                 SignUpUserInfo.shared.dispose()
             }
         }

@@ -44,7 +44,6 @@ class SignUpTermsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
-        kakaoAppleLoginLogic()
         allAgreeBtn.checkDelegate = self
         agreeBtn[0].checkDelegate = self
         agreeBtn[1].checkDelegate = self
@@ -81,32 +80,14 @@ class SignUpTermsVC: UIViewController {
         thirdMoreBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
     }
     
-    // 카카오, 애플 로그인 로직 나누기
-    private func kakaoAppleLoginLogic() {
-        if let loginMethod = SignUpUserInfo.shared.loginMethod {
-            switch loginMethod {
-            case .kakao:
-                nextBtn.setTitle("다음 (1/5)", for: .normal)
-            case .apple:
-                nextBtn.setTitle("다음 (1/6)", for: .normal)
-            }
-        }
-    }
-    
     // MARK: - IBActions
     // 다음 버튼
     @IBAction func touchUpNextBtn(_ sender: UIButton) {
         // 전체동의와 이용약관 개인정보 수집 및 이용 버튼이 눌렸을 때 다음 버튼 활성화
         if  nextBtn.backgroundColor == .main {
-            print("유저디폴트에 푸시알림동의버튼", UserDefaults.standard.string(forKey: "pushAlertStatus") ?? "값없음")
-            // 유저디폴트에 푸시알림동의버튼
-//            UserDefaults.standard.set(agreeBtn[2]., forKey: "pushAlertStatus")
-            
             // 버튼 클릭 시, 다음 스토리보드로 이동
-            let storyboard = UIStoryboard.init(name: "SignUpCity", bundle: nil)
-            
-            guard let dvc = storyboard.instantiateViewController(identifier: "SignUpCityVC") as? SignUpCityVC else {return}
-            
+            let storyboard = UIStoryboard.init(name: "SignUpEmailPw", bundle: nil)
+            guard let dvc = storyboard.instantiateViewController(identifier: "SignUpEmailPwVC") as? SignUpEmailPwVC else {return}
             self.navigationController?.pushViewController(dvc, animated: true)
         }
         else {
@@ -116,22 +97,21 @@ class SignUpTermsVC: UIViewController {
     
     // 뒤로가기 버튼
     @IBAction func touchUpBackBtn(_ sender: Any) {
-        // 데이터가 저장되어있으면 팝업창뜨게하고, 아니면 그냥 뒤로 이동
-        if ((SignUpUserInfo.shared.region) != nil) {
+        // 데이터가 저장되어있으면 팝업창 뜨게하고, 아니면 뒤로 이동
+        if ((SignUpUserInfo.shared.email) != nil) {
             // 팝업 창 띄워줌
             let storyBoard: UIStoryboard = UIStoryboard(name: "JoinAlert", bundle: nil)
-            
             if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinAlertVC") as? JoinAlertVC {
                 dvc.modalPresentationStyle = .overFullScreen
                 dvc.modalTransitionStyle = .crossDissolve
-                
+                // 팝업창 확인 클릭 시, navigation pop하기 위해서
                 dvc.alertDelegate = self
-                
                 // present 형태로 띄우기
                 self.present(dvc, animated: true, completion: nil)
             }
         }
         else {
+            // 뒤로가기
             navigationController?.popViewController(animated: true)
         }
     }
@@ -140,7 +120,6 @@ class SignUpTermsVC: UIViewController {
     @IBAction func touchUpFirstMoreBtn(_ sender: Any) {
         // 버튼 클릭 시, 스토리보드 이동
         let storyboard = UIStoryboard.init(name: "TermsOfUse", bundle: nil)
-        
         guard let dvc = storyboard.instantiateViewController(identifier: "TermsOfUseVC") as? TermsOfUseVC else {return}
         self.navigationController?.pushViewController(dvc, animated: true)
     }
@@ -149,7 +128,6 @@ class SignUpTermsVC: UIViewController {
     @IBAction func touchUpSecondMoreBtn(_ sender: Any) {
         // 버튼 클릭 시, 스토리보드 이동
         let storyboard = UIStoryboard.init(name: "TermsOfUse", bundle: nil)
-        
         guard let dvc = storyboard.instantiateViewController(identifier: "AgreeVC") as? AgreeVC else {return}
         self.navigationController?.pushViewController(dvc, animated: true)
     }
@@ -159,6 +137,7 @@ class SignUpTermsVC: UIViewController {
     }
 }
 
+// MARK: - Delegate
 // 동의 버튼 로직 delegate
 extension SignUpTermsVC : CheckDelegate {
     func pushNext(btn: CheckBtn) {
@@ -170,7 +149,6 @@ extension SignUpTermsVC : CheckDelegate {
             for idx in 0..<terms.count {
                 agreeBtn[idx].allAgreeBtnImg()
             }
-            
         default:
             // 나머지 버튼들
             btn.changeBtnImg()
@@ -188,7 +166,6 @@ extension SignUpTermsVC : CheckDelegate {
                 }
             }
         }
-        
         if agreeBtn[0].status && agreeBtn[1].status {
             nextBtn.backgroundColor = .main
         }
@@ -203,9 +180,10 @@ extension SignUpTermsVC : AlertDelegate {
     func alertDismiss() {
         guard let viewControllerStack = self.navigationController?.viewControllers else { return }
         
-        // 뷰 스택에서 OnbordingVC를 찾아서 거기까지 pop 합니다.
+        // 뷰 스택에서 SignInVC를 찾아서 거기까지 pop 합니다.
         for viewController in viewControllerStack {
-            if let onboardingVC = viewController as? OnbordingVC { self.navigationController?.popToViewController(onboardingVC, animated: true)
+            if let signInVC = viewController as? SignInVC { self.navigationController?.popToViewController(signInVC, animated: true)
+                // pop되면서 모든 정보 nil로 초기화
                 SignUpUserInfo.shared.dispose()
             }
         }

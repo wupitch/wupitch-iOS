@@ -28,7 +28,7 @@ class SignUpSportsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
-        kakaoAppleLoginLogic()
+        //kakaoAppleLoginLogic()
         setTextFieldDelegate()
         
         // 키보드 show
@@ -107,16 +107,16 @@ class SignUpSportsVC: UIViewController {
     }
     
     // 카카오, 애플 로그인 로직 나누기
-    private func kakaoAppleLoginLogic() {
-        if let loginMethod = SignUpUserInfo.shared.loginMethod {
-            switch loginMethod {
-            case .kakao:
-                nextBtn.setTitle("다음 (3/5)", for: .normal)
-            case .apple:
-                nextBtn.setTitle("다음 (3/6)", for: .normal)
-            }
-        }
-    }
+//    private func kakaoAppleLoginLogic() {
+//        if let loginMethod = SignUpUserInfo.shared.loginMethod {
+//            switch loginMethod {
+//            case .kakao:
+//                nextBtn.setTitle("다음 (3/5)", for: .normal)
+//            case .apple:
+//                nextBtn.setTitle("다음 (3/6)", for: .normal)
+//            }
+//        }
+//    }
     
     // MARK: - IBActions
     // 뒤로가기 버튼

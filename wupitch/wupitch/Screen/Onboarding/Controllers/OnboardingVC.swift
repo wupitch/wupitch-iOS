@@ -14,7 +14,7 @@ class OnboardingVC: UIViewController {
     @IBOutlet weak var onboardingCV: UICollectionView!
     @IBOutlet weak var skipBtn: UIButton!
     
-    // MARK: - ViewDidLoad
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
        setStyle()

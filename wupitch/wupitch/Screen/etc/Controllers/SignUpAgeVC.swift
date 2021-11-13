@@ -18,7 +18,7 @@ class SignUpAgeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
-        kakaoAppleLoginLogic()
+        //kakaoAppleLoginLogic()
     }
     
     func setStyle() {
@@ -27,16 +27,16 @@ class SignUpAgeVC: UIViewController {
     }
     
     // 카카오, 애플 로그인 로직 나누기
-    private func kakaoAppleLoginLogic() {
-        if let loginMethod = SignUpUserInfo.shared.loginMethod {
-            switch loginMethod {
-            case .kakao:
-                nextBtn.setTitle("다음 (4/5)", for: .normal)
-            case .apple:
-                nextBtn.setTitle("다음 (4/6)", for: .normal)
-            }
-        }
-    }
+//    private func kakaoAppleLoginLogic() {
+//        if let loginMethod = SignUpUserInfo.shared.loginMethod {
+//            switch loginMethod {
+//            case .kakao:
+//                nextBtn.setTitle("다음 (4/5)", for: .normal)
+//            case .apple:
+//                nextBtn.setTitle("다음 (4/6)", for: .normal)
+//            }
+//        }
+//    }
     
     @IBAction func touchUpNextBtn(_ sender: Any) {
         if nextBtn.backgroundColor == .main {

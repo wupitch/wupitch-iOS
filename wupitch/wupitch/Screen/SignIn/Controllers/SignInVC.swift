@@ -41,4 +41,13 @@ class SignInVC: UIViewController {
         emailSiginUpBtn.layer.borderWidth = 1.adjusted
         emailSiginUpBtn.layer.borderColor = UIColor.main.cgColor
     }
+    
+    // MARK: - IBActions
+    // 이메일로 회원가입 버튼
+    @IBAction func touchUpSiginUpBtn(_ sender: Any) {
+        // 회원가입 페이지로 이동
+        let storyboard = UIStoryboard.init(name: "SignUpTerms", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(identifier: "SignUpTermsVC") as? SignUpTermsVC else {return}
+        self.navigationController?.pushViewController(dvc, animated: true)
+    }
 }

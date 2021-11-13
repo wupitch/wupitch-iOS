@@ -77,6 +77,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="touchUpSiginUpBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="DuD-3Q-Azd"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bX6-SJ-pSD">
                                 <rect key="frame" x="149.5" y="747.5" width="116" height="14.5"/>

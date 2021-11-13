@@ -8,11 +8,6 @@
 import UIKit
 import KakaoSDKUser
 
-// 카카오, 애플
-enum LoginMethod {
-    case kakao, apple
-}
-
 // 회원가입, 메인
 enum BottomSheetMethod {
     case signUp, main
@@ -20,10 +15,11 @@ enum BottomSheetMethod {
 
 class SignUpUserInfo {
     static let shared = SignUpUserInfo()
-    // 카카오,애플 로직 나누기
-    var loginMethod: LoginMethod?
     // 바텀시트 로그인, 메인 나누기
     var bottomSheetMethod: BottomSheetMethod?
+    // 이메일,패스워드
+    var email : String?
+    var pw : String?
     // 지역선택
     var region : Int?
     // 관심 스포츠 선택

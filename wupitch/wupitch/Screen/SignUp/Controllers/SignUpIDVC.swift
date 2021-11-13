@@ -53,7 +53,6 @@ class SignUpIDVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             // present 형태로 띄우기
             self.present(dvc, animated: true, completion: nil)
         }
-        
     }
     
     @IBAction func touchUpBackbtn(_ sender: Any) {
@@ -68,8 +67,6 @@ class SignUpIDVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         camera.cameraCaptureMode = .photo
         camera.delegate = self
         present(camera, animated: true, completion: nil)
-        
-        //layerRectConverted(fromMetadataOutputRect: CGRect(x: 0, y: 0, width: 1, height: 1))
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -84,9 +81,9 @@ class SignUpIDVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         picker.dismiss(animated: true, completion: nil)
         
         if SignUpUserInfo.shared.idImg != nil {
-            let storyboard = UIStoryboard.init(name: "SignUpAppleComplete", bundle: nil)
+            let storyboard = UIStoryboard.init(name: "SignUpComplete", bundle: nil)
             
-            guard let dvc = storyboard.instantiateViewController(identifier: "SignUpAppleCompleteVC") as? SignUpAppleCompleteVC else {return}
+            guard let dvc = storyboard.instantiateViewController(identifier: "SignUpCompleteVC") as? SignUpCompleteVC else {return}
             
             self.navigationController?.pushViewController(dvc, animated: true)
         }
@@ -103,9 +100,10 @@ extension SignUpIDVC : AlertDelegate {
     func alertDismiss() {
         guard let viewControllerStack = self.navigationController?.viewControllers else { return }
         
-        // 뷰 스택에서 OnbordingVC를 찾아서 거기까지 pop 합니다.
+        // 뷰 스택에서 SignInVC를 찾아서 거기까지 pop 합니다.
         for viewController in viewControllerStack {
-            if let onboardingVC = viewController as? OnbordingVC { self.navigationController?.popToViewController(onboardingVC, animated: true)
+            if let signInVC = viewController as? SignInVC { self.navigationController?.popToViewController(signInVC, animated: true)
+                // pop되면서 모든 정보 nil로 초기화
                 SignUpUserInfo.shared.dispose()
             }
         }

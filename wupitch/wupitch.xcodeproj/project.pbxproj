@@ -82,8 +82,8 @@
 		DD3ACBBF2721083700EBC201 /* SignUpProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACBBE2721083700EBC201 /* SignUpProfileVC.swift */; };
 		DD3ACBC227216D2500EBC201 /* SignUpID.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACBC127216D2500EBC201 /* SignUpID.storyboard */; };
 		DD3ACBC427216D4400EBC201 /* SignUpIDVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACBC327216D4400EBC201 /* SignUpIDVC.swift */; };
-		DD3ACBC62721709200EBC201 /* SignUpAppleComplete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACBC52721709100EBC201 /* SignUpAppleComplete.storyboard */; };
-		DD3ACBC8272170A800EBC201 /* SignUpAppleCompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACBC7272170A800EBC201 /* SignUpAppleCompleteVC.swift */; };
+		DD3ACBC62721709200EBC201 /* SignUpComplete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACBC52721709100EBC201 /* SignUpComplete.storyboard */; };
+		DD3ACBC8272170A800EBC201 /* SignUpCompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACBC7272170A800EBC201 /* SignUpCompleteVC.swift */; };
 		DD3E37B6272F432A00C4192E /* UserInfoWarningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E37B5272F432A00C4192E /* UserInfoWarningVC.swift */; };
 		DD3E37C6272F928E00C4192E /* CrewCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E37C4272F928E00C4192E /* CrewCVCell.swift */; };
 		DD3E37C7272F928E00C4192E /* CrewCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD3E37C5272F928E00C4192E /* CrewCVCell.xib */; };
@@ -226,8 +226,8 @@
 		DD3ACBBE2721083700EBC201 /* SignUpProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProfileVC.swift; sourceTree = "<group>"; };
 		DD3ACBC127216D2500EBC201 /* SignUpID.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpID.storyboard; sourceTree = "<group>"; };
 		DD3ACBC327216D4400EBC201 /* SignUpIDVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpIDVC.swift; sourceTree = "<group>"; };
-		DD3ACBC52721709100EBC201 /* SignUpAppleComplete.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpAppleComplete.storyboard; sourceTree = "<group>"; };
-		DD3ACBC7272170A800EBC201 /* SignUpAppleCompleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAppleCompleteVC.swift; sourceTree = "<group>"; };
+		DD3ACBC52721709100EBC201 /* SignUpComplete.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpComplete.storyboard; sourceTree = "<group>"; };
+		DD3ACBC7272170A800EBC201 /* SignUpCompleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompleteVC.swift; sourceTree = "<group>"; };
 		DD3ACBCF2721A8AE00EBC201 /* wupitch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wupitch.entitlements; sourceTree = "<group>"; };
 		DD3E37B5272F432A00C4192E /* UserInfoWarningVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoWarningVC.swift; sourceTree = "<group>"; };
 		DD3E37C4272F928E00C4192E /* CrewCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewCVCell.swift; sourceTree = "<group>"; };
@@ -954,7 +954,7 @@
 				DD9EEDD1273F77BE00E02396 /* SignUpEmailPw.storyboard */,
 				DD3ACBBC2721082300EBC201 /* SignUpProfile.storyboard */,
 				DD3ACBC127216D2500EBC201 /* SignUpID.storyboard */,
-				DD3ACBC52721709100EBC201 /* SignUpAppleComplete.storyboard */,
+				DD3ACBC52721709100EBC201 /* SignUpComplete.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -966,7 +966,7 @@
 				DD9EEDD3273F77E700E02396 /* SignUpEmailPwVC.swift */,
 				DD3ACBBE2721083700EBC201 /* SignUpProfileVC.swift */,
 				DD3ACBC327216D4400EBC201 /* SignUpIDVC.swift */,
-				DD3ACBC7272170A800EBC201 /* SignUpAppleCompleteVC.swift */,
+				DD3ACBC7272170A800EBC201 /* SignUpCompleteVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1036,7 +1036,7 @@
 				DD3ACBBD2721082300EBC201 /* SignUpProfile.storyboard in Resources */,
 				DDE0EE582728163900C46821 /* JoinAlert.storyboard in Resources */,
 				DD7BEBC427315D3A00DB2F60 /* DetailCrewImgCVCell.xib in Resources */,
-				DD3ACBC62721709200EBC201 /* SignUpAppleComplete.storyboard in Resources */,
+				DD3ACBC62721709200EBC201 /* SignUpComplete.storyboard in Resources */,
 				DD295DAC27181E3D008CFC64 /* LaunchScreen.storyboard in Resources */,
 				DD9EEDDB273FFE9B00E02396 /* CrewSearchCVCell.xib in Resources */,
 				DDED011F271BD96D00C2C343 /* Onboarding.storyboard in Resources */,
@@ -1191,7 +1191,7 @@
 				DD61E4B9271D7E50007504DE /* SignUpTermsVC.swift in Sources */,
 				DD1BFC3927380C920042C51F /* CrewFilterVC.swift in Sources */,
 				DD3A30E0272DABC000D711C6 /* BungaeVC.swift in Sources */,
-				DD3ACBC8272170A800EBC201 /* SignUpAppleCompleteVC.swift in Sources */,
+				DD3ACBC8272170A800EBC201 /* SignUpCompleteVC.swift in Sources */,
 				DD9EEDDA273FFE9B00E02396 /* CrewSearchCVCell.swift in Sources */,
 				DD3A30C1272AA94100D711C6 /* ModalSportsBtn.swift in Sources */,
 				DDC3B5102732A68A00FF4959 /* DetailCrewFooterCRV.swift in Sources */,
