@@ -21,6 +21,8 @@ class LocationPickerVC: UIViewController {
     
     // MARK: - Variable
     var modalDelegate : ModalDelegate?
+    lazy var dataManager = AreaService()
+    var area : [AreaResult] = []
     
     // MARK: - IBOulets
     @IBOutlet weak var selectBtn: UIButton!
@@ -32,10 +34,9 @@ class LocationPickerVC: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setStyle()
         setDelegate()
-        
+        dataManager.getArea(delegate: self)
     }
     
     // MARK: - Function
@@ -65,18 +66,10 @@ class LocationPickerVC: UIViewController {
         // 선택 버튼 누를 시, delegate
         modalDelegate?.modalDismiss()
         modalDelegate?.selectBtnToNextBtn()
-
         
         // 선택 버튼 누를 시, textField의 데이터가 변경되도록
         let i = self.pickerView.selectedRow(inComponent: 0)
-        if let bottomSheetMethod = SignUpUserInfo.shared.bottomSheetMethod {
-            switch bottomSheetMethod {
-            case .signUp:
-                modalDelegate?.textFieldData(data: locationPickerData[i].locationName)
-            case .main:
-                modalDelegate?.textFieldData(data: mainLocationPickerData[i].locationName)
-            }
-        }
+        modalDelegate?.textFieldData(data: area[i].name)
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -95,22 +88,7 @@ extension LocationPickerVC: UITextFieldDelegate, UIPickerViewDelegate, UIPickerV
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if let bottomSheetMethod = SignUpUserInfo.shared.bottomSheetMethod {
-            print("log>>>", bottomSheetMethod)
-            switch bottomSheetMethod {
-            case .signUp:
-                return locationPickerData.count
-            case .main:
-                print(mainLocationPickerData.count)
-                return mainLocationPickerData.count
-            }
-        }
-        return 0
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-
-       // modalDelegate?.textFieldData(data: locationPickerData[row].locationName)
+        return area.count
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
@@ -127,20 +105,24 @@ extension LocationPickerVC: UITextFieldDelegate, UIPickerViewDelegate, UIPickerV
         let numberLabel = UILabel()
         numberLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 22.adjusted)
         numberLabel.tintColor = .bk
-        if let bottomSheetMethod = SignUpUserInfo.shared.bottomSheetMethod {
-            switch bottomSheetMethod {
-            case .signUp:
-                numberLabel.text = locationPickerData[row].locationName
-            case .main:
-                numberLabel.text = mainLocationPickerData[row].locationName
-            }
-        }
+        numberLabel.text = area[row].name
         numberLabel.textAlignment = .center
 
         return numberLabel
     }
 }
 
+// 지역 api 연결
+extension LocationPickerVC {
+    func didSuccessArea(result: [AreaResult]) {
+        print("데이터가 성공적으로 들어왔습니다.")
+        self.area = result
+        self.pickerView.reloadAllComponents()
+    }
+    func failedToRequest(message: String) {
+        print("데이터가 들어오지 않았습니다.")
+    }
+}
 
 
 

@@ -148,7 +148,7 @@ class MakeCrewPhotoVC: UIViewController {
     // UIImagePicker
     func openLibrary() {
         picker.sourceType = .photoLibrary
-        present(picker, animated: false, completion: nil)
+        present(picker, animated: true, completion: nil)
     }
     
     @IBAction func touchUpBackBtn(_ sender: Any) {

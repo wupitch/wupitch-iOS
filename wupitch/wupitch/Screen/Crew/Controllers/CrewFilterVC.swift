@@ -44,6 +44,7 @@ class CrewFilterVC: UIViewController {
         //startTectField.tintColor = .clear
         //startTectField.selectedTextRange = nil
     }
+    
     private func setStyle() {
         // textfield placeholder default color
         //startTimeTextField.attributedPlaceholder = NSAttributedString(string: "00:00", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray02])
@@ -80,12 +81,14 @@ class CrewFilterVC: UIViewController {
 
     // 텍스트 필드 눌렀을 때 addTarget주기
     func textFieldToAddTarget() {
-        startTectField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .touchDown)
+        startTectField.delegate = self
+//        startTectField.addTarget(self, action: #selector(textFieldDidChange), for: .touchDown)
     }
     
     // textFieldToAddTarget()의 addTarget
-    @objc func textFieldDidChange(_ textField:UITextField) {
-        
+    @objc func textFieldDidChange() {
+        print("나온다")
+        startTectField.resignFirstResponder()
         let alertVC = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .time
@@ -308,7 +311,39 @@ class CrewFilterVC: UIViewController {
     }
 }
 
+extension CrewFilterVC: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.resignFirstResponder()
+        let alertVC = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .time
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        } else {
+            // Fallback on earlier versions
+        }
+        datePicker.locale = Locale(identifier: "ko-KR")
+        alertVC.view.addSubview(datePicker)
+        alertVC.view.heightAnchor.constraint(equalToConstant: 350).isActive = true
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
+        datePicker.leadingAnchor.constraint(equalTo: alertVC.view.leadingAnchor).isActive = true
+        datePicker.trailingAnchor.constraint(equalTo: alertVC.view.trailingAnchor).isActive = true
+        datePicker.topAnchor.constraint(equalTo: alertVC.view.topAnchor, constant: 10).isActive = true
+        datePicker.bottomAnchor.constraint(equalTo: alertVC.view.bottomAnchor, constant: -120).isActive = true
 
+        let okAction = UIAlertAction(title: "확인", style: .default) { _ in
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
+            let dateString = dateFormatter.string(from: datePicker.date)
+            self.startTectField.text = dateString
+        }
+        alertVC.addAction(okAction)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        alertVC.addAction(cancelAction)
+
+        present(alertVC, animated: true, completion: nil)
+    }
+}
 //extension CrewFilterVC: UITextFieldDelegate {
 //    func start() {
 //        startTimeTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)

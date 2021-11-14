@@ -126,6 +126,7 @@
                             <constraint firstItem="4Yz-Qs-KVB" firstAttribute="top" secondItem="Q1c-4V-kdV" secondAttribute="bottom" constant="20" id="vym-RY-Pvc"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="QJn-yf-s2H"/>
                     <connections>
                         <outlet property="alertBtn" destination="N9J-kG-B2v" id="nE9-oB-2Bs"/>
                         <outlet property="crewCV" destination="4Yz-Qs-KVB" id="JaJ-Hb-S7G"/>
