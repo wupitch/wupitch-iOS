@@ -269,17 +269,47 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00:00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TLb-FY-wO3">
-                                                        <rect key="frame" x="20" y="60" width="67" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="dpS-TS-fuO">
+                                                        <rect key="frame" x="20" y="64.5" width="222" height="48"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98k-PU-fTi">
+                                                                <rect key="frame" x="0.0" y="0.0" width="104" height="48"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="48" id="VNe-CR-ewM"/>
+                                                                    <constraint firstAttribute="width" secondItem="98k-PU-fTi" secondAttribute="height" multiplier="104:48" id="xBb-f2-YC8"/>
+                                                                </constraints>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="00:00"/>
+                                                                <connections>
+                                                                    <action selector="touchUpStartTimeBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cdW-Yx-wPO"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlr-B7-myb">
+                                                                <rect key="frame" x="107" y="0.0" width="8" height="48"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfR-Ub-gUk">
+                                                                <rect key="frame" x="118" y="0.0" width="104" height="48"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="48" id="IaB-dX-RzM"/>
+                                                                    <constraint firstAttribute="width" secondItem="tfR-Ub-gUk" secondAttribute="height" multiplier="104:48" id="Qho-Ll-6GF"/>
+                                                                </constraints>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="00:00"/>
+                                                                <connections>
+                                                                    <action selector="touchUpEndTimeBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="k0o-5p-DbA"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="TLb-FY-wO3" firstAttribute="top" secondItem="Uqa-RB-sKV" secondAttribute="bottom" constant="7.5" id="CaN-Ku-3rF"/>
                                                     <constraint firstAttribute="height" constant="113" id="Yhc-CA-k6g"/>
                                                     <constraint firstItem="Uqa-RB-sKV" firstAttribute="top" secondItem="Lu2-m6-Adj" secondAttribute="top" constant="32" id="a3U-sE-fzx"/>
-                                                    <constraint firstItem="TLb-FY-wO3" firstAttribute="leading" secondItem="Uqa-RB-sKV" secondAttribute="leading" id="vlx-eE-RWy"/>
+                                                    <constraint firstItem="dpS-TS-fuO" firstAttribute="top" secondItem="Uqa-RB-sKV" secondAttribute="bottom" constant="12" id="hPB-GY-cus"/>
+                                                    <constraint firstItem="dpS-TS-fuO" firstAttribute="leading" secondItem="Uqa-RB-sKV" secondAttribute="leading" id="iX2-Du-cfn"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9R2-Qt-bqo">
@@ -451,7 +481,7 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="h73-3F-tDu" secondAttribute="trailing" id="2Kf-Yg-EsA"/>
                                             <constraint firstItem="Lu2-m6-Adj" firstAttribute="top" secondItem="h73-3F-tDu" secondAttribute="bottom" id="4vp-Wv-aKj"/>
-                                            <constraint firstItem="Whg-K0-QHh" firstAttribute="leading" secondItem="TLb-FY-wO3" secondAttribute="leading" id="8ow-PT-Gfd"/>
+                                            <constraint firstItem="Whg-K0-QHh" firstAttribute="leading" secondItem="dpS-TS-fuO" secondAttribute="leading" id="AYL-SP-lSy"/>
                                             <constraint firstItem="DZc-81-WaW" firstAttribute="leading" secondItem="txe-5M-vaR" secondAttribute="leading" id="CSd-i1-fhy"/>
                                             <constraint firstItem="Lu2-m6-Adj" firstAttribute="leading" secondItem="4DZ-yb-6rr" secondAttribute="leading" id="DRh-nJ-X8e"/>
                                             <constraint firstItem="aPf-YM-9iF" firstAttribute="leading" secondItem="KBJ-0N-XLK" secondAttribute="leading" id="EPZ-sF-s18"/>
@@ -511,11 +541,13 @@
                         <outlet property="ageLabel" destination="aPf-YM-9iF" id="hVe-BR-Y3i"/>
                         <outlet property="applyBtn" destination="GgX-MI-MHC" id="JhD-ry-mDP"/>
                         <outlet property="backBtn" destination="4aQ-UG-JO9" id="WxM-d5-aPf"/>
+                        <outlet property="betweenLabel" destination="rlr-B7-myb" id="uFs-5N-uKZ"/>
                         <outlet property="crewCountLabel" destination="Whg-K0-QHh" id="gL9-ED-xoE"/>
                         <outlet property="dateLabel" destination="DZc-81-WaW" id="NwP-K1-2DZ"/>
+                        <outlet property="endTimeBtn" destination="tfR-Ub-gUk" id="N5u-WM-m8H"/>
                         <outlet property="resetBtn" destination="Cgq-iw-ocZ" id="ioM-UY-KZy"/>
                         <outlet property="sportsLabel" destination="yb3-AR-a1j" id="2a7-iP-oCx"/>
-                        <outlet property="startTectField" destination="TLb-FY-wO3" id="UBK-Cx-Gnl"/>
+                        <outlet property="startTimeBtn" destination="98k-PU-fTi" id="k3q-tC-WVO"/>
                         <outlet property="timeLabel" destination="Uqa-RB-sKV" id="86t-de-WWE"/>
                         <outlet property="titleLabel" destination="lJm-pT-VBh" id="sfe-wP-Ru6"/>
                         <outletCollection property="sportsBtns" destination="pAx-pp-xx3" collectionClass="NSMutableArray" id="tob-iB-Xb3"/>

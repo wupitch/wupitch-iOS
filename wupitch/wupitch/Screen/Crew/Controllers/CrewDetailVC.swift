@@ -112,6 +112,12 @@ class CrewDetailVC: BaseVC {
     }
 }
 
+ func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    if (scrollView.contentOffset.y + 1) >= (scrollView.contentSize.height - 211) {
+        print("얼만큼 내려왓나?")
+    }
+}
+
 extension CrewDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -293,6 +299,16 @@ extension CrewDetailVC: GuestModalDelegate {
                 // present 형태로 띄우기
                 self.present(dvc, animated: true, completion: nil)
             }
+        }
+    }
+  
+    // 스크롤 시 선 감지
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (scrollView.contentOffset.y+1) >= 200 {
+            lineView.alpha = 1
+        }
+        else {
+            lineView.alpha = 0.0
         }
     }
 }
