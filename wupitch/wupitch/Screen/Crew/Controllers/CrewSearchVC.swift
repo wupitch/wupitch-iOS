@@ -22,10 +22,11 @@ class CrewSearchVC: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var backBtn: UIButton!
     
     var tabPage = [tabEnum.crew, tabEnum.bungae]
+    var passwordEyeBtn = UIButton(type: .system)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        passwordEyeSecure()
         crewSearchCV.delegate = self
         crewSearchCV.dataSource = self
         
@@ -40,7 +41,25 @@ class CrewSearchVC: UIViewController, UISearchBarDelegate {
         searchTextField.makeRounded(cornerRadius: 8.adjusted)
         searchTextField.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
         searchTextField.textColor = .gray03
-        searchTextField.addLeftPadding()
+        searchTextField.addPadding()
+    }
+    
+    // cancel btn
+    func passwordEyeSecure() {
+        passwordEyeBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: searchTextField.frame.height))
+        passwordEyeBtn.setImage(UIImage(named: "searchClose"), for: UIControl.State())
+        let container = UIView(frame: passwordEyeBtn.frame)
+        container.addSubview(passwordEyeBtn)
+        searchTextField.rightView = container
+        searchTextField.rightViewMode = .whileEditing
+
+        passwordEyeBtn.addTarget(self, action: #selector(passwordEyeButtonClick), for: .touchUpInside)
+    }
+
+    // cancel btn addTarget
+    @objc func passwordEyeButtonClick(_ sender: UIButton) {
+        searchTextField.text = nil
+        searchTextField.resignFirstResponder()
     }
     
     @IBAction func touchUpCrewBtn(_ sender: Any) {

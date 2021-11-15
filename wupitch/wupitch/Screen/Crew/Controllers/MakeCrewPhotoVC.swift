@@ -161,6 +161,7 @@ class MakeCrewPhotoVC: UIViewController {
     
     @IBAction func touchUpNextBtn(_ sender: Any) {
         if nextBtn.backgroundColor == .main {
+            print("다 나옵니까 이모지도?", questionTextView.text ?? "값없엉")
             let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewMoney", bundle: nil)
             if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewMoneyVC") as? MakeCrewMoneyVC {
                 navigationController?.pushViewController(dvc, animated: true)
