@@ -130,6 +130,8 @@
 		DDC3B51D2736373500FF4959 /* GuestDateBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC3B51C2736373500FF4959 /* GuestDateBtn.swift */; };
 		DDC4DAE12741075700D79CC8 /* AreaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAE02741075700D79CC8 /* AreaData.swift */; };
 		DDC4DAE4274107D900D79CC8 /* AreaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAE3274107D900D79CC8 /* AreaService.swift */; };
+		DDC4DAE6274275E200D79CC8 /* ToastMessage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DAE5274275E200D79CC8 /* ToastMessage.storyboard */; };
+		DDC4DAE8274275F300D79CC8 /* ToastMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAE7274275F300D79CC8 /* ToastMessageVC.swift */; };
 		DDE0EE582728163900C46821 /* JoinAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE572728163900C46821 /* JoinAlert.storyboard */; };
 		DDE0EE5A2728164E00C46821 /* JoinAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0EE592728164E00C46821 /* JoinAlertVC.swift */; };
 		DDE0EE5C272873EC00C46821 /* SignUpKakaoComplete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */; };
@@ -277,6 +279,8 @@
 		DDC3B51C2736373500FF4959 /* GuestDateBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestDateBtn.swift; sourceTree = "<group>"; };
 		DDC4DAE02741075700D79CC8 /* AreaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaData.swift; sourceTree = "<group>"; };
 		DDC4DAE3274107D900D79CC8 /* AreaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaService.swift; sourceTree = "<group>"; };
+		DDC4DAE5274275E200D79CC8 /* ToastMessage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToastMessage.storyboard; sourceTree = "<group>"; };
+		DDC4DAE7274275F300D79CC8 /* ToastMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessageVC.swift; sourceTree = "<group>"; };
 		DDE0EE572728163900C46821 /* JoinAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinAlert.storyboard; sourceTree = "<group>"; };
 		DDE0EE592728164E00C46821 /* JoinAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinAlertVC.swift; sourceTree = "<group>"; };
 		DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpKakaoComplete.storyboard; sourceTree = "<group>"; };
@@ -471,6 +475,7 @@
 				DD2D63AF27268A1A007CEC57 /* LevelModal.storyboard */,
 				DD3A30F7272E7C4800D711C6 /* CrewApplication.storyboard */,
 				DD9EEDC6273D095E00E02396 /* DongPicker.storyboard */,
+				DDC4DAE5274275E200D79CC8 /* ToastMessage.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -482,6 +487,7 @@
 				DD2D63B127268A34007CEC57 /* LevelModalVC.swift */,
 				DD3A30F9272E7C5F00D711C6 /* CrewApplicationVC.swift */,
 				DD9EEDC8273D097600E02396 /* DongPickerVC.swift */,
+				DDC4DAE7274275F300D79CC8 /* ToastMessageVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1071,6 +1077,7 @@
 				DD1BFC5B273927200042C51F /* MakeCrewGuest.storyboard in Resources */,
 				DD9EEDD2273F77BE00E02396 /* SignUpEmailPw.storyboard in Resources */,
 				DD2D63B027268A1A007CEC57 /* LevelModal.storyboard in Resources */,
+				DDC4DAE6274275E200D79CC8 /* ToastMessage.storyboard in Resources */,
 				DD7BEBCC27315DF800DB2F60 /* DetailCrewIntroduceCVCell.xib in Resources */,
 				DD3A30DC272DAB7B00D711C6 /* Crew.storyboard in Resources */,
 				DD295DA927181E3D008CFC64 /* Assets.xcassets in Resources */,
@@ -1236,6 +1243,7 @@
 				DDC3B5142733C4D600FF4959 /* VC.swift in Sources */,
 				DD1BFC23273664970042C51F /* NicknameValidationService.swift in Sources */,
 				DD3A30C6272D1E1400D711C6 /* KakaoLoginRequest.swift in Sources */,
+				DDC4DAE8274275F300D79CC8 /* ToastMessageVC.swift in Sources */,
 				DD6728352723E582001E1355 /* LocationPickerData.swift in Sources */,
 				DD1BFC3D2738B7ED0042C51F /* LabelFontSize.swift in Sources */,
 				DDC3B51B2735565C00FF4959 /* MainLocationPickerData.swift in Sources */,

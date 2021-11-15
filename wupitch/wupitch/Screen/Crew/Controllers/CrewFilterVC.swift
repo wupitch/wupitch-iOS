@@ -9,6 +9,8 @@ import UIKit
 
 class CrewFilterVC: UIViewController {
     
+    @IBOutlet weak var toastMessageLabel: UILabel!
+    @IBOutlet weak var toastView: UIView!
     @IBOutlet weak var endTimeBtn: UIButton!
     @IBOutlet weak var betweenLabel: UILabel!
     @IBOutlet weak var startTimeBtn: UIButton!
@@ -34,6 +36,7 @@ class CrewFilterVC: UIViewController {
     
     var timePicker = UIDatePicker()
     var isTextFieldEditing : Bool = false
+    var isPicker : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +65,10 @@ class CrewFilterVC: UIViewController {
         resetBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         resetBtn.tintColor = .gray02
         
+        toastView.alpha = 0.0
+        toastView.makeRounded(cornerRadius: 16.adjusted)
+        toastMessageLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
+        
         // 종목, 연령대 중복 선택 가능
         for i in 0...5 {
             sportsBtns[i].graySportsBtn()
@@ -78,7 +85,14 @@ class CrewFilterVC: UIViewController {
         //endTimeTextField.delegate = self
     }
     
-    
+    // 토스트 메시지
+    func showToast(message:String) {
+        toastMessageLabel.text = message
+        self.toastView?.alpha = 1.0
+        UIView.animate(withDuration: 4.0, delay: 0.01, animations: {
+            self.toastView.alpha = 0.0
+        }, completion: nil)
+    }
     
     @IBAction func touchUpStartTimeBtn(_ sender: Any) {
         let alertVC = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
@@ -89,7 +103,8 @@ class CrewFilterVC: UIViewController {
         } else {
             // Fallback on earlier versions
         }
-        datePicker.locale = Locale(identifier: "ko-KR")
+//        datePicker.locale = Locale(identifier: "ko-KR")
+        datePicker.locale = Locale(identifier: "en_GB")
         alertVC.view.addSubview(datePicker)
         alertVC.view.heightAnchor.constraint(equalToConstant: 350).isActive = true
         datePicker.translatesAutoresizingMaskIntoConstraints = false
@@ -103,10 +118,10 @@ class CrewFilterVC: UIViewController {
             dateFormatter.dateFormat = "HH:mm"
             let dateString = dateFormatter.string(from: datePicker.date)
             
-            // 여기서 두 개 나누고 토스트 버튼까지 띄우면 됌
             self.startTimeBtn.setTitle(dateString, for: .normal)
             self.startTimeBtn.setTitleColor(UIColor.main, for: .normal)
             self.startTimeBtn.layer.borderColor = UIColor.main.cgColor
+            self.isPicker = dateString
         }
         alertVC.addAction(okAction)
         let cancelAction = UIAlertAction(title: "취소", style: .cancel)
@@ -116,15 +131,17 @@ class CrewFilterVC: UIViewController {
     
     
     @IBAction func touchUpEndTimeBtn(_ sender: Any) {
+        self.endTimeBtn.isEnabled = true
         let alertVC = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .time
+        
         if #available(iOS 13.4, *) {
             datePicker.preferredDatePickerStyle = .wheels
         } else {
             // Fallback on earlier versions
         }
-        datePicker.locale = Locale(identifier: "ko-KR")
+        datePicker.locale = Locale(identifier: "en_GB")
         alertVC.view.addSubview(datePicker)
         alertVC.view.heightAnchor.constraint(equalToConstant: 350).isActive = true
         datePicker.translatesAutoresizingMaskIntoConstraints = false
@@ -138,19 +155,24 @@ class CrewFilterVC: UIViewController {
             dateFormatter.dateFormat = "HH:mm"
             let dateString = dateFormatter.string(from: datePicker.date)
             
-            // 여기서 두 개 나누고 토스트 버튼까지 띄우면 됌
-            let date = Date()
-            let date1 = Calendar.current.date(byAdding: .day, value: 1, to: date)
-            let distanceHour = Calendar.current.dateComponents([.hour], from: date, to: date1!).hour
-            let distanceSecond = Calendar.current.dateComponents([.second], from: date, to: date1!).second
-            print("뭐나와", distanceHour)
-            print("분", distanceSecond)
-            
-            self.endTimeBtn.setTitle(dateString, for: .normal)
-            self.endTimeBtn.setTitleColor(UIColor.main, for: .normal)
-            self.endTimeBtn.layer.borderColor = UIColor.main.cgColor
-            self.betweenLabel.textColor = .main
-            
+            if let pickerData = self.isPicker {
+                if pickerData <= dateString {
+                    print(pickerData)
+                    print(dateString)
+                    self.endTimeBtn.setTitle(dateString, for: .normal)
+                    self.endTimeBtn.setTitleColor(UIColor.main, for: .normal)
+                    self.endTimeBtn.layer.borderColor = UIColor.main.cgColor
+                    self.betweenLabel.textColor = .main
+                }
+                else {
+                    print("값이 전거보다 작음")
+                    self.showToast(message: "종료시간이 시작시간보다 늦어야 해요!")
+                }
+            }
+            else {
+                print("앞에거부터입력해라")
+                self.showToast(message: "시작시간부터 입력해주세요!")
+            }
         }
         alertVC.addAction(okAction)
         let cancelAction = UIAlertAction(title: "취소", style: .cancel)

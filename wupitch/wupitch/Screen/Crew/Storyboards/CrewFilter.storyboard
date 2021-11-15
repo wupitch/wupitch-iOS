@@ -512,18 +512,47 @@
                                     <constraint firstItem="4DZ-yb-6rr" firstAttribute="centerX" secondItem="mIE-y1-ZP1" secondAttribute="centerX" id="m6o-ry-gxn"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kH0-qF-Puk">
+                                <rect key="frame" x="27" y="796" width="359" height="81"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image79" translatesAutoresizingMaskIntoConstraints="NO" id="QHN-Uy-9Dl">
+                                        <rect key="frame" x="16" y="28.5" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="2op-Cs-mwB"/>
+                                            <constraint firstAttribute="width" constant="24" id="PTm-fz-7kK"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="종료시간이 시작시간보다 늦어야 해요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngl-Pk-WiK">
+                                        <rect key="frame" x="52" y="30.5" width="253.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="QHN-Uy-9Dl" firstAttribute="centerY" secondItem="kH0-qF-Puk" secondAttribute="centerY" id="Arp-kp-E8P"/>
+                                    <constraint firstItem="Ngl-Pk-WiK" firstAttribute="leading" secondItem="QHN-Uy-9Dl" secondAttribute="trailing" constant="12" id="XKa-Jw-Lfa"/>
+                                    <constraint firstItem="Ngl-Pk-WiK" firstAttribute="centerY" secondItem="QHN-Uy-9Dl" secondAttribute="centerY" id="dkp-FJ-lor"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="72" id="qIR-oG-3Ky"/>
+                                    <constraint firstAttribute="width" secondItem="kH0-qF-Puk" secondAttribute="height" multiplier="320:72" id="uyy-w2-GXJ"/>
+                                    <constraint firstItem="QHN-Uy-9Dl" firstAttribute="leading" secondItem="kH0-qF-Puk" secondAttribute="leading" constant="16" id="wkw-IM-fPa"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dHr-H2-8Z2" secondAttribute="trailing" id="1Jc-pg-8XT"/>
                             <constraint firstItem="dHr-H2-8Z2" firstAttribute="top" secondItem="mIE-y1-ZP1" secondAttribute="bottom" id="1Zr-M2-UNM"/>
+                            <constraint firstItem="kH0-qF-Puk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="27" id="2J4-aY-hl0"/>
                             <constraint firstItem="4DZ-yb-6rr" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" priority="250" id="3XB-92-5Od"/>
                             <constraint firstItem="4aQ-UG-JO9" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="5eo-Mc-Jwp"/>
                             <constraint firstItem="lJm-pT-VBh" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="6AC-Cw-m3A"/>
                             <constraint firstItem="OaW-VU-UdF" firstAttribute="top" secondItem="4aQ-UG-JO9" secondAttribute="bottom" constant="10" id="8MR-F8-CoV"/>
                             <constraint firstItem="lJm-pT-VBh" firstAttribute="centerY" secondItem="4aQ-UG-JO9" secondAttribute="centerY" id="Bl8-CX-65c"/>
                             <constraint firstItem="Fa1-Gm-e0e" firstAttribute="top" secondItem="dHr-H2-8Z2" secondAttribute="bottom" id="CIl-0h-XbP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kH0-qF-Puk" secondAttribute="trailing" constant="28" id="Iyb-eK-yAz"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OaW-VU-UdF" secondAttribute="trailing" id="MWD-Tb-4d2"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mIE-y1-ZP1" secondAttribute="trailing" id="PGd-q4-w7Y"/>
                             <constraint firstItem="OaW-VU-UdF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="RXu-Ox-XgO"/>
@@ -533,6 +562,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Fa1-Gm-e0e" secondAttribute="trailing" id="jes-70-RuD"/>
                             <constraint firstItem="Fa1-Gm-e0e" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="sCE-g0-IIw"/>
                             <constraint firstItem="Fa1-Gm-e0e" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="sre-tD-rxH"/>
+                            <constraint firstItem="dHr-H2-8Z2" firstAttribute="top" secondItem="kH0-qF-Puk" secondAttribute="bottom" constant="16" id="tGP-tS-6vB"/>
                             <constraint firstItem="mIE-y1-ZP1" firstAttribute="top" secondItem="OaW-VU-UdF" secondAttribute="bottom" id="zLH-QV-pFh"/>
                         </constraints>
                     </view>
@@ -550,6 +580,8 @@
                         <outlet property="startTimeBtn" destination="98k-PU-fTi" id="k3q-tC-WVO"/>
                         <outlet property="timeLabel" destination="Uqa-RB-sKV" id="86t-de-WWE"/>
                         <outlet property="titleLabel" destination="lJm-pT-VBh" id="sfe-wP-Ru6"/>
+                        <outlet property="toastMessageLabel" destination="Ngl-Pk-WiK" id="JZh-kt-Kvq"/>
+                        <outlet property="toastView" destination="kH0-qF-Puk" id="exv-ew-gBp"/>
                         <outletCollection property="sportsBtns" destination="pAx-pp-xx3" collectionClass="NSMutableArray" id="tob-iB-Xb3"/>
                         <outletCollection property="dateBtns" destination="IkJ-Ha-Q0k" collectionClass="NSMutableArray" id="KCc-Oh-YsF"/>
                         <outletCollection property="crewCountBtns" destination="R4Z-Sx-8WE" collectionClass="NSMutableArray" id="dO9-ZJ-62d"/>
@@ -582,6 +614,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="image79" width="24" height="24"/>
         <image name="left" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
