@@ -303,8 +303,8 @@ class CrewFilterVC: UIViewController {
         i = startTimeBtn.titleLabel?.text
         var j : String?
         j = endTimeBtn.titleLabel?.text
-        print("시작시간", i)
-        print("종료시간", j)
+        print("시작시간", i ?? "값이 없어요")
+        print("종료시간", j ?? "값이 없어요")
         self.tabBarController?.tabBar.isHidden = false
         navigationController?.popViewController(animated: true)
     }

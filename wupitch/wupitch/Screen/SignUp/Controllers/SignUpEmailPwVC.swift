@@ -16,13 +16,20 @@ class SignUpEmailPwVC: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
     
+    var passwordEyeClick = true
+    var passwordEyeBtn = UIButton(type: .system)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setStyle()
+        passwordEyeSecure()
     }
     
     private func setStyle() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
         emailTextField.backgroundColor = .gray05
         emailTextField.borderStyle = .none
         emailTextField.makeRounded(cornerRadius: 8.adjusted)
@@ -35,7 +42,7 @@ class SignUpEmailPwVC: UIViewController {
         passwordTextField.makeRounded(cornerRadius: 8.adjusted)
         passwordTextField.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
         passwordTextField.textColor = .gray03
-        passwordTextField.addLeftPadding()
+        passwordTextField.addPadding()
         
         emailLabel.alpha = 0.0
         passwordLabel.alpha = 0.0
@@ -46,7 +53,30 @@ class SignUpEmailPwVC: UIViewController {
         titleLabel.textColor = .bk
         titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 30.adjusted)
         
+    }
+    
+    // password eye
+    func passwordEyeSecure() {
+        passwordEyeBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: passwordTextField.frame.height))
+        passwordEyeBtn.setImage(UIImage(named: "viewHide"), for: UIControl.State())
+        let container = UIView(frame: passwordEyeBtn.frame)
+        container.addSubview(passwordEyeBtn)
+        passwordTextField.rightView = container
+        passwordTextField.rightViewMode = .always
         
+        passwordEyeBtn.addTarget(self, action: #selector(passwordEyeButtonClick), for: .touchUpInside)
+    }
+    
+    // password eye addTarget
+    @objc func passwordEyeButtonClick(_ sender: UIButton) {
+        if(passwordEyeClick == true) {
+            passwordTextField.isSecureTextEntry = false
+            passwordEyeBtn.setImage(UIImage(named: "view"), for: UIControl.State())
+        } else {
+            passwordTextField.isSecureTextEntry = true
+            passwordEyeBtn.setImage(UIImage(named: "viewHide"), for: UIControl.State())
+        }
+        passwordEyeClick = !passwordEyeClick
     }
     
     @IBAction func touchUpNextBtn(_ sender: Any) {
@@ -83,6 +113,43 @@ class SignUpEmailPwVC: UIViewController {
     
 }
 
+
+extension SignUpEmailPwVC : UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+    }
+    
+}
+
+//extension UITextField {
+//    private func setPasswordEyeImage(_ button: UIButton) {
+//        if(isSecureTextEntry){
+//            button.setImage(UIImage(named: "viewHide"), for: .normal)
+//        }else{
+//            button.setImage(UIImage(named: "view"), for: .normal)
+//        }
+//    }
+//
+//    func passwordEyeSecure() {
+//        //텍스트 필드 돋보기 표시
+//        let passwordEye = UIButton()
+//        setPasswordEyeImage(passwordEye)
+//        passwordEye.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
+////        passwordEye.frame = CGRect(x: CGFloat(self.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
+//        passwordEye.frame = CGRect(x: 0,y: 0, width: 0, height: 36)
+//        //passwordEye.addTarget(self, action: #selector(passwordEyeButtonClick), for: .touchUpInside)
+//        self.rightView = passwordEye
+//        self.rightViewMode = .always
+//    }
+//
+//    // 눈 클릭
+//    @objc func passwordEyeButtonClick() {
+//        self.isSecureTextEntry = !self.isSecureTextEntry
+//        setPasswordEyeImage(sender as! UIButton)
+//    }
+//
+//
+//}
 // MARK: - Delegate
 // 팝업창 Delegate
 extension SignUpEmailPwVC : AlertDelegate {
