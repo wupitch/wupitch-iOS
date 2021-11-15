@@ -43,20 +43,10 @@ class CrewFilterVC: UIViewController {
         
         setStyle()
         textFieldDelegate()
+        setTimeBtn()
     }
     
     private func setStyle() {
-        startTimeBtn.setTitleColor(UIColor.gray02, for: .normal)
-        endTimeBtn.setTitleColor(UIColor.gray02, for: .normal)
-        betweenLabel.textColor = .gray02
-        startTimeBtn.makeRounded(cornerRadius: 8.adjusted)
-        endTimeBtn.makeRounded(cornerRadius: 8.adjusted)
-        startTimeBtn.layer.borderWidth = 1.adjusted
-        endTimeBtn.layer.borderWidth = 1.adjusted
-        startTimeBtn.layer.borderColor = UIColor.gray02.cgColor
-        endTimeBtn.layer.borderColor = UIColor.gray02.cgColor
-        startTimeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
-        endTimeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         
         // applyBtn default
         applyBtn.colorNextBtnStyle()
@@ -78,6 +68,23 @@ class CrewFilterVC: UIViewController {
         for j in 0...6 {
             dateBtns[j].graySportsBtn()
         }
+    }
+    
+    func setTimeBtn() {
+        startTimeBtn.setTitleColor(UIColor.gray02, for: .normal)
+        startTimeBtn.setTitle("00:00", for: .normal)
+        endTimeBtn.setTitle("00:00", for: .normal)
+        endTimeBtn.setTitleColor(UIColor.gray02, for: .normal)
+        betweenLabel.textColor = .gray02
+        startTimeBtn.makeRounded(cornerRadius: 8.adjusted)
+        endTimeBtn.makeRounded(cornerRadius: 8.adjusted)
+        startTimeBtn.layer.borderWidth = 1.adjusted
+        endTimeBtn.layer.borderWidth = 1.adjusted
+        startTimeBtn.layer.borderColor = UIColor.gray02.cgColor
+        endTimeBtn.layer.borderColor = UIColor.gray02.cgColor
+        startTimeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+        endTimeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+        isPicker = nil
     }
     
     func textFieldDelegate() {
@@ -131,7 +138,6 @@ class CrewFilterVC: UIViewController {
     
     
     @IBAction func touchUpEndTimeBtn(_ sender: Any) {
-        self.endTimeBtn.isEnabled = true
         let alertVC = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .time
@@ -156,7 +162,7 @@ class CrewFilterVC: UIViewController {
             let dateString = dateFormatter.string(from: datePicker.date)
             
             if let pickerData = self.isPicker {
-                if pickerData <= dateString {
+                if pickerData < dateString {
                     print(pickerData)
                     print(dateString)
                     self.endTimeBtn.setTitle(dateString, for: .normal)
@@ -165,12 +171,10 @@ class CrewFilterVC: UIViewController {
                     self.betweenLabel.textColor = .main
                 }
                 else {
-                    print("값이 전거보다 작음")
                     self.showToast(message: "종료시간이 시작시간보다 늦어야 해요!")
                 }
             }
             else {
-                print("앞에거부터입력해라")
                 self.showToast(message: "시작시간부터 입력해주세요!")
             }
         }
@@ -248,6 +252,7 @@ class CrewFilterVC: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    // 초기화 버튼
     @IBAction func touchUpResetBtn(_ sender: Any) {
         for i in 0...5 {
             if sportsBtns[i].status == true || ageBtns[i].status == true {
@@ -265,11 +270,7 @@ class CrewFilterVC: UIViewController {
                 crewCountBtns[i].defaultSportsBtn()
             }
         }
-        //startTimeTextField.defaultTapTextFiledStyle()
-        //startTimeTextField.textColor = .gray02
-        //endTImeTextField.defaultTapTextFiledStyle()
-        //endTImeTextField.textColor = .gray02
-        //betweenLabel.textColor = .gray02
+        setTimeBtn()
     }
     
     @IBAction func touchUpApplyBtn(_ sender: Any) {
@@ -298,6 +299,12 @@ class CrewFilterVC: UIViewController {
                 print("크루원수",i)
             }
         }
+        var i : String?
+        i = startTimeBtn.titleLabel?.text
+        var j : String?
+        j = endTimeBtn.titleLabel?.text
+        print("시작시간", i)
+        print("종료시간", j)
         self.tabBarController?.tabBar.isHidden = false
         navigationController?.popViewController(animated: true)
     }
