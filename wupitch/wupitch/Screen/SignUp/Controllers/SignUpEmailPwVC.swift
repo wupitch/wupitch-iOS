@@ -8,7 +8,7 @@
 import UIKit
 
 class SignUpEmailPwVC: UIViewController {
-
+    
     @IBOutlet weak var nextBtn: NextBtn!
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -19,11 +19,13 @@ class SignUpEmailPwVC: UIViewController {
     var passwordEyeClick = true
     var passwordEyeBtn = UIButton(type: .system)
     var resultIsSuccess : Bool = false
+    var pwResultIsSuccess : Bool = false
     lazy var emailValidationManage = EmailValidationService()
+    lazy var pwValidationManage = PwValidationService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setStyle()
         passwordEyeSecure()
     }
@@ -84,13 +86,13 @@ class SignUpEmailPwVC: UIViewController {
     @IBAction func touchUpNextBtn(_ sender: Any) {
         // 전체동의와 이용약관 개인정보 수집 및 이용 버튼이 눌렸을 때 다음 버튼 활성화
         // if  nextBtn.backgroundColor == .main {
-            // 버튼 클릭 시, 다음 스토리보드로 이동
-            let storyboard = UIStoryboard.init(name: "SignUpProfile", bundle: nil)
-            guard let dvc = storyboard.instantiateViewController(identifier: "SignUpProfileVC") as? SignUpProfileVC else {return}
-            self.navigationController?.pushViewController(dvc, animated: true)
+        // 버튼 클릭 시, 다음 스토리보드로 이동
+        let storyboard = UIStoryboard.init(name: "SignUpProfile", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(identifier: "SignUpProfileVC") as? SignUpProfileVC else {return}
+        self.navigationController?.pushViewController(dvc, animated: true)
         // }
         // else {
-           // nextBtn.backgroundColor = .gray03
+        // nextBtn.backgroundColor = .gray03
         // }
     }
     
@@ -153,7 +155,13 @@ extension SignUpEmailPwVC : UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        emailValidationManage.postEmailValidation(EmailValidationRequest(email: emailTextField.text ?? "값없음"), delegate: self)
+        if emailTextField.resignFirstResponder() {
+            emailValidationManage.postEmailValidation(EmailValidationRequest(email: emailTextField.text ?? "값없음"), delegate: self)
+        }
+        else {
+            pwValidationManage.postPwValidation(PwValidationRequest(password: passwordTextField.text ?? "값없음"), delegate: self)
+            
+        }
         
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -180,7 +188,7 @@ extension SignUpEmailPwVC : AlertDelegate {
     }
 }
 
-// 이메일 중복 api 연결
+// 이메일, 패스워드 중복 api 연결
 extension SignUpEmailPwVC {
     func didSuccessEmailValidation(result: EmailValidationData) {
         print("데이터가 성공적으로 들어왔습니다.")
@@ -200,11 +208,35 @@ extension SignUpEmailPwVC {
             emailLabel.text = "사용 가능한 이메일입니다."
             emailLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
             emailLabel.textColor = UIColor(red: 72/255, green: 190/255, blue: 0/255, alpha: 1)
-            //if textViewState == true {
+            if pwResultIsSuccess == true {
                 nextBtn.backgroundColor = .main
-            //}
+            }
         }
     }
+        
+    func didSuccessPwValidation(result: PwValidationData) {
+        print("데이터가 성공적으로 들어왔습니다.")
+        print(result.isSuccess)
+        pwResultIsSuccess = result.isSuccess
+        
+        if result.isSuccess == false {
+            passwordLabel.alpha = 1
+            passwordLabel.text = "사용하실 수 없는 비밀번호입니다."
+            passwordLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+            passwordLabel.textColor = UIColor(red: 241/255, green: 0/255, blue: 0/255, alpha: 1)
+            nextBtn.backgroundColor = .gray03
+        }
+        else {
+            passwordLabel.alpha = 1
+            passwordLabel.text = "사용 가능한 비밀번호입니다."
+            passwordLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+            passwordLabel.textColor = UIColor(red: 72/255, green: 190/255, blue: 0/255, alpha: 1)
+            if resultIsSuccess == true {
+                nextBtn.backgroundColor = .main
+            }
+        }
+    }
+
     func failedToEmailRequest(message: String) {
         print("데이터가 들어오지 않았습니다.")
         
