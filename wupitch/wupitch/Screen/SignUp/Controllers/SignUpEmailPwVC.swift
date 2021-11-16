@@ -18,6 +18,8 @@ class SignUpEmailPwVC: UIViewController {
     
     var passwordEyeClick = true
     var passwordEyeBtn = UIButton(type: .system)
+    var resultIsSuccess : Bool = false
+    lazy var emailValidationManage = EmailValidationService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,14 +115,6 @@ class SignUpEmailPwVC: UIViewController {
     
 }
 
-
-extension SignUpEmailPwVC : UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-    }
-    
-}
-
 //extension UITextField {
 //    private func setPasswordEyeImage(_ button: UIButton) {
 //        if(isSecureTextEntry){
@@ -150,6 +144,26 @@ extension SignUpEmailPwVC : UITextFieldDelegate {
 //
 //
 //}
+
+
+extension SignUpEmailPwVC : UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        emailTextField.textColor = .bk
+        passwordTextField.textColor = .bk
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        emailValidationManage.postEmailValidation(EmailValidationRequest(email: emailTextField.text ?? "값없음"), delegate: self)
+        
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        return true
+    }
+    
+}
+
 // MARK: - Delegate
 // 팝업창 Delegate
 extension SignUpEmailPwVC : AlertDelegate {
@@ -163,5 +177,36 @@ extension SignUpEmailPwVC : AlertDelegate {
                 SignUpUserInfo.shared.dispose()
             }
         }
+    }
+}
+
+// 이메일 중복 api 연결
+extension SignUpEmailPwVC {
+    func didSuccessEmailValidation(result: EmailValidationData) {
+        print("데이터가 성공적으로 들어왔습니다.")
+        print(result.isSuccess)
+        
+        resultIsSuccess = result.isSuccess
+        
+        if result.isSuccess == false {
+            emailLabel.alpha = 1
+            emailLabel.text = "사용 불가능한 이메일입니다."
+            emailLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+            emailLabel.textColor = UIColor(red: 241/255, green: 0/255, blue: 0/255, alpha: 1)
+            nextBtn.backgroundColor = .gray03
+        }
+        else {
+            emailLabel.alpha = 1
+            emailLabel.text = "사용 가능한 이메일입니다."
+            emailLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+            emailLabel.textColor = UIColor(red: 72/255, green: 190/255, blue: 0/255, alpha: 1)
+            //if textViewState == true {
+                nextBtn.backgroundColor = .main
+            //}
+        }
+    }
+    func failedToEmailRequest(message: String) {
+        print("데이터가 들어오지 않았습니다.")
+        
     }
 }

@@ -59,13 +59,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wk-y7-7Ak">
-                                <rect key="frame" x="20" y="262" width="42" height="21"/>
+                                <rect key="frame" x="20" y="264" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GED-r3-Whl">
-                                <rect key="frame" x="20" y="291" width="375" height="49"/>
+                                <rect key="frame" x="20" y="293" width="375" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="M1X-Kj-U9h"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" secondItem="GED-r3-Whl" secondAttribute="height" multiplier="336:44" id="RNd-yM-5AP"/>
@@ -74,7 +74,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3w3-JP-fkz">
-                                <rect key="frame" x="20" y="344" width="42" height="21"/>
+                                <rect key="frame" x="20" y="348" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -112,8 +112,8 @@
                             <constraint firstItem="vZw-Lp-par" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="v4h-nf-R0R"/>
                             <constraint firstItem="pqw-Fn-nga" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="vET-X1-0tn"/>
                             <constraint firstItem="5k2-w4-dRx" firstAttribute="top" secondItem="pqw-Fn-nga" secondAttribute="bottom" constant="48" id="yDo-F4-6Wz"/>
-                            <constraint firstItem="9Wk-y7-7Ak" firstAttribute="top" secondItem="5k2-w4-dRx" secondAttribute="bottom" constant="4" id="zA6-RI-b74"/>
-                            <constraint firstItem="3w3-JP-fkz" firstAttribute="top" secondItem="GED-r3-Whl" secondAttribute="bottom" constant="4" id="zmt-Kr-NXn"/>
+                            <constraint firstItem="9Wk-y7-7Ak" firstAttribute="top" secondItem="5k2-w4-dRx" secondAttribute="bottom" constant="6" id="zA6-RI-b74"/>
+                            <constraint firstItem="3w3-JP-fkz" firstAttribute="top" secondItem="GED-r3-Whl" secondAttribute="bottom" constant="6" id="zmt-Kr-NXn"/>
                         </constraints>
                     </view>
                     <connections>
