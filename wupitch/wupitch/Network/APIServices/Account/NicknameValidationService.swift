@@ -21,7 +21,6 @@ struct NicknameValidationService {
                 switch response.result {
                 case .success(let response):
                     delegate.didSuccessNicknameValidation(result: response)
-                    print("성공햇니",response)
                 case .failure(let error):
                     print("오류가 났습니다",error.localizedDescription)
                     delegate.failedToRequest(message: "오류가났습니다.")

@@ -83,17 +83,24 @@ class SignUpEmailPwVC: UIViewController {
         passwordEyeClick = !passwordEyeClick
     }
     
+    // 다음 버튼
     @IBAction func touchUpNextBtn(_ sender: Any) {
-        // 전체동의와 이용약관 개인정보 수집 및 이용 버튼이 눌렸을 때 다음 버튼 활성화
-        // if  nextBtn.backgroundColor == .main {
-        // 버튼 클릭 시, 다음 스토리보드로 이동
-        let storyboard = UIStoryboard.init(name: "SignUpProfile", bundle: nil)
-        guard let dvc = storyboard.instantiateViewController(identifier: "SignUpProfileVC") as? SignUpProfileVC else {return}
-        self.navigationController?.pushViewController(dvc, animated: true)
-        // }
-        // else {
-        // nextBtn.backgroundColor = .gray03
-        // }
+        if  nextBtn.backgroundColor == .main {
+            
+            // 다음 버튼 클릭 시, 싱글톤에 이메일, 패스워드 넣어주기
+            SignUpUserInfo.shared.email = emailTextField.text
+            SignUpUserInfo.shared.password = passwordTextField.text
+            print("이메일 >>>>>>>>>>",SignUpUserInfo.shared.email ?? "값이 없어요!")
+            print("비밀번호 >>>>>>>>>>",SignUpUserInfo.shared.password ?? "값이 없어요!")
+            
+            //버튼 클릭 시, 다음 스토리보드로 이동
+            let storyboard = UIStoryboard.init(name: "SignUpProfile", bundle: nil)
+            guard let dvc = storyboard.instantiateViewController(identifier: "SignUpProfileVC") as? SignUpProfileVC else {return}
+            self.navigationController?.pushViewController(dvc, animated: true)
+        }
+        else {
+            nextBtn.backgroundColor = .gray03
+        }
     }
     
     // 엑스 버튼

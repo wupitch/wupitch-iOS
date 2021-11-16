@@ -7,10 +7,6 @@
 
 import Foundation
 
-// 패스워드 중복인지 아닌지 구분해주는 api
-// MARK: - PwValidationData
-struct PwValidationData: Codable {
-    let isSuccess: Bool
-    let code: Int
-    let message: String
+struct PwValidationRequest: Codable {
+    var password: String
 }

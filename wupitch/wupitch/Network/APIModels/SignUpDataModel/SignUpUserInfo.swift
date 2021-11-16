@@ -17,9 +17,15 @@ class SignUpUserInfo {
     static let shared = SignUpUserInfo()
     // 바텀시트 로그인, 메인 나누기
     var bottomSheetMethod: BottomSheetMethod?
-    // 이메일,패스워드
+    
+    
+    // 회원가입에 넣을 값
+    var isPushAgree : Bool?
     var email : String?
-    var pw : String?
+    var password : String?
+    var nickname : String?
+    var introduce : String?
+    
     // 지역선택
     var region : Int?
     // 관심 스포츠 선택
@@ -28,8 +34,8 @@ class SignUpUserInfo {
     // 연령대 선택
     var age : Int?
     // 프로필 설정
-    var nickName : String?
-    var userIntroduce : String?
+    //var nickName : String?
+    //var userIntroduce : String?
     // 신분증 사진
     var idImg : UIImage?
     
@@ -50,8 +56,8 @@ class SignUpUserInfo {
         SignUpUserInfo.shared.region = nil
         SignUpUserInfo.shared.etcText = nil
         SignUpUserInfo.shared.age = nil
-        SignUpUserInfo.shared.nickName = nil
-        SignUpUserInfo.shared.userIntroduce = nil
+        //SignUpUserInfo.shared.nickName = nil
+        //SignUpUserInfo.shared.userIntroduce = nil
         SignUpUserInfo.shared.idImg = nil
     }
     

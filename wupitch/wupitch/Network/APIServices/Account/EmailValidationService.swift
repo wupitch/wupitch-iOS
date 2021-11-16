@@ -21,7 +21,6 @@ struct EmailValidationService {
                 switch response.result {
                 case .success(let response):
                     delegate.didSuccessEmailValidation(result: response)
-                    print("성공햇니",response)
                 case .failure(let error):
                     print("오류가 났습니다",error.localizedDescription)
                     delegate.failedToEmailRequest(message: "오류가 났습니다.")

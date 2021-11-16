@@ -24,6 +24,7 @@ class SignUpProfileVC: UIViewController {
     let maxLength = 6
     var resultIsSuccess : Bool = false
     lazy var nicknameValidationManage = NicknameValidationService()
+    lazy var signUpManager = SignUpService()
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -102,12 +103,29 @@ class SignUpProfileVC: UIViewController {
         }
     }
     
-    // startBtn
+    // 다음버튼
     @IBAction func touchUpStartBtn(_ sender: Any) {
         if startBtn.backgroundColor == .main {
+            // 싱글톤에 닉네임, 자기소개 넣어주기
+            SignUpUserInfo.shared.nickname = nickNameTextField.text
+            SignUpUserInfo.shared.introduce = infoTextView.text
+            print("닉네임 >>>>>>>>>>", SignUpUserInfo.shared.nickname ?? "값이 없어요!")
+            print("자기소개 >>>>>>>>>>", SignUpUserInfo.shared.introduce ?? "값이 없어요!")
+            
             // 다음 스토리 보드로 이동
             let storyboard = UIStoryboard.init(name: "SignUpID", bundle: nil)
             guard let dvc = storyboard.instantiateViewController(identifier: "SignUpIDVC") as? SignUpIDVC else {return}
+            
+            // 신분증 인증 전의 회원가입 데이터들을 한번에 보내기
+            if let email = SignUpUserInfo.shared.email,
+               let introduce = SignUpUserInfo.shared.introduce,
+               let isPushAgree = SignUpUserInfo.shared.isPushAgree,
+               let nickname = SignUpUserInfo.shared.nickname,
+               let password = SignUpUserInfo.shared.password {
+                
+                signUpManager.postSignUp(SignUpRequest(email: email, introduce: introduce, isPushAgree: isPushAgree, nickname: nickname, password: password), delegate: self)
+            }
+            
             self.navigationController?.pushViewController(dvc, animated: true)
         }
         else {
@@ -135,7 +153,7 @@ extension SignUpProfileVC: UITextViewDelegate, UITextFieldDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         // 텍스트 싱글톤에 저장
-        SignUpUserInfo.shared.userIntroduce = infoTextView.text
+        //SignUpUserInfo.shared.userIntroduce = infoTextView.text
         
         if textView.text.isEmpty {
             textViewState = false
@@ -144,7 +162,7 @@ extension SignUpProfileVC: UITextViewDelegate, UITextFieldDelegate {
             startBtn.backgroundColor = .gray03
             
             // 받은 값 초기화
-            SignUpUserInfo.shared.userIntroduce = nil
+           // SignUpUserInfo.shared.userIntroduce = nil
         }
     }
     
@@ -181,8 +199,7 @@ extension SignUpProfileVC: UITextViewDelegate, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         nicknameValidationManage.postNicknameValidation(NicknameValidationRequest(nickname: nickNameTextField.text ?? "값없음"), delegate: self)
-        // 텍스트 싱글톤에 저장
-        SignUpUserInfo.shared.nickName = nickNameTextField.text
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -230,10 +247,22 @@ extension SignUpProfileVC {
             }
         }
     }
+    
+    // 회원가입 api -> 사진 인증 넘어가기 전, 다음 버튼 누르면 값을 한번에 넣어주자!
+    func didSuccessSignUp(result: SignUpResult) {
+        print("데이터가 성공적으로 들어왔습니다.")
+        // 자동로그인을 위해 유저디폴트에 유저 토큰 저장
+        UserDefaults.standard.set(result.jwt, forKey: "userToken")
+        // 혹시모르니 유저 아이디도 저장
+        UserDefaults.standard.set(result.accountID, forKey: "userID")
+    }
+    
     func failedToRequest(message: String) {
         print("데이터가 들어오지 않았습니다.")
         
     }
 }
+
+
 
 

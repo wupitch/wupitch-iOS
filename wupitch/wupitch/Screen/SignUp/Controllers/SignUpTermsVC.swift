@@ -85,6 +85,9 @@ class SignUpTermsVC: UIViewController {
     @IBAction func touchUpNextBtn(_ sender: UIButton) {
         // 전체동의와 이용약관 개인정보 수집 및 이용 버튼이 눌렸을 때 다음 버튼 활성화
         if  nextBtn.backgroundColor == .main {
+            // 푸시알림버튼 싱글톤에 저장
+            SignUpUserInfo.shared.isPushAgree = agreeBtn[2].status
+            print("푸시알림 >>>>>>>>>>", SignUpUserInfo.shared.isPushAgree ?? "값이 없어요!")
             // 버튼 클릭 시, 다음 스토리보드로 이동
             let storyboard = UIStoryboard.init(name: "SignUpEmailPw", bundle: nil)
             guard let dvc = storyboard.instantiateViewController(identifier: "SignUpEmailPwVC") as? SignUpEmailPwVC else {return}

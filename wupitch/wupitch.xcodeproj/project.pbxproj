@@ -138,6 +138,11 @@
 		DDC4DAF2274389AA00D79CC8 /* PwValidationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAF1274389AA00D79CC8 /* PwValidationData.swift */; };
 		DDC4DAF4274389BC00D79CC8 /* PwValidationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAF3274389BC00D79CC8 /* PwValidationRequest.swift */; };
 		DDC4DAF627438A3100D79CC8 /* PwValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAF527438A3100D79CC8 /* PwValidationService.swift */; };
+		DDC4DAF82743D1B000D79CC8 /* SignUpCamera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DAF72743D1B000D79CC8 /* SignUpCamera.storyboard */; };
+		DDC4DAFA2743D1C000D79CC8 /* SignUpCameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAF92743D1C000D79CC8 /* SignUpCameraVC.swift */; };
+		DDC4DAFC2743FBD500D79CC8 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAFB2743FBD500D79CC8 /* SignUpService.swift */; };
+		DDC4DAFF2743FC1F00D79CC8 /* SignUpData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAFE2743FC1F00D79CC8 /* SignUpData.swift */; };
+		DDC4DB012743FC2F00D79CC8 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB002743FC2F00D79CC8 /* SignUpRequest.swift */; };
 		DDE0EE582728163900C46821 /* JoinAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE572728163900C46821 /* JoinAlert.storyboard */; };
 		DDE0EE5A2728164E00C46821 /* JoinAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0EE592728164E00C46821 /* JoinAlertVC.swift */; };
 		DDE0EE5C272873EC00C46821 /* SignUpKakaoComplete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */; };
@@ -293,6 +298,11 @@
 		DDC4DAF1274389AA00D79CC8 /* PwValidationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwValidationData.swift; sourceTree = "<group>"; };
 		DDC4DAF3274389BC00D79CC8 /* PwValidationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwValidationRequest.swift; sourceTree = "<group>"; };
 		DDC4DAF527438A3100D79CC8 /* PwValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwValidationService.swift; sourceTree = "<group>"; };
+		DDC4DAF72743D1B000D79CC8 /* SignUpCamera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpCamera.storyboard; sourceTree = "<group>"; };
+		DDC4DAF92743D1C000D79CC8 /* SignUpCameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCameraVC.swift; sourceTree = "<group>"; };
+		DDC4DAFB2743FBD500D79CC8 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
+		DDC4DAFE2743FC1F00D79CC8 /* SignUpData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpData.swift; sourceTree = "<group>"; };
+		DDC4DB002743FC2F00D79CC8 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		DDE0EE572728163900C46821 /* JoinAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinAlert.storyboard; sourceTree = "<group>"; };
 		DDE0EE592728164E00C46821 /* JoinAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinAlertVC.swift; sourceTree = "<group>"; };
 		DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpKakaoComplete.storyboard; sourceTree = "<group>"; };
@@ -343,6 +353,7 @@
 		DD1BFC1E273663230042C51F /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				DDC4DAFD2743FBEC00D79CC8 /* SignUp */,
 				DDC4DAEA274381FC00D79CC8 /* Password */,
 				DDC4DAE9274381EF00D79CC8 /* Email */,
 				DD1BFC282736DCA60042C51F /* Nickname */,
@@ -357,6 +368,7 @@
 				DD1BFC22273664970042C51F /* NicknameValidationService.swift */,
 				DDC4DAEF2743833E00D79CC8 /* EmailValidationService.swift */,
 				DDC4DAF527438A3100D79CC8 /* PwValidationService.swift */,
+				DDC4DAFB2743FBD500D79CC8 /* SignUpService.swift */,
 				DD1BFC262736DC8C0042C51F /* InformationService.swift */,
 			);
 			path = Account;
@@ -548,12 +560,12 @@
 			path = UIComponent;
 			sourceTree = "<group>";
 		};
-		DD3A30C2272ADF2000D711C6 /* SignUp */ = {
+		DD3A30C2272ADF2000D711C6 /* SignUpDataModel */ = {
 			isa = PBXGroup;
 			children = (
 				DD3A30C3272ADF6200D711C6 /* SignUpUserInfo.swift */,
 			);
-			path = SignUp;
+			path = SignUpDataModel;
 			sourceTree = "<group>";
 		};
 		DD3A30C7272DA31200D711C6 /* Kakao */ = {
@@ -882,6 +894,15 @@
 			path = Password;
 			sourceTree = "<group>";
 		};
+		DDC4DAFD2743FBEC00D79CC8 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				DDC4DAFE2743FC1F00D79CC8 /* SignUpData.swift */,
+				DDC4DB002743FC2F00D79CC8 /* SignUpRequest.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 		DDE0EE54272815FD00C46821 /* PopupAlert */ = {
 			isa = PBXGroup;
 			children = (
@@ -983,7 +1004,7 @@
 			children = (
 				DDC4DADF2741072B00D79CC8 /* Area */,
 				DD1BFC1E273663230042C51F /* Account */,
-				DD3A30C2272ADF2000D711C6 /* SignUp */,
+				DD3A30C2272ADF2000D711C6 /* SignUpDataModel */,
 				DDE0EE65272932A000C46821 /* SignIn */,
 				DDED0119271B33DD00C2C343 /* Onboarding */,
 			);
@@ -1016,6 +1037,7 @@
 				DD9EEDD1273F77BE00E02396 /* SignUpEmailPw.storyboard */,
 				DD3ACBBC2721082300EBC201 /* SignUpProfile.storyboard */,
 				DD3ACBC127216D2500EBC201 /* SignUpID.storyboard */,
+				DDC4DAF72743D1B000D79CC8 /* SignUpCamera.storyboard */,
 				DD3ACBC52721709100EBC201 /* SignUpComplete.storyboard */,
 			);
 			path = Storyboards;
@@ -1028,6 +1050,7 @@
 				DD9EEDD3273F77E700E02396 /* SignUpEmailPwVC.swift */,
 				DD3ACBBE2721083700EBC201 /* SignUpProfileVC.swift */,
 				DD3ACBC327216D4400EBC201 /* SignUpIDVC.swift */,
+				DDC4DAF92743D1C000D79CC8 /* SignUpCameraVC.swift */,
 				DD3ACBC7272170A800EBC201 /* SignUpCompleteVC.swift */,
 			);
 			path = Controllers;
@@ -1097,6 +1120,7 @@
 				DD3ACBB52720FFC600EBC201 /* TermsOfUse.storyboard in Resources */,
 				DD3ACBBD2721082300EBC201 /* SignUpProfile.storyboard in Resources */,
 				DDE0EE582728163900C46821 /* JoinAlert.storyboard in Resources */,
+				DDC4DAF82743D1B000D79CC8 /* SignUpCamera.storyboard in Resources */,
 				DD7BEBC427315D3A00DB2F60 /* DetailCrewImgCVCell.xib in Resources */,
 				DD3ACBC62721709200EBC201 /* SignUpComplete.storyboard in Resources */,
 				DD295DAC27181E3D008CFC64 /* LaunchScreen.storyboard in Resources */,
@@ -1211,6 +1235,7 @@
 				DD1BFC512738E91E0042C51F /* MakeCrewPhotoVC.swift in Sources */,
 				DD7BEBCB27315DF800DB2F60 /* DetailCrewIntroduceCVCell.swift in Sources */,
 				DD3ACBB7272104D300EBC201 /* TermsOfUseVC.swift in Sources */,
+				DDC4DAFA2743D1C000D79CC8 /* SignUpCameraVC.swift in Sources */,
 				DD7BEBCF27315E1900DB2F60 /* DtailCrewContentCVCell.swift in Sources */,
 				DD3A30D5272DA75400D711C6 /* TabbarVC.swift in Sources */,
 				DD6728432725563A001E1355 /* UIView.swift in Sources */,
@@ -1225,6 +1250,7 @@
 				DD3E37C6272F928E00C4192E /* CrewCVCell.swift in Sources */,
 				DD9EEDC3273A667D00E02396 /* CrewAlertTVCell.swift in Sources */,
 				DD61E4C6271EBCE6007504DE /* LocationPickerVC.swift in Sources */,
+				DDC4DAFF2743FC1F00D79CC8 /* SignUpData.swift in Sources */,
 				DD9EEDBD273A492D00E02396 /* CrewAlertVC.swift in Sources */,
 				DDE0EE672729333300C46821 /* KakaoLoginService.swift in Sources */,
 				DD2D63B227268A34007CEC57 /* LevelModalVC.swift in Sources */,
@@ -1281,12 +1307,14 @@
 				DD1BFC25273665990042C51F /* NicknameValidationRequest.swift in Sources */,
 				DDC3B5142733C4D600FF4959 /* VC.swift in Sources */,
 				DD1BFC23273664970042C51F /* NicknameValidationService.swift in Sources */,
+				DDC4DAFC2743FBD500D79CC8 /* SignUpService.swift in Sources */,
 				DD3A30C6272D1E1400D711C6 /* KakaoLoginRequest.swift in Sources */,
 				DDC4DAE8274275F300D79CC8 /* ToastMessageVC.swift in Sources */,
 				DD6728352723E582001E1355 /* LocationPickerData.swift in Sources */,
 				DD1BFC3D2738B7ED0042C51F /* LabelFontSize.swift in Sources */,
 				DDC3B51B2735565C00FF4959 /* MainLocationPickerData.swift in Sources */,
 				DD3ACBC427216D4400EBC201 /* SignUpIDVC.swift in Sources */,
+				DDC4DB012743FC2F00D79CC8 /* SignUpRequest.swift in Sources */,
 				DDE0EE6D2729908B00C46821 /* SignUpAgeVC.swift in Sources */,
 				DDC4DAF627438A3100D79CC8 /* PwValidationService.swift in Sources */,
 				DD3A30CE272DA3BD00D711C6 /* AppleLoginService.swift in Sources */,

@@ -9,6 +9,7 @@ import UIKit
 
 class MakeCrewRegionVC: UIViewController {
 
+    @IBOutlet weak var placeLabel: LabelFontSize!
     @IBOutlet weak var nextBtn: NextBtn!
     @IBOutlet weak var modalView: UIView!
     @IBOutlet weak var titleLabel: LabelFontSize!
@@ -29,6 +30,7 @@ class MakeCrewRegionVC: UIViewController {
         placeTextField.delegate = self
         // modalView
         modalView.alpha = 0.0
+        placeLabel.CrewNoPlaceLabel()
         // titleLabel Style
         titleLabel.makeCrewTitleLabel()
         // textField Style

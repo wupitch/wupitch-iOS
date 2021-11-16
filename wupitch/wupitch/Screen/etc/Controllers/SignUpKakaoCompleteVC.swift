@@ -39,7 +39,7 @@ class SignUpKakaoCompleteVC: UIViewController {
     }
     
     func changeTitleLabelToNickname() {
-        titleLabel.text = (SignUpUserInfo.shared.nickName ?? "닉네임없음") + " 님, 환영합니다"
+        //titleLabel.text = (SignUpUserInfo.shared.nickName ?? "닉네임없음") + " 님, 환영합니다"
     }
     
     // 홈으로 이동

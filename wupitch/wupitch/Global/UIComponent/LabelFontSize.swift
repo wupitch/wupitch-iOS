@@ -49,4 +49,9 @@ extension LabelFontSize {
         self.textColor = .bk
     }
     
+    func CrewNoPlaceLabel() {
+        self.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+        self.textColor = .gray02
+    }
+    
 }

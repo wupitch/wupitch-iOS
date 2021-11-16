@@ -133,7 +133,7 @@
                                     <constraint firstAttribute="trailing" secondItem="ocF-kH-9bK" secondAttribute="trailing" constant="19" id="zeQ-RS-v7e"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2f-Fw-zGO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2f-Fw-zGO" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
                                 <rect key="frame" x="20" y="362.5" width="202" height="17"/>
                                 <attributedString key="attributedText">
                                     <fragment content="* 공란 시 ‘장소 미정’으로 표기됩니다.">
@@ -184,6 +184,7 @@
                         <outlet property="dongTextField" destination="gJ9-LD-WhA" id="eDr-FP-7l5"/>
                         <outlet property="modalView" destination="eoY-7b-r1N" id="EAR-gi-Yyc"/>
                         <outlet property="nextBtn" destination="ocF-kH-9bK" id="J0N-z7-aDX"/>
+                        <outlet property="placeLabel" destination="R2f-Fw-zGO" id="2bt-7b-jgZ"/>
                         <outlet property="placeTextField" destination="CFx-g9-ahd" id="Snb-Cd-NUf"/>
                         <outlet property="regionTextField" destination="cVC-m8-j5x" id="h1f-xW-mra"/>
                         <outlet property="titleLabel" destination="ghC-iy-Hzn" id="fzJ-HG-40a"/>
