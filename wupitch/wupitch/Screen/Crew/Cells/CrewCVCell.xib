@@ -47,20 +47,6 @@
                                     <constraint firstItem="K38-yX-mLM" firstAttribute="leading" secondItem="0kG-wR-iOO" secondAttribute="leading" constant="8" id="sxl-As-vdt"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XeR-mQ-qTr">
-                                <rect key="frame" x="203.5" y="19" width="6" height="6"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="6" id="fnd-LY-VyB"/>
-                                    <constraint firstAttribute="height" constant="6" id="lf7-us-D5S"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70G-F8-XiA">
-                                <rect key="frame" x="217.5" y="11.5" width="41.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이나러ㅑ이라넝랴ㅣ나러ㅑ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEp-Cj-1bh">
                                 <rect key="frame" x="144" y="42" width="154" height="20.5"/>
                                 <constraints>
@@ -103,23 +89,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="EZM-tH-r4C" firstAttribute="top" secondItem="D4M-JI-uXA" secondAttribute="top" id="ERx-g9-cSf"/>
-                            <constraint firstItem="70G-F8-XiA" firstAttribute="centerY" secondItem="XeR-mQ-qTr" secondAttribute="centerY" id="EgL-hT-ggq"/>
                             <constraint firstItem="ZEp-Cj-1bh" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="rj9-nc-COk" secondAttribute="leading" id="Ifh-fI-S5V"/>
                             <constraint firstItem="bAB-Nd-Awu" firstAttribute="top" secondItem="ZEp-Cj-1bh" secondAttribute="bottom" constant="8" id="J3I-Sl-XpT"/>
                             <constraint firstItem="0kG-wR-iOO" firstAttribute="top" secondItem="D4M-JI-uXA" secondAttribute="top" constant="10" id="Rdf-vE-den"/>
                             <constraint firstAttribute="bottom" secondItem="bAB-Nd-Awu" secondAttribute="bottom" constant="10" id="WFP-No-GTt"/>
                             <constraint firstItem="0kG-wR-iOO" firstAttribute="leading" secondItem="EZM-tH-r4C" secondAttribute="trailing" constant="16" id="Y0N-n7-r05"/>
+                            <constraint firstItem="rj9-nc-COk" firstAttribute="centerY" secondItem="0kG-wR-iOO" secondAttribute="centerY" id="YlW-Xs-VUA"/>
                             <constraint firstAttribute="trailing" secondItem="txc-cA-08c" secondAttribute="trailing" constant="10" id="eBh-nP-7yq"/>
-                            <constraint firstItem="txc-cA-08c" firstAttribute="centerY" secondItem="70G-F8-XiA" secondAttribute="centerY" id="ecv-EG-xe0"/>
-                            <constraint firstItem="ZEp-Cj-1bh" firstAttribute="top" secondItem="70G-F8-XiA" secondAttribute="bottom" constant="9.5" id="hqn-p0-Iva"/>
                             <constraint firstAttribute="bottom" secondItem="EZM-tH-r4C" secondAttribute="bottom" id="lGJ-yQ-vzd"/>
-                            <constraint firstItem="70G-F8-XiA" firstAttribute="leading" secondItem="XeR-mQ-qTr" secondAttribute="trailing" constant="8" id="mTF-3a-0aN"/>
                             <constraint firstItem="EZM-tH-r4C" firstAttribute="leading" secondItem="D4M-JI-uXA" secondAttribute="leading" id="nHa-y1-tCi"/>
                             <constraint firstItem="ZEp-Cj-1bh" firstAttribute="leading" secondItem="0kG-wR-iOO" secondAttribute="leading" id="q3b-Sh-IC3"/>
                             <constraint firstItem="bAB-Nd-Awu" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="rj9-nc-COk" secondAttribute="leading" id="rbM-eW-vcu"/>
-                            <constraint firstItem="XeR-mQ-qTr" firstAttribute="centerY" secondItem="0kG-wR-iOO" secondAttribute="centerY" id="vik-B0-S5t"/>
                             <constraint firstItem="ZEp-Cj-1bh" firstAttribute="top" secondItem="0kG-wR-iOO" secondAttribute="bottom" constant="8" id="w2J-pK-BJb"/>
-                            <constraint firstItem="XeR-mQ-qTr" firstAttribute="leading" secondItem="0kG-wR-iOO" secondAttribute="trailing" constant="8" id="xKe-57-4Jd"/>
                             <constraint firstItem="bAB-Nd-Awu" firstAttribute="leading" secondItem="ZEp-Cj-1bh" secondAttribute="leading" id="yfF-id-tEh"/>
                         </constraints>
                     </view>
@@ -135,10 +116,9 @@
             <size key="customSize" width="332" height="125"/>
             <connections>
                 <outlet property="bgView" destination="D4M-JI-uXA" id="TEJ-n2-Vel"/>
-                <outlet property="circleView" destination="XeR-mQ-qTr" id="qgS-Pd-1ag"/>
                 <outlet property="dayLabel" destination="akY-WE-iH1" id="rC1-wR-bBF"/>
+                <outlet property="imageView" destination="EZM-tH-r4C" id="uys-Wk-2HK"/>
                 <outlet property="pinImageView" destination="rj9-nc-COk" id="0Wc-wy-hyL"/>
-                <outlet property="regionLabel" destination="70G-F8-XiA" id="Kdu-aM-jFe"/>
                 <outlet property="subLabel" destination="qHZ-Ra-f1Z" id="vW7-DW-6MN"/>
                 <outlet property="tagNameLabel" destination="K38-yX-mLM" id="RZx-8O-1Ju"/>
                 <outlet property="tagNameView" destination="0kG-wR-iOO" id="og0-AS-gBH"/>

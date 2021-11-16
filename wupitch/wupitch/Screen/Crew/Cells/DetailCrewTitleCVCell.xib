@@ -38,20 +38,6 @@
                             <constraint firstItem="jxb-Gx-16W" firstAttribute="leading" secondItem="ZzZ-R9-mh1" secondAttribute="leading" constant="12" id="jfS-LT-0cE"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhI-yh-fN4">
-                        <rect key="frame" x="93.5" y="35" width="6" height="6"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="6" id="N2G-2Y-ZQZ"/>
-                            <constraint firstAttribute="height" constant="6" id="V7l-Xx-UeH"/>
-                        </constraints>
-                    </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVU-P9-Xwd">
-                        <rect key="frame" x="107.5" y="28" width="41.5" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rho-oK-xs1">
                         <rect key="frame" x="20" y="68" width="41.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -143,23 +129,17 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="Rho-oK-xs1" firstAttribute="leading" secondItem="ZzZ-R9-mh1" secondAttribute="leading" id="4y7-cL-7yn"/>
-                <constraint firstItem="QVU-P9-Xwd" firstAttribute="leading" secondItem="zhI-yh-fN4" secondAttribute="trailing" constant="8" id="6kA-pJ-5mI"/>
                 <constraint firstItem="ZzZ-R9-mh1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="24" id="Ahd-ZR-7S7"/>
                 <constraint firstItem="Tq2-r3-NkY" firstAttribute="top" secondItem="Rho-oK-xs1" secondAttribute="bottom" constant="14" id="BRr-cG-bzg"/>
                 <constraint firstItem="Tq2-r3-NkY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="Is6-eB-1mu"/>
-                <constraint firstItem="zhI-yh-fN4" firstAttribute="leading" secondItem="ZzZ-R9-mh1" secondAttribute="trailing" constant="8" id="KOi-hI-ZBF"/>
                 <constraint firstItem="Rho-oK-xs1" firstAttribute="top" secondItem="ZzZ-R9-mh1" secondAttribute="bottom" constant="16" id="PDi-Jw-LQ0"/>
-                <constraint firstItem="QVU-P9-Xwd" firstAttribute="centerY" secondItem="zhI-yh-fN4" secondAttribute="centerY" id="Tfj-b0-D8Z"/>
-                <constraint firstItem="zhI-yh-fN4" firstAttribute="centerY" secondItem="ZzZ-R9-mh1" secondAttribute="centerY" id="dSo-PL-Tyd"/>
                 <constraint firstItem="ZzZ-R9-mh1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="o1r-Mj-Mc1"/>
             </constraints>
             <size key="customSize" width="295" height="266"/>
             <connections>
                 <outlet property="bottomDateLabel" destination="Mci-bR-ElD" id="82T-Y0-Th2"/>
-                <outlet property="circleView" destination="zhI-yh-fN4" id="eIt-Av-nAe"/>
                 <outlet property="locationLabel" destination="lOF-jw-Zsp" id="ifk-IG-GMb"/>
                 <outlet property="moneyLabel" destination="r3W-y1-0jq" id="mol-Gu-Fly"/>
-                <outlet property="regionLabel" destination="QVU-P9-Xwd" id="5L4-lP-Mpa"/>
                 <outlet property="tagLabel" destination="jxb-Gx-16W" id="8lm-qZ-ZeB"/>
                 <outlet property="tagView" destination="ZzZ-R9-mh1" id="cFv-bg-8m7"/>
                 <outlet property="titleLabel" destination="Rho-oK-xs1" id="BPE-4d-8u1"/>

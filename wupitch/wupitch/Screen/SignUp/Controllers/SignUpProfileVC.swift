@@ -152,17 +152,11 @@ extension SignUpProfileVC: UITextViewDelegate, UITextFieldDelegate {
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        // 텍스트 싱글톤에 저장
-        //SignUpUserInfo.shared.userIntroduce = infoTextView.text
-        
         if textView.text.isEmpty {
             textViewState = false
             textView.text = "내용을 입력해주세요."
             textView.textColor = .gray03
             startBtn.backgroundColor = .gray03
-            
-            // 받은 값 초기화
-           // SignUpUserInfo.shared.userIntroduce = nil
         }
     }
     
@@ -199,7 +193,6 @@ extension SignUpProfileVC: UITextViewDelegate, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         nicknameValidationManage.postNicknameValidation(NicknameValidationRequest(nickname: nickNameTextField.text ?? "값없음"), delegate: self)
-        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

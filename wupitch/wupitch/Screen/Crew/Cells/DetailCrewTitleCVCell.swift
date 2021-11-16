@@ -14,8 +14,6 @@ class DetailCrewTitleCVCell: UICollectionViewCell {
     @IBOutlet weak var bottomDateLabel: UILabel!
     @IBOutlet weak var topDateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var regionLabel: UILabel!
-    @IBOutlet weak var circleView: UIView!
     @IBOutlet weak var tagLabel: UILabel!
     @IBOutlet weak var tagView: UIView!
     
@@ -35,9 +33,7 @@ class DetailCrewTitleCVCell: UICollectionViewCell {
         tagView.makeRounded(cornerRadius: 14.adjusted)
         tagLabel.tintColor = .wht
         tagLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
-        circleView.makeRounded(cornerRadius: nil)
-        regionLabel.tintColor = .bk
-        regionLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 20.adjusted)
         titleLabel.tintColor = .bk
         

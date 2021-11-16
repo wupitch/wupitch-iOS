@@ -68,25 +68,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qTM-29-NCj">
-                                <rect key="frame" x="20" y="194" width="375" height="48"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="지역구 선택" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cVC-m8-j5x" customClass="tapTextField" customModule="wupitch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="179.5" height="48"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="cVC-m8-j5x" secondAttribute="height" multiplier="160:48" id="0aH-db-vxh"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="N6E-dC-Xr1"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="동 선택" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gJ9-LD-WhA" customClass="tapTextField" customModule="wupitch" customModuleProvider="target">
-                                        <rect key="frame" x="195.5" y="0.0" width="179.5" height="48"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="지역구 선택" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cVC-m8-j5x" customClass="tapTextField" customModule="wupitch" customModuleProvider="target">
+                                <rect key="frame" x="20" y="194" width="160" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="cVC-m8-j5x" secondAttribute="height" multiplier="160:48" id="0aH-db-vxh"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="N6E-dC-Xr1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUq-Bb-CUL" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
                                 <rect key="frame" x="20" y="274" width="29.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -153,12 +143,10 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qTM-29-NCj" secondAttribute="trailing" constant="19" id="1bT-WZ-lly"/>
                             <constraint firstItem="CFx-g9-ahd" firstAttribute="leading" secondItem="aUq-Bb-CUL" secondAttribute="leading" id="33M-3L-Zia"/>
                             <constraint firstItem="R2f-Fw-zGO" firstAttribute="leading" secondItem="CFx-g9-ahd" secondAttribute="leading" id="4ln-vX-qS2"/>
                             <constraint firstItem="CFx-g9-ahd" firstAttribute="top" secondItem="aUq-Bb-CUL" secondAttribute="bottom" constant="12" id="57e-bl-0u4"/>
-                            <constraint firstItem="qTM-29-NCj" firstAttribute="top" secondItem="ghC-iy-Hzn" secondAttribute="bottom" constant="32" id="86u-uS-a74"/>
-                            <constraint firstItem="aUq-Bb-CUL" firstAttribute="leading" secondItem="qTM-29-NCj" secondAttribute="leading" id="9Gc-vp-5Px"/>
+                            <constraint firstItem="aUq-Bb-CUL" firstAttribute="top" secondItem="cVC-m8-j5x" secondAttribute="bottom" constant="32" id="Bsi-We-ixx"/>
                             <constraint firstItem="flr-WN-XIU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ELT-CA-IEU"/>
                             <constraint firstItem="ghC-iy-Hzn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Fzr-p7-Tkb"/>
                             <constraint firstItem="eoY-7b-r1N" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="NOn-1f-ecd"/>
@@ -166,22 +154,22 @@
                             <constraint firstItem="ghC-iy-Hzn" firstAttribute="top" secondItem="KQY-Ax-NbQ" secondAttribute="bottom" constant="32" id="OR7-Wm-0Io"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="KQY-Ax-NbQ" secondAttribute="trailing" id="QM3-hZ-LWZ"/>
                             <constraint firstItem="eoY-7b-r1N" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="RVz-XF-wuw"/>
-                            <constraint firstItem="qTM-29-NCj" firstAttribute="leading" secondItem="ghC-iy-Hzn" secondAttribute="leading" id="SP0-Wk-tIb"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="flr-WN-XIU" secondAttribute="trailing" id="SWB-Xb-wNq"/>
                             <constraint firstItem="KQY-Ax-NbQ" firstAttribute="top" secondItem="flr-WN-XIU" secondAttribute="bottom" id="a4H-aO-n91"/>
                             <constraint firstItem="rSS-6Y-LGy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="bQ3-hH-uWu"/>
                             <constraint firstItem="R2f-Fw-zGO" firstAttribute="top" secondItem="CFx-g9-ahd" secondAttribute="bottom" constant="12" id="dqC-Yk-HFR"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="rSS-6Y-LGy" secondAttribute="bottom" id="edT-a0-J5f"/>
+                            <constraint firstItem="aUq-Bb-CUL" firstAttribute="leading" secondItem="cVC-m8-j5x" secondAttribute="leading" id="fnp-EC-veg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rSS-6Y-LGy" secondAttribute="trailing" id="hG6-hx-Ie5"/>
                             <constraint firstItem="KQY-Ax-NbQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="iCa-6V-G6F"/>
                             <constraint firstItem="eoY-7b-r1N" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="kne-Os-2ht"/>
-                            <constraint firstItem="aUq-Bb-CUL" firstAttribute="top" secondItem="qTM-29-NCj" secondAttribute="bottom" constant="32" id="ld2-Vn-nng"/>
                             <constraint firstAttribute="bottom" secondItem="eoY-7b-r1N" secondAttribute="bottom" id="p9u-Q1-3CT"/>
+                            <constraint firstItem="cVC-m8-j5x" firstAttribute="top" secondItem="ghC-iy-Hzn" secondAttribute="bottom" constant="32" id="t8X-66-32U"/>
                             <constraint firstItem="flr-WN-XIU" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="ttQ-oV-n6b"/>
+                            <constraint firstItem="cVC-m8-j5x" firstAttribute="leading" secondItem="ghC-iy-Hzn" secondAttribute="leading" id="ytP-Ch-WTB"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="dongTextField" destination="gJ9-LD-WhA" id="eDr-FP-7l5"/>
                         <outlet property="modalView" destination="eoY-7b-r1N" id="EAR-gi-Yyc"/>
                         <outlet property="nextBtn" destination="ocF-kH-9bK" id="J0N-z7-aDX"/>
                         <outlet property="placeLabel" destination="R2f-Fw-zGO" id="2bt-7b-jgZ"/>

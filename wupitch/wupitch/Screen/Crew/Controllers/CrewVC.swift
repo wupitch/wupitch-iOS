@@ -105,7 +105,6 @@ extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         }
         
         cell.tagNameLabel.text = "배드민턴"
-        cell.regionLabel.text = "법정동"
         cell.titleLabel.text = "가나다라마바이ㅏ러니아러니ㅏㅇ러사아자차카타파하"
         cell.dayLabel.text = "월요일 24:00 - 24:00"
         cell.subLabel.text = "가나다라마바사아자차카타파하"

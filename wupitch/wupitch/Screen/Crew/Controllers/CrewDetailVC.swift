@@ -143,8 +143,6 @@ extension CrewDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
                 return UICollectionViewCell()
             }
             cell.titleLabel.text = "가나다라마바사아자차카타파하"
-            cell.regionLabel.text = "법정동"
-            cell.circleView.backgroundColor = .red
             cell.tagView.backgroundColor = .red
             cell.tagLabel.text = "농구"
             cell.tagLabel.textColor = .wht
