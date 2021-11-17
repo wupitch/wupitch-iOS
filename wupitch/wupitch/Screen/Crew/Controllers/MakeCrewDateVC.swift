@@ -78,6 +78,7 @@ class MakeCrewDateVC: UIViewController {
         let alertVC = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .time
+        datePicker.minuteInterval = 15
         if #available(iOS 13.4, *) {
             datePicker.preferredDatePickerStyle = .wheels
         } else {
@@ -113,6 +114,7 @@ class MakeCrewDateVC: UIViewController {
         let alertVC = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .time
+        datePicker.minuteInterval = 15
         
         if #available(iOS 13.4, *) {
             datePicker.preferredDatePickerStyle = .wheels
@@ -446,6 +448,7 @@ class MakeCrewDateVC: UIViewController {
         }
 //        datePicker.locale = Locale(identifier: "ko-KR")
         datePicker.locale = Locale(identifier: "en_GB")
+        datePicker.minuteInterval = 15
         alertVC.view.addSubview(datePicker)
         alertVC.view.heightAnchor.constraint(equalToConstant: 350).isActive = true
         datePicker.translatesAutoresizingMaskIntoConstraints = false
@@ -481,6 +484,7 @@ class MakeCrewDateVC: UIViewController {
             // Fallback on earlier versions
         }
         datePicker.locale = Locale(identifier: "en_GB")
+        datePicker.minuteInterval = 15
         alertVC.view.addSubview(datePicker)
         alertVC.view.heightAnchor.constraint(equalToConstant: 350).isActive = true
         datePicker.translatesAutoresizingMaskIntoConstraints = false

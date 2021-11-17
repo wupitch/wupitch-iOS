@@ -105,6 +105,7 @@ class CrewFilterVC: UIViewController {
         let alertVC = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .time
+        datePicker.minuteInterval = 15
         if #available(iOS 13.4, *) {
             datePicker.preferredDatePickerStyle = .wheels
         } else {
@@ -141,6 +142,7 @@ class CrewFilterVC: UIViewController {
         let alertVC = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .time
+        datePicker.minuteInterval = 15
         
         if #available(iOS 13.4, *) {
             datePicker.preferredDatePickerStyle = .wheels

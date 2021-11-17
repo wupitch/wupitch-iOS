@@ -121,15 +121,14 @@ extension SignInVC : UITextFieldDelegate {
 extension SignInVC {
     func didSuccessSignIn(result: SignInResult) {
         print("데이터가 성공적으로 들어왔습니다.")
-        self.presentAlert(title: "로그인에 성공하였습니다.", isCancelActionIncluded: true) {
-            action in
-            UserDefaults.standard.string(forKey: "userToken") // 토큰 저장
-            
-            // 회원가입 페이지로 이동
-            let storyboard = UIStoryboard.init(name: "Crew", bundle: nil)
-            guard let dvc = storyboard.instantiateViewController(identifier: "CrewVC") as? CrewVC else {return}
-            self.navigationController?.pushViewController(dvc, animated: true)
-        }
+        
+        // 토큰 저장
+        UserDefaults.standard.string(forKey: "userToken")
+        
+        // 회원가입 페이지로 이동
+        let storyboard = UIStoryboard.init(name: "Crew", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(identifier: "CrewVC") as? CrewVC else {return}
+        self.navigationController?.pushViewController(dvc, animated: true)
     }
     
     func failedToRequest(message: String) {
