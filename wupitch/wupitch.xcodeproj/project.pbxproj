@@ -143,6 +143,12 @@
 		DDC4DAFC2743FBD500D79CC8 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAFB2743FBD500D79CC8 /* SignUpService.swift */; };
 		DDC4DAFF2743FC1F00D79CC8 /* SignUpData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAFE2743FC1F00D79CC8 /* SignUpData.swift */; };
 		DDC4DB012743FC2F00D79CC8 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB002743FC2F00D79CC8 /* SignUpRequest.swift */; };
+		DDC4DB0327440E6700D79CC8 /* SignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB0227440E6700D79CC8 /* SignInService.swift */; };
+		DDC4DB0627440EF700D79CC8 /* SignInData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB0527440EF700D79CC8 /* SignInData.swift */; };
+		DDC4DB0827440F0100D79CC8 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB0727440F0100D79CC8 /* SignInRequest.swift */; };
+		DDC4DB0A2744323C00D79CC8 /* UIAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB092744323C00D79CC8 /* UIAlert.swift */; };
+		DDC4DB0C274432A300D79CC8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB0B274432A300D79CC8 /* String.swift */; };
+		DDC4DB0E274432E400D79CC8 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB0D274432E400D79CC8 /* UIViewController.swift */; };
 		DDE0EE582728163900C46821 /* JoinAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE572728163900C46821 /* JoinAlert.storyboard */; };
 		DDE0EE5A2728164E00C46821 /* JoinAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0EE592728164E00C46821 /* JoinAlertVC.swift */; };
 		DDE0EE5C272873EC00C46821 /* SignUpKakaoComplete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */; };
@@ -303,6 +309,12 @@
 		DDC4DAFB2743FBD500D79CC8 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		DDC4DAFE2743FC1F00D79CC8 /* SignUpData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpData.swift; sourceTree = "<group>"; };
 		DDC4DB002743FC2F00D79CC8 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
+		DDC4DB0227440E6700D79CC8 /* SignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInService.swift; sourceTree = "<group>"; };
+		DDC4DB0527440EF700D79CC8 /* SignInData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInData.swift; sourceTree = "<group>"; };
+		DDC4DB0727440F0100D79CC8 /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
+		DDC4DB092744323C00D79CC8 /* UIAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlert.swift; sourceTree = "<group>"; };
+		DDC4DB0B274432A300D79CC8 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		DDC4DB0D274432E400D79CC8 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		DDE0EE572728163900C46821 /* JoinAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinAlert.storyboard; sourceTree = "<group>"; };
 		DDE0EE592728164E00C46821 /* JoinAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinAlertVC.swift; sourceTree = "<group>"; };
 		DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpKakaoComplete.storyboard; sourceTree = "<group>"; };
@@ -353,6 +365,7 @@
 		DD1BFC1E273663230042C51F /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				DDC4DB0427440EEC00D79CC8 /* SignIn */,
 				DDC4DAFD2743FBEC00D79CC8 /* SignUp */,
 				DDC4DAEA274381FC00D79CC8 /* Password */,
 				DDC4DAE9274381EF00D79CC8 /* Email */,
@@ -369,6 +382,7 @@
 				DDC4DAEF2743833E00D79CC8 /* EmailValidationService.swift */,
 				DDC4DAF527438A3100D79CC8 /* PwValidationService.swift */,
 				DDC4DAFB2743FBD500D79CC8 /* SignUpService.swift */,
+				DDC4DB0227440E6700D79CC8 /* SignInService.swift */,
 				DD1BFC262736DC8C0042C51F /* InformationService.swift */,
 			);
 			path = Account;
@@ -474,6 +488,9 @@
 				DD61E4C1271EB81C007504DE /* Adjusted.swift */,
 				DD6728422725563A001E1355 /* UIView.swift */,
 				DD2D63B32726A8A0007CEC57 /* UITextField.swift */,
+				DDC4DB092744323C00D79CC8 /* UIAlert.swift */,
+				DDC4DB0D274432E400D79CC8 /* UIViewController.swift */,
+				DDC4DB0B274432A300D79CC8 /* String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -560,12 +577,12 @@
 			path = UIComponent;
 			sourceTree = "<group>";
 		};
-		DD3A30C2272ADF2000D711C6 /* SignUpDataModel */ = {
+		DD3A30C2272ADF2000D711C6 /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
 				DD3A30C3272ADF6200D711C6 /* SignUpUserInfo.swift */,
 			);
-			path = SignUpDataModel;
+			path = Singleton;
 			sourceTree = "<group>";
 		};
 		DD3A30C7272DA31200D711C6 /* Kakao */ = {
@@ -903,6 +920,15 @@
 			path = SignUp;
 			sourceTree = "<group>";
 		};
+		DDC4DB0427440EEC00D79CC8 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				DDC4DB0527440EF700D79CC8 /* SignInData.swift */,
+				DDC4DB0727440F0100D79CC8 /* SignInRequest.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
 		DDE0EE54272815FD00C46821 /* PopupAlert */ = {
 			isa = PBXGroup;
 			children = (
@@ -941,27 +967,27 @@
 			children = (
 				DDC4DAE2274107BC00D79CC8 /* Area */,
 				DD1BFC212736644D0042C51F /* Account */,
-				DDE0EE64272931AC00C46821 /* SignIn */,
+				DDE0EE64272931AC00C46821 /* SocialLogin */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
 		};
-		DDE0EE64272931AC00C46821 /* SignIn */ = {
+		DDE0EE64272931AC00C46821 /* SocialLogin */ = {
 			isa = PBXGroup;
 			children = (
 				DDE0EE662729333300C46821 /* KakaoLoginService.swift */,
 				DD3A30CD272DA3BD00D711C6 /* AppleLoginService.swift */,
 			);
-			path = SignIn;
+			path = SocialLogin;
 			sourceTree = "<group>";
 		};
-		DDE0EE65272932A000C46821 /* SignIn */ = {
+		DDE0EE65272932A000C46821 /* SocialLogin */ = {
 			isa = PBXGroup;
 			children = (
 				DD3A30C8272DA32700D711C6 /* Apple */,
 				DD3A30C7272DA31200D711C6 /* Kakao */,
 			);
-			path = SignIn;
+			path = SocialLogin;
 			sourceTree = "<group>";
 		};
 		DDED00F52719CB4200C2C343 /* Onboarding */ = {
@@ -1004,8 +1030,8 @@
 			children = (
 				DDC4DADF2741072B00D79CC8 /* Area */,
 				DD1BFC1E273663230042C51F /* Account */,
-				DD3A30C2272ADF2000D711C6 /* SignUpDataModel */,
-				DDE0EE65272932A000C46821 /* SignIn */,
+				DDE0EE65272932A000C46821 /* SocialLogin */,
+				DD3A30C2272ADF2000D711C6 /* Singleton */,
 				DDED0119271B33DD00C2C343 /* Onboarding */,
 			);
 			path = APIModels;
@@ -1221,6 +1247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDC4DB0327440E6700D79CC8 /* SignInService.swift in Sources */,
 				DD1BFC3B2738B2790042C51F /* TextFiledTapPicker.swift in Sources */,
 				DD3A30E6272DAC0300D711C6 /* MyActivityVC.swift in Sources */,
 				DD7BEBC727315D7000DB2F60 /* DetailCrewTitleCVCell.swift in Sources */,
@@ -1243,12 +1270,14 @@
 				DD1BFC4D2738E8EC0042C51F /* MakeCrewDateVC.swift in Sources */,
 				DDC4DAE12741075700D79CC8 /* AreaData.swift in Sources */,
 				DDED00F82719D02900C2C343 /* UIColor.swift in Sources */,
+				DDC4DB0827440F0100D79CC8 /* SignInRequest.swift in Sources */,
 				DD3A30CA272DA33600D711C6 /* AppleLoginData.swift in Sources */,
 				DDC3B5162733C86800FF4959 /* NextBtn.swift in Sources */,
 				DDED01062719E2D400C2C343 /* UIFont.swift in Sources */,
 				DD3ACBBB2721075500EBC201 /* SignUpSportsVC.swift in Sources */,
 				DD3E37C6272F928E00C4192E /* CrewCVCell.swift in Sources */,
 				DD9EEDC3273A667D00E02396 /* CrewAlertTVCell.swift in Sources */,
+				DDC4DB0A2744323C00D79CC8 /* UIAlert.swift in Sources */,
 				DD61E4C6271EBCE6007504DE /* LocationPickerVC.swift in Sources */,
 				DDC4DAFF2743FC1F00D79CC8 /* SignUpData.swift in Sources */,
 				DD9EEDBD273A492D00E02396 /* CrewAlertVC.swift in Sources */,
@@ -1258,11 +1287,13 @@
 				DD3A30E8272DAC2000D711C6 /* FeedVC.swift in Sources */,
 				DD1BFC20273663450042C51F /* NicknameValidationData.swift in Sources */,
 				DDC4DAF2274389AA00D79CC8 /* PwValidationData.swift in Sources */,
+				DDC4DB0C274432A300D79CC8 /* String.swift in Sources */,
 				DD1BFC592738E9C40042C51F /* SignUpPhoneVC.swift in Sources */,
 				DDC4DAF02743833E00D79CC8 /* EmailValidationService.swift in Sources */,
 				DD3A30BB2729AB1400D711C6 /* CheckBtn.swift in Sources */,
 				DD3A30F6272E620B00D711C6 /* AddCrewVC.swift in Sources */,
 				DDED011B271B33F800C2C343 /* OnboardingData.swift in Sources */,
+				DDC4DB0E274432E400D79CC8 /* UIViewController.swift in Sources */,
 				DDC4DAE4274107D900D79CC8 /* AreaService.swift in Sources */,
 				DD7BEBC327315D3A00DB2F60 /* DetailCrewImgCVCell.swift in Sources */,
 				DD3A30CC272DA37100D711C6 /* AppleLoginRequest.swift in Sources */,
@@ -1277,6 +1308,7 @@
 				DD2D63B42726A8A0007CEC57 /* UITextField.swift in Sources */,
 				DD295DA027181E3B008CFC64 /* AppDelegate.swift in Sources */,
 				DD3E37CB2730182C00C4192E /* CrewDetailVC.swift in Sources */,
+				DDC4DB0627440EF700D79CC8 /* SignInData.swift in Sources */,
 				DD67283B27244CE3001E1355 /* AgreeVC.swift in Sources */,
 				DD3A30C4272ADF6200D711C6 /* SignUpUserInfo.swift in Sources */,
 				DD3A30EE272DAC4F00D711C6 /* ProfileVC.swift in Sources */,
