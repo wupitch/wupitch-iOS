@@ -98,34 +98,35 @@ class SignUpIDVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     @IBAction func touchUpPhotoBtn(_ sender: Any) {
         
-        //self.cameraView.addSubview((imagePickerController.view))
         
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .camera
-        imagePicker.allowsEditing = true
-        imagePicker.cameraDevice = .rear
-        imagePicker.cameraCaptureMode = .photo
-
-        let imgView = UIImageView(frame: CGRect(x: 43, y: 259, width: 290, height: 190))
-        imgView.image = UIImage(named: "imgGl")
-        imagePicker.cameraOverlayView = imgView
-        imagePicker.showsCameraControls = true
-
-//        cameraView = UIView(frame: CGRect(x: 50, y: 300, width: 300, height: 300))
-//        cameraView.backgroundColor = .black
-//        imagePicker.view.frame = cameraView.bounds
-
-        imagePicker.delegate = self
-        present(imagePicker, animated: true, completion: nil)
-
-        let camera = UIImagePickerController()
-        camera.sourceType = .camera
-        camera.allowsEditing = true
-        camera.cameraDevice = .rear
-        camera.cameraOverlayView = overlayView
-        camera.cameraCaptureMode = .photo
-        camera.delegate = self
-        present(camera, animated: true, completion: nil)
+        let storyboard = UIStoryboard.init(name: "SignUpCamera", bundle: nil)
+        
+        guard let dvc = storyboard.instantiateViewController(identifier: "SignUpCameraVC") as? SignUpCameraVC else {return}
+        
+        self.navigationController?.pushViewController(dvc, animated: true)
+        
+//        let imagePicker = UIImagePickerController()
+//        imagePicker.sourceType = .camera
+//        imagePicker.allowsEditing = true
+//        imagePicker.cameraDevice = .rear
+//        imagePicker.cameraCaptureMode = .photo
+//
+//        let imgView = UIImageView(frame: CGRect(x: 43, y: 259, width: 290, height: 190))
+//        imgView.image = UIImage(named: "imgGl")
+//        imagePicker.cameraOverlayView = imgView
+//        imagePicker.showsCameraControls = true
+//
+//        imagePicker.delegate = self
+//        present(imagePicker, animated: true, completion: nil)
+//
+//        let camera = UIImagePickerController()
+//        camera.sourceType = .camera
+//        camera.allowsEditing = true
+//        camera.cameraDevice = .rear
+//        camera.cameraOverlayView = overlayView
+//        camera.cameraCaptureMode = .photo
+//        camera.delegate = self
+//        present(camera, animated: true, completion: nil)
     }
     
 //    private func addCameraInView(){

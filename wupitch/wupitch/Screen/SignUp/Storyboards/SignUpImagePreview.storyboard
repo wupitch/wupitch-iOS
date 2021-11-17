@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign Up Image PreviewVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SignUpImagePreviewVC" id="Y6W-OH-hqX" customClass="SignUpImagePreviewVC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yca-VP-1No">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="717"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w5I-m2-xfY">
+                                <rect key="frame" x="0.0" y="151" width="414" height="271.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="w5I-m2-xfY" secondAttribute="height" multiplier="375:246" id="7gN-bC-bjP"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YD5-hf-HBg">
+                                <rect key="frame" x="374" y="54" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="316-iU-R1F"/>
+                                    <constraint firstAttribute="height" constant="24" id="Cbk-dX-DdH"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="whtclose"/>
+                                <connections>
+                                    <action selector="touchUpCancelBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Y94-E9-vKw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7N-kz-jX0">
+                                <rect key="frame" x="32" y="797" width="52" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="다시찍기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchUpCameraAgainBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Y5L-Bv-nAz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPa-eD-loq">
+                                <rect key="frame" x="330" y="797" width="52" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="사진사용">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchUpUsePhotoBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ucW-NH-uTz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="w5I-m2-xfY" firstAttribute="trailing" secondItem="Yca-VP-1No" secondAttribute="trailing" id="3K8-v5-zLV"/>
+                            <constraint firstItem="Yca-VP-1No" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="C7f-50-CGF"/>
+                            <constraint firstItem="w5I-m2-xfY" firstAttribute="centerY" secondItem="Yca-VP-1No" secondAttribute="centerY" multiplier="0.8" id="Cap-c4-Tyu"/>
+                            <constraint firstItem="YD5-hf-HBg" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="Cze-q9-mYc"/>
+                            <constraint firstItem="h7N-kz-jX0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="H7s-kB-qAX"/>
+                            <constraint firstItem="w5I-m2-xfY" firstAttribute="centerX" secondItem="Yca-VP-1No" secondAttribute="centerX" id="IXT-5G-bQP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="YD5-hf-HBg" secondAttribute="trailing" constant="16" id="JTt-G0-1v5"/>
+                            <constraint firstItem="Yca-VP-1No" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Rrf-tu-3Aj"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="dPa-eD-loq" secondAttribute="bottom" constant="35" id="Yku-QC-riX"/>
+                            <constraint firstItem="w5I-m2-xfY" firstAttribute="leading" secondItem="Yca-VP-1No" secondAttribute="leading" id="a41-te-QMd"/>
+                            <constraint firstItem="Yca-VP-1No" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="aTQ-TZ-whJ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dPa-eD-loq" secondAttribute="trailing" constant="32" id="b6R-BL-dc6"/>
+                            <constraint firstItem="Yca-VP-1No" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.8" id="giG-Fr-Sq0"/>
+                            <constraint firstItem="Yca-VP-1No" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="j08-Bh-vS9"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="h7N-kz-jX0" secondAttribute="bottom" constant="35" id="nId-6f-b9f"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Yca-VP-1No" secondAttribute="trailing" id="yLh-iq-dlg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cameraAgainBtn" destination="h7N-kz-jX0" id="XGN-DM-TGo"/>
+                        <outlet property="cancelBtn" destination="YD5-hf-HBg" id="xJz-yl-kbp"/>
+                        <outlet property="imagePrevieImageView" destination="w5I-m2-xfY" id="3yE-R2-iDF"/>
+                        <outlet property="usePhotoBtn" destination="dPa-eD-loq" id="0gK-eb-612"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13" y="71"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="whtclose" width="24" height="24"/>
+    </resources>
+</document>
