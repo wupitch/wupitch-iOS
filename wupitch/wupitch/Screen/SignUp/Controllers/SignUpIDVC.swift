@@ -7,8 +7,10 @@
 
 import UIKit
 
+// 신분증 인증 뷰
 class SignUpIDVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    // MARK: - IBoutlets
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var thirdContentsLabel: UILabel!
     @IBOutlet weak var secondContentsLabel: UILabel!
@@ -19,64 +21,35 @@ class SignUpIDVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var photoBtn: UIButton!
     
-    let overlayView = UIImageView(image:UIImage(named: "default"))
-    var cameraView = UIView()
-//    var screenBounds: CGSize = UIScreen.screens.bounds.size;
-
-    
-    
-//    private lazy var imagePickerController: UIImagePickerController = {
-//        let imagePicker = UIImagePickerController()
-//
-//
-//        imagePicker.sourceType = .camera
-//               imagePicker.allowsEditing = false
-//               imagePicker.cameraDevice = .rear
-//               imagePicker.cameraCaptureMode = .photo
-//
-//               let imgView = UIImageView(frame: CGRect(x: 43, y: 259, width: 290, height: 190))
-//               imgView.image = UIImage(named: "imgGl")
-//               imagePicker.cameraOverlayView = imgView
-//               imagePicker.showsCameraControls = true
-//
-//               cameraView = UIView(frame: CGRect(x: 50, y: 300, width: 200, height: 200))
-//        cameraView.backgroundColor = UIColor.black
-//               imagePicker.view.frame = cameraView.bounds
-//
-//               imagePicker.delegate = self
-//
-//        var scale = screenBounds.height / screenBounds.width;
-//
-//        imagePicker.cameraViewTransform = CGAffineTransform(scaleX: scale, y: scale)
-//
-//            present(imagePicker, animated: true, completion: nil)
-//
-//
-//
-//        return imagePicker
-//        }()
-    
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-       // addCameraInView()
         setStyle()
     }
-    func setStyle() {
+    
+    private func setStyle() {
+        // title Label
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24.adjusted)
         titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 30.adjusted)
         titleLabel.textColor = .black
         
+        // description Label
         descriptionLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
         descriptionLabel.setTextWithLineHeight(text: descriptionLabel.text, lineHeight: 20.adjusted)
         descriptionLabel.textColor = .gray02
         
+        // photo Btn
         photoBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
         photoBtn.makeRounded(cornerRadius: 8.adjusted)
         
+        // Label
         firstContentsLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
         secondContentsLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
         thirdContentsLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
     }
+    
+    // MARK: - IBActions
+    // 취소버튼
     @IBAction func touchUpCancelBtn(_ sender: Any) {
         // 취소 버튼 클릭 시, 팝업 창 띄워줌
         let storyBoard: UIStoryboard = UIStoryboard(name: "JoinAlert", bundle: nil)
@@ -92,75 +65,21 @@ class SignUpIDVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         }
     }
     
+    // 뒤로가기 버튼
     @IBAction func touchUpBackbtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
+    // 신분증 인증 버튼
     @IBAction func touchUpPhotoBtn(_ sender: Any) {
-        
-        
         let storyboard = UIStoryboard.init(name: "SignUpCamera", bundle: nil)
-        
         guard let dvc = storyboard.instantiateViewController(identifier: "SignUpCameraVC") as? SignUpCameraVC else {return}
         
         self.navigationController?.pushViewController(dvc, animated: true)
-        
-//        let imagePicker = UIImagePickerController()
-//        imagePicker.sourceType = .camera
-//        imagePicker.allowsEditing = true
-//        imagePicker.cameraDevice = .rear
-//        imagePicker.cameraCaptureMode = .photo
-//
-//        let imgView = UIImageView(frame: CGRect(x: 43, y: 259, width: 290, height: 190))
-//        imgView.image = UIImage(named: "imgGl")
-//        imagePicker.cameraOverlayView = imgView
-//        imagePicker.showsCameraControls = true
-//
-//        imagePicker.delegate = self
-//        present(imagePicker, animated: true, completion: nil)
-//
-//        let camera = UIImagePickerController()
-//        camera.sourceType = .camera
-//        camera.allowsEditing = true
-//        camera.cameraDevice = .rear
-//        camera.cameraOverlayView = overlayView
-//        camera.cameraCaptureMode = .photo
-//        camera.delegate = self
-//        present(camera, animated: true, completion: nil)
     }
-    
-//    private func addCameraInView(){
-//         // Add the imageviewcontroller to UIView as a subview
-//         self.cameraView.addSubview((imagePickerController.view))
-//     }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        
-        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
-            
-            SignUpUserInfo.shared.idImg = image
-            //myImageView.image = image
-        }
-        
-        picker.dismiss(animated: true, completion: nil)
-        
-        if SignUpUserInfo.shared.idImg != nil {
-            let storyboard = UIStoryboard.init(name: "SignUpComplete", bundle: nil)
-            
-            guard let dvc = storyboard.instantiateViewController(identifier: "SignUpCompleteVC") as? SignUpCompleteVC else {return}
-            
-            self.navigationController?.pushViewController(dvc, animated: true)
-        }
-    }
-    
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
 }
 
+// MARK: - delegate
 extension SignUpIDVC : AlertDelegate {
     func alertDismiss() {
         guard let viewControllerStack = self.navigationController?.viewControllers else { return }

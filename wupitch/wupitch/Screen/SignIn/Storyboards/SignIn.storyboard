@@ -20,8 +20,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="MGf-Wa-cLK">
                                 <rect key="frame" x="118.5" y="150" width="177" height="154"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="154" id="v9g-oq-cvn"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="MGf-Wa-cLK" secondAttribute="height" multiplier="177:154" id="wda-aZ-DCi"/>
+                                    <constraint firstAttribute="height" constant="154" id="v9g-oq-cvn"/>
+                                    <constraint firstAttribute="width" secondItem="MGf-Wa-cLK" secondAttribute="height" multiplier="177:154" id="wda-aZ-DCi"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CBC-SY-ata">

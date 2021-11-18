@@ -7,12 +7,12 @@
 
 import UIKit
 
+// 약관 동의 뷰
 class SignUpTermsVC: UIViewController {
     
     // MARK: - Variable
     // 약관동의 배열
     var terms = Array(repeating: false, count: 3)
-    var colorBtn : Int?
     
     // MARK: - IBOutlets
     // 라벨
@@ -44,15 +44,31 @@ class SignUpTermsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
-        allAgreeBtn.checkDelegate = self
-        agreeBtn[0].checkDelegate = self
-        agreeBtn[1].checkDelegate = self
-        agreeBtn[2].checkDelegate = self
+        setDelegate()
     }
     
     // MARK: - Function
-    // style
     private func setStyle() {
+        setBtnStyle()
+        setLabelStyle()
+    }
+   
+    // btn style
+    private func setBtnStyle() {
+        // btns
+        allAgreeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        agreeBtn[0].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        agreeBtn[1].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        agreeBtn[2].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        
+        // moreBtns
+        firstMoreBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+        secMoreBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+        thirdMoreBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+    }
+    
+    // label style
+    private func setLabelStyle() {
         // titleLabel
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24.adjusted)
         titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 30.adjusted)
@@ -67,19 +83,16 @@ class SignUpTermsVC: UIViewController {
         secondLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
         thirdLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
         fourthLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
-        
-        // btns
-        allAgreeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
-        agreeBtn[0].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
-        agreeBtn[1].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
-        agreeBtn[2].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
-        
-        // moreBtns
-        firstMoreBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
-        secMoreBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
-        thirdMoreBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
     }
     
+    // btn delegate
+    private func setDelegate() {
+        allAgreeBtn.checkDelegate = self
+        agreeBtn[0].checkDelegate = self
+        agreeBtn[1].checkDelegate = self
+        agreeBtn[2].checkDelegate = self
+    }
+   
     // MARK: - IBActions
     // 다음 버튼
     @IBAction func touchUpNextBtn(_ sender: UIButton) {
@@ -101,13 +114,14 @@ class SignUpTermsVC: UIViewController {
     // 뒤로가기 버튼
     @IBAction func touchUpBackBtn(_ sender: Any) {
         // 데이터가 저장되어있으면 팝업창 뜨게하고, 아니면 뒤로 이동
+        // 다음 화면의 이메일 값이 있으면 팝업창, 없으면 그냥 뒤로가기
         if ((SignUpUserInfo.shared.email) != nil) {
             // 팝업 창 띄워줌
             let storyBoard: UIStoryboard = UIStoryboard(name: "JoinAlert", bundle: nil)
             if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinAlertVC") as? JoinAlertVC {
                 dvc.modalPresentationStyle = .overFullScreen
                 dvc.modalTransitionStyle = .crossDissolve
-                // 팝업창 확인 클릭 시, navigation pop하기 위해서
+                // 팝업창 확인 클릭 시, navigation pop하기위해서 delegate 위임
                 dvc.alertDelegate = self
                 // present 형태로 띄우기
                 self.present(dvc, animated: true, completion: nil)

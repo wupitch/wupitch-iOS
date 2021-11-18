@@ -6,24 +6,61 @@
 //
 
 import UIKit
-import KakaoSDKCommon
 
+// 로그인 뷰
 class SignInVC: UIViewController {
 
+    // MARK: - IBoutlets
     @IBOutlet weak var emailSiginUpBtn: UIButton!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
+    // MARK: - Variable
     lazy var signInManager = SignInService()
-    var isMessage : String = ""
-    var isSuccess : Bool = false
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setStyle()
+        setDelegate()
+        setKeyboard()
+        dismissKeyboardWhenTappedAround()
+    }
+    
+    // MARK: - Function
+    private func setStyle() {
+        // emailTextField
+        emailTextField.backgroundColor = .gray05
+        emailTextField.borderStyle = .none
+        emailTextField.makeRounded(cornerRadius: 22.adjusted)
+        emailTextField.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        emailTextField.textColor = .gray03
+        emailTextField.loginVIewPadding()
         
+        // passwordTextField
+        passwordTextField.backgroundColor = .gray05
+        passwordTextField.borderStyle = .none
+        passwordTextField.makeRounded(cornerRadius: 22.adjusted)
+        passwordTextField.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        passwordTextField.textColor = .gray03
+        passwordTextField.loginVIewPadding()
+        
+        // signInBtn
+        loginBtn.makeRounded(cornerRadius: 22.adjusted)
+        
+        // signUpBtn
+        emailSiginUpBtn.makeRounded(cornerRadius: 22.adjusted)
+        emailSiginUpBtn.layer.borderWidth = 1.adjusted
+        emailSiginUpBtn.layer.borderColor = UIColor.main.cgColor
+    }
+    
+    private func setDelegate() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+    
+    private func setKeyboard() {
         // 키보드 show
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
@@ -42,51 +79,16 @@ class SignInVC: UIViewController {
     func keyboardWillHide(_ sender: Notification) {
         self.view.frame.origin.y = 0 // Move view to original position
     }
-    
-    private func setStyle() {
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-        emailTextField.backgroundColor = .gray05
-        emailTextField.borderStyle = .none
-        emailTextField.makeRounded(cornerRadius: 22.adjusted)
-        emailTextField.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
-        emailTextField.textColor = .gray03
-        emailTextField.loginVIewPadding()
-        
-        passwordTextField.backgroundColor = .gray05
-        passwordTextField.borderStyle = .none
-        passwordTextField.makeRounded(cornerRadius: 22.adjusted)
-        passwordTextField.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
-        passwordTextField.textColor = .gray03
-        passwordTextField.loginVIewPadding()
-        
-        loginBtn.makeRounded(cornerRadius: 22.adjusted)
-        
-        emailSiginUpBtn.makeRounded(cornerRadius: 22.adjusted)
-        emailSiginUpBtn.layer.borderWidth = 1.adjusted
-        emailSiginUpBtn.layer.borderColor = UIColor.main.cgColor
-    }
-    
-    private func alertSheet(message : String) {
-        let alert = UIAlertController(title: message, message: "", preferredStyle: UIAlertController.Style.alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler : nil )
-        let cancel = UIAlertAction(title: "cancel", style: .cancel, handler : nil)
-        
-        alert.addAction(cancel)
-        alert.addAction(okAction)
-        
-        present(alert, animated: true, completion: nil)
-    }
-    
+
     // MARK: - IBActions
-    
     // 로그인버튼
     @IBAction func touchUpSignInBtn(_ sender: Any) {
-        
+        // 이메일에 아무것도 입력되지 않았을 때
         guard let email = emailTextField.text?.trim, email.isExists else {
             self.presentAlert(title: "아이디를 입력해주세요.")
             return
         }
+        // 패스워드에 아무것도 입력되지 않았을 때
         guard let password = passwordTextField.text?.trim, password.isExists else {
             self.presentAlert(title: "비밀번호를 입력해주세요.")
             return
@@ -104,12 +106,12 @@ class SignInVC: UIViewController {
     }
 }
 
+// MARK: - Extension
 extension SignInVC : UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         emailTextField.textColor = .bk
         passwordTextField.textColor = .bk
     }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()

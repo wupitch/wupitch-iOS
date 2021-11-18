@@ -31,9 +31,13 @@ class SignUpImagePreviewVC: UIViewController {
     }
     
     @IBAction func touchUpCancelBtn(_ sender: Any) {
-        
+        guard let viewControllerStack = self.navigationController?.viewControllers else { return }
+        // 뷰 스택에서 SignUpCameraVC를 찾아서 거기까지 pop 합니다.
+        for viewController in viewControllerStack {
+            if let signUpIDVC = viewController as? SignUpIDVC { self.navigationController?.popToViewController(signUpIDVC, animated: true)
+            }
+        }
     }
-    
 
     @IBAction func touchUpCameraAgainBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

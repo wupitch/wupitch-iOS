@@ -7,6 +7,7 @@
 
 import UIKit
 
+// 프로필 뷰
 class SignUpProfileVC: UIViewController {
     
     // MARK: - IBOulets
@@ -32,20 +33,12 @@ class SignUpProfileVC: UIViewController {
         setStyle()
         placeholderSetting()
         setDelegate()
+        dismissKeyboardWhenTappedAround()
     }
     
     // MARK: - Funtion
     func setDelegate() {
         nickNameTextField.delegate = self
-    }
-    
-    func changeStartBtnColor() {
-        if nickNameTextField.resignFirstResponder() && infoTextView.text == nil {
-            startBtn.backgroundColor = .gray03
-        }
-        else {
-            startBtn.backgroundColor = .main
-        }
     }
     
     func placeholderSetting() {
@@ -112,10 +105,6 @@ class SignUpProfileVC: UIViewController {
             print("닉네임 >>>>>>>>>>", SignUpUserInfo.shared.nickname ?? "값이 없어요!")
             print("자기소개 >>>>>>>>>>", SignUpUserInfo.shared.introduce ?? "값이 없어요!")
             
-            // 다음 스토리 보드로 이동
-            let storyboard = UIStoryboard.init(name: "SignUpID", bundle: nil)
-            guard let dvc = storyboard.instantiateViewController(identifier: "SignUpIDVC") as? SignUpIDVC else {return}
-            
             // 신분증 인증 전의 회원가입 데이터들을 한번에 보내기
             if let email = SignUpUserInfo.shared.email,
                let introduce = SignUpUserInfo.shared.introduce,
@@ -124,9 +113,12 @@ class SignUpProfileVC: UIViewController {
                let password = SignUpUserInfo.shared.password {
                 
                 signUpManager.postSignUp(SignUpRequest(email: email, introduce: introduce, isPushAgree: isPushAgree, nickname: nickname, password: password), delegate: self)
+                
+                // 다음 스토리 보드로 이동
+                let storyboard = UIStoryboard.init(name: "SignUpID", bundle: nil)
+                guard let dvc = storyboard.instantiateViewController(identifier: "SignUpIDVC") as? SignUpIDVC else {return}
+                self.navigationController?.pushViewController(dvc, animated: true)
             }
-            
-            self.navigationController?.pushViewController(dvc, animated: true)
         }
         else {
             startBtn.backgroundColor = .gray03
@@ -134,6 +126,7 @@ class SignUpProfileVC: UIViewController {
     }
 }
 
+// MARK: - Extension
 extension SignUpProfileVC: UITextViewDelegate, UITextFieldDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -201,6 +194,7 @@ extension SignUpProfileVC: UITextViewDelegate, UITextFieldDelegate {
     }
 }
 
+// MARK: - Delegate
 extension SignUpProfileVC : AlertDelegate {
     func alertDismiss() {
         guard let viewControllerStack = self.navigationController?.viewControllers else { return }

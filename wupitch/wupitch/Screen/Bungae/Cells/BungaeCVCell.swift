@@ -1,13 +1,13 @@
 //
-//  CrewCVCell.swift
+//  BungaeCVCell.swift
 //  wupitch
 //
-//  Created by 김수정 on 2021/11/01.
+//  Created by 김수정 on 2021/11/18.
 //
 
 import UIKit
 
-class CrewCVCell: UICollectionViewCell {
+class BungaeCVCell: UICollectionViewCell {
     
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var pinImageView: UIImageView!
@@ -17,11 +17,12 @@ class CrewCVCell: UICollectionViewCell {
     @IBOutlet weak var tagNameLabel: UILabel!
     @IBOutlet weak var tagNameView: UIView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var bungaeCountLabel: UILabel!
     
-    static let identifier = "CrewCVCell"
+    static let identifier = "BungaeCVCell"
     
     static func nib() -> UINib {
-        return UINib(nibName: "CrewCVCell", bundle: nil)
+        return UINib(nibName: "BungaeCVCell", bundle: nil)
     }
 
     override func awakeFromNib() {
@@ -29,14 +30,26 @@ class CrewCVCell: UICollectionViewCell {
         
         tagNameView.makeRounded(cornerRadius: 12.adjusted)
         tagNameLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
+        tagNameLabel.setTextWithLineHeight(text: tagNameLabel.text, lineHeight: 22.adjusted)
+        
         
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
+        titleLabel.textColor = .bk
+        
         dayLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+        
+        dayLabel.textColor = .gray01
+        
         subLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+        subLabel.textColor = .gray01
+        
+        bungaeCountLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+        bungaeCountLabel.textColor = .gray01
         
         bgView.makeRounded(cornerRadius: 16.adjusted)
         bgView.backgroundColor = .gray05
         bgView.layer.borderWidth = 1.adjusted
         bgView.layer.borderColor = UIColor.gray04.cgColor
     }
+
 }

@@ -7,33 +7,48 @@
 
 import UIKit
 
+// 이메일,패스워드 뷰
 class SignUpEmailPwVC: UIViewController {
     
+    // MARK: - IBOutlets
+    // 다음 버튼
     @IBOutlet weak var nextBtn: NextBtn!
+    
+    // 비밀번호 라벨 및 텍스트필드
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    // 이메일 라벨 및 텍스트 필드
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
+    
+    // '이메일과 비번 입력해주세요' 라벪
     @IBOutlet weak var titleLabel: UILabel!
     
+    // MARK: - Variable
+    // 비밀번호 가리기,보이기
     var passwordEyeClick = true
     var passwordEyeBtn = UIButton(type: .system)
+    
     var resultIsSuccess : Bool = false
     var pwResultIsSuccess : Bool = false
+    
+    // MARK: - Server Data Singleton
     lazy var emailValidationManage = EmailValidationService()
     lazy var pwValidationManage = PwValidationService()
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setStyle()
+        setDelegate()
         passwordEyeSecure()
+        dismissKeyboardWhenTappedAround()
     }
     
+    // MARK: - Function
     private func setStyle() {
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-        
+        // emailTextField
         emailTextField.backgroundColor = .gray05
         emailTextField.borderStyle = .none
         emailTextField.makeRounded(cornerRadius: 8.adjusted)
@@ -41,6 +56,7 @@ class SignUpEmailPwVC: UIViewController {
         emailTextField.textColor = .gray03
         emailTextField.addLeftPadding()
         
+        // passwordTextField
         passwordTextField.backgroundColor = .gray05
         passwordTextField.borderStyle = .none
         passwordTextField.makeRounded(cornerRadius: 8.adjusted)
@@ -48,19 +64,23 @@ class SignUpEmailPwVC: UIViewController {
         passwordTextField.textColor = .gray03
         passwordTextField.addPadding()
         
+        // Label
         emailLabel.alpha = 0.0
         passwordLabel.alpha = 0.0
         emailLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
         passwordLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
-        
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24.adjusted)
         titleLabel.textColor = .bk
         titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 30.adjusted)
-        
+    }
+    
+    private func setDelegate() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     // password eye
-    func passwordEyeSecure() {
+    private func passwordEyeSecure() {
         passwordEyeBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: passwordTextField.frame.height))
         passwordEyeBtn.setImage(UIImage(named: "viewHide"), for: UIControl.State())
         let container = UIView(frame: passwordEyeBtn.frame)
@@ -83,6 +103,7 @@ class SignUpEmailPwVC: UIViewController {
         passwordEyeClick = !passwordEyeClick
     }
     
+    // MARK: - IBActions
     // 다음 버튼
     @IBAction func touchUpNextBtn(_ sender: Any) {
         if  nextBtn.backgroundColor == .main {
@@ -124,59 +145,29 @@ class SignUpEmailPwVC: UIViewController {
     
 }
 
-//extension UITextField {
-//    private func setPasswordEyeImage(_ button: UIButton) {
-//        if(isSecureTextEntry){
-//            button.setImage(UIImage(named: "viewHide"), for: .normal)
-//        }else{
-//            button.setImage(UIImage(named: "view"), for: .normal)
-//        }
-//    }
-//
-//    func passwordEyeSecure() {
-//        //텍스트 필드 돋보기 표시
-//        let passwordEye = UIButton()
-//        setPasswordEyeImage(passwordEye)
-//        passwordEye.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
-////        passwordEye.frame = CGRect(x: CGFloat(self.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
-//        passwordEye.frame = CGRect(x: 0,y: 0, width: 0, height: 36)
-//        //passwordEye.addTarget(self, action: #selector(passwordEyeButtonClick), for: .touchUpInside)
-//        self.rightView = passwordEye
-//        self.rightViewMode = .always
-//    }
-//
-//    // 눈 클릭
-//    @objc func passwordEyeButtonClick() {
-//        self.isSecureTextEntry = !self.isSecureTextEntry
-//        setPasswordEyeImage(sender as! UIButton)
-//    }
-//
-//
-//}
-
-
+// MARK: - Extension
 extension SignUpEmailPwVC : UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         emailTextField.textColor = .bk
         passwordTextField.textColor = .bk
     }
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
         if emailTextField.resignFirstResponder() {
-            emailValidationManage.postEmailValidation(EmailValidationRequest(email: emailTextField.text ?? "값없음"), delegate: self)
+            if let email = emailTextField.text {
+                emailValidationManage.postEmailValidation(EmailValidationRequest(email: email), delegate: self)
+            }
         }
         else {
-            pwValidationManage.postPwValidation(PwValidationRequest(password: passwordTextField.text ?? "값없음"), delegate: self)
-            
+            if let password = passwordTextField.text {
+                pwValidationManage.postPwValidation(PwValidationRequest(password: password), delegate: self)
+            }
         }
-        
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         return true
     }
-    
 }
 
 // MARK: - Delegate
@@ -224,6 +215,7 @@ extension SignUpEmailPwVC {
     func didSuccessPwValidation(result: PwValidationData) {
         print("데이터가 성공적으로 들어왔습니다.")
         print(result.isSuccess)
+        
         pwResultIsSuccess = result.isSuccess
         
         if result.isSuccess == false {
@@ -246,6 +238,5 @@ extension SignUpEmailPwVC {
 
     func failedToEmailRequest(message: String) {
         print("데이터가 들어오지 않았습니다.")
-        
     }
 }
