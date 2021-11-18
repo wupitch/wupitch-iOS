@@ -20,7 +20,10 @@ class MakeCrewGuestVC: UIViewController {
     @IBOutlet weak var noMoneyLabelBtn: CheckBtn!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var titleLabel: LabelFontSize!
+    
     var crewDelegate : CrewDelegate?
+    lazy var makeCrewDataManager = MakeCrewService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -73,6 +76,7 @@ class MakeCrewGuestVC: UIViewController {
         
     }
     
+    // 게시하기 버튼
     @IBAction func touchUpNextBtn(_ sender: Any) {
         if nextBtn.backgroundColor == .main {
             guard let viewControllerStack = self.navigationController?.viewControllers else { return }
@@ -124,5 +128,16 @@ extension MakeCrewGuestVC : UITextFieldDelegate {
             return newLength <= 6
         }
         return true
+    }
+}
+
+// MARK: - 크루 생성 api
+extension MakeCrewGuestVC {
+    func didSuccessMakeCrew(result: MakeCrewData) {
+        print(result.isSuccess)
+    }
+    
+    func failedToRequest(message: String) {
+        print("데이터가 들어오지 않습니다.")
     }
 }

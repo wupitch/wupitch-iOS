@@ -12,6 +12,9 @@ class SportsBtn : UIButton {
     
     var status : Bool = false
     
+    // 버튼 아이디
+    var btnId : Int?
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         defaultSportsBtn()

@@ -30,8 +30,6 @@ class BungaeCVCell: UICollectionViewCell {
         
         tagNameView.makeRounded(cornerRadius: 12.adjusted)
         tagNameLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
-        tagNameLabel.setTextWithLineHeight(text: tagNameLabel.text, lineHeight: 22.adjusted)
-        
         
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
         titleLabel.textColor = .bk

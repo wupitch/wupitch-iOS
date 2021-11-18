@@ -18,13 +18,20 @@ class SignUpUserInfo {
     // 바텀시트 로그인, 메인 나누기
     var bottomSheetMethod: BottomSheetMethod?
     
-    
+    // -------------------
     // 회원가입에 넣을 값
     var isPushAgree : Bool?
     var email : String?
     var password : String?
     var nickname : String?
     var introduce : String?
+    
+    // 스포츠 조회에 넣을 싱글톤 -> id값
+    var sports : [Int] = [1,2,3,4,5,6,7]
+    
+    // 스포츠 버튼 눌렸을 때 전달할 값
+    var clickSportsBtn : Int?
+    // ------------------------
     
     // 지역선택
     var region : Int?

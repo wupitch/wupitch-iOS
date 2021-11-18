@@ -158,6 +158,8 @@
 		DDC4DB1F2746415000D79CC8 /* BungaeCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DB1D2746415000D79CC8 /* BungaeCVCell.xib */; };
 		DDC4DB2127465BF800D79CC8 /* BungaeDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DB2027465BF800D79CC8 /* BungaeDetail.storyboard */; };
 		DDC4DB2327465C1F00D79CC8 /* BungaeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB2227465C1F00D79CC8 /* BungaeDetailVC.swift */; };
+		DDC4DB262746A95E00D79CC8 /* SportsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB252746A95E00D79CC8 /* SportsData.swift */; };
+		DDC4DB292746A97800D79CC8 /* SportsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB282746A97800D79CC8 /* SportsService.swift */; };
 		DDE0EE582728163900C46821 /* JoinAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE572728163900C46821 /* JoinAlert.storyboard */; };
 		DDE0EE5A2728164E00C46821 /* JoinAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0EE592728164E00C46821 /* JoinAlertVC.swift */; };
 		DDE0EE5C272873EC00C46821 /* SignUpKakaoComplete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */; };
@@ -333,6 +335,8 @@
 		DDC4DB1D2746415000D79CC8 /* BungaeCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BungaeCVCell.xib; sourceTree = "<group>"; };
 		DDC4DB2027465BF800D79CC8 /* BungaeDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BungaeDetail.storyboard; sourceTree = "<group>"; };
 		DDC4DB2227465C1F00D79CC8 /* BungaeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeDetailVC.swift; sourceTree = "<group>"; };
+		DDC4DB252746A95E00D79CC8 /* SportsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsData.swift; sourceTree = "<group>"; };
+		DDC4DB282746A97800D79CC8 /* SportsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsService.swift; sourceTree = "<group>"; };
 		DDE0EE572728163900C46821 /* JoinAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinAlert.storyboard; sourceTree = "<group>"; };
 		DDE0EE592728164E00C46821 /* JoinAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinAlertVC.swift; sourceTree = "<group>"; };
 		DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpKakaoComplete.storyboard; sourceTree = "<group>"; };
@@ -976,6 +980,22 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		DDC4DB242746A93D00D79CC8 /* Sports */ = {
+			isa = PBXGroup;
+			children = (
+				DDC4DB252746A95E00D79CC8 /* SportsData.swift */,
+			);
+			path = Sports;
+			sourceTree = "<group>";
+		};
+		DDC4DB272746A96900D79CC8 /* Sports */ = {
+			isa = PBXGroup;
+			children = (
+				DDC4DB282746A97800D79CC8 /* SportsService.swift */,
+			);
+			path = Sports;
+			sourceTree = "<group>";
+		};
 		DDE0EE54272815FD00C46821 /* PopupAlert */ = {
 			isa = PBXGroup;
 			children = (
@@ -1012,6 +1032,7 @@
 		DDE0EE632729317C00C46821 /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				DDC4DB272746A96900D79CC8 /* Sports */,
 				DDC4DB0F2744B92A00D79CC8 /* MakeCrew */,
 				DDC4DAE2274107BC00D79CC8 /* Area */,
 				DD1BFC212736644D0042C51F /* Account */,
@@ -1076,6 +1097,7 @@
 		DDED0118271B33C200C2C343 /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
+				DDC4DB242746A93D00D79CC8 /* Sports */,
 				DDC4DB102744B93D00D79CC8 /* MakeCrew */,
 				DDC4DADF2741072B00D79CC8 /* Area */,
 				DD1BFC1E273663230042C51F /* Account */,
@@ -1311,6 +1333,7 @@
 				DD1BFC272736DC8C0042C51F /* InformationService.swift in Sources */,
 				DD9EEDE12740354200E02396 /* OnboardingVC.swift in Sources */,
 				DD1BFC492738E8BB0042C51F /* MakeCrewInfoVC.swift in Sources */,
+				DDC4DB292746A97800D79CC8 /* SportsService.swift in Sources */,
 				DDC3B5192734041500FF4959 /* BaseVC.swift in Sources */,
 				DD9EEDC9273D097600E02396 /* DongPickerVC.swift in Sources */,
 				DD1BFC512738E91E0042C51F /* MakeCrewPhotoVC.swift in Sources */,
@@ -1404,6 +1427,7 @@
 				DDC4DAE8274275F300D79CC8 /* ToastMessageVC.swift in Sources */,
 				DD6728352723E582001E1355 /* LocationPickerData.swift in Sources */,
 				DD1BFC3D2738B7ED0042C51F /* LabelFontSize.swift in Sources */,
+				DDC4DB262746A95E00D79CC8 /* SportsData.swift in Sources */,
 				DDC3B51B2735565C00FF4959 /* MainLocationPickerData.swift in Sources */,
 				DD3ACBC427216D4400EBC201 /* SignUpIDVC.swift in Sources */,
 				DDC4DB012743FC2F00D79CC8 /* SignUpRequest.swift in Sources */,

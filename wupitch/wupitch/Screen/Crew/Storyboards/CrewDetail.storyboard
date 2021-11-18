@@ -108,8 +108,8 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vsn-vW-pAc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vsn-vW-pAc">
+                                <rect key="frame" x="0.0" y="800" width="375" height="12"/>
                                 <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             </view>
                         </subviews>

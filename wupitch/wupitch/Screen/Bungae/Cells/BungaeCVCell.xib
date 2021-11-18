@@ -43,7 +43,7 @@
                                 <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="SPV-5r-dCg" firstAttribute="centerY" secondItem="S1u-nR-aOO" secondAttribute="centerY" id="QSw-xY-5fr"/>
-                                    <constraint firstAttribute="height" constant="24" id="VKx-rx-9xE"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="VKx-rx-9xE"/>
                                     <constraint firstItem="SPV-5r-dCg" firstAttribute="leading" secondItem="S1u-nR-aOO" secondAttribute="leading" constant="8" id="bb9-cC-wcs"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="fUU-7L-FSU"/>
                                     <constraint firstItem="SPV-5r-dCg" firstAttribute="centerX" secondItem="S1u-nR-aOO" secondAttribute="centerX" id="iTM-5e-suw"/>
