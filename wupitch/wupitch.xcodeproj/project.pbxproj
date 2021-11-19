@@ -160,6 +160,10 @@
 		DDC4DB2327465C1F00D79CC8 /* BungaeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB2227465C1F00D79CC8 /* BungaeDetailVC.swift */; };
 		DDC4DB262746A95E00D79CC8 /* SportsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB252746A95E00D79CC8 /* SportsData.swift */; };
 		DDC4DB292746A97800D79CC8 /* SportsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB282746A97800D79CC8 /* SportsService.swift */; };
+		DDC4DB2C2747791F00D79CC8 /* BungaeTitleCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB2A2747791F00D79CC8 /* BungaeTitleCVCell.swift */; };
+		DDC4DB2D2747791F00D79CC8 /* BungaeTitleCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DB2B2747791F00D79CC8 /* BungaeTitleCVCell.xib */; };
+		DDC4DB3027478B7200D79CC8 /* BungaeIntroduceCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB2E27478B7200D79CC8 /* BungaeIntroduceCVCell.swift */; };
+		DDC4DB3127478B7200D79CC8 /* BungaeIntroduceCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DB2F27478B7200D79CC8 /* BungaeIntroduceCVCell.xib */; };
 		DDE0EE582728163900C46821 /* JoinAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE572728163900C46821 /* JoinAlert.storyboard */; };
 		DDE0EE5A2728164E00C46821 /* JoinAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0EE592728164E00C46821 /* JoinAlertVC.swift */; };
 		DDE0EE5C272873EC00C46821 /* SignUpKakaoComplete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */; };
@@ -337,6 +341,10 @@
 		DDC4DB2227465C1F00D79CC8 /* BungaeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeDetailVC.swift; sourceTree = "<group>"; };
 		DDC4DB252746A95E00D79CC8 /* SportsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsData.swift; sourceTree = "<group>"; };
 		DDC4DB282746A97800D79CC8 /* SportsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsService.swift; sourceTree = "<group>"; };
+		DDC4DB2A2747791F00D79CC8 /* BungaeTitleCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeTitleCVCell.swift; sourceTree = "<group>"; };
+		DDC4DB2B2747791F00D79CC8 /* BungaeTitleCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BungaeTitleCVCell.xib; sourceTree = "<group>"; };
+		DDC4DB2E27478B7200D79CC8 /* BungaeIntroduceCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeIntroduceCVCell.swift; sourceTree = "<group>"; };
+		DDC4DB2F27478B7200D79CC8 /* BungaeIntroduceCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BungaeIntroduceCVCell.xib; sourceTree = "<group>"; };
 		DDE0EE572728163900C46821 /* JoinAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinAlert.storyboard; sourceTree = "<group>"; };
 		DDE0EE592728164E00C46821 /* JoinAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinAlertVC.swift; sourceTree = "<group>"; };
 		DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpKakaoComplete.storyboard; sourceTree = "<group>"; };
@@ -976,6 +984,10 @@
 			children = (
 				DDC4DB1C2746415000D79CC8 /* BungaeCVCell.swift */,
 				DDC4DB1D2746415000D79CC8 /* BungaeCVCell.xib */,
+				DDC4DB2A2747791F00D79CC8 /* BungaeTitleCVCell.swift */,
+				DDC4DB2B2747791F00D79CC8 /* BungaeTitleCVCell.xib */,
+				DDC4DB2E27478B7200D79CC8 /* BungaeIntroduceCVCell.swift */,
+				DDC4DB2F27478B7200D79CC8 /* BungaeIntroduceCVCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1248,6 +1260,7 @@
 				DD9EEDBB273A491300E02396 /* CrewAlert.storyboard in Resources */,
 				DD1BFC332737FFB50042C51F /* CrewSearch.storyboard in Resources */,
 				DD7BEBD027315E1900DB2F60 /* DtailCrewContentCVCell.xib in Resources */,
+				DDC4DB2D2747791F00D79CC8 /* BungaeTitleCVCell.xib in Resources */,
 				DDC3B50D27327A0000FF4959 /* DetailCrewHeaderCRV.xib in Resources */,
 				DD1BFC3F2738E6C90042C51F /* MakeCrewSports.storyboard in Resources */,
 				DD1BFC4B2738E8DA0042C51F /* MakeCrewDate.storyboard in Resources */,
@@ -1258,6 +1271,7 @@
 				DD9EEDCC273EC6E700E02396 /* SignIn.storyboard in Resources */,
 				DD3ACBB92721073E00EBC201 /* SignUpSports.storyboard in Resources */,
 				DD3A30E4272DABE900D711C6 /* MyActivity.storyboard in Resources */,
+				DDC4DB3127478B7200D79CC8 /* BungaeIntroduceCVCell.xib in Resources */,
 				DD9EEDC7273D095E00E02396 /* DongPicker.storyboard in Resources */,
 				DD3E37C92730180100C4192E /* CrewDetail.storyboard in Resources */,
 				DD3A30F4272E61EB00D711C6 /* AddCrew.storyboard in Resources */,
@@ -1343,6 +1357,7 @@
 				DD7BEBCF27315E1900DB2F60 /* DtailCrewContentCVCell.swift in Sources */,
 				DD3A30D5272DA75400D711C6 /* TabbarVC.swift in Sources */,
 				DD6728432725563A001E1355 /* UIView.swift in Sources */,
+				DDC4DB2C2747791F00D79CC8 /* BungaeTitleCVCell.swift in Sources */,
 				DDC4DAF4274389BC00D79CC8 /* PwValidationRequest.swift in Sources */,
 				DD1BFC4D2738E8EC0042C51F /* MakeCrewDateVC.swift in Sources */,
 				DDC4DAE12741075700D79CC8 /* AreaData.swift in Sources */,
@@ -1390,6 +1405,7 @@
 				DDC4DB0627440EF700D79CC8 /* SignInData.swift in Sources */,
 				DD67283B27244CE3001E1355 /* AgreeVC.swift in Sources */,
 				DD3A30C4272ADF6200D711C6 /* SignUpUserInfo.swift in Sources */,
+				DDC4DB3027478B7200D79CC8 /* BungaeIntroduceCVCell.swift in Sources */,
 				DD3A30EE272DAC4F00D711C6 /* ProfileVC.swift in Sources */,
 				DDE0EE5E2728740400C46821 /* SignUpKakaoCompleteVC.swift in Sources */,
 				DDE0EE5A2728164E00C46821 /* JoinAlertVC.swift in Sources */,

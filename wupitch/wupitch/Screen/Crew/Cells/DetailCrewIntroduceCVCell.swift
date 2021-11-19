@@ -9,6 +9,10 @@ import UIKit
 
 class DetailCrewIntroduceCVCell: UICollectionViewCell {
 
+    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var peopleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tagSelectCV: UICollectionView!
     
     static let identifier = "DetailCrewIntroduceCVCell"
@@ -23,6 +27,18 @@ class DetailCrewIntroduceCVCell: UICollectionViewCell {
         tagSelectCV.delegate = self
         tagSelectCV.dataSource = self
         tagSelectCV.register(TagCVCell.nib(), forCellWithReuseIdentifier: TagCVCell.identifier)
+        
+        titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
+        titleLabel.textColor = .bk
+        
+        peopleLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+        peopleLabel.textColor = .bk
+        
+        ageLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+        ageLabel.textColor = .bk
+        
+        contentLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        contentLabel.textColor = .bk
         
     }
 }

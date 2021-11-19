@@ -15,6 +15,9 @@ class SportsBtn : UIButton {
     // 버튼 아이디
     var btnId : Int?
     
+    // 연령대
+    var ageInt : Int?
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         defaultSportsBtn()

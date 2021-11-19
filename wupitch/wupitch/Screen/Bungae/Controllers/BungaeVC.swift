@@ -114,9 +114,9 @@ extension BungaeVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // cell 누르면 해당 디테일 페이지로 이동
-        let storyboard = UIStoryboard.init(name: "CrewDetail", bundle: nil)
+        let storyboard = UIStoryboard.init(name: "BungaeDetail", bundle: nil)
         
-        guard let dvc = storyboard.instantiateViewController(identifier: "CrewDetailVC") as? CrewDetailVC else {return}
+        guard let dvc = storyboard.instantiateViewController(identifier: "BungaeDetailVC") as? BungaeDetailVC else {return}
         
         self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.pushViewController(dvc, animated: true)

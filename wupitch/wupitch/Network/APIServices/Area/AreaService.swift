@@ -13,7 +13,7 @@ struct AreaService {
     
     let url = "https://prod.wupitch.site/app/areas"
     
-    func getArea(delegate: LocationPickerVC) {
+    func getArea(delegate: CrewVC) {
         
         AF.request(url, method: .get, encoding: JSONEncoding.default, headers: [ "Content-Type":"application/json"])
             .responseDecodable(of: AreaData.self) { response in

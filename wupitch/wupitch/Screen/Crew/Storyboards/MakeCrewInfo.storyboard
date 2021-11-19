@@ -167,7 +167,7 @@
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="10대"/>
                                                                 <connections>
-                                                                    <action selector="touchUpFirstBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vWV-cY-hQb"/>
+                                                                    <action selector="touchUpFirstBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7ij-ca-gA0"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ax-fj-Hak" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
@@ -176,7 +176,7 @@
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="20대"/>
                                                                 <connections>
-                                                                    <action selector="touchUpSecondBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Of1-gK-wQb"/>
+                                                                    <action selector="touchUpSecondBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Onv-RB-Kvv"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AdM-Y4-Mv3" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
@@ -185,7 +185,7 @@
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="30대"/>
                                                                 <connections>
-                                                                    <action selector="touchUpThirdBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zCG-3P-aef"/>
+                                                                    <action selector="touchUpThirdBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="pFf-vA-4j4"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -199,7 +199,7 @@
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="40대"/>
                                                                 <connections>
-                                                                    <action selector="touchUpFourthBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ovJ-W7-toh"/>
+                                                                    <action selector="touchUpFourthBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hC7-Vy-6L5"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYs-h4-KLu" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
@@ -208,7 +208,7 @@
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="50대 이상"/>
                                                                 <connections>
-                                                                    <action selector="touchUpFifthBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="qnA-ty-kOi"/>
+                                                                    <action selector="touchUpFifthBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mIc-HW-xce"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5o-ZQ-ppz">

@@ -30,12 +30,10 @@ class MakeCrewInfoVC: UIViewController {
         super.viewDidLoad()
         setStyle()
     }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        bgView.endEditing(true)
-    }
     
     private func setStyle() {
+        
+        
         // titleLabel Style
         titleLabel.makeCrewTitleLabel()
         // subTitleStyle
@@ -62,113 +60,108 @@ class MakeCrewInfoVC: UIViewController {
         for i in 0...7 {
             addInfoBtns[i].graySportsBtn()
         }
+        
+        // 연령대 싱글톤 값으로 초기화
+        for i in 0...4 {
+            ageBtns[i].graySportsBtn()
+            ageBtns[i].ageInt = SignUpUserInfo.shared.ageList[i]
+        }
     }
     
-    func test() {
-        if SignUpUserInfo.shared.crewName != nil && SignUpUserInfo.shared.crewCount != nil && SignUpUserInfo.shared.ageBtn != nil {
-            nextBtn.backgroundColor = .main
-        }
-        else {
-            nextBtn?.backgroundColor = .gray03
-        }
-    }
+//    func test() {
+//        if SignUpUserInfo.shared.crewName != nil && SignUpUserInfo.shared.crewCount != nil && SignUpUserInfo.shared.ageBtn != nil {
+//            nextBtn.backgroundColor = .main
+//        }
+//        else {
+//            nextBtn?.backgroundColor = .gray03
+//        }
+//    }
     
     @IBAction func touchUpFirstBtn(_ sender: Any) {
-        if ageBtns[0].status == false {
-            ageBtns[0].colorSportsBtn()
-            ageBtns[1].defaultSportsBtn()
-            ageBtns[2].defaultSportsBtn()
-            ageBtns[3].defaultSportsBtn()
-            ageBtns[4].defaultSportsBtn()
-            SignUpUserInfo.shared.ageBtn = 0
-            if SignUpUserInfo.shared.crewName != nil && SignUpUserInfo.shared.crewCount != nil {
-                nextBtn.backgroundColor = .main
-            }
-        }
-        else {
-            ageBtns[0].defaultSportsBtn()
-            SignUpUserInfo.shared.ageBtn = nil
-            nextBtn.backgroundColor = .gray03
-        }
+          
+        
+//        ageBtns[0].status = true
+//        if ageBtns[0].status == true {
+//            if crewNameTextField.text?.isEmpty == false  && crewCountTextField.text?.isEmpty == false {
+//                nextBtn.backgroundColor = .main
+//            }
+//        }
+//        else {
+//            nextBtn.backgroundColor = .gray03
+//        }
     }
-    
+
     @IBAction func touchUpSecondBtn(_ sender: Any) {
-        if ageBtns[1].status == false {
-            ageBtns[1].colorSportsBtn()
-            ageBtns[0].defaultSportsBtn()
-            ageBtns[2].defaultSportsBtn()
-            ageBtns[3].defaultSportsBtn()
-            ageBtns[4].defaultSportsBtn()
-            SignUpUserInfo.shared.ageBtn = 1
-            if SignUpUserInfo.shared.crewName != nil && SignUpUserInfo.shared.crewCount != nil {
-                nextBtn.backgroundColor = .main
-            }
-            
-        }
-        else {
-            ageBtns[1].defaultSportsBtn()
-            SignUpUserInfo.shared.ageBtn = nil
-            nextBtn.backgroundColor = .gray03
-        }
+        
+//        if ageBtns[1].status == false {
+//            ageBtns[1].colorSportsBtn()
+//            ageBtns[0].defaultSportsBtn()
+//            ageBtns[2].defaultSportsBtn()
+//            ageBtns[3].defaultSportsBtn()
+//            ageBtns[4].defaultSportsBtn()
+//            if SignUpUserInfo.shared.crewName != nil && SignUpUserInfo.shared.crewCount != nil {
+//                nextBtn.backgroundColor = .main
+//            }
+//
+//        }
+//        else {
+//            ageBtns[1].defaultSportsBtn()
+//            nextBtn.backgroundColor = .gray03
+//        }
     }
-    
+
     @IBAction func touchUpThirdBtn(_ sender: Any) {
-        if ageBtns[2].status == false {
-            ageBtns[2].colorSportsBtn()
-            ageBtns[0].defaultSportsBtn()
-            ageBtns[1].defaultSportsBtn()
-            ageBtns[3].defaultSportsBtn()
-            ageBtns[4].defaultSportsBtn()
-            SignUpUserInfo.shared.ageBtn = 2
-            if SignUpUserInfo.shared.crewName != nil && SignUpUserInfo.shared.crewCount != nil {
-                           nextBtn.backgroundColor = .main
-                       }
-        }
-        else {
-            ageBtns[2].defaultSportsBtn()
-            SignUpUserInfo.shared.ageBtn = nil
-            nextBtn.backgroundColor = .gray03
-        }
+        
+//        if ageBtns[2].status == false {
+//            ageBtns[2].colorSportsBtn()
+//            ageBtns[0].defaultSportsBtn()
+//            ageBtns[1].defaultSportsBtn()
+//            ageBtns[3].defaultSportsBtn()
+//            ageBtns[4].defaultSportsBtn()
+//            if SignUpUserInfo.shared.crewName != nil && SignUpUserInfo.shared.crewCount != nil {
+//                           nextBtn.backgroundColor = .main
+//                       }
+//        }
+//        else {
+//            ageBtns[2].defaultSportsBtn()
+//            nextBtn.backgroundColor = .gray03
+//        }
     }
-    
+
     @IBAction func touchUpFourthBtn(_ sender: Any) {
-        if ageBtns[3].status == false {
-            ageBtns[3].colorSportsBtn()
-            ageBtns[0].defaultSportsBtn()
-            ageBtns[1].defaultSportsBtn()
-            ageBtns[2].defaultSportsBtn()
-            ageBtns[4].defaultSportsBtn()
-            SignUpUserInfo.shared.ageBtn = 3
-            if SignUpUserInfo.shared.crewName != nil && SignUpUserInfo.shared.crewCount != nil {
-                           nextBtn.backgroundColor = .main
-                       }
-        }
-        else {
-            ageBtns[3].defaultSportsBtn()
-            SignUpUserInfo.shared.ageBtn = nil
-            nextBtn.backgroundColor = .gray03
-        }
+        
+//        if ageBtns[3].status == false {
+//            ageBtns[3].colorSportsBtn()
+//            ageBtns[0].defaultSportsBtn()
+//            ageBtns[1].defaultSportsBtn()
+//            ageBtns[2].defaultSportsBtn()
+//            ageBtns[4].defaultSportsBtn()
+//            if SignUpUserInfo.shared.crewName != nil && SignUpUserInfo.shared.crewCount != nil {
+//                           nextBtn.backgroundColor = .main
+//                       }
+//        }
+//        else {
+//            ageBtns[3].defaultSportsBtn()
+//            nextBtn.backgroundColor = .gray03
+//        }
     }
-    
+
     @IBAction func touchUpFifthBtn(_ sender: Any) {
-        if ageBtns[4].status == false {
-            ageBtns[4].colorSportsBtn()
-            ageBtns[0].defaultSportsBtn()
-            ageBtns[1].defaultSportsBtn()
-            ageBtns[2].defaultSportsBtn()
-            ageBtns[3].defaultSportsBtn()
-            SignUpUserInfo.shared.ageBtn = 4
-            if SignUpUserInfo.shared.crewName != nil && SignUpUserInfo.shared.crewCount != nil {
-                           nextBtn.backgroundColor = .main
-                       }
-            
-            
-        }
-        else {
-            ageBtns[4].defaultSportsBtn()
-            SignUpUserInfo.shared.ageBtn = nil
-            nextBtn.backgroundColor = .gray03
-        }
+       
+//        if ageBtns[4].status == false {
+//            ageBtns[4].colorSportsBtn()
+//            ageBtns[0].defaultSportsBtn()
+//            ageBtns[1].defaultSportsBtn()
+//            ageBtns[2].defaultSportsBtn()
+//            ageBtns[3].defaultSportsBtn()
+//            if SignUpUserInfo.shared.crewName != nil && SignUpUserInfo.shared.crewCount != nil {
+//                nextBtn.backgroundColor = .main
+//            }
+//        }
+//        else {
+//            ageBtns[4].defaultSportsBtn()
+//            nextBtn.backgroundColor = .gray03
+//        }
     }
     
     @IBAction func touchUpBackBtn(_ sender: Any) {
@@ -178,8 +171,26 @@ class MakeCrewInfoVC: UIViewController {
     @IBAction func touchUpCancelBtn(_ sender: Any) {
     }
     
+    // 다음 버튼
     @IBAction func touchUpNextBtn(_ sender: Any) {
         if nextBtn.backgroundColor == .main {
+            // 나이버튼 활성화 상태 확인 후
+            // 나이버튼의 인티저 값을 agelist에 넣어줌
+            for i in 0...4 {
+                if ageBtns[i].status == true {
+                    SignUpUserInfo.shared.ageList[i] = ageBtns[i].ageInt!
+                    SignUpUserInfo.shared.extraInfoList[i] = SignUpUserInfo.shared.extraInfo[i]
+                    print("연령대 >>>>>>>>>",SignUpUserInfo.shared.ageList[i])
+                    print("추가정보 >>>>>>>>>",SignUpUserInfo.shared.extraInfo[i])
+                }
+            }
+            // 싱글톤에 값 넣어주기
+            SignUpUserInfo.shared.crewName = crewNameTextField.text
+            SignUpUserInfo.shared.crewCount = Int(crewCountTextField.text ?? "") ?? 0
+            print("크루이름 >>>>>>>>>",SignUpUserInfo.shared.crewName ?? "크루이름이 없습니다.")
+            print("현재 크루원 수 >>>>>>>>>",SignUpUserInfo.shared.crewCount ?? "현재 크루원 수가 없습니다.")
+            
+            
             let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewDate", bundle: nil)
             if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewDateVC") as? MakeCrewDateVC {
                 navigationController?.pushViewController(dvc, animated: true)
@@ -199,15 +210,13 @@ extension MakeCrewInfoVC : UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if crewNameTextField.text?.isEmpty == false && crewCountTextField.text?.isEmpty == false {
-            SignUpUserInfo.shared.crewName = crewNameTextField.text
-            SignUpUserInfo.shared.crewCount = crewCountTextField.text
-            if SignUpUserInfo.shared.ageBtn != nil {
-                nextBtn.backgroundColor = .main
+            for i in 0...4 {
+                if ageBtns[i].status == true {
+                    nextBtn.backgroundColor = .main
+                }
             }
         }
         else {
-            SignUpUserInfo.shared.crewName = nil
-            SignUpUserInfo.shared.crewCount = nil
             nextBtn.backgroundColor = .gray03
         }
     }

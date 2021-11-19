@@ -17,13 +17,14 @@ class CrewVC: BaseVC {
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var selectRegionBtn: UIButton!
     
-    var pickerViewData : String?
+    lazy var dataManager = AreaService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
         setCVDelegate()
         tapGesture()
+        dataManager.getArea(delegate: self)
     }
     
     private func setStyle() {
@@ -163,3 +164,18 @@ extension CrewVC: ModalDelegate {
 }
 
 
+// 지역 api 연결
+extension CrewVC {
+    func didSuccessArea(result: [AreaResult]) {
+        print("데이터가 성공적으로 들어왔습니다.")
+        
+        // 싱글톤에 값 넣어주기
+        for i in 0...25 {
+            SignUpUserInfo.shared.areas[i] = result[i].areaID
+            SignUpUserInfo.shared.areaName[i] = result[i].name
+        }
+    }
+    func failedToRequest(message: String) {
+        print("데이터가 들어오지 않았습니다.")
+    }
+}

@@ -21,8 +21,6 @@ class LocationPickerVC: UIViewController {
     
     // MARK: - Variable
     var modalDelegate : ModalDelegate?
-    lazy var dataManager = AreaService()
-    var area : [AreaResult] = []
     
     // MARK: - IBOulets
     @IBOutlet weak var selectBtn: UIButton!
@@ -36,7 +34,6 @@ class LocationPickerVC: UIViewController {
         super.viewDidLoad()
         setStyle()
         setDelegate()
-        dataManager.getArea(delegate: self)
     }
     
     // MARK: - Function
@@ -69,7 +66,7 @@ class LocationPickerVC: UIViewController {
         
         // 선택 버튼 누를 시, textField의 데이터가 변경되도록
         let i = self.pickerView.selectedRow(inComponent: 0)
-        modalDelegate?.textFieldData(data: area[i].name)
+        modalDelegate?.textFieldData(data: SignUpUserInfo.shared.areaName[i])
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -88,7 +85,7 @@ extension LocationPickerVC: UITextFieldDelegate, UIPickerViewDelegate, UIPickerV
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return area.count
+        return SignUpUserInfo.shared.areaName.count
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
@@ -105,24 +102,13 @@ extension LocationPickerVC: UITextFieldDelegate, UIPickerViewDelegate, UIPickerV
         let numberLabel = UILabel()
         numberLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 22.adjusted)
         numberLabel.tintColor = .bk
-        numberLabel.text = area[row].name
+        numberLabel.text = SignUpUserInfo.shared.areaName[row]
         numberLabel.textAlignment = .center
 
         return numberLabel
     }
 }
 
-// 지역 api 연결
-extension LocationPickerVC {
-    func didSuccessArea(result: [AreaResult]) {
-        print("데이터가 성공적으로 들어왔습니다.")
-        self.area = result
-        self.pickerView.reloadAllComponents()
-    }
-    func failedToRequest(message: String) {
-        print("데이터가 들어오지 않았습니다.")
-    }
-}
 
 
 

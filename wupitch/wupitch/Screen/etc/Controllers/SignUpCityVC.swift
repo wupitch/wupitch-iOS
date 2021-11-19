@@ -111,8 +111,8 @@ class SignUpCityVC: UIViewController {
         // 버튼 색이 .main일 때만 동작
         if nextBtn.backgroundColor == .main {
             
-            print("<<<<<<<<싱글톤 값이 잘 들어가나 확인>>>>>>>>>>")
-            print("내가 선택한 지역은? : ", SignUpUserInfo.shared.region ?? "아무 값도 없습니다.")
+            //print("<<<<<<<<싱글톤 값이 잘 들어가나 확인>>>>>>>>>>")
+            //print("내가 선택한 지역은? : ", SignUpUserInfo.shared.region ?? "아무 값도 없습니다.")
             
             // 다음 버튼 클릭 시, 다음 스토리보드로 이동
             let storyboard = UIStoryboard.init(name: "SignUpSports", bundle: nil)
