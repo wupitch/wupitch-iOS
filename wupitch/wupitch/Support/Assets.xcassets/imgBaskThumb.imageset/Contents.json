@@ -2,8 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "imgBaskThumb.png"
+      "filename" : "imgBaskThumb.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
@@ -11,9 +11,9 @@
       "scale" : "2x"
     },
     {
-      "idiom" : "universal",
+      "filename" : "imgBaskThumb@3x.png",
       "scale" : "3x",
-      "filename" : "imgBaskThumb@3x.png"
+      "idiom" : "universal"
     }
   ],
   "info" : {

@@ -164,6 +164,8 @@
 		DDC4DB2D2747791F00D79CC8 /* BungaeTitleCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DB2B2747791F00D79CC8 /* BungaeTitleCVCell.xib */; };
 		DDC4DB3027478B7200D79CC8 /* BungaeIntroduceCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB2E27478B7200D79CC8 /* BungaeIntroduceCVCell.swift */; };
 		DDC4DB3127478B7200D79CC8 /* BungaeIntroduceCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DB2F27478B7200D79CC8 /* BungaeIntroduceCVCell.xib */; };
+		DDC4DB332748F2F300D79CC8 /* BungaeFilter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DB322748F2F300D79CC8 /* BungaeFilter.storyboard */; };
+		DDC4DB352748F30E00D79CC8 /* BungaeFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB342748F30D00D79CC8 /* BungaeFilterVC.swift */; };
 		DDE0EE582728163900C46821 /* JoinAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE572728163900C46821 /* JoinAlert.storyboard */; };
 		DDE0EE5A2728164E00C46821 /* JoinAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0EE592728164E00C46821 /* JoinAlertVC.swift */; };
 		DDE0EE5C272873EC00C46821 /* SignUpKakaoComplete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */; };
@@ -345,6 +347,8 @@
 		DDC4DB2B2747791F00D79CC8 /* BungaeTitleCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BungaeTitleCVCell.xib; sourceTree = "<group>"; };
 		DDC4DB2E27478B7200D79CC8 /* BungaeIntroduceCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeIntroduceCVCell.swift; sourceTree = "<group>"; };
 		DDC4DB2F27478B7200D79CC8 /* BungaeIntroduceCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BungaeIntroduceCVCell.xib; sourceTree = "<group>"; };
+		DDC4DB322748F2F300D79CC8 /* BungaeFilter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BungaeFilter.storyboard; sourceTree = "<group>"; };
+		DDC4DB342748F30D00D79CC8 /* BungaeFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeFilterVC.swift; sourceTree = "<group>"; };
 		DDE0EE572728163900C46821 /* JoinAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinAlert.storyboard; sourceTree = "<group>"; };
 		DDE0EE592728164E00C46821 /* JoinAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinAlertVC.swift; sourceTree = "<group>"; };
 		DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpKakaoComplete.storyboard; sourceTree = "<group>"; };
@@ -749,6 +753,7 @@
 			children = (
 				DD3A30E1272DABCC00D711C6 /* Bungae.storyboard */,
 				DDC4DB2027465BF800D79CC8 /* BungaeDetail.storyboard */,
+				DDC4DB322748F2F300D79CC8 /* BungaeFilter.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -758,6 +763,7 @@
 			children = (
 				DD3A30DF272DABC000D711C6 /* BungaeVC.swift */,
 				DDC4DB2227465C1F00D79CC8 /* BungaeDetailVC.swift */,
+				DDC4DB342748F30D00D79CC8 /* BungaeFilterVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1269,6 +1275,7 @@
 				DD3A30D3272DA6E300D711C6 /* Tabbar.storyboard in Resources */,
 				DD1BFC572738E9A70042C51F /* SignUpPhone.storyboard in Resources */,
 				DD9EEDCC273EC6E700E02396 /* SignIn.storyboard in Resources */,
+				DDC4DB332748F2F300D79CC8 /* BungaeFilter.storyboard in Resources */,
 				DD3ACBB92721073E00EBC201 /* SignUpSports.storyboard in Resources */,
 				DD3A30E4272DABE900D711C6 /* MyActivity.storyboard in Resources */,
 				DDC4DB3127478B7200D79CC8 /* BungaeIntroduceCVCell.xib in Resources */,
@@ -1433,6 +1440,7 @@
 				DD295DA227181E3B008CFC64 /* SceneDelegate.swift in Sources */,
 				DDC4DB122744B95D00D79CC8 /* MakeCrewData.swift in Sources */,
 				DD1BFC30273788360042C51F /* TagCVCell.swift in Sources */,
+				DDC4DB352748F30E00D79CC8 /* BungaeFilterVC.swift in Sources */,
 				DD1BFC25273665990042C51F /* NicknameValidationRequest.swift in Sources */,
 				DDC3B5142733C4D600FF4959 /* VC.swift in Sources */,
 				DD1BFC23273664970042C51F /* NicknameValidationService.swift in Sources */,

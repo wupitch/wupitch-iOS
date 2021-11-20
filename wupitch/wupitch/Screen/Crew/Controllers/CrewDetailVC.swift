@@ -8,8 +8,10 @@
 import UIKit
 import Alamofire
 
+// 크루 디테일 뷰
 class CrewDetailVC: BaseVC {
     
+    // MARK: - IBOutlet
     @IBOutlet weak var modalView: UIView!
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var guestBtn: UIButton!
@@ -19,83 +21,106 @@ class CrewDetailVC: BaseVC {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var backBtn: UIButton!
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
         setCVDelegate()
-        tabBarController?.tabBar.isHidden = true
     }
     
+    // MARK: - Function
     private func setStyle() {
+        // 모달뷰
         modalView.alpha = 0.0
-        
+        // Label
         titleLabel.text = "크루"
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
-        
+        // 스크롤시 안보여야하는 라인뷰
         lineView.backgroundColor = .gray04
         lineView.alpha = 0.0
         bottomLineView.backgroundColor = .gray04
+        // 손님버튼
         guestBtn.setTitle("손님으로 참여", for: .normal)
         guestBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
         guestBtn.tintColor = .main
         guestBtn.layer.borderWidth = 1.adjusted
         guestBtn.layer.borderColor = UIColor.main.cgColor
-        
+        guestBtn.makeRounded(cornerRadius: 8.adjusted)
+        // 가입 버튼
         registerBtn.setTitle("가입하기", for: .normal)
         registerBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
         registerBtn.tintColor = .wht
         registerBtn.backgroundColor = .main
-        
         registerBtn.makeRounded(cornerRadius: 8.adjusted)
-        guestBtn.makeRounded(cornerRadius: 8.adjusted)
+        // 탭바 안보이게
+        tabBarController?.tabBar.isHidden = true
     }
     
+    // 스크롤 시 선 감지
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (scrollView.contentOffset.y+1) >= 200 {
+            lineView.alpha = 1
+        }
+        else {
+            lineView.alpha = 0.0
+        }
+    }
+    
+    
+    // MARK: - 컬렉션 뷰의 특정 섹션에 섹션헤더, 섹션푸터 넣어주는 방법
+    // CV Delegate & Register Cell
     private func setCVDelegate() {
+        // delegate
         detailCV.delegate = self
         detailCV.dataSource = self
+        
+        // Register Cell
         detailCV.register(DetailCrewImgCVCell.nib(), forCellWithReuseIdentifier: DetailCrewImgCVCell.identifier)
-        
-        detailCV.register(DetailCrewHeaderCRV.nib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "DetailCrewHeaderCRV")
-        
-        detailCV.register(DetailCrewFooterCRV.nib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "DetailCrewFooterCRV")
-        
         detailCV.register(DetailCrewTitleCVCell.nib(), forCellWithReuseIdentifier: DetailCrewTitleCVCell.identifier)
         detailCV.register(DetailCrewIntroduceCVCell.nib(), forCellWithReuseIdentifier: DetailCrewIntroduceCVCell.identifier)
         detailCV.register(DtailCrewContentCVCell.nib(), forCellWithReuseIdentifier: DtailCrewContentCVCell.identifier)
+        
+        // Register Reusable View Cell
+        detailCV.register(DetailCrewHeaderCRV.nib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "DetailCrewHeaderCRV")
+        detailCV.register(DetailCrewFooterCRV.nib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "DetailCrewFooterCRV")
     }
     
+    // MARK: - IBAction
+    // 가입하기 버튼
     @IBAction func touchUpRegisterBtn(_ sender: Any) {
         // 사용자의 자기소개 부분이 비어있다면 정보가 부족하다는 알림창을 띄워주고, 그렇지 않다면 가입 신청이 완료되었다는 창 띄워주기
-//        if SignUpUserInfo.shared.userIntroduce == nil {
-//            let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
-//            if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
-//                dvc.modalPresentationStyle = .overFullScreen
-//                dvc.modalTransitionStyle = .crossDissolve
-//
-//                // present 형태로 띄우기
-//                self.present(dvc, animated: true, completion: nil)
-//            }
-//        }
-//        else {
-//
-//        // 가입 완료 팝업 창 띄워줌
-//        let storyBoard: UIStoryboard = UIStoryboard(name: "JoinComplete", bundle: nil)
-//
-//        if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinCompleteVC") as? JoinCompleteVC {
-//            dvc.modalPresentationStyle = .overFullScreen
-//            dvc.modalTransitionStyle = .crossDissolve
-//
-//            // present 형태로 띄우기
-//            self.present(dvc, animated: true, completion: nil)
-//        }
-//        }
+        //        if SignUpUserInfo.shared.userIntroduce == nil {
+        //            let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
+        //            if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
+        //                dvc.modalPresentationStyle = .overFullScreen
+        //                dvc.modalTransitionStyle = .crossDissolve
+        //
+        //                // present 형태로 띄우기
+        //                self.present(dvc, animated: true, completion: nil)
+        //            }
+        //        }
+        //        else {
+        //
+        //        // 가입 완료 팝업 창 띄워줌
+        //        let storyBoard: UIStoryboard = UIStoryboard(name: "JoinComplete", bundle: nil)
+        //
+        //        if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinCompleteVC") as? JoinCompleteVC {
+        //            dvc.modalPresentationStyle = .overFullScreen
+        //            dvc.modalTransitionStyle = .crossDissolve
+        //
+        //            // present 형태로 띄우기
+        //            self.present(dvc, animated: true, completion: nil)
+        //        }
+        //    }
     }
+    
     // 뒤로가기 버튼
     @IBAction func touchUpBackBtn(_ sender: Any) {
         self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.popViewController(animated: true)
     }
-    // 손님
+    
+    // 손님 버튼
     @IBAction func touchUpGuestRegisterBtn(_ sender: Any) {
         // 손님신청 바텀시트
         let storyBoard: UIStoryboard = UIStoryboard(name: "CrewApplication", bundle: nil)
@@ -112,18 +137,13 @@ class CrewDetailVC: BaseVC {
     }
 }
 
- func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-    if (scrollView.contentOffset.y + 1) >= (scrollView.contentSize.height - 211) {
-        print("얼만큼 내려왓나?")
-    }
-}
-
 extension CrewDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
     
+    // 섹션 개수 지정
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 6
     }
@@ -179,6 +199,8 @@ extension CrewDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         }
     }
     
+    // kind는 supplementary view의 종류를 의미
+    // section header로 넣을지 footer로 넣을지 저 kind를 통해 결정
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         switch kind {
@@ -213,6 +235,7 @@ extension CrewDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         }
     }
     
+    // 섹션헤더 높이 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         
         switch section {
@@ -227,6 +250,7 @@ extension CrewDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         }
     }
     
+    // 섹션 푸터 높이 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         
         switch section {
@@ -236,7 +260,6 @@ extension CrewDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             return CGSize(width: collectionView.bounds.width, height: 0)
         }
     }
-    
     
     // MARK: - collectionView size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -278,35 +301,27 @@ extension CrewDetailVC: GuestModalDelegate {
     
     func selectBtnToOpenPopup() {
         // 자기소개가 없으면 정보가 부족하다는 알럿창 띄우고, 있으면 손님으로 가입 되었다는 알림창 띄울 수 있도록
-//        if SignUpUserInfo.shared.userIntroduce == nil {
-//            let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
-//            if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
-//                dvc.modalPresentationStyle = .overFullScreen
-//                dvc.modalTransitionStyle = .crossDissolve
-//                
-//                // present 형태로 띄우기
-//                self.present(dvc, animated: true, completion: nil)
-//            }
-//        }
-//        else {
-//            let storyBoard: UIStoryboard = UIStoryboard(name: "GuestComplete", bundle: nil)
-//            if let dvc = storyBoard.instantiateViewController(withIdentifier: "GuestCompleteVC") as? GuestCompleteVC {
-//                dvc.modalPresentationStyle = .overFullScreen
-//                dvc.modalTransitionStyle = .crossDissolve
-//                
-//                // present 형태로 띄우기
-//                self.present(dvc, animated: true, completion: nil)
-//            }
-//        }
+        //        if SignUpUserInfo.shared.userIntroduce == nil {
+        //            let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
+        //            if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
+        //                dvc.modalPresentationStyle = .overFullScreen
+        //                dvc.modalTransitionStyle = .crossDissolve
+        //
+        //                // present 형태로 띄우기
+        //                self.present(dvc, animated: true, completion: nil)
+        //            }
+        //        }
+        //        else {
+        //            let storyBoard: UIStoryboard = UIStoryboard(name: "GuestComplete", bundle: nil)
+        //            if let dvc = storyBoard.instantiateViewController(withIdentifier: "GuestCompleteVC") as? GuestCompleteVC {
+        //                dvc.modalPresentationStyle = .overFullScreen
+        //                dvc.modalTransitionStyle = .crossDissolve
+        //
+        //                // present 형태로 띄우기
+        //                self.present(dvc, animated: true, completion: nil)
+        //            }
+        //        }
     }
-  
-    // 스크롤 시 선 감지
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if (scrollView.contentOffset.y+1) >= 200 {
-            lineView.alpha = 1
-        }
-        else {
-            lineView.alpha = 0.0
-        }
-    }
+    
+   
 }

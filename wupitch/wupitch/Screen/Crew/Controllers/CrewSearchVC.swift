@@ -23,6 +23,7 @@ class CrewSearchVC: UIViewController, UISearchBarDelegate {
     
     var tabPage = [tabEnum.crew, tabEnum.bungae]
     var passwordEyeBtn = UIButton(type: .system)
+    var clickBungae : Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +33,13 @@ class CrewSearchVC: UIViewController, UISearchBarDelegate {
         
         self.crewSearchCV.register(CrewSearchCVCell.nib(), forCellWithReuseIdentifier: CrewSearchCVCell.identifier)
 
-        crewBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
-        bungaeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
-        tabLinBungaeView.backgroundColor = .clear
+        crewBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        bungaeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
+        crewBtn.isUserInteractionEnabled = false
+        bungaeBtn.isUserInteractionEnabled = false
         
+        tabLineView.backgroundColor = .clear
+
         searchTextField.backgroundColor = .gray05
         searchTextField.borderStyle = .none
         searchTextField.makeRounded(cornerRadius: 8.adjusted)
@@ -44,6 +48,17 @@ class CrewSearchVC: UIViewController, UISearchBarDelegate {
         searchTextField.addPadding()
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        bungaeBtn.sendActions(for: .touchUpInside)
+//    }
+    override func viewDidAppear(_ animated: Bool) {
+           super.viewDidAppear(animated)
+           bungaeBtn.sendActions(for: .touchUpInside)
+           crewBtn.isUserInteractionEnabled = true
+           bungaeBtn.isUserInteractionEnabled = true
+       }
+   
     // cancel btn
     func passwordEyeSecure() {
         passwordEyeBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: searchTextField.frame.height))
@@ -64,46 +79,24 @@ class CrewSearchVC: UIViewController, UISearchBarDelegate {
     
     @IBAction func touchUpCrewBtn(_ sender: Any) {
         crewSearchCV.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
-       
-        if crewBtn.isSelected == true && bungaeBtn.isSelected == false{
-            crewBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
-            bungaeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
-            // 번개탭바 보이게
-            tabLinBungaeView.backgroundColor = .bk
-            // 탭바 안보이게
-            tabLineView.backgroundColor = .clear
-        }
-        else {
-            crewBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
-            bungaeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
-            // 번개탭바 안보이게
-            tabLinBungaeView.backgroundColor = .clear
-            // 탭바 보이게
-            tabLineView.backgroundColor = .bk
-        }
+        crewBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
+        bungaeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        // 번개탭바 안보이게
+        tabLinBungaeView.backgroundColor = .clear
+        // 탭바 보이게
+        tabLineView.backgroundColor = .bk
     }
     
     @IBAction func touchUpBungaeBtn(_ sender: Any) {
-        crewSearchCV.scrollToItem(at: IndexPath(item: 1, section: 0), at: .centeredHorizontally, animated: true)
-       
-        if crewBtn.isSelected == false && bungaeBtn.isSelected == true{
-            crewBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
-            bungaeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
-            // 번개탭바 안보이게
-            tabLinBungaeView.backgroundColor = .clear
-            // 탭바 보이게
-            tabLineView.backgroundColor = .bk
-        }
-        else {
-            crewBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
-            bungaeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
-            // 번개탭바 보이게
-            tabLinBungaeView.backgroundColor = .bk
-            // 탭바 안보이게
-            tabLineView.backgroundColor = .clear
-        }
+        print("번개터치")
+        crewSearchCV.scrollToItem(at: IndexPath(row: 1, section: 0), at: .centeredHorizontally, animated: true)
+        crewBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        bungaeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
+        // 번개탭바 보이게
+        tabLinBungaeView.backgroundColor = .bk
+        // 탭바 안보이게
+        tabLineView.backgroundColor = .clear
     }
-    
     
     @IBAction func touchUpBackBtn(_ sender: Any) {
         self.tabBarController?.tabBar.isHidden = false
@@ -123,6 +116,8 @@ extension CrewSearchVC : UICollectionViewDelegate, UICollectionViewDataSource, U
         cell.tabBar = tabPage[indexPath.row]
         return cell
     }
+    
+    
     
     //MARK: - Cell 사이즈
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize

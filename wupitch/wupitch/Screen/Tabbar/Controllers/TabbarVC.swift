@@ -44,7 +44,7 @@ class TabbarVC: UITabBarController {
         guard let fifthTabVC = fifthTab.instantiateViewController(identifier: "ProfileVC") as? ProfileVC  else { return }
         let fifthTabNC = UINavigationController(rootViewController: fifthTabVC)
         fifthTabNC.tabBarItem.image = UIImage(named: "profile")
-        fifthTabNC.tabBarItem.title = "프로필"
+        fifthTabNC.tabBarItem.title = "마이페이지"
         
         let tabs = [firstTabNC, secondTabNC, thirdTabNC, fourthTabNC, fifthTabNC]
         self.setViewControllers(tabs, animated: true)

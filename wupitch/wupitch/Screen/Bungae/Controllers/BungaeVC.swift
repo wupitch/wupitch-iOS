@@ -60,8 +60,8 @@ class BungaeVC: BaseVC {
     }
     
     @IBAction func touchUpFilterBtn(_ sender: Any) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "CrewFilter", bundle: nil)
-        if let dvc = storyBoard.instantiateViewController(withIdentifier: "CrewFilterVC") as? CrewFilterVC {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "BungaeFilter", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "BungaeFilterVC") as? BungaeFilterVC {
             self.tabBarController?.tabBar.isHidden = true
             navigationController?.pushViewController(dvc, animated: true)
         }

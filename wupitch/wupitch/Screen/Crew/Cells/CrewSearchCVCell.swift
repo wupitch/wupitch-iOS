@@ -24,6 +24,7 @@ class CrewSearchCVCell: UICollectionViewCell {
         crewSearchCV.delegate = self
         crewSearchCV.dataSource = self
         self.crewSearchCV.register(CrewCVCell.nib(), forCellWithReuseIdentifier: CrewCVCell.identifier)
+        self.crewSearchCV.register(BungaeCVCell.nib(), forCellWithReuseIdentifier: BungaeCVCell.identifier)
     }
 
 }
@@ -34,20 +35,24 @@ extension CrewSearchCVCell : UICollectionViewDelegate, UICollectionViewDelegateF
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CrewCVCell.identifier, for: indexPath) as? CrewCVCell else{
-            return UICollectionViewCell()
-        }
         
-        // 산책내역
         if tabBar == tabEnum.crew {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CrewCVCell.identifier, for: indexPath) as? CrewCVCell else{
+                return UICollectionViewCell()
+            }
+            return cell
             print("크루 눌렸음")
         }
-        // 식사내역
+        
         else if tabBar == tabEnum.bungae {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BungaeCVCell.identifier, for: indexPath) as? BungaeCVCell else{
+                return UICollectionViewCell()
+            }
+            return cell
             print("번개 눌렸을")
         }
         
-        return cell
+        return UICollectionViewCell()
     }
     // MARK: - collectionView size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
