@@ -43,7 +43,6 @@ class CrewFilterVC: UIViewController {
         
         setStyle()
         textFieldDelegate()
-        setTimeBtn()
     }
     
     private func setStyle() {
@@ -70,22 +69,22 @@ class CrewFilterVC: UIViewController {
         }
     }
     
-    func setTimeBtn() {
-        startTimeBtn.setTitleColor(UIColor.gray02, for: .normal)
-        startTimeBtn.setTitle("00:00", for: .normal)
-        endTimeBtn.setTitle("00:00", for: .normal)
-        endTimeBtn.setTitleColor(UIColor.gray02, for: .normal)
-        betweenLabel.textColor = .gray02
-        startTimeBtn.makeRounded(cornerRadius: 8.adjusted)
-        endTimeBtn.makeRounded(cornerRadius: 8.adjusted)
-        startTimeBtn.layer.borderWidth = 1.adjusted
-        endTimeBtn.layer.borderWidth = 1.adjusted
-        startTimeBtn.layer.borderColor = UIColor.gray02.cgColor
-        endTimeBtn.layer.borderColor = UIColor.gray02.cgColor
-        startTimeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
-        endTimeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
-        isPicker = nil
-    }
+//    func setTimeBtn() {
+//        startTimeBtn.setTitleColor(UIColor.gray02, for: .normal)
+//        startTimeBtn.setTitle("00:00", for: .normal)
+//        endTimeBtn.setTitle("00:00", for: .normal)
+//        endTimeBtn.setTitleColor(UIColor.gray02, for: .normal)
+//        betweenLabel.textColor = .gray02
+//        startTimeBtn.makeRounded(cornerRadius: 8.adjusted)
+//        endTimeBtn.makeRounded(cornerRadius: 8.adjusted)
+//        startTimeBtn.layer.borderWidth = 1.adjusted
+//        endTimeBtn.layer.borderWidth = 1.adjusted
+//        startTimeBtn.layer.borderColor = UIColor.gray02.cgColor
+//        endTimeBtn.layer.borderColor = UIColor.gray02.cgColor
+//        startTimeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+//        endTimeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+//        isPicker = nil
+//    }
     
     func textFieldDelegate() {
         //startTectField.delegate = self
@@ -272,7 +271,7 @@ class CrewFilterVC: UIViewController {
                 crewCountBtns[i].defaultSportsBtn()
             }
         }
-        setTimeBtn()
+        //setTimeBtn()
     }
     
     @IBAction func touchUpApplyBtn(_ sender: Any) {
