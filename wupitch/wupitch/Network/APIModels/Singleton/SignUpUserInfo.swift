@@ -34,7 +34,7 @@ class SignUpUserInfo {
     // 크루만들기 기본정보
     var crewName : String?
     var crewCount : Int?
-    var ageList : [Int] = [1,2,3,4,5]
+    var ageList : [Int] = [0,1,2,3,4]
     var extraInfoList : [Int] = [1,2,3,4,5,6,7,8]
     
     

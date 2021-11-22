@@ -9,6 +9,7 @@ import UIKit
 
 class MakeCrewInfoVC: UIViewController {
 
+    // MARK: - IBOutlet
     @IBOutlet var addInfoBtns: [SportsBtn]!
     @IBOutlet var ageBtns: [SportsBtn]!
     @IBOutlet var bgView: UIView!
@@ -26,14 +27,17 @@ class MakeCrewInfoVC: UIViewController {
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var nextBtn: NextBtn!
     
+    lazy var extraDataManager = ExtraService()
+    
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
+        extraDataManager.getExtra(delegate: self)
     }
     
+    // MARK: - Function
     private func setStyle() {
-        
-        
         // titleLabel Style
         titleLabel.makeCrewTitleLabel()
         // subTitleStyle
@@ -63,105 +67,84 @@ class MakeCrewInfoVC: UIViewController {
         
         // 연령대 싱글톤 값으로 초기화
         for i in 0...4 {
-            ageBtns[i].graySportsBtn()
             ageBtns[i].ageInt = SignUpUserInfo.shared.ageList[i]
         }
     }
-    
-//    func test() {
-//        if SignUpUserInfo.shared.crewName != nil && SignUpUserInfo.shared.crewCount != nil && SignUpUserInfo.shared.ageBtn != nil {
-//            nextBtn.backgroundColor = .main
-//        }
-//        else {
-//            nextBtn?.backgroundColor = .gray03
-//        }
-//    }
-    
+
+    // MARK: - IBAction
     @IBAction func touchUpFirstBtn(_ sender: Any) {
-          
-        
-//        ageBtns[0].status = true
-//        if ageBtns[0].status == true {
-//            if crewNameTextField.text?.isEmpty == false  && crewCountTextField.text?.isEmpty == false {
-//                nextBtn.backgroundColor = .main
-//            }
-//        }
-//        else {
-//            nextBtn.backgroundColor = .gray03
-//        }
+        if ageBtns[0].backgroundColor == .gray04 {
+            ageBtns[0].colorSportsBtn()
+            if crewNameTextField.text?.isEmpty == false && crewCountTextField.text?.isEmpty == false {
+                nextBtn.backgroundColor = .main
+            }
+        }
+        else {
+            ageBtns[0].defaultSportsBtn()
+            if ageBtns.filter({$0.status}).count < 1 {
+                nextBtn.backgroundColor = .gray03
+            }
+        }
     }
 
     @IBAction func touchUpSecondBtn(_ sender: Any) {
-        
-//        if ageBtns[1].status == false {
-//            ageBtns[1].colorSportsBtn()
-//            ageBtns[0].defaultSportsBtn()
-//            ageBtns[2].defaultSportsBtn()
-//            ageBtns[3].defaultSportsBtn()
-//            ageBtns[4].defaultSportsBtn()
-//            if SignUpUserInfo.shared.crewName != nil && SignUpUserInfo.shared.crewCount != nil {
-//                nextBtn.backgroundColor = .main
-//            }
-//
-//        }
-//        else {
-//            ageBtns[1].defaultSportsBtn()
-//            nextBtn.backgroundColor = .gray03
-//        }
+        if ageBtns[1].backgroundColor == .gray04 {
+            ageBtns[1].colorSportsBtn()
+            if crewNameTextField.text?.isEmpty == false && crewCountTextField.text?.isEmpty == false {
+                nextBtn.backgroundColor = .main
+            }
+        }
+        else {
+            ageBtns[1].defaultSportsBtn()
+            if ageBtns.filter({$0.status}).count < 1 {
+                nextBtn.backgroundColor = .gray03
+            }
+        }
     }
 
     @IBAction func touchUpThirdBtn(_ sender: Any) {
-        
-//        if ageBtns[2].status == false {
-//            ageBtns[2].colorSportsBtn()
-//            ageBtns[0].defaultSportsBtn()
-//            ageBtns[1].defaultSportsBtn()
-//            ageBtns[3].defaultSportsBtn()
-//            ageBtns[4].defaultSportsBtn()
-//            if SignUpUserInfo.shared.crewName != nil && SignUpUserInfo.shared.crewCount != nil {
-//                           nextBtn.backgroundColor = .main
-//                       }
-//        }
-//        else {
-//            ageBtns[2].defaultSportsBtn()
-//            nextBtn.backgroundColor = .gray03
-//        }
+        if ageBtns[2].backgroundColor == .gray04 {
+            ageBtns[2].colorSportsBtn()
+            if crewNameTextField.text?.isEmpty == false && crewCountTextField.text?.isEmpty == false {
+                nextBtn.backgroundColor = .main
+            }
+        }
+        else {
+            ageBtns[2].defaultSportsBtn()
+            if ageBtns.filter({$0.status}).count < 1 {
+                nextBtn.backgroundColor = .gray03
+            }
+        }
     }
 
     @IBAction func touchUpFourthBtn(_ sender: Any) {
-        
-//        if ageBtns[3].status == false {
-//            ageBtns[3].colorSportsBtn()
-//            ageBtns[0].defaultSportsBtn()
-//            ageBtns[1].defaultSportsBtn()
-//            ageBtns[2].defaultSportsBtn()
-//            ageBtns[4].defaultSportsBtn()
-//            if SignUpUserInfo.shared.crewName != nil && SignUpUserInfo.shared.crewCount != nil {
-//                           nextBtn.backgroundColor = .main
-//                       }
-//        }
-//        else {
-//            ageBtns[3].defaultSportsBtn()
-//            nextBtn.backgroundColor = .gray03
-//        }
+        if ageBtns[3].backgroundColor == .gray04 {
+            ageBtns[3].colorSportsBtn()
+            if crewNameTextField.text?.isEmpty == false && crewCountTextField.text?.isEmpty == false {
+                nextBtn.backgroundColor = .main
+            }
+        }
+        else {
+            ageBtns[3].defaultSportsBtn()
+            if ageBtns.filter({$0.status}).count < 1 {
+                nextBtn.backgroundColor = .gray03
+            }
+        }
     }
 
     @IBAction func touchUpFifthBtn(_ sender: Any) {
-       
-//        if ageBtns[4].status == false {
-//            ageBtns[4].colorSportsBtn()
-//            ageBtns[0].defaultSportsBtn()
-//            ageBtns[1].defaultSportsBtn()
-//            ageBtns[2].defaultSportsBtn()
-//            ageBtns[3].defaultSportsBtn()
-//            if SignUpUserInfo.shared.crewName != nil && SignUpUserInfo.shared.crewCount != nil {
-//                nextBtn.backgroundColor = .main
-//            }
-//        }
-//        else {
-//            ageBtns[4].defaultSportsBtn()
-//            nextBtn.backgroundColor = .gray03
-//        }
+        if ageBtns[4].backgroundColor == .gray04 {
+            ageBtns[4].colorSportsBtn()
+            if crewNameTextField.text?.isEmpty == false && crewCountTextField.text?.isEmpty == false {
+                nextBtn.backgroundColor = .main
+            }
+        }
+        else {
+            ageBtns[4].defaultSportsBtn()
+            if ageBtns.filter({$0.status}).count < 1 {
+                nextBtn.backgroundColor = .gray03
+            }
+        }
     }
     
     @IBAction func touchUpBackBtn(_ sender: Any) {
@@ -179,9 +162,13 @@ class MakeCrewInfoVC: UIViewController {
             for i in 0...4 {
                 if ageBtns[i].status == true {
                     SignUpUserInfo.shared.ageList[i] = ageBtns[i].ageInt!
-                    SignUpUserInfo.shared.extraInfoList[i] = SignUpUserInfo.shared.extraInfo[i]
                     print("연령대 >>>>>>>>>",SignUpUserInfo.shared.ageList[i])
-                    print("추가정보 >>>>>>>>>",SignUpUserInfo.shared.extraInfo[i])
+                }
+            }
+            for i in 0...7 {
+                if addInfoBtns[i].status == true {
+                    SignUpUserInfo.shared.extraInfoList[i] = addInfoBtns[i].extraId!
+                    print("추가정보 >>>>>>>>>",SignUpUserInfo.shared.extraInfoList[i])
                 }
             }
             // 싱글톤에 값 넣어주기
@@ -202,6 +189,7 @@ class MakeCrewInfoVC: UIViewController {
     }
 }
 
+// MARK: -  Extension
 extension MakeCrewInfoVC : UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         crewNameTextField.textColor = .bk
@@ -238,5 +226,23 @@ extension MakeCrewInfoVC : UITextFieldDelegate {
             return newLength <= 3
         }
         return true
+    }
+}
+
+extension MakeCrewInfoVC {
+    func didSuccessExtra(result: [ExtraResult]) {
+        print("값이 성공적으로 들어왔습니다.")
+        
+        // 추가정보 싱글톤에 버튼 아이디 값 넣어주기 (싱글톤에 저장)
+        // 버튼 자체에 싱글톤 값 넣어주기
+        for i in 0...7 {
+            SignUpUserInfo.shared.extraInfo[i] = result[i].extraID
+            addInfoBtns[i].extraId = SignUpUserInfo.shared.extraInfo[i]
+            print(">>>", addInfoBtns[i].extraId ?? "값이 없어용")
+        }
+    }
+    
+    func failedToRequest(message: String) {
+        print("값이 들어오지 않았습니다.")
     }
 }

@@ -166,6 +166,8 @@
 		DDC4DB3127478B7200D79CC8 /* BungaeIntroduceCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DB2F27478B7200D79CC8 /* BungaeIntroduceCVCell.xib */; };
 		DDC4DB332748F2F300D79CC8 /* BungaeFilter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DB322748F2F300D79CC8 /* BungaeFilter.storyboard */; };
 		DDC4DB352748F30E00D79CC8 /* BungaeFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB342748F30D00D79CC8 /* BungaeFilterVC.swift */; };
+		DDC4DB39274B297D00D79CC8 /* ExtraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB38274B297D00D79CC8 /* ExtraService.swift */; };
+		DDC4DB3B274B299400D79CC8 /* ExtraData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB3A274B299400D79CC8 /* ExtraData.swift */; };
 		DDE0EE582728163900C46821 /* JoinAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE572728163900C46821 /* JoinAlert.storyboard */; };
 		DDE0EE5A2728164E00C46821 /* JoinAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0EE592728164E00C46821 /* JoinAlertVC.swift */; };
 		DDE0EE5C272873EC00C46821 /* SignUpKakaoComplete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */; };
@@ -349,6 +351,8 @@
 		DDC4DB2F27478B7200D79CC8 /* BungaeIntroduceCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BungaeIntroduceCVCell.xib; sourceTree = "<group>"; };
 		DDC4DB322748F2F300D79CC8 /* BungaeFilter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BungaeFilter.storyboard; sourceTree = "<group>"; };
 		DDC4DB342748F30D00D79CC8 /* BungaeFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeFilterVC.swift; sourceTree = "<group>"; };
+		DDC4DB38274B297D00D79CC8 /* ExtraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraService.swift; sourceTree = "<group>"; };
+		DDC4DB3A274B299400D79CC8 /* ExtraData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraData.swift; sourceTree = "<group>"; };
 		DDE0EE572728163900C46821 /* JoinAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinAlert.storyboard; sourceTree = "<group>"; };
 		DDE0EE592728164E00C46821 /* JoinAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinAlertVC.swift; sourceTree = "<group>"; };
 		DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpKakaoComplete.storyboard; sourceTree = "<group>"; };
@@ -1014,6 +1018,22 @@
 			path = Sports;
 			sourceTree = "<group>";
 		};
+		DDC4DB36274B293D00D79CC8 /* Extra */ = {
+			isa = PBXGroup;
+			children = (
+				DDC4DB38274B297D00D79CC8 /* ExtraService.swift */,
+			);
+			path = Extra;
+			sourceTree = "<group>";
+		};
+		DDC4DB37274B295100D79CC8 /* Extra */ = {
+			isa = PBXGroup;
+			children = (
+				DDC4DB3A274B299400D79CC8 /* ExtraData.swift */,
+			);
+			path = Extra;
+			sourceTree = "<group>";
+		};
 		DDE0EE54272815FD00C46821 /* PopupAlert */ = {
 			isa = PBXGroup;
 			children = (
@@ -1050,6 +1070,7 @@
 		DDE0EE632729317C00C46821 /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				DDC4DB36274B293D00D79CC8 /* Extra */,
 				DDC4DB272746A96900D79CC8 /* Sports */,
 				DDC4DB0F2744B92A00D79CC8 /* MakeCrew */,
 				DDC4DAE2274107BC00D79CC8 /* Area */,
@@ -1115,6 +1136,7 @@
 		DDED0118271B33C200C2C343 /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
+				DDC4DB37274B295100D79CC8 /* Extra */,
 				DDC4DB242746A93D00D79CC8 /* Sports */,
 				DDC4DB102744B93D00D79CC8 /* MakeCrew */,
 				DDC4DADF2741072B00D79CC8 /* Area */,
@@ -1344,6 +1366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDC4DB3B274B299400D79CC8 /* ExtraData.swift in Sources */,
 				DDC4DB0327440E6700D79CC8 /* SignInService.swift in Sources */,
 				DD1BFC3B2738B2790042C51F /* TextFiledTapPicker.swift in Sources */,
 				DD3A30E6272DAC0300D711C6 /* MyActivityVC.swift in Sources */,
@@ -1454,6 +1477,7 @@
 				DDC4DB262746A95E00D79CC8 /* SportsData.swift in Sources */,
 				DDC3B51B2735565C00FF4959 /* MainLocationPickerData.swift in Sources */,
 				DD3ACBC427216D4400EBC201 /* SignUpIDVC.swift in Sources */,
+				DDC4DB39274B297D00D79CC8 /* ExtraService.swift in Sources */,
 				DDC4DB012743FC2F00D79CC8 /* SignUpRequest.swift in Sources */,
 				DDE0EE6D2729908B00C46821 /* SignUpAgeVC.swift in Sources */,
 				DDC4DAF627438A3100D79CC8 /* PwValidationService.swift in Sources */,
