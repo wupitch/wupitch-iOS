@@ -72,9 +72,10 @@ class SignUpIDVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     // 신분증 인증 버튼
     @IBAction func touchUpPhotoBtn(_ sender: Any) {
+        
         let storyboard = UIStoryboard.init(name: "SignUpCamera", bundle: nil)
         guard let dvc = storyboard.instantiateViewController(identifier: "SignUpCameraVC") as? SignUpCameraVC else {return}
-        
+
         self.navigationController?.pushViewController(dvc, animated: true)
     }
 }

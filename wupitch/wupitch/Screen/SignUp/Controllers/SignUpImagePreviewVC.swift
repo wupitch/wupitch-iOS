@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SignUpImagePreviewVC: UIViewController {
 
@@ -14,7 +15,9 @@ class SignUpImagePreviewVC: UIViewController {
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var usePhotoBtn: UIButton!
     @IBOutlet weak var cameraAgainBtn: UIButton!
-    public var image:UIImage?
+    public var image: UIImage?
+    
+    //lazy var profileImageDataManager = ProfileImageService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +48,46 @@ class SignUpImagePreviewVC: UIViewController {
     
     @IBAction func touchUpUsePhotoBtn(_ sender: Any) {
         
+        let url = "https://prod.wupitch.site/app/accounts/image"
+        
+        var header : HTTPHeaders = []
+        
+        if let token = UserDefaults.standard.string(forKey: "userToken") {
+            header = ["Content-Type":"multipart/form-data", "X-ACCESS-TOKEN": token]
+        }
+        
+        let userImage = self.imagePrevieImageView?.image
+        
+        AF.upload(
+            multipartFormData: { MultipartFormData in
+                if((userImage) != nil){
+                    MultipartFormData.append(userImage!.jpegData(compressionQuality: 0.025)!, withName: "images", fileName: "imageNew.jpeg", mimeType: "image/jpeg")
+                    print("사진 잘 들어오나 확인 >>>>>", userImage!)
+                }
+            }, to: url, method: .post, headers: header).uploadProgress(queue: .main) { progress in
+                print("Upload Progress: \(progress.fractionCompleted)")
+            }.responseJSON { data in
+                switch data.result {
+                case .success(let response):
+                    print("데이터가 성공적으로 들어왔어요", response)
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
     }
-    
+}
+
+extension UIImage {
+    func resize(newWidth: CGFloat) -> UIImage {
+        let scale = newWidth / self.size.width
+        let newHeight = self.size.height * scale
+        let size = CGSize(width: newWidth, height: newHeight)
+        let render = UIGraphicsImageRenderer(size: size)
+        let renderImage = render.image {
+            context in self.draw(in: CGRect(origin: .zero, size: size)) }
+        print("화면 배율: \(UIScreen.main.scale)") // 배수
+        print("origin: \(self), resize: \(renderImage)")
+        return renderImage
+    }
 }

@@ -158,35 +158,38 @@ class MakeCrewDateVC: UIViewController {
         present(alertVC, animated: true, completion: nil)
     }
     
+    func weekBtnCheck() {
+        for i in 0...6 {
+            if dateBtns[i].status == true {
+                weekBtns[0].grayCheck()
+                weekBtns[1].grayCheck()
+                weekBtns[2].grayCheck()
+            }
+            else {
+                weekBtns[0].colorCheck()
+                weekBtns[1].colorCheck()
+                weekBtns[2].colorCheck()
+            }
+        }
+    }
     
     @IBAction func touchUpWeekBtn(_ sender: Any) {
-        if weekBtns[0].status == false {
-            weekBtns[0].colorCheck()
-        }
-        else {
-            weekBtns[0].grayCheck()
-        }
+        
+            //weekBtnCheck()
         
     }
     
     @IBAction func touchUpTwoWeekBtn(_ sender: Any) {
-        if weekBtns[1].status == false {
-            weekBtns[1].colorCheck()
-        }
-        else {
-            weekBtns[1].grayCheck()
-        }
+        
+           //weekBtnCheck()
+       
         
     }
     
     @IBAction func touchUpThreeWeekBtn(_ sender: Any) {
-        if weekBtns[2].status == false {
-            weekBtns[2].colorCheck()
-        }
-        else {
-            weekBtns[2].grayCheck()
-        }
         
+           //weekBtnCheck()
+       
     }
     
     
