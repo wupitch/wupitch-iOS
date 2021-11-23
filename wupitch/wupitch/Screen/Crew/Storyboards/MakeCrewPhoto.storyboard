@@ -338,7 +338,6 @@
                     </view>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
-                        <outlet property="addPhotoLabel" destination="HRb-fA-q3y" id="Win-3F-7DT"/>
                         <outlet property="crewInfoTextCountLabel" destination="8MW-cG-uMa" id="zwJ-4r-l2w"/>
                         <outlet property="crewInfoTextView" destination="ZEP-jq-VHb" id="lnR-TO-4PT"/>
                         <outlet property="imageLabel" destination="HRb-fA-q3y" id="b2g-V4-vf5"/>

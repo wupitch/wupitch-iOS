@@ -30,7 +30,6 @@ class MakeCrewPhotoVC: UIViewController {
     @IBOutlet weak var plusImageVIew: UIImageView!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var addPhotoLabel: UILabel!
     @IBOutlet weak var questionTextCountLabel: UILabel!
     @IBOutlet weak var questionLabel: LabelFontSize!
     @IBOutlet weak var materialsTextCountLabel: UILabel!
@@ -63,7 +62,7 @@ class MakeCrewPhotoVC: UIViewController {
         picker.delegate = self
         
         photoView.makeRounded(cornerRadius: 8.adjusted)
-        addPhotoLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+        imageLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         
         titleTextField.backgroundColor = .gray05
         titleTextField.borderStyle = .none
