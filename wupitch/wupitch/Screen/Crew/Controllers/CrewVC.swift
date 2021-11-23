@@ -131,13 +131,13 @@ extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         let width = self.view.frame.width
         //let height =  collectionView.frame.height
         
-        return CGSize(width: width-40, height: 128)
+        return CGSize(width: width-40, height: 133)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
                         UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 21, left: 0, bottom: 16, right: 0)
+        return UIEdgeInsets(top: 12, left: 0, bottom: 0, right: 0)
     }
 }
 

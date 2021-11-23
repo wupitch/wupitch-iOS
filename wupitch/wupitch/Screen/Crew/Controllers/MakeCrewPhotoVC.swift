@@ -7,20 +7,15 @@
 
 import UIKit
 
-//struct Const {
-//    static var soccer = UIImage(named: "soccer")
-//    static var basketball = UIImage(named: "imgBaskThumb")
-//}
-//
-//struct Info {
-//    static var shared = Info()
-//    let sports: Sports
-//    let name: String
-//
-//    private init() {
-//
-//    }
-//}
+struct BasicImageAndColor {
+    var soccer = UIImage(named: "imgFootThumb")
+    var basketball = UIImage(named: "imgBaskThumb")
+    var badminton = UIImage(named: "imgBadThumb")
+    var volleyball = UIImage(named: "imgVollThumb")
+    var running = UIImage(named: "imgRunThumb")
+    var hiking = UIImage(named: "imgHikeThumb")
+}
+
 //
 //struct Sports {
 //    let primaryKey: String
@@ -60,6 +55,7 @@ class MakeCrewPhotoVC: UIViewController {
         tapGesture()
         //Info.shared.sports.primaryKey = "dfjslf"
         //Info.shared.sports.basicImage = Const.soccer
+        
     }
    
     private func setStyle() {

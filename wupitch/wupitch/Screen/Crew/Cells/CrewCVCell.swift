@@ -31,6 +31,9 @@ class CrewCVCell: UICollectionViewCell {
         tagNameLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
         
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
+        titleLabel.textColor = .bk
+        dayLabel.textColor = .gray01
+        subLabel.textColor = .gray01
         dayLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         subLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         

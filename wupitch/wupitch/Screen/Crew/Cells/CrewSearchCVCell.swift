@@ -57,13 +57,18 @@ extension CrewSearchCVCell : UICollectionViewDelegate, UICollectionViewDelegateF
     // MARK: - collectionView size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: self.frame.width-40, height: 128)
+        if tabBar == tabEnum.crew {
+            return CGSize(width: self.frame.width-40, height: 133)
+        }
+        else {
+            return CGSize(width: self.frame.width-40, height: 150)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
                         UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 21, left: 0, bottom: 16, right: 0)
+        return UIEdgeInsets(top: 21, left: 0, bottom: 0, right: 0)
     }
     
 }

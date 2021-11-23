@@ -168,6 +168,16 @@
 		DDC4DB352748F30E00D79CC8 /* BungaeFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB342748F30D00D79CC8 /* BungaeFilterVC.swift */; };
 		DDC4DB39274B297D00D79CC8 /* ExtraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB38274B297D00D79CC8 /* ExtraService.swift */; };
 		DDC4DB3B274B299400D79CC8 /* ExtraData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB3A274B299400D79CC8 /* ExtraData.swift */; };
+		DDC4DB43274D2BA700D79CC8 /* MakeBungaeRegion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DB42274D2BA700D79CC8 /* MakeBungaeRegion.storyboard */; };
+		DDC4DB45274D2BBA00D79CC8 /* MakeBungaeRegionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB44274D2BBA00D79CC8 /* MakeBungaeRegionVC.swift */; };
+		DDC4DB47274D2BDA00D79CC8 /* MakeBungaeDate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DB46274D2BDA00D79CC8 /* MakeBungaeDate.storyboard */; };
+		DDC4DB49274D2BF000D79CC8 /* MakeBungaeDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB48274D2BF000D79CC8 /* MakeBungaeDateVC.swift */; };
+		DDC4DB4B274D2C1100D79CC8 /* MakeBungaePhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DB4A274D2C1100D79CC8 /* MakeBungaePhoto.storyboard */; };
+		DDC4DB4D274D2C2200D79CC8 /* MakeBungaePhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB4C274D2C2100D79CC8 /* MakeBungaePhotoVC.swift */; };
+		DDC4DB4F274D2C5200D79CC8 /* MakeBungaeCount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DB4E274D2C5100D79CC8 /* MakeBungaeCount.storyboard */; };
+		DDC4DB51274D2C6300D79CC8 /* MakeBungaeCountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB50274D2C6300D79CC8 /* MakeBungaeCountVC.swift */; };
+		DDC4DB53274D2C8200D79CC8 /* MakeBungaeMoney.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DB52274D2C8200D79CC8 /* MakeBungaeMoney.storyboard */; };
+		DDC4DB55274D2C9400D79CC8 /* MakeBungaeMoneyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB54274D2C9400D79CC8 /* MakeBungaeMoneyVC.swift */; };
 		DDE0EE582728163900C46821 /* JoinAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE572728163900C46821 /* JoinAlert.storyboard */; };
 		DDE0EE5A2728164E00C46821 /* JoinAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0EE592728164E00C46821 /* JoinAlertVC.swift */; };
 		DDE0EE5C272873EC00C46821 /* SignUpKakaoComplete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */; };
@@ -353,6 +363,16 @@
 		DDC4DB342748F30D00D79CC8 /* BungaeFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeFilterVC.swift; sourceTree = "<group>"; };
 		DDC4DB38274B297D00D79CC8 /* ExtraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraService.swift; sourceTree = "<group>"; };
 		DDC4DB3A274B299400D79CC8 /* ExtraData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraData.swift; sourceTree = "<group>"; };
+		DDC4DB42274D2BA700D79CC8 /* MakeBungaeRegion.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MakeBungaeRegion.storyboard; sourceTree = "<group>"; };
+		DDC4DB44274D2BBA00D79CC8 /* MakeBungaeRegionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBungaeRegionVC.swift; sourceTree = "<group>"; };
+		DDC4DB46274D2BDA00D79CC8 /* MakeBungaeDate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MakeBungaeDate.storyboard; sourceTree = "<group>"; };
+		DDC4DB48274D2BF000D79CC8 /* MakeBungaeDateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBungaeDateVC.swift; sourceTree = "<group>"; };
+		DDC4DB4A274D2C1100D79CC8 /* MakeBungaePhoto.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MakeBungaePhoto.storyboard; sourceTree = "<group>"; };
+		DDC4DB4C274D2C2100D79CC8 /* MakeBungaePhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBungaePhotoVC.swift; sourceTree = "<group>"; };
+		DDC4DB4E274D2C5100D79CC8 /* MakeBungaeCount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MakeBungaeCount.storyboard; sourceTree = "<group>"; };
+		DDC4DB50274D2C6300D79CC8 /* MakeBungaeCountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBungaeCountVC.swift; sourceTree = "<group>"; };
+		DDC4DB52274D2C8200D79CC8 /* MakeBungaeMoney.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MakeBungaeMoney.storyboard; sourceTree = "<group>"; };
+		DDC4DB54274D2C9400D79CC8 /* MakeBungaeMoneyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBungaeMoneyVC.swift; sourceTree = "<group>"; };
 		DDE0EE572728163900C46821 /* JoinAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinAlert.storyboard; sourceTree = "<group>"; };
 		DDE0EE592728164E00C46821 /* JoinAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinAlertVC.swift; sourceTree = "<group>"; };
 		DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpKakaoComplete.storyboard; sourceTree = "<group>"; };
@@ -758,6 +778,11 @@
 				DD3A30E1272DABCC00D711C6 /* Bungae.storyboard */,
 				DDC4DB2027465BF800D79CC8 /* BungaeDetail.storyboard */,
 				DDC4DB322748F2F300D79CC8 /* BungaeFilter.storyboard */,
+				DDC4DB42274D2BA700D79CC8 /* MakeBungaeRegion.storyboard */,
+				DDC4DB46274D2BDA00D79CC8 /* MakeBungaeDate.storyboard */,
+				DDC4DB4A274D2C1100D79CC8 /* MakeBungaePhoto.storyboard */,
+				DDC4DB4E274D2C5100D79CC8 /* MakeBungaeCount.storyboard */,
+				DDC4DB52274D2C8200D79CC8 /* MakeBungaeMoney.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -768,6 +793,11 @@
 				DD3A30DF272DABC000D711C6 /* BungaeVC.swift */,
 				DDC4DB2227465C1F00D79CC8 /* BungaeDetailVC.swift */,
 				DDC4DB342748F30D00D79CC8 /* BungaeFilterVC.swift */,
+				DDC4DB44274D2BBA00D79CC8 /* MakeBungaeRegionVC.swift */,
+				DDC4DB48274D2BF000D79CC8 /* MakeBungaeDateVC.swift */,
+				DDC4DB4C274D2C2100D79CC8 /* MakeBungaePhotoVC.swift */,
+				DDC4DB50274D2C6300D79CC8 /* MakeBungaeCountVC.swift */,
+				DDC4DB54274D2C9400D79CC8 /* MakeBungaeMoneyVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1269,6 +1299,7 @@
 				DDC4DB2127465BF800D79CC8 /* BungaeDetail.storyboard in Resources */,
 				DD3ACBC227216D2500EBC201 /* SignUpID.storyboard in Resources */,
 				DD7BEBC827315D7000DB2F60 /* DetailCrewTitleCVCell.xib in Resources */,
+				DDC4DB43274D2BA700D79CC8 /* MakeBungaeRegion.storyboard in Resources */,
 				DDC4DB1A274506D500D79CC8 /* SignUpImagePreview.storyboard in Resources */,
 				DD1BFC472738E8AD0042C51F /* MakeCrewInfo.storyboard in Resources */,
 				DD3A30EA272DAC2700D711C6 /* Feed.storyboard in Resources */,
@@ -1287,6 +1318,7 @@
 				DD1BFC432738E86E0042C51F /* MakeCrewRegion.storyboard in Resources */,
 				DD9EEDBB273A491300E02396 /* CrewAlert.storyboard in Resources */,
 				DD1BFC332737FFB50042C51F /* CrewSearch.storyboard in Resources */,
+				DDC4DB4F274D2C5200D79CC8 /* MakeBungaeCount.storyboard in Resources */,
 				DD7BEBD027315E1900DB2F60 /* DtailCrewContentCVCell.xib in Resources */,
 				DDC4DB2D2747791F00D79CC8 /* BungaeTitleCVCell.xib in Resources */,
 				DDC3B50D27327A0000FF4959 /* DetailCrewHeaderCRV.xib in Resources */,
@@ -1294,10 +1326,13 @@
 				DD1BFC4B2738E8DA0042C51F /* MakeCrewDate.storyboard in Resources */,
 				DD61E4BD271D8EB8007504DE /* SignUpCity.storyboard in Resources */,
 				DDE0EE5C272873EC00C46821 /* SignUpKakaoComplete.storyboard in Resources */,
+				DDC4DB53274D2C8200D79CC8 /* MakeBungaeMoney.storyboard in Resources */,
 				DD3A30D3272DA6E300D711C6 /* Tabbar.storyboard in Resources */,
+				DDC4DB4B274D2C1100D79CC8 /* MakeBungaePhoto.storyboard in Resources */,
 				DD1BFC572738E9A70042C51F /* SignUpPhone.storyboard in Resources */,
 				DD9EEDCC273EC6E700E02396 /* SignIn.storyboard in Resources */,
 				DDC4DB332748F2F300D79CC8 /* BungaeFilter.storyboard in Resources */,
+				DDC4DB47274D2BDA00D79CC8 /* MakeBungaeDate.storyboard in Resources */,
 				DD3ACBB92721073E00EBC201 /* SignUpSports.storyboard in Resources */,
 				DD3A30E4272DABE900D711C6 /* MyActivity.storyboard in Resources */,
 				DDC4DB3127478B7200D79CC8 /* BungaeIntroduceCVCell.xib in Resources */,
@@ -1380,6 +1415,7 @@
 				DDC4DB292746A97800D79CC8 /* SportsService.swift in Sources */,
 				DDC3B5192734041500FF4959 /* BaseVC.swift in Sources */,
 				DD9EEDC9273D097600E02396 /* DongPickerVC.swift in Sources */,
+				DDC4DB49274D2BF000D79CC8 /* MakeBungaeDateVC.swift in Sources */,
 				DD1BFC512738E91E0042C51F /* MakeCrewPhotoVC.swift in Sources */,
 				DD7BEBCB27315DF800DB2F60 /* DetailCrewIntroduceCVCell.swift in Sources */,
 				DD3ACBB7272104D300EBC201 /* TermsOfUseVC.swift in Sources */,
@@ -1414,8 +1450,10 @@
 				DD1BFC592738E9C40042C51F /* SignUpPhoneVC.swift in Sources */,
 				DDC4DAF02743833E00D79CC8 /* EmailValidationService.swift in Sources */,
 				DD3A30BB2729AB1400D711C6 /* CheckBtn.swift in Sources */,
+				DDC4DB55274D2C9400D79CC8 /* MakeBungaeMoneyVC.swift in Sources */,
 				DD3A30F6272E620B00D711C6 /* AddCrewVC.swift in Sources */,
 				DDED011B271B33F800C2C343 /* OnboardingData.swift in Sources */,
+				DDC4DB45274D2BBA00D79CC8 /* MakeBungaeRegionVC.swift in Sources */,
 				DDC4DB142744B96C00D79CC8 /* MakeCrewRequest.swift in Sources */,
 				DDC4DB0E274432E400D79CC8 /* UIViewController.swift in Sources */,
 				DDC4DAE4274107D900D79CC8 /* AreaService.swift in Sources */,
@@ -1456,7 +1494,9 @@
 				DDC3B51D2736373500FF4959 /* GuestDateBtn.swift in Sources */,
 				DD1BFC352737FFEB0042C51F /* CrewSearchVC.swift in Sources */,
 				DDE0EE692729335000C46821 /* KakaoLoginData.swift in Sources */,
+				DDC4DB51274D2C6300D79CC8 /* MakeBungaeCountVC.swift in Sources */,
 				DDC4DB18274503DB00D79CC8 /* SignUpImagePreviewVC.swift in Sources */,
+				DDC4DB4D274D2C2200D79CC8 /* MakeBungaePhotoVC.swift in Sources */,
 				DDC4DAEC2743821000D79CC8 /* EmailValidationData.swift in Sources */,
 				DDC3B50C27327A0000FF4959 /* DetailCrewHeaderCRV.swift in Sources */,
 				DDC4DAEE2743822500D79CC8 /* EmailValidationRequest.swift in Sources */,

@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CbH-93-O2u">
                         <rect key="frame" x="0.0" y="0.0" width="328" height="144"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgFoot" translatesAutoresizingMaskIntoConstraints="NO" id="aNB-Vd-quZ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgBungae" translatesAutoresizingMaskIntoConstraints="NO" id="aNB-Vd-quZ">
                                 <rect key="frame" x="0.0" y="0.0" width="129" height="144"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="129" id="6GB-Yt-KJb"/>
@@ -154,7 +154,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="imgFoot" width="128" height="126"/>
+        <image name="imgBungae" width="128" height="142"/>
         <image name="selecPin" width="24" height="24"/>
         <image name="userCicrle" width="20" height="20"/>
         <systemColor name="systemBackgroundColor">
