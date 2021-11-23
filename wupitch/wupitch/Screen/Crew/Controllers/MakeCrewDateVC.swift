@@ -9,20 +9,24 @@ import UIKit
 
 class MakeCrewDateVC: UIViewController {
 
+    @IBOutlet weak var nextBtn: NextBtn!
     @IBOutlet weak var toastView: UIView!
     @IBOutlet weak var toastMessageLabel: UILabel!
     @IBOutlet var betweenLabels: [UILabel]!
     @IBOutlet var endTimeBtns: [UIButton]!
     @IBOutlet var startTimeBtns: [UIButton]!
-    @IBOutlet var weekBtns: [CheckBtn]!
     @IBOutlet var dateBtns: [SportsBtn]!
     @IBOutlet weak var secondBgView: UIView!
     @IBOutlet weak var firstBgView: UIView!
     @IBOutlet var addBtn: [UIButton]!
     
-    var isFirstDatePicker : String?
-    var isSecondDatePicker : String?
-    var isThirdDatePicker : String?
+    var isFirstStartDatePicker : String?
+    var isSecondStartDatePicker : String?
+    var isThirdStartDatePicker : String?
+    
+    var isFirstEndDatePicker : String?
+    var isSecondEndDatePicker : String?
+    var isThirdEndDatePicker : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,21 +38,30 @@ class MakeCrewDateVC: UIViewController {
         toastView.makeRounded(cornerRadius: 16.adjusted)
         toastMessageLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
         
-        for i in 0...2 {
-            weekBtns[i].setTitleColor(.gray02, for: .normal)
-            weekBtns[i].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
-            weekBtns[i].titleLabel?.setTextWithLineHeight(text: weekBtns[i].titleLabel?.text, lineHeight: 19.adjusted)
-            weekBtns[i].grayCheck()
-        }
-        
         setTimeBtn()
+    }
+    
+    func setBtn(i:Int) {
+        startTimeBtns[i].setTitleColor(UIColor.gray02, for: .normal)
+        startTimeBtns[i].setTitle("00:00", for: .normal)
+        endTimeBtns[i].setTitle("00:00", for: .normal)
+        endTimeBtns[i].setTitleColor(UIColor.gray02, for: .normal)
+        betweenLabels[i].textColor = .gray02
+        startTimeBtns[i].makeRounded(cornerRadius: 8.adjusted)
+        endTimeBtns[i].makeRounded(cornerRadius: 8.adjusted)
+        startTimeBtns[i].layer.borderWidth = 1.adjusted
+        endTimeBtns[i].layer.borderWidth = 1.adjusted
+        startTimeBtns[i].layer.borderColor = UIColor.gray02.cgColor
+        endTimeBtns[i].layer.borderColor = UIColor.gray02.cgColor
+        startTimeBtns[i].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+        endTimeBtns[i].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
     }
     
     func setTimeBtn() {
         for i in 0...2 {
             startTimeBtns[i].setTitleColor(UIColor.gray02, for: .normal)
             startTimeBtns[i].setTitle("00:00", for: .normal)
-            startTimeBtns[i].setTitle("00:00", for: .normal)
+            endTimeBtns[i].setTitle("00:00", for: .normal)
             endTimeBtns[i].setTitleColor(UIColor.gray02, for: .normal)
             betweenLabels[i].textColor = .gray02
             startTimeBtns[i].makeRounded(cornerRadius: 8.adjusted)
@@ -60,9 +73,13 @@ class MakeCrewDateVC: UIViewController {
             startTimeBtns[i].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
             endTimeBtns[i].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         }
-        isFirstDatePicker = nil
-        isSecondDatePicker = nil
-        isThirdDatePicker = nil
+        isFirstStartDatePicker = nil
+        isSecondStartDatePicker = nil
+        isThirdStartDatePicker = nil
+        
+        isFirstEndDatePicker = nil
+        isSecondEndDatePicker = nil
+        isThirdEndDatePicker = nil
     }
     
     // 토스트 메시지
@@ -72,6 +89,31 @@ class MakeCrewDateVC: UIViewController {
         UIView.animate(withDuration: 4.0, delay: 0.01, animations: {
             self.toastView.alpha = 0.0
         }, completion: nil)
+    }
+    
+    func dateLogic(index: Int) {
+        if dateBtns[index].status == true {
+            nextBtn.backgroundColor = .main
+        }
+        else {
+            nextBtn.backgroundColor = .gray03
+        }
+    }
+    
+    func touchUpDateBtnLogic(index: Int) {
+        if dateBtns[index].status == false {
+            dateBtns[index].colorSportsBtn()
+            for i in 0...6 {
+                dateBtns[i].defaultSportsBtn()
+            }
+            if isFirstStartDatePicker != nil {
+                nextBtn.backgroundColor = .main
+            }
+        }
+        else {
+            dateBtns[index].defaultSportsBtn()
+            nextBtn.backgroundColor = .gray03
+        }
     }
     
     @IBAction func touchUpStartTimeBtn(_ sender: Any) {
@@ -102,7 +144,8 @@ class MakeCrewDateVC: UIViewController {
             self.startTimeBtns[0].setTitle(dateString, for: .normal)
             self.startTimeBtns[0].setTitleColor(UIColor.main, for: .normal)
             self.startTimeBtns[0].layer.borderColor = UIColor.main.cgColor
-            self.isFirstDatePicker = dateString
+            self.isFirstStartDatePicker = dateString
+            
         }
         alertVC.addAction(okAction)
         let cancelAction = UIAlertAction(title: "취소", style: .cancel)
@@ -130,12 +173,12 @@ class MakeCrewDateVC: UIViewController {
         datePicker.topAnchor.constraint(equalTo: alertVC.view.topAnchor, constant: 10).isActive = true
         datePicker.bottomAnchor.constraint(equalTo: alertVC.view.bottomAnchor, constant: -120).isActive = true
         
-        let okAction = UIAlertAction(title: "확인", style: .default) { _ in
+        let okAction = UIAlertAction(title: "확인", style: .default) { [self] _ in
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "HH:mm"
             let dateString = dateFormatter.string(from: datePicker.date)
-            
-            if let pickerData = self.isFirstDatePicker {
+
+            if let pickerData = self.isFirstStartDatePicker {
                 if pickerData < dateString {
                     print(pickerData)
                     print(dateString)
@@ -143,6 +186,12 @@ class MakeCrewDateVC: UIViewController {
                     self.endTimeBtns[0].setTitleColor(UIColor.main, for: .normal)
                     self.endTimeBtns[0].layer.borderColor = UIColor.main.cgColor
                     self.betweenLabels[0].textColor = .main
+                    self.isFirstEndDatePicker = dateString
+                    
+                    for i in 0...6 {
+                        dateLogic(index: i)
+                    }
+
                 }
                 else {
                     self.showToast(message: "종료시간이 시작시간보다 늦어야 해요!")
@@ -158,42 +207,6 @@ class MakeCrewDateVC: UIViewController {
         present(alertVC, animated: true, completion: nil)
     }
     
-    func weekBtnCheck() {
-        for i in 0...6 {
-            if dateBtns[i].status == true {
-                weekBtns[0].grayCheck()
-                weekBtns[1].grayCheck()
-                weekBtns[2].grayCheck()
-            }
-            else {
-                weekBtns[0].colorCheck()
-                weekBtns[1].colorCheck()
-                weekBtns[2].colorCheck()
-            }
-        }
-    }
-    
-    @IBAction func touchUpWeekBtn(_ sender: Any) {
-        
-            //weekBtnCheck()
-        
-    }
-    
-    @IBAction func touchUpTwoWeekBtn(_ sender: Any) {
-        
-           //weekBtnCheck()
-       
-        
-    }
-    
-    @IBAction func touchUpThreeWeekBtn(_ sender: Any) {
-        
-           //weekBtnCheck()
-       
-    }
-    
-    
-    
     @IBAction func touchUpNextBtn(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewPhoto", bundle: nil)
         if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewPhotoVC") as? MakeCrewPhotoVC {
@@ -202,7 +215,7 @@ class MakeCrewDateVC: UIViewController {
     }
     
     @IBAction func touchUpAddBtn(_ sender: UIButton) {
-        if firstBgView.isHidden == false {
+        if firstBgView.isHidden == false && nextBtn.backgroundColor == .main {
             addBtn[0].setImage(UIImage(named: "subtract"), for: .normal)
             firstBgView.isHidden = true
             print("이프눌린다")
@@ -211,6 +224,12 @@ class MakeCrewDateVC: UIViewController {
             if firstBgView.isHidden == true && secondBgView.isHidden == false {
                 addBtn[0].setImage(UIImage(named: "add"), for: .normal)
                 firstBgView.isHidden = false
+                for i in 7...13 {
+                    dateBtns[i].defaultSportsBtn()
+                }
+                setBtn(i:1)
+                isSecondStartDatePicker = nil
+                isSecondEndDatePicker = nil
                 print("엘즈눌린다")
             }
         }
@@ -238,9 +257,13 @@ class MakeCrewDateVC: UIViewController {
             dateBtns[4].defaultSportsBtn()
             dateBtns[5].defaultSportsBtn()
             dateBtns[6].defaultSportsBtn()
+            if isFirstStartDatePicker != nil {
+                nextBtn.backgroundColor = .main
+            }
         }
         else {
             dateBtns[0].defaultSportsBtn()
+            nextBtn.backgroundColor = .gray03
         }
     }
     
@@ -253,9 +276,13 @@ class MakeCrewDateVC: UIViewController {
             dateBtns[4].defaultSportsBtn()
             dateBtns[5].defaultSportsBtn()
             dateBtns[6].defaultSportsBtn()
+            if isFirstStartDatePicker != nil {
+                nextBtn.backgroundColor = .main
+            }
         }
         else {
             dateBtns[1].defaultSportsBtn()
+            nextBtn.backgroundColor = .gray03
         }
     }
     
@@ -268,9 +295,13 @@ class MakeCrewDateVC: UIViewController {
             dateBtns[4].defaultSportsBtn()
             dateBtns[5].defaultSportsBtn()
             dateBtns[6].defaultSportsBtn()
+            if isFirstStartDatePicker != nil {
+                nextBtn.backgroundColor = .main
+            }
         }
         else {
             dateBtns[2].defaultSportsBtn()
+            nextBtn.backgroundColor = .gray03
         }
     }
     
@@ -283,9 +314,13 @@ class MakeCrewDateVC: UIViewController {
             dateBtns[4].defaultSportsBtn()
             dateBtns[5].defaultSportsBtn()
             dateBtns[6].defaultSportsBtn()
+            if isFirstStartDatePicker != nil {
+                nextBtn.backgroundColor = .main
+            }
         }
         else {
             dateBtns[3].defaultSportsBtn()
+            nextBtn.backgroundColor = .gray03
         }
     }
     
@@ -298,9 +333,13 @@ class MakeCrewDateVC: UIViewController {
             dateBtns[3].defaultSportsBtn()
             dateBtns[5].defaultSportsBtn()
             dateBtns[6].defaultSportsBtn()
+            if isFirstStartDatePicker != nil {
+                nextBtn.backgroundColor = .main
+            }
         }
         else {
             dateBtns[4].defaultSportsBtn()
+            nextBtn.backgroundColor = .gray03
         }
     }
     
@@ -313,9 +352,13 @@ class MakeCrewDateVC: UIViewController {
             dateBtns[3].defaultSportsBtn()
             dateBtns[4].defaultSportsBtn()
             dateBtns[6].defaultSportsBtn()
+            if isFirstStartDatePicker != nil {
+                nextBtn.backgroundColor = .main
+            }
         }
         else {
             dateBtns[5].defaultSportsBtn()
+            nextBtn.backgroundColor = .gray03
         }
     }
     
@@ -328,9 +371,13 @@ class MakeCrewDateVC: UIViewController {
             dateBtns[3].defaultSportsBtn()
             dateBtns[4].defaultSportsBtn()
             dateBtns[5].defaultSportsBtn()
+            if isFirstStartDatePicker != nil {
+                nextBtn.backgroundColor = .main
+            }
         }
         else {
             dateBtns[6].defaultSportsBtn()
+            nextBtn.backgroundColor = .gray03
         }
     }
     
@@ -344,9 +391,14 @@ class MakeCrewDateVC: UIViewController {
             dateBtns[11].defaultSportsBtn()
             dateBtns[12].defaultSportsBtn()
             dateBtns[13].defaultSportsBtn()
+            if isSecondStartDatePicker != nil && isSecondEndDatePicker != nil {
+                nextBtn.backgroundColor = .main
+                
+            }
         }
         else {
             dateBtns[7].defaultSportsBtn()
+            nextBtn.backgroundColor = .gray03
         }
     }
     
@@ -468,7 +520,7 @@ class MakeCrewDateVC: UIViewController {
             self.startTimeBtns[1].setTitle(dateString, for: .normal)
             self.startTimeBtns[1].setTitleColor(UIColor.main, for: .normal)
             self.startTimeBtns[1].layer.borderColor = UIColor.main.cgColor
-            self.isSecondDatePicker = dateString
+            self.isSecondStartDatePicker = dateString
         }
         alertVC.addAction(okAction)
         let cancelAction = UIAlertAction(title: "취소", style: .cancel)
@@ -501,7 +553,7 @@ class MakeCrewDateVC: UIViewController {
             dateFormatter.dateFormat = "HH:mm"
             let dateString = dateFormatter.string(from: datePicker.date)
             
-            if let pickerData = self.isSecondDatePicker {
+            if let pickerData = self.isSecondStartDatePicker {
                 if pickerData < dateString {
                     print(pickerData)
                     print(dateString)
@@ -509,6 +561,13 @@ class MakeCrewDateVC: UIViewController {
                     self.endTimeBtns[1].setTitleColor(UIColor.main, for: .normal)
                     self.endTimeBtns[1].layer.borderColor = UIColor.main.cgColor
                     self.betweenLabels[1].textColor = .main
+                    self.isSecondEndDatePicker = dateString
+                    
+                    
+//                        for i in 7...13 {
+//                            self.dateLogic(index: i)
+//                        }
+                    
                 }
                 else {
                     self.showToast(message: "종료시간이 시작시간보다 늦어야 해요!")
@@ -660,7 +719,7 @@ class MakeCrewDateVC: UIViewController {
             self.startTimeBtns[2].setTitle(dateString, for: .normal)
             self.startTimeBtns[2].setTitleColor(UIColor.main, for: .normal)
             self.startTimeBtns[2].layer.borderColor = UIColor.main.cgColor
-            self.isThirdDatePicker = dateString
+            self.isThirdStartDatePicker = dateString
         }
         alertVC.addAction(okAction)
         let cancelAction = UIAlertAction(title: "취소", style: .cancel)
@@ -692,7 +751,7 @@ class MakeCrewDateVC: UIViewController {
             dateFormatter.dateFormat = "HH:mm"
             let dateString = dateFormatter.string(from: datePicker.date)
             
-            if let pickerData = self.isThirdDatePicker {
+            if let pickerData = self.isThirdStartDatePicker {
                 if pickerData < dateString {
                     print(pickerData)
                     print(dateString)
@@ -700,6 +759,7 @@ class MakeCrewDateVC: UIViewController {
                     self.endTimeBtns[2].setTitleColor(UIColor.main, for: .normal)
                     self.endTimeBtns[2].layer.borderColor = UIColor.main.cgColor
                     self.betweenLabels[2].textColor = .main
+                    self.isThirdEndDatePicker = dateString
                 }
                 else {
                     self.showToast(message: "종료시간이 시작시간보다 늦어야 해요!")

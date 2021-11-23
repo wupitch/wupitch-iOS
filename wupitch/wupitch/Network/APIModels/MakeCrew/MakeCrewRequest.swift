@@ -7,23 +7,30 @@
 
 import Foundation
 
+// MARK: - MakeCrewRequest
 struct MakeCrewRequest: Codable {
-    var ageList : [Int]
-    var areaId : Int
-    // 회비
-    var conference : Int
-    // 요일
-    var days : [Int]
-    var endTime : Double
-    // 추가정보배열
-    var extraInfoList : [Int]
-    // 손님비
-    var guestConference : Int
-    var inquiries : String
-    var introduction : String
-    var location : String
-    var sportsId : Int
-    var startTime : Double
-    // 크루이름
-    var title : String
+    let ageList: [Int]
+    let areaID, conference: Int
+    let extraInfoList: [Int]
+    let guestConference: Int
+    let inquiries, introduction, location: String
+    let sportsID: Int
+    let title: String
+    let memberCount: Int
+    let scheduleList: [ScheduleList]
+
+    enum CodingKeys: String, CodingKey {
+        case ageList
+        case areaID = "areaId"
+        case conference, extraInfoList, guestConference, inquiries, introduction, location
+        case sportsID = "sportsId"
+        case title, memberCount, scheduleList
+    }
+}
+
+// MARK: - ScheduleList
+struct ScheduleList: Codable {
+    let dayIdx: Int
+    let startTime: Double
+    let endTime: Int
 }

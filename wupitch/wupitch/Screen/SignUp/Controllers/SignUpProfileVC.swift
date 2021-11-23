@@ -65,8 +65,8 @@ class SignUpProfileVC: UIViewController {
         
         // textView Style
         infoTextView.backgroundColor = .gray05
-        infoTextView.layer.cornerRadius = 8
-        infoTextView.textContainerInset = UIEdgeInsets(top: 12, left: 16, bottom: 12, right: 16)
+        infoTextView.makeRounded(cornerRadius: 8.adjusted)
+        infoTextView.textContainerInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
         infoTextView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
         
         // textcountLabel Style

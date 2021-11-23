@@ -65,6 +65,7 @@ class SignUpImagePreviewVC: UIViewController {
                     print("사진 잘 들어오나 확인 >>>>>", userImage!)
                 }
             }, to: url, method: .post, headers: header).uploadProgress(queue: .main) { progress in
+                
                 print("Upload Progress: \(progress.fractionCompleted)")
             }.responseJSON { data in
                 switch data.result {
