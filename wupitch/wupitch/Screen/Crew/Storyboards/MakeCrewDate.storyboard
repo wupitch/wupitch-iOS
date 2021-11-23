@@ -59,9 +59,6 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="다음 (4/7)"/>
-                                        <connections>
-                                            <action selector="touchUpNextBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ZWa-Ew-213"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -117,7 +114,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="m6y-c8-xdC">
                                                                 <rect key="frame" x="0.0" y="0.0" width="327" height="48"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pom-9a-fyn" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pom-9a-fyn" customClass="DateBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="56" height="48"/>
                                                                         <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
@@ -126,68 +123,47 @@
                                                                         </constraints>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="월"/>
-                                                                        <connections>
-                                                                            <action selector="touchUpFirstBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="YQT-2a-ChJ"/>
-                                                                        </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLJ-8s-w8M" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLJ-8s-w8M" customClass="DateBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="68" y="0.0" width="55.5" height="48"/>
                                                                         <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="화"/>
-                                                                        <connections>
-                                                                            <action selector="touchUpSecondBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="C67-oE-u2F"/>
-                                                                        </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZV5-z0-4k8" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZV5-z0-4k8" customClass="DateBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="135.5" y="0.0" width="56" height="48"/>
                                                                         <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="수"/>
-                                                                        <connections>
-                                                                            <action selector="touchUpThirdBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sHi-Zt-Kv7"/>
-                                                                        </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Su-yT-7VF" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Su-yT-7VF" customClass="DateBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="203.5" y="0.0" width="55.5" height="48"/>
                                                                         <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="목"/>
-                                                                        <connections>
-                                                                            <action selector="touchUpFourthBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="jVB-UL-qUB"/>
-                                                                        </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6K2-in-DFy" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6K2-in-DFy" customClass="DateBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="271" y="0.0" width="56" height="48"/>
                                                                         <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="금"/>
-                                                                        <connections>
-                                                                            <action selector="touchUpFiftnBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="jp0-dj-zR6"/>
-                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="HGZ-2i-Sbm">
                                                                 <rect key="frame" x="0.0" y="60" width="327" height="48"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDg-eQ-Q7e" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDg-eQ-Q7e" customClass="DateBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="56" height="48"/>
                                                                         <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="토"/>
-                                                                        <connections>
-                                                                            <action selector="touchUpSixthBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="LJq-U8-jeF"/>
-                                                                        </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VvK-d9-4gq" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VvK-d9-4gq" customClass="DateBtn" customModule="wupitch" customModuleProvider="target">
                                                                         <rect key="frame" x="68" y="0.0" width="55.5" height="48"/>
                                                                         <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="일"/>
-                                                                        <connections>
-                                                                            <action selector="touchUpSevenxthBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KJW-Bm-bfx"/>
-                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ww-FI-aJF">
                                                                         <rect key="frame" x="135.5" y="0.0" width="56" height="48"/>
@@ -296,7 +272,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Z4Q-K0-Sqv">
                                                                         <rect key="frame" x="0.0" y="0.0" width="327" height="48"/>
                                                                         <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2r-qX-Sjo" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2r-qX-Sjo" customClass="DateBtn" customModule="wupitch" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="56" height="48"/>
                                                                                 <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <constraints>
@@ -305,68 +281,47 @@
                                                                                 </constraints>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <state key="normal" title="월"/>
-                                                                                <connections>
-                                                                                    <action selector="touchUpFirsDateBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="c68-e2-Qbh"/>
-                                                                                </connections>
                                                                             </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDj-JL-Xdo" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDj-JL-Xdo" customClass="DateBtn" customModule="wupitch" customModuleProvider="target">
                                                                                 <rect key="frame" x="68" y="0.0" width="55.5" height="48"/>
                                                                                 <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <state key="normal" title="화"/>
-                                                                                <connections>
-                                                                                    <action selector="touchUpSecondDateBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1rp-bY-rBw"/>
-                                                                                </connections>
                                                                             </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ye9-Ae-Yns" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ye9-Ae-Yns" customClass="DateBtn" customModule="wupitch" customModuleProvider="target">
                                                                                 <rect key="frame" x="135.5" y="0.0" width="56" height="48"/>
                                                                                 <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <state key="normal" title="수"/>
-                                                                                <connections>
-                                                                                    <action selector="touchUpThirdDateBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="30a-9u-vgV"/>
-                                                                                </connections>
                                                                             </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbw-wY-ZJa" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbw-wY-ZJa" customClass="DateBtn" customModule="wupitch" customModuleProvider="target">
                                                                                 <rect key="frame" x="203.5" y="0.0" width="55.5" height="48"/>
                                                                                 <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <state key="normal" title="목"/>
-                                                                                <connections>
-                                                                                    <action selector="touchUpFourthDateBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hEg-Tg-d7q"/>
-                                                                                </connections>
                                                                             </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGu-ee-f03" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGu-ee-f03" customClass="DateBtn" customModule="wupitch" customModuleProvider="target">
                                                                                 <rect key="frame" x="271" y="0.0" width="56" height="48"/>
                                                                                 <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <state key="normal" title="금"/>
-                                                                                <connections>
-                                                                                    <action selector="touchUpFiftnDateBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Ld1-8e-R0g"/>
-                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="iBe-97-OIi">
                                                                         <rect key="frame" x="0.0" y="60" width="327" height="48"/>
                                                                         <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5i-2d-eI1" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5i-2d-eI1" customClass="DateBtn" customModule="wupitch" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="56" height="48"/>
                                                                                 <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <state key="normal" title="토"/>
-                                                                                <connections>
-                                                                                    <action selector="touchUpSixthDateBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="5Om-hC-4Sb"/>
-                                                                                </connections>
                                                                             </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oq5-K6-59O" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oq5-K6-59O" customClass="DateBtn" customModule="wupitch" customModuleProvider="target">
                                                                                 <rect key="frame" x="68" y="0.0" width="55.5" height="48"/>
                                                                                 <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <state key="normal" title="일"/>
-                                                                                <connections>
-                                                                                    <action selector="touchUpSevenxthDateBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="E4y-cq-cIA"/>
-                                                                                </connections>
                                                                             </button>
                                                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcK-cG-rU6">
                                                                                 <rect key="frame" x="135.5" y="0.0" width="56" height="48"/>
@@ -446,14 +401,14 @@
                                                                 </connections>
                                                             </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6t-WY-ZDR">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="328"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="308"/>
                                                                 <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="34a-g9-sf7" firstAttribute="leading" secondItem="Ldk-9a-ePn" secondAttribute="leading" id="0Fv-96-gE5"/>
                                                             <constraint firstAttribute="trailing" secondItem="Ldk-9a-ePn" secondAttribute="trailing" constant="67" id="5bo-eb-Uoz"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Q6t-WY-ZDR" secondAttribute="bottom" constant="100" id="6fa-Zs-676"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Q6t-WY-ZDR" secondAttribute="bottom" constant="120" id="6fa-Zs-676"/>
                                                             <constraint firstItem="34a-g9-sf7" firstAttribute="top" secondItem="Ldk-9a-ePn" secondAttribute="bottom" constant="32" id="Cb2-Uk-fD2"/>
                                                             <constraint firstItem="Ldk-9a-ePn" firstAttribute="top" secondItem="fVz-Bn-ThI" secondAttribute="bottom" constant="12" id="H8G-s2-5Sc"/>
                                                             <constraint firstAttribute="height" constant="428" id="TPO-zh-9Hp"/>
@@ -484,7 +439,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="CPm-so-4wg">
                                                                         <rect key="frame" x="0.0" y="0.0" width="327" height="48"/>
                                                                         <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4U-U2-ztT" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4U-U2-ztT" customClass="DateBtn" customModule="wupitch" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="56" height="48"/>
                                                                                 <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <constraints>
@@ -493,68 +448,47 @@
                                                                                 </constraints>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <state key="normal" title="월"/>
-                                                                                <connections>
-                                                                                    <action selector="touchUpFirsDateBtnCheck:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vSh-RH-7P9"/>
-                                                                                </connections>
                                                                             </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCh-Gr-84d" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCh-Gr-84d" customClass="DateBtn" customModule="wupitch" customModuleProvider="target">
                                                                                 <rect key="frame" x="68" y="0.0" width="55.5" height="48"/>
                                                                                 <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <state key="normal" title="화"/>
-                                                                                <connections>
-                                                                                    <action selector="touchUpSecondDateBtnCheck:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sel-oH-FIr"/>
-                                                                                </connections>
                                                                             </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACX-mh-ebS" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACX-mh-ebS" customClass="DateBtn" customModule="wupitch" customModuleProvider="target">
                                                                                 <rect key="frame" x="135.5" y="0.0" width="56" height="48"/>
                                                                                 <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <state key="normal" title="수"/>
-                                                                                <connections>
-                                                                                    <action selector="touchUpThirdDateBtnCheck:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fOG-s0-uJ9"/>
-                                                                                </connections>
                                                                             </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSu-ci-2ra" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSu-ci-2ra" customClass="DateBtn" customModule="wupitch" customModuleProvider="target">
                                                                                 <rect key="frame" x="203.5" y="0.0" width="55.5" height="48"/>
                                                                                 <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <state key="normal" title="목"/>
-                                                                                <connections>
-                                                                                    <action selector="touchUpFourthDateBtnCheck:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="wZZ-VC-qgO"/>
-                                                                                </connections>
                                                                             </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJG-86-5Ge" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJG-86-5Ge" customClass="DateBtn" customModule="wupitch" customModuleProvider="target">
                                                                                 <rect key="frame" x="271" y="0.0" width="56" height="48"/>
                                                                                 <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <state key="normal" title="금"/>
-                                                                                <connections>
-                                                                                    <action selector="touchUpFiftnDateBtnCheck:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CLJ-xI-1g6"/>
-                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="oxX-Re-Bw7">
                                                                         <rect key="frame" x="0.0" y="60" width="327" height="48"/>
                                                                         <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z01-nV-gdj" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z01-nV-gdj" customClass="DateBtn" customModule="wupitch" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="56" height="48"/>
                                                                                 <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <state key="normal" title="토"/>
-                                                                                <connections>
-                                                                                    <action selector="touchUpSixthDateBtnCheck:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xtc-Oz-aSQ"/>
-                                                                                </connections>
                                                                             </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZN-6X-P0A" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZN-6X-P0A" customClass="DateBtn" customModule="wupitch" customModuleProvider="target">
                                                                                 <rect key="frame" x="68" y="0.0" width="55.5" height="48"/>
                                                                                 <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <state key="normal" title="일"/>
-                                                                                <connections>
-                                                                                    <action selector="touchUpSevenxthDateBtnCheck:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="n4m-eo-1Yt"/>
-                                                                                </connections>
                                                                             </button>
                                                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2a-lM-Xf0">
                                                                                 <rect key="frame" x="135.5" y="0.0" width="56" height="48"/>

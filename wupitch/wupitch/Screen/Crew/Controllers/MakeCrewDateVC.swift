@@ -15,7 +15,7 @@ class MakeCrewDateVC: UIViewController {
     @IBOutlet var betweenLabels: [UILabel]!
     @IBOutlet var endTimeBtns: [UIButton]!
     @IBOutlet var startTimeBtns: [UIButton]!
-    @IBOutlet var dateBtns: [SportsBtn]!
+    @IBOutlet var dateBtns: [DateBtn]!
     @IBOutlet weak var secondBgView: UIView!
     @IBOutlet weak var firstBgView: UIView!
     @IBOutlet var addBtn: [UIButton]!
@@ -31,6 +31,8 @@ class MakeCrewDateVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        dateBtns.forEach { $0.dateDelegate = self }
+        
         toastView.alpha = 0.0
         addBtn[0].makeRounded(cornerRadius: nil)
         addBtn[1].makeRounded(cornerRadius: nil)
@@ -38,24 +40,27 @@ class MakeCrewDateVC: UIViewController {
         toastView.makeRounded(cornerRadius: 16.adjusted)
         toastMessageLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
         
+        firstBgView.isHidden = false
+        secondBgView.isHidden = false
+        
         setTimeBtn()
     }
     
-    func setBtn(i:Int) {
-        startTimeBtns[i].setTitleColor(UIColor.gray02, for: .normal)
-        startTimeBtns[i].setTitle("00:00", for: .normal)
-        endTimeBtns[i].setTitle("00:00", for: .normal)
-        endTimeBtns[i].setTitleColor(UIColor.gray02, for: .normal)
-        betweenLabels[i].textColor = .gray02
-        startTimeBtns[i].makeRounded(cornerRadius: 8.adjusted)
-        endTimeBtns[i].makeRounded(cornerRadius: 8.adjusted)
-        startTimeBtns[i].layer.borderWidth = 1.adjusted
-        endTimeBtns[i].layer.borderWidth = 1.adjusted
-        startTimeBtns[i].layer.borderColor = UIColor.gray02.cgColor
-        endTimeBtns[i].layer.borderColor = UIColor.gray02.cgColor
-        startTimeBtns[i].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
-        endTimeBtns[i].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
-    }
+//    func setBtn(i:Int) {
+//        startTimeBtns[i].setTitleColor(UIColor.gray02, for: .normal)
+//        startTimeBtns[i].setTitle("00:00", for: .normal)
+//        endTimeBtns[i].setTitle("00:00", for: .normal)
+//        endTimeBtns[i].setTitleColor(UIColor.gray02, for: .normal)
+//        betweenLabels[i].textColor = .gray02
+//        startTimeBtns[i].makeRounded(cornerRadius: 8.adjusted)
+//        endTimeBtns[i].makeRounded(cornerRadius: 8.adjusted)
+//        startTimeBtns[i].layer.borderWidth = 1.adjusted
+//        endTimeBtns[i].layer.borderWidth = 1.adjusted
+//        startTimeBtns[i].layer.borderColor = UIColor.gray02.cgColor
+//        endTimeBtns[i].layer.borderColor = UIColor.gray02.cgColor
+//        startTimeBtns[i].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+//        endTimeBtns[i].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+//    }
     
     func setTimeBtn() {
         for i in 0...2 {
@@ -100,21 +105,7 @@ class MakeCrewDateVC: UIViewController {
         }
     }
     
-    func touchUpDateBtnLogic(index: Int) {
-        if dateBtns[index].status == false {
-            dateBtns[index].colorSportsBtn()
-            for i in 0...6 {
-                dateBtns[i].defaultSportsBtn()
-            }
-            if isFirstStartDatePicker != nil {
-                nextBtn.backgroundColor = .main
-            }
-        }
-        else {
-            dateBtns[index].defaultSportsBtn()
-            nextBtn.backgroundColor = .gray03
-        }
-    }
+    
     
     @IBAction func touchUpStartTimeBtn(_ sender: Any) {
         let alertVC = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
@@ -225,9 +216,9 @@ class MakeCrewDateVC: UIViewController {
                 addBtn[0].setImage(UIImage(named: "add"), for: .normal)
                 firstBgView.isHidden = false
                 for i in 7...13 {
-                    dateBtns[i].defaultSportsBtn()
+                    //dateBtns[i].defaultSportsBtn()
                 }
-                setBtn(i:1)
+                //setBtn(i:1)
                 isSecondStartDatePicker = nil
                 isSecondEndDatePicker = nil
                 print("엘즈눌린다")
@@ -248,249 +239,7 @@ class MakeCrewDateVC: UIViewController {
         }
     }
     
-    @IBAction func touchUpFirstBtn(_ sender: Any) {
-        if dateBtns[0].status == false {
-            dateBtns[0].colorSportsBtn()
-            dateBtns[1].defaultSportsBtn()
-            dateBtns[2].defaultSportsBtn()
-            dateBtns[3].defaultSportsBtn()
-            dateBtns[4].defaultSportsBtn()
-            dateBtns[5].defaultSportsBtn()
-            dateBtns[6].defaultSportsBtn()
-            if isFirstStartDatePicker != nil {
-                nextBtn.backgroundColor = .main
-            }
-        }
-        else {
-            dateBtns[0].defaultSportsBtn()
-            nextBtn.backgroundColor = .gray03
-        }
-    }
     
-    @IBAction func touchUpSecondBtn(_ sender: Any) {
-        if dateBtns[1].status == false {
-            dateBtns[1].colorSportsBtn()
-            dateBtns[0].defaultSportsBtn()
-            dateBtns[2].defaultSportsBtn()
-            dateBtns[3].defaultSportsBtn()
-            dateBtns[4].defaultSportsBtn()
-            dateBtns[5].defaultSportsBtn()
-            dateBtns[6].defaultSportsBtn()
-            if isFirstStartDatePicker != nil {
-                nextBtn.backgroundColor = .main
-            }
-        }
-        else {
-            dateBtns[1].defaultSportsBtn()
-            nextBtn.backgroundColor = .gray03
-        }
-    }
-    
-    @IBAction func touchUpThirdBtn(_ sender: Any) {
-        if dateBtns[2].status == false {
-            dateBtns[2].colorSportsBtn()
-            dateBtns[0].defaultSportsBtn()
-            dateBtns[1].defaultSportsBtn()
-            dateBtns[3].defaultSportsBtn()
-            dateBtns[4].defaultSportsBtn()
-            dateBtns[5].defaultSportsBtn()
-            dateBtns[6].defaultSportsBtn()
-            if isFirstStartDatePicker != nil {
-                nextBtn.backgroundColor = .main
-            }
-        }
-        else {
-            dateBtns[2].defaultSportsBtn()
-            nextBtn.backgroundColor = .gray03
-        }
-    }
-    
-    @IBAction func touchUpFourthBtn(_ sender: Any) {
-        if dateBtns[3].status == false {
-            dateBtns[3].colorSportsBtn()
-            dateBtns[0].defaultSportsBtn()
-            dateBtns[1].defaultSportsBtn()
-            dateBtns[2].defaultSportsBtn()
-            dateBtns[4].defaultSportsBtn()
-            dateBtns[5].defaultSportsBtn()
-            dateBtns[6].defaultSportsBtn()
-            if isFirstStartDatePicker != nil {
-                nextBtn.backgroundColor = .main
-            }
-        }
-        else {
-            dateBtns[3].defaultSportsBtn()
-            nextBtn.backgroundColor = .gray03
-        }
-    }
-    
-    @IBAction func touchUpFiftnBtn(_ sender: Any) {
-        if dateBtns[4].status == false {
-            dateBtns[4].colorSportsBtn()
-            dateBtns[0].defaultSportsBtn()
-            dateBtns[1].defaultSportsBtn()
-            dateBtns[2].defaultSportsBtn()
-            dateBtns[3].defaultSportsBtn()
-            dateBtns[5].defaultSportsBtn()
-            dateBtns[6].defaultSportsBtn()
-            if isFirstStartDatePicker != nil {
-                nextBtn.backgroundColor = .main
-            }
-        }
-        else {
-            dateBtns[4].defaultSportsBtn()
-            nextBtn.backgroundColor = .gray03
-        }
-    }
-    
-    @IBAction func touchUpSixthBtn(_ sender: Any) {
-        if dateBtns[5].status == false {
-            dateBtns[5].colorSportsBtn()
-            dateBtns[0].defaultSportsBtn()
-            dateBtns[1].defaultSportsBtn()
-            dateBtns[2].defaultSportsBtn()
-            dateBtns[3].defaultSportsBtn()
-            dateBtns[4].defaultSportsBtn()
-            dateBtns[6].defaultSportsBtn()
-            if isFirstStartDatePicker != nil {
-                nextBtn.backgroundColor = .main
-            }
-        }
-        else {
-            dateBtns[5].defaultSportsBtn()
-            nextBtn.backgroundColor = .gray03
-        }
-    }
-    
-    @IBAction func touchUpSevenxthBtn(_ sender: Any) {
-        if dateBtns[6].status == false {
-            dateBtns[6].colorSportsBtn()
-            dateBtns[0].defaultSportsBtn()
-            dateBtns[1].defaultSportsBtn()
-            dateBtns[2].defaultSportsBtn()
-            dateBtns[3].defaultSportsBtn()
-            dateBtns[4].defaultSportsBtn()
-            dateBtns[5].defaultSportsBtn()
-            if isFirstStartDatePicker != nil {
-                nextBtn.backgroundColor = .main
-            }
-        }
-        else {
-            dateBtns[6].defaultSportsBtn()
-            nextBtn.backgroundColor = .gray03
-        }
-    }
-    
-    // 두번째 일정
-    @IBAction func touchUpFirsDateBtn(_ sender: Any) {
-        if dateBtns[7].status == false {
-            dateBtns[7].colorSportsBtn()
-            dateBtns[8].defaultSportsBtn()
-            dateBtns[9].defaultSportsBtn()
-            dateBtns[10].defaultSportsBtn()
-            dateBtns[11].defaultSportsBtn()
-            dateBtns[12].defaultSportsBtn()
-            dateBtns[13].defaultSportsBtn()
-            if isSecondStartDatePicker != nil && isSecondEndDatePicker != nil {
-                nextBtn.backgroundColor = .main
-                
-            }
-        }
-        else {
-            dateBtns[7].defaultSportsBtn()
-            nextBtn.backgroundColor = .gray03
-        }
-    }
-    
-    @IBAction func touchUpSecondDateBtn(_ sender: Any) {
-        if dateBtns[8].status == false {
-            dateBtns[8].colorSportsBtn()
-            dateBtns[7].defaultSportsBtn()
-            dateBtns[9].defaultSportsBtn()
-            dateBtns[10].defaultSportsBtn()
-            dateBtns[11].defaultSportsBtn()
-            dateBtns[12].defaultSportsBtn()
-            dateBtns[13].defaultSportsBtn()
-        }
-        else {
-            dateBtns[8].defaultSportsBtn()
-        }
-    }
-    
-    @IBAction func touchUpThirdDateBtn(_ sender: Any) {
-        if dateBtns[9].status == false {
-            dateBtns[9].colorSportsBtn()
-            dateBtns[7].defaultSportsBtn()
-            dateBtns[8].defaultSportsBtn()
-            dateBtns[10].defaultSportsBtn()
-            dateBtns[11].defaultSportsBtn()
-            dateBtns[12].defaultSportsBtn()
-            dateBtns[13].defaultSportsBtn()
-        }
-        else {
-            dateBtns[9].defaultSportsBtn()
-        }
-    }
-    
-    @IBAction func touchUpFourthDateBtn(_ sender: Any) {
-        if dateBtns[10].status == false {
-            dateBtns[10].colorSportsBtn()
-            dateBtns[7].defaultSportsBtn()
-            dateBtns[8].defaultSportsBtn()
-            dateBtns[9].defaultSportsBtn()
-            dateBtns[11].defaultSportsBtn()
-            dateBtns[12].defaultSportsBtn()
-            dateBtns[13].defaultSportsBtn()
-        }
-        else {
-            dateBtns[10].defaultSportsBtn()
-        }
-    }
-    
-    @IBAction func touchUpFiftnDateBtn(_ sender: Any) {
-        if dateBtns[11].status == false {
-            dateBtns[11].colorSportsBtn()
-            dateBtns[7].defaultSportsBtn()
-            dateBtns[8].defaultSportsBtn()
-            dateBtns[9].defaultSportsBtn()
-            dateBtns[10].defaultSportsBtn()
-            dateBtns[12].defaultSportsBtn()
-            dateBtns[13].defaultSportsBtn()
-        }
-        else {
-            dateBtns[11].defaultSportsBtn()
-        }
-    }
-    
-    @IBAction func touchUpSixthDateBtn(_ sender: Any) {
-        if dateBtns[12].status == false {
-            dateBtns[12].colorSportsBtn()
-            dateBtns[7].defaultSportsBtn()
-            dateBtns[8].defaultSportsBtn()
-            dateBtns[9].defaultSportsBtn()
-            dateBtns[10].defaultSportsBtn()
-            dateBtns[11].defaultSportsBtn()
-            dateBtns[13].defaultSportsBtn()
-        }
-        else {
-            dateBtns[12].defaultSportsBtn()
-        }
-    }
-    
-    @IBAction func touchUpSevenxthDateBtn(_ sender: Any) {
-        if dateBtns[13].status == false {
-            dateBtns[13].colorSportsBtn()
-            dateBtns[7].defaultSportsBtn()
-            dateBtns[8].defaultSportsBtn()
-            dateBtns[9].defaultSportsBtn()
-            dateBtns[10].defaultSportsBtn()
-            dateBtns[11].defaultSportsBtn()
-            dateBtns[12].defaultSportsBtn()
-        }
-        else {
-            dateBtns[13].defaultSportsBtn()
-        }
-    }
     
     @IBAction func touchUpDateTwoStartTimeBtn(_ sender: Any) {
         let alertVC = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
@@ -586,110 +335,7 @@ class MakeCrewDateVC: UIViewController {
     
     
     // 3번째 일정
-    @IBAction func touchUpFirsDateBtnCheck(_ sender: Any) {
-        if dateBtns[14].status == false {
-            dateBtns[14].colorSportsBtn()
-            dateBtns[15].defaultSportsBtn()
-            dateBtns[16].defaultSportsBtn()
-            dateBtns[17].defaultSportsBtn()
-            dateBtns[18].defaultSportsBtn()
-            dateBtns[19].defaultSportsBtn()
-            dateBtns[20].defaultSportsBtn()
-        }
-        else {
-            dateBtns[14].defaultSportsBtn()
-        }
-    }
-    
-    @IBAction func touchUpSecondDateBtnCheck(_ sender: Any) {
-        if dateBtns[15].status == false {
-            dateBtns[15].colorSportsBtn()
-            dateBtns[14].defaultSportsBtn()
-            dateBtns[16].defaultSportsBtn()
-            dateBtns[17].defaultSportsBtn()
-            dateBtns[18].defaultSportsBtn()
-            dateBtns[19].defaultSportsBtn()
-            dateBtns[20].defaultSportsBtn()
-        }
-        else {
-            dateBtns[15].defaultSportsBtn()
-        }
-    }
-    
-    @IBAction func touchUpThirdDateBtnCheck(_ sender: Any) {
-        if dateBtns[16].status == false {
-            dateBtns[16].colorSportsBtn()
-            dateBtns[14].defaultSportsBtn()
-            dateBtns[15].defaultSportsBtn()
-            dateBtns[17].defaultSportsBtn()
-            dateBtns[18].defaultSportsBtn()
-            dateBtns[19].defaultSportsBtn()
-            dateBtns[20].defaultSportsBtn()
-        }
-        else {
-            dateBtns[16].defaultSportsBtn()
-        }
-    }
-    
-    @IBAction func touchUpFourthDateBtnCheck(_ sender: Any) {
-        if dateBtns[17].status == false {
-            dateBtns[17].colorSportsBtn()
-            dateBtns[14].defaultSportsBtn()
-            dateBtns[15].defaultSportsBtn()
-            dateBtns[16].defaultSportsBtn()
-            dateBtns[18].defaultSportsBtn()
-            dateBtns[19].defaultSportsBtn()
-            dateBtns[20].defaultSportsBtn()
-        }
-        else {
-            dateBtns[17].defaultSportsBtn()
-        }
-    }
-    
-    @IBAction func touchUpFiftnDateBtnCheck(_ sender: Any) {
-        if dateBtns[18].status == false {
-            dateBtns[18].colorSportsBtn()
-            dateBtns[14].defaultSportsBtn()
-            dateBtns[15].defaultSportsBtn()
-            dateBtns[16].defaultSportsBtn()
-            dateBtns[17].defaultSportsBtn()
-            dateBtns[19].defaultSportsBtn()
-            dateBtns[20].defaultSportsBtn()
-        }
-        else {
-            dateBtns[18].defaultSportsBtn()
-        }
-    }
-    
-    @IBAction func touchUpSixthDateBtnCheck(_ sender: Any) {
-        if dateBtns[19].status == false {
-            dateBtns[19].colorSportsBtn()
-            dateBtns[14].defaultSportsBtn()
-            dateBtns[15].defaultSportsBtn()
-            dateBtns[16].defaultSportsBtn()
-            dateBtns[17].defaultSportsBtn()
-            dateBtns[18].defaultSportsBtn()
-            dateBtns[20].defaultSportsBtn()
-        }
-        else {
-            dateBtns[19].defaultSportsBtn()
-        }
-    }
-    
-    @IBAction func touchUpSevenxthDateBtnCheck(_ sender: Any) {
-        if dateBtns[20].status == false {
-            dateBtns[20].colorSportsBtn()
-            dateBtns[14].defaultSportsBtn()
-            dateBtns[15].defaultSportsBtn()
-            dateBtns[16].defaultSportsBtn()
-            dateBtns[17].defaultSportsBtn()
-            dateBtns[18].defaultSportsBtn()
-            dateBtns[19].defaultSportsBtn()
-        }
-        else {
-            dateBtns[20].defaultSportsBtn()
-        }
-    }
+   
     
     
     @IBAction func touchUpDateThreeStartTimeBtn(_ sender: Any) {
@@ -775,4 +421,32 @@ class MakeCrewDateVC: UIViewController {
         present(alertVC, animated: true, completion: nil)
     }
     
+}
+
+extension MakeCrewDateVC : DateDelegate {
+    func clickDate(btn: DateBtn) {
+        guard let buttonIndex = dateBtns.firstIndex(of: btn) else { return }
+        switch buttonIndex {
+        case 0...6 :
+            for i in 0...6 {
+                if i != buttonIndex {
+                    dateBtns[i].status = false
+                }
+            }
+        case 7...13 :
+            for i in 7...13 {
+                if i != buttonIndex {
+                    dateBtns[i].status = false
+                }
+            }
+        case 14...20 :
+            for i in 14...20 {
+                if i != buttonIndex {
+                    dateBtns[i].status = false
+                }
+            }
+        default:
+            break
+        }
+    }
 }

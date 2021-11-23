@@ -9,21 +9,35 @@ import UIKit
 
 class MakeBungaeCountVC: UIViewController {
 
+    @IBOutlet weak var nextBtn: NextBtn!
+    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var countTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        // textField Style
+        //countTextField.attributedPlaceholder = NSAttributedString(string: "00", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray02])
+        
+        
+        
+        countTextField.backgroundColor = .gray05
+        countTextField.borderStyle = .none
+        countTextField.makeRounded(cornerRadius: 8.adjusted)
+        countTextField.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        countTextField.textColor = .gray03
+        countTextField.addLeftPadding()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func touchUpBackBtn(_ sender: Any) {
+        
     }
-    */
-
+    
+    @IBAction func touchUpCancelBtn(_ sender: Any) {
+        
+    }
+    
+    @IBAction func touchUpNextBtn(_ sender: Any) {
+        
+    }
 }
