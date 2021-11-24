@@ -183,6 +183,12 @@
 		DDC4DB5B274DE79A00D79CC8 /* FeedDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB5A274DE79A00D79CC8 /* FeedDetailVC.swift */; };
 		DDC4DB5F274E234400D79CC8 /* FeedCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB5D274E234400D79CC8 /* FeedCVCell.swift */; };
 		DDC4DB60274E234400D79CC8 /* FeedCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DB5E274E234400D79CC8 /* FeedCVCell.xib */; };
+		DDC4DB64274E2BB100D79CC8 /* ActivityCrewCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB62274E2BB100D79CC8 /* ActivityCrewCVCell.swift */; };
+		DDC4DB65274E2BB100D79CC8 /* ActivityCrewCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DB63274E2BB100D79CC8 /* ActivityCrewCVCell.xib */; };
+		DDC4DB6D274E2C4200D79CC8 /* ActivityCrewCRV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB6B274E2C4200D79CC8 /* ActivityCrewCRV.swift */; };
+		DDC4DB6E274E2C4200D79CC8 /* ActivityCrewCRV.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DB6C274E2C4200D79CC8 /* ActivityCrewCRV.xib */; };
+		DDD1AD24274E3AB900CCC312 /* NoActivityCrewCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD1AD22274E3AB900CCC312 /* NoActivityCrewCVCell.swift */; };
+		DDD1AD25274E3AB900CCC312 /* NoActivityCrewCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDD1AD23274E3AB900CCC312 /* NoActivityCrewCVCell.xib */; };
 		DDE0EE582728163900C46821 /* JoinAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE572728163900C46821 /* JoinAlert.storyboard */; };
 		DDE0EE5A2728164E00C46821 /* JoinAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0EE592728164E00C46821 /* JoinAlertVC.swift */; };
 		DDE0EE5C272873EC00C46821 /* SignUpKakaoComplete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */; };
@@ -383,6 +389,12 @@
 		DDC4DB5A274DE79A00D79CC8 /* FeedDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailVC.swift; sourceTree = "<group>"; };
 		DDC4DB5D274E234400D79CC8 /* FeedCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCVCell.swift; sourceTree = "<group>"; };
 		DDC4DB5E274E234400D79CC8 /* FeedCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCVCell.xib; sourceTree = "<group>"; };
+		DDC4DB62274E2BB100D79CC8 /* ActivityCrewCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCrewCVCell.swift; sourceTree = "<group>"; };
+		DDC4DB63274E2BB100D79CC8 /* ActivityCrewCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityCrewCVCell.xib; sourceTree = "<group>"; };
+		DDC4DB6B274E2C4200D79CC8 /* ActivityCrewCRV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCrewCRV.swift; sourceTree = "<group>"; };
+		DDC4DB6C274E2C4200D79CC8 /* ActivityCrewCRV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityCrewCRV.xib; sourceTree = "<group>"; };
+		DDD1AD22274E3AB900CCC312 /* NoActivityCrewCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoActivityCrewCVCell.swift; sourceTree = "<group>"; };
+		DDD1AD23274E3AB900CCC312 /* NoActivityCrewCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoActivityCrewCVCell.xib; sourceTree = "<group>"; };
 		DDE0EE572728163900C46821 /* JoinAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinAlert.storyboard; sourceTree = "<group>"; };
 		DDE0EE592728164E00C46821 /* JoinAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinAlertVC.swift; sourceTree = "<group>"; };
 		DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpKakaoComplete.storyboard; sourceTree = "<group>"; };
@@ -701,7 +713,7 @@
 			isa = PBXGroup;
 			children = (
 				DD3E37C1272F924300C4192E /* Cells */,
-				DDC3B5122732ACBB00FF4959 /* ReusableViewCell */,
+				DDC3B5122732ACBB00FF4959 /* ReusableViewCells */,
 				DD3E37B8272F49BD00C4192E /* Controllers */,
 				DD3E37B7272F49B300C4192E /* Storyboards */,
 			);
@@ -721,6 +733,8 @@
 		DD3A30D8272DAA7E00D711C6 /* MyActivity */ = {
 			isa = PBXGroup;
 			children = (
+				DDC4DB6A274E2C0900D79CC8 /* ReusableViewCells */,
+				DDC4DB61274E2B9100D79CC8 /* Cells */,
 				DD3E37BC272F4A1500C4192E /* Controllers */,
 				DD3E37BB272F4A0D00C4192E /* Storyboards */,
 			);
@@ -945,7 +959,7 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		DDC3B5122732ACBB00FF4959 /* ReusableViewCell */ = {
+		DDC3B5122732ACBB00FF4959 /* ReusableViewCells */ = {
 			isa = PBXGroup;
 			children = (
 				DDC3B50A27327A0000FF4959 /* DetailCrewHeaderCRV.swift */,
@@ -953,7 +967,7 @@
 				DDC3B50E2732A68A00FF4959 /* DetailCrewFooterCRV.swift */,
 				DDC3B50F2732A68A00FF4959 /* DetailCrewFooterCRV.xib */,
 			);
-			path = ReusableViewCell;
+			path = ReusableViewCells;
 			sourceTree = "<group>";
 		};
 		DDC3B517273403B900FF4959 /* BaseVC */ = {
@@ -1085,6 +1099,26 @@
 				DDC4DB5E274E234400D79CC8 /* FeedCVCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		DDC4DB61274E2B9100D79CC8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DDC4DB62274E2BB100D79CC8 /* ActivityCrewCVCell.swift */,
+				DDC4DB63274E2BB100D79CC8 /* ActivityCrewCVCell.xib */,
+				DDD1AD22274E3AB900CCC312 /* NoActivityCrewCVCell.swift */,
+				DDD1AD23274E3AB900CCC312 /* NoActivityCrewCVCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DDC4DB6A274E2C0900D79CC8 /* ReusableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				DDC4DB6B274E2C4200D79CC8 /* ActivityCrewCRV.swift */,
+				DDC4DB6C274E2C4200D79CC8 /* ActivityCrewCRV.xib */,
+			);
+			path = ReusableViewCells;
 			sourceTree = "<group>";
 		};
 		DDE0EE54272815FD00C46821 /* PopupAlert */ = {
@@ -1325,9 +1359,11 @@
 				DDC4DB43274D2BA700D79CC8 /* MakeBungaeRegion.storyboard in Resources */,
 				DDC4DB1A274506D500D79CC8 /* SignUpImagePreview.storyboard in Resources */,
 				DD1BFC472738E8AD0042C51F /* MakeCrewInfo.storyboard in Resources */,
+				DDC4DB65274E2BB100D79CC8 /* ActivityCrewCVCell.xib in Resources */,
 				DD3A30EA272DAC2700D711C6 /* Feed.storyboard in Resources */,
 				DD1BFC4F2738E90D0042C51F /* MakeCrewPhoto.storyboard in Resources */,
 				DD1BFC5B273927200042C51F /* MakeCrewGuest.storyboard in Resources */,
+				DDD1AD25274E3AB900CCC312 /* NoActivityCrewCVCell.xib in Resources */,
 				DD9EEDD2273F77BE00E02396 /* SignUpEmailPw.storyboard in Resources */,
 				DD2D63B027268A1A007CEC57 /* LevelModal.storyboard in Resources */,
 				DDC4DAE6274275E200D79CC8 /* ToastMessage.storyboard in Resources */,
@@ -1362,6 +1398,7 @@
 				DD3A30E4272DABE900D711C6 /* MyActivity.storyboard in Resources */,
 				DDC4DB3127478B7200D79CC8 /* BungaeIntroduceCVCell.xib in Resources */,
 				DD9EEDC7273D095E00E02396 /* DongPicker.storyboard in Resources */,
+				DDC4DB6E274E2C4200D79CC8 /* ActivityCrewCRV.xib in Resources */,
 				DD3E37C92730180100C4192E /* CrewDetail.storyboard in Resources */,
 				DD3A30F4272E61EB00D711C6 /* AddCrew.storyboard in Resources */,
 				DDE0EE6B2729907600C46821 /* SignUpAge.storyboard in Resources */,
@@ -1436,6 +1473,7 @@
 				DD3E37B6272F432A00C4192E /* UserInfoWarningVC.swift in Sources */,
 				DD1BFC272736DC8C0042C51F /* InformationService.swift in Sources */,
 				DDC4DB5B274DE79A00D79CC8 /* FeedDetailVC.swift in Sources */,
+				DDC4DB64274E2BB100D79CC8 /* ActivityCrewCVCell.swift in Sources */,
 				DD9EEDE12740354200E02396 /* OnboardingVC.swift in Sources */,
 				DD1BFC492738E8BB0042C51F /* MakeCrewInfoVC.swift in Sources */,
 				DDC4DB292746A97800D79CC8 /* SportsService.swift in Sources */,
@@ -1466,6 +1504,7 @@
 				DD61E4C6271EBCE6007504DE /* LocationPickerVC.swift in Sources */,
 				DDC4DAFF2743FC1F00D79CC8 /* SignUpData.swift in Sources */,
 				DD9EEDBD273A492D00E02396 /* CrewAlertVC.swift in Sources */,
+				DDD1AD24274E3AB900CCC312 /* NoActivityCrewCVCell.swift in Sources */,
 				DDE0EE672729333300C46821 /* KakaoLoginService.swift in Sources */,
 				DD2D63B227268A34007CEC57 /* LevelModalVC.swift in Sources */,
 				DD1BFC452738E8820042C51F /* MakeCrewRegionVC.swift in Sources */,
@@ -1482,6 +1521,7 @@
 				DDC4DB45274D2BBA00D79CC8 /* MakeBungaeRegionVC.swift in Sources */,
 				DDC4DB142744B96C00D79CC8 /* MakeCrewRequest.swift in Sources */,
 				DDC4DB0E274432E400D79CC8 /* UIViewController.swift in Sources */,
+				DDC4DB6D274E2C4200D79CC8 /* ActivityCrewCRV.swift in Sources */,
 				DDC4DAE4274107D900D79CC8 /* AreaService.swift in Sources */,
 				DD7BEBC327315D3A00DB2F60 /* DetailCrewImgCVCell.swift in Sources */,
 				DD3A30CC272DA37100D711C6 /* AppleLoginRequest.swift in Sources */,

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ActivityCrewCRV" reuseIdentifier="ActivityCrewCRV" id="U6b-Vx-4bR" customClass="ActivityCrewCRV" customModule="wupitch" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="활동중인 크루" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4L-CU-5fe">
+                    <rect key="frame" x="20" y="0.0" width="300" height="50"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <constraints>
+                <constraint firstItem="a4L-CU-5fe" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="HLO-SV-Kv3"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="a4L-CU-5fe" secondAttribute="bottom" id="YQV-6e-h8c"/>
+                <constraint firstAttribute="trailing" secondItem="a4L-CU-5fe" secondAttribute="trailing" id="cEh-zd-Y4Q"/>
+                <constraint firstItem="a4L-CU-5fe" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="20" id="pCj-O1-Ofg"/>
+            </constraints>
+            <connections>
+                <outlet property="crewLabel" destination="a4L-CU-5fe" id="DMb-Ym-M0Z"/>
+            </connections>
+            <point key="canvasLocation" x="133" y="94"/>
+        </collectionReusableView>
+    </objects>
+</document>
