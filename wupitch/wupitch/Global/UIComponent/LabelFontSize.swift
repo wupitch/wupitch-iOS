@@ -54,4 +54,9 @@ extension LabelFontSize {
         self.textColor = .gray02
     }
     
+    func titleLabelFontSize() {
+        self.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 22.adjusted)
+        self.textColor = .bk
+    }
+    
 }

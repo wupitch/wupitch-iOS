@@ -181,6 +181,8 @@
 		DDC4DB57274D53AD00D79CC8 /* DateBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB56274D53AD00D79CC8 /* DateBtn.swift */; };
 		DDC4DB59274DE78C00D79CC8 /* FeedDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DB58274DE78C00D79CC8 /* FeedDetail.storyboard */; };
 		DDC4DB5B274DE79A00D79CC8 /* FeedDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB5A274DE79A00D79CC8 /* FeedDetailVC.swift */; };
+		DDC4DB5F274E234400D79CC8 /* FeedCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB5D274E234400D79CC8 /* FeedCVCell.swift */; };
+		DDC4DB60274E234400D79CC8 /* FeedCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DB5E274E234400D79CC8 /* FeedCVCell.xib */; };
 		DDE0EE582728163900C46821 /* JoinAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE572728163900C46821 /* JoinAlert.storyboard */; };
 		DDE0EE5A2728164E00C46821 /* JoinAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0EE592728164E00C46821 /* JoinAlertVC.swift */; };
 		DDE0EE5C272873EC00C46821 /* SignUpKakaoComplete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */; };
@@ -379,6 +381,8 @@
 		DDC4DB56274D53AD00D79CC8 /* DateBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateBtn.swift; sourceTree = "<group>"; };
 		DDC4DB58274DE78C00D79CC8 /* FeedDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedDetail.storyboard; sourceTree = "<group>"; };
 		DDC4DB5A274DE79A00D79CC8 /* FeedDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailVC.swift; sourceTree = "<group>"; };
+		DDC4DB5D274E234400D79CC8 /* FeedCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCVCell.swift; sourceTree = "<group>"; };
+		DDC4DB5E274E234400D79CC8 /* FeedCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCVCell.xib; sourceTree = "<group>"; };
 		DDE0EE572728163900C46821 /* JoinAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinAlert.storyboard; sourceTree = "<group>"; };
 		DDE0EE592728164E00C46821 /* JoinAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinAlertVC.swift; sourceTree = "<group>"; };
 		DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpKakaoComplete.storyboard; sourceTree = "<group>"; };
@@ -726,6 +730,7 @@
 		DD3A30D9272DAB0000D711C6 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				DDC4DB5C274E231F00D79CC8 /* Cells */,
 				DD3E37BE272F4A3000C4192E /* Controllers */,
 				DD3E37BD272F4A2800C4192E /* Storyboards */,
 			);
@@ -1073,6 +1078,15 @@
 			path = Extra;
 			sourceTree = "<group>";
 		};
+		DDC4DB5C274E231F00D79CC8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DDC4DB5D274E234400D79CC8 /* FeedCVCell.swift */,
+				DDC4DB5E274E234400D79CC8 /* FeedCVCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		DDE0EE54272815FD00C46821 /* PopupAlert */ = {
 			isa = PBXGroup;
 			children = (
@@ -1318,6 +1332,7 @@
 				DD2D63B027268A1A007CEC57 /* LevelModal.storyboard in Resources */,
 				DDC4DAE6274275E200D79CC8 /* ToastMessage.storyboard in Resources */,
 				DD7BEBCC27315DF800DB2F60 /* DetailCrewIntroduceCVCell.xib in Resources */,
+				DDC4DB60274E234400D79CC8 /* FeedCVCell.xib in Resources */,
 				DD3A30DC272DAB7B00D711C6 /* Crew.storyboard in Resources */,
 				DDC4DB1F2746415000D79CC8 /* BungaeCVCell.xib in Resources */,
 				DD295DA927181E3D008CFC64 /* Assets.xcassets in Resources */,
@@ -1472,6 +1487,7 @@
 				DD3A30CC272DA37100D711C6 /* AppleLoginRequest.swift in Sources */,
 				DDED0124271BDCD700C2C343 /* OnboardingCVCell.swift in Sources */,
 				DD3A30F2272DB07500D711C6 /* JoinCompleteVC.swift in Sources */,
+				DDC4DB5F274E234400D79CC8 /* FeedCVCell.swift in Sources */,
 				DD3ACBBF2721083700EBC201 /* SignUpProfileVC.swift in Sources */,
 				DD9EEDD0273EC71E00E02396 /* SignInVC.swift in Sources */,
 				DD3A30FA272E7C5F00D711C6 /* CrewApplicationVC.swift in Sources */,

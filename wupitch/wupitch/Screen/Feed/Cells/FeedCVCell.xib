@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FeedCVCell" id="gTV-IL-0wX" customClass="FeedCVCell" customModule="wupitch" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="190" height="170"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="190" height="170"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgVoll" translatesAutoresizingMaskIntoConstraints="NO" id="ME8-Zs-9IZ">
+                        <rect key="frame" x="0.0" y="0.0" width="190" height="170"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reactHeartInact" translatesAutoresizingMaskIntoConstraints="NO" id="3Li-7G-ZIR">
+                        <rect key="frame" x="162" y="142" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="SJH-yG-EYs"/>
+                            <constraint firstAttribute="width" constant="24" id="spg-RI-S6Q"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="ME8-Zs-9IZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0Ee-8E-XCo"/>
+                <constraint firstAttribute="trailing" secondItem="ME8-Zs-9IZ" secondAttribute="trailing" id="4aA-Xo-ExN"/>
+                <constraint firstAttribute="bottom" secondItem="ME8-Zs-9IZ" secondAttribute="bottom" id="JBf-Yg-UDu"/>
+                <constraint firstItem="ME8-Zs-9IZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Pus-eq-307"/>
+                <constraint firstAttribute="trailing" secondItem="3Li-7G-ZIR" secondAttribute="trailing" constant="4" id="WrT-4h-WZm"/>
+                <constraint firstAttribute="bottom" secondItem="3Li-7G-ZIR" secondAttribute="bottom" constant="4" id="rG8-fI-D99"/>
+            </constraints>
+            <size key="customSize" width="190" height="170"/>
+            <point key="canvasLocation" x="224.63768115942031" y="48.214285714285715"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="imgVoll" width="128" height="126"/>
+        <image name="reactHeartInact" width="24" height="24"/>
+    </resources>
+</document>
