@@ -179,6 +179,8 @@
 		DDC4DB53274D2C8200D79CC8 /* MakeBungaeMoney.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DB52274D2C8200D79CC8 /* MakeBungaeMoney.storyboard */; };
 		DDC4DB55274D2C9400D79CC8 /* MakeBungaeMoneyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB54274D2C9400D79CC8 /* MakeBungaeMoneyVC.swift */; };
 		DDC4DB57274D53AD00D79CC8 /* DateBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB56274D53AD00D79CC8 /* DateBtn.swift */; };
+		DDC4DB59274DE78C00D79CC8 /* FeedDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DB58274DE78C00D79CC8 /* FeedDetail.storyboard */; };
+		DDC4DB5B274DE79A00D79CC8 /* FeedDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DB5A274DE79A00D79CC8 /* FeedDetailVC.swift */; };
 		DDE0EE582728163900C46821 /* JoinAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE572728163900C46821 /* JoinAlert.storyboard */; };
 		DDE0EE5A2728164E00C46821 /* JoinAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0EE592728164E00C46821 /* JoinAlertVC.swift */; };
 		DDE0EE5C272873EC00C46821 /* SignUpKakaoComplete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */; };
@@ -375,6 +377,8 @@
 		DDC4DB52274D2C8200D79CC8 /* MakeBungaeMoney.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MakeBungaeMoney.storyboard; sourceTree = "<group>"; };
 		DDC4DB54274D2C9400D79CC8 /* MakeBungaeMoneyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBungaeMoneyVC.swift; sourceTree = "<group>"; };
 		DDC4DB56274D53AD00D79CC8 /* DateBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateBtn.swift; sourceTree = "<group>"; };
+		DDC4DB58274DE78C00D79CC8 /* FeedDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedDetail.storyboard; sourceTree = "<group>"; };
+		DDC4DB5A274DE79A00D79CC8 /* FeedDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailVC.swift; sourceTree = "<group>"; };
 		DDE0EE572728163900C46821 /* JoinAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinAlert.storyboard; sourceTree = "<group>"; };
 		DDE0EE592728164E00C46821 /* JoinAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinAlertVC.swift; sourceTree = "<group>"; };
 		DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpKakaoComplete.storyboard; sourceTree = "<group>"; };
@@ -825,6 +829,7 @@
 			isa = PBXGroup;
 			children = (
 				DD3A30E9272DAC2700D711C6 /* Feed.storyboard */,
+				DDC4DB58274DE78C00D79CC8 /* FeedDetail.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -833,6 +838,7 @@
 			isa = PBXGroup;
 			children = (
 				DD3A30E7272DAC2000D711C6 /* FeedVC.swift */,
+				DDC4DB5A274DE79A00D79CC8 /* FeedDetailVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1336,6 +1342,7 @@
 				DD9EEDCC273EC6E700E02396 /* SignIn.storyboard in Resources */,
 				DDC4DB332748F2F300D79CC8 /* BungaeFilter.storyboard in Resources */,
 				DDC4DB47274D2BDA00D79CC8 /* MakeBungaeDate.storyboard in Resources */,
+				DDC4DB59274DE78C00D79CC8 /* FeedDetail.storyboard in Resources */,
 				DD3ACBB92721073E00EBC201 /* SignUpSports.storyboard in Resources */,
 				DD3A30E4272DABE900D711C6 /* MyActivity.storyboard in Resources */,
 				DDC4DB3127478B7200D79CC8 /* BungaeIntroduceCVCell.xib in Resources */,
@@ -1413,6 +1420,7 @@
 				DD1BFC552738E9530042C51F /* MakeCrewMoneyVC.swift in Sources */,
 				DD3E37B6272F432A00C4192E /* UserInfoWarningVC.swift in Sources */,
 				DD1BFC272736DC8C0042C51F /* InformationService.swift in Sources */,
+				DDC4DB5B274DE79A00D79CC8 /* FeedDetailVC.swift in Sources */,
 				DD9EEDE12740354200E02396 /* OnboardingVC.swift in Sources */,
 				DD1BFC492738E8BB0042C51F /* MakeCrewInfoVC.swift in Sources */,
 				DDC4DB292746A97800D79CC8 /* SportsService.swift in Sources */,
