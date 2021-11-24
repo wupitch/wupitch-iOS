@@ -128,6 +128,8 @@
 		DDC3B5192734041500FF4959 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC3B5182734041500FF4959 /* BaseVC.swift */; };
 		DDC3B51B2735565C00FF4959 /* MainLocationPickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC3B51A2735565B00FF4959 /* MainLocationPickerData.swift */; };
 		DDC3B51D2736373500FF4959 /* GuestDateBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC3B51C2736373500FF4959 /* GuestDateBtn.swift */; };
+		DDC46B4A274E4F010015341E /* MyActivityDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC46B49274E4F010015341E /* MyActivityDetail.storyboard */; };
+		DDC46B4C274E4F0D0015341E /* MyActivityDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B4B274E4F0D0015341E /* MyActivityDetailVC.swift */; };
 		DDC4DAE12741075700D79CC8 /* AreaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAE02741075700D79CC8 /* AreaData.swift */; };
 		DDC4DAE4274107D900D79CC8 /* AreaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAE3274107D900D79CC8 /* AreaService.swift */; };
 		DDC4DAE6274275E200D79CC8 /* ToastMessage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DAE5274275E200D79CC8 /* ToastMessage.storyboard */; };
@@ -336,6 +338,8 @@
 		DDC3B5182734041500FF4959 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		DDC3B51A2735565B00FF4959 /* MainLocationPickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLocationPickerData.swift; sourceTree = "<group>"; };
 		DDC3B51C2736373500FF4959 /* GuestDateBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestDateBtn.swift; sourceTree = "<group>"; };
+		DDC46B49274E4F010015341E /* MyActivityDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyActivityDetail.storyboard; sourceTree = "<group>"; };
+		DDC46B4B274E4F0D0015341E /* MyActivityDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyActivityDetailVC.swift; sourceTree = "<group>"; };
 		DDC4DAE02741075700D79CC8 /* AreaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaData.swift; sourceTree = "<group>"; };
 		DDC4DAE3274107D900D79CC8 /* AreaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaService.swift; sourceTree = "<group>"; };
 		DDC4DAE5274275E200D79CC8 /* ToastMessage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToastMessage.storyboard; sourceTree = "<group>"; };
@@ -836,6 +840,7 @@
 			isa = PBXGroup;
 			children = (
 				DD3A30E3272DABE900D711C6 /* MyActivity.storyboard */,
+				DDC46B49274E4F010015341E /* MyActivityDetail.storyboard */,
 				DDEB65F9274E477200F48DF0 /* AddBoard.storyboard */,
 			);
 			path = Storyboards;
@@ -845,6 +850,7 @@
 			isa = PBXGroup;
 			children = (
 				DD3A30E5272DAC0300D711C6 /* MyActivityVC.swift */,
+				DDC46B4B274E4F0D0015341E /* MyActivityDetailVC.swift */,
 				DDEB65FB274E478900F48DF0 /* AddBoardVC.swift */,
 			);
 			path = Controllers;
@@ -1415,6 +1421,7 @@
 				DD3E37C7272F928E00C4192E /* CrewCVCell.xib in Resources */,
 				DD3A30F8272E7C4800D711C6 /* CrewApplication.storyboard in Resources */,
 				DD1BFC3727380C760042C51F /* CrewFilter.storyboard in Resources */,
+				DDC46B4A274E4F010015341E /* MyActivityDetail.storyboard in Resources */,
 				DD3A30E2272DABCC00D711C6 /* Bungae.storyboard in Resources */,
 				DD1BFC532738E9420042C51F /* MakeCrewMoney.storyboard in Resources */,
 				DD1BFC31273788360042C51F /* TagCVCell.xib in Resources */,
@@ -1542,6 +1549,7 @@
 				DD1BFC412738E6DD0042C51F /* MakeCrewSportsVC.swift in Sources */,
 				DD3A30DE272DAB9400D711C6 /* CrewVC.swift in Sources */,
 				DD2D63B42726A8A0007CEC57 /* UITextField.swift in Sources */,
+				DDC46B4C274E4F0D0015341E /* MyActivityDetailVC.swift in Sources */,
 				DD295DA027181E3B008CFC64 /* AppDelegate.swift in Sources */,
 				DD3E37CB2730182C00C4192E /* CrewDetailVC.swift in Sources */,
 				DDC4DB0627440EF700D79CC8 /* SignInData.swift in Sources */,
