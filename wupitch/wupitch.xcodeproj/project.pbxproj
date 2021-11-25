@@ -139,6 +139,8 @@
 		DDC46B5A274F87330015341E /* ProfileSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B59274F87330015341E /* ProfileSettingsVC.swift */; };
 		DDC46B5C274F8BE40015341E /* ProfilePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC46B5B274F8BE40015341E /* ProfilePassword.storyboard */; };
 		DDC46B5E274F8BF30015341E /* ProfilePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B5D274F8BF30015341E /* ProfilePasswordVC.swift */; };
+		DDC46B60274FA9F60015341E /* WithdrawalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B5F274FA9F60015341E /* WithdrawalService.swift */; };
+		DDC46B63274FAA390015341E /* WithdrawalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B62274FAA390015341E /* WithdrawalData.swift */; };
 		DDC4DAE12741075700D79CC8 /* AreaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAE02741075700D79CC8 /* AreaData.swift */; };
 		DDC4DAE4274107D900D79CC8 /* AreaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAE3274107D900D79CC8 /* AreaService.swift */; };
 		DDC4DAE6274275E200D79CC8 /* ToastMessage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DAE5274275E200D79CC8 /* ToastMessage.storyboard */; };
@@ -358,6 +360,8 @@
 		DDC46B59274F87330015341E /* ProfileSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsVC.swift; sourceTree = "<group>"; };
 		DDC46B5B274F8BE40015341E /* ProfilePassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfilePassword.storyboard; sourceTree = "<group>"; };
 		DDC46B5D274F8BF30015341E /* ProfilePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePasswordVC.swift; sourceTree = "<group>"; };
+		DDC46B5F274FA9F60015341E /* WithdrawalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalService.swift; sourceTree = "<group>"; };
+		DDC46B62274FAA390015341E /* WithdrawalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalData.swift; sourceTree = "<group>"; };
 		DDC4DAE02741075700D79CC8 /* AreaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaData.swift; sourceTree = "<group>"; };
 		DDC4DAE3274107D900D79CC8 /* AreaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaService.swift; sourceTree = "<group>"; };
 		DDC4DAE5274275E200D79CC8 /* ToastMessage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToastMessage.storyboard; sourceTree = "<group>"; };
@@ -471,6 +475,7 @@
 		DD1BFC1E273663230042C51F /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				DDC46B61274FAA1F0015341E /* Withdrawal */,
 				DDC4DB0427440EEC00D79CC8 /* SignIn */,
 				DDC4DAFD2743FBEC00D79CC8 /* SignUp */,
 				DDC4DAEA274381FC00D79CC8 /* Password */,
@@ -489,6 +494,7 @@
 				DDC4DAF527438A3100D79CC8 /* PwValidationService.swift */,
 				DDC4DAFB2743FBD500D79CC8 /* SignUpService.swift */,
 				DDC4DB0227440E6700D79CC8 /* SignInService.swift */,
+				DDC46B5F274FA9F60015341E /* WithdrawalService.swift */,
 				DD1BFC262736DC8C0042C51F /* InformationService.swift */,
 			);
 			path = Account;
@@ -1015,6 +1021,14 @@
 				DDC3B5182734041500FF4959 /* BaseVC.swift */,
 			);
 			path = BaseVC;
+			sourceTree = "<group>";
+		};
+		DDC46B61274FAA1F0015341E /* Withdrawal */ = {
+			isa = PBXGroup;
+			children = (
+				DDC46B62274FAA390015341E /* WithdrawalData.swift */,
+			);
+			path = Withdrawal;
 			sourceTree = "<group>";
 		};
 		DDC4DADF2741072B00D79CC8 /* Area */ = {
@@ -1595,6 +1609,7 @@
 				DD1BFC3927380C920042C51F /* CrewFilterVC.swift in Sources */,
 				DD3A30E0272DABC000D711C6 /* BungaeVC.swift in Sources */,
 				DD3ACBC8272170A800EBC201 /* SignUpCompleteVC.swift in Sources */,
+				DDC46B63274FAA390015341E /* WithdrawalData.swift in Sources */,
 				DDC46B4E274E89E20015341E /* DatePickerBtn.swift in Sources */,
 				DD9EEDDA273FFE9B00E02396 /* CrewSearchCVCell.swift in Sources */,
 				DD3A30C1272AA94100D711C6 /* ModalSportsBtn.swift in Sources */,
@@ -1630,6 +1645,7 @@
 				DD3A30C6272D1E1400D711C6 /* KakaoLoginRequest.swift in Sources */,
 				DDC4DAE8274275F300D79CC8 /* ToastMessageVC.swift in Sources */,
 				DD6728352723E582001E1355 /* LocationPickerData.swift in Sources */,
+				DDC46B60274FA9F60015341E /* WithdrawalService.swift in Sources */,
 				DD1BFC3D2738B7ED0042C51F /* LabelFontSize.swift in Sources */,
 				DDC46B5E274F8BF30015341E /* ProfilePasswordVC.swift in Sources */,
 				DDC4DB262746A95E00D79CC8 /* SportsData.swift in Sources */,

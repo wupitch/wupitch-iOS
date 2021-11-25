@@ -72,6 +72,12 @@ class SignUpImagePreviewVC: UIViewController {
                 case .success(let response):
                     print("데이터가 성공적으로 들어왔어요", response)
                     
+                    //버튼 클릭 시, 다음 스토리보드로 이동
+                    let storyboard = UIStoryboard.init(name: "SignUpComplete", bundle: nil)
+                    guard let dvc = storyboard.instantiateViewController(identifier: "SignUpCompleteVC") as? SignUpCompleteVC else {return}
+                    self.tabBarController?.tabBar.isHidden = true
+                    self.navigationController?.pushViewController(dvc, animated: true)
+                    
                 case .failure(let error):
                     print(error.localizedDescription)
                 }

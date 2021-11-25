@@ -10,6 +10,8 @@ import UIKit
 class ProfileSettingsVC: UIViewController {
 
     @IBOutlet var settingsBtn: [UIButton]!
+    lazy var withdrawalDataManager = WithdrawalService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
@@ -34,6 +36,7 @@ class ProfileSettingsVC: UIViewController {
     
     // 비밀번호 변경 버튼
     @IBAction func touchUpPasswordBtn(_ sender: Any) {
+        
         //버튼 클릭 시, 다음 스토리보드로 이동
         let storyboard = UIStoryboard.init(name: "ProfilePassword", bundle: nil)
         guard let dvc = storyboard.instantiateViewController(identifier: "ProfilePasswordVC") as? ProfilePasswordVC else {return}
@@ -45,7 +48,31 @@ class ProfileSettingsVC: UIViewController {
     @IBAction func touchUpLogoutBtn(_ sender: Any) {
         // 유저 토큰 삭제
         UserDefaults.standard.removeObject(forKey: "userToken")
-       
+        
+        if UserDefaults.standard.string(forKey: "userToken") == nil {
+            guard let viewControllerStack = self.navigationController?.viewControllers else { return }
+            
+            // 뷰 스택에서 SignInVC를 찾아서 거기까지 pop 합니다.
+            for viewController in viewControllerStack {
+                if let signInVC = viewController as? SignInVC { self.navigationController?.popToViewController(signInVC, animated: true)
+                }
+            }
+        }
+    }
+    
+    // 회원탈퇴 버튼
+    @IBAction func touchUpOutBtn(_ sender: Any) {
+        withdrawalDataManager.patchWithdrawal(delegate: self)
+        
+    }
+}
+
+// 회원 탈퇴 api
+extension ProfileSettingsVC {
+    func didSuccessWithdrawal(result: WithdrawalData) {
+        print("데이터가 성공적으로 들어왔습니다.")
+        print(result.isSuccess)
+        
         guard let viewControllerStack = self.navigationController?.viewControllers else { return }
         
         // 뷰 스택에서 SignInVC를 찾아서 거기까지 pop 합니다.
@@ -55,9 +82,10 @@ class ProfileSettingsVC: UIViewController {
         }
     }
     
-    // 회원탈퇴 버튼
-    @IBAction func touchUpOutBtn(_ sender: Any) {
+    func failedToRequest(message: String) {
+        print("데이터가 들어오지 않았습니다.")
+        
     }
-    
-    
 }
+
+

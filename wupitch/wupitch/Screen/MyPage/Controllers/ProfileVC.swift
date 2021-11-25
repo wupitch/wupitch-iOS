@@ -87,9 +87,9 @@ class ProfileVC: BaseVC {
     @IBAction func touchUpSettingsBtn(_ sender: Any) {
         
         //버튼 클릭 시, 다음 스토리보드로 이동
-                let storyboard = UIStoryboard.init(name: "ProfileSettings", bundle: nil)
-                guard let dvc = storyboard.instantiateViewController(identifier: "ProfileSettingsVC") as? ProfileSettingsVC else {return}
-                self.tabBarController?.tabBar.isHidden = true
-                self.navigationController?.pushViewController(dvc, animated: true)
+        let storyboard = UIStoryboard.init(name: "ProfileSettings", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(identifier: "ProfileSettingsVC") as? ProfileSettingsVC else {return}
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.pushViewController(dvc, animated: true)
     }
 }
