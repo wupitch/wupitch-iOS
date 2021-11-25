@@ -1087,21 +1087,21 @@
 			path = SignIn;
 			sourceTree = "<group>";
 		};
-		DDC4DB0F2744B92A00D79CC8 /* MakeCrew */ = {
+		DDC4DB0F2744B92A00D79CC8 /* Crew */ = {
 			isa = PBXGroup;
 			children = (
 				DDC4DB152744B97B00D79CC8 /* MakeCrewService.swift */,
 			);
-			path = MakeCrew;
+			path = Crew;
 			sourceTree = "<group>";
 		};
-		DDC4DB102744B93D00D79CC8 /* MakeCrew */ = {
+		DDC4DB102744B93D00D79CC8 /* Crew */ = {
 			isa = PBXGroup;
 			children = (
 				DDC4DB112744B95D00D79CC8 /* MakeCrewData.swift */,
 				DDC4DB132744B96C00D79CC8 /* MakeCrewRequest.swift */,
 			);
-			path = MakeCrew;
+			path = Crew;
 			sourceTree = "<group>";
 		};
 		DDC4DB1B2746412600D79CC8 /* Cells */ = {
@@ -1218,7 +1218,7 @@
 			children = (
 				DDC4DB36274B293D00D79CC8 /* Extra */,
 				DDC4DB272746A96900D79CC8 /* Sports */,
-				DDC4DB0F2744B92A00D79CC8 /* MakeCrew */,
+				DDC4DB0F2744B92A00D79CC8 /* Crew */,
 				DDC4DAE2274107BC00D79CC8 /* Area */,
 				DD1BFC212736644D0042C51F /* Account */,
 				DDE0EE64272931AC00C46821 /* SocialLogin */,
@@ -1284,7 +1284,7 @@
 			children = (
 				DDC4DB37274B295100D79CC8 /* Extra */,
 				DDC4DB242746A93D00D79CC8 /* Sports */,
-				DDC4DB102744B93D00D79CC8 /* MakeCrew */,
+				DDC4DB102744B93D00D79CC8 /* Crew */,
 				DDC4DADF2741072B00D79CC8 /* Area */,
 				DD1BFC1E273663230042C51F /* Account */,
 				DDE0EE65272932A000C46821 /* SocialLogin */,

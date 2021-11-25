@@ -17,6 +17,7 @@ struct MakeCrewRequest: Codable {
     let sportsID: Int
     let title: String
     let memberCount: Int
+    let materials: String
     let scheduleList: [ScheduleList]
 
     enum CodingKeys: String, CodingKey {
@@ -24,7 +25,7 @@ struct MakeCrewRequest: Codable {
         case areaID = "areaId"
         case conference, extraInfoList, guestConference, inquiries, introduction, location
         case sportsID = "sportsId"
-        case title, memberCount, scheduleList
+        case title, memberCount, materials, scheduleList
     }
 }
 

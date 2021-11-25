@@ -13,4 +13,14 @@ struct MakeCrewData: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String
+    let result: MakeCrewResult
+}
+
+// MARK: - MakeCrewResult
+struct MakeCrewResult: Codable {
+    let clubID: Int
+
+    enum CodingKeys: String, CodingKey {
+        case clubID = "clubId"
+    }
 }

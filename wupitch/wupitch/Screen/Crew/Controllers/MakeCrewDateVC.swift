@@ -23,21 +23,6 @@ class MakeCrewDateVC: UIViewController {
     // 플러스 버튼 검사
     var plusBtnCheck = [false, false]
     
-    // 요일 버튼 검사
-    var dateSectionFirstBtnCheck = [false,false,false,false,false,false,false]
-    var dateSectionSecondBtnCheck = [false,false,false,false,false,false,false,false,false,false,false,false,false,false]
-    var dateSectionThirdBtnCheck = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
-    
-    // 초기화
-    var firstPickerStartData : Double?
-    var firstPickerEndData : Double?
-//
-//    var secondPickerStartData : Double?
-//    var secondPickerEndData : Double?
-//
-//    var thirdPickerStartData : Double?
-//    var thirdPickerEndData : Double?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,40 +46,80 @@ class MakeCrewDateVC: UIViewController {
         betweenLabels[2].textColor = .gray02
     }
     
+    // 중복체크
+    private func duplicateCheck(section:Int, index:Int) {
+        var isDuplicate = false
+        let idx = index % 7
+        switch section {
+        case 0:
+            if let sectionTwo = (7...13).first(where: { dateBtns[$0].status == true }) {
+                if (sectionTwo % 7) == idx { isDuplicate = true }
+            }
+            if let sectionThree = (14...20).first(where: { dateBtns[$0].status == true }) {
+                if (sectionThree % 7) == idx { isDuplicate = true }
+            }
+        case 1:
+            if let sectionOne = (0...6).first(where: { dateBtns[$0].status == true }) {
+                if sectionOne == idx { isDuplicate = true }
+            }
+            if let sectionThree = (14...20).first(where: { dateBtns[$0].status == true }) {
+                if (sectionThree % 7) == idx { isDuplicate = true }
+            }
+        case 2:
+            if let sectionOne = (0...6).first(where: { dateBtns[$0].status == true }) {
+                if sectionOne == idx { isDuplicate = true }
+            }
+            if let sectionTwo = (7...13).first(where: { dateBtns[$0].status == true }) {
+                if (sectionTwo % 7) == idx { isDuplicate = true }
+            }
+        default :
+            break
+        }
+        
+        if isDuplicate == true {
+            dateBtns[index].status = false
+            // 알림창 띄우기
+            print("중복되었습니다.")
+        }
+    }
+    
     /// check()메서드는 모든 요일, 시간 버튼이 클릭될때마다 호출
-    func check() {
+    private func check() {
         // 섹션 1 검사하는 코드
         // 요일, 시간이 전부 true인지?
-        if dateSectionFirstBtnCheck.contains { $0 == true } && startTimeBtns[0].status && endTimeBtns[0].status {
+        if (0...6).contains(where: { dateBtns[$0].status == true }) && startTimeBtns[0].status && endTimeBtns[0].status {
             // true
             nextBtn.backgroundColor = .main
         } else {
             // false
             nextBtn.backgroundColor = .gray03
+            return
         }
         
         if plusBtnCheck[0] == true {
             // 섹션 2 검사하는 코드
             // 요일, 시간이 전부 true인지?
-            if dateSectionFirstBtnCheck.contains { $0 == true } && dateSectionSecondBtnCheck.contains { $0 == true } && startTimeBtns[1].status && endTimeBtns[1].status {
+            if (7...13).contains(where: { dateBtns[$0].status == true }) && startTimeBtns[1].status && endTimeBtns[1].status {
                 // true
                 nextBtn.backgroundColor = .main
-                
+
             } else {
                 // false
                 nextBtn.backgroundColor = .gray03
+                return
             }
         }
-        
+
         if plusBtnCheck[1] == true {
             // 섹션 3 검사하는 코드
             // 요일, 시간이 전부 true인지?
-            if dateSectionFirstBtnCheck.contains { $0 == true } && dateSectionSecondBtnCheck.contains { $0 == true } && dateSectionThirdBtnCheck.contains { $0 == true } && startTimeBtns[2].status && endTimeBtns[2].status {
+            if (14...20).contains(where: { dateBtns[$0].status == true }) && startTimeBtns[2].status && endTimeBtns[2].status {
                 // true
                 nextBtn.backgroundColor = .main
             } else {
                 // false
                 nextBtn.backgroundColor = .gray03
+                return
             }
         }
     }
@@ -160,29 +185,26 @@ extension MakeCrewDateVC : DateDelegate {
                 if i != buttonIndex {
                     dateBtns[i].status = false
                 }
-                dateSectionFirstBtnCheck[i] = dateBtns[i].status
-                check()
             }
+            duplicateCheck(section: 0, index: buttonIndex)
         case 7...13 :
             for i in 7...13 {
                 if i != buttonIndex {
                     dateBtns[i].status = false
                 }
-                dateSectionSecondBtnCheck[i] = dateBtns[i].status
-                check()
             }
-            
+            duplicateCheck(section: 1, index: buttonIndex)
         case 14...20 :
             for i in 14...20 {
                 if i != buttonIndex {
                     dateBtns[i].status = false
                 }
-                dateSectionThirdBtnCheck[i] = dateBtns[i].status
-                check()
             }
+            duplicateCheck(section: 2, index: buttonIndex)
         default:
             break
         }
+        check()
     }
 }
 
