@@ -10,15 +10,11 @@ import UIKit
 class SignUpSportsVC: UIViewController {
     
     // MARK: - IBOulets
-    @IBOutlet weak var textView: UIView!
     @IBOutlet var sportBtns: [SportsBtn]!
-    @IBOutlet weak var etcTextField: UITextField!
     @IBOutlet weak var nextBtn: NextBtn!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
-    @IBOutlet weak var textCount: UILabel!
     
     let maxLength = 20
     var etcTextFieldState : Bool?
@@ -28,116 +24,27 @@ class SignUpSportsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
-        //kakaoAppleLoginLogic()
-        setTextFieldDelegate()
-        
-        // 키보드 show
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        
-        // 키보드 hide
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        // 텍스트필드
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(textDidChange(_:)),
-                                               name: UITextField.textDidChangeNotification,
-                                               object: etcTextField)
-    }
-    
-    // 텍스트필드
-    @objc private func textDidChange(_ notification: Notification) {
-        if let textField = notification.object as? UITextField {
-            if let text = etcTextField.text {
-                
-                if text.count >= maxLength {
-                    // 20글자 넘어가면 자동으로 키보드 내려감
-                    etcTextField.resignFirstResponder()
-                }
-                
-                // 초과되는 텍스트 제거
-                if text.count > maxLength {
-                    let index = text.index(text.startIndex, offsetBy: maxLength)
-                    let newString = text[text.startIndex..<index]
-                    etcTextField.text = String(newString)
-                }
-            }
-        }
-    }
-    
-    // 키보드 올라가는거
-    @objc
-    func keyboardWillShow(_ sender: Notification) {
-        self.view.frame.origin.y = -100 // Move view 150 points upward
-    }
-    
-    // 키보드 내리는거 (원래 상태로 복귀)
-    @objc
-    func keyboardWillHide(_ sender: Notification) {
-        self.view.frame.origin.y = 0 // Move view to original position
-    }
-    
-    // setDelegate
-    private func setTextFieldDelegate() {
-        etcTextField.delegate = self
     }
     
     // set style
     private func setStyle() {
-        // textField Style
-        etcTextField.alpha = 0.0
-        etcTextField.attributedPlaceholder = NSAttributedString(string: "기타 스포츠를 입력해주세요. (선택)", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray03])
-        etcTextField.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
-        
-        // textCount
-        textCount.alpha = 0.0
-        textCount.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
-        
-        // textView
-        textView.alpha = 0.0
-        
         // titleLabel Style
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24.adjusted)
         titleLabel.tintColor = .bk
-        titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 30.adjusted)
+        titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 35.adjusted)
         
         // description Style
         descriptionLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
         descriptionLabel.setTextWithLineHeight(text: descriptionLabel.text, lineHeight: 20.adjusted)
+        descriptionLabel.textColor = .gray02
         
     }
-    
-    // 카카오, 애플 로그인 로직 나누기
-//    private func kakaoAppleLoginLogic() {
-//        if let loginMethod = SignUpUserInfo.shared.loginMethod {
-//            switch loginMethod {
-//            case .kakao:
-//                nextBtn.setTitle("다음 (3/5)", for: .normal)
-//            case .apple:
-//                nextBtn.setTitle("다음 (3/6)", for: .normal)
-//            }
-//        }
-//    }
     
     // MARK: - IBActions
     // 뒤로가기 버튼
     @IBAction func touchUpBackBtn(_ sender: Any) {
+        self.tabBarController?.tabBar.isHidden = true
         navigationController?.popViewController(animated: true)
-    }
-    
-    // x 버튼
-    @IBAction func touchUpCancelBtn(_ sender: Any) {
-        // 취소 버튼 클릭 시, 팝업 창 띄워줌
-        let storyBoard: UIStoryboard = UIStoryboard(name: "JoinAlert", bundle: nil)
-        
-        if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinAlertVC") as? JoinAlertVC {
-            dvc.modalPresentationStyle = .overFullScreen
-            dvc.modalTransitionStyle = .crossDissolve
-            
-            dvc.alertDelegate = self
-            
-            // present 형태로 띄우기
-            self.present(dvc, animated: true, completion: nil)
-        }
     }
     
     // 다음 버튼
@@ -292,75 +199,6 @@ class SignUpSportsVC: UIViewController {
                 nextBtn.backgroundColor = .gray03
             }
         }
-    }
-    
-    // 기타 버튼
-    @IBAction func etcBtn(_ sender: UIButton) {
-        sportBtns[6].tag = 7
-        // 버튼의 색이 default 값일 때
-        if sportBtns[6].backgroundColor == .gray04 {
-            // 색으로 변경
-            sportBtns[6].colorSportsBtn()
-            etcTextField.alpha = 1
-            textCount.alpha = 1
-            textView.alpha = 1
-            etcBtnState = true
-            nextBtn.backgroundColor = .main
-        }
-        else {
-            // 버튼 색 기본색으로 변경
-            sportBtns[6].defaultSportsBtn()
-            etcTextField.alpha = 0.0
-            textCount.alpha = 0.0
-            textView.alpha = 0.0
-            etcBtnState = false
-            // 버튼 해제시 싱글톤 초기화
-            SignUpUserInfo.shared.etcText = nil
-            
-            // 버튼이 몇개가 눌려있나 점검 -> 한개도 없으면 다음 버튼 비활성화
-            if sportBtns.filter({$0.status}).count < 1 {
-                nextBtn.backgroundColor = .gray03
-            }
-        }
-    }
-}
-
-// textField delegate
-extension SignUpSportsVC: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        let currentCharacterCount = etcTextField.text?.count ?? 0
-        if (range.length + range.location > currentCharacterCount){
-            return false
-        }
-        let newLength = currentCharacterCount + string.count - range.length
-        
-        textCount.text = "\(newLength)" + "/20"
-        
-        return newLength <= 20
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("뭐라고나오나보자",etcTextField.text ?? "값없음")
-        etcTextField.textColor = .bk
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        // 텍스트 싱글톤에 저장
-        SignUpUserInfo.shared.etcText = etcTextField.text
-        
-        if textField.text?.isEmpty == true {
-            //etcTextFieldState = false
-            //nextBtn.backgroundColor = .gray03
-            // 텍스트 싱글톤 초기화
-            SignUpUserInfo.shared.etcText = nil
-        }
-    }
-    
-    // 리턴버튼 누르면 키보드 사라짐
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        etcTextField.resignFirstResponder()
-        return true
     }
 }
 
