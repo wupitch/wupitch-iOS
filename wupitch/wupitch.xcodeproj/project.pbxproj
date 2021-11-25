@@ -133,6 +133,8 @@
 		DDC46B4E274E89E20015341E /* DatePickerBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B4D274E89E20015341E /* DatePickerBtn.swift */; };
 		DDC46B50274F68270015341E /* ProfileDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC46B4F274F68270015341E /* ProfileDetail.storyboard */; };
 		DDC46B52274F68370015341E /* ProfileDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B51274F68370015341E /* ProfileDetailVC.swift */; };
+		DDC46B54274F744C0015341E /* ProfileNickname.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC46B53274F744C0015341E /* ProfileNickname.storyboard */; };
+		DDC46B56274F745E0015341E /* ProfileNicknameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B55274F745E0015341E /* ProfileNicknameVC.swift */; };
 		DDC4DAE12741075700D79CC8 /* AreaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAE02741075700D79CC8 /* AreaData.swift */; };
 		DDC4DAE4274107D900D79CC8 /* AreaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAE3274107D900D79CC8 /* AreaService.swift */; };
 		DDC4DAE6274275E200D79CC8 /* ToastMessage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DAE5274275E200D79CC8 /* ToastMessage.storyboard */; };
@@ -346,6 +348,8 @@
 		DDC46B4D274E89E20015341E /* DatePickerBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerBtn.swift; sourceTree = "<group>"; };
 		DDC46B4F274F68270015341E /* ProfileDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileDetail.storyboard; sourceTree = "<group>"; };
 		DDC46B51274F68370015341E /* ProfileDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailVC.swift; sourceTree = "<group>"; };
+		DDC46B53274F744C0015341E /* ProfileNickname.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileNickname.storyboard; sourceTree = "<group>"; };
+		DDC46B55274F745E0015341E /* ProfileNicknameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNicknameVC.swift; sourceTree = "<group>"; };
 		DDC4DAE02741075700D79CC8 /* AreaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaData.swift; sourceTree = "<group>"; };
 		DDC4DAE3274107D900D79CC8 /* AreaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaService.swift; sourceTree = "<group>"; };
 		DDC4DAE5274275E200D79CC8 /* ToastMessage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToastMessage.storyboard; sourceTree = "<group>"; };
@@ -890,6 +894,7 @@
 				DD3ACBB82721073E00EBC201 /* SignUpSports.storyboard */,
 				DDE0EE6A2729907600C46821 /* SignUpAge.storyboard */,
 				DD1BFC562738E9A70042C51F /* SignUpPhone.storyboard */,
+				DDC46B53274F744C0015341E /* ProfileNickname.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -903,6 +908,7 @@
 				DD3ACBBA2721075500EBC201 /* SignUpSportsVC.swift */,
 				DDE0EE6C2729908B00C46821 /* SignUpAgeVC.swift */,
 				DD1BFC582738E9C40042C51F /* SignUpPhoneVC.swift */,
+				DDC46B55274F745E0015341E /* ProfileNicknameVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1364,6 +1370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDED0125271BDCD700C2C343 /* OnboardingCVCell.xib in Resources */,
+				DDC46B54274F744C0015341E /* ProfileNickname.storyboard in Resources */,
 				DD3ACBB52720FFC600EBC201 /* TermsOfUse.storyboard in Resources */,
 				DD3ACBBD2721082300EBC201 /* SignUpProfile.storyboard in Resources */,
 				DDE0EE582728163900C46821 /* JoinAlert.storyboard in Resources */,
@@ -1611,6 +1618,7 @@
 				DD6728352723E582001E1355 /* LocationPickerData.swift in Sources */,
 				DD1BFC3D2738B7ED0042C51F /* LabelFontSize.swift in Sources */,
 				DDC4DB262746A95E00D79CC8 /* SportsData.swift in Sources */,
+				DDC46B56274F745E0015341E /* ProfileNicknameVC.swift in Sources */,
 				DDC3B51B2735565C00FF4959 /* MainLocationPickerData.swift in Sources */,
 				DD3ACBC427216D4400EBC201 /* SignUpIDVC.swift in Sources */,
 				DDC4DB39274B297D00D79CC8 /* ExtraService.swift in Sources */,
