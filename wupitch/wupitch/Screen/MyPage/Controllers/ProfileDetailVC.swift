@@ -22,8 +22,35 @@ class ProfileDetailVC: UIViewController {
         }
     }
   
+    // 뒤로가기 버튼
     @IBAction func touchUpBackBtn(_ sender: Any) {
         self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    // 닉네임 및 소개 버튼
+    @IBAction func touchUpNicknameBtn(_ sender: Any) {
+    }
+    
+    // 지역 버튼
+    @IBAction func touchUpRegionBtn(_ sender: Any) {
+        
+        //버튼 클릭 시, 다음 스토리보드로 이동
+        let storyboard = UIStoryboard.init(name: "SignUpCity", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(identifier: "SignUpCityVC") as? SignUpCityVC else {return}
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.pushViewController(dvc, animated: true)
+    }
+    
+    // 관심 스포츠 버튼
+    @IBAction func touchUpSportsBtn(_ sender: Any) {
+    }
+    
+    // 연령대 버튼
+    @IBAction func touchUpAgeBtn(_ sender: Any) {
+    }
+    
+    // 연락처 버튼
+    @IBAction func touchUpNumberBtn(_ sender: Any) {
     }
 }

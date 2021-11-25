@@ -30,19 +30,6 @@
                                     <action selector="touchUpBackBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1zZ-Dz-XJV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oc2-qY-tXX">
-                                <rect key="frame" x="374" y="54" width="24" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="0Aw-S4-fnf"/>
-                                    <constraint firstAttribute="height" constant="24" id="Iqw-DP-BaU"/>
-                                </constraints>
-                                <color key="tintColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="" image="close"/>
-                                <connections>
-                                    <action selector="touchUpCancelBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="YtW-Pj-stw"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지역을 선택해주세요." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3NI-Pc-ZlU">
                                 <rect key="frame" x="20" y="120" width="93" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -57,13 +44,13 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="다음 (2/5)"/>
+                                <state key="normal" title="완료"/>
                                 <connections>
                                     <action selector="touchUpNextBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="geG-af-GiM"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="지역구 선택" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QWf-hv-pFY">
-                                <rect key="frame" x="20" y="209" width="160" height="48"/>
+                                <rect key="frame" x="20" y="193" width="160" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="b9a-iV-8l0"/>
                                     <constraint firstAttribute="width" constant="160" id="qzT-uo-3h6"/>
@@ -85,13 +72,11 @@
                             <constraint firstItem="TvP-go-Z1i" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="ETh-5p-SRb"/>
                             <constraint firstAttribute="bottom" secondItem="TvP-go-Z1i" secondAttribute="bottom" id="Hgq-g6-ZF9"/>
                             <constraint firstItem="rYN-pi-Pkf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Ltr-TM-S1b"/>
-                            <constraint firstItem="Oc2-qY-tXX" firstAttribute="centerY" secondItem="nCe-YZ-Fc7" secondAttribute="centerY" id="T2B-Hq-laj"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rYN-pi-Pkf" secondAttribute="trailing" constant="19" id="TGQ-fc-ia1"/>
                             <constraint firstItem="QWf-hv-pFY" firstAttribute="leading" secondItem="3NI-Pc-ZlU" secondAttribute="leading" id="WgC-2U-kly"/>
                             <constraint firstItem="TvP-go-Z1i" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Ypq-Hq-NgS"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Oc2-qY-tXX" secondAttribute="trailing" constant="16" id="b6I-OB-T1i"/>
                             <constraint firstItem="3NI-Pc-ZlU" firstAttribute="top" secondItem="nCe-YZ-Fc7" secondAttribute="bottom" constant="42" id="jYr-dU-MpO"/>
-                            <constraint firstItem="QWf-hv-pFY" firstAttribute="top" secondItem="3NI-Pc-ZlU" secondAttribute="bottom" constant="48" id="m2B-z4-r4g"/>
+                            <constraint firstItem="QWf-hv-pFY" firstAttribute="top" secondItem="3NI-Pc-ZlU" secondAttribute="bottom" constant="32" id="m2B-z4-r4g"/>
                             <constraint firstItem="nCe-YZ-Fc7" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="miV-bb-cVg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="rYN-pi-Pkf" secondAttribute="bottom" constant="44" id="niW-RE-1AO"/>
                         </constraints>
@@ -99,7 +84,6 @@
                     <navigationItem key="navigationItem" id="W8s-6u-Mqe"/>
                     <connections>
                         <outlet property="backBtn" destination="nCe-YZ-Fc7" id="9wg-Jb-ZV7"/>
-                        <outlet property="closeBtn" destination="Oc2-qY-tXX" id="fzJ-If-iuK"/>
                         <outlet property="modalBgView" destination="TvP-go-Z1i" id="aJI-gE-KKI"/>
                         <outlet property="nextBtn" destination="rYN-pi-Pkf" id="9sR-xT-y4a"/>
                         <outlet property="selectTextField" destination="QWf-hv-pFY" id="r3L-PG-Gqo"/>
@@ -112,7 +96,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="close" width="24" height="24"/>
         <image name="left" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

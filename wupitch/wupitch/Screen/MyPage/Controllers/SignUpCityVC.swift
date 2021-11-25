@@ -41,7 +41,7 @@ class SignUpCityVC: UIViewController {
         
         // titleLabel Style
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24.adjusted)
-        titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 30.adjusted)
+        titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 35.adjusted)
     }
     
     // 카카오, 애플 로그인 로직 나누기
@@ -87,23 +87,8 @@ class SignUpCityVC: UIViewController {
     // MARK: - IBActions
     // 뒤로가기 버튼
     @IBAction func touchUpBackBtn(_ sender: Any) {
+        self.tabBarController?.tabBar.isHidden = true
         navigationController?.popViewController(animated: true)
-    }
-    
-    // 취소 버튼
-    @IBAction func touchUpCancelBtn(_ sender: Any) {
-        // 취소 버튼 클릭 시, 팝업 창 띄워줌
-        let storyBoard: UIStoryboard = UIStoryboard(name: "JoinAlert", bundle: nil)
-        
-        if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinAlertVC") as? JoinAlertVC {
-            dvc.modalPresentationStyle = .overFullScreen
-            dvc.modalTransitionStyle = .crossDissolve
-            
-            dvc.alertDelegate = self
-            
-            // present 형태로 띄우기
-            self.present(dvc, animated: true, completion: nil)
-        }
     }
     
     // 다음 버튼
