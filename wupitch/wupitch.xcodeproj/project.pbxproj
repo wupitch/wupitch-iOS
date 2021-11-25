@@ -135,6 +135,10 @@
 		DDC46B52274F68370015341E /* ProfileDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B51274F68370015341E /* ProfileDetailVC.swift */; };
 		DDC46B54274F744C0015341E /* ProfileNickname.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC46B53274F744C0015341E /* ProfileNickname.storyboard */; };
 		DDC46B56274F745E0015341E /* ProfileNicknameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B55274F745E0015341E /* ProfileNicknameVC.swift */; };
+		DDC46B58274F87200015341E /* ProfileSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC46B57274F87200015341E /* ProfileSettings.storyboard */; };
+		DDC46B5A274F87330015341E /* ProfileSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B59274F87330015341E /* ProfileSettingsVC.swift */; };
+		DDC46B5C274F8BE40015341E /* ProfilePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC46B5B274F8BE40015341E /* ProfilePassword.storyboard */; };
+		DDC46B5E274F8BF30015341E /* ProfilePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B5D274F8BF30015341E /* ProfilePasswordVC.swift */; };
 		DDC4DAE12741075700D79CC8 /* AreaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAE02741075700D79CC8 /* AreaData.swift */; };
 		DDC4DAE4274107D900D79CC8 /* AreaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAE3274107D900D79CC8 /* AreaService.swift */; };
 		DDC4DAE6274275E200D79CC8 /* ToastMessage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DAE5274275E200D79CC8 /* ToastMessage.storyboard */; };
@@ -350,6 +354,10 @@
 		DDC46B51274F68370015341E /* ProfileDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailVC.swift; sourceTree = "<group>"; };
 		DDC46B53274F744C0015341E /* ProfileNickname.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileNickname.storyboard; sourceTree = "<group>"; };
 		DDC46B55274F745E0015341E /* ProfileNicknameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNicknameVC.swift; sourceTree = "<group>"; };
+		DDC46B57274F87200015341E /* ProfileSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileSettings.storyboard; sourceTree = "<group>"; };
+		DDC46B59274F87330015341E /* ProfileSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsVC.swift; sourceTree = "<group>"; };
+		DDC46B5B274F8BE40015341E /* ProfilePassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfilePassword.storyboard; sourceTree = "<group>"; };
+		DDC46B5D274F8BF30015341E /* ProfilePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePasswordVC.swift; sourceTree = "<group>"; };
 		DDC4DAE02741075700D79CC8 /* AreaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaData.swift; sourceTree = "<group>"; };
 		DDC4DAE3274107D900D79CC8 /* AreaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaService.swift; sourceTree = "<group>"; };
 		DDC4DAE5274275E200D79CC8 /* ToastMessage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToastMessage.storyboard; sourceTree = "<group>"; };
@@ -890,11 +898,13 @@
 			children = (
 				DD3A30EB272DAC3E00D711C6 /* Profile.storyboard */,
 				DDC46B4F274F68270015341E /* ProfileDetail.storyboard */,
+				DDC46B57274F87200015341E /* ProfileSettings.storyboard */,
 				DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */,
 				DD3ACBB82721073E00EBC201 /* SignUpSports.storyboard */,
 				DDE0EE6A2729907600C46821 /* SignUpAge.storyboard */,
 				DD1BFC562738E9A70042C51F /* SignUpPhone.storyboard */,
 				DDC46B53274F744C0015341E /* ProfileNickname.storyboard */,
+				DDC46B5B274F8BE40015341E /* ProfilePassword.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -904,11 +914,13 @@
 			children = (
 				DD3A30ED272DAC4F00D711C6 /* ProfileVC.swift */,
 				DDC46B51274F68370015341E /* ProfileDetailVC.swift */,
+				DDC46B59274F87330015341E /* ProfileSettingsVC.swift */,
 				DD61E4BE271D8ECA007504DE /* SignUpCityVC.swift */,
 				DD3ACBBA2721075500EBC201 /* SignUpSportsVC.swift */,
 				DDE0EE6C2729908B00C46821 /* SignUpAgeVC.swift */,
 				DD1BFC582738E9C40042C51F /* SignUpPhoneVC.swift */,
 				DDC46B55274F745E0015341E /* ProfileNicknameVC.swift */,
+				DDC46B5D274F8BF30015341E /* ProfilePasswordVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1417,6 +1429,7 @@
 				DD61E4BD271D8EB8007504DE /* SignUpCity.storyboard in Resources */,
 				DDE0EE5C272873EC00C46821 /* SignUpKakaoComplete.storyboard in Resources */,
 				DDC4DB53274D2C8200D79CC8 /* MakeBungaeMoney.storyboard in Resources */,
+				DDC46B5C274F8BE40015341E /* ProfilePassword.storyboard in Resources */,
 				DD3A30D3272DA6E300D711C6 /* Tabbar.storyboard in Resources */,
 				DDC4DB4B274D2C1100D79CC8 /* MakeBungaePhoto.storyboard in Resources */,
 				DD1BFC572738E9A70042C51F /* SignUpPhone.storyboard in Resources */,
@@ -1432,6 +1445,7 @@
 				DD3E37C92730180100C4192E /* CrewDetail.storyboard in Resources */,
 				DD3A30F4272E61EB00D711C6 /* AddCrew.storyboard in Resources */,
 				DDE0EE6B2729907600C46821 /* SignUpAge.storyboard in Resources */,
+				DDC46B58274F87200015341E /* ProfileSettings.storyboard in Resources */,
 				DD34220B272F418A005DF6CA /* UserInfoWarning.storyboard in Resources */,
 				DDED012B271C0E5300C2C343 /* SignUpTerms.storyboard in Resources */,
 				DD61E4C4271EBAF5007504DE /* LocationPicker.storyboard in Resources */,
@@ -1617,12 +1631,14 @@
 				DDC4DAE8274275F300D79CC8 /* ToastMessageVC.swift in Sources */,
 				DD6728352723E582001E1355 /* LocationPickerData.swift in Sources */,
 				DD1BFC3D2738B7ED0042C51F /* LabelFontSize.swift in Sources */,
+				DDC46B5E274F8BF30015341E /* ProfilePasswordVC.swift in Sources */,
 				DDC4DB262746A95E00D79CC8 /* SportsData.swift in Sources */,
 				DDC46B56274F745E0015341E /* ProfileNicknameVC.swift in Sources */,
 				DDC3B51B2735565C00FF4959 /* MainLocationPickerData.swift in Sources */,
 				DD3ACBC427216D4400EBC201 /* SignUpIDVC.swift in Sources */,
 				DDC4DB39274B297D00D79CC8 /* ExtraService.swift in Sources */,
 				DDC4DB012743FC2F00D79CC8 /* SignUpRequest.swift in Sources */,
+				DDC46B5A274F87330015341E /* ProfileSettingsVC.swift in Sources */,
 				DDE0EE6D2729908B00C46821 /* SignUpAgeVC.swift in Sources */,
 				DDC4DAF627438A3100D79CC8 /* PwValidationService.swift in Sources */,
 				DD3A30CE272DA3BD00D711C6 /* AppleLoginService.swift in Sources */,

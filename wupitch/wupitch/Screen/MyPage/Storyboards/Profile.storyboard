@@ -122,8 +122,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4Uj-PK-RXw">
-                                <rect key="frame" x="20" y="242.5" width="103" height="68"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Uj-PK-RXw">
+                                <rect key="frame" x="20" y="242.5" width="103" height="76"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jA-1X-C16">
                                         <rect key="frame" x="0.0" y="0.0" width="103" height="24"/>
@@ -134,9 +134,12 @@
                                         <state key="normal" title="관심 크루 및 번개">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="touchUpPinCrewBungaeBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4LA-yf-ZeV"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOs-0d-PuV">
-                                        <rect key="frame" x="0.0" y="44" width="86" height="24"/>
+                                        <rect key="frame" x="0.0" y="52" width="86" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="HHf-8D-bDw"/>
                                         </constraints>
@@ -144,18 +147,21 @@
                                         <state key="normal" title="작성글 및 사진">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="touchUpPhotoBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="IP0-yQ-AdV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dh1-uI-xfj">
-                                <rect key="frame" x="0.0" y="328.5" width="414" height="8"/>
+                                <rect key="frame" x="0.0" y="336.5" width="414" height="8"/>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="ipV-BP-XGg"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5lJ-1r-va3">
-                                <rect key="frame" x="20" y="354.5" width="52" height="230"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="5lJ-1r-va3">
+                                <rect key="frame" x="20" y="362.5" width="52" height="146"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLO-bu-paN">
                                         <rect key="frame" x="0.0" y="0.0" width="52" height="30"/>
@@ -163,47 +169,56 @@
                                         <state key="normal" title="공지사항">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="touchUpGongJiBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="egk-Go-Dos"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIR-uF-Ntl">
-                                        <rect key="frame" x="0.0" y="50" width="30" height="30"/>
+                                        <rect key="frame" x="0.0" y="58" width="30" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="FAQ">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="touchUpFAQBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="wmj-y5-Oe3"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iu0-eL-Y0R">
-                                        <rect key="frame" x="0.0" y="100" width="30" height="30"/>
+                                        <rect key="frame" x="0.0" y="116" width="30" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="설정">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uM0-5y-gKe">
-                                        <rect key="frame" x="0.0" y="150" width="52" height="30"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="로그아웃">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmU-Fo-HeG">
-                                        <rect key="frame" x="0.0" y="200" width="52" height="30"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="회원탈퇴">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
+                                        <connections>
+                                            <action selector="touchUpSettingsBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ALv-OH-Gdy"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MmI-Lm-CyK">
+                                <rect key="frame" x="373" y="219.5" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="UMi-yd-2bz"/>
+                                    <constraint firstAttribute="width" constant="16" id="wTC-8B-VcE"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="whtclose"/>
+                                <connections>
+                                    <action selector="touchUpMessageCancelBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2YK-2F-iaD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="MmI-Lm-CyK" firstAttribute="top" secondItem="BtW-it-dn6" secondAttribute="top" constant="20" id="3Ok-Vs-B91"/>
                             <constraint firstItem="1XP-5i-xNh" firstAttribute="bottom" secondItem="BtW-it-dn6" secondAttribute="bottom" constant="-10" id="4XG-ei-wPb"/>
                             <constraint firstItem="UbJ-sS-cqm" firstAttribute="leading" secondItem="lfr-EM-Zna" secondAttribute="leading" id="4xG-T4-Fym"/>
                             <constraint firstItem="4Uj-PK-RXw" firstAttribute="top" secondItem="UbJ-sS-cqm" secondAttribute="bottom" constant="36" id="6oN-9X-u3S"/>
                             <constraint firstItem="5lJ-1r-va3" firstAttribute="top" secondItem="Dh1-uI-xfj" secondAttribute="bottom" constant="18" id="7Ee-Fi-DM4"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="P8v-jb-Qu0" secondAttribute="trailing" constant="20" id="CCX-i1-Fyh"/>
                             <constraint firstItem="UbJ-sS-cqm" firstAttribute="top" secondItem="lfr-EM-Zna" secondAttribute="bottom" constant="32" id="ESZ-NZ-pRR"/>
+                            <constraint firstItem="MmI-Lm-CyK" firstAttribute="trailing" secondItem="BtW-it-dn6" secondAttribute="trailing" constant="-5" id="Fy3-MR-aCg"/>
                             <constraint firstItem="4Uj-PK-RXw" firstAttribute="leading" secondItem="UbJ-sS-cqm" secondAttribute="leading" id="MCA-Fx-MAb"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Dh1-uI-xfj" secondAttribute="trailing" id="MCl-So-fQZ"/>
                             <constraint firstItem="1XP-5i-xNh" firstAttribute="trailing" secondItem="BtW-it-dn6" secondAttribute="trailing" constant="-16" id="Pej-ZN-YbX"/>
@@ -222,7 +237,9 @@
                     </view>
                     <connections>
                         <outlet property="alertBtn" destination="P8v-jb-Qu0" id="L7B-aF-bBP"/>
+                        <outlet property="alertCancelBtn" destination="MmI-Lm-CyK" id="8M3-Oc-fkG"/>
                         <outlet property="cameraBtn" destination="uij-LE-AeH" id="d7b-bY-Nkh"/>
+                        <outlet property="messageModalImageView" destination="BtW-it-dn6" id="c98-b8-sVB"/>
                         <outlet property="myPageLabel" destination="lfr-EM-Zna" id="Jjd-fW-Vdj"/>
                         <outlet property="nicknameLabel" destination="5wh-Ce-wIE" id="0DJ-aK-uuI"/>
                         <outlet property="profileAlertLabel" destination="1XP-5i-xNh" id="EKh-3P-tvY"/>
@@ -235,8 +252,6 @@
                         <outletCollection property="settingsBtn" destination="HLO-bu-paN" collectionClass="NSMutableArray" id="aQ8-F7-yuc"/>
                         <outletCollection property="settingsBtn" destination="mIR-uF-Ntl" collectionClass="NSMutableArray" id="yah-G9-UdA"/>
                         <outletCollection property="settingsBtn" destination="iu0-eL-Y0R" collectionClass="NSMutableArray" id="9o2-zs-qMM"/>
-                        <outletCollection property="settingsBtn" destination="uM0-5y-gKe" collectionClass="NSMutableArray" id="Epb-bj-lki"/>
-                        <outletCollection property="settingsBtn" destination="tmU-Fo-HeG" collectionClass="NSMutableArray" id="awd-Hs-W87"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -250,6 +265,7 @@
         <image name="iArrowsChevronBackward" width="24" height="24"/>
         <image name="profileBasic" width="64" height="64"/>
         <image name="union" width="180" height="71.5"/>
+        <image name="whtclose" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
