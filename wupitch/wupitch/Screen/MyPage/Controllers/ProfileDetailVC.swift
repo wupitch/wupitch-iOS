@@ -54,9 +54,21 @@ class ProfileDetailVC: UIViewController {
     
     // 연령대 버튼
     @IBAction func touchUpAgeBtn(_ sender: Any) {
+        
+        //버튼 클릭 시, 다음 스토리보드로 이동
+        let storyboard = UIStoryboard.init(name: "SignUpAge", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(identifier: "SignUpAgeVC") as? SignUpAgeVC else {return}
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.pushViewController(dvc, animated: true)
     }
     
     // 연락처 버튼
     @IBAction func touchUpNumberBtn(_ sender: Any) {
+        
+        //버튼 클릭 시, 다음 스토리보드로 이동
+        let storyboard = UIStoryboard.init(name: "SignUpPhone", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(identifier: "SignUpPhoneVC") as? SignUpPhoneVC else {return}
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.pushViewController(dvc, animated: true)
     }
 }

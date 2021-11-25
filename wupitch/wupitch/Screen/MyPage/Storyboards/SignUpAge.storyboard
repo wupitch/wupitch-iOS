@@ -30,19 +30,6 @@
                                     <action selector="touchUpBackBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="RlX-jp-5rF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEB-fJ-kAX">
-                                <rect key="frame" x="374" y="54" width="24" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="YEg-4O-to5"/>
-                                    <constraint firstAttribute="height" constant="24" id="aQh-N0-8oz"/>
-                                </constraints>
-                                <color key="tintColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="close"/>
-                                <connections>
-                                    <action selector="touchUpCancelBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="IEg-pm-8G9"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연령대를 선택해주세요." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sa-p2-c3a">
                                 <rect key="frame" x="20" y="120" width="93" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -56,7 +43,7 @@
                                     <constraint firstAttribute="height" constant="52" id="d7C-ED-5hr"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="다음 (4/5)">
+                                <state key="normal" title="완료">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -64,7 +51,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="yap-oK-yQ2">
-                                <rect key="frame" x="20" y="209" width="375" height="112"/>
+                                <rect key="frame" x="20" y="193" width="375" height="112"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="iZg-Z2-Ufl">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -126,7 +113,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WzD-HR-7Ru" customClass="SportsBtn" customModule="wupitch" customModuleProvider="target">
-                                <rect key="frame" x="20" y="337" width="179.5" height="48"/>
+                                <rect key="frame" x="20" y="321" width="179.5" height="48"/>
                                 <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -147,19 +134,16 @@
                             <constraint firstItem="yap-oK-yQ2" firstAttribute="leading" secondItem="1Sa-p2-c3a" secondAttribute="leading" id="P5e-dO-iQO"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="yap-oK-yQ2" secondAttribute="trailing" constant="19" id="Qlc-b4-ZWJ"/>
                             <constraint firstItem="WzD-HR-7Ru" firstAttribute="leading" secondItem="cfC-Ff-lDD" secondAttribute="leading" id="RPa-cS-XOe"/>
-                            <constraint firstItem="wEB-fJ-kAX" firstAttribute="centerY" secondItem="5tj-w3-Yyf" secondAttribute="centerY" id="Ruk-H1-NY7"/>
                             <constraint firstItem="1Sa-p2-c3a" firstAttribute="top" secondItem="5tj-w3-Yyf" secondAttribute="bottom" constant="42" id="Tpv-Xg-VKA"/>
                             <constraint firstItem="WzD-HR-7Ru" firstAttribute="top" secondItem="cfC-Ff-lDD" secondAttribute="bottom" constant="16" id="aT2-j2-pwn"/>
                             <constraint firstItem="WzD-HR-7Ru" firstAttribute="width" secondItem="cfC-Ff-lDD" secondAttribute="width" id="hvL-kQ-K1M"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="yVp-kp-fTk" secondAttribute="trailing" constant="19" id="moj-4I-Ttx"/>
                             <constraint firstItem="5tj-w3-Yyf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="of1-RE-AT7"/>
-                            <constraint firstItem="yap-oK-yQ2" firstAttribute="top" secondItem="1Sa-p2-c3a" secondAttribute="bottom" constant="48" id="rTz-DA-yLp"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wEB-fJ-kAX" secondAttribute="trailing" constant="16" id="xkU-4z-WJI"/>
+                            <constraint firstItem="yap-oK-yQ2" firstAttribute="top" secondItem="1Sa-p2-c3a" secondAttribute="bottom" constant="32" id="rTz-DA-yLp"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backBtn" destination="5tj-w3-Yyf" id="NFC-Pf-XxC"/>
-                        <outlet property="cancelBtn" destination="wEB-fJ-kAX" id="SVI-CQ-AJN"/>
                         <outlet property="nextBtn" destination="yVp-kp-fTk" id="yOi-Ua-rdu"/>
                         <outlet property="titleLabel" destination="1Sa-p2-c3a" id="jwz-IC-9Rm"/>
                         <outletCollection property="ageBtns" destination="OvD-Km-1CW" collectionClass="NSMutableArray" id="fiL-cF-val"/>
@@ -175,7 +159,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="close" width="24" height="24"/>
         <image name="left" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

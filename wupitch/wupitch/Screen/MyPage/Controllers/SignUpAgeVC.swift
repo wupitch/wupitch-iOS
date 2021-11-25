@@ -9,7 +9,6 @@ import UIKit
 
 class SignUpAgeVC: UIViewController {
     
-    @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var nextBtn: NextBtn!
@@ -18,25 +17,13 @@ class SignUpAgeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
-        //kakaoAppleLoginLogic()
     }
     
     func setStyle() {
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24.adjusted)
-        titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 30.adjusted)
+        titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 35.adjusted)
     }
     
-    // 카카오, 애플 로그인 로직 나누기
-//    private func kakaoAppleLoginLogic() {
-//        if let loginMethod = SignUpUserInfo.shared.loginMethod {
-//            switch loginMethod {
-//            case .kakao:
-//                nextBtn.setTitle("다음 (4/5)", for: .normal)
-//            case .apple:
-//                nextBtn.setTitle("다음 (4/6)", for: .normal)
-//            }
-//        }
-//    }
     
     @IBAction func touchUpNextBtn(_ sender: Any) {
         if nextBtn.backgroundColor == .main {
@@ -57,22 +44,8 @@ class SignUpAgeVC: UIViewController {
     }
     
     @IBAction func touchUpBackBtn(_ sender: Any) {
+        self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.popViewController(animated: true)
-    }
-    
-    @IBAction func touchUpCancelBtn(_ sender: Any) {
-        // 취소 버튼 클릭 시, 팝업 창 띄워줌
-        let storyBoard: UIStoryboard = UIStoryboard(name: "JoinAlert", bundle: nil)
-        
-        if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinAlertVC") as? JoinAlertVC {
-            dvc.modalPresentationStyle = .overFullScreen
-            dvc.modalTransitionStyle = .crossDissolve
-            
-            dvc.alertDelegate = self
-            
-            // present 형태로 띄우기
-            self.present(dvc, animated: true, completion: nil)
-        }
     }
     
     @IBAction func touchUpFirstBtn(_ sender: Any) {
