@@ -59,4 +59,8 @@ extension LabelFontSize {
         self.textColor = .bk
     }
     
+    func nicknameLabelFontSize() {
+        self.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18.adjusted)
+        self.textColor = .bk
+    }
 }

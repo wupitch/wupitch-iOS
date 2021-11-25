@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마이페이지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfr-EM-Zna">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마이페이지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfr-EM-Zna" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
                                 <rect key="frame" x="20" y="54" width="74" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -31,6 +31,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="bell"/>
+                                <connections>
+                                    <action selector="touchUpAlertBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="WfB-uc-SQ8"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UbJ-sS-cqm">
                                 <rect key="frame" x="20" y="106.5" width="374" height="100"/>
@@ -50,12 +53,15 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="btnPhoto"/>
+                                        <connections>
+                                            <action selector="touchUpCameraBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="AGQ-cj-GFI"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="UGE-zi-NbM">
-                                        <rect key="frame" x="115" y="26" width="215" height="48"/>
+                                        <rect key="frame" x="115" y="26" width="195" height="48"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우피치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wh-Ce-wIE">
-                                                <rect key="frame" x="0.0" y="0.0" width="215" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우피치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wh-Ce-wIE" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="195" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="KXG-e5-cIa"/>
                                                 </constraints>
@@ -63,8 +69,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가나다라마바사리ㅏ어랴니ㅏㅇ러ㅑㄴ아ㅣ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xv-nt-2ui">
-                                                <rect key="frame" x="0.0" y="26" width="215" height="22"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가나다라마바사리ㅏ어랴니ㅏㅇ러ㅑㄴ아ㅣ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xv-nt-2ui" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="26" width="195" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="uyP-Uk-DVP"/>
                                                 </constraints>
@@ -82,6 +88,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="" image="iArrowsChevronBackward"/>
+                                        <connections>
+                                            <action selector="touchUpArrowBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="k1G-1v-uTk"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -95,18 +104,18 @@
                                     <constraint firstAttribute="trailing" secondItem="qit-j5-x2A" secondAttribute="trailing" constant="20" id="nxO-D7-Qnc"/>
                                     <constraint firstItem="Zwz-9e-lLz" firstAttribute="leading" secondItem="UbJ-sS-cqm" secondAttribute="leading" constant="24" id="nzv-5N-ZgL"/>
                                     <constraint firstItem="qit-j5-x2A" firstAttribute="centerY" secondItem="Zwz-9e-lLz" secondAttribute="centerY" id="pVx-JO-Le9"/>
-                                    <constraint firstItem="UGE-zi-NbM" firstAttribute="trailing" secondItem="qit-j5-x2A" secondAttribute="leading" id="y2Q-kn-2Ds"/>
+                                    <constraint firstItem="UGE-zi-NbM" firstAttribute="trailing" secondItem="qit-j5-x2A" secondAttribute="leading" constant="-20" id="y2Q-kn-2Ds"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="union" translatesAutoresizingMaskIntoConstraints="NO" id="BtW-it-dn6">
-                                <rect key="frame" x="214" y="201.5" width="180" height="71.5"/>
+                                <rect key="frame" x="214" y="199.5" width="180" height="71.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="hrg-Q1-tNk"/>
                                     <constraint firstAttribute="height" constant="71.299999999999997" id="vFh-MO-Igu"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XP-5i-xNh">
-                                <rect key="frame" x="230" y="225" width="148" height="40"/>
+                                <rect key="frame" x="230" y="221" width="148" height="40"/>
                                 <string key="text">크루 및 번개 신청을 위해 
 모든 프로필 항목을 채워야해요!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -189,7 +198,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="1XP-5i-xNh" firstAttribute="bottom" secondItem="BtW-it-dn6" secondAttribute="bottom" constant="-8" id="4XG-ei-wPb"/>
+                            <constraint firstItem="1XP-5i-xNh" firstAttribute="bottom" secondItem="BtW-it-dn6" secondAttribute="bottom" constant="-10" id="4XG-ei-wPb"/>
                             <constraint firstItem="UbJ-sS-cqm" firstAttribute="leading" secondItem="lfr-EM-Zna" secondAttribute="leading" id="4xG-T4-Fym"/>
                             <constraint firstItem="4Uj-PK-RXw" firstAttribute="top" secondItem="UbJ-sS-cqm" secondAttribute="bottom" constant="36" id="6oN-9X-u3S"/>
                             <constraint firstItem="5lJ-1r-va3" firstAttribute="top" secondItem="Dh1-uI-xfj" secondAttribute="bottom" constant="18" id="7Ee-Fi-DM4"/>
@@ -201,16 +210,34 @@
                             <constraint firstItem="lfr-EM-Zna" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="QXK-Vd-KxC"/>
                             <constraint firstItem="P8v-jb-Qu0" firstAttribute="centerY" secondItem="lfr-EM-Zna" secondAttribute="centerY" id="SMa-h2-06T"/>
                             <constraint firstItem="BtW-it-dn6" firstAttribute="trailing" secondItem="UbJ-sS-cqm" secondAttribute="trailing" id="Uhj-fD-lnr"/>
-                            <constraint firstItem="BtW-it-dn6" firstAttribute="top" secondItem="UbJ-sS-cqm" secondAttribute="bottom" constant="-5" id="XvF-gI-QYY"/>
+                            <constraint firstItem="BtW-it-dn6" firstAttribute="top" secondItem="UbJ-sS-cqm" secondAttribute="bottom" constant="-7" id="XvF-gI-QYY"/>
                             <constraint firstItem="Dh1-uI-xfj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="a6y-kX-fc6"/>
                             <constraint firstItem="lfr-EM-Zna" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="bih-os-UQL"/>
                             <constraint firstItem="Dh1-uI-xfj" firstAttribute="top" secondItem="4Uj-PK-RXw" secondAttribute="bottom" constant="18" id="inL-Wq-7qj"/>
                             <constraint firstItem="5lJ-1r-va3" firstAttribute="leading" secondItem="4Uj-PK-RXw" secondAttribute="leading" id="kPV-2d-U8W"/>
                             <constraint firstItem="1XP-5i-xNh" firstAttribute="leading" secondItem="BtW-it-dn6" secondAttribute="leading" constant="16" id="lgQ-mI-LJW"/>
                             <constraint firstItem="UbJ-sS-cqm" firstAttribute="trailing" secondItem="P8v-jb-Qu0" secondAttribute="trailing" id="qT5-PJ-Evq"/>
-                            <constraint firstItem="1XP-5i-xNh" firstAttribute="top" secondItem="BtW-it-dn6" secondAttribute="top" constant="23.300000000000001" id="x9P-8d-yWr"/>
+                            <constraint firstItem="1XP-5i-xNh" firstAttribute="top" secondItem="BtW-it-dn6" secondAttribute="top" constant="21.300000000000001" id="x9P-8d-yWr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="alertBtn" destination="P8v-jb-Qu0" id="L7B-aF-bBP"/>
+                        <outlet property="cameraBtn" destination="uij-LE-AeH" id="d7b-bY-Nkh"/>
+                        <outlet property="myPageLabel" destination="lfr-EM-Zna" id="Jjd-fW-Vdj"/>
+                        <outlet property="nicknameLabel" destination="5wh-Ce-wIE" id="0DJ-aK-uuI"/>
+                        <outlet property="profileAlertLabel" destination="1XP-5i-xNh" id="EKh-3P-tvY"/>
+                        <outlet property="profileBgView" destination="UbJ-sS-cqm" id="o37-Mv-9nS"/>
+                        <outlet property="profileImageVIew" destination="Zwz-9e-lLz" id="whP-Cc-AMh"/>
+                        <outlet property="profileSettingBtn" destination="qit-j5-x2A" id="tme-8t-Dai"/>
+                        <outlet property="subLabel" destination="6xv-nt-2ui" id="baJ-kX-PTi"/>
+                        <outletCollection property="settingsBtn" destination="9jA-1X-C16" collectionClass="NSMutableArray" id="TOF-VY-sef"/>
+                        <outletCollection property="settingsBtn" destination="fOs-0d-PuV" collectionClass="NSMutableArray" id="f18-Le-LQ8"/>
+                        <outletCollection property="settingsBtn" destination="HLO-bu-paN" collectionClass="NSMutableArray" id="aQ8-F7-yuc"/>
+                        <outletCollection property="settingsBtn" destination="mIR-uF-Ntl" collectionClass="NSMutableArray" id="yah-G9-UdA"/>
+                        <outletCollection property="settingsBtn" destination="iu0-eL-Y0R" collectionClass="NSMutableArray" id="9o2-zs-qMM"/>
+                        <outletCollection property="settingsBtn" destination="uM0-5y-gKe" collectionClass="NSMutableArray" id="Epb-bj-lki"/>
+                        <outletCollection property="settingsBtn" destination="tmU-Fo-HeG" collectionClass="NSMutableArray" id="awd-Hs-W87"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
