@@ -26,8 +26,11 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="" image="left"/>
+                                <connections>
+                                    <action selector="touchUpBackBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="jIj-w0-AIv"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="크루" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FqX-Fy-zIl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="크루" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FqX-Fy-zIl" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
                                 <rect key="frame" x="192.5" y="56" width="29.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -51,7 +54,12 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQa-yY-zvE">
                                                 <rect key="frame" x="0.0" y="0.0" width="103.5" height="30"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="소개"/>
+                                                <state key="normal" title="소개">
+                                                    <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="touchUpFirstBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="RxU-sT-Vq7"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J3s-W6-4Ot">
                                                 <rect key="frame" x="0.0" y="37" width="103.5" height="3"/>
@@ -68,7 +76,12 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c97-6o-cJB">
                                                 <rect key="frame" x="0.0" y="0.0" width="103.5" height="30"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="게시판"/>
+                                                <state key="normal" title="게시판">
+                                                    <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="touchUpSecondBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Pst-Kf-Vfd"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HEN-j4-smG">
                                                 <rect key="frame" x="0.0" y="37" width="103.5" height="3"/>
@@ -85,7 +98,12 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpp-rN-nb4">
                                                 <rect key="frame" x="0.0" y="0.0" width="103.5" height="30"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="사진첩"/>
+                                                <state key="normal" title="사진첩">
+                                                    <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="touchUpThirdBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="WxM-lV-sGN"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1HV-VB-u6y">
                                                 <rect key="frame" x="0.0" y="37" width="103.5" height="3"/>
@@ -102,7 +120,12 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0b-AU-BtC">
                                                 <rect key="frame" x="0.0" y="0.0" width="103.5" height="30"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="크루원"/>
+                                                <state key="normal" title="크루원">
+                                                    <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="touchUpFourthBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Vjc-uq-ZmG"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1L-sL-jp9">
                                                 <rect key="frame" x="0.0" y="37" width="103.5" height="3"/>
@@ -118,10 +141,10 @@
                                     <constraint firstAttribute="height" constant="44" id="jcC-qn-Kbb"/>
                                 </constraints>
                             </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3ek-MU-RqW">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3ek-MU-RqW">
                                 <rect key="frame" x="0.0" y="132" width="414" height="730"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wZm-45-3Nb">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wZm-45-3Nb">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -143,9 +166,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="h65-eG-EnI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="564-qx-nqm"/>
+                            <constraint firstItem="bc6-Gh-Cxo" firstAttribute="centerY" secondItem="h65-eG-EnI" secondAttribute="centerY" id="8nh-Hz-svI"/>
                             <constraint firstItem="LG5-R5-CzJ" firstAttribute="top" secondItem="h65-eG-EnI" secondAttribute="bottom" constant="10" id="C3a-TN-Z5q"/>
                             <constraint firstItem="h65-eG-EnI" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="DZT-jZ-2sP"/>
-                            <constraint firstItem="bc6-Gh-Cxo" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="H0i-kj-bhi"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="LG5-R5-CzJ" secondAttribute="trailing" id="NVE-gJ-jst"/>
                             <constraint firstItem="FqX-Fy-zIl" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Vfv-io-4cz"/>
                             <constraint firstItem="FqX-Fy-zIl" firstAttribute="centerY" secondItem="h65-eG-EnI" secondAttribute="centerY" id="gLA-sH-r67"/>
@@ -157,6 +180,19 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3ek-MU-RqW" secondAttribute="trailing" id="xEM-JP-2rX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="MyActivityCV" destination="3ek-MU-RqW" id="UXQ-cf-3UA"/>
+                        <outlet property="alertBtn" destination="bc6-Gh-Cxo" id="XMb-t9-kOj"/>
+                        <outlet property="backBtn" destination="h65-eG-EnI" id="rvB-sw-ujx"/>
+                        <outlet property="firstBtn" destination="PQa-yY-zvE" id="Ujz-5Z-hsX"/>
+                        <outlet property="firstLineView" destination="J3s-W6-4Ot" id="qQP-Fu-a9m"/>
+                        <outlet property="fourthBtn" destination="Q0b-AU-BtC" id="lG2-az-u78"/>
+                        <outlet property="fourthLineView" destination="b1L-sL-jp9" id="zq7-qY-0Q7"/>
+                        <outlet property="secondBtn" destination="c97-6o-cJB" id="a2L-r1-6zB"/>
+                        <outlet property="secondLineView" destination="HEN-j4-smG" id="7sZ-ad-wgY"/>
+                        <outlet property="thirdBtn" destination="lpp-rN-nb4" id="6Yf-rL-YJH"/>
+                        <outlet property="thirdLineView" destination="1HV-VB-u6y" id="I8g-g9-d77"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

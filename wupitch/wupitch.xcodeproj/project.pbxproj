@@ -141,6 +141,8 @@
 		DDC46B5E274F8BF30015341E /* ProfilePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B5D274F8BF30015341E /* ProfilePasswordVC.swift */; };
 		DDC46B60274FA9F60015341E /* WithdrawalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B5F274FA9F60015341E /* WithdrawalService.swift */; };
 		DDC46B63274FAA390015341E /* WithdrawalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B62274FAA390015341E /* WithdrawalData.swift */; };
+		DDC46B66274FBA7A0015341E /* ActivityTabCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B64274FBA7A0015341E /* ActivityTabCVCell.swift */; };
+		DDC46B67274FBA7A0015341E /* ActivityTabCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDC46B65274FBA7A0015341E /* ActivityTabCVCell.xib */; };
 		DDC4DAE12741075700D79CC8 /* AreaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAE02741075700D79CC8 /* AreaData.swift */; };
 		DDC4DAE4274107D900D79CC8 /* AreaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAE3274107D900D79CC8 /* AreaService.swift */; };
 		DDC4DAE6274275E200D79CC8 /* ToastMessage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DAE5274275E200D79CC8 /* ToastMessage.storyboard */; };
@@ -362,6 +364,8 @@
 		DDC46B5D274F8BF30015341E /* ProfilePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePasswordVC.swift; sourceTree = "<group>"; };
 		DDC46B5F274FA9F60015341E /* WithdrawalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalService.swift; sourceTree = "<group>"; };
 		DDC46B62274FAA390015341E /* WithdrawalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalData.swift; sourceTree = "<group>"; };
+		DDC46B64274FBA7A0015341E /* ActivityTabCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTabCVCell.swift; sourceTree = "<group>"; };
+		DDC46B65274FBA7A0015341E /* ActivityTabCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityTabCVCell.xib; sourceTree = "<group>"; };
 		DDC4DAE02741075700D79CC8 /* AreaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaData.swift; sourceTree = "<group>"; };
 		DDC4DAE3274107D900D79CC8 /* AreaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaService.swift; sourceTree = "<group>"; };
 		DDC4DAE5274275E200D79CC8 /* ToastMessage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToastMessage.storyboard; sourceTree = "<group>"; };
@@ -1161,6 +1165,8 @@
 				DDC4DB63274E2BB100D79CC8 /* ActivityCrewCVCell.xib */,
 				DDD1AD22274E3AB900CCC312 /* NoActivityCrewCVCell.swift */,
 				DDD1AD23274E3AB900CCC312 /* NoActivityCrewCVCell.xib */,
+				DDC46B64274FBA7A0015341E /* ActivityTabCVCell.swift */,
+				DDC46B65274FBA7A0015341E /* ActivityTabCVCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1414,6 +1420,7 @@
 				DDC4DB1A274506D500D79CC8 /* SignUpImagePreview.storyboard in Resources */,
 				DD1BFC472738E8AD0042C51F /* MakeCrewInfo.storyboard in Resources */,
 				DDC4DB65274E2BB100D79CC8 /* ActivityCrewCVCell.xib in Resources */,
+				DDC46B67274FBA7A0015341E /* ActivityTabCVCell.xib in Resources */,
 				DD3A30EA272DAC2700D711C6 /* Feed.storyboard in Resources */,
 				DDEB65FA274E477200F48DF0 /* AddBoard.storyboard in Resources */,
 				DD1BFC4F2738E90D0042C51F /* MakeCrewPhoto.storyboard in Resources */,
@@ -1525,6 +1532,7 @@
 				DDC4DB3B274B299400D79CC8 /* ExtraData.swift in Sources */,
 				DDC4DB0327440E6700D79CC8 /* SignInService.swift in Sources */,
 				DD1BFC3B2738B2790042C51F /* TextFiledTapPicker.swift in Sources */,
+				DDC46B66274FBA7A0015341E /* ActivityTabCVCell.swift in Sources */,
 				DD3A30E6272DAC0300D711C6 /* MyActivityVC.swift in Sources */,
 				DD7BEBC727315D7000DB2F60 /* DetailCrewTitleCVCell.swift in Sources */,
 				DD61E4BB271D856E007504DE /* UILabel.swift in Sources */,
