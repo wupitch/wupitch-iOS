@@ -28,6 +28,16 @@ class MakeCrewDateVC: UIViewController {
     var dateSectionSecondBtnCheck = [false,false,false,false,false,false,false,false,false,false,false,false,false,false]
     var dateSectionThirdBtnCheck = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
     
+    // 초기화
+    var firstPickerStartData : Double?
+    var firstPickerEndData : Double?
+//
+//    var secondPickerStartData : Double?
+//    var secondPickerEndData : Double?
+//
+//    var thirdPickerStartData : Double?
+//    var thirdPickerEndData : Double?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,7 +56,9 @@ class MakeCrewDateVC: UIViewController {
     }
     
     func setTimeBtn() {
-        //betweenLabels.textColor = .gray02
+        betweenLabels[0].textColor = .gray02
+        betweenLabels[1].textColor = .gray02
+        betweenLabels[2].textColor = .gray02
     }
     
     /// check()메서드는 모든 요일, 시간 버튼이 클릭될때마다 호출
@@ -67,6 +79,7 @@ class MakeCrewDateVC: UIViewController {
             if dateSectionFirstBtnCheck.contains { $0 == true } && dateSectionSecondBtnCheck.contains { $0 == true } && startTimeBtns[1].status && endTimeBtns[1].status {
                 // true
                 nextBtn.backgroundColor = .main
+                
             } else {
                 // false
                 nextBtn.backgroundColor = .gray03
@@ -203,28 +216,31 @@ extension MakeCrewDateVC : DatePickerDelegate {
                 
             case startTimeBtns[0] :
                 if endTimeBtns[0].status {
-                    value = endTimeBtns[0].doubleDatePicker(secondDate: dateString, location: false)
+                    value = endTimeBtns[0].doubleDatePicker(secondDate: dateString, location: true)
                 }
                 
             case startTimeBtns[1] :
                 if endTimeBtns[1].status {
-                    value = endTimeBtns[1].doubleDatePicker(secondDate: dateString, location: false)
+                    value = endTimeBtns[1].doubleDatePicker(secondDate: dateString, location: true)
                 }
                 
             case startTimeBtns[2] :
                 if endTimeBtns[2].status {
-                    value = endTimeBtns[2].doubleDatePicker(secondDate: dateString, location: false)
+                    value = endTimeBtns[2].doubleDatePicker(secondDate: dateString, location: true)
                 }
                 
             case endTimeBtns[0] :
-                value = startTimeBtns[0].doubleDatePicker(secondDate: dateString, location: true)
+                value = startTimeBtns[0].doubleDatePicker(secondDate: dateString, location: false)
+                betweenLabels[0].textColor = .main
                 
                 
             case endTimeBtns[1] :
-                value = startTimeBtns[1].doubleDatePicker(secondDate: dateString, location: true)
+                value = startTimeBtns[1].doubleDatePicker(secondDate: dateString, location: false)
+                betweenLabels[1].textColor = .main
                 
             case endTimeBtns[2] :
-                value = startTimeBtns[2].doubleDatePicker(secondDate: dateString, location: true)
+                value = startTimeBtns[2].doubleDatePicker(secondDate: dateString, location: false)
+                betweenLabels[2].textColor = .main
                 
             default:
                 break

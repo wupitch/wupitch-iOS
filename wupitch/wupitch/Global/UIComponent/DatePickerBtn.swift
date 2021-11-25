@@ -55,7 +55,7 @@ extension DatePickerBtn {
         self.layer.borderColor = UIColor.main.cgColor
     }
     
-    private func grayDatePickerBtn() {
+    func grayDatePickerBtn() {
         self.setTitleColor(UIColor.gray02, for: .normal)
         self.setTitle("00:00", for: .normal)
         self.layer.borderColor = UIColor.gray02.cgColor
@@ -74,14 +74,10 @@ extension DatePickerBtn {
         print("first double형",doubleFirstDate)
         print("second double형",doubleSecondDate)
         
-//        if location == true {
-//
-//        }
-        
         if location ? doubleFirstDate > doubleSecondDate : doubleFirstDate < doubleSecondDate {
-            return false
+            return true
         }
-        return true
+        return false
     }
 }
 
