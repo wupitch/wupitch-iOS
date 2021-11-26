@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MakeCrewPhotoVC: UIViewController {
 
@@ -134,6 +135,8 @@ class MakeCrewPhotoVC: UIViewController {
         let defaultImage = UIAlertAction(title: "기본 이미지 사용", style: .default) { [weak self] _ in
             self?.photoImageView.image = self?.basicImage
             SignUpUserInfo.shared.photo = self?.photoImageView.image
+            self?.imageLabel.isHidden = true
+            self?.plusImageVIew.isHidden = true
         }
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alert.addAction(library)
@@ -158,6 +161,7 @@ class MakeCrewPhotoVC: UIViewController {
     
     @IBAction func touchUpNextBtn(_ sender: Any) {
         if nextBtn.backgroundColor == .main {
+            
             // 크루이름
             SignUpUserInfo.shared.title = titleTextField.text
             // 크루소개

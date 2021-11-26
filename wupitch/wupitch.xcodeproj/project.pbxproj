@@ -145,6 +145,8 @@
 		DDC46B67274FBA7A0015341E /* ActivityTabCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDC46B65274FBA7A0015341E /* ActivityTabCVCell.xib */; };
 		DDC46B6A2750BD1D0015341E /* ToggleAlarmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B692750BD1D0015341E /* ToggleAlarmData.swift */; };
 		DDC46B6C2750BD390015341E /* ToggleAlarmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B6B2750BD390015341E /* ToggleAlarmService.swift */; };
+		DDC46B6E2751512E0015341E /* MakeCrewImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B6D2751512E0015341E /* MakeCrewImageData.swift */; };
+		DDC46B702751514E0015341E /* MakeCrewImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B6F2751514E0015341E /* MakeCrewImageService.swift */; };
 		DDC4DAE12741075700D79CC8 /* AreaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAE02741075700D79CC8 /* AreaData.swift */; };
 		DDC4DAE4274107D900D79CC8 /* AreaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAE3274107D900D79CC8 /* AreaService.swift */; };
 		DDC4DAE6274275E200D79CC8 /* ToastMessage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DAE5274275E200D79CC8 /* ToastMessage.storyboard */; };
@@ -370,6 +372,8 @@
 		DDC46B65274FBA7A0015341E /* ActivityTabCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityTabCVCell.xib; sourceTree = "<group>"; };
 		DDC46B692750BD1D0015341E /* ToggleAlarmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleAlarmData.swift; sourceTree = "<group>"; };
 		DDC46B6B2750BD390015341E /* ToggleAlarmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleAlarmService.swift; sourceTree = "<group>"; };
+		DDC46B6D2751512E0015341E /* MakeCrewImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCrewImageData.swift; sourceTree = "<group>"; };
+		DDC46B6F2751514E0015341E /* MakeCrewImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCrewImageService.swift; sourceTree = "<group>"; };
 		DDC4DAE02741075700D79CC8 /* AreaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaData.swift; sourceTree = "<group>"; };
 		DDC4DAE3274107D900D79CC8 /* AreaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaService.swift; sourceTree = "<group>"; };
 		DDC4DAE5274275E200D79CC8 /* ToastMessage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToastMessage.storyboard; sourceTree = "<group>"; };
@@ -1105,6 +1109,7 @@
 			isa = PBXGroup;
 			children = (
 				DDC4DB152744B97B00D79CC8 /* MakeCrewService.swift */,
+				DDC46B6F2751514E0015341E /* MakeCrewImageService.swift */,
 			);
 			path = Crew;
 			sourceTree = "<group>";
@@ -1114,6 +1119,7 @@
 			children = (
 				DDC4DB112744B95D00D79CC8 /* MakeCrewData.swift */,
 				DDC4DB132744B96C00D79CC8 /* MakeCrewRequest.swift */,
+				DDC46B6D2751512E0015341E /* MakeCrewImageData.swift */,
 			);
 			path = Crew;
 			sourceTree = "<group>";
@@ -1606,6 +1612,8 @@
 				DDC4DB142744B96C00D79CC8 /* MakeCrewRequest.swift in Sources */,
 				DDC4DB0E274432E400D79CC8 /* UIViewController.swift in Sources */,
 				DDC4DB6D274E2C4200D79CC8 /* ActivityCrewCRV.swift in Sources */,
+				DDC46B6E2751512E0015341E /* MakeCrewImageData.swift in Sources */,
+				DDC46B702751514E0015341E /* MakeCrewImageService.swift in Sources */,
 				DDC4DAE4274107D900D79CC8 /* AreaService.swift in Sources */,
 				DD7BEBC327315D3A00DB2F60 /* DetailCrewImgCVCell.swift in Sources */,
 				DD3A30CC272DA37100D711C6 /* AppleLoginRequest.swift in Sources */,
