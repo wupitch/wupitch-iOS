@@ -66,7 +66,7 @@ class LocationPickerVC: UIViewController {
         
         // 선택 버튼 누를 시, textField의 데이터가 변경되도록
         let i = self.pickerView.selectedRow(inComponent: 0)
-        modalDelegate?.textFieldData(data: SignUpUserInfo.shared.areaName[i])
+        modalDelegate?.textFieldData(data: SignUpUserInfo.shared.areaName?[i] ?? "값없음")
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -85,7 +85,7 @@ extension LocationPickerVC: UITextFieldDelegate, UIPickerViewDelegate, UIPickerV
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return SignUpUserInfo.shared.areaName.count
+        return SignUpUserInfo.shared.areaName?.count ?? 0
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
@@ -102,7 +102,7 @@ extension LocationPickerVC: UITextFieldDelegate, UIPickerViewDelegate, UIPickerV
         let numberLabel = UILabel()
         numberLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 22.adjusted)
         numberLabel.tintColor = .bk
-        numberLabel.text = SignUpUserInfo.shared.areaName[row]
+        numberLabel.text = SignUpUserInfo.shared.areaName?[row]
         numberLabel.textAlignment = .center
 
         return numberLabel

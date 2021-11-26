@@ -25,8 +25,8 @@ class TabbarVC: UITabBarController {
         let secondTab = UIStoryboard.init(name: "Bungae", bundle: nil)
         guard let secondTabVC = secondTab.instantiateViewController(identifier: "BungaeVC") as? BungaeVC  else { return }
         let secondTabNC = UINavigationController(rootViewController: secondTabVC)
-        secondTabVC.tabBarItem.image = UIImage(named: "bungae")
-        secondTabVC.tabBarItem.title = "번개"
+        secondTabNC.tabBarItem.image = UIImage(named: "bungae")
+        secondTabNC.tabBarItem.title = "번개"
         
         let thirdTab = UIStoryboard.init(name: "MyActivity", bundle: nil)
         guard let thirdTabVC = thirdTab.instantiateViewController(identifier: "MyActivityVC") as? MyActivityVC  else { return }

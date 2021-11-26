@@ -38,6 +38,10 @@ class MakeCrewDateVC: UIViewController {
         toastMessageLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
         
         setTimeBtn()
+        
+        for i in 0...20 {
+            dateBtns[i].dayId = i
+        }
     }
     
     func setTimeBtn() {
@@ -134,9 +138,44 @@ class MakeCrewDateVC: UIViewController {
     }
     
     @IBAction func touchUpNextBtn(_ sender: Any) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewPhoto", bundle: nil)
-        if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewPhotoVC") as? MakeCrewPhotoVC {
-            navigationController?.pushViewController(dvc, animated: true)
+        if nextBtn.backgroundColor == .main {
+            SignUpUserInfo.shared.schedules = []
+            // 섹션 0
+            for i in 0...6 {
+                if dateBtns[i].status == true {
+                    guard let date = dateBtns[i].dayId else { return }
+                    let start = startTimeBtns[0].stringToDouble()
+                    let end = endTimeBtns[0].stringToDouble()
+            
+                    SignUpUserInfo.shared.schedules?.append(ScheduleList(dayIdx: date, startTime: start, endTime: end))
+                }
+            }
+            // 섹션 1
+            for i in 7...13 {
+                if plusBtnCheck[0] == true && dateBtns[i].status == true {
+                    guard let date = dateBtns[i].dayId else { return }
+                    let start = startTimeBtns[1].stringToDouble()
+                    let end = endTimeBtns[1].stringToDouble()
+                    SignUpUserInfo.shared.schedules?.append(ScheduleList(dayIdx: (date % 7), startTime: start, endTime: end))
+                }
+            }
+            // 섹션 2
+            for i in 14...20 {
+                if plusBtnCheck[1] == true && dateBtns[i].status == true {
+                    guard let date = dateBtns[i].dayId else { return }
+                    let start = startTimeBtns[2].stringToDouble()
+                    let end = endTimeBtns[2].stringToDouble()
+                    SignUpUserInfo.shared.schedules?.append(ScheduleList(dayIdx: (date % 7), startTime: start, endTime: end))
+                }
+            }
+            print("뭐들어와???", SignUpUserInfo.shared.schedules)
+            let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewPhoto", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewPhotoVC") as? MakeCrewPhotoVC {
+                self.navigationController?.pushViewController(dvc, animated: true)
+            }
+        }
+        else {
+            nextBtn.backgroundColor = .gray03
         }
     }
     

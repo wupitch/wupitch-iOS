@@ -11,6 +11,7 @@ import UIKit
 class DatePickerBtn : UIButton {
     
     var datePickerDelegate : DatePickerDelegate?
+    var timeLabel : Double?
     var status : Bool = false {
         didSet {
             status ? colorDatePickerBtn() : grayDatePickerBtn()
@@ -74,10 +75,18 @@ extension DatePickerBtn {
         print("first double형",doubleFirstDate)
         print("second double형",doubleSecondDate)
         
+        
         if location ? doubleFirstDate > doubleSecondDate : doubleFirstDate < doubleSecondDate {
+//            timeLabel = doubleFirstDate
             return true
         }
         return false
+    }
+    
+    func stringToDouble() -> Double {
+        guard let firstDate = self.titleLabel?.text else { return 0.0 }
+        let firstDateArray = firstDate.split(separator: ":")
+        return Double(firstDateArray.first!)! + (Double(firstDateArray.last!)! * 0.01)
     }
 }
 

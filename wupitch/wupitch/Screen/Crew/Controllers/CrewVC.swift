@@ -168,11 +168,16 @@ extension CrewVC: ModalDelegate {
 extension CrewVC {
     func didSuccessArea(result: [AreaResult]) {
         print("데이터가 성공적으로 들어왔습니다.")
-        
-        // 싱글톤에 값 넣어주기
+        // 초기화
+        SignUpUserInfo.shared.areas = []
+        SignUpUserInfo.shared.areaName = []
+        // 유저디폴트에 지역 값 넣어주기
         for i in 0...25 {
-            SignUpUserInfo.shared.areas[i] = result[i].areaID
-            SignUpUserInfo.shared.areaName[i] = result[i].name
+            UserDefaults.standard.set(result[i].areaID, forKey: "areaId")
+            UserDefaults.standard.set(result[i].name, forKey: "areaName")
+            // 싱글톤에 넣어주기
+            SignUpUserInfo.shared.areas?.append(result[i].areaID)
+            SignUpUserInfo.shared.areaName?.append(result[i].name)
         }
     }
     func failedToRequest(message: String) {

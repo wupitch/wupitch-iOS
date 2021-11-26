@@ -27,6 +27,29 @@ class MakeCrewGuestVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+//        if let sportsBtn = SignUpUserInfo.shared.clickSportsBtn,
+//           let areaId = SignUpUserInfo.shared.selectAreaPicker,
+//           let location = SignUpUserInfo.shared.location,
+//           //let crewName = SignUpUserInfo.shared.crewName,
+//           let crewCount = SignUpUserInfo.shared.crewCount,
+//           let ageList = SignUpUserInfo.shared.ageList,
+//           let extraInfoList = SignUpUserInfo.shared.extraInfoList,
+//           let schedules = SignUpUserInfo.shared.schedules,
+//           let title = SignUpUserInfo.shared.title,
+//           let crewInfo = SignUpUserInfo.shared.crewInfo,
+//           let materials = SignUpUserInfo.shared.materials,
+//           let question = SignUpUserInfo.shared.question,
+//           let money = SignUpUserInfo.shared.money,
+//           let guestMoney = SignUpUserInfo.shared.guestMoney {
+//
+//            makeCrewDataManager.postMakeCrew(MakeCrewRequest(ageList: ageList, areaID: areaId, conference: money, extraInfoList: extraInfoList, guestConference: guestMoney, inquiries: question, introduction: crewInfo, location: location, sportsID: sportsBtn, title: title, memberCount: crewCount, materials: materials, scheduleList: schedules), delegate: self)
+//        }
+//        else {
+//            print("rkqtdjqtdma")
+//        }
+        
+        
         setStyle()
     }
     
@@ -79,19 +102,11 @@ class MakeCrewGuestVC: UIViewController {
     // 게시하기 버튼
     @IBAction func touchUpNextBtn(_ sender: Any) {
         if nextBtn.backgroundColor == .main {
-            guard let viewControllerStack = self.navigationController?.viewControllers else { return }
-            // 뷰 스택에서 crewVC를 찾아서 거기까지 pop 합니다. 후에 crewDetailVC를 찾아서 push 합니다.
-            for viewController in viewControllerStack {
-                if let crewVC = viewController as? CrewVC {
-                    tabBarController?.tabBar.isHidden = false
-                    self.navigationController?.popToViewController(crewVC, animated: true)
-                    
-                    let storyBoard: UIStoryboard = UIStoryboard(name: "CrewDetail", bundle: nil)
-                    if let dvc = storyBoard.instantiateViewController(withIdentifier: "CrewDetailVC") as? CrewDetailVC {
-                        navigationController?.pushViewController(dvc, animated: true)
-                    }
-                }
-            }
+            
+            SignUpUserInfo.shared.guestMoney = Int(titleTextField.text ?? "") ?? nil
+            print("손님비 >>>>>>>>>>>", SignUpUserInfo.shared.guestMoney)
+            
+            makeCrewDataManager.postMakeCrew(MakeCrewRequest(ageList: SignUpUserInfo.shared.ageList ?? [], areaID: SignUpUserInfo.shared.selectAreaPicker ?? -99, conference: SignUpUserInfo.shared.money ?? -99, extraInfoList: SignUpUserInfo.shared.extraInfoList ?? [], guestConference: SignUpUserInfo.shared.guestMoney ?? -99, inquiries: SignUpUserInfo.shared.question ?? "", introduction: SignUpUserInfo.shared.crewInfo ?? "", location: SignUpUserInfo.shared.location ?? "", sportsID: SignUpUserInfo.shared.clickSportsBtn ?? -99, title: SignUpUserInfo.shared.title ?? "", memberCount: SignUpUserInfo.shared.crewCount ?? -99, materials: SignUpUserInfo.shared.materials ?? "", scheduleList: SignUpUserInfo.shared.schedules ?? []), delegate: self)
         }
         else {
             nextBtn.backgroundColor = .gray03
@@ -133,8 +148,23 @@ extension MakeCrewGuestVC : UITextFieldDelegate {
 
 // MARK: - 크루 생성 api
 extension MakeCrewGuestVC {
-    func didSuccessMakeCrew(result: MakeCrewData) {
-        print(result.isSuccess)
+    func didSuccessMakeCrew(result: MakeCrewResult) {
+        print("요청에 성공하셨습니다.")
+        print(result.clubID)
+        
+        guard let viewControllerStack = self.navigationController?.viewControllers else { return }
+        // 뷰 스택에서 crewVC를 찾아서 거기까지 pop 합니다. 후에 crewDetailVC를 찾아서 push 합니다.
+        for viewController in viewControllerStack {
+            if let crewVC = viewController as? CrewVC {
+                tabBarController?.tabBar.isHidden = false
+                self.navigationController?.popToViewController(crewVC, animated: true)
+                
+                let storyBoard: UIStoryboard = UIStoryboard(name: "CrewDetail", bundle: nil)
+                if let dvc = storyBoard.instantiateViewController(withIdentifier: "CrewDetailVC") as? CrewDetailVC {
+                    navigationController?.pushViewController(dvc, animated: true)
+                }
+            }
+        }
     }
     
     func failedToRequest(message: String) {

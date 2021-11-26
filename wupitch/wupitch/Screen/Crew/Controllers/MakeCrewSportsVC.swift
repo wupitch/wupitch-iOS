@@ -15,7 +15,6 @@ class MakeCrewSportsVC: UIViewController {
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var makeCrewLabel: LabelFontSize!
     
-    var sportsBtnId : [SportsResult] = []
     lazy var sportDataManager = SportsService()
     
     override func viewDidLoad() {
@@ -39,6 +38,8 @@ class MakeCrewSportsVC: UIViewController {
             sportsBtns[3].defaultSportsBtn()
             sportsBtns[4].defaultSportsBtn()
             sportsBtns[5].defaultSportsBtn()
+            
+            
             nextBtn.colorNextBtnStyle()
         }
         else {
@@ -141,7 +142,7 @@ class MakeCrewSportsVC: UIViewController {
                 if sportsBtns[i].status == true {
                     // 눌린 버튼 싱글톤에 넣어주기
                     SignUpUserInfo.shared.clickSportsBtn = sportsBtns[i].btnId
-                    print("현재 눌린 버튼 확인>>>>>>>>>",SignUpUserInfo.shared.clickSportsBtn!)
+                    print("현재 눌린 버튼 확인>>>>>>>>>",SignUpUserInfo.shared.clickSportsBtn ?? -99)
                 }
             }
             let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewRegion", bundle: nil)
@@ -157,13 +158,16 @@ class MakeCrewSportsVC: UIViewController {
 extension MakeCrewSportsVC {
     func didSuccessSports(result: [SportsResult]) {
         print("값이 성공적으로 들어왔습니다.")
-        self.sportsBtnId = result
+        // 싱글톤 초기화
+        SignUpUserInfo.shared.sports = []
         
-        // 스포츠 싱글톤에 버튼 아이디 값 넣어주기 (싱글톤에 저장)
-        // 버튼 자체에 싱글톤 값 넣어주기
         for i in 0...5 {
-            SignUpUserInfo.shared.sports[i] = result[i].sportsID
-            sportsBtns[i].btnId = SignUpUserInfo.shared.sports[i]
+            // 유저디폴트에 스포츠 아이디 저장
+            UserDefaults.standard.set(result[i].sportsID, forKey: "sportsId")
+            // 싱글톤에 스포츠 아이디 저장
+            SignUpUserInfo.shared.sports?.append(result[i].sportsID)
+            // 스포츠 버튼에 아이디값 세팅
+            sportsBtns[i].btnId = result[i].sportsID
         }
     }
     

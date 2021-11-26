@@ -81,6 +81,7 @@ class ProfileVC: BaseVC {
     
     // FAQ 버튼
     @IBAction func touchUpFAQBtn(_ sender: Any) {
+        
     }
     
     // 설정 버튼
@@ -89,7 +90,7 @@ class ProfileVC: BaseVC {
         //버튼 클릭 시, 다음 스토리보드로 이동
         let storyboard = UIStoryboard.init(name: "ProfileSettings", bundle: nil)
         guard let dvc = storyboard.instantiateViewController(identifier: "ProfileSettingsVC") as? ProfileSettingsVC else {return}
-        self.tabBarController?.tabBar.isHidden = true
+        dvc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(dvc, animated: true)
     }
 }

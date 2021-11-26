@@ -31,22 +31,38 @@ class SignUpUserInfo {
     var clickSportsBtn : Int?
     // 피커로 지역선택하면 전달할 값
     var selectAreaPicker : Int?
+    var location : String?
     // 크루만들기 기본정보
     var crewName : String?
     var crewCount : Int?
-    var ageList : [Int] = [0,1,2,3,4]
-    var extraInfoList : [Int] = [1,2,3,4,5,6,7,8]
+    var ageList : [Int]?
+    var extraInfoList : [Int]?
+    // 정기일정정보
+    var schedules: [ScheduleList]?
+    // 크루만들기 포토부분
+    var photo : UIImage?
+    var title : String?
+    var crewInfo : String?
+    var materials : String?
+    var question : String?
+    // 크루만들기 회비
+    var money : Int?
+    // 크루만들기 손님비
+    var guestMoney : Int?
+    
+    // -----------------------
+    
     
     
     // 스포츠 조회에 넣을 싱글톤 -> id값
-    var sports : [Int] = [1,2,3,4,5,6,7]
+    var sports : [Int]?
     // 지역 조회에 넣을 싱글톤 -> id값
-    var areas : [Int] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]
+    var areas : [Int]?
     // 지역 조회에 넣을 싱글톤 -> name값
-    var areaName : [String] = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26"]
+    var areaName : [String]?
     // 추가 정보 조회에 넣을 싱글톤 -> id값
-    var extraInfo : [Int] = [1,2,3,4,5,6,7,8]
-    
+    var extraInfo : [Int]?
+
     
     
     // ------------------------
@@ -65,12 +81,7 @@ class SignUpUserInfo {
     
     
     
-    // 크루만들기 포토부분
-    var photo : UIImage?
-    var title : String?
-    var crewInfo : String?
-    var materials : String?
-    var question : String?
+    
     
     func dispose() {
         //SignUpUserInfo.shared.region = nil

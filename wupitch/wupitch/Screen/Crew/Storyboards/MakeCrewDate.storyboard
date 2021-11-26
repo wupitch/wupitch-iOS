@@ -59,6 +59,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="다음 (4/7)"/>
+                                        <connections>
+                                            <action selector="touchUpNextBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Qge-16-RNJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

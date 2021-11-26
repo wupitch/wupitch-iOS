@@ -10,6 +10,7 @@ import UIKit
 class DateBtn : UIButton {
     
     var dateDelegate : DateDelegate?
+    var dayId : Int?
     var status : Bool = false {
         didSet {
             status ? colorDateBtn() : grayDateBtn()

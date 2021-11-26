@@ -7,22 +7,6 @@
 
 import UIKit
 
-struct BasicImageAndColor {
-    var soccer = UIImage(named: "imgFootThumb")
-    var basketball = UIImage(named: "imgBaskThumb")
-    var badminton = UIImage(named: "imgBadThumb")
-    var volleyball = UIImage(named: "imgVollThumb")
-    var running = UIImage(named: "imgRunThumb")
-    var hiking = UIImage(named: "imgHikeThumb")
-}
-
-//
-//struct Sports {
-//    let primaryKey: String
-//    let basicImageName: String
-//    let basicImage: UIImage
-//}
-
 class MakeCrewPhotoVC: UIViewController {
 
     @IBOutlet weak var nextBtn: NextBtn!
@@ -52,9 +36,26 @@ class MakeCrewPhotoVC: UIViewController {
         setStyle()
         placeholderSetting()
         tapGesture()
-        //Info.shared.sports.primaryKey = "dfjslf"
-        //Info.shared.sports.basicImage = Const.soccer
-        
+        setBasicImage()
+    }
+    
+    private func setBasicImage() {
+        switch SignUpUserInfo.shared.clickSportsBtn {
+        case 1:
+            basicImage = UIImage(named: "imgFootThumb")
+        case 2:
+            basicImage = UIImage(named: "imgBaskThumb")
+        case 3:
+            basicImage = UIImage(named: "imgBadThumb")
+        case 4:
+            basicImage = UIImage(named: "imgVollThumb")
+        case 5:
+            basicImage = UIImage(named: "imgRunThumb")
+        case 6:
+            basicImage = UIImage(named: "imgHikeThumb")
+        default:
+            break
+        }
     }
    
     private func setStyle() {
@@ -132,6 +133,7 @@ class MakeCrewPhotoVC: UIViewController {
         }
         let defaultImage = UIAlertAction(title: "기본 이미지 사용", style: .default) { [weak self] _ in
             self?.photoImageView.image = self?.basicImage
+            SignUpUserInfo.shared.photo = self?.photoImageView.image
         }
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alert.addAction(library)
@@ -156,6 +158,22 @@ class MakeCrewPhotoVC: UIViewController {
     
     @IBAction func touchUpNextBtn(_ sender: Any) {
         if nextBtn.backgroundColor == .main {
+            // 크루이름
+            SignUpUserInfo.shared.title = titleTextField.text
+            // 크루소개
+            SignUpUserInfo.shared.crewInfo = crewInfoTextView.text
+            // 문의처
+            SignUpUserInfo.shared.question = questionTextView.text
+            
+            if materialsTextView.textColor != .bk {
+                SignUpUserInfo.shared.materials = nil
+            }
+            else {
+                SignUpUserInfo.shared.materials = materialsTextView.text
+            }
+            
+            print("크루이름, 크루소개, 크루준비물, 문의처 >>>>>>>>>>",SignUpUserInfo.shared.title ?? "크루이름이 없어요",SignUpUserInfo.shared.crewInfo ?? "크루소개가 없어요", SignUpUserInfo.shared.materials ?? "크루준비물이 없어요", SignUpUserInfo.shared.question ?? "크루문의처가 없어요")
+            
             let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewMoney", bundle: nil)
             if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewMoneyVC") as? MakeCrewMoneyVC {
                 navigationController?.pushViewController(dvc, animated: true)
@@ -176,14 +194,6 @@ extension MakeCrewPhotoVC: UITextViewDelegate, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let title = titleTextField.text {
             SignUpUserInfo.shared.title = title.isEmpty ? nil : title
-//            if title.isEmpty {
-//                print("title is empty")
-//                SignUpUserInfo.shared.title = nil
-//            }
-//            else {
-//                print("타이틀이 비어잇지않을때")
-//                SignUpUserInfo.shared.title = title
-//            }
         }
         else {
             print("엘스문")
@@ -213,7 +223,6 @@ extension MakeCrewPhotoVC: UITextViewDelegate, UITextFieldDelegate {
                 SignUpUserInfo.shared.crewInfo = crewInfoTextView.text
             }
         }
-        
         
         if materialsTextView.text.isEmpty {
             materialsTextView.text = placeholder.1

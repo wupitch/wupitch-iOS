@@ -100,6 +100,7 @@ class SignUpTermsVC: UIViewController {
         if  nextBtn.backgroundColor == .main {
             // 푸시알림버튼 싱글톤에 저장
             SignUpUserInfo.shared.isPushAgree = agreeBtn[2].status
+            UserDefaults.standard.set(SignUpUserInfo.shared.isPushAgree, forKey: "isPushAgree")
             print("푸시알림 >>>>>>>>>>", SignUpUserInfo.shared.isPushAgree ?? "값이 없어요!")
             // 버튼 클릭 시, 다음 스토리보드로 이동
             let storyboard = UIStoryboard.init(name: "SignUpEmailPw", bundle: nil)

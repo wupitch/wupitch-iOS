@@ -79,6 +79,9 @@ class MakeCrewMoneyVC: UIViewController {
     
     @IBAction func touchUpNextBtn(_ sender: Any) {
         if nextBtn.backgroundColor == .main {
+            
+            SignUpUserInfo.shared.money = Int(titleTextField.text ?? "") ?? nil
+            print("회비 >>>>>>>>>>>", SignUpUserInfo.shared.money)
             let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewGuest", bundle: nil)
             if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewGuestVC") as? MakeCrewGuestVC {
                 navigationController?.pushViewController(dvc, animated: true)
@@ -88,7 +91,6 @@ class MakeCrewMoneyVC: UIViewController {
             nextBtn.backgroundColor = .gray03
         }
     }
-
 }
 
 extension MakeCrewMoneyVC : UITextFieldDelegate {

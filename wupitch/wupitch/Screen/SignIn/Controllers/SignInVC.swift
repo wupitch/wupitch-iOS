@@ -28,6 +28,11 @@ class SignInVC: UIViewController {
         dismissKeyboardWhenTappedAround()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setViewControllers([self], animated: true)
+    }
+    
     // MARK: - Function
     private func setStyle() {
         // emailTextField
@@ -128,8 +133,8 @@ extension SignInVC {
         UserDefaults.standard.string(forKey: "userToken")
         
         // 회원가입 페이지로 이동
-        let storyboard = UIStoryboard.init(name: "Crew", bundle: nil)
-        guard let dvc = storyboard.instantiateViewController(identifier: "CrewVC") as? CrewVC else {return}
+        let storyboard = UIStoryboard.init(name: "Tabbar", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(identifier: "TabbarVC") as? TabbarVC else {return}
         self.navigationController?.pushViewController(dvc, animated: true)
     }
     

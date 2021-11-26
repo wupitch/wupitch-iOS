@@ -69,19 +69,21 @@ class ProfilePasswordVC: UIViewController {
     
     // password eye
     private func passwordEyeSecure() {
-        passwordEyeBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: passwordTextField.frame.height))
-        passwordEyeBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: changePwTextField.frame.height))
+        passwordEyeBtn = UIButton()
+//    frame: CGRect(x: 0, y: 0, width: 50, height: passwordTextField.frame.height))
+//        passwordEyeBtn = UIButton()
+////    frame: CGRect(x: 0, y: 0, width: 50, height: changePwTextField.frame.height))
         passwordEyeBtn.setImage(UIImage(named: "viewHide"), for: UIControl.State())
         let container = UIView(frame: passwordEyeBtn.frame)
         container.addSubview(passwordEyeBtn)
         passwordTextField.rightView = container
         passwordTextField.rightViewMode = .always
-        changePwTextField.rightView = container
-        changePwTextField.rightViewMode = .always
+//        changePwTextField.rightView = container
+//        changePwTextField.rightViewMode = .always
         
         passwordEyeBtn.addTarget(self, action: #selector(passwordEyeButtonClick), for: .touchUpInside)
         
-        passwordEyeBtn.addTarget(self, action: #selector(changePasswordEyeButtonClick), for: .touchUpInside)
+//        passwordEyeBtn.addTarget(self, action: #selector(changePasswordEyeButtonClick), for: .touchUpInside)
     }
     
     // password eye addTarget

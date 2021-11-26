@@ -33,5 +33,5 @@ struct MakeCrewRequest: Codable {
 struct ScheduleList: Codable {
     let dayIdx: Int
     let startTime: Double
-    let endTime: Int
+    let endTime: Double
 }

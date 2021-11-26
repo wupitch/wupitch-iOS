@@ -67,7 +67,7 @@ class MakeCrewInfoVC: UIViewController {
         
         // 연령대 싱글톤 값으로 초기화
         for i in 0...4 {
-            ageBtns[i].ageInt = SignUpUserInfo.shared.ageList[i]
+            ageBtns[i].ageInt = i
         }
     }
 
@@ -159,16 +159,18 @@ class MakeCrewInfoVC: UIViewController {
         if nextBtn.backgroundColor == .main {
             // 나이버튼 활성화 상태 확인 후
             // 나이버튼의 인티저 값을 agelist에 넣어줌
+            SignUpUserInfo.shared.ageList = []
+            SignUpUserInfo.shared.extraInfoList = []
             for i in 0...4 {
                 if ageBtns[i].status == true {
-                    SignUpUserInfo.shared.ageList[i] = ageBtns[i].ageInt!
-                    print("연령대 >>>>>>>>>",SignUpUserInfo.shared.ageList[i])
+                    SignUpUserInfo.shared.ageList?.append(ageBtns[i].ageInt!)
+                    print("연령대 >>>>>>>>>",SignUpUserInfo.shared.ageList)
                 }
             }
             for i in 0...7 {
                 if addInfoBtns[i].status == true {
-                    SignUpUserInfo.shared.extraInfoList[i] = addInfoBtns[i].extraId!
-                    print("추가정보 >>>>>>>>>",SignUpUserInfo.shared.extraInfoList[i])
+                    SignUpUserInfo.shared.extraInfoList?.append(addInfoBtns[i].extraId!)
+                    print("추가정보 >>>>>>>>>",SignUpUserInfo.shared.extraInfoList)
                 }
             }
             // 싱글톤에 값 넣어주기
@@ -176,7 +178,6 @@ class MakeCrewInfoVC: UIViewController {
             SignUpUserInfo.shared.crewCount = Int(crewCountTextField.text ?? "") ?? 0
             print("크루이름 >>>>>>>>>",SignUpUserInfo.shared.crewName ?? "크루이름이 없습니다.")
             print("현재 크루원 수 >>>>>>>>>",SignUpUserInfo.shared.crewCount ?? "현재 크루원 수가 없습니다.")
-            
             
             let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewDate", bundle: nil)
             if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewDateVC") as? MakeCrewDateVC {
@@ -235,9 +236,10 @@ extension MakeCrewInfoVC {
         
         // 추가정보 싱글톤에 버튼 아이디 값 넣어주기 (싱글톤에 저장)
         // 버튼 자체에 싱글톤 값 넣어주기
+        SignUpUserInfo.shared.extraInfo = []
         for i in 0...7 {
-            SignUpUserInfo.shared.extraInfo[i] = result[i].extraID
-            addInfoBtns[i].extraId = SignUpUserInfo.shared.extraInfo[i]
+            SignUpUserInfo.shared.extraInfo?.append(result[i].extraID)
+            addInfoBtns[i].extraId = result[i].extraID
             print(">>>", addInfoBtns[i].extraId ?? "값이 없어용")
         }
     }
