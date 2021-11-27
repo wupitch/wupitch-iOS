@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MakeBungaeMoneyVC: UIViewController {
 
@@ -140,53 +141,53 @@ extension MakeBungaeMoneyVC {
     func didSuccessMakeBungae(result: MakeBungaeResult) {
         print("요청에 성공하셨습니다.")
         print(result.impromptuID)
+
+        let url = "https://prod.wupitch.site/app/impromptu/image"
+
+        var header : HTTPHeaders = []
+
+        if let token = UserDefaults.standard.string(forKey: "userToken") {
+            header = ["Content-Type":"multipart/form-data", "X-ACCESS-TOKEN": token]
+        }
+        let impromptuId = String(result.impromptuID)
+
+        let userImage = SignUpUserInfo.shared.bungaePhoto
+
+        AF.upload(
+            multipartFormData: { MultipartFormData in
+
+                if((userImage) != nil) {
+                    MultipartFormData.append(userImage!.jpegData(compressionQuality: 0.025)! ,withName: "images", fileName: "imageNew.jpeg", mimeType: "image/jpeg")
+                    print("사진 잘 들어오나 확인 >>>>>", userImage!)
+                    MultipartFormData.append(Data(impromptuId.utf8), withName: "impromptuId")
+                }
+            }, to: url, method: .patch, headers: header).uploadProgress(queue: .main) { progress in
+
+                print("Upload Progress: \(progress.fractionCompleted)")
+            }.responseJSON { data in
+                switch data.result {
+                case .success(let response):
+                    print("데이터가 성공적으로 들어왔어요", response)
+
+                    guard let viewControllerStack = self.navigationController?.viewControllers else { return }
+                    // 뷰 스택에서 crewVC를 찾아서 거기까지 pop 합니다. 후에 bungaeDetailVC를 찾아서 push 합니다.
+                    for viewController in viewControllerStack {
+                        if let bungaeVC = viewController as? BungaeVC {
+                            self.tabBarController?.tabBar.isHidden = false
+                            self.navigationController?.popToViewController(bungaeVC, animated: true)
+
+                            let storyBoard: UIStoryboard = UIStoryboard(name: "BungaeDetail", bundle: nil)
+                            if let dvc = storyBoard.instantiateViewController(withIdentifier: "BungaeDetailVC") as? BungaeDetailVC {
+                                self.navigationController?.pushViewController(dvc, animated: true)
+                            }
+                        }
+                    }
+
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
     }
-//        let url = "https://prod.wupitch.site/app/clubs/image"
-//
-//        var header : HTTPHeaders = []
-//
-//        if let token = UserDefaults.standard.string(forKey: "userToken") {
-//            header = ["Content-Type":"multipart/form-data", "X-ACCESS-TOKEN": token]
-//        }
-//        let crewId = String(result.clubID)
-//
-//        let userImage = SignUpUserInfo.shared.photo
-//
-//        AF.upload(
-//            multipartFormData: { MultipartFormData in
-//
-//                if((userImage) != nil) {
-//                    MultipartFormData.append(userImage!.jpegData(compressionQuality: 0.025)! ,withName: "images", fileName: "imageNew.jpeg", mimeType: "image/jpeg")
-//                    print("사진 잘 들어오나 확인 >>>>>", userImage!)
-//                    MultipartFormData.append(Data(crewId.utf8), withName: "crewId")
-//                }
-//            }, to: url, method: .patch, headers: header).uploadProgress(queue: .main) { progress in
-//
-//                print("Upload Progress: \(progress.fractionCompleted)")
-//            }.responseJSON { data in
-//                switch data.result {
-//                case .success(let response):
-//                    print("데이터가 성공적으로 들어왔어요", response)
-//
-//                    guard let viewControllerStack = self.navigationController?.viewControllers else { return }
-//                    // 뷰 스택에서 crewVC를 찾아서 거기까지 pop 합니다. 후에 crewDetailVC를 찾아서 push 합니다.
-//                    for viewController in viewControllerStack {
-//                        if let crewVC = viewController as? CrewVC {
-//                            self.tabBarController?.tabBar.isHidden = false
-//                            self.navigationController?.popToViewController(crewVC, animated: true)
-//
-//                            let storyBoard: UIStoryboard = UIStoryboard(name: "CrewDetail", bundle: nil)
-//                            if let dvc = storyBoard.instantiateViewController(withIdentifier: "CrewDetailVC") as? CrewDetailVC {
-//                                self.navigationController?.pushViewController(dvc, animated: true)
-//                            }
-//                        }
-//                    }
-//
-//                case .failure(let error):
-//                    print(error.localizedDescription)
-//                }
-//            }
-//    }
     
     func failedToRequest(message: String) {
         print("데이터가 들어오지 않습니다.")
