@@ -11,12 +11,16 @@ PODS:
     - KakaoSDKCommon/Common (= 2.5.5)
   - KakaoSDKUser (2.5.5):
     - KakaoSDKAuth (= 2.5.5)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.4)
   - KakaoSDKAuth
   - KakaoSDKCommon
   - KakaoSDKUser
+  - SDWebImage (~> 5.0)
 
 SPEC REPOS:
   trunk:
@@ -24,13 +28,15 @@ SPEC REPOS:
     - KakaoSDKAuth
     - KakaoSDKCommon
     - KakaoSDKUser
+    - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   KakaoSDKAuth: 7474cf67d199a9c2ec6a46e4ed8398cf34c1262d
   KakaoSDKCommon: fb2c9223a86d6f65a8ba73bbaad7cec6a2b09630
   KakaoSDKUser: 7bb1c38bbd4608bd4e7eebbd4eda130338364fb3
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
 
-PODFILE CHECKSUM: c8c3cd7adc8d5b5a78bf96903647a264a1633894
+PODFILE CHECKSUM: bfc4e6f483616b800a6ede40ff9d2a1d420e948b
 
 COCOAPODS: 1.11.2

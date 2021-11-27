@@ -130,7 +130,7 @@ extension SignInVC {
         print("데이터가 성공적으로 들어왔습니다.")
         
         // 토큰 저장
-        UserDefaults.standard.string(forKey: "userToken")
+        UserDefaults.standard.set(result.jwt, forKey: "userToken")
         
         // 회원가입 페이지로 이동
         let storyboard = UIStoryboard.init(name: "Tabbar", bundle: nil)

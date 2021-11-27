@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import SDWebImage
 
 class ProfileVC: BaseVC {
 
@@ -23,11 +24,19 @@ class ProfileVC: BaseVC {
     @IBOutlet weak var messageModalImageView: UIImageView!
     @IBOutlet weak var alertCancelBtn: UIButton!
     
+    lazy var memberInfoDataManager = MemberInfoService()
     let picker = UIImagePickerController()
+    var userInfo : MemberInfoResult?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
+        memberInfoDataManager.getMemberInfo(delegate: self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     private func setStyle() {
@@ -157,5 +166,19 @@ extension ProfileVC : UIImagePickerControllerDelegate, UINavigationControllerDel
             profileImageVIew.image = UIImage(named: "profileBasic")
         }
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ProfileVC {
+    func didSuccessMemberInfo(result: MemberInfoResult) {
+        print("요청에 성공하셨습니다.")
+       
+        nicknameLabel.text = result.nickname
+        subLabel.text = result.introduce
+        profileImageVIew.sd_setImage(with: URL(string: result.profileImageURL))
+    }
+    
+    func failedToRequest(message: String) {
+        print("데이터가 들어오지 않습니다.")
     }
 }

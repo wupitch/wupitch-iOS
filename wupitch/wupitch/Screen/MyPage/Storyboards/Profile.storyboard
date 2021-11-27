@@ -38,7 +38,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UbJ-sS-cqm">
                                 <rect key="frame" x="20" y="106.5" width="374" height="100"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileBasic" translatesAutoresizingMaskIntoConstraints="NO" id="Zwz-9e-lLz">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zwz-9e-lLz">
                                         <rect key="frame" x="24" y="18" width="64" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="64" id="H0T-kx-c4Z"/>
@@ -60,7 +60,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="UGE-zi-NbM">
                                         <rect key="frame" x="115" y="26" width="195" height="48"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우피치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wh-Ce-wIE" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wh-Ce-wIE" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="195" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="KXG-e5-cIa"/>
@@ -69,7 +69,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가나다라마바사리ㅏ어랴니ㅏㅇ러ㅑㄴ아ㅣ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xv-nt-2ui" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xv-nt-2ui" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="26" width="195" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="uyP-Uk-DVP"/>
@@ -263,7 +263,6 @@
         <image name="bell" width="24" height="24"/>
         <image name="btnPhoto" width="24" height="24"/>
         <image name="iArrowsChevronBackward" width="24" height="24"/>
-        <image name="profileBasic" width="64" height="64"/>
         <image name="union" width="180" height="71.5"/>
         <image name="whtclose" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
