@@ -48,7 +48,7 @@ class SignUpImagePreviewVC: UIViewController {
     
     @IBAction func touchUpUsePhotoBtn(_ sender: Any) {
         
-        let url = "https://prod.wupitch.site/app/accounts/image"
+        let url = "https://prod.wupitch.site/app/accounts/identification"
         
         var header : HTTPHeaders = []
         
