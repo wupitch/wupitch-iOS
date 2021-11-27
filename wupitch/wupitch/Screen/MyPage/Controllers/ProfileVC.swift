@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ProfileVC: BaseVC {
 
@@ -21,6 +22,8 @@ class ProfileVC: BaseVC {
     @IBOutlet var settingsBtn: [UIButton]!
     @IBOutlet weak var messageModalImageView: UIImageView!
     @IBOutlet weak var alertCancelBtn: UIButton!
+    
+    let picker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +42,8 @@ class ProfileVC: BaseVC {
         subLabel.CrewNoPlaceLabel()
         profileAlertLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 12)
         profileAlertLabel.setTextWithLineHeight(text: profileAlertLabel.text, lineHeight: 20)
+        picker.delegate = self
+        profileImageVIew.makeRounded(cornerRadius: nil)
     }
     
     // 메시지 취소 버튼
@@ -55,6 +60,21 @@ class ProfileVC: BaseVC {
     
     // 카메라 버튼
     @IBAction func touchUpCameraBtn(_ sender: Any) {
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+        let library = UIAlertAction(title: "사진앨범", style: .default) {(action) in
+            self.openLibrary()
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        alert.addAction(library)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    // UIImagePicker
+    func openLibrary() {
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
+        present(picker, animated: true, completion: nil)
     }
     
     // 화살표 버튼
@@ -92,5 +112,50 @@ class ProfileVC: BaseVC {
         guard let dvc = storyboard.instantiateViewController(identifier: "ProfileSettingsVC") as? ProfileSettingsVC else {return}
         dvc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(dvc, animated: true)
+    }
+}
+
+// MARK: - UIImagePicker
+extension ProfileVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        {
+            profileImageVIew.image = image
+            
+            let url = "https://prod.wupitch.site/app/accounts/image"
+            
+            var header : HTTPHeaders = []
+            
+            if let token = UserDefaults.standard.string(forKey: "userToken") {
+                header = ["Content-Type":"multipart/form-data", "X-ACCESS-TOKEN": token]
+            }
+            
+            let userImage = self.profileImageVIew.image
+            
+            AF.upload(
+                multipartFormData: { MultipartFormData in
+                    if((userImage) != nil){
+                        MultipartFormData.append(userImage!.jpegData(compressionQuality: 0.025)!, withName: "images", fileName: "imageNew.jpeg", mimeType: "image/jpeg")
+                        print("사진 잘 들어오나 확인 >>>>>", userImage!)
+                    }
+                }, to: url, method: .post, headers: header).uploadProgress(queue: .main) { progress in
+                    
+                    print("Upload Progress: \(progress.fractionCompleted)")
+                }.responseJSON { data in
+                    switch data.result {
+                    case .success(let response):
+                        print("데이터가 성공적으로 들어왔어요", response)
+                        
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+        }
+        else {
+            // 사진 없을 땐 기본 이미지 넣어주기
+            profileImageVIew.image = UIImage(named: "profileBasic")
+        }
+        dismiss(animated: true, completion: nil)
     }
 }

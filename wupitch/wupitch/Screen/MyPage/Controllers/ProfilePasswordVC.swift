@@ -25,6 +25,7 @@ class ProfilePasswordVC: UIViewController {
     // 비밀번호 가리기,보이기
     var passwordEyeClick = true
     var passwordEyeBtn = UIButton(type: .system)
+    var changePasswordEyeBtn = UIButton(type: .system)
     
     var resultIsSuccess : Bool = false
     var pwResultIsSuccess : Bool = false
@@ -35,6 +36,7 @@ class ProfilePasswordVC: UIViewController {
         setStyle()
         setDelegate()
         passwordEyeSecure()
+        changePasswordEyeSecure()
     }
     
     // MARK: - Function
@@ -69,21 +71,13 @@ class ProfilePasswordVC: UIViewController {
     
     // password eye
     private func passwordEyeSecure() {
-        passwordEyeBtn = UIButton()
-//    frame: CGRect(x: 0, y: 0, width: 50, height: passwordTextField.frame.height))
-//        passwordEyeBtn = UIButton()
-////    frame: CGRect(x: 0, y: 0, width: 50, height: changePwTextField.frame.height))
+        passwordEyeBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: passwordTextField.frame.height))
         passwordEyeBtn.setImage(UIImage(named: "viewHide"), for: UIControl.State())
         let container = UIView(frame: passwordEyeBtn.frame)
         container.addSubview(passwordEyeBtn)
         passwordTextField.rightView = container
         passwordTextField.rightViewMode = .always
-//        changePwTextField.rightView = container
-//        changePwTextField.rightViewMode = .always
-        
         passwordEyeBtn.addTarget(self, action: #selector(passwordEyeButtonClick), for: .touchUpInside)
-        
-//        passwordEyeBtn.addTarget(self, action: #selector(changePasswordEyeButtonClick), for: .touchUpInside)
     }
     
     // password eye addTarget
@@ -98,14 +92,25 @@ class ProfilePasswordVC: UIViewController {
         passwordEyeClick = !passwordEyeClick
     }
     
+    // password eye
+    private func changePasswordEyeSecure() {
+        changePasswordEyeBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: changePwTextField.frame.height))
+        changePasswordEyeBtn.setImage(UIImage(named: "viewHide"), for: UIControl.State())
+        let container = UIView(frame: changePasswordEyeBtn.frame)
+        container.addSubview(changePasswordEyeBtn)
+        changePwTextField.rightView = container
+        changePwTextField.rightViewMode = .always
+        changePasswordEyeBtn.addTarget(self, action: #selector(changePasswordEyeButtonClick), for: .touchUpInside)
+    }
+    
     // password eye addTarget
     @objc func changePasswordEyeButtonClick(_ sender: UIButton) {
         if(passwordEyeClick == true) {
-            passwordTextField.isSecureTextEntry = false
-            passwordEyeBtn.setImage(UIImage(named: "view"), for: UIControl.State())
+            changePwTextField.isSecureTextEntry = false
+            changePasswordEyeBtn.setImage(UIImage(named: "view"), for: UIControl.State())
         } else {
-            passwordTextField.isSecureTextEntry = true
-            passwordEyeBtn.setImage(UIImage(named: "viewHide"), for: UIControl.State())
+            changePwTextField.isSecureTextEntry = true
+            changePasswordEyeBtn.setImage(UIImage(named: "viewHide"), for: UIControl.State())
         }
         passwordEyeClick = !passwordEyeClick
     }
