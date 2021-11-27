@@ -31,6 +31,7 @@ class ProfilePasswordVC: UIViewController {
     var pwResultIsSuccess : Bool = false
     
     lazy var passwordCheckDataManager = PasswordCheckService()
+    lazy var changePasswordDataManager = ChangePasswordService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,22 +121,16 @@ class ProfilePasswordVC: UIViewController {
     // MARK: - IBActions
     // 다음 버튼
     @IBAction func touchUpNextBtn(_ sender: Any) {
-        //        if  nextBtn.backgroundColor == .main {
-        //
-        //            // 다음 버튼 클릭 시, 싱글톤에 이메일, 패스워드 넣어주기
-        //            SignUpUserInfo.shared.email = changePwTextField.text
-        //            SignUpUserInfo.shared.password = passwordTextField.text
-        //            print("이메일 >>>>>>>>>>",SignUpUserInfo.shared.email ?? "값이 없어요!")
-        //            print("비밀번호 >>>>>>>>>>",SignUpUserInfo.shared.password ?? "값이 없어요!")
-        //
-        //            //버튼 클릭 시, 다음 스토리보드로 이동
-        //            let storyboard = UIStoryboard.init(name: "SignUpProfile", bundle: nil)
-        //            guard let dvc = storyboard.instantiateViewController(identifier: "SignUpProfileVC") as? SignUpProfileVC else {return}
-        //            self.navigationController?.pushViewController(dvc, animated: true)
-        //        }
-        //        else {
-        //            nextBtn.backgroundColor = .gray03
-        //        }
+        if  nextBtn.backgroundColor == .main {
+            if let changePassword = changePwTextField.text {
+                changePasswordDataManager.patchChangePassword(ChangePasswordRequest(password: changePassword), delegate: self)
+                
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+        else {
+            nextBtn.backgroundColor = .gray03
+        }
     }
     
     // 뒤로가기 버튼
@@ -159,17 +154,21 @@ extension ProfilePasswordVC : UITextFieldDelegate {
         }
         else {
             if let changePassword = changePwTextField.text {
-                if passwordTextField.text == changePassword {
-                    changePwLabel.alpha = 1
-                    changePwLabel.text = "사용하실 수 없는 비밀번호입니다."
-                    changePwLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
-                    changePwLabel.textColor = UIColor(red: 241/255, green: 0/255, blue: 0/255, alpha: 1)
-                }
-                else {
+                if passwordTextField.text != changePwTextField.text {
                     changePwLabel.alpha = 1
                     changePwLabel.text = "사용하실 수 있는 비밀번호입니다."
                     changePwLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
                     changePwLabel.textColor = UIColor(red: 72/255, green: 190/255, blue: 0/255, alpha: 1)
+                    if passwordLabel.textColor == UIColor(red: 72/255, green: 190/255, blue: 0/255, alpha: 1) {
+                        nextBtn.backgroundColor = .main
+                    }
+                }
+                else {
+                    changePwLabel.alpha = 1
+                    changePwLabel.text = "사용하실 수 없는 비밀번호입니다."
+                    changePwLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+                    changePwLabel.textColor = UIColor(red: 241/255, green: 0/255, blue: 0/255, alpha: 1)
+                    nextBtn.backgroundColor = .gray03
                 }
             }
         }
@@ -191,16 +190,25 @@ extension ProfilePasswordVC {
             passwordLabel.text = "비밀번호가 일치합니다."
             passwordLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
             passwordLabel.textColor = UIColor(red: 72/255, green: 190/255, blue: 0/255, alpha: 1)
+            if changePwLabel.textColor == UIColor(red: 72/255, green: 190/255, blue: 0/255, alpha: 1) {
+                nextBtn.backgroundColor = .main
+            }
         }
         else {
             passwordLabel.alpha = 1
             passwordLabel.text = "비밀번호가 일치하지 않습니다."
             passwordLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
             passwordLabel.textColor = UIColor(red: 241/255, green: 0/255, blue: 0/255, alpha: 1)
+            nextBtn.backgroundColor = .gray03
         }
+    }
+    
+    func didSuccessChangePassword(result : ChangePasswordData) {
+        print("데이터가 성공적으로 들어왔습니다.")
     }
     
     func failedToRequest(message : String) {
         print("데이터를 가져오지 못했습니다.")
     }
 }
+
