@@ -57,7 +57,6 @@ class MyActivityDetailVC: UIViewController {
     }
     
     @IBAction func touchUpSecondBtn(_ sender: Any) {
-        print("번개터치")
         MyActivityCV.scrollToItem(at: IndexPath(row: 1, section: 0), at: .centeredHorizontally, animated: true)
         firstBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         secondBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
@@ -87,7 +86,6 @@ class MyActivityDetailVC: UIViewController {
     }
     
     @IBAction func touchUpFourthBtn(_ sender: Any) {
-        print("번개터치")
         MyActivityCV.scrollToItem(at: IndexPath(row: 3, section: 0), at: .centeredHorizontally, animated: true)
         firstBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         secondBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)

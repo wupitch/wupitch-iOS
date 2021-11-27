@@ -155,6 +155,8 @@
 		DDC46B8327522FE60015341E /* ChangePasswordData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B8227522FE60015341E /* ChangePasswordData.swift */; };
 		DDC46B8527522FF80015341E /* ChangePasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B8427522FF80015341E /* ChangePasswordRequest.swift */; };
 		DDC46B87275230320015341E /* ChangePasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B86275230320015341E /* ChangePasswordService.swift */; };
+		DDC46B8C275239700015341E /* ReadyCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B8A275239700015341E /* ReadyCVCell.swift */; };
+		DDC46B8D275239700015341E /* ReadyCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDC46B8B275239700015341E /* ReadyCVCell.xib */; };
 		DDC4DAE12741075700D79CC8 /* AreaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAE02741075700D79CC8 /* AreaData.swift */; };
 		DDC4DAE4274107D900D79CC8 /* AreaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAE3274107D900D79CC8 /* AreaService.swift */; };
 		DDC4DAE6274275E200D79CC8 /* ToastMessage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DAE5274275E200D79CC8 /* ToastMessage.storyboard */; };
@@ -390,6 +392,8 @@
 		DDC46B8227522FE60015341E /* ChangePasswordData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordData.swift; sourceTree = "<group>"; };
 		DDC46B8427522FF80015341E /* ChangePasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRequest.swift; sourceTree = "<group>"; };
 		DDC46B86275230320015341E /* ChangePasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordService.swift; sourceTree = "<group>"; };
+		DDC46B8A275239700015341E /* ReadyCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyCVCell.swift; sourceTree = "<group>"; };
+		DDC46B8B275239700015341E /* ReadyCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReadyCVCell.xib; sourceTree = "<group>"; };
 		DDC4DAE02741075700D79CC8 /* AreaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaData.swift; sourceTree = "<group>"; };
 		DDC4DAE3274107D900D79CC8 /* AreaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaService.swift; sourceTree = "<group>"; };
 		DDC4DAE5274275E200D79CC8 /* ToastMessage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToastMessage.storyboard; sourceTree = "<group>"; };
@@ -1220,6 +1224,8 @@
 			children = (
 				DDC4DB5D274E234400D79CC8 /* FeedCVCell.swift */,
 				DDC4DB5E274E234400D79CC8 /* FeedCVCell.xib */,
+				DDC46B8A275239700015341E /* ReadyCVCell.swift */,
+				DDC46B8B275239700015341E /* ReadyCVCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1471,6 +1477,7 @@
 			files = (
 				DDED0125271BDCD700C2C343 /* OnboardingCVCell.xib in Resources */,
 				DDC46B54274F744C0015341E /* ProfileNickname.storyboard in Resources */,
+				DDC46B8D275239700015341E /* ReadyCVCell.xib in Resources */,
 				DD3ACBB52720FFC600EBC201 /* TermsOfUse.storyboard in Resources */,
 				DD3ACBBD2721082300EBC201 /* SignUpProfile.storyboard in Resources */,
 				DDE0EE582728163900C46821 /* JoinAlert.storyboard in Resources */,
@@ -1735,6 +1742,7 @@
 				DD1BFC3D2738B7ED0042C51F /* LabelFontSize.swift in Sources */,
 				DDC46B7A2751E5140015341E /* MakeBungaeService.swift in Sources */,
 				DDC46B5E274F8BF30015341E /* ProfilePasswordVC.swift in Sources */,
+				DDC46B8C275239700015341E /* ReadyCVCell.swift in Sources */,
 				DDC4DB262746A95E00D79CC8 /* SportsData.swift in Sources */,
 				DDC46B8527522FF80015341E /* ChangePasswordRequest.swift in Sources */,
 				DDC46B56274F745E0015341E /* ProfileNicknameVC.swift in Sources */,

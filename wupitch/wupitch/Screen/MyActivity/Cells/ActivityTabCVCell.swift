@@ -25,13 +25,28 @@ class ActivityTabCVCell: UICollectionViewCell {
         tabCV.dataSource = self
         self.tabCV.register(CrewCVCell.nib(), forCellWithReuseIdentifier: CrewCVCell.identifier)
         self.tabCV.register(BungaeCVCell.nib(), forCellWithReuseIdentifier: BungaeCVCell.identifier)
+        self.tabCV.register(ReadyCVCell.nib(), forCellWithReuseIdentifier: ReadyCVCell.identifier)
     }
 
 }
 
 extension ActivityTabCVCell : UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if tabBar == myActivityTab.introduce {
+            return 10
+        }
+        else if tabBar == myActivityTab.board {
+            return 1
+        }
+        
+        else if tabBar == myActivityTab.photo {
+            return 1
+        }
+        
+        else if tabBar == myActivityTab.crewone {
+           return 1
+        }
+        return Int()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -45,7 +60,7 @@ extension ActivityTabCVCell : UICollectionViewDelegate, UICollectionViewDelegate
         }
         
         else if tabBar == myActivityTab.board {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BungaeCVCell.identifier, for: indexPath) as? BungaeCVCell else{
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReadyCVCell.identifier, for: indexPath) as? ReadyCVCell else{
                 return UICollectionViewCell()
             }
             return cell
@@ -53,7 +68,7 @@ extension ActivityTabCVCell : UICollectionViewDelegate, UICollectionViewDelegate
         }
         
         else if tabBar == myActivityTab.photo {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BungaeCVCell.identifier, for: indexPath) as? BungaeCVCell else{
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReadyCVCell.identifier, for: indexPath) as? ReadyCVCell else{
                 return UICollectionViewCell()
             }
             return cell
@@ -61,7 +76,7 @@ extension ActivityTabCVCell : UICollectionViewDelegate, UICollectionViewDelegate
         }
         
         else if tabBar == myActivityTab.crewone {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BungaeCVCell.identifier, for: indexPath) as? BungaeCVCell else{
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReadyCVCell.identifier, for: indexPath) as? ReadyCVCell else{
                 return UICollectionViewCell()
             }
             return cell
@@ -76,16 +91,17 @@ extension ActivityTabCVCell : UICollectionViewDelegate, UICollectionViewDelegate
             return CGSize(width: self.frame.width-40, height: 133)
         }
         else if tabBar == myActivityTab.board {
-            return CGSize(width: self.frame.width-40, height: self.frame.height)
+            return CGSize(width: self.frame.width, height: self.frame.height)
         }
         
         else if tabBar == myActivityTab.photo {
-            return CGSize(width: self.frame.width-40, height: self.frame.height)
+            return CGSize(width: self.frame.width, height: self.frame.height)
         }
         
-        else {
-            return CGSize(width: self.frame.width-40, height: self.frame.height)
+        else if tabBar == myActivityTab.crewone {
+            return CGSize(width: self.frame.width, height: self.frame.height)
         }
+        return CGSize()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:

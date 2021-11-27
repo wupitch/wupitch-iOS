@@ -27,17 +27,17 @@ class FeedVC: BaseVC {
         feedCV.delegate = self
         feedCV.dataSource = self
         feedCV.register(FeedCVCell.nib(), forCellWithReuseIdentifier: FeedCVCell.identifier)
+        feedCV.register(ReadyCVCell.nib(), forCellWithReuseIdentifier: ReadyCVCell.identifier)
     }
 }
 
 extension FeedVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // 일단은 다섯개로
-        return 20
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCVCell.identifier, for: indexPath) as? FeedCVCell else{
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReadyCVCell.identifier, for: indexPath) as? ReadyCVCell else{
             return UICollectionViewCell()
         }
 
@@ -59,25 +59,30 @@ extension FeedVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     // MARK: - collectionView size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = collectionView.frame.width / 3
-        //let height =  collectionView.frame.height
+        //let width = collectionView.frame.width / 3
+        let width = collectionView.frame.width
+        let height =  collectionView.frame.height
         
-        return CGSize(width: width-8, height: width)
+        //return CGSize(width: width -8, height: width)
+        return CGSize(width: width, height: height)
     }
     
     // 위 아래 간격
       func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-          return 6
+          //return 6
+          return 0
       }
 
       // 옆 간격
       func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-          return 6
+          //return 6
+          return 0
       }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
                         UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
+        //return UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 }
