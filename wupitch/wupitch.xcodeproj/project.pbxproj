@@ -149,6 +149,9 @@
 		DDC46B76275169C00015341E /* MakeBungaeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B75275169C00015341E /* MakeBungaeRequest.swift */; };
 		DDC46B782751D0340015341E /* PickerBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B772751D0340015341E /* PickerBtn.swift */; };
 		DDC46B7A2751E5140015341E /* MakeBungaeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B792751E5140015341E /* MakeBungaeService.swift */; };
+		DDC46B7D2752219F0015341E /* PasswordCheckData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B7C2752219F0015341E /* PasswordCheckData.swift */; };
+		DDC46B7F275222860015341E /* PasswordCheckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B7E275222860015341E /* PasswordCheckRequest.swift */; };
+		DDC46B81275222B80015341E /* PasswordCheckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC46B80275222B80015341E /* PasswordCheckService.swift */; };
 		DDC4DAE12741075700D79CC8 /* AreaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAE02741075700D79CC8 /* AreaData.swift */; };
 		DDC4DAE4274107D900D79CC8 /* AreaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4DAE3274107D900D79CC8 /* AreaService.swift */; };
 		DDC4DAE6274275E200D79CC8 /* ToastMessage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC4DAE5274275E200D79CC8 /* ToastMessage.storyboard */; };
@@ -378,6 +381,9 @@
 		DDC46B75275169C00015341E /* MakeBungaeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBungaeRequest.swift; sourceTree = "<group>"; };
 		DDC46B772751D0340015341E /* PickerBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerBtn.swift; sourceTree = "<group>"; };
 		DDC46B792751E5140015341E /* MakeBungaeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBungaeService.swift; sourceTree = "<group>"; };
+		DDC46B7C2752219F0015341E /* PasswordCheckData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCheckData.swift; sourceTree = "<group>"; };
+		DDC46B7E275222860015341E /* PasswordCheckRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCheckRequest.swift; sourceTree = "<group>"; };
+		DDC46B80275222B80015341E /* PasswordCheckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCheckService.swift; sourceTree = "<group>"; };
 		DDC4DAE02741075700D79CC8 /* AreaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaData.swift; sourceTree = "<group>"; };
 		DDC4DAE3274107D900D79CC8 /* AreaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaService.swift; sourceTree = "<group>"; };
 		DDC4DAE5274275E200D79CC8 /* ToastMessage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToastMessage.storyboard; sourceTree = "<group>"; };
@@ -491,6 +497,7 @@
 		DD1BFC1E273663230042C51F /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				DDC46B7B275221750015341E /* PasswordCheck */,
 				DDC46B682750BCFC0015341E /* ToggleAlarm */,
 				DDC46B61274FAA1F0015341E /* Withdrawal */,
 				DDC4DB0427440EEC00D79CC8 /* SignIn */,
@@ -513,6 +520,7 @@
 				DDC4DB0227440E6700D79CC8 /* SignInService.swift */,
 				DDC46B5F274FA9F60015341E /* WithdrawalService.swift */,
 				DDC46B6B2750BD390015341E /* ToggleAlarmService.swift */,
+				DDC46B80275222B80015341E /* PasswordCheckService.swift */,
 				DD1BFC262736DC8C0042C51F /* InformationService.swift */,
 			);
 			path = Account;
@@ -1073,6 +1081,15 @@
 				DDC46B75275169C00015341E /* MakeBungaeRequest.swift */,
 			);
 			path = Bungae;
+			sourceTree = "<group>";
+		};
+		DDC46B7B275221750015341E /* PasswordCheck */ = {
+			isa = PBXGroup;
+			children = (
+				DDC46B7C2752219F0015341E /* PasswordCheckData.swift */,
+				DDC46B7E275222860015341E /* PasswordCheckRequest.swift */,
+			);
+			path = PasswordCheck;
 			sourceTree = "<group>";
 		};
 		DDC4DADF2741072B00D79CC8 /* Area */ = {
@@ -1650,11 +1667,13 @@
 				DD2D63B42726A8A0007CEC57 /* UITextField.swift in Sources */,
 				DDC46B4C274E4F0D0015341E /* MyActivityDetailVC.swift in Sources */,
 				DD295DA027181E3B008CFC64 /* AppDelegate.swift in Sources */,
+				DDC46B7F275222860015341E /* PasswordCheckRequest.swift in Sources */,
 				DD3E37CB2730182C00C4192E /* CrewDetailVC.swift in Sources */,
 				DDC4DB0627440EF700D79CC8 /* SignInData.swift in Sources */,
 				DD67283B27244CE3001E1355 /* AgreeVC.swift in Sources */,
 				DD3A30C4272ADF6200D711C6 /* SignUpUserInfo.swift in Sources */,
 				DDC4DB3027478B7200D79CC8 /* BungaeIntroduceCVCell.swift in Sources */,
+				DDC46B81275222B80015341E /* PasswordCheckService.swift in Sources */,
 				DD3A30EE272DAC4F00D711C6 /* ProfileVC.swift in Sources */,
 				DDE0EE5E2728740400C46821 /* SignUpKakaoCompleteVC.swift in Sources */,
 				DDE0EE5A2728164E00C46821 /* JoinAlertVC.swift in Sources */,
@@ -1662,6 +1681,7 @@
 				DD1BFC3927380C920042C51F /* CrewFilterVC.swift in Sources */,
 				DD3A30E0272DABC000D711C6 /* BungaeVC.swift in Sources */,
 				DD3ACBC8272170A800EBC201 /* SignUpCompleteVC.swift in Sources */,
+				DDC46B7D2752219F0015341E /* PasswordCheckData.swift in Sources */,
 				DDC46B63274FAA390015341E /* WithdrawalData.swift in Sources */,
 				DDC46B4E274E89E20015341E /* DatePickerBtn.swift in Sources */,
 				DD9EEDDA273FFE9B00E02396 /* CrewSearchCVCell.swift in Sources */,
