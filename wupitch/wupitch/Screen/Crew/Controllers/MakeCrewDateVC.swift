@@ -306,9 +306,10 @@ extension MakeCrewDateVC : DatePickerDelegate {
             default:
                 break
             }
-            
             if value == false {
                 showToast(message: "종료시간이 시작시간보다 늦어야 해요!")
+                btn.status = false
+                btn.grayDatePickerBtn()
             }
             else {
                 btn.status = true

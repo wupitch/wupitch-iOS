@@ -14,6 +14,9 @@ class MakeBungaeMoneyVC: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var nextBtn: NextBtn!
     @IBOutlet weak var titleLabel: LabelFontSize!
+    
+    lazy var makeBungaeDataManager = MakeBungaeService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -83,10 +86,12 @@ class MakeBungaeMoneyVC: UIViewController {
     
     @IBAction func touchUpNextBtn(_ sender: Any) {
         if nextBtn.backgroundColor == .main {
-            let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewGuest", bundle: nil)
-            if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewGuestVC") as? MakeCrewGuestVC {
-                navigationController?.pushViewController(dvc, animated: true)
-            }
+            SignUpUserInfo.shared.bungaeDues = Int(titleTextField.text ?? "") ?? nil
+            print("참여비 >>>>>>>>>>>>>",SignUpUserInfo.shared.bungaeDues)
+            
+            makeBungaeDataManager.postMakeBungae(MakeBungaeRequest(areaID: SignUpUserInfo.shared.bungaeSelectAreaId ?? -99, location: SignUpUserInfo.shared.bungaeLocation ?? "", date: SignUpUserInfo.shared.bungaeDate ?? "", startTime: SignUpUserInfo.shared.bungaeStartTime ?? 0.0, endTime: SignUpUserInfo.shared.bungaeEndTime ?? 0.0, title: SignUpUserInfo.shared.bungaeTitle ?? "", introduction: SignUpUserInfo.shared.bungaeIntroduction ?? "", inquiries: SignUpUserInfo.shared.bungaeInquiries ?? "", materials: SignUpUserInfo.shared.bungaeMaterials ?? "", recruitmentCount: SignUpUserInfo.shared.bungaeCount ?? -99, dues: SignUpUserInfo.shared.bungaeDues ?? -99), delegate: self)
+            
+            print("제대로 나오나 확인", SignUpUserInfo.shared.bungaeSelectAreaId ?? -99, SignUpUserInfo.shared.bungaeLocation ?? "", SignUpUserInfo.shared.bungaeDate ?? "", SignUpUserInfo.shared.bungaeStartTime ?? 0.0, SignUpUserInfo.shared.bungaeEndTime ?? 0.0, SignUpUserInfo.shared.bungaeTitle ?? "", SignUpUserInfo.shared.bungaeIntroduction ?? "", SignUpUserInfo.shared.bungaeInquiries ?? "", SignUpUserInfo.shared.bungaeMaterials ?? "", SignUpUserInfo.shared.bungaeCount ?? -99, SignUpUserInfo.shared.bungaeDues ?? -99 )
         }
         else {
             nextBtn.backgroundColor = .gray03
@@ -128,7 +133,62 @@ extension MakeBungaeMoneyVC : UITextFieldDelegate {
         }
         return true
     }
+}
+
+// MARK: - 번개 생성 api
+extension MakeBungaeMoneyVC {
+    func didSuccessMakeBungae(result: MakeBungaeResult) {
+        print("요청에 성공하셨습니다.")
+        print(result.impromptuID)
+    }
+//        let url = "https://prod.wupitch.site/app/clubs/image"
+//
+//        var header : HTTPHeaders = []
+//
+//        if let token = UserDefaults.standard.string(forKey: "userToken") {
+//            header = ["Content-Type":"multipart/form-data", "X-ACCESS-TOKEN": token]
+//        }
+//        let crewId = String(result.clubID)
+//
+//        let userImage = SignUpUserInfo.shared.photo
+//
+//        AF.upload(
+//            multipartFormData: { MultipartFormData in
+//
+//                if((userImage) != nil) {
+//                    MultipartFormData.append(userImage!.jpegData(compressionQuality: 0.025)! ,withName: "images", fileName: "imageNew.jpeg", mimeType: "image/jpeg")
+//                    print("사진 잘 들어오나 확인 >>>>>", userImage!)
+//                    MultipartFormData.append(Data(crewId.utf8), withName: "crewId")
+//                }
+//            }, to: url, method: .patch, headers: header).uploadProgress(queue: .main) { progress in
+//
+//                print("Upload Progress: \(progress.fractionCompleted)")
+//            }.responseJSON { data in
+//                switch data.result {
+//                case .success(let response):
+//                    print("데이터가 성공적으로 들어왔어요", response)
+//
+//                    guard let viewControllerStack = self.navigationController?.viewControllers else { return }
+//                    // 뷰 스택에서 crewVC를 찾아서 거기까지 pop 합니다. 후에 crewDetailVC를 찾아서 push 합니다.
+//                    for viewController in viewControllerStack {
+//                        if let crewVC = viewController as? CrewVC {
+//                            self.tabBarController?.tabBar.isHidden = false
+//                            self.navigationController?.popToViewController(crewVC, animated: true)
+//
+//                            let storyBoard: UIStoryboard = UIStoryboard(name: "CrewDetail", bundle: nil)
+//                            if let dvc = storyBoard.instantiateViewController(withIdentifier: "CrewDetailVC") as? CrewDetailVC {
+//                                self.navigationController?.pushViewController(dvc, animated: true)
+//                            }
+//                        }
+//                    }
+//
+//                case .failure(let error):
+//                    print(error.localizedDescription)
+//                }
+//            }
+//    }
     
-
-
+    func failedToRequest(message: String) {
+        print("데이터가 들어오지 않습니다.")
+    }
 }

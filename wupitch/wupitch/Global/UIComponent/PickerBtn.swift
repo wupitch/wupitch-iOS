@@ -1,17 +1,16 @@
 //
-//  datePickerBtn.swift
+//  PickerBtn.swift
 //  wupitch
 //
-//  Created by 김수정 on 2021/11/24.
+//  Created by 김수정 on 2021/11/27.
 //
 
 import Foundation
 import UIKit
 
-class DatePickerBtn : UIButton {
+class PickerBtn : UIButton {
     
-    var datePickerDelegate : DatePickerDelegate?
-    var timeLabel : Double?
+    var pickerDelegate : PickerDelegate?
     var status : Bool = false {
         didSet {
             status ? colorDatePickerBtn() : grayDatePickerBtn()
@@ -34,10 +33,10 @@ class DatePickerBtn : UIButton {
     }
 }
 
-extension DatePickerBtn {
+extension PickerBtn {
     private func defaultDatePickerBtn() {
         self.setTitleColor(UIColor.gray02, for: .normal)
-        self.setTitle("00:00", for: .normal)
+        self.setTitle("0000-00-00", for: .normal)
         self.makeRounded(cornerRadius: 8.adjusted)
         self.layer.borderWidth = 1.adjusted
         self.layer.borderColor = UIColor.gray02.cgColor
@@ -47,7 +46,7 @@ extension DatePickerBtn {
     }
     
     @objc func touchUp() {
-        datePickerDelegate?.clickDatePicker(btn: self)
+        pickerDelegate?.clickPicker(btn: self)
         
     }
     
@@ -58,7 +57,7 @@ extension DatePickerBtn {
     
     func grayDatePickerBtn() {
         self.setTitleColor(UIColor.gray02, for: .normal)
-        self.setTitle("00:00", for: .normal)
+        self.setTitle("0000-00-00", for: .normal)
         self.layer.borderColor = UIColor.gray02.cgColor
     }
     
@@ -90,7 +89,7 @@ extension DatePickerBtn {
     }
 }
 
-protocol DatePickerDelegate {
-    func clickDatePicker(btn:DatePickerBtn)
+protocol PickerDelegate {
+    func clickPicker(btn:PickerBtn)
 }
 

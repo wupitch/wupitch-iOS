@@ -162,13 +162,14 @@ class MakeCrewPhotoVC: UIViewController {
     @IBAction func touchUpNextBtn(_ sender: Any) {
         if nextBtn.backgroundColor == .main {
             
-            // 크루이름
+            // 크루제목
             SignUpUserInfo.shared.title = titleTextField.text
             // 크루소개
             SignUpUserInfo.shared.crewInfo = crewInfoTextView.text
             // 문의처
             SignUpUserInfo.shared.question = questionTextView.text
             
+            // 크루준비물
             if materialsTextView.textColor != .bk {
                 SignUpUserInfo.shared.materials = nil
             }

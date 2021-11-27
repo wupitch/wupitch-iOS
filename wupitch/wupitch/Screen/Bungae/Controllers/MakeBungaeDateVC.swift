@@ -9,21 +9,187 @@ import UIKit
 
 class MakeBungaeDateVC: UIViewController {
 
+    @IBOutlet weak var titleLabel: LabelFontSize!
+    @IBOutlet weak var nextBtn: NextBtn!
+    @IBOutlet weak var toastView: UIView!
+    @IBOutlet weak var toastMessageLabel: UILabel!
+    @IBOutlet var betweenLabels: UILabel!
+    @IBOutlet var endTimeBtns: DatePickerBtn!
+    @IBOutlet var startTimeBtns: DatePickerBtn!
+    @IBOutlet var dateBtns: PickerBtn!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        dateBtns.pickerDelegate = self
+        startTimeBtns.datePickerDelegate = self
+        endTimeBtns.datePickerDelegate = self
+
+        toastView.alpha = 0.0
+        //betweenLabels.textColor = .gray02
+
+        titleLabel.titleLabelFontSize()
+        toastView.makeRounded(cornerRadius: 16.adjusted)
+        toastMessageLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
+    }
+
+    // 토스트 메시지
+    func showToast(message:String) {
+        toastMessageLabel.text = message
+        self.toastView?.alpha = 1.0
+        UIView.animate(withDuration: 4.0, delay: 0.01, animations: {
+            self.toastView.alpha = 0.0
+        }, completion: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func check() {
+        if dateBtns.status == true {
+            // true
+            if startTimeBtns.status == true && endTimeBtns.status == true {
+                nextBtn.backgroundColor = .main
+            }
+        } else {
+            // false
+            nextBtn.backgroundColor = .gray03
+            return
+        }
+        
+        if startTimeBtns.status == true && endTimeBtns.status == true {
+            // true
+            if dateBtns.status == true {
+                nextBtn.backgroundColor = .main
+            }
+        } else {
+            // false
+            nextBtn.backgroundColor = .gray03
+            return
+        }
     }
-    */
+    
+    @IBAction func touchUpBackBtn(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func touchUpCancelBtn(_ sender: Any) {
+        
+    }
+    
+    @IBAction func touchUpNextBtn(_ sender: Any) {
+        if nextBtn.backgroundColor == .main {
+            // 날짜
+            SignUpUserInfo.shared.bungaeDate = dateBtns.titleLabel?.text
+            // 시간
+            SignUpUserInfo.shared.bungaeStartTime = startTimeBtns.stringToDouble()
+            SignUpUserInfo.shared.bungaeEndTime = endTimeBtns.stringToDouble()
+            
+            print("날짜 및 시간 >>>>>>>>> ", SignUpUserInfo.shared.bungaeDate, SignUpUserInfo.shared.bungaeStartTime, SignUpUserInfo.shared.bungaeEndTime)
+            let storyBoard: UIStoryboard = UIStoryboard(name: "MakeBungaePhoto", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeBungaePhotoVC") as? MakeBungaePhotoVC {
+                self.navigationController?.pushViewController(dvc, animated: true)
+            }
+        }
+        else {
+            nextBtn.backgroundColor = .gray03
+        }
+    }
+}
 
+extension MakeBungaeDateVC : DatePickerDelegate {
+    func clickDatePicker(btn: DatePickerBtn) {
+        let alertVC = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .time
+        datePicker.minuteInterval = 15
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        } else {
+            // Fallback on earlier versions
+        }
+        datePicker.locale = Locale(identifier: "en_GB")
+        alertVC.view.addSubview(datePicker)
+        alertVC.view.heightAnchor.constraint(equalToConstant: 350).isActive = true
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
+        datePicker.leadingAnchor.constraint(equalTo: alertVC.view.leadingAnchor).isActive = true
+        datePicker.trailingAnchor.constraint(equalTo: alertVC.view.trailingAnchor).isActive = true
+        datePicker.topAnchor.constraint(equalTo: alertVC.view.topAnchor, constant: 10).isActive = true
+        datePicker.bottomAnchor.constraint(equalTo: alertVC.view.bottomAnchor, constant: -120).isActive = true
+        
+        let okAction = UIAlertAction(title: "확인", style: .default) { [self] _ in
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
+            let dateString = dateFormatter.string(from: datePicker.date)
+            
+            var value = true
+            switch btn {
+                
+            case startTimeBtns :
+                if endTimeBtns.status {
+                    value = endTimeBtns.doubleDatePicker(secondDate: dateString, location: true)
+                }
+                
+            case endTimeBtns :
+                value = startTimeBtns.doubleDatePicker(secondDate: dateString, location: false)
+                //betweenLabels.textColor = .main
+                
+            default:
+                break
+            }
+            
+            if value == false {
+                showToast(message: "종료시간이 시작시간보다 늦어야 해요!")
+            }
+            else {
+                btn.status = true
+                btn.setTitle(dateString, for: .normal)
+                check()
+            }
+        }
+        alertVC.addAction(okAction)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        alertVC.addAction(cancelAction)
+        
+        present(alertVC, animated: true, completion: nil)
+    }
+}
+
+extension MakeBungaeDateVC : PickerDelegate {
+    func clickPicker(btn: PickerBtn) {
+        let alertVC = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        } else {
+            // Fallback on earlier versions
+        }
+        datePicker.locale = Locale(identifier: "ko")
+        alertVC.view.addSubview(datePicker)
+        alertVC.view.heightAnchor.constraint(equalToConstant: 350).isActive = true
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
+        datePicker.leadingAnchor.constraint(equalTo: alertVC.view.leadingAnchor).isActive = true
+        datePicker.trailingAnchor.constraint(equalTo: alertVC.view.trailingAnchor).isActive = true
+        datePicker.topAnchor.constraint(equalTo: alertVC.view.topAnchor, constant: 10).isActive = true
+        datePicker.bottomAnchor.constraint(equalTo: alertVC.view.bottomAnchor, constant: -120).isActive = true
+        
+        let okAction = UIAlertAction(title: "확인", style: .default) { [self] _ in
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let dateString = dateFormatter.string(from: datePicker.date)
+            var value = true
+            
+            if value == false {
+                print("벨류가 펄스다")
+            }
+            else {
+                btn.status = true
+                btn.setTitle(dateString, for: .normal)
+                check()
+            }
+        }
+        alertVC.addAction(okAction)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        alertVC.addAction(cancelAction)
+        
+        present(alertVC, animated: true, completion: nil)
+    }
 }

@@ -92,12 +92,14 @@ class MakeBungaeRegionVC: UIViewController {
             for i in 0...25 {
                 if regionTextField.text == SignUpUserInfo.shared.areaName?[i] {
                      // 값을 싱글톤에 저장
-                    SignUpUserInfo.shared.selectAreaPicker = SignUpUserInfo.shared.areas?[i]
-                     print("지역id >>>>>>>>>>", SignUpUserInfo.shared.selectAreaPicker!)
+                    SignUpUserInfo.shared.bungaeSelectAreaId = SignUpUserInfo.shared.areas?[i]
+                     print("지역id >>>>>>>>>>", SignUpUserInfo.shared.bungaeSelectAreaId!)
                 }
             }
-            let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewInfo", bundle: nil)
-            if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewInfoVC") as? MakeCrewInfoVC {
+            SignUpUserInfo.shared.bungaeLocation = placeTextField.text
+            print("장소 >>>>>>>>>>>",SignUpUserInfo.shared.bungaeLocation)
+            let storyBoard: UIStoryboard = UIStoryboard(name: "MakeBungaeDate", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeBungaeDateVC") as? MakeBungaeDateVC {
                 navigationController?.pushViewController(dvc, animated: true)
             }
         }

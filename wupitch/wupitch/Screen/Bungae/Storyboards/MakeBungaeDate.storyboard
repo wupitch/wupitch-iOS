@@ -16,9 +16,171 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bm2-hT-qsM">
+                                <rect key="frame" x="16" y="54" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="Igy-70-uE0"/>
+                                    <constraint firstAttribute="height" constant="24" id="aro-pC-yVa"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="left"/>
+                                <connections>
+                                    <action selector="touchUpBackBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="rEu-PA-jdk"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="번개 만들기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9R-RV-2qi" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
+                                <rect key="frame" x="168" y="56" width="78" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ax-oF-Nwo">
+                                <rect key="frame" x="374" y="54" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="HlQ-zs-AbG"/>
+                                    <constraint firstAttribute="height" constant="24" id="pQI-mm-l4u"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="touchUpCancelBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cl5-38-vXv"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKa-zE-mfm">
+                                <rect key="frame" x="0.0" y="87" width="414" height="1"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="sgj-lT-0G2"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜와 시간은 언제인가요?" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mw8-te-nke" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
+                                <rect key="frame" x="20" y="120" width="93" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dx9-SV-4D1" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
+                                <rect key="frame" x="20" y="273" width="29.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhh-EN-KhK" customClass="NextBtn" customModule="wupitch" customModuleProvider="target">
+                                <rect key="frame" x="20" y="798" width="375" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="030-gS-zpu"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="다음 (2/5)"/>
+                                <connections>
+                                    <action selector="touchUpNextBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Kul-wg-DIN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQp-KR-uas" customClass="PickerBtn" customModule="wupitch" customModuleProvider="target">
+                                <rect key="frame" x="20" y="193" width="160" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="5NJ-Ih-9sZ"/>
+                                    <constraint firstAttribute="width" secondItem="iQp-KR-uas" secondAttribute="height" multiplier="160:48" id="nML-Gq-ALB"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="0000.00.00 (월)"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="AJV-OY-9ag">
+                                <rect key="frame" x="20" y="305.5" width="222" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYa-VM-Hnn" customClass="DatePickerBtn" customModule="wupitch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="104" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="ako-BQ-tGz"/>
+                                            <constraint firstAttribute="width" secondItem="MYa-VM-Hnn" secondAttribute="height" multiplier="104:48" id="bfy-4I-gJX"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="00:00"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mr9-gM-4Z8">
+                                        <rect key="frame" x="107" y="0.0" width="8" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Gv-bN-wAX" customClass="DatePickerBtn" customModule="wupitch" customModuleProvider="target">
+                                        <rect key="frame" x="118" y="0.0" width="104" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="DXD-br-uD0"/>
+                                            <constraint firstAttribute="width" secondItem="2Gv-bN-wAX" secondAttribute="height" multiplier="104:48" id="sSn-A0-3DN"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="00:00"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FSq-7T-0M2">
+                                <rect key="frame" x="28" y="697" width="359" height="81"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image79" translatesAutoresizingMaskIntoConstraints="NO" id="jLS-TB-irZ">
+                                        <rect key="frame" x="16" y="28.5" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="4yv-gS-lfa"/>
+                                            <constraint firstAttribute="height" constant="24" id="xp6-fe-hyP"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="종료시간이 시작시간보다 늦어야 해요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5TZ-wA-JgL">
+                                        <rect key="frame" x="52" y="30.5" width="253.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="5TZ-wA-JgL" firstAttribute="leading" secondItem="jLS-TB-irZ" secondAttribute="trailing" constant="12" id="IzY-kh-Jq5"/>
+                                    <constraint firstItem="jLS-TB-irZ" firstAttribute="centerY" secondItem="FSq-7T-0M2" secondAttribute="centerY" id="Xne-VM-5z6"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="72" id="bEV-jR-PqL"/>
+                                    <constraint firstItem="jLS-TB-irZ" firstAttribute="leading" secondItem="FSq-7T-0M2" secondAttribute="leading" constant="16" id="eyC-1u-4OE"/>
+                                    <constraint firstItem="5TZ-wA-JgL" firstAttribute="centerY" secondItem="jLS-TB-irZ" secondAttribute="centerY" id="tia-vY-Rpi"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GKa-zE-mfm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="1dK-3n-9kE"/>
+                            <constraint firstItem="FSq-7T-0M2" firstAttribute="width" secondItem="FSq-7T-0M2" secondAttribute="height" multiplier="320:72" id="1iG-wJ-SzP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="uhh-EN-KhK" secondAttribute="bottom" constant="12" id="5vr-Wk-YpD"/>
+                            <constraint firstItem="uhh-EN-KhK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="9ZW-cL-P0W"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="FSq-7T-0M2" secondAttribute="trailing" constant="27" id="9zb-DZ-BO7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="GKa-zE-mfm" secondAttribute="trailing" id="Af5-VL-6lr"/>
+                            <constraint firstItem="iQp-KR-uas" firstAttribute="top" secondItem="mw8-te-nke" secondAttribute="bottom" constant="32" id="FZM-SY-5Mc"/>
+                            <constraint firstItem="AJV-OY-9ag" firstAttribute="leading" secondItem="Dx9-SV-4D1" secondAttribute="leading" id="HvQ-2L-gSl"/>
+                            <constraint firstItem="Dx9-SV-4D1" firstAttribute="top" secondItem="iQp-KR-uas" secondAttribute="bottom" constant="32" id="Isz-sh-Z2h"/>
+                            <constraint firstItem="iQp-KR-uas" firstAttribute="leading" secondItem="mw8-te-nke" secondAttribute="leading" id="JNA-7Q-Br2"/>
+                            <constraint firstItem="I9R-RV-2qi" firstAttribute="centerY" secondItem="Bm2-hT-qsM" secondAttribute="centerY" id="Q1j-k9-f26"/>
+                            <constraint firstItem="GKa-zE-mfm" firstAttribute="top" secondItem="Bm2-hT-qsM" secondAttribute="bottom" constant="9" id="RUT-OO-Bkd"/>
+                            <constraint firstItem="mw8-te-nke" firstAttribute="top" secondItem="GKa-zE-mfm" secondAttribute="bottom" constant="32" id="SkX-Cg-jl9"/>
+                            <constraint firstItem="Bm2-hT-qsM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="VD4-wp-g0G"/>
+                            <constraint firstItem="uhh-EN-KhK" firstAttribute="top" secondItem="FSq-7T-0M2" secondAttribute="bottom" constant="20" id="WeZ-Px-EjB"/>
+                            <constraint firstItem="FSq-7T-0M2" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="28" id="X7P-NM-6Ua"/>
+                            <constraint firstItem="AJV-OY-9ag" firstAttribute="top" secondItem="Dx9-SV-4D1" secondAttribute="bottom" constant="12" id="a8j-ij-y7V"/>
+                            <constraint firstItem="4Ax-oF-Nwo" firstAttribute="centerY" secondItem="I9R-RV-2qi" secondAttribute="centerY" id="hhD-Jb-M2C"/>
+                            <constraint firstItem="Bm2-hT-qsM" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="kfH-zy-LTE"/>
+                            <constraint firstItem="I9R-RV-2qi" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="l7O-Qr-fat"/>
+                            <constraint firstItem="Dx9-SV-4D1" firstAttribute="leading" secondItem="iQp-KR-uas" secondAttribute="leading" id="sBq-1f-maJ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="uhh-EN-KhK" secondAttribute="trailing" constant="19" id="vaN-eE-AUi"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4Ax-oF-Nwo" secondAttribute="trailing" constant="16" id="wFC-MY-NbG"/>
+                            <constraint firstItem="mw8-te-nke" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="zrJ-OC-Tbt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateBtns" destination="iQp-KR-uas" id="p24-ab-NF9"/>
+                        <outlet property="endTimeBtns" destination="2Gv-bN-wAX" id="NFF-uI-Tmk"/>
+                        <outlet property="nextBtn" destination="uhh-EN-KhK" id="E58-S9-iYP"/>
+                        <outlet property="startTimeBtns" destination="MYa-VM-Hnn" id="DFY-z3-4Gk"/>
+                        <outlet property="titleLabel" destination="mw8-te-nke" id="7nw-ab-Hu2"/>
+                        <outlet property="toastMessageLabel" destination="5TZ-wA-JgL" id="qvp-rL-gBJ"/>
+                        <outlet property="toastView" destination="FSq-7T-0M2" id="YKB-ZE-4Az"/>
+                        <outletCollection property="betweenLabels" destination="Mr9-gM-4Z8" collectionClass="NSMutableArray" id="Afw-T5-Xxg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -26,6 +188,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="close" width="24" height="24"/>
+        <image name="image79" width="24" height="24"/>
+        <image name="left" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

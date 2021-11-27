@@ -44,8 +44,8 @@ class BungaeVC: BaseVC {
     }
     
     @objc private func screenDidTap(_ gesture: UITapGestureRecognizer) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewSports", bundle: nil)
-        if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewSportsVC") as? MakeCrewSportsVC {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "MakeBungaeRegion", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeBungaeRegionVC") as? MakeBungaeRegionVC {
             self.tabBarController?.tabBar.isHidden = true
             navigationController?.pushViewController(dvc, animated: true)
         }

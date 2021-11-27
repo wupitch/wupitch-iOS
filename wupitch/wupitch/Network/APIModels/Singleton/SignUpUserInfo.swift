@@ -52,6 +52,23 @@ class SignUpUserInfo {
     
     // -----------------------
     
+    // 번개생성에 한번에 넣어줄 값
+    // 지역
+    var bungaeSelectAreaId : Int?
+    var bungaeLocation : String?
+    // 날짜,시간
+    var bungaeDate : String?
+    var bungaeStartTime : Double?
+    var bungaeEndTime : Double?
+    // 사진부분
+    var bungaeTitle, bungaeIntroduction, bungaeInquiries, bungaeMaterials :  String?
+    var bungaePhoto : UIImage?
+    //모집인원
+    var bungaeCount : Int?
+    // 참여비
+    var bungaeDues : Int?
+    
+    // ---------------------
     
     
     // 스포츠 조회에 넣을 싱글톤 -> id값

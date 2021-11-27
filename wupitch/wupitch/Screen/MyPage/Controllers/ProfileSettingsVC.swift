@@ -37,6 +37,10 @@ class ProfileSettingsVC: UIViewController {
     // 스위치 버튼
     @IBAction func touchUpAlertSwitchBtn(_ sender: Any) {
         toggleAlarmDataManager.patchToggleAlarm(delegate: self)
+        
+        // 데이터가 성공적으로 들어오면 토글 버튼을 유저 디폴트에 저장
+        UserDefaults.standard.set(alertSwitch.isOn, forKey: "isPushAgree")
+        print("푸시동의알림",UserDefaults.standard.bool(forKey: "isPushAgree"))
     }
     
     // 비밀번호 변경 버튼
@@ -79,9 +83,6 @@ extension ProfileSettingsVC {
         print("데이터가 성공적으로 들어왔습니다.")
         print(result.isSuccess)
         
-//        UserDefaults.standard.set(alertSwitch.isOn, forKey: "")
-        
-        alertSwitch.isOn = UserDefaults.standard.bool(forKey: "isPushAgree")
     }
     
     func failedToRequest(message: String) {

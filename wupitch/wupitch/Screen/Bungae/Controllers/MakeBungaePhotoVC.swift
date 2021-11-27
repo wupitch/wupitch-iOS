@@ -35,11 +35,13 @@ class MakeBungaePhotoVC: UIViewController {
         setStyle()
         placeholderSetting()
         tapGesture()
-        //Info.shared.sports.primaryKey = "dfjslf"
-        //Info.shared.sports.basicImage = Const.soccer
-        
+        setBasicImage()
     }
    
+    private func setBasicImage() {
+        basicImage = UIImage(named: "imgBungaeThumb")
+    }
+    
     private func setStyle() {
         titleTextField.delegate = self
         picker.delegate = self
@@ -91,10 +93,10 @@ class MakeBungaePhotoVC: UIViewController {
     }
     
     func checkInfoIsFilled() {
-        if let _ = SignUpUserInfo.shared.crewInfo,
-           let _ = SignUpUserInfo.shared.question,
-           let _ = SignUpUserInfo.shared.title,
-           let _ = SignUpUserInfo.shared.photo {
+        if let _ = SignUpUserInfo.shared.bungaeIntroduction,
+           let _ = SignUpUserInfo.shared.bungaeInquiries,
+           let _ = SignUpUserInfo.shared.bungaeTitle,
+           let _ = SignUpUserInfo.shared.bungaePhoto {
             nextBtn.backgroundColor = .main
         } else {
             nextBtn.backgroundColor = .gray03
@@ -115,6 +117,9 @@ class MakeBungaePhotoVC: UIViewController {
         }
         let defaultImage = UIAlertAction(title: "기본 이미지 사용", style: .default) { [weak self] _ in
             self?.photoImageView.image = self?.basicImage
+            SignUpUserInfo.shared.bungaePhoto = self?.photoImageView.image
+            self?.imageLabel.isHidden = true
+            self?.plusImageVIew.isHidden = true
         }
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alert.addAction(library)
@@ -139,8 +144,26 @@ class MakeBungaePhotoVC: UIViewController {
     
     @IBAction func touchUpNextBtn(_ sender: Any) {
         if nextBtn.backgroundColor == .main {
-            let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewMoney", bundle: nil)
-            if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewMoneyVC") as? MakeCrewMoneyVC {
+            
+            // 번개제목
+            SignUpUserInfo.shared.bungaeTitle = titleTextField.text
+            // 번개소개
+            SignUpUserInfo.shared.bungaeIntroduction = crewInfoTextView.text
+            // 문의처
+            SignUpUserInfo.shared.bungaeInquiries = questionTextView.text
+            
+            // 번개준비물 (선택)
+            if materialsTextView.textColor != .bk {
+                SignUpUserInfo.shared.bungaeMaterials = nil
+            }
+            else {
+                SignUpUserInfo.shared.bungaeMaterials = materialsTextView.text
+            }
+            
+            print("번개이름, 번개소개, 번개준비물, 문의처 >>>>>>>>>>",SignUpUserInfo.shared.bungaeTitle ?? "이름이 없어요",SignUpUserInfo.shared.bungaeIntroduction ?? "소개가 없어요", SignUpUserInfo.shared.bungaeMaterials ?? "준비물이 없어요", SignUpUserInfo.shared.bungaeInquiries ?? "문의처가 없어요")
+            
+            let storyBoard: UIStoryboard = UIStoryboard(name: "MakeBungaeCount", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeBungaeCountVC") as? MakeBungaeCountVC {
                 navigationController?.pushViewController(dvc, animated: true)
             }
         }
@@ -158,15 +181,7 @@ extension MakeBungaePhotoVC: UITextViewDelegate, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let title = titleTextField.text {
-            SignUpUserInfo.shared.title = title.isEmpty ? nil : title
-//            if title.isEmpty {
-//                print("title is empty")
-//                SignUpUserInfo.shared.title = nil
-//            }
-//            else {
-//                print("타이틀이 비어잇지않을때")
-//                SignUpUserInfo.shared.title = title
-//            }
+            SignUpUserInfo.shared.bungaeTitle = title.isEmpty ? nil : title
         }
         else {
             print("엘스문")
@@ -190,27 +205,26 @@ extension MakeBungaePhotoVC: UITextViewDelegate, UITextFieldDelegate {
         if crewInfoTextView.text.isEmpty {
             crewInfoTextView.text = placeholder.0
             crewInfoTextView.textColor = .gray03
-            SignUpUserInfo.shared.crewInfo = nil
+            SignUpUserInfo.shared.bungaeIntroduction = nil
         } else {
             if crewInfoTextView.text != placeholder.0 {
-                SignUpUserInfo.shared.crewInfo = crewInfoTextView.text
+                SignUpUserInfo.shared.bungaeIntroduction = crewInfoTextView.text
             }
         }
-        
-        
+    
         if materialsTextView.text.isEmpty {
             materialsTextView.text = placeholder.1
             materialsTextView.textColor = .gray03
-            SignUpUserInfo.shared.materials = nil
+            SignUpUserInfo.shared.bungaeMaterials = nil
         }
         
         if questionTextView.text.isEmpty {
             questionTextView.text = placeholder.2
             questionTextView.textColor = .gray03
-            SignUpUserInfo.shared.question = nil
+            SignUpUserInfo.shared.bungaeInquiries = nil
         } else {
             if questionTextView.text != placeholder.2 {
-                SignUpUserInfo.shared.question = questionTextView.text
+                SignUpUserInfo.shared.bungaeInquiries = questionTextView.text
             }
         }
         checkInfoIsFilled()
@@ -258,7 +272,7 @@ extension MakeBungaePhotoVC : UIImagePickerControllerDelegate, UINavigationContr
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         {
             photoImageView.image = image
-            SignUpUserInfo.shared.photo = photoImageView.image
+            SignUpUserInfo.shared.bungaePhoto = photoImageView.image
             print(info)
             imageLabel.isHidden = true
             plusImageVIew.isHidden = true
@@ -266,7 +280,7 @@ extension MakeBungaePhotoVC : UIImagePickerControllerDelegate, UINavigationContr
             checkInfoIsFilled()
         }
         else {
-            SignUpUserInfo.shared.photo = nil
+            SignUpUserInfo.shared.bungaePhoto = nil
         }
         dismiss(animated: true, completion: nil)
     }

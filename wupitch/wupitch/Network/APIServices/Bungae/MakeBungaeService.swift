@@ -1,20 +1,19 @@
 //
-//  ToggleAlarmService.swift
+//  MakeBungaeService.swift
 //  wupitch
 //
-//  Created by 김수정 on 2021/11/26.
+//  Created by 김수정 on 2021/11/27.
 //
 
 import Foundation
 import Alamofire
 
-// 알림 동의 변경 API
-struct ToggleAlarmService {
-    static let shared = ToggleAlarmService()
+struct MakeBungaeService {
+    static let shared = MakeBungaeService()
     
-    let url = "https://prod.wupitch.site/app/accounts/toggle-alarm-info"
+    let url = "https://prod.wupitch.site/app/impromptus"
     
-    func patchToggleAlarm(delegate: ProfileSettingsVC) {
+    func postMakeBungae(_ parameters: MakeBungaeRequest, delegate: MakeBungaeMoneyVC) {
         
         var header : HTTPHeaders = []
         
@@ -25,20 +24,22 @@ struct ToggleAlarmService {
             header = ["Content-Type":"application/json"]
         }
         
-        AF.request(url, method: .patch, encoding: JSONEncoding.default, headers: header)
+        AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: header)
 //                            .responseString(completionHandler: { response in
 //                                print("response",response.result)
-//                                                }
-            .responseDecodable(of: ToggleAlarmData.self, emptyResponseCodes: [200, 204, 205]) { response in
+//                            }
+            .responseDecodable(of: MakeBungaeData.self, emptyResponseCodes: [200, 204, 205]) { response in
+                print(url)
+                print("????")
                 print("response",response)
                 switch response.result {
                 case .success(let response):
-                    delegate.didSuccessToggleAlarm(result: response)
+                    delegate.didSuccessMakeBungae(result: response.result)
                 case .failure(let error):
                     print("오류가 났습니다",error.localizedDescription)
                     delegate.failedToRequest(message: "오류가났습니다.")
                 }
             }
-//        )
+//                                )
     }
 }
