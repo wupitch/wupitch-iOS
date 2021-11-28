@@ -9,10 +9,17 @@ import UIKit
 
 class DetailCrewTitleCVCell: UICollectionViewCell {
 
-    @IBOutlet weak var moneyLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var bottomDateLabel: UILabel!
-    @IBOutlet weak var topDateLabel: UILabel!
+    
+    @IBOutlet var money: [UILabel]!
+    @IBOutlet var moneyLabel: [UILabel]!
+    
+    @IBOutlet var dayLabel: [UILabel]!
+    @IBOutlet var startImeLabel: [UILabel]!
+    @IBOutlet var betweenLabel: [UILabel]!
+    
+    @IBOutlet var endTimeLabel: [UILabel]!
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tagLabel: UILabel!
     @IBOutlet weak var tagView: UIView!
@@ -27,6 +34,7 @@ class DetailCrewTitleCVCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setStyle()
+        
     }
     
     private func setStyle() {

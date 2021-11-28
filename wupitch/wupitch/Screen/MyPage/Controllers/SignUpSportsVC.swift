@@ -20,12 +20,14 @@ class SignUpSportsVC: UIViewController {
     var etcTextFieldState : Bool?
     var etcBtnState : Bool?
     lazy var memberSportsDataManager = MemberSportsService()
+    lazy var informationDataManager = InformationService()
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
         memberSportsDataManager.getMemberSports(delegate: self)
+        
     }
     
     // set style
@@ -52,7 +54,10 @@ class SignUpSportsVC: UIViewController {
     // 다음 버튼
     @IBAction func touchUpNextBtn(_ sender: Any) {
         if nextBtn.backgroundColor == .main {
-            //SignUpUserInfo.shared.sportsList
+            
+//            informationDataManager.patchInformation(InformationRequest(sportsList: [0,1,2], otherSports: "", ageNum: nil, nickname: "", introduce: nil, phoneNumber: nil), delegate: self)
+            
+            
             let storyboard = UIStoryboard.init(name: "SignUpAge", bundle: nil)
             guard let dvc = storyboard.instantiateViewController(identifier: "SignUpAgeVC") as? SignUpAgeVC else {return}
             self.navigationController?.pushViewController(dvc, animated: true)
@@ -65,7 +70,7 @@ class SignUpSportsVC: UIViewController {
 //            print("등산버튼:", SignUpUserInfo.shared.sportsList[4])
 //            print("런닝버튼:", SignUpUserInfo.shared.sportsList[5])
 //            print("기타버튼:", SignUpUserInfo.shared.sportsList[6])
-            print("기타글씨:", SignUpUserInfo.shared.etcText ?? "값없음")
+//            print("기타글씨:", SignUpUserInfo.shared.etcText ?? "값없음")
         }
         else {
             nextBtn.backgroundColor = .gray03
@@ -223,16 +228,22 @@ extension SignUpSportsVC {
         print("데이터가 성공적으로 들어왔습니다.")
         // 스포츠 리스트의 값이 있을 때
         if result.list.isEmpty != true {
-            for i in 0...5 {
+            for i in 0...5 {sportBtns
                 sportBtns[i].colorSportsBtn()
             }
         }
         else {
             print("선택한 값이 없어요!")
         }
-        
     }
+    
+    // 회원 수정 에이피아이
+    func didSuccessInformation(result: InformationData) {
+        print("값이 성공적으로 들어왔습니다.")
+    }
+    
     func failedToRequest(message: String) {
         print("데이터가 들어오지 않았습니다.")
     }
 }
+

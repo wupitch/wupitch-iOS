@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>ko_KR</string>
-	<key>NSCameraUsageDescription</key>
-	<string>저희 앱은 사용자의 카메라를 사용합니다.</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -41,5 +37,9 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 </dict>
 </plist>

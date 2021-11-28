@@ -1,34 +1,40 @@
-//
-//  CrewDetailData.swift
-//  wupitch
-//
-//  Created by 김수정 on 2021/11/28.
-//
+
 
 import Foundation
 
-// MARK: - CrewDetailData
-struct CrewDetailData: Codable {
+// MARK: - Welcome
+struct AA: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String
-    let result: CrewDetailResult
+    let result: Result
 }
 
-// MARK: - CrewDetailResult
-struct CrewDetailResult: Codable {
+// MARK: - Result
+struct Result: Codable {
+    let content: [Content]
+    let pageable: Pageable
+    let totalPages, totalElements: Int
+    let last: Bool
+    let size, number: Int
+    let sort: Sort
+    let numberOfElements: Int
+    let first, empty: Bool
+}
+
+// MARK: - Content
+struct Content: Codable {
     let clubID, sportsID: Int
-    let sportsName, areaName, clubTitle, crewName: String
-    let dues, guestDues, memberCount: Int
-    let extraList, ageTable: [String]
-    let introduction: String
+    let sportsName, clubTitle, introduction: String
     let schedules: [Schedule]
     let crewImage: JSONNull?
+    let isPinUp: Bool
+    let areaName: String
 
     enum CodingKeys: String, CodingKey {
         case clubID = "clubId"
         case sportsID = "sportsId"
-        case sportsName, areaName, clubTitle, crewName, dues, guestDues, memberCount, extraList, ageTable, introduction, schedules, crewImage
+        case sportsName, clubTitle, introduction, schedules, crewImage, isPinUp, areaName
     }
 }
 
@@ -36,7 +42,19 @@ struct CrewDetailResult: Codable {
 struct Schedule: Codable {
     let dayIdx: Int
     let day: String
-    let startTime, endTime: Double
+    let startTime, endTime: Int
+}
+
+// MARK: - Pageable
+struct Pageable: Codable {
+    let sort: Sort
+    let offset, pageNumber, pageSize: Int
+    let paged, unpaged: Bool
+}
+
+// MARK: - Sort
+struct Sort: Codable {
+    let empty, sorted, unsorted: Bool
 }
 
 // MARK: - Encode/decode helpers
@@ -65,3 +83,4 @@ class JSONNull: Codable, Hashable {
         try container.encodeNil()
     }
 }
+

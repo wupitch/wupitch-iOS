@@ -21,6 +21,7 @@ class TagCVCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setStyle()
+        fittingSize(availableHeight: 500, name: tagLabel.text)
     }
     
     func setStyle() {
@@ -29,6 +30,18 @@ class TagCVCell: UICollectionViewCell {
         
         tagBgView.makeRounded(cornerRadius: 16.adjusted)
         tagBgView.backgroundColor = .gray04
+    }
+    
+    func fittingSize(availableHeight: CGFloat, name: String?) -> CGSize {
+        let cell = TagCVCell()
+        cell.configure(name: name)
+        
+        let targetSize = CGSize(width: UIView.layoutFittingCompressedSize.width, height: availableHeight)
+        return cell.contentView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .fittingSizeLevel, verticalFittingPriority: .required)
+    }
+    
+    func configure(name: String?) {
+        tagLabel.text = name
     }
 
 }

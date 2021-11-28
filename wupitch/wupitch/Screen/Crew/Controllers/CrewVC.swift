@@ -39,6 +39,16 @@ class CrewVC: BaseVC {
         crewCV.register(CrewCVCell.nib(), forCellWithReuseIdentifier: CrewCVCell.identifier)
     }
     
+//    func getEstimatedHeightFromDummyCell(_ indexPath: IndexPath) -> CGFloat {
+//          let width = view.frame.width - 10
+//          let estimatedHeight: CGFloat = 800.0
+//          let dummyCell = ChatCell(frame: CGRect(x: 0, y: 0, width: width, height: estimatedHeight))
+//          dummyCell.layoutIfNeeded()
+//          let estimateSize = dummyCell.systemLayoutSizeFitting(CGSize(width: width, height: estimatedHeight))
+//          return estimateSize.height
+//    }
+
+    
     // MARK: FloatingView tap gesture
     private func tapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action:#selector(self.screenDidTap(_:)))
@@ -184,3 +194,15 @@ extension CrewVC {
         print("데이터가 들어오지 않았습니다.")
     }
 }
+
+//extension CrewVC {
+//    func didSuccessLookUpCrew(result: CrewDetailResult) {
+//        print("데이터가 성공적으로 들어왔습니다.")
+//
+//    }
+//    
+//    func failedToRequest(message: String) {
+//        print("데이터가 들어오지 않았습니다.")
+//
+//    }
+//}

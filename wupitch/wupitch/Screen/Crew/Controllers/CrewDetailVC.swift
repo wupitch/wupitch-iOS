@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import SDWebImage
 
 // 크루 디테일 뷰
 class CrewDetailVC: BaseVC {
@@ -21,14 +22,15 @@ class CrewDetailVC: BaseVC {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var backBtn: UIButton!
     
-    lazy var crewDetailDataManager = CrewDetailService()
+    //lazy var crewDetailDataManager = CrewDetailService()
+    //var detailInfo : CrewDetailResult?
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
         setCVDelegate()
-        crewDetailDataManager.getCrewDetail(delegate: self)
+        //crewDetailDataManager.getCrewDetail(delegate: self)
     }
     
     // MARK: - Function
@@ -156,7 +158,7 @@ extension CrewDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailCrewImgCVCell.identifier, for: indexPath) as? DetailCrewImgCVCell else{
                 return UICollectionViewCell()
             }
-            //cell.mainImgView.image = UIImage(named: "test")
+            //cell.mainImgView.sd_setImage(with: URL(string: detailInfo?.crewImage))
             
             return cell
         }
@@ -164,14 +166,41 @@ extension CrewDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailCrewTitleCVCell.identifier, for: indexPath) as? DetailCrewTitleCVCell else{
                 return UICollectionViewCell()
             }
-            cell.titleLabel.text = "가나다라마바사아자차카타파하"
-            cell.tagView.backgroundColor = .red
-            cell.tagLabel.text = "농구"
-            cell.tagLabel.textColor = .wht
-            cell.topDateLabel.text = "수요일 20:00 - 22:00"
-            cell.bottomDateLabel.text = "일요일 11:30 - 13:30"
-            cell.locationLabel.text = "가나다라마바사아자차카타파하"
-            cell.moneyLabel.text = "정기회비 15,000원"
+            
+//            cell.titleLabel.text = detailInfo?.clubTitle
+//            cell.tagView.backgroundColor = .red
+//            cell.tagLabel.text = detailInfo?.sportsName
+//            cell.tagLabel.textColor = .wht
+//
+//            // 하나라도 값이 없다면 히든처리
+//            if let dayOne = detailInfo?.schedules[0].day,
+//               let dayTwo = detailInfo?.schedules[1].day,
+//               let dayThree = detailInfo?.schedules[2].day {
+//
+//                cell.dayLabel[0].text = dayOne
+//                cell.dayLabel[1].text = dayTwo
+//                cell.dayLabel[2].text = dayThree
+//            }
+//
+//            cell.dayLabel[0].text = detailInfo?.schedules[0].day
+//            cell.startImeLabel[0].text = String(detailInfo?.schedules[0].startTime ?? 0.0)
+//            cell.endTimeLabel[0].text = String(detailInfo?.schedules[0].endTime ?? 0.0)
+//
+//            cell.dayLabel[1].text = detailInfo?.schedules[1].day
+//            cell.startImeLabel[1].text = String(detailInfo?.schedules[1].startTime ?? 0.0)
+//            cell.endTimeLabel[1].text = String(detailInfo?.schedules[1].endTime ?? 0.0)
+//
+//            cell.dayLabel[2].text = detailInfo?.schedules[2].day
+//            cell.startImeLabel[2].text = String(detailInfo?.schedules[2].startTime ?? 0.0)
+//            cell.endTimeLabel[2].text = String(detailInfo?.schedules[2].endTime ?? 0.0)
+//
+//            cell.locationLabel.text = detailInfo?.areaName
+//
+//            cell.moneyLabel[0].text = "정기회비"
+//            cell.moneyLabel[1].text = "손님비"
+//
+//            cell.money[0].text = String(detailInfo?.dues ?? 0)
+//            cell.money[1].text = String(detailInfo?.guestDues ?? 0)
             
             return cell
         }
@@ -273,7 +302,7 @@ extension CrewDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             return CGSize(width: width, height: 211)
         }
         else if indexPath.section == 1 {
-            return CGSize(width: width, height: 228)
+            return CGSize(width: width, height: 0)
         }
         else if indexPath.section == 2 {
             return CGSize(width: width, height: 724)
@@ -328,14 +357,15 @@ extension CrewDetailVC: GuestModalDelegate {
    
 }
 
-extension CrewDetailVC {
-    func didSuccessCrewDetail(result: CrewDetailResult) {
-        print("데이터가 성공적으로 들어왔습니다.")
-        
-    }
-    
-    func failedToRequest(message: String) {
-        print("데이터가 들어오지 않았습니다.")
-        
-    }
-}
+//extension CrewDetailVC {
+//    func didSuccessCrewDetail(result: CrewDetailResult) {
+//        print("데이터가 성공적으로 들어왔습니다.")
+//        self.detailInfo = result
+//        detailCV.reloadData()
+//    }
+//
+//    func failedToRequest(message: String) {
+//        print("데이터가 들어오지 않았습니다.")
+//
+//    }
+//}

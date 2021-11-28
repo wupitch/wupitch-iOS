@@ -23,7 +23,7 @@ class CrewCVCell: UICollectionViewCell {
     static func nib() -> UINib {
         return UINib(nibName: "CrewCVCell", bundle: nil)
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -42,4 +42,5 @@ class CrewCVCell: UICollectionViewCell {
         bgView.layer.borderWidth = 1.adjusted
         bgView.layer.borderColor = UIColor.gray04.cgColor
     }
+
 }

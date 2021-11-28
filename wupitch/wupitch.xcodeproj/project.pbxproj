@@ -97,6 +97,12 @@
 		DD485F7727530A620071AE93 /* MemberPhoneNumberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F7627530A620071AE93 /* MemberPhoneNumberData.swift */; };
 		DD485F7B27530E630071AE93 /* MemberAreaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F7A27530E630071AE93 /* MemberAreaService.swift */; };
 		DD485F7E27530E7E0071AE93 /* MemberAreaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F7D27530E7E0071AE93 /* MemberAreaData.swift */; };
+		DD485F8127534C940071AE93 /* LookUpCrewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F8027534C940071AE93 /* LookUpCrewService.swift */; };
+		DD485F8427534F200071AE93 /* LookUpCrewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F8327534F200071AE93 /* LookUpCrewData.swift */; };
+		DD485F8A275394AC0071AE93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD485F89275394AC0071AE93 /* GoogleService-Info.plist */; };
+		DD485F8E275396FB0071AE93 /* FCMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F8D275396FB0071AE93 /* FCMService.swift */; };
+		DD485F90275397050071AE93 /* FCMData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F8F275397050071AE93 /* FCMData.swift */; };
+		DD485F92275399330071AE93 /* FCMRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F91275399330071AE93 /* FCMRequest.swift */; };
 		DD61E4B9271D7E50007504DE /* SignUpTermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */; };
 		DD61E4BB271D856E007504DE /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4BA271D856E007504DE /* UILabel.swift */; };
 		DD61E4BD271D8EB8007504DE /* SignUpCity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */; };
@@ -346,6 +352,12 @@
 		DD485F7627530A620071AE93 /* MemberPhoneNumberData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberPhoneNumberData.swift; sourceTree = "<group>"; };
 		DD485F7A27530E630071AE93 /* MemberAreaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAreaService.swift; sourceTree = "<group>"; };
 		DD485F7D27530E7E0071AE93 /* MemberAreaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAreaData.swift; sourceTree = "<group>"; };
+		DD485F8027534C940071AE93 /* LookUpCrewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpCrewService.swift; sourceTree = "<group>"; };
+		DD485F8327534F200071AE93 /* LookUpCrewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpCrewData.swift; sourceTree = "<group>"; };
+		DD485F89275394AC0071AE93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DD485F8D275396FB0071AE93 /* FCMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMService.swift; sourceTree = "<group>"; };
+		DD485F8F275397050071AE93 /* FCMData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMData.swift; sourceTree = "<group>"; };
+		DD485F91275399330071AE93 /* FCMRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMRequest.swift; sourceTree = "<group>"; };
 		DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTermsVC.swift; sourceTree = "<group>"; };
 		DD61E4BA271D856E007504DE /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpCity.storyboard; sourceTree = "<group>"; };
@@ -650,6 +662,7 @@
 				DD295D9F27181E3B008CFC64 /* AppDelegate.swift */,
 				DD295DA127181E3B008CFC64 /* SceneDelegate.swift */,
 				DD295DAD27181E3D008CFC64 /* Info.plist */,
+				DD485F89275394AC0071AE93 /* GoogleService-Info.plist */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -1081,6 +1094,39 @@
 			path = MemberArea;
 			sourceTree = "<group>";
 		};
+		DD485F7F27534C710071AE93 /* LookUpCrew */ = {
+			isa = PBXGroup;
+			children = (
+				DD485F8027534C940071AE93 /* LookUpCrewService.swift */,
+			);
+			path = LookUpCrew;
+			sourceTree = "<group>";
+		};
+		DD485F8227534F140071AE93 /* LookUpCrew */ = {
+			isa = PBXGroup;
+			children = (
+				DD485F8327534F200071AE93 /* LookUpCrewData.swift */,
+			);
+			path = LookUpCrew;
+			sourceTree = "<group>";
+		};
+		DD485F8B275396E10071AE93 /* FCM */ = {
+			isa = PBXGroup;
+			children = (
+				DD485F8D275396FB0071AE93 /* FCMService.swift */,
+			);
+			path = FCM;
+			sourceTree = "<group>";
+		};
+		DD485F8C275396EB0071AE93 /* FCM */ = {
+			isa = PBXGroup;
+			children = (
+				DD485F8F275397050071AE93 /* FCMData.swift */,
+				DD485F91275399330071AE93 /* FCMRequest.swift */,
+			);
+			path = FCM;
+			sourceTree = "<group>";
+		};
 		DD9EEDCA273D614300E02396 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -1293,6 +1339,7 @@
 		DDC4DB0F2744B92A00D79CC8 /* Crew */ = {
 			isa = PBXGroup;
 			children = (
+				DD485F7F27534C710071AE93 /* LookUpCrew */,
 				DDC46B982752AB450015341E /* CrewDetail */,
 				DDC46B972752AB3B0015341E /* MakeCrew */,
 			);
@@ -1302,6 +1349,7 @@
 		DDC4DB102744B93D00D79CC8 /* Crew */ = {
 			isa = PBXGroup;
 			children = (
+				DD485F8227534F140071AE93 /* LookUpCrew */,
 				DDC46B942752AABE0015341E /* CrewDetail */,
 				DDC46B932752AAB30015341E /* MakeCrew */,
 			);
@@ -1424,6 +1472,7 @@
 		DDE0EE632729317C00C46821 /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				DD485F8B275396E10071AE93 /* FCM */,
 				DD485F7227530A2C0071AE93 /* PhoneNumber */,
 				DD485F6C2753041E0071AE93 /* Age */,
 				DDC46B71275169620015341E /* Bungae */,
@@ -1493,6 +1542,7 @@
 		DDED0118271B33C200C2C343 /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
+				DD485F8C275396EB0071AE93 /* FCM */,
 				DD485F7527530A520071AE93 /* PhoneNumber */,
 				DD485F6F275304340071AE93 /* Age */,
 				DDC46B72275169690015341E /* Bungae */,
@@ -1680,6 +1730,7 @@
 				DDC4DB6E274E2C4200D79CC8 /* ActivityCrewCRV.xib in Resources */,
 				DD3E37C92730180100C4192E /* CrewDetail.storyboard in Resources */,
 				DD3A30F4272E61EB00D711C6 /* AddCrew.storyboard in Resources */,
+				DD485F8A275394AC0071AE93 /* GoogleService-Info.plist in Resources */,
 				DDE0EE6B2729907600C46821 /* SignUpAge.storyboard in Resources */,
 				DDC46B58274F87200015341E /* ProfileSettings.storyboard in Resources */,
 				DD34220B272F418A005DF6CA /* UserInfoWarning.storyboard in Resources */,
@@ -1772,6 +1823,7 @@
 				DD6728432725563A001E1355 /* UIView.swift in Sources */,
 				DDC4DB2C2747791F00D79CC8 /* BungaeTitleCVCell.swift in Sources */,
 				DDC4DAF4274389BC00D79CC8 /* PwValidationRequest.swift in Sources */,
+				DD485F8E275396FB0071AE93 /* FCMService.swift in Sources */,
 				DD1BFC4D2738E8EC0042C51F /* MakeCrewDateVC.swift in Sources */,
 				DDC46B6A2750BD1D0015341E /* ToggleAlarmData.swift in Sources */,
 				DDC4DAE12741075700D79CC8 /* AreaData.swift in Sources */,
@@ -1810,6 +1862,7 @@
 				DD3A30F6272E620B00D711C6 /* AddCrewVC.swift in Sources */,
 				DDED011B271B33F800C2C343 /* OnboardingData.swift in Sources */,
 				DD485F682752FFDD0071AE93 /* MemberSportsData.swift in Sources */,
+				DD485F8127534C940071AE93 /* LookUpCrewService.swift in Sources */,
 				DDC4DB45274D2BBA00D79CC8 /* MakeBungaeRegionVC.swift in Sources */,
 				DDC4DB142744B96C00D79CC8 /* MakeCrewRequest.swift in Sources */,
 				DDC4DB0E274432E400D79CC8 /* UIViewController.swift in Sources */,
@@ -1848,11 +1901,14 @@
 				DDC46B7D2752219F0015341E /* PasswordCheckData.swift in Sources */,
 				DD485F6E2753042D0071AE93 /* MemberAgeService.swift in Sources */,
 				DDC46B63274FAA390015341E /* WithdrawalData.swift in Sources */,
+				DD485F92275399330071AE93 /* FCMRequest.swift in Sources */,
+				DD485F90275397050071AE93 /* FCMData.swift in Sources */,
 				DDC46B4E274E89E20015341E /* DatePickerBtn.swift in Sources */,
 				DD485F7427530A460071AE93 /* MemberPhoneNumberService.swift in Sources */,
 				DD9EEDDA273FFE9B00E02396 /* CrewSearchCVCell.swift in Sources */,
 				DD3A30C1272AA94100D711C6 /* ModalSportsBtn.swift in Sources */,
 				DDC46B8327522FE60015341E /* ChangePasswordData.swift in Sources */,
+				DD485F8427534F200071AE93 /* LookUpCrewData.swift in Sources */,
 				DDC3B5102732A68A00FF4959 /* DetailCrewFooterCRV.swift in Sources */,
 				DDC46B76275169C00015341E /* MakeBungaeRequest.swift in Sources */,
 				DDC46B742751698B0015341E /* MakeBungaeData.swift in Sources */,
@@ -2053,6 +2109,7 @@
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = wupitch/Support/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "저희 앱은 사용자의 카메라를 사용합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Onboarding;
@@ -2085,6 +2142,7 @@
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = wupitch/Support/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "저희 앱은 사용자의 카메라를 사용합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Onboarding;

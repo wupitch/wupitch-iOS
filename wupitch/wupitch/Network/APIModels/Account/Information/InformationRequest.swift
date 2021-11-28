@@ -9,10 +9,8 @@ import Foundation
 
 // MARK: - InformationRequest
 struct InformationRequest: Codable {
-    var ageNum : Int
-    var areaId : Int
-    var introduce : String
-    var nickname : String
-    var otherSports : String
-    var sportsList : [Int]
+    let sportsList: [Int]
+    let otherSports: String
+    let ageNum: Int
+    let nickname, introduce, phoneNumber: String
 }
