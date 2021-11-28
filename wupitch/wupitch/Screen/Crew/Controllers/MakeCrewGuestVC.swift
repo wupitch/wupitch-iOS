@@ -162,6 +162,9 @@ extension MakeCrewGuestVC {
         }
         let crewId = String(result.clubID)
         
+        // 크루아이디 저장
+        UserDefaults.standard.set(result.clubID, forKey: "clubId")
+        
         let userImage = SignUpUserInfo.shared.photo
         
         AF.upload(

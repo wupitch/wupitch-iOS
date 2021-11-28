@@ -19,11 +19,13 @@ class SignUpSportsVC: UIViewController {
     let maxLength = 20
     var etcTextFieldState : Bool?
     var etcBtnState : Bool?
+    lazy var memberSportsDataManager = MemberSportsService()
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
+        memberSportsDataManager.getMemberSports(delegate: self)
     }
     
     // set style
@@ -213,5 +215,24 @@ extension SignUpSportsVC : AlertDelegate {
                 SignUpUserInfo.shared.dispose()
             }
         }
+    }
+}
+
+extension SignUpSportsVC {
+    func didSuccessMemberSports(result: MemberSportsResult) {
+        print("데이터가 성공적으로 들어왔습니다.")
+        // 스포츠 리스트의 값이 있을 때
+        if result.list.isEmpty != true {
+            for i in 0...5 {
+                sportBtns[i].colorSportsBtn()
+            }
+        }
+        else {
+            print("선택한 값이 없어요!")
+        }
+        
+    }
+    func failedToRequest(message: String) {
+        print("데이터가 들어오지 않았습니다.")
     }
 }
