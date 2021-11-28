@@ -91,6 +91,12 @@
 		DD3E37CB2730182C00C4192E /* CrewDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E37CA2730182C00C4192E /* CrewDetailVC.swift */; };
 		DD485F682752FFDD0071AE93 /* MemberSportsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F672752FFDD0071AE93 /* MemberSportsData.swift */; };
 		DD485F6B275300520071AE93 /* MemberSportsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F6A275300520071AE93 /* MemberSportsService.swift */; };
+		DD485F6E2753042D0071AE93 /* MemberAgeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F6D2753042D0071AE93 /* MemberAgeService.swift */; };
+		DD485F71275304400071AE93 /* MemberAgeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F70275304400071AE93 /* MemberAgeData.swift */; };
+		DD485F7427530A460071AE93 /* MemberPhoneNumberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F7327530A460071AE93 /* MemberPhoneNumberService.swift */; };
+		DD485F7727530A620071AE93 /* MemberPhoneNumberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F7627530A620071AE93 /* MemberPhoneNumberData.swift */; };
+		DD485F7B27530E630071AE93 /* MemberAreaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F7A27530E630071AE93 /* MemberAreaService.swift */; };
+		DD485F7E27530E7E0071AE93 /* MemberAreaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F7D27530E7E0071AE93 /* MemberAreaData.swift */; };
 		DD61E4B9271D7E50007504DE /* SignUpTermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */; };
 		DD61E4BB271D856E007504DE /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4BA271D856E007504DE /* UILabel.swift */; };
 		DD61E4BD271D8EB8007504DE /* SignUpCity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */; };
@@ -334,6 +340,12 @@
 		DD3E37CA2730182C00C4192E /* CrewDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewDetailVC.swift; sourceTree = "<group>"; };
 		DD485F672752FFDD0071AE93 /* MemberSportsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberSportsData.swift; sourceTree = "<group>"; };
 		DD485F6A275300520071AE93 /* MemberSportsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberSportsService.swift; sourceTree = "<group>"; };
+		DD485F6D2753042D0071AE93 /* MemberAgeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAgeService.swift; sourceTree = "<group>"; };
+		DD485F70275304400071AE93 /* MemberAgeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAgeData.swift; sourceTree = "<group>"; };
+		DD485F7327530A460071AE93 /* MemberPhoneNumberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberPhoneNumberService.swift; sourceTree = "<group>"; };
+		DD485F7627530A620071AE93 /* MemberPhoneNumberData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberPhoneNumberData.swift; sourceTree = "<group>"; };
+		DD485F7A27530E630071AE93 /* MemberAreaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAreaService.swift; sourceTree = "<group>"; };
+		DD485F7D27530E7E0071AE93 /* MemberAreaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAreaData.swift; sourceTree = "<group>"; };
 		DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTermsVC.swift; sourceTree = "<group>"; };
 		DD61E4BA271D856E007504DE /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpCity.storyboard; sourceTree = "<group>"; };
@@ -1021,6 +1033,54 @@
 			path = MemberSports;
 			sourceTree = "<group>";
 		};
+		DD485F6C2753041E0071AE93 /* Age */ = {
+			isa = PBXGroup;
+			children = (
+				DD485F6D2753042D0071AE93 /* MemberAgeService.swift */,
+			);
+			path = Age;
+			sourceTree = "<group>";
+		};
+		DD485F6F275304340071AE93 /* Age */ = {
+			isa = PBXGroup;
+			children = (
+				DD485F70275304400071AE93 /* MemberAgeData.swift */,
+			);
+			path = Age;
+			sourceTree = "<group>";
+		};
+		DD485F7227530A2C0071AE93 /* PhoneNumber */ = {
+			isa = PBXGroup;
+			children = (
+				DD485F7327530A460071AE93 /* MemberPhoneNumberService.swift */,
+			);
+			path = PhoneNumber;
+			sourceTree = "<group>";
+		};
+		DD485F7527530A520071AE93 /* PhoneNumber */ = {
+			isa = PBXGroup;
+			children = (
+				DD485F7627530A620071AE93 /* MemberPhoneNumberData.swift */,
+			);
+			path = PhoneNumber;
+			sourceTree = "<group>";
+		};
+		DD485F7927530E530071AE93 /* MemberArea */ = {
+			isa = PBXGroup;
+			children = (
+				DD485F7A27530E630071AE93 /* MemberAreaService.swift */,
+			);
+			path = MemberArea;
+			sourceTree = "<group>";
+		};
+		DD485F7C27530E700071AE93 /* MemberArea */ = {
+			isa = PBXGroup;
+			children = (
+				DD485F7D27530E7E0071AE93 /* MemberAreaData.swift */,
+			);
+			path = MemberArea;
+			sourceTree = "<group>";
+		};
 		DD9EEDCA273D614300E02396 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -1179,6 +1239,7 @@
 		DDC4DADF2741072B00D79CC8 /* Area */ = {
 			isa = PBXGroup;
 			children = (
+				DD485F7C27530E700071AE93 /* MemberArea */,
 				DDC4DAE02741075700D79CC8 /* AreaData.swift */,
 			);
 			path = Area;
@@ -1187,6 +1248,7 @@
 		DDC4DAE2274107BC00D79CC8 /* Area */ = {
 			isa = PBXGroup;
 			children = (
+				DD485F7927530E530071AE93 /* MemberArea */,
 				DDC4DAE3274107D900D79CC8 /* AreaService.swift */,
 			);
 			path = Area;
@@ -1362,6 +1424,8 @@
 		DDE0EE632729317C00C46821 /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				DD485F7227530A2C0071AE93 /* PhoneNumber */,
+				DD485F6C2753041E0071AE93 /* Age */,
 				DDC46B71275169620015341E /* Bungae */,
 				DDC4DB36274B293D00D79CC8 /* Extra */,
 				DDC4DB272746A96900D79CC8 /* Sports */,
@@ -1429,6 +1493,8 @@
 		DDED0118271B33C200C2C343 /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
+				DD485F7527530A520071AE93 /* PhoneNumber */,
+				DD485F6F275304340071AE93 /* Age */,
 				DDC46B72275169690015341E /* Bungae */,
 				DDC4DB37274B295100D79CC8 /* Extra */,
 				DDC4DB242746A93D00D79CC8 /* Sports */,
@@ -1709,6 +1775,7 @@
 				DD1BFC4D2738E8EC0042C51F /* MakeCrewDateVC.swift in Sources */,
 				DDC46B6A2750BD1D0015341E /* ToggleAlarmData.swift in Sources */,
 				DDC4DAE12741075700D79CC8 /* AreaData.swift in Sources */,
+				DD485F7E27530E7E0071AE93 /* MemberAreaData.swift in Sources */,
 				DDC46B92275274350015341E /* MemberInfoData.swift in Sources */,
 				DDED00F82719D02900C2C343 /* UIColor.swift in Sources */,
 				DDC4DB0827440F0100D79CC8 /* SignInRequest.swift in Sources */,
@@ -1735,6 +1802,7 @@
 				DD1BFC20273663450042C51F /* NicknameValidationData.swift in Sources */,
 				DDC4DAF2274389AA00D79CC8 /* PwValidationData.swift in Sources */,
 				DDC4DB0C274432A300D79CC8 /* String.swift in Sources */,
+				DD485F71275304400071AE93 /* MemberAgeData.swift in Sources */,
 				DD1BFC592738E9C40042C51F /* SignUpPhoneVC.swift in Sources */,
 				DDC4DAF02743833E00D79CC8 /* EmailValidationService.swift in Sources */,
 				DD3A30BB2729AB1400D711C6 /* CheckBtn.swift in Sources */,
@@ -1749,6 +1817,7 @@
 				DDC4DAE4274107D900D79CC8 /* AreaService.swift in Sources */,
 				DD7BEBC327315D3A00DB2F60 /* DetailCrewImgCVCell.swift in Sources */,
 				DD3A30CC272DA37100D711C6 /* AppleLoginRequest.swift in Sources */,
+				DD485F7727530A620071AE93 /* MemberPhoneNumberData.swift in Sources */,
 				DDED0124271BDCD700C2C343 /* OnboardingCVCell.swift in Sources */,
 				DD3A30F2272DB07500D711C6 /* JoinCompleteVC.swift in Sources */,
 				DDC4DB5F274E234400D79CC8 /* FeedCVCell.swift in Sources */,
@@ -1777,8 +1846,10 @@
 				DD3A30E0272DABC000D711C6 /* BungaeVC.swift in Sources */,
 				DD3ACBC8272170A800EBC201 /* SignUpCompleteVC.swift in Sources */,
 				DDC46B7D2752219F0015341E /* PasswordCheckData.swift in Sources */,
+				DD485F6E2753042D0071AE93 /* MemberAgeService.swift in Sources */,
 				DDC46B63274FAA390015341E /* WithdrawalData.swift in Sources */,
 				DDC46B4E274E89E20015341E /* DatePickerBtn.swift in Sources */,
+				DD485F7427530A460071AE93 /* MemberPhoneNumberService.swift in Sources */,
 				DD9EEDDA273FFE9B00E02396 /* CrewSearchCVCell.swift in Sources */,
 				DD3A30C1272AA94100D711C6 /* ModalSportsBtn.swift in Sources */,
 				DDC46B8327522FE60015341E /* ChangePasswordData.swift in Sources */,
@@ -1794,6 +1865,7 @@
 				DD485F6B275300520071AE93 /* MemberSportsService.swift in Sources */,
 				DD1BFC2B2736DCCA0042C51F /* InformationData.swift in Sources */,
 				DD342209272ED504005DF6CA /* GuestCompleteVC.swift in Sources */,
+				DD485F7B27530E630071AE93 /* MemberAreaService.swift in Sources */,
 				DDC3B51D2736373500FF4959 /* GuestDateBtn.swift in Sources */,
 				DD1BFC352737FFEB0042C51F /* CrewSearchVC.swift in Sources */,
 				DDE0EE692729335000C46821 /* KakaoLoginData.swift in Sources */,

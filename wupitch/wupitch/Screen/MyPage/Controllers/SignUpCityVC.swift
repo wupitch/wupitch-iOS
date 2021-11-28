@@ -17,12 +17,15 @@ class SignUpCityVC: UIViewController {
     @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
     
+    lazy var memberAreaDataManager = MemberAreaService()
+    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
         //kakaoAppleLoginLogic()
         textFieldToAddTarget()
+        memberAreaDataManager.getMemberArea(delegate: self)
     }
     
     // MARK: - Function
@@ -148,5 +151,25 @@ extension SignUpCityVC : AlertDelegate {
                 SignUpUserInfo.shared.dispose()
             }
         }
+    }
+}
+
+extension SignUpCityVC {
+    func didSuccessMemberArea(result: MemberAreaResult) {
+        print("데이터가 성공적으로 들어왔습니다.")
+        
+        if result.areaID != nil {
+            // 선택되면 textField 색상 변경
+            selectTextField.textColor = .main
+            selectTextField.attributedPlaceholder = NSAttributedString(string: result.areaName, attributes: [NSAttributedString.Key.foregroundColor : UIColor.main])
+            selectTextField.layer.borderColor = UIColor.main.cgColor
+        }
+        else {
+            print("값이 없어요")
+        }
+        
+    }
+    func failedToRequest(message: String) {
+        print("데이터가 들어오지 않았습니다.")
     }
 }

@@ -232,6 +232,15 @@ class ProfileNicknameVC: UIViewController {
 //    }
 //}
 
+//extension ProfileNicknameVC {
+//    func didSuccessMemberArea(result: MemberAreaResult) {
+//        print("데이터가 성공적으로 들어왔습니다.")
+//
+//    }
+//    func failedToRequest(message: String) {
+//        print("데이터가 들어오지 않았습니다.")
+//    }
+//}
 
 
 

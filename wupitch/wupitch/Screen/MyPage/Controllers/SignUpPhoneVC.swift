@@ -9,11 +9,14 @@ import UIKit
 
 class SignUpPhoneVC: UIViewController {
 
+    @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
+    lazy var memberPhoneNumber = MemberPhoneNumberService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
+        memberPhoneNumber.getMemberPhoneNumber(delegate: self)
     }
     
     private func setStyle() {
@@ -34,3 +37,21 @@ class SignUpPhoneVC: UIViewController {
     
     
 }
+
+extension SignUpPhoneVC {
+    func didSuccessMemberPhoneNumber(result: MemberPhoneNumberResult) {
+        print("데이터가 성공적으로 들어왔습니다.")
+        
+        if result.phoneNumber != nil {
+            phoneTextField.text = result.phoneNumber
+        }
+        else {
+            print("값이 없어요")
+        }
+        
+    }
+    func failedToRequest(message: String) {
+        print("데이터가 들어오지 않았습니다.")
+    }
+}
+

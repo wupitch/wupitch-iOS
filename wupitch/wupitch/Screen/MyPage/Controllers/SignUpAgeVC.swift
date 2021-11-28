@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SignUpAgeVC: UIViewController {
     
@@ -14,9 +15,12 @@ class SignUpAgeVC: UIViewController {
     @IBOutlet weak var nextBtn: NextBtn!
     @IBOutlet var ageBtns: [SportsBtn]!
     
+    lazy var memberAgeDataManager = MemberAgeService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
+        memberAgeDataManager.getMemberAge(delegate: self)
     }
     
     func setStyle() {
@@ -119,5 +123,17 @@ extension SignUpAgeVC : AlertDelegate {
                 SignUpUserInfo.shared.dispose()
             }
         }
+    }
+}
+
+extension SignUpAgeVC {
+    func didSuccessMemberAge(result: MemberAgeResult) {
+        print("데이터가 성공적으로 들어왔습니다.")
+        
+        ageBtns[result.ageIdx].colorSportsBtn()
+        
+    }
+    func failedToRequest(message: String) {
+        print("데이터가 들어오지 않았습니다.")
     }
 }

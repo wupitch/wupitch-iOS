@@ -17,12 +17,12 @@ struct MemberSportsService {
         
         var header : HTTPHeaders = []
                 
-                if let token = UserDefaults.standard.string(forKey: "userToken") {
-                    header = ["Content-Type":"application/json", "X-ACCESS-TOKEN": token]
-                }
-                else {
-                    header = ["Content-Type":"application/json"]
-                }
+        if let token = UserDefaults.standard.string(forKey: "userToken") {
+            header = ["Content-Type":"application/json", "X-ACCESS-TOKEN": token]
+        }
+        else {
+            header = ["Content-Type":"application/json"]
+        }
         
         AF.request(url, method: .get, encoding: JSONEncoding.default, headers: header)
             .responseDecodable(of: MemberSportsData.self) { response in
