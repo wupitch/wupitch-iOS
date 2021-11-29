@@ -30,11 +30,11 @@ struct CrewDetailService {
 
         let url: String
 
-        let crewId = 1
+        let clubId = 1
 
         //UserDefaults.standard.integer(forKey: "clubId")
 
-        url = "https://prod.wupitch.site/app/clubs/\(crewId)"
+        url = "https://prod.wupitch.site/app/clubs/\(clubId)"
 
         AF.request(url, method: .get, encoding: JSONEncoding.default, headers: header)
 //                            .responseString(completionHandler: { response in

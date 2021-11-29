@@ -30,7 +30,7 @@ class CrewDetailVC: BaseVC {
         super.viewDidLoad()
         setStyle()
         setCVDelegate()
-        //crewDetailDataManager.getCrewDetail(delegate: self)
+        crewDetailDataManager.getCrewDetail(delegate: self)
     }
     
     // MARK: - Function

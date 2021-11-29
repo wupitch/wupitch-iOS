@@ -104,6 +104,8 @@
 		DD485F90275397050071AE93 /* FCMData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F8F275397050071AE93 /* FCMData.swift */; };
 		DD485F92275399330071AE93 /* FCMRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F91275399330071AE93 /* FCMRequest.swift */; };
 		DD485F952753E4320071AE93 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F942753E4320071AE93 /* GenericResponse.swift */; };
+		DD485FA6275556A30071AE93 /* LookUpBungaeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FA5275556A30071AE93 /* LookUpBungaeService.swift */; };
+		DD485FA8275556B10071AE93 /* LookUpBungaeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FA7275556B10071AE93 /* LookUpBungaeData.swift */; };
 		DD61E4B9271D7E50007504DE /* SignUpTermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */; };
 		DD61E4BB271D856E007504DE /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4BA271D856E007504DE /* UILabel.swift */; };
 		DD61E4BD271D8EB8007504DE /* SignUpCity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */; };
@@ -360,6 +362,8 @@
 		DD485F8F275397050071AE93 /* FCMData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMData.swift; sourceTree = "<group>"; };
 		DD485F91275399330071AE93 /* FCMRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMRequest.swift; sourceTree = "<group>"; };
 		DD485F942753E4320071AE93 /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
+		DD485FA5275556A30071AE93 /* LookUpBungaeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpBungaeService.swift; sourceTree = "<group>"; };
+		DD485FA7275556B10071AE93 /* LookUpBungaeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpBungaeData.swift; sourceTree = "<group>"; };
 		DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTermsVC.swift; sourceTree = "<group>"; };
 		DD61E4BA271D856E007504DE /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpCity.storyboard; sourceTree = "<group>"; };
@@ -1129,6 +1133,22 @@
 			path = FCM;
 			sourceTree = "<group>";
 		};
+		DD485FA3275556780071AE93 /* LookUpBungae */ = {
+			isa = PBXGroup;
+			children = (
+				DD485FA5275556A30071AE93 /* LookUpBungaeService.swift */,
+			);
+			path = LookUpBungae;
+			sourceTree = "<group>";
+		};
+		DD485FA4275556900071AE93 /* LookUpBungae */ = {
+			isa = PBXGroup;
+			children = (
+				DD485FA7275556B10071AE93 /* LookUpBungaeData.swift */,
+			);
+			path = LookUpBungae;
+			sourceTree = "<group>";
+		};
 		DD9EEDCA273D614300E02396 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -1218,6 +1238,7 @@
 		DDC46B71275169620015341E /* Bungae */ = {
 			isa = PBXGroup;
 			children = (
+				DD485FA3275556780071AE93 /* LookUpBungae */,
 				DDC46B792751E5140015341E /* MakeBungaeService.swift */,
 			);
 			path = Bungae;
@@ -1226,6 +1247,7 @@
 		DDC46B72275169690015341E /* Bungae */ = {
 			isa = PBXGroup;
 			children = (
+				DD485FA4275556900071AE93 /* LookUpBungae */,
 				DDC46B732751698B0015341E /* MakeBungaeData.swift */,
 				DDC46B75275169C00015341E /* MakeBungaeRequest.swift */,
 			);
@@ -1819,6 +1841,7 @@
 				DDC4DB49274D2BF000D79CC8 /* MakeBungaeDateVC.swift in Sources */,
 				DD1BFC512738E91E0042C51F /* MakeCrewPhotoVC.swift in Sources */,
 				DD7BEBCB27315DF800DB2F60 /* DetailCrewIntroduceCVCell.swift in Sources */,
+				DD485FA6275556A30071AE93 /* LookUpBungaeService.swift in Sources */,
 				DD3ACBB7272104D300EBC201 /* TermsOfUseVC.swift in Sources */,
 				DDC4DAFA2743D1C000D79CC8 /* SignUpCameraVC.swift in Sources */,
 				DD7BEBCF27315E1900DB2F60 /* DtailCrewContentCVCell.swift in Sources */,
@@ -1966,6 +1989,7 @@
 				DDE0EE6D2729908B00C46821 /* SignUpAgeVC.swift in Sources */,
 				DDC4DAF627438A3100D79CC8 /* PwValidationService.swift in Sources */,
 				DD3A30CE272DA3BD00D711C6 /* AppleLoginService.swift in Sources */,
+				DD485FA8275556B10071AE93 /* LookUpBungaeData.swift in Sources */,
 				DD61E4BF271D8ECA007504DE /* SignUpCityVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

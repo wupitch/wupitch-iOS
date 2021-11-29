@@ -17,12 +17,22 @@ class BungaeVC: BaseVC {
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var selectRegionBtn: UIButton!
     
+    lazy var bungaeDataManager = LookUpBungeService()
+    var lookUpBungaeResult : LookUpBungaeResult?
+    var schedule : LookUpBungaeContent?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setStyle()
         setCVDelegate()
         tapGesture()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("유저디폴트", UserDefaults.standard.dictionary(forKey: "bungaeFilterParams"))
+        bungaeDataManager.getLookUpBunge(params: UserDefaults.standard.dictionary(forKey: "bungaeFilterParams") as? [String:[Any]], delegate: self)
     }
     
     private func setStyle() {
@@ -90,12 +100,23 @@ class BungaeVC: BaseVC {
             self.present(dvc, animated: true, completion: nil)
         }
     }
+    
+    func stringDate(doubleDate: Double) -> String {
+        let doubleToString = String(doubleDate)
+        
+        let stringChange = doubleToString.split(separator: ".")
+        
+        let stringDate = String(stringChange.first!) + ":" + String(stringChange.last!)
+        
+        return stringDate
+    }
+    
+    
 }
 
 extension BungaeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // 일단은 다섯개로
-        return 5
+        return lookUpBungaeResult?.content.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -103,11 +124,31 @@ extension BungaeVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
             return UICollectionViewCell()
         }
         
-        cell.tagNameLabel.text = "D-1"
-        cell.titleLabel.text = "가나다라마바이ㅏ러니아러니ㅏㅇ러사아자차카타파하"
-        cell.dayLabel.text = "월요일 24:00 - 24:00"
-        cell.subLabel.text = "가나다라마바사아자차카타파하"
-        cell.bungaeCountLabel.text = "2/3"
+        // 디데이 숫자가 1일때만 백그라운드 색 진하게
+        if  lookUpBungaeResult?.content[indexPath.row].dday == 1 {
+            cell.tagNameView.backgroundColor = .bk
+            cell.tagNameLabel.textColor = .wht
+        }
+        else {
+            cell.tagNameView.backgroundColor = .gray03
+            cell.tagNameLabel.textColor = .wht
+        }
+       
+        cell.tagNameLabel.text = String("D-") + String(lookUpBungaeResult?.content[indexPath.row].dday ?? -1)
+        
+        cell.titleLabel.text = lookUpBungaeResult?.content[indexPath.row].title
+        cell.dayLabel.text = String(lookUpBungaeResult?.content[indexPath.row].date ?? "21.00.00") + " " + String(lookUpBungaeResult?.content[indexPath.row].day ?? "") + " " + stringDate(doubleDate: lookUpBungaeResult?.content[indexPath.row].startTime ?? 0.0)
+        cell.subLabel.text = lookUpBungaeResult?.content[indexPath.row].location
+        cell.bungaeCountLabel.text = String(lookUpBungaeResult?.content[indexPath.row].nowMemberCount ?? -1) + "/" + String(lookUpBungaeResult?.content[indexPath.row].recruitmentCount ?? -1)
+        
+        // 핀업버튼이 true일 때
+        if lookUpBungaeResult?.content[indexPath.row].isPinUp == true {
+            cell.pinImageView.isHidden = false
+        }
+        else {
+            cell.pinImageView.isHidden = true
+        }
+        
         
         return cell
     }
@@ -161,3 +202,15 @@ extension BungaeVC: ModalDelegate {
     }
 }
 
+extension BungaeVC {
+    // 번개 조회 api
+    func didSuccessLookUpBungae(result: LookUpBungaeResult) {
+        print("번개조회데이터가 성공적으로 들어왔습니다.")
+        lookUpBungaeResult = result
+        bungaeCV.reloadData()
+    }
+    
+    func failedToRequest(message: String) {
+        print("데이터가 들어오지 않았습니다.")
+    }
+}

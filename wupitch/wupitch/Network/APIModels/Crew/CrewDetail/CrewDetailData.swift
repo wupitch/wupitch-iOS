@@ -29,7 +29,7 @@ struct Content: Codable {
     let schedules: [Schedule]
     let crewImage: String?
     let isPinUp: Bool
-    let areaName: String
+    let areaName: String?
 
     enum CodingKeys: String, CodingKey {
         case clubID = "clubId"
@@ -42,7 +42,7 @@ struct Content: Codable {
 struct Schedule: Codable {
     let dayIdx: Int
     let day: String
-    let startTime, endTime: Int
+    let startTime, endTime: Double?
 }
 
 // MARK: - Pageable

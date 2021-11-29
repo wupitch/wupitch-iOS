@@ -26,22 +26,21 @@ class CrewVC: BaseVC {
     var lookUpCrewResult : LookUpCrewDataResult?
     var schedule : LookUpContent?
     var basicImage : UIImage?
+    var dict = [String:[Any]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
         setCVDelegate()
         tapGesture()
-        
+        // 지역 api
         dataManager.getArea(delegate: self)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("유저디폴트", UserDefaults.standard.dictionary(forKey: "filterParams"))
         crewDataManager.getLookUpCrew(params: UserDefaults.standard.dictionary(forKey: "filterParams") as? [String:[Any]], delegate: self)
-    
     }
     
     private func setStyle() {
@@ -270,12 +269,14 @@ extension CrewVC: ModalDelegate {
     // 모달이 dismiss되면서 모달백그라운드 색도 없어짐
     func modalDismiss() {
         modalView.alpha = 0.0
+        crewCV.reloadData()
     }
     
     // textField에 모달에서 선택했던 피커 값 넣어주기
     func textFieldData(data: String) {
-        selectRegionBtn.setTitle(data, for: .normal)
+        
         //SignUpUserInfo.shared.region = data
+        selectRegionBtn.setTitle(data, for: .normal)
     }
 }
 
@@ -301,7 +302,6 @@ extension CrewVC {
     func didSuccessLookUpCrew(result: LookUpCrewDataResult) {
         print("조회데이터가 성공적으로 들어왔습니다.")
         lookUpCrewResult = result
-        
         crewCV.reloadData()
     }
     
