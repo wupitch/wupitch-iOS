@@ -12,7 +12,7 @@ class CrewCVCell: UICollectionViewCell {
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var pinImageView: UIImageView!
     @IBOutlet weak var subLabel: UILabel!
-    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet var dayLabels: [UILabel]!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tagNameLabel: UILabel!
     @IBOutlet weak var tagNameView: UIView!
@@ -32,9 +32,15 @@ class CrewCVCell: UICollectionViewCell {
         
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
         titleLabel.textColor = .bk
-        dayLabel.textColor = .gray01
+        
+        for i in 0...4 {
+            dayLabels[i].font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+            dayLabels[i].textColor = .gray01
+        }
+        
+        pinImageView.isHidden = true
+        
         subLabel.textColor = .gray01
-        dayLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         subLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         
         bgView.makeRounded(cornerRadius: 16.adjusted)

@@ -33,7 +33,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dDc-RM-xqJ">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dDc-RM-xqJ">
                                 <rect key="frame" x="0.0" y="134" width="414" height="649"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xp3-p4-WLj">
@@ -64,28 +64,17 @@
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="7Z7-p7-X6l">
                                 <rect key="frame" x="121" y="88" width="172.5" height="26"/>
                             </pageControl>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ef-cC-WPW">
-                                <rect key="frame" x="0.0" y="783" width="414" height="1"/>
-                                <color key="backgroundColor" red="1" green="0.50980392156862742" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="9YD-Bq-NfP"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dDc-RM-xqJ" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="3lH-Ol-UQY"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0Ef-cC-WPW" secondAttribute="trailing" id="5h0-94-HkE"/>
-                            <constraint firstItem="0Ef-cC-WPW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="8IH-gl-99m"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xpf-HI-pzh" secondAttribute="trailing" constant="34" id="VIW-VA-REy"/>
                             <constraint firstItem="dDc-RM-xqJ" firstAttribute="top" secondItem="7Z7-p7-X6l" secondAttribute="bottom" constant="20" id="dvf-R0-SHE"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="xpf-HI-pzh" secondAttribute="bottom" constant="24" id="i2O-fO-mHd"/>
                             <constraint firstItem="dDc-RM-xqJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="lv3-7g-cM3"/>
                             <constraint firstItem="7Z7-p7-X6l" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="44" id="mgX-Zu-KXD"/>
                             <constraint firstItem="7Z7-p7-X6l" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="u6d-SL-3mn"/>
-                            <constraint firstItem="xpf-HI-pzh" firstAttribute="top" secondItem="0Ef-cC-WPW" secondAttribute="bottom" constant="24" id="veP-m3-zsn"/>
-                            <constraint firstItem="0Ef-cC-WPW" firstAttribute="top" secondItem="dDc-RM-xqJ" secondAttribute="bottom" id="xvL-ah-iKW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6w0-1Y-xLe"/>

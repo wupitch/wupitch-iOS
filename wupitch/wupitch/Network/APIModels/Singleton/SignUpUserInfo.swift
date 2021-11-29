@@ -38,6 +38,7 @@ class SignUpUserInfo {
     var ageList : [Int]?
     var extraInfoList : [Int]?
     // 정기일정정보
+    var date: Int?
     var schedules: [ScheduleList]?
     // 크루만들기 포토부분
     var photo : UIImage?
@@ -49,6 +50,20 @@ class SignUpUserInfo {
     var money : Int?
     // 크루만들기 손님비
     var guestMoney : Int?
+    
+    
+    // 크루조회
+    var ageListBtn: [Int]?
+    var areaIdBtn: Int?
+    var daysBtn: [Int]?
+    var isAsc: Bool?
+    var memberCountValueBtn: Int?
+    var page: Int?
+    var size: Int?
+    var sortBy: String?
+    var sportsListBtn: [Int]?
+    
+
     
     // -----------------------
     

@@ -103,6 +103,8 @@
 		DD485F8E275396FB0071AE93 /* FCMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F8D275396FB0071AE93 /* FCMService.swift */; };
 		DD485F90275397050071AE93 /* FCMData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F8F275397050071AE93 /* FCMData.swift */; };
 		DD485F92275399330071AE93 /* FCMRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F91275399330071AE93 /* FCMRequest.swift */; };
+		DD485F952753E4320071AE93 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F942753E4320071AE93 /* GenericResponse.swift */; };
+		DD485F972753EC8A0071AE93 /* LookUpCrewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F962753EC8A0071AE93 /* LookUpCrewRequest.swift */; };
 		DD61E4B9271D7E50007504DE /* SignUpTermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */; };
 		DD61E4BB271D856E007504DE /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4BA271D856E007504DE /* UILabel.swift */; };
 		DD61E4BD271D8EB8007504DE /* SignUpCity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */; };
@@ -358,6 +360,8 @@
 		DD485F8D275396FB0071AE93 /* FCMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMService.swift; sourceTree = "<group>"; };
 		DD485F8F275397050071AE93 /* FCMData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMData.swift; sourceTree = "<group>"; };
 		DD485F91275399330071AE93 /* FCMRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMRequest.swift; sourceTree = "<group>"; };
+		DD485F942753E4320071AE93 /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
+		DD485F962753EC8A0071AE93 /* LookUpCrewRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpCrewRequest.swift; sourceTree = "<group>"; };
 		DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTermsVC.swift; sourceTree = "<group>"; };
 		DD61E4BA271D856E007504DE /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpCity.storyboard; sourceTree = "<group>"; };
@@ -1106,6 +1110,7 @@
 			isa = PBXGroup;
 			children = (
 				DD485F8327534F200071AE93 /* LookUpCrewData.swift */,
+				DD485F962753EC8A0071AE93 /* LookUpCrewRequest.swift */,
 			);
 			path = LookUpCrew;
 			sourceTree = "<group>";
@@ -1472,6 +1477,7 @@
 		DDE0EE632729317C00C46821 /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				DD485F942753E4320071AE93 /* GenericResponse.swift */,
 				DD485F8B275396E10071AE93 /* FCM */,
 				DD485F7227530A2C0071AE93 /* PhoneNumber */,
 				DD485F6C2753041E0071AE93 /* Age */,
@@ -1923,7 +1929,9 @@
 				DD342209272ED504005DF6CA /* GuestCompleteVC.swift in Sources */,
 				DD485F7B27530E630071AE93 /* MemberAreaService.swift in Sources */,
 				DDC3B51D2736373500FF4959 /* GuestDateBtn.swift in Sources */,
+				DD485F972753EC8A0071AE93 /* LookUpCrewRequest.swift in Sources */,
 				DD1BFC352737FFEB0042C51F /* CrewSearchVC.swift in Sources */,
+				DD485F952753E4320071AE93 /* GenericResponse.swift in Sources */,
 				DDE0EE692729335000C46821 /* KakaoLoginData.swift in Sources */,
 				DDC4DB51274D2C6300D79CC8 /* MakeBungaeCountVC.swift in Sources */,
 				DDC4DB18274503DB00D79CC8 /* SignUpImagePreviewVC.swift in Sources */,

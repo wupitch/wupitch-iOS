@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import Foundation
+import SDWebImage
+
+// 스포츠 아이디로 사진이랑 색이랑 이름 엮어야해
 
 class CrewVC: BaseVC {
     
@@ -18,6 +22,10 @@ class CrewVC: BaseVC {
     @IBOutlet weak var selectRegionBtn: UIButton!
     
     lazy var dataManager = AreaService()
+    lazy var crewDataManager = LookUpCrewService()
+    var lookUpCrewResult : LookUpCrewDataResult?
+    var schedule : LookUpContent?
+    var basicImage : UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +33,14 @@ class CrewVC: BaseVC {
         setCVDelegate()
         tapGesture()
         dataManager.getArea(delegate: self)
+        crewDataManager.getLookUpCrew(request: LookUpCrewRequest(ageList: SignUpUserInfo.shared.ageListBtn ?? [-1], areaId: SignUpUserInfo.shared.areaIdBtn ?? -1, days: SignUpUserInfo.shared.daysBtn ?? [-1], isAsc: SignUpUserInfo.shared.isAsc ?? true, memberCountValue: SignUpUserInfo.shared.memberCountValueBtn ?? -1, page: SignUpUserInfo.shared.page ?? -1, size: SignUpUserInfo.shared.size ?? 10, sortBy: SignUpUserInfo.shared.sortBy ?? "updatedAt", sportsList:SignUpUserInfo.shared.sportsListBtn ?? [-1]), delegate: self)
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     private func setStyle() {
@@ -39,15 +55,17 @@ class CrewVC: BaseVC {
         crewCV.register(CrewCVCell.nib(), forCellWithReuseIdentifier: CrewCVCell.identifier)
     }
     
-//    func getEstimatedHeightFromDummyCell(_ indexPath: IndexPath) -> CGFloat {
-//          let width = view.frame.width - 10
-//          let estimatedHeight: CGFloat = 800.0
-//          let dummyCell = ChatCell(frame: CGRect(x: 0, y: 0, width: width, height: estimatedHeight))
-//          dummyCell.layoutIfNeeded()
-//          let estimateSize = dummyCell.systemLayoutSizeFitting(CGSize(width: width, height: estimatedHeight))
-//          return estimateSize.height
-//    }
-
+    //    func getEstimatedHeightFromDummyCell(_ indexPath: IndexPath) -> CGFloat {
+    //          let width = view.frame.width - 10
+    //          let estimatedHeight: CGFloat = 800.0
+    //          let dummyCell = ChatCell(frame: CGRect(x: 0, y: 0, width: width, height: estimatedHeight))
+    //          dummyCell.layoutIfNeeded()
+    //          let estimateSize = dummyCell.systemLayoutSizeFitting(CGSize(width: width, height: estimatedHeight))
+    //          return estimateSize.height
+    //    }
+    
+    
+    
     
     // MARK: FloatingView tap gesture
     private func tapGesture() {
@@ -102,12 +120,23 @@ class CrewVC: BaseVC {
             self.present(dvc, animated: true, completion: nil)
         }
     }
+    
+    func stringDate(doubleDate: Double) -> String {
+        let doubleToString = String(doubleDate)
+        
+        let stringChange = doubleToString.split(separator: ".")
+        
+        let stringDate = String(stringChange.first!) + ":" + String(stringChange.last!)
+        
+        return stringDate
+    }
+    
+    
 }
 
 extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // 일단은 다섯개로
-        return 5
+        return lookUpCrewResult?.content.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -115,10 +144,84 @@ extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             return UICollectionViewCell()
         }
         
-        cell.tagNameLabel.text = "축구/풋살"
-        cell.titleLabel.text = "가나다라마바이ㅏ러니아러니ㅏㅇ러사아자차카타파하"
-        cell.dayLabel.text = "월요일 24:00 - 24:00"
-        cell.subLabel.text = "가나다라마바사아자차카타파하"
+        switch lookUpCrewResult?.content[indexPath.row].sportsID {
+        case 1:
+            cell.tagNameLabel.text = "축구/풋살"
+            cell.tagNameView.backgroundColor = .sub04
+            if lookUpCrewResult?.content[indexPath.row].crewImage == nil {
+                cell.imageView.image = UIImage(named: "imgFoot")
+            }
+            else {
+                cell.imageView.sd_setImage(with: URL(string: lookUpCrewResult?.content[indexPath.row].crewImage ?? ""))
+            }
+        case 2:
+            cell.tagNameLabel.text = "농구"
+            cell.tagNameView.backgroundColor = .sub02
+            if lookUpCrewResult?.content[indexPath.row].crewImage == nil {
+                cell.imageView.image = UIImage(named: "imgBasket")
+            }
+            else {
+                cell.imageView.sd_setImage(with: URL(string: lookUpCrewResult?.content[indexPath.row].crewImage ?? ""))
+            }
+        case 3:
+            cell.tagNameLabel.text = "배드민턴"
+            cell.tagNameView.backgroundColor = .sub03
+            if lookUpCrewResult?.content[indexPath.row].crewImage == nil {
+                cell.imageView.image = UIImage(named: "imgBad")
+            }
+            else {
+                cell.imageView.sd_setImage(with: URL(string: lookUpCrewResult?.content[indexPath.row].crewImage ?? ""))
+            }
+        case 4:
+            cell.tagNameLabel.text = "배구"
+            cell.tagNameView.backgroundColor = .sub01
+            if lookUpCrewResult?.content[indexPath.row].crewImage == nil {
+                cell.imageView.image = UIImage(named: "imgVoll")
+            }
+            else {
+                cell.imageView.sd_setImage(with: URL(string: lookUpCrewResult?.content[indexPath.row].crewImage ?? ""))
+            }
+        case 5:
+            cell.tagNameLabel.text = "런닝"
+            cell.tagNameView.backgroundColor = .sub05
+            if lookUpCrewResult?.content[indexPath.row].crewImage == nil {
+                cell.imageView.image = UIImage(named: "imgRun")
+            }
+            else {
+                cell.imageView.sd_setImage(with: URL(string: lookUpCrewResult?.content[indexPath.row].crewImage ?? ""))
+            }
+        case 6:
+            cell.tagNameLabel.text = "등산"
+            cell.tagNameView.backgroundColor = .sub06
+            if lookUpCrewResult?.content[indexPath.row].crewImage == nil {
+                cell.imageView.image = UIImage(named: "imgHike")
+            }
+            else {
+                cell.imageView.sd_setImage(with: URL(string: lookUpCrewResult?.content[indexPath.row].crewImage ?? ""))
+            }
+        default:
+            break
+        }
+        
+        // 핀업버튼이 true일 때
+        if lookUpCrewResult?.content[indexPath.row].isPinUp == true {
+            cell.pinImageView.isHidden = false
+        }
+        else {
+            cell.pinImageView.isHidden = true
+        }
+        
+        // 나머지 값들
+        //cell.tagNameLabel.text = lookUpCrewResult?.content[indexPath.row].sportsName
+        cell.titleLabel.text = lookUpCrewResult?.content[indexPath.row].clubTitle
+        
+        cell.dayLabels[0].text = lookUpCrewResult?.content[indexPath.row].schedules[0].day
+        cell.dayLabels[1].text = stringDate(doubleDate: lookUpCrewResult?.content[indexPath.row].schedules[0].startTime ?? -1.0)
+        cell.dayLabels[3].text = stringDate(doubleDate: lookUpCrewResult?.content[indexPath.row].schedules[0].endTime ?? -1.0)
+        cell.dayLabels[4].isHidden = true
+        
+        // 장소가 지정되어있지 않을 경우 "장소미정" 뜨게함
+        cell.subLabel.text = lookUpCrewResult?.content[indexPath.row].areaName ?? "장소미정"
         
         return cell
     }
@@ -190,19 +293,16 @@ extension CrewVC {
             SignUpUserInfo.shared.areaName?.append(result[i].name)
         }
     }
+    
+    // 크루 조회 api
+    func didSuccessLookUpCrew(result: LookUpCrewDataResult) {
+        print("조회데이터가 성공적으로 들어왔습니다.")
+        lookUpCrewResult = result
+        
+        crewCV.reloadData()
+    }
+    
     func failedToRequest(message: String) {
         print("데이터가 들어오지 않았습니다.")
     }
 }
-
-//extension CrewVC {
-//    func didSuccessLookUpCrew(result: CrewDetailResult) {
-//        print("데이터가 성공적으로 들어왔습니다.")
-//
-//    }
-//    
-//    func failedToRequest(message: String) {
-//        print("데이터가 들어오지 않았습니다.")
-//
-//    }
-//}
