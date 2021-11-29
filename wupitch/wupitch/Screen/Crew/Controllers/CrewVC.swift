@@ -32,15 +32,16 @@ class CrewVC: BaseVC {
         setStyle()
         setCVDelegate()
         tapGesture()
-        dataManager.getArea(delegate: self)
-        crewDataManager.getLookUpCrew(request: LookUpCrewRequest(ageList: SignUpUserInfo.shared.ageListBtn ?? [-1], areaId: SignUpUserInfo.shared.areaIdBtn ?? -1, days: SignUpUserInfo.shared.daysBtn ?? [-1], isAsc: SignUpUserInfo.shared.isAsc ?? true, memberCountValue: SignUpUserInfo.shared.memberCountValueBtn ?? -1, page: SignUpUserInfo.shared.page ?? -1, size: SignUpUserInfo.shared.size ?? 10, sortBy: SignUpUserInfo.shared.sortBy ?? "updatedAt", sportsList:SignUpUserInfo.shared.sportsListBtn ?? [-1]), delegate: self)
         
+        dataManager.getArea(delegate: self)
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        print("유저디폴트", UserDefaults.standard.dictionary(forKey: "filterParams"))
+        crewDataManager.getLookUpCrew(params: UserDefaults.standard.dictionary(forKey: "filterParams") as? [String:[Any]], delegate: self)
+    
     }
     
     private func setStyle() {
@@ -155,15 +156,6 @@ extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
                 cell.imageView.sd_setImage(with: URL(string: lookUpCrewResult?.content[indexPath.row].crewImage ?? ""))
             }
         case 2:
-            cell.tagNameLabel.text = "농구"
-            cell.tagNameView.backgroundColor = .sub02
-            if lookUpCrewResult?.content[indexPath.row].crewImage == nil {
-                cell.imageView.image = UIImage(named: "imgBasket")
-            }
-            else {
-                cell.imageView.sd_setImage(with: URL(string: lookUpCrewResult?.content[indexPath.row].crewImage ?? ""))
-            }
-        case 3:
             cell.tagNameLabel.text = "배드민턴"
             cell.tagNameView.backgroundColor = .sub03
             if lookUpCrewResult?.content[indexPath.row].crewImage == nil {
@@ -172,7 +164,8 @@ extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             else {
                 cell.imageView.sd_setImage(with: URL(string: lookUpCrewResult?.content[indexPath.row].crewImage ?? ""))
             }
-        case 4:
+            
+        case 3:
             cell.tagNameLabel.text = "배구"
             cell.tagNameView.backgroundColor = .sub01
             if lookUpCrewResult?.content[indexPath.row].crewImage == nil {
@@ -181,20 +174,30 @@ extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             else {
                 cell.imageView.sd_setImage(with: URL(string: lookUpCrewResult?.content[indexPath.row].crewImage ?? ""))
             }
-        case 5:
-            cell.tagNameLabel.text = "런닝"
-            cell.tagNameView.backgroundColor = .sub05
+        case 4:
+            cell.tagNameLabel.text = "농구"
+            cell.tagNameView.backgroundColor = .sub02
             if lookUpCrewResult?.content[indexPath.row].crewImage == nil {
-                cell.imageView.image = UIImage(named: "imgRun")
+                cell.imageView.image = UIImage(named: "imgBasket")
+            }
+            else {
+                cell.imageView.sd_setImage(with: URL(string: lookUpCrewResult?.content[indexPath.row].crewImage ?? ""))
+            }
+            
+        case 5:
+            cell.tagNameLabel.text = "등산"
+            cell.tagNameView.backgroundColor = .sub06
+            if lookUpCrewResult?.content[indexPath.row].crewImage == nil {
+                cell.imageView.image = UIImage(named: "imgHike")
             }
             else {
                 cell.imageView.sd_setImage(with: URL(string: lookUpCrewResult?.content[indexPath.row].crewImage ?? ""))
             }
         case 6:
-            cell.tagNameLabel.text = "등산"
-            cell.tagNameView.backgroundColor = .sub06
+            cell.tagNameLabel.text = "런닝"
+            cell.tagNameView.backgroundColor = .sub05
             if lookUpCrewResult?.content[indexPath.row].crewImage == nil {
-                cell.imageView.image = UIImage(named: "imgHike")
+                cell.imageView.image = UIImage(named: "imgRun")
             }
             else {
                 cell.imageView.sd_setImage(with: URL(string: lookUpCrewResult?.content[indexPath.row].crewImage ?? ""))

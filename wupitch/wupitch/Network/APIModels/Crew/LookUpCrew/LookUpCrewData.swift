@@ -47,7 +47,7 @@ struct LookUpContent: Codable {
 struct ScheduleArray: Codable {
     let dayIdx: Int
     let day: String
-    let startTime, endTime: Double
+    let startTime, endTime: Double?
 }
 
 // MARK: - SetPaging

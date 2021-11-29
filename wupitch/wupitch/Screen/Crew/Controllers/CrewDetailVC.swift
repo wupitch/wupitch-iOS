@@ -22,8 +22,8 @@ class CrewDetailVC: BaseVC {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var backBtn: UIButton!
     
-    //lazy var crewDetailDataManager = CrewDetailService()
-    //var detailInfo : CrewDetailResult?
+    lazy var crewDetailDataManager = CrewDetailService()
+    var detailInfo : CrewDetailResult?
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -87,6 +87,16 @@ class CrewDetailVC: BaseVC {
         // Register Reusable View Cell
         detailCV.register(DetailCrewHeaderCRV.nib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "DetailCrewHeaderCRV")
         detailCV.register(DetailCrewFooterCRV.nib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "DetailCrewFooterCRV")
+    }
+    
+    func stringDate(doubleDate: Double) -> String {
+        let doubleToString = String(doubleDate)
+        
+        let stringChange = doubleToString.split(separator: ".")
+        
+        let stringDate = String(stringChange.first!) + ":" + String(stringChange.last!)
+        
+        return stringDate
     }
     
     // MARK: - IBAction
@@ -158,8 +168,54 @@ extension CrewDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailCrewImgCVCell.identifier, for: indexPath) as? DetailCrewImgCVCell else{
                 return UICollectionViewCell()
             }
-            //cell.mainImgView.sd_setImage(with: URL(string: detailInfo?.crewImage))
             
+            switch detailInfo?.content[indexPath.row].sportsID {
+            case 1:
+                if detailInfo?.content[indexPath.row].crewImage == nil {
+                    cell.mainImgView.image = UIImage(named: "imgFootThumb")
+                }
+                else {
+                    cell.mainImgView.sd_setImage(with: URL(string: detailInfo?.content[indexPath.row].crewImage ?? ""))
+                }
+            case 2:
+                if detailInfo?.content[indexPath.row].crewImage == nil {
+                    cell.mainImgView.image = UIImage(named: "imgBaskThumb")
+                }
+                else {
+                    cell.mainImgView.sd_setImage(with: URL(string: detailInfo?.content[indexPath.row].crewImage ?? ""))
+                }
+            case 3:
+                if detailInfo?.content[indexPath.row].crewImage == nil {
+                    cell.mainImgView.image = UIImage(named: "imgBadThumb")
+                }
+                else {
+                    cell.mainImgView.sd_setImage(with: URL(string: detailInfo?.content[indexPath.row].crewImage ?? ""))
+                }
+            case 4:
+                if detailInfo?.content[indexPath.row].crewImage == nil {
+                    cell.mainImgView.image = UIImage(named: "imgVollThumb")
+                }
+                else {
+                    cell.mainImgView.sd_setImage(with: URL(string: detailInfo?.content[indexPath.row].crewImage ?? ""))
+                }
+            case 5:
+                if detailInfo?.content[indexPath.row].crewImage == nil {
+                    cell.mainImgView.image = UIImage(named: "imgRunThumb")
+                }
+                else {
+                    cell.mainImgView.sd_setImage(with: URL(string: detailInfo?.content[indexPath.row].crewImage ?? ""))
+                }
+            case 6:
+                if detailInfo?.content[indexPath.row].crewImage == nil {
+                    cell.mainImgView.image = UIImage(named: "imgHikeThumb")
+                }
+                else {
+                    cell.mainImgView.sd_setImage(with: URL(string: detailInfo?.content[indexPath.row].crewImage ?? ""))
+                }
+            default:
+                break
+            }
+        
             return cell
         }
         else if indexPath.section == 1 {
@@ -167,25 +223,50 @@ extension CrewDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
                 return UICollectionViewCell()
             }
             
-//            cell.titleLabel.text = detailInfo?.clubTitle
-//            cell.tagView.backgroundColor = .red
-//            cell.tagLabel.text = detailInfo?.sportsName
-//            cell.tagLabel.textColor = .wht
+            cell.titleLabel.text = detailInfo?.content[indexPath.row].clubTitle
+            
+            cell.tagLabel.text = detailInfo?.content[indexPath.row].sportsName
+            cell.tagLabel.textColor = .wht
+
+            // 하나라도 값이 없다면 히든처리
+            if let dayOne = detailInfo?.content[indexPath.row].schedules[0].day,
+               let dayTwo = detailInfo?.content[indexPath.row].schedules[1].day,
+               let dayThree = detailInfo?.content[indexPath.row].schedules[2].day {
+
+                cell.dayLabel[0].text = dayOne
+                cell.dayLabel[1].text = dayTwo
+                cell.dayLabel[2].text = dayThree
+            }
+            
+            switch detailInfo?.content[indexPath.row].sportsID {
+            case 1:
+                cell.tagLabel.text = "축구/풋살"
+                cell.tagView.backgroundColor = .sub04
+            case 2:
+                cell.tagLabel.text = "농구"
+                cell.tagView.backgroundColor = .sub02
+            case 3:
+                cell.tagLabel.text = "배드민턴"
+                cell.tagView.backgroundColor = .sub03
+            case 4:
+                cell.tagLabel.text = "배구"
+                cell.tagView.backgroundColor = .sub01
+            case 5:
+                cell.tagLabel.text = "런닝"
+                cell.tagView.backgroundColor = .sub05
+            case 6:
+                cell.tagLabel.text = "등산"
+                cell.tagView.backgroundColor = .sub06
+            default:
+                break
+            }
+
+//            cell.startImeLabel[0].text = stringDate(doubleDate: detailInfo?.content[indexPath.row].schedules[indexPath.row].startTime ?? -1.0)
 //
-//            // 하나라도 값이 없다면 히든처리
-//            if let dayOne = detailInfo?.schedules[0].day,
-//               let dayTwo = detailInfo?.schedules[1].day,
-//               let dayThree = detailInfo?.schedules[2].day {
-//
-//                cell.dayLabel[0].text = dayOne
-//                cell.dayLabel[1].text = dayTwo
-//                cell.dayLabel[2].text = dayThree
-//            }
-//
-//            cell.dayLabel[0].text = detailInfo?.schedules[0].day
-//            cell.startImeLabel[0].text = String(detailInfo?.schedules[0].startTime ?? 0.0)
-//            cell.endTimeLabel[0].text = String(detailInfo?.schedules[0].endTime ?? 0.0)
-//
+            
+           
+
+
 //            cell.dayLabel[1].text = detailInfo?.schedules[1].day
 //            cell.startImeLabel[1].text = String(detailInfo?.schedules[1].startTime ?? 0.0)
 //            cell.endTimeLabel[1].text = String(detailInfo?.schedules[1].endTime ?? 0.0)
@@ -357,15 +438,15 @@ extension CrewDetailVC: GuestModalDelegate {
    
 }
 
-//extension CrewDetailVC {
-//    func didSuccessCrewDetail(result: CrewDetailResult) {
-//        print("데이터가 성공적으로 들어왔습니다.")
-//        self.detailInfo = result
-//        detailCV.reloadData()
-//    }
-//
-//    func failedToRequest(message: String) {
-//        print("데이터가 들어오지 않았습니다.")
-//
-//    }
-//}
+extension CrewDetailVC {
+    func didSuccessCrewDetail(result: CrewDetailResult) {
+        print("데이터가 성공적으로 들어왔습니다.")
+        self.detailInfo = result
+        detailCV.reloadData()
+    }
+
+    func failedToRequest(message: String) {
+        print("데이터가 들어오지 않았습니다.")
+
+    }
+}

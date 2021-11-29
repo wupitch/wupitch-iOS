@@ -3,15 +3,15 @@
 import Foundation
 
 // MARK: - Welcome
-struct AA: Codable {
+struct CrewDetailData: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String
-    let result: Result
+    let result: CrewDetailResult
 }
 
-// MARK: - Result
-struct Result: Codable {
+// MARK: - CrewDetailResult
+struct CrewDetailResult: Codable {
     let content: [Content]
     let pageable: Pageable
     let totalPages, totalElements: Int
@@ -27,7 +27,7 @@ struct Content: Codable {
     let clubID, sportsID: Int
     let sportsName, clubTitle, introduction: String
     let schedules: [Schedule]
-    let crewImage: JSONNull?
+    let crewImage: String?
     let isPinUp: Bool
     let areaName: String
 
@@ -56,31 +56,3 @@ struct Pageable: Codable {
 struct Sort: Codable {
     let empty, sorted, unsorted: Bool
 }
-
-// MARK: - Encode/decode helpers
-
-class JSONNull: Codable, Hashable {
-
-    public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
-        return true
-    }
-
-    public var hashValue: Int {
-        return 0
-    }
-
-    public init() {}
-
-    public required init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        if !container.decodeNil() {
-            throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
-        }
-    }
-
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        try container.encodeNil()
-    }
-}
-
