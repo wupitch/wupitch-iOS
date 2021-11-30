@@ -121,6 +121,10 @@
 		DD485FD22755EB6F0071AE93 /* LookUpCrewFilterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FD12755EB6F0071AE93 /* LookUpCrewFilterData.swift */; };
 		DD485FD627560A130071AE93 /* BungaeDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FD527560A130071AE93 /* BungaeDetailService.swift */; };
 		DD485FD827560A200071AE93 /* BungaeDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FD727560A200071AE93 /* BungaeDetailData.swift */; };
+		DD485FDB27565EAE0071AE93 /* CrewRegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FDA27565EAE0071AE93 /* CrewRegisterService.swift */; };
+		DD485FDE27565F770071AE93 /* CrewRegisterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FDD27565F770071AE93 /* CrewRegisterData.swift */; };
+		DD485FE227566E760071AE93 /* PinUpToggleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FE127566E760071AE93 /* PinUpToggleService.swift */; };
+		DD485FE427566E870071AE93 /* PinUpToggleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FE327566E870071AE93 /* PinUpToggleData.swift */; };
 		DD61E4B9271D7E50007504DE /* SignUpTermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */; };
 		DD61E4BB271D856E007504DE /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4BA271D856E007504DE /* UILabel.swift */; };
 		DD61E4BD271D8EB8007504DE /* SignUpCity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */; };
@@ -394,6 +398,10 @@
 		DD485FD12755EB6F0071AE93 /* LookUpCrewFilterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpCrewFilterData.swift; sourceTree = "<group>"; };
 		DD485FD527560A130071AE93 /* BungaeDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeDetailService.swift; sourceTree = "<group>"; };
 		DD485FD727560A200071AE93 /* BungaeDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeDetailData.swift; sourceTree = "<group>"; };
+		DD485FDA27565EAE0071AE93 /* CrewRegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewRegisterService.swift; sourceTree = "<group>"; };
+		DD485FDD27565F770071AE93 /* CrewRegisterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewRegisterData.swift; sourceTree = "<group>"; };
+		DD485FE127566E760071AE93 /* PinUpToggleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinUpToggleService.swift; sourceTree = "<group>"; };
+		DD485FE327566E870071AE93 /* PinUpToggleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinUpToggleData.swift; sourceTree = "<group>"; };
 		DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTermsVC.swift; sourceTree = "<group>"; };
 		DD61E4BA271D856E007504DE /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpCity.storyboard; sourceTree = "<group>"; };
@@ -1309,6 +1317,38 @@
 			path = BungaeDetail;
 			sourceTree = "<group>";
 		};
+		DD485FD927565E8B0071AE93 /* RegisterToggle */ = {
+			isa = PBXGroup;
+			children = (
+				DD485FDA27565EAE0071AE93 /* CrewRegisterService.swift */,
+			);
+			path = RegisterToggle;
+			sourceTree = "<group>";
+		};
+		DD485FDC27565F5F0071AE93 /* RegisterToggle */ = {
+			isa = PBXGroup;
+			children = (
+				DD485FDD27565F770071AE93 /* CrewRegisterData.swift */,
+			);
+			path = RegisterToggle;
+			sourceTree = "<group>";
+		};
+		DD485FDF27566E520071AE93 /* PinUpToggle */ = {
+			isa = PBXGroup;
+			children = (
+				DD485FE127566E760071AE93 /* PinUpToggleService.swift */,
+			);
+			path = PinUpToggle;
+			sourceTree = "<group>";
+		};
+		DD485FE027566E620071AE93 /* PinUpToggle */ = {
+			isa = PBXGroup;
+			children = (
+				DD485FE327566E870071AE93 /* PinUpToggleData.swift */,
+			);
+			path = PinUpToggle;
+			sourceTree = "<group>";
+		};
 		DD9EEDCA273D614300E02396 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -1525,6 +1565,8 @@
 		DDC4DB0F2744B92A00D79CC8 /* Crew */ = {
 			isa = PBXGroup;
 			children = (
+				DD485FDF27566E520071AE93 /* PinUpToggle */,
+				DD485FD927565E8B0071AE93 /* RegisterToggle */,
 				DD485FCD2755EADD0071AE93 /* LookUpCrewFilter */,
 				DD485F7F27534C710071AE93 /* LookUpCrew */,
 				DDC46B982752AB450015341E /* CrewDetail */,
@@ -1536,6 +1578,8 @@
 		DDC4DB102744B93D00D79CC8 /* Crew */ = {
 			isa = PBXGroup;
 			children = (
+				DD485FE027566E620071AE93 /* PinUpToggle */,
+				DD485FDC27565F5F0071AE93 /* RegisterToggle */,
 				DD485FD02755EB5C0071AE93 /* LookUpCrewFilter */,
 				DD485F8227534F140071AE93 /* LookUpCrew */,
 				DDC46B942752AABE0015341E /* CrewDetail */,
@@ -2033,6 +2077,7 @@
 				DDC46B782751D0340015341E /* PickerBtn.swift in Sources */,
 				DDC46B52274F68370015341E /* ProfileDetailVC.swift in Sources */,
 				DD3ACBBB2721075500EBC201 /* SignUpSportsVC.swift in Sources */,
+				DD485FE427566E870071AE93 /* PinUpToggleData.swift in Sources */,
 				DD3E37C6272F928E00C4192E /* CrewCVCell.swift in Sources */,
 				DD9EEDC3273A667D00E02396 /* CrewAlertTVCell.swift in Sources */,
 				DD485FAF2755C7C60071AE93 /* PhoneNumberInfomationService.swift in Sources */,
@@ -2058,6 +2103,7 @@
 				DD3A30F6272E620B00D711C6 /* AddCrewVC.swift in Sources */,
 				DDED011B271B33F800C2C343 /* OnboardingData.swift in Sources */,
 				DD485F682752FFDD0071AE93 /* MemberSportsData.swift in Sources */,
+				DD485FDE27565F770071AE93 /* CrewRegisterData.swift in Sources */,
 				DD485F8127534C940071AE93 /* LookUpCrewService.swift in Sources */,
 				DDC4DB45274D2BBA00D79CC8 /* MakeBungaeRegionVC.swift in Sources */,
 				DDC4DB142744B96C00D79CC8 /* MakeCrewRequest.swift in Sources */,
@@ -2096,6 +2142,7 @@
 				DD61E4B9271D7E50007504DE /* SignUpTermsVC.swift in Sources */,
 				DD1BFC3927380C920042C51F /* CrewFilterVC.swift in Sources */,
 				DD3A30E0272DABC000D711C6 /* BungaeVC.swift in Sources */,
+				DD485FE227566E760071AE93 /* PinUpToggleService.swift in Sources */,
 				DD3ACBC8272170A800EBC201 /* SignUpCompleteVC.swift in Sources */,
 				DDC46B7D2752219F0015341E /* PasswordCheckData.swift in Sources */,
 				DD485F6E2753042D0071AE93 /* MemberAgeService.swift in Sources */,
@@ -2157,6 +2204,7 @@
 				DDC46B7A2751E5140015341E /* MakeBungaeService.swift in Sources */,
 				DDC46B5E274F8BF30015341E /* ProfilePasswordVC.swift in Sources */,
 				DDC46B8C275239700015341E /* ReadyCVCell.swift in Sources */,
+				DD485FDB27565EAE0071AE93 /* CrewRegisterService.swift in Sources */,
 				DDC4DB262746A95E00D79CC8 /* SportsData.swift in Sources */,
 				DDC46B8527522FF80015341E /* ChangePasswordRequest.swift in Sources */,
 				DD485FC72755DE860071AE93 /* ProfileNicknameRequest.swift in Sources */,

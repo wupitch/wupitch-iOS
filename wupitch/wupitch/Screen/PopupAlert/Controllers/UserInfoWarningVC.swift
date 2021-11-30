@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol IntroduceDelegate {
+    func dismissIntroducePopup()
+}
+
 class UserInfoWarningVC: UIViewController {
 
     @IBOutlet weak var cancelBtn: UIButton!
@@ -15,6 +19,8 @@ class UserInfoWarningVC: UIViewController {
     @IBOutlet weak var completeBtn: UIButton!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var alertView: UIView!
+    
+    var introducePopUp : IntroduceDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +51,7 @@ class UserInfoWarningVC: UIViewController {
     
     @IBAction func touchUpSelectBtn(_ sender: Any) {
         // 이 팝업 dismiss 후 프로필 작성하러가는 페이지로 이동
+        introducePopUp?.dismissIntroducePopup()
+        dismiss(animated: true, completion: nil)
     }
-    
 }

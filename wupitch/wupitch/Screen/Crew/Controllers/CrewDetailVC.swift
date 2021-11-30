@@ -25,6 +25,8 @@ class CrewDetailVC: BaseVC {
     
     lazy var crewDetailDataManager = CrewDetailService()
     var detailInfo : CrewDetailResult?
+    var status = false
+    lazy var crewRegisterToggle = CrewRegisterService()
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -109,7 +111,7 @@ class CrewDetailVC: BaseVC {
                     if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
                         dvc.modalPresentationStyle = .overFullScreen
                         dvc.modalTransitionStyle = .crossDissolve
-        
+                        dvc.introducePopUp = self
                         // present 형태로 띄우기
                         self.present(dvc, animated: true, completion: nil)
                     }
@@ -127,6 +129,7 @@ class CrewDetailVC: BaseVC {
                     self.present(dvc, animated: true, completion: nil)
                 }
             }
+        crewRegisterToggle.postCrewRegisterService(delegate: self)
     }
     
     // 뒤로가기 버튼
@@ -169,7 +172,7 @@ extension CrewDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailCrewImgCVCell.identifier, for: indexPath) as? DetailCrewImgCVCell else{
                 return UICollectionViewCell()
             }
-            cell.crewPinDelegate = self
+            
             switch detailInfo?.sportsID {
             case 1:
                 if detailInfo?.crewImage == nil {
@@ -409,7 +412,7 @@ extension CrewDetailVC: GuestModalDelegate {
                     if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
                         dvc.modalPresentationStyle = .overFullScreen
                         dvc.modalTransitionStyle = .crossDissolve
-        
+                        dvc.introducePopUp = self
                         // present 형태로 띄우기
                         self.present(dvc, animated: true, completion: nil)
                     }
@@ -435,6 +438,17 @@ extension CrewDetailVC {
         self.detailInfo = result
         detailCV.reloadData()
     }
+    
+    func didSuccessCrewRegister(result: CrewRegisterData) {
+        print("크루 등록 토글이 성공적으로 들어옵니다.")
+        print(result.message)
+    }
+    
+    func didSuccessPinUpToggle(result: PinUpToggleData) {
+        print("핀업 토글이 성공적으로 들어옵니다.")
+        print(result.message)
+        detailCV.reloadData()
+    }
 
     func failedToRequest(message: String) {
         print("크루 디테일 조회 데이터가 들어오지 않았습니다.")
@@ -442,10 +456,11 @@ extension CrewDetailVC {
     }
 }
 
-extension CrewDetailVC: PinDelegate {
-    func selectPinBtn() {
-        
+extension CrewDetailVC: IntroduceDelegate {
+    func dismissIntroducePopup() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "ProfileNickname", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "ProfileNicknameVC") as? ProfileNicknameVC {
+            navigationController?.pushViewController(dvc, animated: true)
+        }
     }
-    
-    
 }
