@@ -7,8 +7,15 @@
 
 import UIKit
 
+protocol PinDelegate {
+    func selectPinBtn()
+}
+
 class DetailCrewImgCVCell: UICollectionViewCell {
 
+    var status = false
+    var crewPinDelegate : PinDelegate?
+    
     @IBOutlet weak var mainImgView: UIImageView!
     @IBOutlet weak var pinBtn: UIButton!
     
@@ -23,4 +30,8 @@ class DetailCrewImgCVCell: UICollectionViewCell {
         
     }
 
+    @IBAction func touchUpPinBtn(_ sender: Any) {
+        self.crewPinDelegate?.selectPinBtn()
+        
+    }
 }

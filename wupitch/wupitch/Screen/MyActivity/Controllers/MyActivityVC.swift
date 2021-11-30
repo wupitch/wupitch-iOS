@@ -30,6 +30,7 @@ class MyActivityVC: BaseVC {
         
         MyActivityCV.register(ActivityCrewCVCell.nib(), forCellWithReuseIdentifier: ActivityCrewCVCell.identifier)
         MyActivityCV.register(BungaeCVCell.nib(), forCellWithReuseIdentifier: BungaeCVCell.identifier)
+        MyActivityCV.register(ReadyCVCell.nib(), forCellWithReuseIdentifier: ReadyCVCell.identifier)
         
         // 아무것도 없을 때는 이거
         MyActivityCV.register(NoActivityCrewCVCell.nib(), forCellWithReuseIdentifier: NoActivityCrewCVCell.identifier)
@@ -47,60 +48,67 @@ extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     // 섹션 개수 지정
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
+        //return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-        if indexPath.section == 0 {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ActivityCrewCVCell.identifier, for: indexPath) as? ActivityCrewCVCell else{
-                return UICollectionViewCell()
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReadyCVCell.identifier, for: indexPath) as? ReadyCVCell else{
+            return UICollectionViewCell()
         }
         return cell
     }
-        else {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BungaeCVCell.identifier, for: indexPath) as? BungaeCVCell else{
-                return UICollectionViewCell()
-            }
-            cell.pinImageView.image = UIImage(named: "leader")
-            return cell
-        }
-    }
+//        if indexPath.section == 0 {
+//            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ActivityCrewCVCell.identifier, for: indexPath) as? ActivityCrewCVCell else{
+//                return UICollectionViewCell()
+//        }
+//        return cell
+//    }
+//        else {
+//            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BungaeCVCell.identifier, for: indexPath) as? BungaeCVCell else{
+//                return UICollectionViewCell()
+//            }
+//            cell.pinImageView.image = UIImage(named: "leader")
+//            return cell
+//        }
     
     // kind는 supplementary view의 종류를 의미
     // section header로 넣을지 footer로 넣을지 저 kind를 통해 결정
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        switch kind {
-        case UICollectionView.elementKindSectionHeader:
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,withReuseIdentifier: "ActivityCrewCRV",for: indexPath) as! ActivityCrewCRV
-            
-            switch indexPath.section {
-            case 0:
-                headerView.frame.size.height = 48.0
-            case 1:
-                headerView.frame.size.height = 48.0
-                headerView.crewLabel.text = "예정된 번개"
-            default:
-                headerView.frame.size.height = 0.0
-            }
-            return headerView
-        default:
-            assert(false, "응 아니야")
-        }
+//        switch kind {
+//        case UICollectionView.elementKindSectionHeader:
+//            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,withReuseIdentifier: "ActivityCrewCRV",for: indexPath) as! ActivityCrewCRV
+//
+//            switch indexPath.section {
+//            case 0:
+//                headerView.frame.size.height = 48.0
+//            case 1:
+//                headerView.frame.size.height = 48.0
+//                headerView.crewLabel.text = "예정된 번개"
+//            default:
+//                headerView.frame.size.height = 0.0
+//            }
+//            return headerView
+//        default:
+//            assert(false, "응 아니야")
+//        }
+        return UICollectionReusableView()
     }
     
     // 섹션헤더 높이 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         
-        switch section {
-        case 0:
-            return CGSize(width: collectionView.bounds.width, height: 48)
-        case 1:
-            return CGSize(width: collectionView.bounds.width, height: 48)
-        default:
-            return CGSize(width: collectionView.bounds.width, height: 40)
-        }
+//        switch section {
+//        case 0:
+//            return CGSize(width: collectionView.bounds.width, height: 48)
+//        case 1:
+//            return CGSize(width: collectionView.bounds.width, height: 48)
+//        default:
+//            return CGSize(width: collectionView.bounds.width, height: 40)
+//        }
+        return CGSize()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -119,14 +127,16 @@ extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = collectionView.frame.width
-        //let height =  collectionView.frame.height
+        let height =  collectionView.frame.height
         
-        if indexPath.section == 0 {
-            return CGSize(width: width-40, height: 176)
-        }
-        else {
-            return CGSize(width: width-40, height: 144)
-        }
+        return CGSize(width: width, height: height)
+        
+//        if indexPath.section == 0 {
+//            return CGSize(width: width-40, height: 176)
+//        }
+//        else {
+//            return CGSize(width: width-40, height: 144)
+//        }
     }
     
     // 위 아래 간격

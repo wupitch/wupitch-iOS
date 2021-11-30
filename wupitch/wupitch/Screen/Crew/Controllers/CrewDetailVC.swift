@@ -12,6 +12,7 @@ import SDWebImage
 // 크루 디테일 뷰
 class CrewDetailVC: BaseVC {
     
+    
     // MARK: - IBOutlet
     @IBOutlet weak var modalView: UIView!
     @IBOutlet weak var registerBtn: UIButton!
@@ -168,7 +169,7 @@ extension CrewDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailCrewImgCVCell.identifier, for: indexPath) as? DetailCrewImgCVCell else{
                 return UICollectionViewCell()
             }
-            
+            cell.crewPinDelegate = self
             switch detailInfo?.sportsID {
             case 1:
                 if detailInfo?.crewImage == nil {
@@ -439,4 +440,12 @@ extension CrewDetailVC {
         print("크루 디테일 조회 데이터가 들어오지 않았습니다.")
 
     }
+}
+
+extension CrewDetailVC: PinDelegate {
+    func selectPinBtn() {
+        
+    }
+    
+    
 }
