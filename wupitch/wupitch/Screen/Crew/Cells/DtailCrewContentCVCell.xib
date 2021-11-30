@@ -41,6 +41,10 @@
                 <constraint firstItem="05a-tm-t5E" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="r2h-A2-RlD"/>
             </constraints>
             <size key="customSize" width="314" height="204"/>
+            <connections>
+                <outlet property="contentLabel" destination="yFE-eT-zpL" id="tov-j5-hTh"/>
+                <outlet property="titleLabel" destination="05a-tm-t5E" id="jSf-fw-sPp"/>
+            </connections>
             <point key="canvasLocation" x="327.536231884058" y="137.27678571428569"/>
         </collectionViewCell>
     </objects>

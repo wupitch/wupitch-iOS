@@ -17,12 +17,16 @@ class BungaeDetailVC: BaseVC {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var backBtn: UIButton!
 
+    var detailInfo : BungaeDetailResult?
+    lazy var bungaeDetailDataManager = BungaeDetailService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setStyle()
         setCVDelegate()
         tabBarController?.tabBar.isHidden = true
+        bungaeDetailDataManager.getBungaeDetail(delegate: self)
     }
     
     private func setStyle() {
@@ -55,6 +59,17 @@ class BungaeDetailVC: BaseVC {
         detailCV.register(BungaeIntroduceCVCell.nib(), forCellWithReuseIdentifier: BungaeIntroduceCVCell.identifier)
         detailCV.register(DtailCrewContentCVCell.nib(), forCellWithReuseIdentifier: DtailCrewContentCVCell.identifier)
     }
+    
+    func stringDate(doubleDate: Double) -> String {
+        let doubleToString = String(doubleDate)
+        
+        let stringChange = doubleToString.split(separator: ".")
+        
+        let stringDate = String(stringChange.first!) + ":" + String(stringChange.last!)
+        
+        return stringDate
+    }
+    
     
     @IBAction func touchUpRegisterBtn(_ sender: Any) {
         // 사용자의 자기소개 부분이 비어있다면 정보가 부족하다는 알림창을 띄워주고, 그렇지 않다면 가입 신청이 완료되었다는 창 띄워주기
@@ -127,7 +142,14 @@ extension BungaeDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, 
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailCrewImgCVCell.identifier, for: indexPath) as? DetailCrewImgCVCell else{
                 return UICollectionViewCell()
             }
-            //cell.mainImgView.image = UIImage(named: "test")
+            // 사진이 있을 때
+            if detailInfo?.impromptuImage != nil {
+                cell.mainImgView.sd_setImage(with: URL(string: detailInfo?.impromptuImage ?? ""))
+            }
+            // 사진이 없을 때
+            else {
+                cell.mainImgView.image = UIImage(named: "imgBungaeThumb")
+            }
             
             return cell
         }
@@ -135,15 +157,25 @@ extension BungaeDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, 
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BungaeTitleCVCell.identifier, for: indexPath) as? BungaeTitleCVCell else{
                 return UICollectionViewCell()
             }
-            cell.titleLabel.text = "가나다라마바사아자차카타파하가나다라"
-            cell.tagView.backgroundColor = .red
-            cell.tagLabel.text = "D-1"
-            cell.tagLabel.textColor = .wht
-            cell.topDateLabel.text = "수요일 20:00 - 22:00"
-            cell.bottomDateLabel.text = "일요일 11:30 - 13:30"
-            cell.locationLabel.text = "가나다라마바사아자차카타파하"
-            cell.moneyLabel.text = "정기회비 15,000원"
-            cell.countLabel.text = "2/3명 참여"
+            
+            // 디데이 숫자가 1일때만 백그라운드 색 진하게
+            if  detailInfo?.dday == 1 {
+                cell.tagView.backgroundColor = .bk
+                cell.tagLabel.textColor = .wht
+            }
+            else {
+                cell.tagView.backgroundColor = .gray03
+                cell.tagLabel.textColor = .wht
+            }
+            
+            // 나머지
+            cell.titleLabel.text = detailInfo?.title
+            cell.tagLabel.text = String("D-") + String(detailInfo?.dday ?? 0)
+            cell.topDateLabel.text = String(detailInfo?.date ?? "") + " " + String(detailInfo?.day ?? "")
+            cell.bottomDateLabel.text = stringDate(doubleDate: detailInfo?.startTime ?? -1.0) + " - " + stringDate(doubleDate: detailInfo?.endTime ?? -1.0)
+            cell.locationLabel.text = detailInfo?.location
+            cell.moneyLabel.text = "참여비" + " " + String(detailInfo?.dues ?? 0) + "원"
+            cell.countLabel.text = String(detailInfo?.nowMemberCount ?? -99) + "/" + String(detailInfo?.recruitmentCount ?? -99) + "명 참여"
             
             return cell
         }
@@ -152,6 +184,7 @@ extension BungaeDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, 
                 return UICollectionViewCell()
             }
             cell.titleLabel.text = "소개"
+            cell.contentsLabel.text = detailInfo?.introduction
             
             return cell
         }
@@ -159,18 +192,28 @@ extension BungaeDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, 
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DtailCrewContentCVCell.identifier, for: indexPath) as? DtailCrewContentCVCell else{
                 return UICollectionViewCell()
             }
+            cell.titleLabel.text = "준비물"
+            cell.contentLabel.text = detailInfo?.materials
+            
             return cell
         }
         else if indexPath.section == 4 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DtailCrewContentCVCell.identifier, for: indexPath) as? DtailCrewContentCVCell else{
                 return UICollectionViewCell()
             }
+            cell.titleLabel.text = "문의"
+            cell.contentLabel.text = detailInfo?.inquiries
             return cell
         }
         else {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DtailCrewContentCVCell.identifier, for: indexPath) as? DtailCrewContentCVCell else{
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BungaeIntroduceCVCell.identifier, for: indexPath) as? BungaeIntroduceCVCell else{
                 return UICollectionViewCell()
             }
+            
+            cell.titleLabel.text = "안내사항"
+            cell.contentsLabel.text = " - 번개 참여는 번개 리더의 승인 없이 바로 가능합니다.\n\n - 번개 참여 신청 취소는 마이페이지 – 참여 신청한 크루 및 번개에서 가능합니다.(단, 운동 하루 전까지 취소 가능) \n\n - 번개 리더에 의한 번개 삭제 시 푸시 알림을 통해 알려드립니다. \n\n - 번개 참여 신청이 완료된 후, 운동일 하루 전 푸시 알림을 통해 알려드립니다."
+            cell.contentsLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+            
             return cell
         }
     }
@@ -256,7 +299,7 @@ extension BungaeDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, 
             return CGSize(width: width, height: 200)
         }
         else {
-            return CGSize(width: width, height: 200)
+            return CGSize(width: width, height: 320)
         }
     }
     
@@ -307,3 +350,15 @@ extension BungaeDetailVC: GuestModalDelegate {
     }
 }
 
+extension BungaeDetailVC {
+    func didSuccessBungaeDetail(result: BungaeDetailResult) {
+        print("번개 디테일 데이터가 성공적으로 들어왔습니다.")
+        self.detailInfo = result
+        detailCV.reloadData()
+    }
+
+    func failedToRequest(message: String) {
+        print("번개 디테일데이터가 들어오지 않았습니다.")
+
+    }
+}

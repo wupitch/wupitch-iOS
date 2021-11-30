@@ -235,7 +235,6 @@ extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         guard let dvc = storyboard.instantiateViewController(identifier: "CrewDetailVC") as? CrewDetailVC else {return}
         
         
-        
         self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.pushViewController(dvc, animated: true)
     }

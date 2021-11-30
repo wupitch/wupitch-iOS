@@ -154,6 +154,10 @@ extension BungaeVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        // 유저디폴트에 번개 아이디 저장
+        UserDefaults.standard.set(lookUpBungaeResult?.content[indexPath.row].impromptuID, forKey: "impromptuID")
+        
         // cell 누르면 해당 디테일 페이지로 이동
         let storyboard = UIStoryboard.init(name: "BungaeDetail", bundle: nil)
         
