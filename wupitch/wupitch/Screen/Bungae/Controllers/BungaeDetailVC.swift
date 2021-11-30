@@ -51,7 +51,7 @@ class BungaeDetailVC: BaseVC {
     private func setCVDelegate() {
         detailCV.delegate = self
         detailCV.dataSource = self
-        detailCV.register(DetailCrewImgCVCell.nib(), forCellWithReuseIdentifier: DetailCrewImgCVCell.identifier)
+        detailCV.register(BungaeImageCVCell.nib(), forCellWithReuseIdentifier: BungaeImageCVCell.identifier)
         
         detailCV.register(DetailCrewHeaderCRV.nib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "DetailCrewHeaderCRV")
         
@@ -139,7 +139,7 @@ extension BungaeDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if indexPath.section == 0 {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailCrewImgCVCell.identifier, for: indexPath) as? DetailCrewImgCVCell else{
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BungaeImageCVCell.identifier, for: indexPath) as? BungaeImageCVCell else{
                 return UICollectionViewCell()
             }
             // 사진이 있을 때

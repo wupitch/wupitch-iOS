@@ -33,6 +33,10 @@ class CrewDetailVC: BaseVC {
         super.viewDidLoad()
         setStyle()
         setCVDelegate()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         crewDetailDataManager.getCrewDetail(delegate: self)
     }
     
@@ -106,30 +110,30 @@ class CrewDetailVC: BaseVC {
     // 가입하기 버튼
     @IBAction func touchUpRegisterBtn(_ sender: Any) {
         // 사용자의 자기소개 부분이 비어있다면 정보가 부족하다는 알림창을 띄워주고, 그렇지 않다면 가입 신청이 완료되었다는 창 띄워주기
-                if SignUpUserInfo.shared.introduce == nil {
-                    let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
-                    if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
-                        dvc.modalPresentationStyle = .overFullScreen
-                        dvc.modalTransitionStyle = .crossDissolve
-                        dvc.introducePopUp = self
-                        // present 형태로 띄우기
-                        self.present(dvc, animated: true, completion: nil)
-                    }
-                }
-                else {
-        
-                // 가입 완료 팝업 창 띄워줌
-                let storyBoard: UIStoryboard = UIStoryboard(name: "JoinComplete", bundle: nil)
-        
-                if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinCompleteVC") as? JoinCompleteVC {
-                    dvc.modalPresentationStyle = .overFullScreen
-                    dvc.modalTransitionStyle = .crossDissolve
-        
-                    // present 형태로 띄우기
-                    self.present(dvc, animated: true, completion: nil)
-                }
+        if SignUpUserInfo.shared.introduce == nil {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
+                dvc.modalPresentationStyle = .overFullScreen
+                dvc.modalTransitionStyle = .crossDissolve
+                dvc.introducePopUp = self
+                // present 형태로 띄우기
+                self.present(dvc, animated: true, completion: nil)
             }
-        crewRegisterToggle.postCrewRegisterService(delegate: self)
+        }
+        else {
+            
+            // 가입 완료 팝업 창 띄워줌
+            let storyBoard: UIStoryboard = UIStoryboard(name: "JoinComplete", bundle: nil)
+            
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinCompleteVC") as? JoinCompleteVC {
+                dvc.modalPresentationStyle = .overFullScreen
+                dvc.modalTransitionStyle = .crossDissolve
+                
+                // present 형태로 띄우기
+                self.present(dvc, animated: true, completion: nil)
+            }
+            crewRegisterToggle.postCrewRegisterService(delegate: self)
+        }
     }
     
     // 뒤로가기 버튼
@@ -172,7 +176,6 @@ extension CrewDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailCrewImgCVCell.identifier, for: indexPath) as? DetailCrewImgCVCell else{
                 return UICollectionViewCell()
             }
-            
             switch detailInfo?.sportsID {
             case 1:
                 if detailInfo?.crewImage == nil {
@@ -219,7 +222,7 @@ extension CrewDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             default:
                 break
             }
-        
+            
             return cell
         }
         else if indexPath.section == 1 {
@@ -231,7 +234,7 @@ extension CrewDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             
             cell.tagLabel.text = detailInfo?.sportsName
             cell.tagLabel.textColor = .wht
-
+            
             cell.dayLabel[0].text = String(detailInfo?.schedules[0].day ?? "") + " " + stringDate(doubleDate: detailInfo?.schedules[indexPath.row].startTime ?? 0) + " - " + stringDate(doubleDate: detailInfo?.schedules[indexPath.row].endTime ?? 0)
             cell.dayLabel[1].text = String(detailInfo?.schedules[1].day ?? "") + " " + stringDate(doubleDate: detailInfo?.schedules[indexPath.row].startTime ?? 0) + " - " + stringDate(doubleDate: detailInfo?.schedules[indexPath.row].endTime ?? 0)
             cell.dayLabel[2].text = String(detailInfo?.schedules[2].day ?? "") + " " + stringDate(doubleDate: detailInfo?.schedules[indexPath.row].startTime ?? 0) + " - " + stringDate(doubleDate: detailInfo?.schedules[indexPath.row].endTime ?? 0)
@@ -258,9 +261,9 @@ extension CrewDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             default:
                 break
             }
-
+            
             cell.locationLabel.text = detailInfo?.areaName
-
+            
             cell.moneyLabel[0].text = "정기회비" + " " + String(detailInfo?.dues ?? 0)
             cell.moneyLabel[1].text = "손님비" + " " + String(detailInfo?.guestDues ?? 0)
             
@@ -407,29 +410,29 @@ extension CrewDetailVC: GuestModalDelegate {
     
     func selectBtnToOpenPopup() {
         // 자기소개가 없으면 정보가 부족하다는 알럿창 띄우고, 있으면 손님으로 가입 되었다는 알림창 띄울 수 있도록
-                if SignUpUserInfo.shared.introduce == nil {
-                    let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
-                    if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
-                        dvc.modalPresentationStyle = .overFullScreen
-                        dvc.modalTransitionStyle = .crossDissolve
-                        dvc.introducePopUp = self
-                        // present 형태로 띄우기
-                        self.present(dvc, animated: true, completion: nil)
-                    }
-                }
-                else {
-                    let storyBoard: UIStoryboard = UIStoryboard(name: "GuestComplete", bundle: nil)
-                    if let dvc = storyBoard.instantiateViewController(withIdentifier: "GuestCompleteVC") as? GuestCompleteVC {
-                        dvc.modalPresentationStyle = .overFullScreen
-                        dvc.modalTransitionStyle = .crossDissolve
-        
-                        // present 형태로 띄우기
-                        self.present(dvc, animated: true, completion: nil)
-                    }
-                }
+        if SignUpUserInfo.shared.introduce == nil {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
+                dvc.modalPresentationStyle = .overFullScreen
+                dvc.modalTransitionStyle = .crossDissolve
+                dvc.introducePopUp = self
+                // present 형태로 띄우기
+                self.present(dvc, animated: true, completion: nil)
+            }
+        }
+        else {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "GuestComplete", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "GuestCompleteVC") as? GuestCompleteVC {
+                dvc.modalPresentationStyle = .overFullScreen
+                dvc.modalTransitionStyle = .crossDissolve
+                
+                // present 형태로 띄우기
+                self.present(dvc, animated: true, completion: nil)
+            }
+        }
     }
     
-   
+    
 }
 
 extension CrewDetailVC {
@@ -449,10 +452,10 @@ extension CrewDetailVC {
         print(result.message)
         detailCV.reloadData()
     }
-
+    
     func failedToRequest(message: String) {
         print("크루 디테일 조회 데이터가 들어오지 않았습니다.")
-
+        
     }
 }
 

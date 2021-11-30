@@ -125,6 +125,10 @@
 		DD485FDE27565F770071AE93 /* CrewRegisterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FDD27565F770071AE93 /* CrewRegisterData.swift */; };
 		DD485FE227566E760071AE93 /* PinUpToggleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FE127566E760071AE93 /* PinUpToggleService.swift */; };
 		DD485FE427566E870071AE93 /* PinUpToggleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FE327566E870071AE93 /* PinUpToggleData.swift */; };
+		DD485FE7275680FF0071AE93 /* BungaeImageCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FE5275680FF0071AE93 /* BungaeImageCVCell.swift */; };
+		DD485FE8275680FF0071AE93 /* BungaeImageCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD485FE6275680FF0071AE93 /* BungaeImageCVCell.xib */; };
+		DD485FEC275682C00071AE93 /* BungaePinUpToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FEB275682C00071AE93 /* BungaePinUpToggle.swift */; };
+		DD485FEF275682EA0071AE93 /* BungaePinUpToggleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FEE275682EA0071AE93 /* BungaePinUpToggleData.swift */; };
 		DD61E4B9271D7E50007504DE /* SignUpTermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */; };
 		DD61E4BB271D856E007504DE /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4BA271D856E007504DE /* UILabel.swift */; };
 		DD61E4BD271D8EB8007504DE /* SignUpCity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */; };
@@ -402,6 +406,10 @@
 		DD485FDD27565F770071AE93 /* CrewRegisterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewRegisterData.swift; sourceTree = "<group>"; };
 		DD485FE127566E760071AE93 /* PinUpToggleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinUpToggleService.swift; sourceTree = "<group>"; };
 		DD485FE327566E870071AE93 /* PinUpToggleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinUpToggleData.swift; sourceTree = "<group>"; };
+		DD485FE5275680FF0071AE93 /* BungaeImageCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeImageCVCell.swift; sourceTree = "<group>"; };
+		DD485FE6275680FF0071AE93 /* BungaeImageCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BungaeImageCVCell.xib; sourceTree = "<group>"; };
+		DD485FEB275682C00071AE93 /* BungaePinUpToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaePinUpToggle.swift; sourceTree = "<group>"; };
+		DD485FEE275682EA0071AE93 /* BungaePinUpToggleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaePinUpToggleData.swift; sourceTree = "<group>"; };
 		DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTermsVC.swift; sourceTree = "<group>"; };
 		DD61E4BA271D856E007504DE /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpCity.storyboard; sourceTree = "<group>"; };
@@ -1349,6 +1357,22 @@
 			path = PinUpToggle;
 			sourceTree = "<group>";
 		};
+		DD485FEA275682A10071AE93 /* BungaePinUpToggle */ = {
+			isa = PBXGroup;
+			children = (
+				DD485FEB275682C00071AE93 /* BungaePinUpToggle.swift */,
+			);
+			path = BungaePinUpToggle;
+			sourceTree = "<group>";
+		};
+		DD485FED275682D40071AE93 /* BungaePinUpToggle */ = {
+			isa = PBXGroup;
+			children = (
+				DD485FEE275682EA0071AE93 /* BungaePinUpToggleData.swift */,
+			);
+			path = BungaePinUpToggle;
+			sourceTree = "<group>";
+		};
 		DD9EEDCA273D614300E02396 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -1438,6 +1462,7 @@
 		DDC46B71275169620015341E /* Bungae */ = {
 			isa = PBXGroup;
 			children = (
+				DD485FEA275682A10071AE93 /* BungaePinUpToggle */,
 				DD485FD427560A050071AE93 /* BungaeDetail */,
 				DD485FA3275556780071AE93 /* LookUpBungae */,
 				DDC46B792751E5140015341E /* MakeBungaeService.swift */,
@@ -1448,6 +1473,7 @@
 		DDC46B72275169690015341E /* Bungae */ = {
 			isa = PBXGroup;
 			children = (
+				DD485FED275682D40071AE93 /* BungaePinUpToggle */,
 				DD485FD3275609F10071AE93 /* BungaeDetail */,
 				DD485FA4275556900071AE93 /* LookUpBungae */,
 				DDC46B732751698B0015341E /* MakeBungaeData.swift */,
@@ -1593,6 +1619,8 @@
 			children = (
 				DDC4DB1C2746415000D79CC8 /* BungaeCVCell.swift */,
 				DDC4DB1D2746415000D79CC8 /* BungaeCVCell.xib */,
+				DD485FE5275680FF0071AE93 /* BungaeImageCVCell.swift */,
+				DD485FE6275680FF0071AE93 /* BungaeImageCVCell.xib */,
 				DDC4DB2A2747791F00D79CC8 /* BungaeTitleCVCell.swift */,
 				DDC4DB2B2747791F00D79CC8 /* BungaeTitleCVCell.xib */,
 				DDC4DB2E27478B7200D79CC8 /* BungaeIntroduceCVCell.swift */,
@@ -1926,6 +1954,7 @@
 				DD1BFC5B273927200042C51F /* MakeCrewGuest.storyboard in Resources */,
 				DDD1AD25274E3AB900CCC312 /* NoActivityCrewCVCell.xib in Resources */,
 				DD9EEDD2273F77BE00E02396 /* SignUpEmailPw.storyboard in Resources */,
+				DD485FE8275680FF0071AE93 /* BungaeImageCVCell.xib in Resources */,
 				DD2D63B027268A1A007CEC57 /* LevelModal.storyboard in Resources */,
 				DDC4DAE6274275E200D79CC8 /* ToastMessage.storyboard in Resources */,
 				DD7BEBCC27315DF800DB2F60 /* DetailCrewIntroduceCVCell.xib in Resources */,
@@ -2057,6 +2086,7 @@
 				DD3A30D5272DA75400D711C6 /* TabbarVC.swift in Sources */,
 				DD6728432725563A001E1355 /* UIView.swift in Sources */,
 				DDC4DB2C2747791F00D79CC8 /* BungaeTitleCVCell.swift in Sources */,
+				DD485FEF275682EA0071AE93 /* BungaePinUpToggleData.swift in Sources */,
 				DDC4DAF4274389BC00D79CC8 /* PwValidationRequest.swift in Sources */,
 				DD485FBD2755D1F10071AE93 /* PhoneNumberRequest.swift in Sources */,
 				DD485F8E275396FB0071AE93 /* FCMService.swift in Sources */,
@@ -2160,6 +2190,7 @@
 				DDC46B76275169C00015341E /* MakeBungaeRequest.swift in Sources */,
 				DDC46B742751698B0015341E /* MakeBungaeData.swift in Sources */,
 				DD1BFC5D273927370042C51F /* MakeCrewGuestVC.swift in Sources */,
+				DD485FE7275680FF0071AE93 /* BungaeImageCVCell.swift in Sources */,
 				DD1BFC2D2736DCDC0042C51F /* InformationRequest.swift in Sources */,
 				DDED0121271BD98400C2C343 /* OnbordingSocialVC.swift in Sources */,
 				DD3A30BF272A821A00D711C6 /* SportsBtn.swift in Sources */,
@@ -2174,6 +2205,7 @@
 				DD1BFC352737FFEB0042C51F /* CrewSearchVC.swift in Sources */,
 				DD485F952753E4320071AE93 /* GenericResponse.swift in Sources */,
 				DDE0EE692729335000C46821 /* KakaoLoginData.swift in Sources */,
+				DD485FEC275682C00071AE93 /* BungaePinUpToggle.swift in Sources */,
 				DDC4DB51274D2C6300D79CC8 /* MakeBungaeCountVC.swift in Sources */,
 				DDC4DB18274503DB00D79CC8 /* SignUpImagePreviewVC.swift in Sources */,
 				DDEB65FC274E478900F48DF0 /* AddBoardVC.swift in Sources */,
