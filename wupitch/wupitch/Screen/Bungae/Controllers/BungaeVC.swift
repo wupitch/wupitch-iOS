@@ -137,7 +137,7 @@ extension BungaeVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         cell.tagNameLabel.text = String("D-") + String(lookUpBungaeResult?.content[indexPath.row].dday ?? -1)
         
         cell.titleLabel.text = lookUpBungaeResult?.content[indexPath.row].title
-        cell.dayLabel.text = String(lookUpBungaeResult?.content[indexPath.row].date ?? "21.00.00") + " " + String(lookUpBungaeResult?.content[indexPath.row].day ?? "") + " " + stringDate(doubleDate: lookUpBungaeResult?.content[indexPath.row].startTime ?? 0.0)
+        cell.dayLabel.text = String(schedule?.date ?? "21.00.00") + " " + String(schedule?.day ?? "") + " " + stringDate(doubleDate: Double(schedule?.startTime ?? 0))
         cell.subLabel.text = lookUpBungaeResult?.content[indexPath.row].location
         cell.bungaeCountLabel.text = String(lookUpBungaeResult?.content[indexPath.row].nowMemberCount ?? -1) + "/" + String(lookUpBungaeResult?.content[indexPath.row].recruitmentCount ?? -1)
         

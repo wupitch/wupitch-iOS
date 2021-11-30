@@ -9,8 +9,8 @@ import Foundation
 
 // MARK: - LookUpBungaeData
 struct LookUpBungaeData: Codable {
-    let isSuccess: Bool
     let code: Int
+    let isSuccess: Bool
     let message: String
     let result: LookUpBungaeResult
 }
@@ -18,39 +18,32 @@ struct LookUpBungaeData: Codable {
 // MARK: - LookUpBungaeResult
 struct LookUpBungaeResult: Codable {
     let content: [LookUpBungaeContent]
-    let pageable: BungaePagaing
-    let last: Bool
-    let totalPages, totalElements, size, number: Int
+    let empty, first, last: Bool
+    let number, numberOfElements, size: Int
     let sort: BungaeSort
-    let first: Bool
-    let numberOfElements: Int
-    let empty: Bool
+    let totalElements, totalPages: Int
 }
 
-// MARK: - LookUpBungaeContent
+// MARK: - Content
 struct LookUpBungaeContent: Codable {
-    let impromptuID: Int
+    let date, day: String
+    let dday, impromptuID: Int
     let impromptuImage: String?
-    let title, date, day, location: String
+    let isPinUp: Bool
+    let location: String?
     let nowMemberCount, recruitmentCount: Int
     let startTime, endTime: Double
-    let isPinUp: Bool
-    let dday: Int
+    let title: String
 
     enum CodingKeys: String, CodingKey {
+        case date, day, dday, endTime
         case impromptuID = "impromptuId"
-        case impromptuImage, title, date, day, location, nowMemberCount, recruitmentCount, startTime, endTime, isPinUp, dday
+        case impromptuImage, isPinUp, location, nowMemberCount, recruitmentCount, startTime, title
     }
 }
 
-// MARK: - BungaePagaing
-struct BungaePagaing: Codable {
-    let sort: BungaeSort
-    let offset, pageNumber, pageSize: Int
-    let paged, unpaged: Bool
-}
-
-// MARK: - BungaeSort
+// MARK: - Sort
 struct BungaeSort: Codable {
     let empty, sorted, unsorted: Bool
 }
+

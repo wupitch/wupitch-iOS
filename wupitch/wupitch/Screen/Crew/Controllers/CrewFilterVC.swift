@@ -134,7 +134,6 @@ class CrewFilterVC: BaseVC {
     
     
     @IBAction func touchUpBackBtn(_ sender: Any) {
-        self.tabBarController?.tabBar.isHidden = false
         navigationController?.popViewController(animated: true)
     }
     
@@ -212,8 +211,7 @@ class CrewFilterVC: BaseVC {
         }
         
         UserDefaults.standard.set(dict, forKey: "filterParams")
-        print("적용하기", UserDefaults.standard.dictionary(forKey: "filterParams"))
-        self.tabBarController?.tabBar.isHidden = false
+        print("크루필터적용하기", UserDefaults.standard.dictionary(forKey: "filterParams"))
         navigationController?.popViewController(animated: true)
     }
 }

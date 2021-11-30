@@ -23,14 +23,10 @@ struct LookUpBungeService {
             "X-ACCESS-TOKEN": accessToken,
         ]
         
-        let parameters : Parameters = [
-            "clubId":1
-        ]
-        
         // Http Method: GET
         AF.request(urlString,
                    method: .get,
-                   parameters: parameters,
+                   parameters: params,
                    encoding: URLEncoding(destination: .queryString, arrayEncoding: .noBrackets),
                    headers: header).responseDecodable(of: GenericResponse<LookUpBungaeResult>.self
                    ) { response in

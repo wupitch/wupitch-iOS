@@ -7,6 +7,7 @@
 
 import UIKit
 
+// 번개 필터 VC
 class BungaeFilterVC: UIViewController {
 
     @IBOutlet weak var lineView: UIView!
@@ -146,7 +147,7 @@ class BungaeFilterVC: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-   
+   // 적용하기 버튼
     @IBAction func touchUpApplyBtn(_ sender: Any) {
         // 요일 눌린거 확인
         for i in 0...6 {
@@ -179,12 +180,12 @@ class BungaeFilterVC: UIViewController {
         }
         
         UserDefaults.standard.set(bungaeDict, forKey: "bungaeFilterParams")
-        print("적용하기", UserDefaults.standard.dictionary(forKey: "bungaeFilterParams"))
-        self.tabBarController?.tabBar.isHidden = false
+        print("번개필터적용하기", UserDefaults.standard.dictionary(forKey: "bungaeFilterParams"))
         navigationController?.popViewController(animated: true)
         
     }
     
+    // 초기화 버튼
     @IBAction func touchUpResetBtn(_ sender: Any) {
         for i in 0...3 {
             if sportsBtn[i].status == true || countBtns[i].status == true {
