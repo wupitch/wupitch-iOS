@@ -11,14 +11,10 @@ class DetailCrewTitleCVCell: UICollectionViewCell {
 
     @IBOutlet weak var locationLabel: UILabel!
     
-    @IBOutlet var money: [UILabel]!
     @IBOutlet var moneyLabel: [UILabel]!
     
     @IBOutlet var dayLabel: [UILabel]!
-    @IBOutlet var startImeLabel: [UILabel]!
-    @IBOutlet var betweenLabel: [UILabel]!
     
-    @IBOutlet var endTimeLabel: [UILabel]!
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tagLabel: UILabel!
@@ -45,6 +41,17 @@ class DetailCrewTitleCVCell: UICollectionViewCell {
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 20.adjusted)
         titleLabel.tintColor = .bk
         
+        for i in 0...2 {
+            dayLabel[i].font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+            dayLabel[i].textColor = .bk
+        }
+        
+        locationLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+        locationLabel.textColor = .bk
+        
+        for i in 0...1 {
+            moneyLabel[i].font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+            moneyLabel[i].textColor = .bk
+        }
     }
-
 }

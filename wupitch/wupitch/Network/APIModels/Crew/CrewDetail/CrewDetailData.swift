@@ -2,57 +2,43 @@
 
 import Foundation
 
-// MARK: - Welcome
+// MARK: - CrewDetailData
 struct CrewDetailData: Codable {
-    let isSuccess: Bool
     let code: Int
+    let isSuccess: Bool
     let message: String
     let result: CrewDetailResult
 }
 
 // MARK: - CrewDetailResult
 struct CrewDetailResult: Codable {
-    let content: [Content]
-    let pageable: Pageable
-    let totalPages, totalElements: Int
-    let last: Bool
-    let size, number: Int
-    let sort: Sort
-    let numberOfElements: Int
-    let first, empty: Bool
-}
-
-// MARK: - Content
-struct Content: Codable {
-    let clubID, sportsID: Int
-    let sportsName, clubTitle, introduction: String
-    let schedules: [Schedule]
+    let ageTable: [String]
+    let areaName: String
+    let clubID: Int
+    let clubTitle, crewName: String
     let crewImage: String?
-    let isPinUp: Bool
-    let areaName: String?
+    let dues: Int
+    let extraList: [String]?
+    let guestDues: Int
+    let inquiries, introduction: String
+    let materials: String?
+    let memberCount: Int
+    let schedules: [Schedule]
+    let sportsID: Int
+    let sportsName: String
 
     enum CodingKeys: String, CodingKey {
+        case ageTable, areaName
         case clubID = "clubId"
+        case clubTitle, crewImage, crewName, dues, extraList, guestDues, inquiries, introduction, materials, memberCount, schedules
         case sportsID = "sportsId"
-        case sportsName, clubTitle, introduction, schedules, crewImage, isPinUp, areaName
+        case sportsName
     }
 }
 
 // MARK: - Schedule
 struct Schedule: Codable {
-    let dayIdx: Int
     let day: String
-    let startTime, endTime: Double?
-}
-
-// MARK: - Pageable
-struct Pageable: Codable {
-    let sort: Sort
-    let offset, pageNumber, pageSize: Int
-    let paged, unpaged: Bool
-}
-
-// MARK: - Sort
-struct Sort: Codable {
-    let empty, sorted, unsorted: Bool
+    let dayIdx: Int
+    let endTime, startTime: Double?
 }

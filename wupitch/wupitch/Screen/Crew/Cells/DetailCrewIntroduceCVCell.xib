@@ -25,7 +25,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GsJ-iC-Mqq">
-                        <rect key="frame" x="16" y="46.5" width="265" height="183"/>
+                        <rect key="frame" x="16" y="46.5" width="41.5" height="43"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="iJj-uv-JAL">
                                 <rect key="frame" x="0.0" y="0.0" width="41.5" height="43"/>
@@ -44,38 +44,41 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ebp-SJ-zHI">
-                                <rect key="frame" x="0.0" y="63" width="265" height="120"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="ci2-HQ-fzX"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PYH-Ay-McT">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                            </collectionView>
                         </subviews>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="200" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zrc-Rm-edE">
-                        <rect key="frame" x="16" y="253.5" width="265" height="568.5"/>
+                        <rect key="frame" x="16" y="249" width="265" height="568.5"/>
                         <string key="text">동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르</string>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ebp-SJ-zHI">
+                        <rect key="frame" x="16" y="105" width="265" height="120"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="120" id="ci2-HQ-fzX"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PYH-Ay-McT">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="ebp-SJ-zHI" secondAttribute="trailing" constant="20" id="4h4-Mz-Pb1"/>
                 <constraint firstItem="GsJ-iC-Mqq" firstAttribute="top" secondItem="wRl-FD-xKt" secondAttribute="bottom" constant="6" id="5cr-YV-2kK"/>
                 <constraint firstItem="GsJ-iC-Mqq" firstAttribute="leading" secondItem="wRl-FD-xKt" secondAttribute="leading" id="6uy-5E-UwJ"/>
                 <constraint firstItem="wRl-FD-xKt" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="8wS-Jb-vRI"/>
-                <constraint firstItem="Zrc-Rm-edE" firstAttribute="top" secondItem="ebp-SJ-zHI" secondAttribute="bottom" constant="24" id="FfL-6W-vcg"/>
                 <constraint firstAttribute="trailing" secondItem="Zrc-Rm-edE" secondAttribute="trailing" constant="20" id="JJJ-Ti-6X4"/>
-                <constraint firstItem="Zrc-Rm-edE" firstAttribute="leading" secondItem="ebp-SJ-zHI" secondAttribute="leading" id="dA2-xr-M0G"/>
+                <constraint firstItem="Zrc-Rm-edE" firstAttribute="leading" secondItem="ebp-SJ-zHI" secondAttribute="leading" id="NtP-jS-dZD"/>
+                <constraint firstItem="ebp-SJ-zHI" firstAttribute="leading" secondItem="NIV-Vd-bcG" secondAttribute="leading" id="X6m-kh-x3C"/>
+                <constraint firstItem="ebp-SJ-zHI" firstAttribute="top" secondItem="NIV-Vd-bcG" secondAttribute="bottom" constant="15.5" id="gS5-bQ-svb"/>
+                <constraint firstItem="Zrc-Rm-edE" firstAttribute="top" secondItem="ebp-SJ-zHI" secondAttribute="bottom" constant="24" id="o4h-vK-Z3e"/>
                 <constraint firstItem="wRl-FD-xKt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="xYM-Lk-t56"/>
             </constraints>
             <size key="customSize" width="301" height="849"/>

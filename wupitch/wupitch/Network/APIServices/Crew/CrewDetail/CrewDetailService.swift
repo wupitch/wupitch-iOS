@@ -36,20 +36,24 @@ struct CrewDetailService {
 
         url = "https://prod.wupitch.site/app/clubs/\(clubId)"
 
-        AF.request(url, method: .get, encoding: JSONEncoding.default, headers: header)
-//                            .responseString(completionHandler: { response in
-//                                print("response",response.result)
-//                                                }
-            .responseDecodable(of: CrewDetailData.self) { response in
-                print("response",response)
-                switch response.result {
-                case .success(let response):
-                    delegate.didSuccessCrewDetail(result: response.result)
-                case .failure(let error):
-                    print("오류가 났습니다",error.localizedDescription)
-                    delegate.failedToRequest(message: "오류가났습니다.")
-                }
-            }
-//        )
+        // Http Method: GET
+        AF.request(url,
+                   method: .get,
+                   encoding: URLEncoding(destination: .queryString, arrayEncoding: .noBrackets),
+                   headers: header).responseDecodable(of: GenericResponse<CrewDetailResult>.self
+                   ) { response in
+                       print("response",response.result)
+                       switch response.result {
+                       case .success(let response):
+                           print("크루 디테일 리스폰즈",response)
+                           guard let data = response.result else {return}
+                           print("크루 디테일 나오니?")
+                           delegate.didSuccessCrewDetail(result: data)
+                       case .failure(let error):
+                           print("크루디테일이 오류가 났습니다",error.localizedDescription)
+                           delegate.failedToRequest(message: "오류가났습니다.")
+                       }
+                   }
     }
 }
+
