@@ -10,6 +10,8 @@ import Alamofire
 
 class CrewAlertVC: UIViewController {
 
+    var fcmData : [FCMResult]?
+    lazy var fcmDataManager = FCMService()
     @IBOutlet weak var alertTV: UITableView!
     @IBOutlet weak var backBtn: UIButton!
     
@@ -17,6 +19,7 @@ class CrewAlertVC: UIViewController {
         super.viewDidLoad()
         setDeletate()
         setTableViewStyle()
+        fcmDataManager.postFCM(delegate: self)
     }
     private func setDeletate() {
         alertTV.delegate = self
@@ -27,6 +30,16 @@ class CrewAlertVC: UIViewController {
         alertTV.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
     }
     
+    // MARK: - Date & Time
+    func nowDateFormatter(dateLabel: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy.MM.dd"
+        let current_date_string = formatter.string(from: Date())
+        print(current_date_string)
+        let dateLabel = current_date_string
+        return dateLabel
+    }
+    
     @IBAction func touchUpBackBtn(_ sender: Any) {
         self.tabBarController?.tabBar.isHidden = false
         navigationController?.popViewController(animated: true)
@@ -35,15 +48,33 @@ class CrewAlertVC: UIViewController {
 
 extension CrewAlertVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return fcmData?.count ?? -99
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = self.alertTV?.dequeueReusableCell(withIdentifier: CrewAlertTVCell.identifier, for: indexPath) as? CrewAlertTVCell else { return UITableViewCell()
         }
         if indexPath.row == 1 {
-            cell.alertTitleLabel.text = "가나다라마바사"
+            cell.alertTitleLabel.text = fcmData?[indexPath.row].title
+            cell.alertTimeLabel.text = nowDateFormatter(dateLabel: cell.alertTimeLabel.text ?? "")
         }
         return cell
     }
 }
+
+// FCM api 연결
+extension CrewAlertVC {
+    func didSuccessFCM(result: [FCMResult]) {
+        print("FCM 데이터가 성공적으로 들어왔습니다.")
+        fcmData = result
+        alertTV.reloadData()
+        // 토큰 저장
+    }
+    
+    func failedToRequest(message: String) {
+        self.presentAlert(title: message)
+        print("FCM 데이터가 들어오지 않았습니다.")
+        
+    }
+}
+

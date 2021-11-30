@@ -9,7 +9,24 @@ import Foundation
 
 // MARK: - FCMData
 struct FCMData: Codable {
-    let isSuccess: Bool
     let code: Int
+    let isSuccess: Bool
     let message: String
+    let result: [FCMResult]
+}
+
+// MARK: - FCMResult
+struct FCMResult: Codable {
+    let accountID: Int
+    let contents: String
+    let fcmID: Int
+    let isChecked: Bool
+    let title: String
+
+    enum CodingKeys: String, CodingKey {
+        case accountID = "accountId"
+        case contents
+        case fcmID = "fcmId"
+        case isChecked, title
+    }
 }

@@ -8,14 +8,11 @@
 import UIKit
 
 class TabbarVC: UITabBarController {
-
-    lazy var fcmDataManager = FCMService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setTabbar()
         setTabbarColor()
-        fcmDataManager.postFCM(FCMRequest(contents: "테스트내용", targetToken: "fIfiwG4ObU1KnVmdoaTwrs:APA91bESIAdjPmKxvfpAAe8DklU3e6RBIj1PSFQ4fExrXiW1IFXq0bJk94XNJbnKl73k2QsIab3gkjs3wBfSmlSX7rFTCm_H6ijzdcQHl-bHarGc6uO2MR5hTo-hVcM4yNSKK9ntY1bD", title: "테스트제목"), delegate: self)
     }
    
     private func setTabbar() {
@@ -58,21 +55,3 @@ class TabbarVC: UITabBarController {
         self.tabBar.tintColor = .bk
     }
 }
-
-
-// FCM api 연결
-extension TabbarVC {
-    func didSuccessFCM(result: FCMData) {
-        print("데이터가 성공적으로 들어왔습니다.")
-        
-        // 토큰 저장
-        
-    }
-    
-    func failedToRequest(message: String) {
-        self.presentAlert(title: message)
-        print("데이터가 들어오지 않았습니다.")
-        
-    }
-}
-

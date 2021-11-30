@@ -102,7 +102,6 @@
 		DD485F8A275394AC0071AE93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD485F89275394AC0071AE93 /* GoogleService-Info.plist */; };
 		DD485F8E275396FB0071AE93 /* FCMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F8D275396FB0071AE93 /* FCMService.swift */; };
 		DD485F90275397050071AE93 /* FCMData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F8F275397050071AE93 /* FCMData.swift */; };
-		DD485F92275399330071AE93 /* FCMRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F91275399330071AE93 /* FCMRequest.swift */; };
 		DD485F952753E4320071AE93 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F942753E4320071AE93 /* GenericResponse.swift */; };
 		DD485FA6275556A30071AE93 /* LookUpBungaeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FA5275556A30071AE93 /* LookUpBungaeService.swift */; };
 		DD485FA8275556B10071AE93 /* LookUpBungaeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FA7275556B10071AE93 /* LookUpBungaeData.swift */; };
@@ -385,7 +384,6 @@
 		DD485F89275394AC0071AE93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD485F8D275396FB0071AE93 /* FCMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMService.swift; sourceTree = "<group>"; };
 		DD485F8F275397050071AE93 /* FCMData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMData.swift; sourceTree = "<group>"; };
-		DD485F91275399330071AE93 /* FCMRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMRequest.swift; sourceTree = "<group>"; };
 		DD485F942753E4320071AE93 /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 		DD485FA5275556A30071AE93 /* LookUpBungaeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpBungaeService.swift; sourceTree = "<group>"; };
 		DD485FA7275556B10071AE93 /* LookUpBungaeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpBungaeData.swift; sourceTree = "<group>"; };
@@ -1182,7 +1180,6 @@
 			isa = PBXGroup;
 			children = (
 				DD485F8F275397050071AE93 /* FCMData.swift */,
-				DD485F91275399330071AE93 /* FCMRequest.swift */,
 			);
 			path = FCM;
 			sourceTree = "<group>";
@@ -2200,7 +2197,6 @@
 				DDC46B7D2752219F0015341E /* PasswordCheckData.swift in Sources */,
 				DD485F6E2753042D0071AE93 /* MemberAgeService.swift in Sources */,
 				DDC46B63274FAA390015341E /* WithdrawalData.swift in Sources */,
-				DD485F92275399330071AE93 /* FCMRequest.swift in Sources */,
 				DD485F90275397050071AE93 /* FCMData.swift in Sources */,
 				DDC46B4E274E89E20015341E /* DatePickerBtn.swift in Sources */,
 				DD485F7427530A460071AE93 /* MemberPhoneNumberService.swift in Sources */,
