@@ -18,12 +18,14 @@ struct ToggleAlarmService {
         
         var header : HTTPHeaders = []
         
-        if let token = UserDefaults.standard.string(forKey: "userToken") {
-            header = ["Content-Type":"application/json", "X-ACCESS-TOKEN": token]
-        }
-        else {
-            header = ["Content-Type":"application/json"]
-        }
+//        if let token = UserDefaults.standard.string(forKey: "userToken") {
+//            header = ["Content-Type":"application/json", "X-ACCESS-TOKEN": token]
+//        }
+//        else {
+//            header = ["Content-Type":"application/json"]
+//        }
+        let token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aXZpZHN3YW5AbmF2ZXIuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTYzNzk1MzE0MiwiZXhwIjoxNjM4Mzg1MTQyfQ.UA6CiyhNauZ6Nektt-gjiIdyYWKf9GMZLtBNppT0d04"
+        header = ["Content-Type":"application/json", "X-ACCESS-TOKEN": token]
         
         AF.request(url, method: .patch, encoding: JSONEncoding.default, headers: header)
 //                            .responseString(completionHandler: { response in

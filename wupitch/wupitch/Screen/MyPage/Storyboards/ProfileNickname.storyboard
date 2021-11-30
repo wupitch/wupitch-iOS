@@ -25,6 +25,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="left" title=""/>
+                                <connections>
+                                    <action selector="touchUpBackBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="VUw-yA-fas"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임과 소개글을 입력해주세요." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKT-Fw-vPf">
                                 <rect key="frame" x="20" y="120" width="122" height="41"/>
@@ -61,6 +64,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="완료"/>
+                                <connections>
+                                    <action selector="touchUpStartBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="OW5-1g-gqU"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1N-7Z-W6c">
                                 <rect key="frame" x="351" y="387" width="44" height="21"/>
@@ -96,6 +102,15 @@
                             <constraint firstItem="wy0-u8-DH2" firstAttribute="top" secondItem="ZKT-Fw-vPf" secondAttribute="bottom" constant="32" id="uYK-lK-TbX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backBtn" destination="di6-DL-b3L" id="rzy-qE-mTd"/>
+                        <outlet property="correctLabel" destination="axu-WA-n6R" id="rCb-0u-T59"/>
+                        <outlet property="infoTextView" destination="ktf-Te-apI" id="510-1K-rCW"/>
+                        <outlet property="nickNameTextField" destination="wy0-u8-DH2" id="b8c-7r-Bj6"/>
+                        <outlet property="startBtn" destination="TLZ-ke-wK6" id="Ipz-0N-pLR"/>
+                        <outlet property="textCountLabel" destination="M1N-7Z-W6c" id="Yeu-lV-vdW"/>
+                        <outlet property="titleLabel" destination="ZKT-Fw-vPf" id="H09-t8-Hkl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

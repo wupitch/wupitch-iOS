@@ -16,11 +16,13 @@ class SignUpAgeVC: UIViewController {
     @IBOutlet var ageBtns: [SportsBtn]!
     
     lazy var memberAgeDataManager = MemberAgeService()
+    lazy var ageInformationDataManager = AgeInformationService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
         memberAgeDataManager.getMemberAge(delegate: self)
+        
     }
     
     func setStyle() {
@@ -33,13 +35,11 @@ class SignUpAgeVC: UIViewController {
         if nextBtn.backgroundColor == .main {
             
             print("<<<<<<<<<싱글톤 값 잘 받아와지나 확인>>>>>>>>>")
-            print("연령대 : ", SignUpUserInfo.shared.age ?? "값이 없습니다.") 
+            print("연령대 : ", SignUpUserInfo.shared.age ?? "값이 없습니다.")
             
-            let storyboard = UIStoryboard.init(name: "SignUpProfile", bundle: nil)
+            ageInformationDataManager.patchInformation(AgeInformationRequest(ageNum: SignUpUserInfo.shared.age ?? -1), delegate: self)
             
-            guard let dvc = storyboard.instantiateViewController(identifier: "SignUpProfileVC") as? SignUpProfileVC else {return}
-            
-            self.navigationController?.pushViewController(dvc, animated: true)
+            navigationController?.popViewController(animated: true)
         }
         
         else {
@@ -133,7 +133,14 @@ extension SignUpAgeVC {
         ageBtns[result.ageIdx].colorSportsBtn()
         
     }
+    
+    // 회원 수정 에이피아이
+    func didSuccessInformation(result: InformationData) {
+        print("수정한 값이 성공적으로 적용되었습니다.")
+    }
+    
     func failedToRequest(message: String) {
         print("데이터가 들어오지 않았습니다.")
     }
 }
+

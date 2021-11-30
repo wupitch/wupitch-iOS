@@ -31,12 +31,11 @@ class ProfileVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
-        memberInfoDataManager.getMemberInfo(delegate: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        memberInfoDataManager.getMemberInfo(delegate: self)
     }
     
     private func setStyle() {
@@ -175,7 +174,12 @@ extension ProfileVC {
        
         nicknameLabel.text = result.nickname
         subLabel.text = result.introduce
-        profileImageVIew.sd_setImage(with: URL(string: result.profileImageURL))
+        
+        if result.profileImageURL == nil {
+            profileImageVIew.image = UIImage(named: "profileBasic")
+        } else {
+            profileImageVIew.sd_setImage(with: URL(string: result.profileImageURL))
+        }
     }
     
     func failedToRequest(message: String) {

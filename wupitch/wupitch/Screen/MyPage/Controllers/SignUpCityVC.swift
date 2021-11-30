@@ -18,14 +18,18 @@ class SignUpCityVC: UIViewController {
     @IBOutlet weak var backBtn: UIButton!
     
     lazy var memberAreaDataManager = MemberAreaService()
+    lazy var areaInformationDataManager = AreaInformationService()
+    
+    var areaName : MemberAreaResult?
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
-        //kakaoAppleLoginLogic()
         textFieldToAddTarget()
         memberAreaDataManager.getMemberArea(delegate: self)
+        
+        
     }
     
     // MARK: - Function
@@ -46,19 +50,7 @@ class SignUpCityVC: UIViewController {
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24.adjusted)
         titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 35.adjusted)
     }
-    
-    // 카카오, 애플 로그인 로직 나누기
-//    private func kakaoAppleLoginLogic() {
-//        if let loginMethod = SignUpUserInfo.shared.loginMethod {
-//            switch loginMethod {
-//            case .kakao:
-//                nextBtn.setTitle("다음 (2/5)", for: .normal)
-//            case .apple:
-//                nextBtn.setTitle("다음 (2/6)", for: .normal)
-//            }
-//        }
-//    }
-    
+
     // 텍스트 필드 눌렀을 때 addTarget주기
     private func textFieldToAddTarget() {
         selectTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .touchDown)
@@ -99,15 +91,13 @@ class SignUpCityVC: UIViewController {
         // 버튼 색이 .main일 때만 동작
         if nextBtn.backgroundColor == .main {
             
-            //print("<<<<<<<<싱글톤 값이 잘 들어가나 확인>>>>>>>>>>")
-            //print("내가 선택한 지역은? : ", SignUpUserInfo.shared.region ?? "아무 값도 없습니다.")
-            
-            // 다음 버튼 클릭 시, 다음 스토리보드로 이동
-            let storyboard = UIStoryboard.init(name: "SignUpSports", bundle: nil)
-            
-            guard let dvc = storyboard.instantiateViewController(identifier: "SignUpSportsVC") as? SignUpSportsVC else {return}
-            
-            self.navigationController?.pushViewController(dvc, animated: true)
+            for i in 0...25 {
+                if selectTextField.text == SignUpUserInfo.shared.areaName?[i] {
+                    SignUpUserInfo.shared.selectAreaPicker = i+1
+                }
+            }
+            areaInformationDataManager.patchInformation(AreaInformationRequest(areaId: SignUpUserInfo.shared.selectAreaPicker ?? -1), delegate: self)
+            navigationController?.popViewController(animated: true)
         }
         else {
             nextBtn.backgroundColor = .gray03
@@ -157,7 +147,7 @@ extension SignUpCityVC : AlertDelegate {
 extension SignUpCityVC {
     func didSuccessMemberArea(result: MemberAreaResult) {
         print("데이터가 성공적으로 들어왔습니다.")
-        
+        areaName = result
         if result.areaID != nil {
             // 선택되면 textField 색상 변경
             selectTextField.textColor = .main
@@ -169,7 +159,14 @@ extension SignUpCityVC {
         }
         
     }
+    
+    // 회원 수정 에이피아이
+    func didSuccessInformation(result: InformationData) {
+        print("수정한 값이 성공적으로 적용되었습니다.")
+    }
+    
     func failedToRequest(message: String) {
         print("데이터가 들어오지 않았습니다.")
     }
 }
+

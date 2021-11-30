@@ -42,6 +42,11 @@ class SignUpSportsVC: UIViewController {
         descriptionLabel.setTextWithLineHeight(text: descriptionLabel.text, lineHeight: 20.adjusted)
         descriptionLabel.textColor = .gray02
         
+        for i in 0...5 {
+            sportBtns[i].btnId = i+1
+            print(sportBtns[i].btnId)
+        }
+        
     }
     
     // MARK: - IBActions
@@ -54,23 +59,13 @@ class SignUpSportsVC: UIViewController {
     // 다음 버튼
     @IBAction func touchUpNextBtn(_ sender: Any) {
         if nextBtn.backgroundColor == .main {
+            for i in 0...5 {
+                if sportBtns[i].status == true {
+                    informationDataManager.patchInformation(InformationRequest(sportsList: [1,2]), delegate: self)
+                }
+            }
             
-//            informationDataManager.patchInformation(InformationRequest(sportsList: [0,1,2], otherSports: "", ageNum: nil, nickname: "", introduce: nil, phoneNumber: nil), delegate: self)
-            
-            
-            let storyboard = UIStoryboard.init(name: "SignUpAge", bundle: nil)
-            guard let dvc = storyboard.instantiateViewController(identifier: "SignUpAgeVC") as? SignUpAgeVC else {return}
-            self.navigationController?.pushViewController(dvc, animated: true)
-            
-            print("<<<<<<<<<<<싱글톤 값 잘 들어가나 확인>>>>>>>>>>>")
-//            print("축구버튼:", SignUpUserInfo.shared.sportsList[0])
-//            print("배드민턴버튼:", SignUpUserInfo.shared.sportsList[1])
-//            print("배구버튼:", SignUpUserInfo.shared.sportsList[2])
-//            print("농구버튼:", SignUpUserInfo.shared.sportsList[3])
-//            print("등산버튼:", SignUpUserInfo.shared.sportsList[4])
-//            print("런닝버튼:", SignUpUserInfo.shared.sportsList[5])
-//            print("기타버튼:", SignUpUserInfo.shared.sportsList[6])
-//            print("기타글씨:", SignUpUserInfo.shared.etcText ?? "값없음")
+            navigationController?.popViewController(animated: true)
         }
         else {
             nextBtn.backgroundColor = .gray03
@@ -228,7 +223,7 @@ extension SignUpSportsVC {
         print("데이터가 성공적으로 들어왔습니다.")
         // 스포츠 리스트의 값이 있을 때
         if result.list.isEmpty != true {
-            for i in 0...5 {sportBtns
+            for i in 0...5 {
                 sportBtns[i].colorSportsBtn()
             }
         }
@@ -239,7 +234,7 @@ extension SignUpSportsVC {
     
     // 회원 수정 에이피아이
     func didSuccessInformation(result: InformationData) {
-        print("값이 성공적으로 들어왔습니다.")
+        print("수정한 값이 성공적으로 적용되었습니다.")
     }
     
     func failedToRequest(message: String) {

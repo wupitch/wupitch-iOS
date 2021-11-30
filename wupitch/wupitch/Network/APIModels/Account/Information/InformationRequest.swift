@@ -10,7 +10,7 @@ import Foundation
 // MARK: - InformationRequest
 struct InformationRequest: Codable {
     let sportsList: [Int]
-    let otherSports: String
-    let ageNum: Int
-    let nickname, introduce, phoneNumber: String
+//    let otherSports: String
+//    let ageNum: Int
+//    let nickname, introduce, phoneNumber: String
 }

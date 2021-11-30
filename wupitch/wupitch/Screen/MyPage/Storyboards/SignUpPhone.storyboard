@@ -71,6 +71,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nextBtn" destination="MVX-eQ-Ipw" id="kGB-Bl-45d"/>
                         <outlet property="phoneTextField" destination="fWj-uu-6ef" id="9bS-BG-Fsx"/>
                         <outlet property="titleLabel" destination="rB2-pl-ETz" id="Raf-Ux-acS"/>
                     </connections>
