@@ -117,6 +117,8 @@
 		DD485FC42755DDD80071AE93 /* ProfileNicknameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FC32755DDD80071AE93 /* ProfileNicknameService.swift */; };
 		DD485FC72755DE860071AE93 /* ProfileNicknameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FC62755DE860071AE93 /* ProfileNicknameRequest.swift */; };
 		DD485FCC2755E0390071AE93 /* MemberInfoProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FCB2755E0390071AE93 /* MemberInfoProfileService.swift */; };
+		DD485FCF2755EAF70071AE93 /* LookUpCrewFilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FCE2755EAF70071AE93 /* LookUpCrewFilterService.swift */; };
+		DD485FD22755EB6F0071AE93 /* LookUpCrewFilterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FD12755EB6F0071AE93 /* LookUpCrewFilterData.swift */; };
 		DD61E4B9271D7E50007504DE /* SignUpTermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */; };
 		DD61E4BB271D856E007504DE /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4BA271D856E007504DE /* UILabel.swift */; };
 		DD61E4BD271D8EB8007504DE /* SignUpCity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */; };
@@ -386,6 +388,8 @@
 		DD485FC32755DDD80071AE93 /* ProfileNicknameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNicknameService.swift; sourceTree = "<group>"; };
 		DD485FC62755DE860071AE93 /* ProfileNicknameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNicknameRequest.swift; sourceTree = "<group>"; };
 		DD485FCB2755E0390071AE93 /* MemberInfoProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfoProfileService.swift; sourceTree = "<group>"; };
+		DD485FCE2755EAF70071AE93 /* LookUpCrewFilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpCrewFilterService.swift; sourceTree = "<group>"; };
+		DD485FD12755EB6F0071AE93 /* LookUpCrewFilterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpCrewFilterData.swift; sourceTree = "<group>"; };
 		DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTermsVC.swift; sourceTree = "<group>"; };
 		DD61E4BA271D856E007504DE /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpCity.storyboard; sourceTree = "<group>"; };
@@ -1269,6 +1273,22 @@
 			path = MemberInfoProfile;
 			sourceTree = "<group>";
 		};
+		DD485FCD2755EADD0071AE93 /* LookUpCrewFilter */ = {
+			isa = PBXGroup;
+			children = (
+				DD485FCE2755EAF70071AE93 /* LookUpCrewFilterService.swift */,
+			);
+			path = LookUpCrewFilter;
+			sourceTree = "<group>";
+		};
+		DD485FD02755EB5C0071AE93 /* LookUpCrewFilter */ = {
+			isa = PBXGroup;
+			children = (
+				DD485FD12755EB6F0071AE93 /* LookUpCrewFilterData.swift */,
+			);
+			path = LookUpCrewFilter;
+			sourceTree = "<group>";
+		};
 		DD9EEDCA273D614300E02396 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -1483,6 +1503,7 @@
 		DDC4DB0F2744B92A00D79CC8 /* Crew */ = {
 			isa = PBXGroup;
 			children = (
+				DD485FCD2755EADD0071AE93 /* LookUpCrewFilter */,
 				DD485F7F27534C710071AE93 /* LookUpCrew */,
 				DDC46B982752AB450015341E /* CrewDetail */,
 				DDC46B972752AB3B0015341E /* MakeCrew */,
@@ -1493,6 +1514,7 @@
 		DDC4DB102744B93D00D79CC8 /* Crew */ = {
 			isa = PBXGroup;
 			children = (
+				DD485FD02755EB5C0071AE93 /* LookUpCrewFilter */,
 				DD485F8227534F140071AE93 /* LookUpCrew */,
 				DDC46B942752AABE0015341E /* CrewDetail */,
 				DDC46B932752AAB30015341E /* MakeCrew */,
@@ -1973,6 +1995,7 @@
 				DD485FBD2755D1F10071AE93 /* PhoneNumberRequest.swift in Sources */,
 				DD485F8E275396FB0071AE93 /* FCMService.swift in Sources */,
 				DD1BFC4D2738E8EC0042C51F /* MakeCrewDateVC.swift in Sources */,
+				DD485FD22755EB6F0071AE93 /* LookUpCrewFilterData.swift in Sources */,
 				DDC46B6A2750BD1D0015341E /* ToggleAlarmData.swift in Sources */,
 				DDC4DAE12741075700D79CC8 /* AreaData.swift in Sources */,
 				DD485F7E27530E7E0071AE93 /* MemberAreaData.swift in Sources */,
@@ -2019,6 +2042,7 @@
 				DDC4DB0E274432E400D79CC8 /* UIViewController.swift in Sources */,
 				DDC4DB6D274E2C4200D79CC8 /* ActivityCrewCRV.swift in Sources */,
 				DDC4DAE4274107D900D79CC8 /* AreaService.swift in Sources */,
+				DD485FCF2755EAF70071AE93 /* LookUpCrewFilterService.swift in Sources */,
 				DD7BEBC327315D3A00DB2F60 /* DetailCrewImgCVCell.swift in Sources */,
 				DD3A30CC272DA37100D711C6 /* AppleLoginRequest.swift in Sources */,
 				DD485F7727530A620071AE93 /* MemberPhoneNumberData.swift in Sources */,

@@ -33,10 +33,18 @@ class CrewFilterVC: BaseVC {
     
     var dict = [String:[Any]]()
     
+    lazy var crewFilterDataMangaer = LookUpCrewFiletrService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setStyle()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        crewFilterDataMangaer.getLookUpCrewFilter(delegate: self)
     }
 
     private func setStyle() {
@@ -199,7 +207,6 @@ class CrewFilterVC: BaseVC {
                 SignUpUserInfo.shared.memberCountValueBtn? = i+1
                 
                 dict["memberCountValue"] = [i+1]
-                
                 print("크루원수",i+1)
             }
         }
@@ -208,5 +215,42 @@ class CrewFilterVC: BaseVC {
         print("적용하기", UserDefaults.standard.dictionary(forKey: "filterParams"))
         self.tabBarController?.tabBar.isHidden = false
         navigationController?.popViewController(animated: true)
+    }
+}
+
+// 필터 조회 api
+extension CrewFilterVC {
+    func didSuccessLookUpCrewFilter(result: LookUpCrewFilterResult) {
+        print("필터 조회 데이터가 성공적으로 들어왔습니다.")
+        
+        // 종목 값이 있으면
+        if let sports = result.crewPickSportsList {
+            for i in sports {
+                sportsBtns[i-1].colorSportsBtn()
+            }
+        }
+        
+        // 연령대 값이 있으면
+        if let age = result.crewPickAgeList {
+            for i in age {
+                ageBtns[i-1].colorSportsBtn()
+            }
+        }
+        
+        // 요일 값이 있으면
+        if let day = result.crewPickDays {
+            for i in day {
+                dateBtns[i-1].colorSportsBtn()
+            }
+        }
+        
+        // 크루원 수가 있으면
+//        if let crewCount = result.crewPickMemberCountValue {
+//            crewCountBtns[crewCount-1].colorSportsBtn()
+//        }
+    }
+    
+    func failedToRequest(message: String) {
+        print("데이터가 들어오지 않았습니다.")
     }
 }
