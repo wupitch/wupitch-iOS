@@ -129,6 +129,8 @@
 		DD485FE8275680FF0071AE93 /* BungaeImageCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD485FE6275680FF0071AE93 /* BungaeImageCVCell.xib */; };
 		DD485FEC275682C00071AE93 /* BungaePinUpToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FEB275682C00071AE93 /* BungaePinUpToggle.swift */; };
 		DD485FEF275682EA0071AE93 /* BungaePinUpToggleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FEE275682EA0071AE93 /* BungaePinUpToggleData.swift */; };
+		DD485FF22756862F0071AE93 /* BungaeRegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FF12756862F0071AE93 /* BungaeRegisterService.swift */; };
+		DD485FF52756864E0071AE93 /* BungaeRegisterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FF42756864E0071AE93 /* BungaeRegisterData.swift */; };
 		DD61E4B9271D7E50007504DE /* SignUpTermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */; };
 		DD61E4BB271D856E007504DE /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4BA271D856E007504DE /* UILabel.swift */; };
 		DD61E4BD271D8EB8007504DE /* SignUpCity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */; };
@@ -410,6 +412,8 @@
 		DD485FE6275680FF0071AE93 /* BungaeImageCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BungaeImageCVCell.xib; sourceTree = "<group>"; };
 		DD485FEB275682C00071AE93 /* BungaePinUpToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaePinUpToggle.swift; sourceTree = "<group>"; };
 		DD485FEE275682EA0071AE93 /* BungaePinUpToggleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaePinUpToggleData.swift; sourceTree = "<group>"; };
+		DD485FF12756862F0071AE93 /* BungaeRegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeRegisterService.swift; sourceTree = "<group>"; };
+		DD485FF42756864E0071AE93 /* BungaeRegisterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeRegisterData.swift; sourceTree = "<group>"; };
 		DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTermsVC.swift; sourceTree = "<group>"; };
 		DD61E4BA271D856E007504DE /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpCity.storyboard; sourceTree = "<group>"; };
@@ -1373,6 +1377,22 @@
 			path = BungaePinUpToggle;
 			sourceTree = "<group>";
 		};
+		DD485FF0275686190071AE93 /* BungaeRegister */ = {
+			isa = PBXGroup;
+			children = (
+				DD485FF12756862F0071AE93 /* BungaeRegisterService.swift */,
+			);
+			path = BungaeRegister;
+			sourceTree = "<group>";
+		};
+		DD485FF32756863D0071AE93 /* BungaeRegisterData */ = {
+			isa = PBXGroup;
+			children = (
+				DD485FF42756864E0071AE93 /* BungaeRegisterData.swift */,
+			);
+			path = BungaeRegisterData;
+			sourceTree = "<group>";
+		};
 		DD9EEDCA273D614300E02396 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -1462,6 +1482,7 @@
 		DDC46B71275169620015341E /* Bungae */ = {
 			isa = PBXGroup;
 			children = (
+				DD485FF0275686190071AE93 /* BungaeRegister */,
 				DD485FEA275682A10071AE93 /* BungaePinUpToggle */,
 				DD485FD427560A050071AE93 /* BungaeDetail */,
 				DD485FA3275556780071AE93 /* LookUpBungae */,
@@ -1473,6 +1494,7 @@
 		DDC46B72275169690015341E /* Bungae */ = {
 			isa = PBXGroup;
 			children = (
+				DD485FF32756863D0071AE93 /* BungaeRegisterData */,
 				DD485FED275682D40071AE93 /* BungaePinUpToggle */,
 				DD485FD3275609F10071AE93 /* BungaeDetail */,
 				DD485FA4275556900071AE93 /* LookUpBungae */,
@@ -2073,6 +2095,7 @@
 				DD9EEDE12740354200E02396 /* OnboardingVC.swift in Sources */,
 				DD1BFC492738E8BB0042C51F /* MakeCrewInfoVC.swift in Sources */,
 				DDC4DB292746A97800D79CC8 /* SportsService.swift in Sources */,
+				DD485FF52756864E0071AE93 /* BungaeRegisterData.swift in Sources */,
 				DDC3B5192734041500FF4959 /* BaseVC.swift in Sources */,
 				DDC46B9A2752AB550015341E /* CrewDetailService.swift in Sources */,
 				DD9EEDC9273D097600E02396 /* DongPickerVC.swift in Sources */,
@@ -2232,6 +2255,7 @@
 				DDC4DAE8274275F300D79CC8 /* ToastMessageVC.swift in Sources */,
 				DD6728352723E582001E1355 /* LocationPickerData.swift in Sources */,
 				DDC46B60274FA9F60015341E /* WithdrawalService.swift in Sources */,
+				DD485FF22756862F0071AE93 /* BungaeRegisterService.swift in Sources */,
 				DD1BFC3D2738B7ED0042C51F /* LabelFontSize.swift in Sources */,
 				DDC46B7A2751E5140015341E /* MakeBungaeService.swift in Sources */,
 				DDC46B5E274F8BF30015341E /* ProfilePasswordVC.swift in Sources */,

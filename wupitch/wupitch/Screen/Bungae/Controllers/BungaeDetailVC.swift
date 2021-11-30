@@ -9,6 +9,7 @@ import UIKit
 
 class BungaeDetailVC: BaseVC {
     
+    
     @IBOutlet weak var modalView: UIView!
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var bottomLineView: UIView!
@@ -19,6 +20,7 @@ class BungaeDetailVC: BaseVC {
 
     var detailInfo : BungaeDetailResult?
     lazy var bungaeDetailDataManager = BungaeDetailService()
+    lazy var bungaeRegisterDataManager = BungaeRegisterService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +32,7 @@ class BungaeDetailVC: BaseVC {
     }
     
     private func setStyle() {
-        //modalView.alpha = 0.0
+        modalView.alpha = 0.0
         
         titleLabel.text = "번개"
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
@@ -73,50 +75,37 @@ class BungaeDetailVC: BaseVC {
     
     @IBAction func touchUpRegisterBtn(_ sender: Any) {
         // 사용자의 자기소개 부분이 비어있다면 정보가 부족하다는 알림창을 띄워주고, 그렇지 않다면 가입 신청이 완료되었다는 창 띄워주기
-//        if SignUpUserInfo.shared.userIntroduce == nil {
-//            let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
-//            if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
-//                dvc.modalPresentationStyle = .overFullScreen
-//                dvc.modalTransitionStyle = .crossDissolve
-//
-//                // present 형태로 띄우기
-//                self.present(dvc, animated: true, completion: nil)
-//            }
-//        }
-//        else {
-//
-//        // 가입 완료 팝업 창 띄워줌
-//        let storyBoard: UIStoryboard = UIStoryboard(name: "JoinComplete", bundle: nil)
-//
-//        if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinCompleteVC") as? JoinCompleteVC {
-//            dvc.modalPresentationStyle = .overFullScreen
-//            dvc.modalTransitionStyle = .crossDissolve
-//
-//            // present 형태로 띄우기
-//            self.present(dvc, animated: true, completion: nil)
-//        }
-//        }
+        if SignUpUserInfo.shared.introduce == nil {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
+                dvc.modalPresentationStyle = .overFullScreen
+                dvc.modalTransitionStyle = .crossDissolve
+                dvc.introducePopUp = self
+                // present 형태로 띄우기
+                self.present(dvc, animated: true, completion: nil)
+            }
+        }
+        else {
+            
+            // 가입 완료 팝업 창 띄워줌
+            let storyBoard: UIStoryboard = UIStoryboard(name: "JoinComplete", bundle: nil)
+            
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinCompleteVC") as? JoinCompleteVC {
+                dvc.modalPresentationStyle = .overFullScreen
+                dvc.modalTransitionStyle = .crossDissolve
+                
+                // present 형태로 띄우기
+                self.present(dvc, animated: true, completion: nil)
+            }
+            bungaeRegisterDataManager.postBungaeRegisterService(delegate: self)
+        }
     }
     // 뒤로가기 버튼
     @IBAction func touchUpBackBtn(_ sender: Any) {
         self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.popViewController(animated: true)
     }
-    // 손님
-    @IBAction func touchUpGuestRegisterBtn(_ sender: Any) {
-        // 손님신청 바텀시트
-        let storyBoard: UIStoryboard = UIStoryboard(name: "CrewApplication", bundle: nil)
-        
-        if let dvc = storyBoard.instantiateViewController(withIdentifier: "CrewApplicationVC") as? CrewApplicationVC {
-            dvc.modalPresentationStyle = .overFullScreen
-            
-            modalView.alpha = 1
-            dvc.guestModalDelegate = self
-            
-            // present 형태로 띄우기
-            self.present(dvc, animated: true, completion: nil)
-        }
-    }
+   
 
 
  func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -124,6 +113,16 @@ class BungaeDetailVC: BaseVC {
         print("얼만큼 내려왓나?")
     }
 }
+    
+    // 스크롤 시 선 감지
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (scrollView.contentOffset.y+1) >= 200 {
+            lineView.alpha = 1
+        }
+        else {
+            lineView.alpha = 0.0
+        }
+    }
 }
 
 extension BungaeDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -310,42 +309,38 @@ extension BungaeDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
 }
 
-extension BungaeDetailVC: GuestModalDelegate {
+extension BungaeDetailVC: GuestModalDelegate, IntroduceDelegate {
     func modalDismiss() {
         modalView.alpha = 0.0
     }
     
     func selectBtnToOpenPopup() {
         // 자기소개가 없으면 정보가 부족하다는 알럿창 띄우고, 있으면 손님으로 가입 되었다는 알림창 띄울 수 있도록
-//        if SignUpUserInfo.shared.userIntroduce == nil {
-//            let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
-//            if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
-//                dvc.modalPresentationStyle = .overFullScreen
-//                dvc.modalTransitionStyle = .crossDissolve
-//
-//                // present 형태로 띄우기
-//                self.present(dvc, animated: true, completion: nil)
-//            }
-//        }
-//        else {
-//            let storyBoard: UIStoryboard = UIStoryboard(name: "GuestComplete", bundle: nil)
-//            if let dvc = storyBoard.instantiateViewController(withIdentifier: "GuestCompleteVC") as? GuestCompleteVC {
-//                dvc.modalPresentationStyle = .overFullScreen
-//                dvc.modalTransitionStyle = .crossDissolve
-//
-//                // present 형태로 띄우기
-//                self.present(dvc, animated: true, completion: nil)
-//            }
-//        }
-    }
-  
-    // 스크롤 시 선 감지
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if (scrollView.contentOffset.y+1) >= 200 {
-            lineView.alpha = 1
+        if SignUpUserInfo.shared.introduce == nil {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
+                dvc.modalPresentationStyle = .overFullScreen
+                dvc.modalTransitionStyle = .crossDissolve
+                dvc.introducePopUp = self
+                // present 형태로 띄우기
+                self.present(dvc, animated: true, completion: nil)
+            }
         }
         else {
-            lineView.alpha = 0.0
+            let storyBoard: UIStoryboard = UIStoryboard(name: "GuestComplete", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "GuestCompleteVC") as? GuestCompleteVC {
+                dvc.modalPresentationStyle = .overFullScreen
+                dvc.modalTransitionStyle = .crossDissolve
+                
+                // present 형태로 띄우기
+                self.present(dvc, animated: true, completion: nil)
+            }
+        }
+    }
+    func dismissIntroducePopup() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "ProfileNickname", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "ProfileNicknameVC") as? ProfileNicknameVC {
+            navigationController?.pushViewController(dvc, animated: true)
         }
     }
 }
@@ -355,6 +350,11 @@ extension BungaeDetailVC {
         print("번개 디테일 데이터가 성공적으로 들어왔습니다.")
         self.detailInfo = result
         detailCV.reloadData()
+    }
+    
+    func didSuccessBungaeRegister(result: BungaeRegisterResult) {
+        print("번개 등록(가입)이 성공적으로 되었습니다.")
+        print("번개 등록 결과는? ",result.result)
     }
 
     func failedToRequest(message: String) {

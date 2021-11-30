@@ -32,6 +32,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="" image="left"/>
+                                <connections>
+                                    <action selector="touchUpBackBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vDE-Zg-mAi"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NOJ-K6-GQu">
                                 <rect key="frame" x="0.0" y="790" width="414" height="72"/>
@@ -47,6 +50,9 @@
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="touchUpRegisterBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="M0i-Za-aIu"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -94,11 +100,18 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iu0-3r-buo">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Iu0-3r-buo" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="0YH-U1-XqV"/>
                             <constraint firstItem="hNC-S4-otY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="14t-I5-Nah"/>
+                            <constraint firstItem="Iu0-3r-buo" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="3UU-dF-eHh"/>
+                            <constraint firstItem="Iu0-3r-buo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="6QS-MF-i5F"/>
                             <constraint firstItem="SbE-rO-Qds" firstAttribute="top" secondItem="46n-Sa-Ufo" secondAttribute="bottom" id="76V-Lg-3l6"/>
                             <constraint firstItem="NOJ-K6-GQu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="9f2-uG-ISm"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="NOJ-K6-GQu" secondAttribute="trailing" id="Dth-wL-9TD"/>
@@ -109,6 +122,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="NOJ-K6-GQu" secondAttribute="bottom" id="QxP-m3-CGb"/>
                             <constraint firstItem="eDa-Rf-nY9" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Tsd-Bi-Lgx"/>
                             <constraint firstItem="SbE-rO-Qds" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="UxN-ZW-S7k"/>
+                            <constraint firstAttribute="bottom" secondItem="Iu0-3r-buo" secondAttribute="bottom" id="ZaY-LX-8v5"/>
                             <constraint firstItem="Ipr-BC-nSF" firstAttribute="top" secondItem="SbE-rO-Qds" secondAttribute="bottom" id="asX-ud-tf7"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="SbE-rO-Qds" secondAttribute="trailing" id="bRc-sO-LGK"/>
                             <constraint firstAttribute="trailing" secondItem="Ipr-BC-nSF" secondAttribute="trailing" id="dex-i4-zyX"/>
@@ -122,13 +136,14 @@
                         <outlet property="bottomLineView" destination="Ipr-BC-nSF" id="Whw-kz-IwY"/>
                         <outlet property="detailCV" destination="SbE-rO-Qds" id="4Ua-a5-rSd"/>
                         <outlet property="lineView" destination="46n-Sa-Ufo" id="MCG-ib-RWV"/>
+                        <outlet property="modalView" destination="Iu0-3r-buo" id="Iee-pT-rEE"/>
                         <outlet property="registerBtn" destination="qFz-4j-Iwa" id="KdJ-5T-fcu"/>
                         <outlet property="titleLabel" destination="eDa-Rf-nY9" id="fup-86-Jal"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="26" y="98"/>
+            <point key="canvasLocation" x="24.637681159420293" y="97.767857142857139"/>
         </scene>
     </scenes>
     <resources>
