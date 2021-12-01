@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Sign InNC-->
         <scene sceneID="lsZ-se-6Pi">
             <objects>
-                <navigationController navigationBarHidden="YES" id="K4J-dA-WW7" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SignInNC" navigationBarHidden="YES" id="K4J-dA-WW7" customClass="SignInNC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Cv-sL-37q">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

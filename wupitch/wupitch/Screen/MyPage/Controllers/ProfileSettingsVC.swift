@@ -30,7 +30,6 @@ class ProfileSettingsVC: UIViewController {
     
     // 뒤로가기 버튼
     @IBAction func touchUpBackBtn(_ sender: Any) {
-        self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -48,7 +47,7 @@ class ProfileSettingsVC: UIViewController {
         //버튼 클릭 시, 다음 스토리보드로 이동
         let storyboard = UIStoryboard.init(name: "ProfilePassword", bundle: nil)
         guard let dvc = storyboard.instantiateViewController(identifier: "ProfilePasswordVC") as? ProfilePasswordVC else { return }
-        self.tabBarController?.tabBar.isHidden = true
+        dvc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(dvc, animated: true)
     }
     
@@ -56,11 +55,16 @@ class ProfileSettingsVC: UIViewController {
     @IBAction func touchUpLogoutBtn(_ sender: Any) {
         // 유저 토큰 삭제
         UserDefaults.standard.removeObject(forKey: "userToken")
-        
+            
+        let storyboard = UIStoryboard.init(name: "SignIn", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(identifier: "SignInNC") as? SignInVC else {return}
+        print("눌림")
+        UIApplication.shared.windows.first(where: \.isKeyWindow)?.rootViewController = dvc
     }
     
     // 회원탈퇴 버튼
     @IBAction func touchUpOutBtn(_ sender: Any) {
+        UserDefaults.standard.removeObject(forKey: "userToken")
         withdrawalDataManager.patchWithdrawal(delegate: self)
     }
 }
@@ -73,7 +77,7 @@ extension ProfileSettingsVC {
         print(result.isSuccess)
         
         let storyboard = UIStoryboard.init(name: "SignIn", bundle: nil)
-        guard let dvc = storyboard.instantiateViewController(identifier: "SignInVC") as? SignInVC else {return}
+        guard let dvc = storyboard.instantiateViewController(identifier: "SignInNC") as? SignInVC else {return}
 
         UIApplication.shared.windows.first(where: \.isKeyWindow)?.rootViewController = dvc
 

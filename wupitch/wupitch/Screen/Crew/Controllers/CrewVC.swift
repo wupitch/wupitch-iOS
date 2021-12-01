@@ -23,10 +23,10 @@ class CrewVC: BaseVC {
     
     lazy var dataManager = AreaService()
     lazy var crewDataManager = LookUpCrewService()
-    var lookUpCrewResult : LookUpCrewDataResult?
-    var schedule : LookUpContent?
+    lazy var patchFCMDeviceToken = PatchFCMService()
+    var lookUpCrew : [LookUpCrewContent] = []
     var basicImage : UIImage?
-    var dict = [String:[Any]]()
+    var areaDict = [String:[Any]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +35,16 @@ class CrewVC: BaseVC {
         tapGesture()
         // 지역 api
         dataManager.getArea(delegate: self)
+        print(UserDefaults.standard.string(forKey: "userToken"))
+        
+        if let deviceToken = UserDefaults.standard.string(forKey: "deviceToken") {
+            patchFCMDeviceToken.patchFCM(PatchFCMRequest(deviceToken: deviceToken), delegate: self)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("유저디폴트", UserDefaults.standard.dictionary(forKey: "filterParams"))
+        print("크루 필터 파라미터 값 유저디폴트", UserDefaults.standard.dictionary(forKey: "filterParams"))
         crewDataManager.getLookUpCrew(params: UserDefaults.standard.dictionary(forKey: "filterParams") as? [String:[Any]], delegate: self)
     }
     
@@ -53,19 +58,15 @@ class CrewVC: BaseVC {
         crewCV.delegate = self
         crewCV.dataSource = self
         crewCV.register(CrewCVCell.nib(), forCellWithReuseIdentifier: CrewCVCell.identifier)
+        crewCV.register(ReadyCVCell.nib(), forCellWithReuseIdentifier: ReadyCVCell.identifier)
     }
     
-    //    func getEstimatedHeightFromDummyCell(_ indexPath: IndexPath) -> CGFloat {
-    //          let width = view.frame.width - 10
-    //          let estimatedHeight: CGFloat = 800.0
-    //          let dummyCell = ChatCell(frame: CGRect(x: 0, y: 0, width: width, height: estimatedHeight))
-    //          dummyCell.layoutIfNeeded()
-    //          let estimateSize = dummyCell.systemLayoutSizeFitting(CGSize(width: width, height: estimatedHeight))
-    //          return estimateSize.height
-    //    }
-    
-    
-    
+    func stringDate(doubleDate: Double) -> String {
+        let doubleToString = String(doubleDate)
+        let stringChange = doubleToString.split(separator: ".")
+        let stringDate = String(stringChange.first!) + ":" + String(stringChange.last!)
+        return stringDate
+    }
     
     // MARK: FloatingView tap gesture
     private func tapGesture() {
@@ -76,7 +77,7 @@ class CrewVC: BaseVC {
     @objc private func screenDidTap(_ gesture: UITapGestureRecognizer) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewSports", bundle: nil)
         if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewSportsVC") as? MakeCrewSportsVC {
-            self.tabBarController?.tabBar.isHidden = true
+            dvc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(dvc, animated: true)
         }
     }
@@ -84,7 +85,7 @@ class CrewVC: BaseVC {
     @IBAction func touchUpSearchBtn(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "CrewSearch", bundle: nil)
         if let dvc = storyBoard.instantiateViewController(withIdentifier: "CrewSearchVC") as? CrewSearchVC {
-            self.tabBarController?.tabBar.isHidden = true
+            dvc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(dvc, animated: true)
         }
     }
@@ -92,7 +93,7 @@ class CrewVC: BaseVC {
     @IBAction func touchUpFilterBtn(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "CrewFilter", bundle: nil)
         if let dvc = storyBoard.instantiateViewController(withIdentifier: "CrewFilterVC") as? CrewFilterVC {
-            self.tabBarController?.tabBar.isHidden = true
+            dvc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(dvc, animated: true)
         }
     }
@@ -100,11 +101,10 @@ class CrewVC: BaseVC {
     @IBAction func touchUpAlertBtn(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "CrewAlert", bundle: nil)
         if let dvc = storyBoard.instantiateViewController(withIdentifier: "CrewAlertVC") as? CrewAlertVC {
-            self.tabBarController?.tabBar.isHidden = true
+            dvc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(dvc, animated: true)
         }
     }
-    
     
     @IBAction func touchUpRegionBtn(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "LocationPicker", bundle: nil)
@@ -120,168 +120,195 @@ class CrewVC: BaseVC {
             self.present(dvc, animated: true, completion: nil)
         }
     }
-    
-    func stringDate(doubleDate: Double) -> String {
-        let doubleToString = String(doubleDate)
-        
-        let stringChange = doubleToString.split(separator: ".")
-        
-        let stringDate = String(stringChange.first!) + ":" + String(stringChange.last!)
-        
-        return stringDate
-    }
-    
-    
 }
 
 extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return lookUpCrewResult?.content.count ?? 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CrewCVCell.identifier, for: indexPath) as? CrewCVCell else{
-            return UICollectionViewCell()
-        }
         
-        switch lookUpCrewResult?.content[indexPath.row].sportsID {
-        case 1:
-            cell.tagNameLabel.text = "축구/풋살"
-            cell.tagNameView.backgroundColor = .sub04
-            if lookUpCrewResult?.content[indexPath.row].crewImage == nil {
-                cell.imageView.image = UIImage(named: "imgFoot")
-            }
-            else {
-                cell.imageView.sd_setImage(with: URL(string: lookUpCrewResult?.content[indexPath.row].crewImage ?? ""))
-            }
-        case 2:
-            cell.tagNameLabel.text = "배드민턴"
-            cell.tagNameView.backgroundColor = .sub03
-            if lookUpCrewResult?.content[indexPath.row].crewImage == nil {
-                cell.imageView.image = UIImage(named: "imgBad")
-            }
-            else {
-                cell.imageView.sd_setImage(with: URL(string: lookUpCrewResult?.content[indexPath.row].crewImage ?? ""))
-            }
-            
-        case 3:
-            cell.tagNameLabel.text = "배구"
-            cell.tagNameView.backgroundColor = .sub01
-            if lookUpCrewResult?.content[indexPath.row].crewImage == nil {
-                cell.imageView.image = UIImage(named: "imgVoll")
-            }
-            else {
-                cell.imageView.sd_setImage(with: URL(string: lookUpCrewResult?.content[indexPath.row].crewImage ?? ""))
-            }
-        case 4:
-            cell.tagNameLabel.text = "농구"
-            cell.tagNameView.backgroundColor = .sub02
-            if lookUpCrewResult?.content[indexPath.row].crewImage == nil {
-                cell.imageView.image = UIImage(named: "imgBasket")
-            }
-            else {
-                cell.imageView.sd_setImage(with: URL(string: lookUpCrewResult?.content[indexPath.row].crewImage ?? ""))
-            }
-            
-        case 5:
-            cell.tagNameLabel.text = "등산"
-            cell.tagNameView.backgroundColor = .sub06
-            if lookUpCrewResult?.content[indexPath.row].crewImage == nil {
-                cell.imageView.image = UIImage(named: "imgHike")
-            }
-            else {
-                cell.imageView.sd_setImage(with: URL(string: lookUpCrewResult?.content[indexPath.row].crewImage ?? ""))
-            }
-        case 6:
-            cell.tagNameLabel.text = "런닝"
-            cell.tagNameView.backgroundColor = .sub05
-            if lookUpCrewResult?.content[indexPath.row].crewImage == nil {
-                cell.imageView.image = UIImage(named: "imgRun")
-            }
-            else {
-                cell.imageView.sd_setImage(with: URL(string: lookUpCrewResult?.content[indexPath.row].crewImage ?? ""))
-            }
-        default:
-            break
-        }
-        
-        // 핀업버튼이 true일 때
-        if lookUpCrewResult?.content[indexPath.row].isPinUp == true {
-            cell.pinImageView.isHidden = false
+        if lookUpCrew.count > 1 {
+            return lookUpCrew.count
         }
         else {
-            cell.pinImageView.isHidden = true
+            return 1
         }
-        
-        // 나머지 값들
-        //cell.tagNameLabel.text = lookUpCrewResult?.content[indexPath.row].sportsName
-        cell.titleLabel.text = lookUpCrewResult?.content[indexPath.row].clubTitle
-        
-        cell.dayLabels[0].text = lookUpCrewResult?.content[indexPath.row].schedules[0].day
-        cell.dayLabels[1].text = stringDate(doubleDate: lookUpCrewResult?.content[indexPath.row].schedules[0].startTime ?? -1.0)
-        cell.dayLabels[3].text = stringDate(doubleDate: lookUpCrewResult?.content[indexPath.row].schedules[0].endTime ?? -1.0)
-        cell.dayLabels[4].isHidden = true
-        
-        // 장소가 지정되어있지 않을 경우 "장소미정" 뜨게함
-        cell.subLabel.text = lookUpCrewResult?.content[indexPath.row].areaName ?? "장소미정"
-        
-        return cell
     }
-    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if lookUpCrew.count > 1 {
+            
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CrewCVCell.identifier, for: indexPath) as? CrewCVCell else{
+                return UICollectionViewCell()
+            }
+            // 크루 이름 + 색상 + 크루 기본 이미지
+            switch lookUpCrew[indexPath.row].sportsID {
+            case 1:
+                cell.tagNameLabel.text = "축구/풋살"
+                cell.tagNameView.backgroundColor = .sub04
+                if let crewImage = lookUpCrew[indexPath.row].crewImage {
+                    cell.imageView.sd_setImage(with: URL(string: crewImage))
+                } else {
+                    cell.imageView.image = UIImage(named: "imgFoot")
+                }
+            case 2:
+                cell.tagNameLabel.text = "배드민턴"
+                cell.tagNameView.backgroundColor = .sub03
+                if let crewImage = lookUpCrew[indexPath.row].crewImage {
+                    cell.imageView.sd_setImage(with: URL(string: crewImage))
+                } else {
+                    cell.imageView.image = UIImage(named: "imgBad")
+                }
+            case 3:
+                cell.tagNameLabel.text = "배구"
+                cell.tagNameView.backgroundColor = .sub01
+                if let crewImage = lookUpCrew[indexPath.row].crewImage {
+                    cell.imageView.sd_setImage(with: URL(string: crewImage))
+                } else {
+                    cell.imageView.image = UIImage(named: "imgVoll")
+                }
+            case 4:
+                cell.tagNameLabel.text = "농구"
+                cell.tagNameView.backgroundColor = .sub02
+                if let crewImage = lookUpCrew[indexPath.row].crewImage {
+                    cell.imageView.sd_setImage(with: URL(string: crewImage))
+                } else {
+                    cell.imageView.image = UIImage(named: "imgBasket")
+                }
+            case 5:
+                cell.tagNameLabel.text = "등산"
+                cell.tagNameView.backgroundColor = .sub06
+                if let crewImage = lookUpCrew[indexPath.row].crewImage {
+                    cell.imageView.sd_setImage(with: URL(string: crewImage))
+                } else {
+                    cell.imageView.image = UIImage(named: "imgHike")
+                }
+            case 6:
+                cell.tagNameLabel.text = "런닝"
+                cell.tagNameView.backgroundColor = .sub05
+                if let crewImage = lookUpCrew[indexPath.row].crewImage {
+                    cell.imageView.sd_setImage(with: URL(string: crewImage))
+                } else {
+                    cell.imageView.image = UIImage(named: "imgRun")
+                }
+            default:
+                break
+            }
+            
+            // 핀업 버튼이 true일 때
+            if lookUpCrew[indexPath.row].isPinUp == true {
+                cell.pinImageView.isHidden = false
+            }
+            else {
+                cell.pinImageView.isHidden = true
+            }
+            
+            // 크루 제목
+            cell.titleLabel.text = lookUpCrew[indexPath.row].clubTitle
+            // 크루 날짜
+            cell.dayLabels[0].text = lookUpCrew[indexPath.row].schedules[0].day
+            // 시작시간 옵셔널이라서 바인딩
+            if let starTime = lookUpCrew[indexPath.row].schedules[0].startTime {
+                cell.dayLabels[1].text = stringDate(doubleDate: starTime)
+            } else {
+                cell.dayLabels[1].text = nil
+            }
+            // 끝나는시간 옵셔널이라 바인딩
+            if let endTime = lookUpCrew[indexPath.row].schedules[0].endTime {
+                cell.dayLabels[3].text = stringDate(doubleDate: endTime)
+            } else {
+                cell.dayLabels[3].text = nil
+            }
+            cell.dayLabels[2].text = "-"
+            // 크루 모이는 날이 많을 경우 '+' 붙여주기
+            if lookUpCrew[indexPath.row].schedules.count > 1 {
+                cell.dayLabels[4].isHidden = false
+            } else {
+                cell.dayLabels[4].isHidden = true
+            }
+            // 장소가 지정되어있지 않을 경우 "장소미정" 뜨게함
+            cell.subLabel.text = lookUpCrew[indexPath.row].areaName ?? "장소미정"
+            
+            return cell
+            
+        } else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReadyCVCell.identifier, for: indexPath) as? ReadyCVCell else{
+                return UICollectionViewCell()
+            }
+            cell.readyLabel.text = "크루가 없어요."
+            return cell
+        }
+    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // cell 누르면 해당 디테일 페이지로 이동
-        let storyboard = UIStoryboard.init(name: "CrewDetail", bundle: nil)
         
-        guard let dvc = storyboard.instantiateViewController(identifier: "CrewDetailVC") as? CrewDetailVC else {return}
-        
-        
-        self.tabBarController?.tabBar.isHidden = true
-        self.navigationController?.pushViewController(dvc, animated: true)
+        if lookUpCrew.count > 1 {
+            // 크루 아이디 저장
+            UserDefaults.standard.set(lookUpCrew[indexPath.row].clubID, forKey: "clubID")
+            
+            // cell 누르면 해당 디테일 페이지로 이동
+            let storyboard = UIStoryboard.init(name: "CrewDetail", bundle: nil)
+            guard let dvc = storyboard.instantiateViewController(identifier: "CrewDetailVC") as? CrewDetailVC else {return}
+            
+            dvc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(dvc, animated: true)
+            
+        } else {
+            print("크루 값이 없습니다.")
+        }
     }
     
     // MARK: - collectionView size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let width = self.view.frame.width
-        //let height =  collectionView.frame.height
-        
-        return CGSize(width: width-40, height: 133)
+        if lookUpCrew.count > 1 {
+            let width = self.view.frame.width
+            
+            return CGSize(width: width-40, height: 133)
+        }
+        else {
+            let width = self.view.frame.width
+            let height =  collectionView.frame.height
+            
+            return CGSize(width: width, height: height)
+        }
     }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
                         UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 12, left: 0, bottom: 0, right: 0)
+        if lookUpCrew.count > 1 {
+            return UIEdgeInsets(top: 12, left: 0, bottom: 0, right: 0)
+        }
+        else {
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
     }
 }
 
-
 // MARK: - Extension (Modal Delegate)
 extension CrewVC: ModalDelegate {
-    
-    
     // 모달에서 확인 버튼 눌렀을 때 다음 버튼에 생기는 색 변화
     func selectBtnToNextBtn() {
-        //
+        //crewCV.reloadData()
     }
-    
     // 모달이 dismiss되면서 모달백그라운드 색도 없어짐
     func modalDismiss() {
         modalView.alpha = 0.0
         crewCV.reloadData()
     }
-    
     // textField에 모달에서 선택했던 피커 값 넣어주기
     func textFieldData(data: String) {
-        
-        //SignUpUserInfo.shared.region = data
         selectRegionBtn.setTitle(data, for: .normal)
+        
+        for i in 0...25 {
+            if data == SignUpUserInfo.shared.areaName?[i] {
+                areaDict["areaId"] = [i+1]
+            }
+        }
+        UserDefaults.standard.set(areaDict, forKey: "areaParams")
+        print("지역필터적용하기", UserDefaults.standard.dictionary(forKey: "areaParams"))
+        print("지역 필터 파라미터 값 유저디폴트", UserDefaults.standard.dictionary(forKey: "areaParams"))
+        crewDataManager.getLookUpCrew(params: UserDefaults.standard.dictionary(forKey: "areaParams") as? [String:[Any]], delegate: self)
     }
 }
 
-
-// 지역 api 연결
 extension CrewVC {
+    // 지역 api
     func didSuccessArea(result: [AreaResult]) {
         print("데이터가 성공적으로 들어왔습니다.")
         // 초기화
@@ -296,14 +323,17 @@ extension CrewVC {
             SignUpUserInfo.shared.areaName?.append(result[i].name)
         }
     }
-    
     // 크루 조회 api
     func didSuccessLookUpCrew(result: LookUpCrewDataResult) {
         print("조회데이터가 성공적으로 들어왔습니다.")
-        lookUpCrewResult = result
+        lookUpCrew = result.content
         crewCV.reloadData()
     }
-    
+    // 디바이스 토큰 수정 api
+    func didSuccessPatchFCM(result: PatchFCMData) {
+        print("디바이스 토큰 수정 데이터가 성공적으로 들어왔습니다.")
+        print("디바이스 토큰", UserDefaults.standard.string(forKey: "deviceToken"))
+    }
     func failedToRequest(message: String) {
         print("데이터가 들어오지 않았습니다.")
     }

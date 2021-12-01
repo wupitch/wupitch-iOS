@@ -23,21 +23,22 @@ class CrewSearchCVCell: UICollectionViewCell {
         
         crewSearchCV.delegate = self
         crewSearchCV.dataSource = self
-        self.crewSearchCV.register(CrewCVCell.nib(), forCellWithReuseIdentifier: CrewCVCell.identifier)
-        self.crewSearchCV.register(BungaeCVCell.nib(), forCellWithReuseIdentifier: BungaeCVCell.identifier)
+        //self.crewSearchCV.register(CrewCVCell.nib(), forCellWithReuseIdentifier: CrewCVCell.identifier)
+        //self.crewSearchCV.register(BungaeCVCell.nib(), forCellWithReuseIdentifier: BungaeCVCell.identifier)
+        self.crewSearchCV.register(ReadyCVCell.nib(), forCellWithReuseIdentifier: ReadyCVCell.identifier)
     }
 
 }
 
 extension CrewSearchCVCell : UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if tabBar == tabEnum.crew {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CrewCVCell.identifier, for: indexPath) as? CrewCVCell else{
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReadyCVCell.identifier, for: indexPath) as? ReadyCVCell else{
                 return UICollectionViewCell()
             }
             return cell
@@ -45,7 +46,7 @@ extension CrewSearchCVCell : UICollectionViewDelegate, UICollectionViewDelegateF
         }
         
         else if tabBar == tabEnum.bungae {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BungaeCVCell.identifier, for: indexPath) as? BungaeCVCell else{
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReadyCVCell.identifier, for: indexPath) as? ReadyCVCell else{
                 return UICollectionViewCell()
             }
             return cell
@@ -58,17 +59,17 @@ extension CrewSearchCVCell : UICollectionViewDelegate, UICollectionViewDelegateF
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if tabBar == tabEnum.crew {
-            return CGSize(width: self.frame.width-40, height: 133)
+            return CGSize(width: self.frame.width, height: self.frame.height)
         }
         else {
-            return CGSize(width: self.frame.width-40, height: 150)
+            return CGSize(width: self.frame.width, height: self.frame.height)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
                         UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 21, left: 0, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
 }

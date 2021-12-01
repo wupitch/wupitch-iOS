@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 
 class CrewAlertVC: UIViewController {
-
+    
     var fcmData : [FCMResult]?
     lazy var fcmDataManager = FCMService()
     @IBOutlet weak var alertTV: UITableView!
@@ -41,7 +41,6 @@ class CrewAlertVC: UIViewController {
     }
     
     @IBAction func touchUpBackBtn(_ sender: Any) {
-        self.tabBarController?.tabBar.isHidden = false
         navigationController?.popViewController(animated: true)
     }
 }
@@ -54,10 +53,9 @@ extension CrewAlertVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = self.alertTV?.dequeueReusableCell(withIdentifier: CrewAlertTVCell.identifier, for: indexPath) as? CrewAlertTVCell else { return UITableViewCell()
         }
-        if indexPath.row == 1 {
-            cell.alertTitleLabel.text = fcmData?[indexPath.row].title
-            cell.alertTimeLabel.text = nowDateFormatter(dateLabel: cell.alertTimeLabel.text ?? "")
-        }
+        cell.alertTitleLabel.text = fcmData?[indexPath.row].title
+        cell.alertTimeLabel.text = nowDateFormatter(dateLabel: cell.alertTimeLabel.text ?? "")
+        
         return cell
     }
 }

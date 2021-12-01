@@ -56,7 +56,7 @@ class BungaeVC: BaseVC {
     @objc private func screenDidTap(_ gesture: UITapGestureRecognizer) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "MakeBungaeRegion", bundle: nil)
         if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeBungaeRegionVC") as? MakeBungaeRegionVC {
-            self.tabBarController?.tabBar.isHidden = true
+            dvc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(dvc, animated: true)
         }
     }
@@ -64,7 +64,7 @@ class BungaeVC: BaseVC {
     @IBAction func touchUpSearchBtn(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "CrewSearch", bundle: nil)
         if let dvc = storyBoard.instantiateViewController(withIdentifier: "CrewSearchVC") as? CrewSearchVC {
-            self.tabBarController?.tabBar.isHidden = true
+            dvc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(dvc, animated: true)
         }
     }
@@ -72,7 +72,7 @@ class BungaeVC: BaseVC {
     @IBAction func touchUpFilterBtn(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "BungaeFilter", bundle: nil)
         if let dvc = storyBoard.instantiateViewController(withIdentifier: "BungaeFilterVC") as? BungaeFilterVC {
-            self.tabBarController?.tabBar.isHidden = true
+            dvc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(dvc, animated: true)
         }
     }
@@ -80,7 +80,7 @@ class BungaeVC: BaseVC {
     @IBAction func touchUpAlertBtn(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "CrewAlert", bundle: nil)
         if let dvc = storyBoard.instantiateViewController(withIdentifier: "CrewAlertVC") as? CrewAlertVC {
-            self.tabBarController?.tabBar.isHidden = true
+            dvc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(dvc, animated: true)
         }
     }
@@ -163,7 +163,7 @@ extension BungaeVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         
         guard let dvc = storyboard.instantiateViewController(identifier: "BungaeDetailVC") as? BungaeDetailVC else {return}
         
-        self.tabBarController?.tabBar.isHidden = true
+        dvc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(dvc, animated: true)
     }
     

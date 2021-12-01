@@ -100,7 +100,6 @@ class MyActivityDetailVC: UIViewController {
     }
     
     @IBAction func touchUpBackBtn(_ sender: Any) {
-        self.tabBarController?.tabBar.isHidden = false
         navigationController?.popViewController(animated: true)
     }
 }

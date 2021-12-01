@@ -187,7 +187,6 @@ extension MakeCrewGuestVC {
                     // 뷰 스택에서 crewVC를 찾아서 거기까지 pop 합니다. 후에 crewDetailVC를 찾아서 push 합니다.
                     for viewController in viewControllerStack {
                         if let crewVC = viewController as? CrewVC {
-                            self.tabBarController?.tabBar.isHidden = false
                             self.navigationController?.popToViewController(crewVC, animated: true)
                             
                             let storyBoard: UIStoryboard = UIStoryboard(name: "CrewDetail", bundle: nil)

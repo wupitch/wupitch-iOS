@@ -173,7 +173,6 @@ extension MakeBungaeMoneyVC {
                     // 뷰 스택에서 crewVC를 찾아서 거기까지 pop 합니다. 후에 bungaeDetailVC를 찾아서 push 합니다.
                     for viewController in viewControllerStack {
                         if let bungaeVC = viewController as? BungaeVC {
-                            self.tabBarController?.tabBar.isHidden = false
                             self.navigationController?.popToViewController(bungaeVC, animated: true)
 
                             let storyBoard: UIStoryboard = UIStoryboard(name: "BungaeDetail", bundle: nil)

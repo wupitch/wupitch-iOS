@@ -53,5 +53,7 @@ class TabbarVC: UITabBarController {
     private func setTabbarColor() {
         self.tabBar.unselectedItemTintColor = .gray03
         self.tabBar.tintColor = .bk
+        self.tabBar.layer.borderWidth = 1
+        self.tabBar.layer.borderColor = UIColor.gray04.cgColor
     }
 }

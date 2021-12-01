@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--OnboardingNC-->
         <scene sceneID="tRl-tf-IYS">
             <objects>
-                <navigationController navigationBarHidden="YES" id="XWm-5Y-ZJl" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="OnboardingNC" navigationBarHidden="YES" id="XWm-5Y-ZJl" customClass="OnboardingNC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8hF-eo-Cek">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -33,8 +33,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dDc-RM-xqJ">
-                                <rect key="frame" x="0.0" y="134" width="414" height="649"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dDc-RM-xqJ">
+                                <rect key="frame" x="0.0" y="134" width="414" height="648"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xp3-p4-WLj">
                                     <size key="itemSize" width="128" height="128"/>
@@ -69,6 +69,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dDc-RM-xqJ" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="3lH-Ol-UQY"/>
+                            <constraint firstItem="xpf-HI-pzh" firstAttribute="top" secondItem="dDc-RM-xqJ" secondAttribute="bottom" constant="26" id="KKa-9z-gFY"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xpf-HI-pzh" secondAttribute="trailing" constant="34" id="VIW-VA-REy"/>
                             <constraint firstItem="dDc-RM-xqJ" firstAttribute="top" secondItem="7Z7-p7-X6l" secondAttribute="bottom" constant="20" id="dvf-R0-SHE"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="xpf-HI-pzh" secondAttribute="bottom" constant="24" id="i2O-fO-mHd"/>

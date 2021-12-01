@@ -17,7 +17,7 @@ struct SignInService {
         
         AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: ["Content-Type":"application/json"])
             .responseDecodable(of: SignInData.self, emptyResponseCodes: [200, 204, 205]) { response in
-                print("response",response)
+                print("로그인 response",response)
                 switch response.result {
                 case .success(let response):
                     // 성공했을 때
@@ -34,7 +34,7 @@ struct SignInService {
                         }
                     }
                 case .failure(let error):
-                    print("에러났다",error.localizedDescription)
+                    print("로그인 에러났다",error.localizedDescription)
                     delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
                 }
             }

@@ -30,15 +30,16 @@ class CrewSearchVC: UIViewController, UISearchBarDelegate {
         passwordEyeSecure()
         crewSearchCV.delegate = self
         crewSearchCV.dataSource = self
+        searchTextField.delegate = self
         
         self.crewSearchCV.register(CrewSearchCVCell.nib(), forCellWithReuseIdentifier: CrewSearchCVCell.identifier)
 
-        crewBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
-        bungaeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
-        crewBtn.isUserInteractionEnabled = false
-        bungaeBtn.isUserInteractionEnabled = false
+        crewBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
+        bungaeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+//        crewBtn.isUserInteractionEnabled = false
+//        bungaeBtn.isUserInteractionEnabled = false
         
-        tabLineView.backgroundColor = .clear
+        tabLinBungaeView.backgroundColor = .clear
 
         searchTextField.backgroundColor = .gray05
         searchTextField.borderStyle = .none
@@ -52,12 +53,12 @@ class CrewSearchVC: UIViewController, UISearchBarDelegate {
 //        super.viewWillAppear(animated)
 //        bungaeBtn.sendActions(for: .touchUpInside)
 //    }
-    override func viewDidAppear(_ animated: Bool) {
-           super.viewDidAppear(animated)
-           bungaeBtn.sendActions(for: .touchUpInside)
-           crewBtn.isUserInteractionEnabled = true
-           bungaeBtn.isUserInteractionEnabled = true
-       }
+//    override func viewDidAppear(_ animated: Bool) {
+//           super.viewDidAppear(animated)
+//           bungaeBtn.sendActions(for: .touchUpInside)
+//           crewBtn.isUserInteractionEnabled = true
+//           bungaeBtn.isUserInteractionEnabled = true
+//       }
    
     // cancel btn
     func passwordEyeSecure() {
@@ -99,9 +100,21 @@ class CrewSearchVC: UIViewController, UISearchBarDelegate {
     }
     
     @IBAction func touchUpBackBtn(_ sender: Any) {
-        self.tabBarController?.tabBar.isHidden = false
         navigationController?.popViewController(animated: true)
     }
+}
+
+extension CrewSearchVC: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        searchTextField.textColor = .bk
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTextField.resignFirstResponder()
+        return true
+    }
+    
 }
 
 extension CrewSearchVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

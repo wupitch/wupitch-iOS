@@ -17,12 +17,12 @@ struct SportsService {
         
         AF.request(url, method: .get, encoding: JSONEncoding.default, headers: [ "Content-Type":"application/json"])
             .responseDecodable(of: SportsData.self) { response in
-                print("response",response)
+                print("스포츠 버튼 조회 response",response)
                 switch response.result {
                 case .success(let response):
                     delegate.didSuccessSports(result: response.result)
                 case .failure(let error):
-                    print("오류가 났습니다",error.localizedDescription)
+                    print("스포츠 버튼 조회에서 오류가 났습니다",error.localizedDescription)
                     delegate.failedToRequest(message: "오류가났습니다.")
                 }
             }

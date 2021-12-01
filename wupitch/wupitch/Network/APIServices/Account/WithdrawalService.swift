@@ -27,12 +27,12 @@ struct WithdrawalService {
         
         AF.request(url, method: .patch, encoding: JSONEncoding.default, headers: header)
             .responseDecodable(of: WithdrawalData.self, emptyResponseCodes: [200, 204, 205]) { response in
-                print("response",response)
+                print("회원탈퇴 response",response)
                 switch response.result {
                 case .success(let response):
                     delegate.didSuccessWithdrawal(result: response)
                 case .failure(let error):
-                    print("오류가 났습니다",error.localizedDescription)
+                    print("회원탈퇴에서 오류가 났습니다",error.localizedDescription)
                     delegate.failedToRequest(message: "오류가났습니다.")
                 }
             }

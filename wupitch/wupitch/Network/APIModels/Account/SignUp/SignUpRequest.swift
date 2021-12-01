@@ -13,4 +13,5 @@ struct SignUpRequest: Codable {
     var isPushAgree : Bool
     var nickname : String
     var password : String
+    var deviceToken : String
 }

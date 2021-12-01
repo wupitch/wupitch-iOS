@@ -17,12 +17,12 @@ struct EmailValidationService {
         
         AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: ["Content-Type":"application/json"])
             .responseDecodable(of: EmailValidationData.self, emptyResponseCodes: [200, 204, 205]) { response in
-                print("response",response)
+                print("이메일 확인 response",response)
                 switch response.result {
                 case .success(let response):
                     delegate.didSuccessEmailValidation(result: response)
                 case .failure(let error):
-                    print("오류가 났습니다",error.localizedDescription)
+                    print("이메일 확인에서 오류가 났습니다",error.localizedDescription)
                     delegate.failedToEmailRequest(message: "오류가 났습니다.")
                 }
             }

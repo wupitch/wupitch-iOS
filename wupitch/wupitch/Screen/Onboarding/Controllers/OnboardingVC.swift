@@ -14,6 +14,8 @@ class OnboardingVC: UIViewController {
     @IBOutlet weak var onboardingCV: UICollectionView!
     @IBOutlet weak var skipBtn: UIButton!
     
+    var skipIndex : Int = 0
+    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,15 +31,15 @@ class OnboardingVC: UIViewController {
         skipBtn.tintColor = UIColor.main
         
         // 페이지 컨트롤 색상 조정
-        onboardingPageControl.pageIndicatorTintColor = .gray04
+        onboardingPageControl.pageIndicatorTintColor = .gray05
         onboardingPageControl.currentPageIndicatorTintColor = .main
         
         // 컬렉션 뷰 페이징 효과 부드럽게
         onboardingCV.isPagingEnabled = true
         
         // 백그라운드 컬러 설정
-        // onboardingCV.backgroundColor = .gray05
-        // view.backgroundColor = .gray05
+         onboardingCV.backgroundColor = .gray04
+         view.backgroundColor = .gray04
     }
 
     // dataSource & Delegate & Register
@@ -59,7 +61,12 @@ class OnboardingVC: UIViewController {
         // 건너뛰기 버튼 누르면 로그인 페이지로 이동
         let storyboard = UIStoryboard.init(name: "SignIn", bundle: nil)
         guard let dvc = storyboard.instantiateViewController(identifier: "SignInVC") as? SignInVC else {return}
-        self.navigationController?.pushViewController(dvc, animated: true)
+//        skipIndex +=  1
+//        UserDefaults.standard.set(skipIndex, forKey: "skipIndex")
+//        print("스킵인덱스",UserDefaults.standard.integer(forKey: "skipIndex"))
+        navigationController?.pushViewController(dvc, animated: true)
+       
+        
     }
 }
 

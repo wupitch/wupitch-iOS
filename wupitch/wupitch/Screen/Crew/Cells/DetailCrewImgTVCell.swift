@@ -7,17 +7,18 @@
 
 import UIKit
 
-class DetailCrewImgCVCell: UICollectionViewCell {
+class DetailCrewImgTVCell: UITableViewCell {
 
     var status : Bool = false
     lazy var pinUpToggle = PinupToggleService()
+    
     @IBOutlet weak var mainImgView: UIImageView!
     @IBOutlet weak var pinBtn: UIButton!
     
-    static let identifier = "DetailCrewImgCVCell"
+    static let identifier = "DetailCrewImgTVCell"
     
     static func nib() -> UINib {
-        return UINib(nibName: "DetailCrewImgCVCell", bundle: nil)
+        return UINib(nibName: "DetailCrewImgTVCell", bundle: nil)
     }
     
     override func awakeFromNib() {
@@ -48,7 +49,7 @@ class DetailCrewImgCVCell: UICollectionViewCell {
     }
 }
 
-extension DetailCrewImgCVCell {
+extension DetailCrewImgTVCell {
     func didSuccessPinUpToggle(result: PinUpToggleResult) {
         print("핀업 토글이 성공적으로 들어옵니다.")
         print("핀업",result.result)

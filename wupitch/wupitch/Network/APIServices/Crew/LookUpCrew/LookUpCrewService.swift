@@ -16,12 +16,14 @@ struct LookUpCrewService {
         
         let urlString = "https://prod.wupitch.site/app/clubs"
         
-        let accessToken = " eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aXZpZHN3YW5AbmF2ZXIuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTYzNzk1MzE0MiwiZXhwIjoxNjM4Mzg1MTQyfQ.UA6CiyhNauZ6Nektt-gjiIdyYWKf9GMZLtBNppT0d04"
+        var header : HTTPHeaders = []
         
-        let header: HTTPHeaders = [
-            "Content-Type": "application/json",
-            "X-ACCESS-TOKEN": accessToken,
-        ]
+        if let token = UserDefaults.standard.string(forKey: "userToken") {
+            header = ["Content-Type":"application/json", "X-ACCESS-TOKEN": token]
+        }
+        else {
+            header = ["Content-Type":"application/json"]
+        }
         
         // Http Method: GET
         AF.request(urlString,
@@ -33,12 +35,12 @@ struct LookUpCrewService {
                        print("response",response.result)
                        switch response.result {
                        case .success(let response):
-                           print("리스폰즈",response)
+                           print("크루 조회 리스폰즈",response)
                            guard let data = response.result else {return}
-                           print("나오니?")
+                           print("크루 조회 나오니?")
                            delegate.didSuccessLookUpCrew(result: data)
                        case .failure(let error):
-                           print("오류가 났습니다",error.localizedDescription)
+                           print("크루 조회에서 오류가 났습니다",error.localizedDescription)
                            delegate.failedToRequest(message: "오류가났습니다.")
                        }
                    }

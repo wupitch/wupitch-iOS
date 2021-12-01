@@ -99,6 +99,7 @@ class MakeCrewRegionVC: UIViewController {
                 }
             }
             SignUpUserInfo.shared.location = placeTextField.text
+            print("장소 >>>>>>>>>>",SignUpUserInfo.shared.location ?? "장소미정")
             let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewInfo", bundle: nil)
             if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewInfoVC") as? MakeCrewInfoVC {
                 navigationController?.pushViewController(dvc, animated: true)

@@ -130,7 +130,6 @@ class MakeCrewSportsVC: UIViewController {
     
     // 뒤로가기 버튼
     @IBAction func touchUpBackBtn(_ sender: Any) {
-        self.tabBarController?.tabBar.isHidden = false
         navigationController?.popViewController(animated: true)
     }
     
@@ -162,12 +161,13 @@ extension MakeCrewSportsVC {
         SignUpUserInfo.shared.sports = []
         
         for i in 0...5 {
-            // 유저디폴트에 스포츠 아이디 저장
-            UserDefaults.standard.set(result[i].sportsID, forKey: "sportsId")
             // 싱글톤에 스포츠 아이디 저장
             SignUpUserInfo.shared.sports?.append(result[i].sportsID)
             // 스포츠 버튼에 아이디값 세팅
             sportsBtns[i].btnId = result[i].sportsID
+        
+            print("싱글톤에 스포츠 값 잘 들어가나 확인",SignUpUserInfo.shared.sports)
+            print("스포츠 버튼 아이디 값", sportsBtns[i].btnId)
         }
     }
     

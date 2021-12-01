@@ -7,18 +7,20 @@
 
 import UIKit
 
-class DetailCrewIntroduceCVCell: UICollectionViewCell {
+class DetailCrewIntroduceTVCell: UITableViewCell {
 
     @IBOutlet weak var contentLabel: UILabel!
-    @IBOutlet weak var ageLabel: UILabel!
-    @IBOutlet weak var peopleLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var tagSelectCV: UICollectionView!
     
-    static let identifier = "DetailCrewIntroduceCVCell"
+    @IBOutlet weak var tagSelectCV: UICollectionView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var peopleLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    
+    
+    static let identifier = "DetailCrewIntroduceTVCell"
     
     static func nib() -> UINib {
-        return UINib(nibName: "DetailCrewIntroduceCVCell", bundle: nil)
+        return UINib(nibName: "DetailCrewIntroduceTVCell", bundle: nil)
     }
     
     override func awakeFromNib() {
@@ -43,7 +45,7 @@ class DetailCrewIntroduceCVCell: UICollectionViewCell {
     }
 }
 
-extension DetailCrewIntroduceCVCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension DetailCrewIntroduceTVCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 8
     }

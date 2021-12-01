@@ -55,7 +55,6 @@ class SignUpPhoneVC: UIViewController {
   
     // 뒤로가기 버튼
     @IBAction func touchUpBackBtn(_ sender: Any) {
-        self.tabBarController?.tabBar.isHidden = true
         navigationController?.popViewController(animated: true)
     }
     

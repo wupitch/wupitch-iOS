@@ -13,31 +13,26 @@ struct BungaeDetailService {
 
     func getBungaeDetail(delegate: BungaeDetailVC) {
 
-//        var header : HTTPHeaders = []
-//
-//        if let token = UserDefaults.standard.string(forKey: "userToken") {
-//            header = ["Content-Type":"application/json", "X-ACCESS-TOKEN": token]
-//        }
-//        else {
-//            header = ["Content-Type":"application/json"]
-//        }
-
+        let urlString : String
+        
+        if let impromptuId = UserDefaults.standard.string(forKey: "impromptuId") {
+            urlString = "https://prod.wupitch.site/app/impromptus/\(impromptuId)"
+        }
+        else {
+            urlString = "https://prod.wupitch.site/app/impromptus"
+        }
+        
         var header : HTTPHeaders = []
-
-        let token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYWFAenp6LmRkZCIsInJvbGUiOiJST0xFX1VTRVIiLCJpYXQiOjE2MzgwNDA1ODUsImV4cCI6MTYzODQ3MjU4NX0.nKiwwxOxjwKv0BaNgWVEb_wHIKL_Ey26FzO5vRx0oLY"
-
-        header = ["Content-Type":"application/json", "X-ACCESS-TOKEN": token]
-
-        let url: String
-
-        let impromptusId = 1
-
-        //UserDefaults.standard.integer(forKey: "clubId")
-
-        url = "https://prod.wupitch.site/app/impromptus/\(impromptusId)"
+        
+        if let token = UserDefaults.standard.string(forKey: "userToken") {
+            header = ["Content-Type":"application/json", "X-ACCESS-TOKEN": token]
+        }
+        else {
+            header = ["Content-Type":"application/json"]
+        }
 
         // Http Method: GET
-        AF.request(url,
+        AF.request(urlString,
                    method: .get,
                    encoding: URLEncoding(destination: .queryString, arrayEncoding: .noBrackets),
                    headers: header).responseDecodable(of: GenericResponse<BungaeDetailResult>.self
@@ -50,7 +45,7 @@ struct BungaeDetailService {
                            print("번개 디테일 나오니?")
                            delegate.didSuccessBungaeDetail(result: data)
                        case .failure(let error):
-                           print("오류가 났습니다",error.localizedDescription)
+                           print("번개 디테일에서 오류가 났습니다",error.localizedDescription)
                            delegate.failedToRequest(message: "오류가났습니다.")
                        }
                    }

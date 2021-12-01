@@ -157,6 +157,8 @@ class CrewFilterVC: BaseVC {
         }
         dict = [String:[Any]]()
         print("초기화")
+        // 유저디폴트 값도 초기화
+        UserDefaults.standard.removeObject(forKey: "filterParams")
     }
     
     @IBAction func touchUpApplyBtn(_ sender: Any) {
@@ -220,34 +222,29 @@ class CrewFilterVC: BaseVC {
 extension CrewFilterVC {
     func didSuccessLookUpCrewFilter(result: LookUpCrewFilterResult) {
         print("필터 조회 데이터가 성공적으로 들어왔습니다.")
-        
         // 종목 값이 있으면
         if let sports = result.crewPickSportsList {
             for i in sports {
                 sportsBtns[i-1].colorSportsBtn()
             }
         }
-        
         // 연령대 값이 있으면
         if let age = result.crewPickAgeList {
             for i in age {
                 ageBtns[i-1].colorSportsBtn()
             }
         }
-        
         // 요일 값이 있으면
         if let day = result.crewPickDays {
             for i in day {
                 dateBtns[i-1].colorSportsBtn()
             }
         }
-        
         // 크루원 수가 있으면
-//        if let crewCount = result.crewPickMemberCountValue {
-//            crewCountBtns[crewCount-1].colorSportsBtn()
-//        }
+        if let crewCount = result.crewPickMemberCountValue {
+            crewCountBtns[crewCount-1].colorSportsBtn()
+        }
     }
-    
     func failedToRequest(message: String) {
         print("데이터가 들어오지 않았습니다.")
     }

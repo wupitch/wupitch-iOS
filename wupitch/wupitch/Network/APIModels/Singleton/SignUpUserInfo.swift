@@ -62,7 +62,6 @@ class SignUpUserInfo {
     var size: Int?
     var sortBy: String?
     var sportsListBtn: [Int]?
-    
 
     
     // -----------------------

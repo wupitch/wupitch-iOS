@@ -24,7 +24,6 @@ class ProfileDetailVC: UIViewController {
   
     // 뒤로가기 버튼
     @IBAction func touchUpBackBtn(_ sender: Any) {
-        self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -34,7 +33,7 @@ class ProfileDetailVC: UIViewController {
         //버튼 클릭 시, 다음 스토리보드로 이동
         let storyboard = UIStoryboard.init(name: "ProfileNickname", bundle: nil)
         guard let dvc = storyboard.instantiateViewController(identifier: "ProfileNicknameVC") as? ProfileNicknameVC else {return}
-        self.tabBarController?.tabBar.isHidden = true
+        dvc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(dvc, animated: true)
     }
     
@@ -44,7 +43,7 @@ class ProfileDetailVC: UIViewController {
         //버튼 클릭 시, 다음 스토리보드로 이동
         let storyboard = UIStoryboard.init(name: "SignUpCity", bundle: nil)
         guard let dvc = storyboard.instantiateViewController(identifier: "SignUpCityVC") as? SignUpCityVC else {return}
-        self.tabBarController?.tabBar.isHidden = true
+        dvc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(dvc, animated: true)
     }
     
@@ -54,7 +53,7 @@ class ProfileDetailVC: UIViewController {
         //버튼 클릭 시, 다음 스토리보드로 이동
         let storyboard = UIStoryboard.init(name: "SignUpSports", bundle: nil)
         guard let dvc = storyboard.instantiateViewController(identifier: "SignUpSportsVC") as? SignUpSportsVC else {return}
-        self.tabBarController?.tabBar.isHidden = true
+        dvc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(dvc, animated: true)
     }
     
@@ -64,7 +63,7 @@ class ProfileDetailVC: UIViewController {
         //버튼 클릭 시, 다음 스토리보드로 이동
         let storyboard = UIStoryboard.init(name: "SignUpAge", bundle: nil)
         guard let dvc = storyboard.instantiateViewController(identifier: "SignUpAgeVC") as? SignUpAgeVC else {return}
-        self.tabBarController?.tabBar.isHidden = true
+        dvc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(dvc, animated: true)
     }
     
@@ -74,7 +73,7 @@ class ProfileDetailVC: UIViewController {
         //버튼 클릭 시, 다음 스토리보드로 이동
         let storyboard = UIStoryboard.init(name: "SignUpPhone", bundle: nil)
         guard let dvc = storyboard.instantiateViewController(identifier: "SignUpPhoneVC") as? SignUpPhoneVC else {return}
-        self.tabBarController?.tabBar.isHidden = true
+        dvc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(dvc, animated: true)
     }
 }

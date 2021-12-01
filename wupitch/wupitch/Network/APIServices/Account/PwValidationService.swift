@@ -17,12 +17,12 @@ struct PwValidationService {
         
         AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: ["Content-Type":"application/json"])
             .responseDecodable(of: PwValidationData.self, emptyResponseCodes: [200, 204, 205]) { response in
-                print("response",response)
+                print("비밀번호 확인 response",response)
                 switch response.result {
                 case .success(let response):
                     delegate.didSuccessPwValidation(result: response)
                 case .failure(let error):
-                    print("오류가 났습니다",error.localizedDescription)
+                    print("비밀번호 확인 오류가 났습니다",error.localizedDescription)
                     delegate.failedToEmailRequest(message: "오류가 났습니다.")
                 }
             }

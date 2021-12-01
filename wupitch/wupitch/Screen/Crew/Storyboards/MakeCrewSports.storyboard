@@ -116,7 +116,7 @@
                                                 <rect key="frame" x="129" y="0.0" width="117" height="48"/>
                                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="등산"/>
+                                                <state key="normal" title="런닝"/>
                                                 <connections>
                                                     <action selector="touchUpHikingBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xBl-Va-REr"/>
                                                 </connections>
@@ -125,7 +125,7 @@
                                                 <rect key="frame" x="258" y="0.0" width="117" height="48"/>
                                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="런닝"/>
+                                                <state key="normal" title="등산"/>
                                                 <connections>
                                                     <action selector="touchUpRunningBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6Uc-dY-8On"/>
                                                 </connections>

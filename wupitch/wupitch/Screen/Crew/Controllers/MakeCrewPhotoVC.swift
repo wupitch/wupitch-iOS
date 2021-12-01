@@ -45,11 +45,11 @@ class MakeCrewPhotoVC: UIViewController {
         case 1:
             basicImage = UIImage(named: "imgFootThumb")
         case 2:
-            basicImage = UIImage(named: "imgBaskThumb")
-        case 3:
             basicImage = UIImage(named: "imgBadThumb")
-        case 4:
+        case 3:
             basicImage = UIImage(named: "imgVollThumb")
+        case 4:
+            basicImage = UIImage(named: "imgBaskThumb")
         case 5:
             basicImage = UIImage(named: "imgRunThumb")
         case 6:

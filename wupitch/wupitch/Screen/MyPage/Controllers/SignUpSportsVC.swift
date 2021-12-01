@@ -52,17 +52,27 @@ class SignUpSportsVC: UIViewController {
     // MARK: - IBActions
     // 뒤로가기 버튼
     @IBAction func touchUpBackBtn(_ sender: Any) {
-        self.tabBarController?.tabBar.isHidden = true
         navigationController?.popViewController(animated: true)
     }
     
+//    SignUpUserInfo.shared.ageList = []
+//    SignUpUserInfo.shared.extraInfoList = []
+//    for i in 0...4 {
+//        if ageBtns[i].status == true {
+//            SignUpUserInfo.shared.ageList?.append(ageBtns[i].ageInt!)
+//            print("연령대 >>>>>>>>>",SignUpUserInfo.shared.ageList)
+//        }
+//    }
     // 다음 버튼
     @IBAction func touchUpNextBtn(_ sender: Any) {
         if nextBtn.backgroundColor == .main {
+            SignUpUserInfo.shared.sportsListBtn = []
             for i in 0...5 {
                 if sportBtns[i].status == true {
-                    informationDataManager.patchInformation(InformationRequest(sportsList: [1,2]), delegate: self)
+                    SignUpUserInfo.shared.sportsListBtn?.append(sportBtns[i].btnId ?? -99)
                 }
+                informationDataManager.patchInformation(InformationRequest(sportsList: SignUpUserInfo.shared.sportsListBtn ?? [-99]), delegate: self)
+                print("스포츠버튼인덱스", SignUpUserInfo.shared.sportsListBtn)
             }
             
             navigationController?.popViewController(animated: true)
@@ -221,14 +231,9 @@ extension SignUpSportsVC : AlertDelegate {
 extension SignUpSportsVC {
     func didSuccessMemberSports(result: MemberSportsResult) {
         print("데이터가 성공적으로 들어왔습니다.")
-        // 스포츠 리스트의 값이 있을 때
-        if result.list.isEmpty != true {
-            for i in 0...5 {
-                sportBtns[i].colorSportsBtn()
-            }
-        }
-        else {
-            print("선택한 값이 없어요!")
+        
+        for i in result.list {
+            sportBtns[i.sportsID-1].colorSportsBtn()
         }
     }
     

@@ -25,21 +25,15 @@ struct MakeBungaeService {
         }
         
         AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: header)
-//                            .responseString(completionHandler: { response in
-//                                print("response",response.result)
-//                            }
             .responseDecodable(of: MakeBungaeData.self, emptyResponseCodes: [200, 204, 205]) { response in
-                print(url)
-                print("????")
-                print("response",response)
+                print("번개 생성하기 response",response)
                 switch response.result {
                 case .success(let response):
                     delegate.didSuccessMakeBungae(result: response.result)
                 case .failure(let error):
-                    print("오류가 났습니다",error.localizedDescription)
+                    print("번개 생성하기에서 오류가 났습니다",error.localizedDescription)
                     delegate.failedToRequest(message: "오류가났습니다.")
                 }
             }
-//                                )
     }
 }

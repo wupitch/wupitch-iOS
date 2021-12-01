@@ -66,6 +66,7 @@ class ProfileVC: BaseVC {
         // 다음 스토리 보드로 이동
         let storyboard = UIStoryboard.init(name: "CrewAlert", bundle: nil)
         guard let dvc = storyboard.instantiateViewController(identifier: "CrewAlertVC") as? CrewAlertVC else {return}
+        dvc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(dvc, animated: true)
     }
     
@@ -94,7 +95,7 @@ class ProfileVC: BaseVC {
         //버튼 클릭 시, 다음 스토리보드로 이동
         let storyboard = UIStoryboard.init(name: "ProfileDetail", bundle: nil)
         guard let dvc = storyboard.instantiateViewController(identifier: "ProfileDetailVC") as? ProfileDetailVC else {return}
-        self.tabBarController?.tabBar.isHidden = true
+        dvc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(dvc, animated: true)
     }
     
@@ -138,12 +139,10 @@ extension ProfileVC : UIImagePickerControllerDelegate, UINavigationControllerDel
             
             var header : HTTPHeaders = []
             
-//            if let token = UserDefaults.standard.string(forKey: "userToken") {
-//                header = ["Content-Type":"multipart/form-data", "X-ACCESS-TOKEN": token]
-//            }
-            let token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aXZpZHN3YW5AbmF2ZXIuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTYzNzk1MzE0MiwiZXhwIjoxNjM4Mzg1MTQyfQ.UA6CiyhNauZ6Nektt-gjiIdyYWKf9GMZLtBNppT0d04"
-            header = ["Content-Type":"application/json", "X-ACCESS-TOKEN": token]
-            
+            if let token = UserDefaults.standard.string(forKey: "userToken") {
+                header = ["Content-Type":"multipart/form-data", "X-ACCESS-TOKEN": token]
+            }
+           
             let userImage = self.profileImageVIew.image
             
             AF.upload(
@@ -183,7 +182,7 @@ extension ProfileVC {
         if result.profileImageURL == nil {
             profileImageVIew.image = UIImage(named: "profileBasic")
         } else {
-            profileImageVIew.sd_setImage(with: URL(string: result.profileImageURL))
+            profileImageVIew.sd_setImage(with: URL(string: result.profileImageURL ?? ""))
         }
     }
     

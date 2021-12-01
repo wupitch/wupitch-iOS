@@ -17,7 +17,7 @@ class SignUpImagePreviewVC: UIViewController {
     @IBOutlet weak var cameraAgainBtn: UIButton!
     public var image: UIImage?
     
-    //lazy var profileImageDataManager = ProfileImageService()
+    lazy var signUpManager = SignUpService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,16 +67,28 @@ class SignUpImagePreviewVC: UIViewController {
             }, to: url, method: .post, headers: header).uploadProgress(queue: .main) { progress in
                 
                 print("Upload Progress: \(progress.fractionCompleted)")
-            }.responseJSON { data in
+            }.responseJSON { [self] data in
                 switch data.result {
                 case .success(let response):
                     print("데이터가 성공적으로 들어왔어요", response)
                     
+                    // 신분증 인증 전의 회원가입 데이터들을 한번에 보내기
+                    if let email = SignUpUserInfo.shared.email,
+                       let introduce = SignUpUserInfo.shared.introduce,
+                       let isPushAgree = SignUpUserInfo.shared.isPushAgree,
+                       let nickname = SignUpUserInfo.shared.nickname,
+                       let password = SignUpUserInfo.shared.password,
+                       let deviceToken = UserDefaults.standard.string(forKey: "deviceToken") {
+                        
+                        signUpManager.postSignUp(SignUpRequest(email: email, introduce: introduce, isPushAgree: isPushAgree, nickname: nickname, password: password, deviceToken: deviceToken), delegate: self)
+                    
+                     print("디바이스토큰 >>>>>>>>>",UserDefaults.standard.string(forKey: "deviceToken"))
                     //버튼 클릭 시, 다음 스토리보드로 이동
                     let storyboard = UIStoryboard.init(name: "SignUpComplete", bundle: nil)
                     guard let dvc = storyboard.instantiateViewController(identifier: "SignUpCompleteVC") as? SignUpCompleteVC else {return}
                     self.tabBarController?.tabBar.isHidden = true
-                    self.navigationController?.pushViewController(dvc, animated: true)
+                        self.navigationController?.pushViewController(dvc, animated: true)
+                    }
                     
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -98,3 +110,22 @@ extension UIImage {
         return renderImage
     }
 }
+
+// 회원가입 api
+extension SignUpImagePreviewVC {
+    // 다음 버튼 누르면 값을 한번에 넣어주자!
+    func didSuccessSignUp(result: SignUpResult) {
+        print("회원가입 데이터가 성공적으로 들어왔습니다.")
+        // 자동로그인을 위해 유저디폴트에 유저 토큰 저장
+        UserDefaults.standard.set(result.jwt, forKey: "userToken")
+        // 혹시모르니 유저 아이디도 저장
+        UserDefaults.standard.set(result.accountID, forKey: "userID")
+    }
+    
+    func failedToRequest(message: String) {
+        print("회원가입 데이터가 들어오지 않았습니다.")
+        
+    }
+}
+
+

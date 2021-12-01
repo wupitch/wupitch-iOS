@@ -13,25 +13,32 @@ struct BungaePinupToggleService {
     
     func patchBungaePinUpToggleService(delegate: BungaeImageCVCell) {
         
-        let impromptuId = 4
+        let urlString : String
         
-        let urlString = "https://prod.wupitch.site/app/impromptus/\(impromptuId)/pinUp-toggle"
+        if let impromptuId = UserDefaults.standard.string(forKey: "impromptuId") {
+            urlString = "https://prod.wupitch.site/app/impromptus/\(impromptuId)/pinUp-toggle"
+        }
+        else {
+            urlString = "https://prod.wupitch.site/app/impromptus"
+        }
         
-        let accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0bndqZEB0LnQiLCJyb2xlIjoiUk9MRV9VU0VSIiwiaWF0IjoxNjM4MjU2MjEzLCJleHAiOjE2Mzg2ODgyMTN9.xLwAVhi1EGuTwxodyVOPh_WcITZK-zPHXW6y1YH130g"
+        var header : HTTPHeaders = []
         
-        let header: HTTPHeaders = [
-            "Content-Type": "application/json",
-            "X-ACCESS-TOKEN": accessToken,
-        ]
+        if let token = UserDefaults.standard.string(forKey: "userToken") {
+            header = ["Content-Type":"application/json", "X-ACCESS-TOKEN": token]
+        }
+        else {
+            header = ["Content-Type":"application/json"]
+        }
         
         AF.request(urlString, method: .patch, encoding: JSONEncoding.default, headers: header)
             .responseDecodable(of: BungaePinUpToggleData.self) { response in
-                print("response",response)
+                print("번개 핀업 토글 response",response)
                 switch response.result {
                 case .success(let response):
                     delegate.didSuccessBungaePinUpToggle(result: response.result)
                 case .failure(let error):
-                    print("오류가 났습니다",error.localizedDescription)
+                    print("번개 핀업 토글에서 오류가 났습니다",error.localizedDescription)
                     delegate.failedToRequest(message: "오류가났습니다.")
                 }
             }

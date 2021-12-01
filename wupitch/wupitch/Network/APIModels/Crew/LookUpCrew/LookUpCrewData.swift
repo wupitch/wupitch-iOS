@@ -10,55 +10,49 @@ import UIKit
 
 // MARK: - LookUpCrewData
 struct LookUpCrewData: Codable {
-    let isSuccess: Bool
     let code: Int
+    let isSuccess: Bool
     let message: String
     let result: LookUpCrewDataResult
 }
 
 // MARK: - LookUpCrewDataResult
 struct LookUpCrewDataResult: Codable {
-    let content: [LookUpContent]
-    let pageable: SetPaging
-    let totalPages, totalElements: Int
-    let last: Bool
-    let size, number: Int
-    let sort: ArraySort
-    let numberOfElements: Int
-    let first, empty: Bool
+    let content: [LookUpCrewContent]
+    let empty, first, last: Bool
+    let number, numberOfElements, size: Int
+    let sort: Sort
+    let totalElements, totalPages: Int
 }
 
-struct LookUpContent: Codable {
-    let clubID, sportsID: Int
-      let sportsName, clubTitle, introduction: String
-      let schedules: [ScheduleArray]
-      let crewImage: String?
-      let isPinUp: Bool
-      let areaName: String?
+// MARK: - LookUpCrewContent
+struct LookUpCrewContent: Codable {
+    let areaName: String?
+    let clubID: Int
+    let clubTitle, introduction: String
+    let crewImage: String?
+    let isPinUp: Bool
+    let schedules: [LookUpCrewSchedule]
+    let sportsID: Int
+    let sportsName: String
 
-      enum CodingKeys: String, CodingKey {
-          case clubID = "clubId"
-          case sportsID = "sportsId"
-          case sportsName, clubTitle, introduction, schedules, crewImage, isPinUp, areaName
-      }
+    enum CodingKeys: String, CodingKey {
+        case areaName
+        case clubID = "clubId"
+        case clubTitle, crewImage, introduction, isPinUp, schedules
+        case sportsID = "sportsId"
+        case sportsName
+    }
 }
 
-// MARK: - ScheduleArray
-struct ScheduleArray: Codable {
-    let dayIdx: Int
+// MARK: - Schedule
+struct LookUpCrewSchedule: Codable {
     let day: String
-    let startTime, endTime: Double?
+    let dayIdx: Int
+    let endTime, startTime: Double?
 }
 
-// MARK: - SetPaging
-struct SetPaging: Codable {
-    let sort: ArraySort
-    let offset, pageNumber, pageSize: Int
-    let paged, unpaged: Bool
-}
-
-// MARK: - ArraySort
-struct ArraySort: Codable {
+// MARK: - Sort
+struct Sort: Codable {
     let empty, sorted, unsorted: Bool
 }
-

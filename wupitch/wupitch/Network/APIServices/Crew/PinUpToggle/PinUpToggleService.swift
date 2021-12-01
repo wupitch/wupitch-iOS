@@ -11,27 +11,34 @@ import Alamofire
 struct PinupToggleService {
     static let shared = PinupToggleService()
     
-    func patchPinUpToggleService(delegate: DetailCrewImgCVCell) {
+    func patchPinUpToggleService(delegate: DetailCrewImgTVCell) {
         
-        let clubId = 3
+        let urlString : String
         
-        let urlString = "https://prod.wupitch.site/app/clubs/\(clubId)/pinUp-toggle"
+        if let clubId = UserDefaults.standard.string(forKey: "clubId") {
+            urlString = "https://prod.wupitch.site/app/clubs/\(clubId)/pinUp-toggle"
+        }
+        else {
+            urlString = "https://prod.wupitch.site/app/clubs"
+        }
         
-        let accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0bndqZEB0LnQiLCJyb2xlIjoiUk9MRV9VU0VSIiwiaWF0IjoxNjM4MjU2MjEzLCJleHAiOjE2Mzg2ODgyMTN9.xLwAVhi1EGuTwxodyVOPh_WcITZK-zPHXW6y1YH130g"
+        var header : HTTPHeaders = []
         
-        let header: HTTPHeaders = [
-            "Content-Type": "application/json",
-            "X-ACCESS-TOKEN": accessToken,
-        ]
+        if let token = UserDefaults.standard.string(forKey: "userToken") {
+            header = ["Content-Type":"application/json", "X-ACCESS-TOKEN": token]
+        }
+        else {
+            header = ["Content-Type":"application/json"]
+        }
         
         AF.request(urlString, method: .patch, encoding: JSONEncoding.default, headers: header)
             .responseDecodable(of: PinUpToggleData.self) { response in
-                print("response",response)
+                print("크루 핀업 토글 response",response)
                 switch response.result {
                 case .success(let response):
                     delegate.didSuccessPinUpToggle(result: response.result)
                 case .failure(let error):
-                    print("오류가 났습니다",error.localizedDescription)
+                    print("크루 핀업 토글에서 오류가 났습니다",error.localizedDescription)
                     delegate.failedToRequest(message: "오류가났습니다.")
                 }
             }
