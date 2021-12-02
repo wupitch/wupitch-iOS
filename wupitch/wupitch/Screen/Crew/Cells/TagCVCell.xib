@@ -19,10 +19,10 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="feE-gp-bAJ">
-                        <rect key="frame" x="0.0" y="0.0" width="65.5" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="68" height="56"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VbE-HA-vk5">
-                                <rect key="frame" x="12" y="17.5" width="41.5" height="21"/>
+                                <rect key="frame" x="12" y="17.5" width="44" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -41,6 +41,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="feE-gp-bAJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="JC7-XE-2GB"/>
+                <constraint firstAttribute="trailing" secondItem="feE-gp-bAJ" secondAttribute="trailing" id="Op5-dV-qXd"/>
                 <constraint firstAttribute="bottom" secondItem="feE-gp-bAJ" secondAttribute="bottom" id="SWp-fv-Ngo"/>
                 <constraint firstItem="feE-gp-bAJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bJt-57-52V"/>
             </constraints>

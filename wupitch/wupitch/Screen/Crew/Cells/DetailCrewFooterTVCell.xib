@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCrewFooterTVCell" rowHeight="210" id="d4C-S0-4HU" customClass="DetailCrewFooterTVCell" customModule="wupitch" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="432" height="210"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d4C-S0-4HU" id="GDq-2e-sXU">
+                <rect key="frame" x="0.0" y="0.0" width="432" height="210"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAn-dh-IzI">
+                        <rect key="frame" x="20" y="18" width="392" height="174"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="손님이란?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8P-5x-ybH">
+                                <rect key="frame" x="20" y="20" width="67.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="손님 신청 시, 별다른 동호회 가입 절차 없이 하 루 동안 기존 동호회 회원들과 함께 운동을 즐길 수 있습니다." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhf-3d-Drz">
+                                <rect key="frame" x="20" y="52.5" width="352" height="97.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="L8P-5x-ybH" firstAttribute="top" secondItem="dAn-dh-IzI" secondAttribute="top" constant="20" id="55e-fl-Iwo"/>
+                            <constraint firstItem="nhf-3d-Drz" firstAttribute="top" secondItem="L8P-5x-ybH" secondAttribute="bottom" constant="12" id="G4d-JD-9Cw"/>
+                            <constraint firstAttribute="bottom" secondItem="nhf-3d-Drz" secondAttribute="bottom" constant="24" id="R2O-wL-w3H"/>
+                            <constraint firstItem="nhf-3d-Drz" firstAttribute="leading" secondItem="L8P-5x-ybH" secondAttribute="leading" id="SWF-In-qMk"/>
+                            <constraint firstItem="L8P-5x-ybH" firstAttribute="leading" secondItem="dAn-dh-IzI" secondAttribute="leading" constant="20" id="gbz-T8-Kk7"/>
+                            <constraint firstAttribute="trailing" secondItem="nhf-3d-Drz" secondAttribute="trailing" constant="20" id="umW-Fg-kOu"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="dAn-dh-IzI" secondAttribute="bottom" constant="18" id="U61-AQ-Gkh"/>
+                    <constraint firstItem="dAn-dh-IzI" firstAttribute="top" secondItem="GDq-2e-sXU" secondAttribute="top" constant="18" id="ZbD-ZK-5Ip"/>
+                    <constraint firstItem="dAn-dh-IzI" firstAttribute="leading" secondItem="GDq-2e-sXU" secondAttribute="leading" constant="20" id="b3F-fv-fjM"/>
+                    <constraint firstAttribute="trailing" secondItem="dAn-dh-IzI" secondAttribute="trailing" constant="20" id="tEO-LE-HIA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bgView" destination="dAn-dh-IzI" id="y2O-r2-ddB"/>
+                <outlet property="subLabel" destination="nhf-3d-Drz" id="W2e-mv-m0D"/>
+                <outlet property="titleLabel" destination="L8P-5x-ybH" id="emd-Ne-kvK"/>
+            </connections>
+            <point key="canvasLocation" x="-97.101449275362327" y="115.17857142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

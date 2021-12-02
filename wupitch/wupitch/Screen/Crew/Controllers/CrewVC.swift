@@ -323,6 +323,7 @@ extension CrewVC {
             // 싱글톤에 넣어주기
             SignUpUserInfo.shared.areas?.append(result[i].areaID)
             SignUpUserInfo.shared.areaName?.append(result[i].name)
+            SignUpUserInfo.shared.bungaeAreaName?.append(result[i].name)
         }
     }
     // 크루 조회 api

@@ -44,6 +44,7 @@ class SignUpEmailPwVC: UIViewController {
         setDelegate()
         passwordEyeSecure()
         dismissKeyboardWhenTappedAround()
+        passwordTextField.textContentType = .oneTimeCode
     }
     
     // MARK: - Function

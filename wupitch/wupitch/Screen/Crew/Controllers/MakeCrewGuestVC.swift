@@ -163,7 +163,7 @@ extension MakeCrewGuestVC {
         let crewId = String(result.clubID)
         
         // 크루아이디 저장
-        UserDefaults.standard.set(result.clubID, forKey: "clubId")
+        UserDefaults.standard.set(result.clubID, forKey: "clubID")
         
         let userImage = SignUpUserInfo.shared.photo
         
@@ -191,6 +191,7 @@ extension MakeCrewGuestVC {
                             
                             let storyBoard: UIStoryboard = UIStoryboard(name: "CrewDetail", bundle: nil)
                             if let dvc = storyBoard.instantiateViewController(withIdentifier: "CrewDetailVC") as? CrewDetailVC {
+                                dvc.hidesBottomBarWhenPushed = true
                                 self.navigationController?.pushViewController(dvc, animated: true)
                             }
                         }

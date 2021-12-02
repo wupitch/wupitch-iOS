@@ -28,15 +28,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         // 유저 토큰이 있을 때, 홈으로 이동(자동로그인)
-//        if let userToken = UserDefaults.standard.string(forKey: "userToken") {
-//            let storyboard = UIStoryboard.init(name: "Tabbar", bundle: nil)
-//            let vc = storyboard.instantiateViewController(withIdentifier: "TabbarVC")
-//            vc.navigationController?.pushViewController(vc, animated: true)
-//            self.window?.rootViewController = vc
-//            self.window?.makeKeyAndVisible()
-//        }
+        // 여기다 알림이 왔을때 어떻게 할지도 적자 무조건 자동로그인은안돼!!
+        if let userToken = UserDefaults.standard.string(forKey: "userToken") {
+            let storyboard = UIStoryboard.init(name: "Tabbar", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "TabbarVC")
+            vc.navigationController?.pushViewController(vc, animated: true)
+            self.window?.rootViewController = vc
+            self.window?.makeKeyAndVisible()
+        }
         // 없을 때, 온보딩으로 이동
-//        else {
+        else {
             let storyboard = UIStoryboard.init(name: "Onboarding", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "OnboardingNC")
             vc.navigationController?.pushViewController(vc, animated: true)
@@ -49,7 +50,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 vc.navigationController?.pushViewController(vc, animated: true)
                 self.window?.rootViewController = vc
                 self.window?.makeKeyAndVisible()
-//            }
+            }
         }
     }
 

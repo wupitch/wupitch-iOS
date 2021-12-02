@@ -18,7 +18,6 @@ class DetailCrewIntroduceTVCell: UITableViewCell {
     
     
     static let identifier = "DetailCrewIntroduceTVCell"
-    
     static func nib() -> UINib {
         return UINib(nibName: "DetailCrewIntroduceTVCell", bundle: nil)
     }

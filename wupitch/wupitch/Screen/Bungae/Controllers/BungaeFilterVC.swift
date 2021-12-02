@@ -28,11 +28,19 @@ class BungaeFilterVC: UIViewController {
     
     var bungaeDict = [String:[Any]]()
     
+    lazy var bungaeFilterDataManager = LookUpBungaeFiletrService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setStyle()
     
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        bungaeFilterDataManager.getLookUpBungaeFilter(delegate: self)
     }
     
     private func setStyle() {
@@ -200,5 +208,29 @@ class BungaeFilterVC: UIViewController {
         }
         bungaeDict = [String:[Any]]()
         print("초기화")
+    }
+}
+
+// 필터 조회 api
+extension BungaeFilterVC {
+    func didSuccessLookUpBungaeFilter(result: LookUpBungaeFilterResult) {
+        print("필터 조회 데이터가 성공적으로 들어왔습니다.")
+        // 일정 값이 있으면
+        if let schedules = result.impromptuPickScheduleIndex {
+            sportsBtn[schedules-1].colorSportsBtn()
+        }
+        // 요일 값이 있으면
+        if let days = result.impromptuPickDays {
+            for i in days {
+                dateBtns[i-1].colorSportsBtn()
+            }
+        }
+        // 모집인원 값이 있으면
+        if let memeber = result.impromptuPickMemberCountValue {
+            countBtns[memeber-1].colorSportsBtn()
+        }
+    }
+    func failedToRequest(message: String) {
+        print("데이터가 들어오지 않았습니다.")
     }
 }

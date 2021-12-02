@@ -25,6 +25,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="" image="left"/>
+                                <connections>
+                                    <action selector="touchUpBackBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Jzn-pv-A7b"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ly1-A4-A7I">
                                 <rect key="frame" x="167" y="56.000000000000007" width="41.333333333333343" height="20.333333333333336"/>
@@ -39,7 +42,7 @@
                                     <constraint firstAttribute="height" constant="1" id="flP-5o-fB7"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="L2D-Dd-xUT">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="L2D-Dd-xUT">
                                 <rect key="frame" x="0.0" y="87.333333333333314" width="375" height="617.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -64,11 +67,17 @@
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="touchUpGuestRegisterBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cc7-nN-HWr"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsO-M4-KkP">
                                                 <rect key="frame" x="174" y="0.0" width="162" height="48"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="touchUpRegisterBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bao-i4-2SW"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -82,14 +91,21 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="68" id="t4l-eR-6x7"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5a-V1-Wce">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="S5a-V1-Wce" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="9WE-8X-dK4"/>
                             <constraint firstItem="ojs-Pn-Mqb" firstAttribute="top" secondItem="Ly1-A4-A7I" secondAttribute="bottom" constant="10" id="Cdr-D9-gX1"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="L2D-Dd-xUT" secondAttribute="trailing" id="D4i-Aw-aSP"/>
                             <constraint firstItem="Fby-hV-0z1" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="Ehq-6A-bux"/>
+                            <constraint firstAttribute="bottom" secondItem="S5a-V1-Wce" secondAttribute="bottom" id="Hhg-NB-q5y"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="SoD-bV-GCl" secondAttribute="bottom" id="L2A-ov-5hM"/>
+                            <constraint firstItem="S5a-V1-Wce" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="TY0-1X-7s3"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ojs-Pn-Mqb" secondAttribute="trailing" id="Uhs-CI-gTH"/>
                             <constraint firstItem="SoD-bV-GCl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="W2d-vq-bEb"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fGt-xF-vq2" secondAttribute="trailing" id="ZiY-Wf-M45"/>
@@ -98,6 +114,7 @@
                             <constraint firstItem="L2D-Dd-xUT" firstAttribute="top" secondItem="ojs-Pn-Mqb" secondAttribute="bottom" id="gNh-xi-Jjq"/>
                             <constraint firstItem="L2D-Dd-xUT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="kET-Hw-H3U"/>
                             <constraint firstItem="ojs-Pn-Mqb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nUx-1l-oEw"/>
+                            <constraint firstItem="S5a-V1-Wce" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pBU-Ki-zy7"/>
                             <constraint firstItem="SoD-bV-GCl" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="qe5-C5-uD0"/>
                             <constraint firstItem="Ly1-A4-A7I" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="siy-DZ-7c5"/>
                             <constraint firstItem="Ly1-A4-A7I" firstAttribute="centerY" secondItem="Fby-hV-0z1" secondAttribute="centerY" id="tcp-w1-KHo"/>
@@ -107,6 +124,13 @@
                     </view>
                     <connections>
                         <outlet property="CrewDetailTV" destination="L2D-Dd-xUT" id="jbe-jC-ULG"/>
+                        <outlet property="backBtn" destination="Fby-hV-0z1" id="CtP-pn-z0n"/>
+                        <outlet property="bottomLineView" destination="fGt-xF-vq2" id="7qX-KN-lAf"/>
+                        <outlet property="guestBtn" destination="t0I-bC-77F" id="Pez-6c-bIi"/>
+                        <outlet property="lineView" destination="ojs-Pn-Mqb" id="4rd-q7-JdL"/>
+                        <outlet property="modalView" destination="S5a-V1-Wce" id="7Rd-nw-alc"/>
+                        <outlet property="registerBtn" destination="BsO-M4-KkP" id="wU1-So-JYd"/>
+                        <outlet property="titleLabel" destination="Ly1-A4-A7I" id="Epq-ed-QwH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

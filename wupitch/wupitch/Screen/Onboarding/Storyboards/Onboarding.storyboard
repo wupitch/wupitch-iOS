@@ -74,7 +74,7 @@
                             <constraint firstItem="dDc-RM-xqJ" firstAttribute="top" secondItem="7Z7-p7-X6l" secondAttribute="bottom" constant="20" id="dvf-R0-SHE"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="xpf-HI-pzh" secondAttribute="bottom" constant="24" id="i2O-fO-mHd"/>
                             <constraint firstItem="dDc-RM-xqJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="lv3-7g-cM3"/>
-                            <constraint firstItem="7Z7-p7-X6l" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="44" id="mgX-Zu-KXD"/>
+                            <constraint firstItem="7Z7-p7-X6l" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" priority="250" constant="44" id="mgX-Zu-KXD"/>
                             <constraint firstItem="7Z7-p7-X6l" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="u6d-SL-3mn"/>
                         </constraints>
                     </view>

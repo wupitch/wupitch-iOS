@@ -91,6 +91,7 @@ class SignUpUserInfo {
     var areas : [Int]?
     // 지역 조회에 넣을 싱글톤 -> name값
     var areaName : [String]?
+    var bungaeAreaName : [String]?
     // 추가 정보 조회에 넣을 싱글톤 -> id값
     var extraInfo : [Int]?
 

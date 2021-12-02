@@ -10,13 +10,15 @@ import UIKit
 class DetailCrewTitleTVCell: UITableViewCell {
 
     
+    @IBOutlet weak var dateIcon: UIImageView!
+    @IBOutlet weak var moneyIcon: UIImageView!
+    @IBOutlet weak var locationIcon: UIImageView!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet var moneyLabel: [UILabel]!
     @IBOutlet var dayLabel: [UILabel]!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tagLabel: UILabel!
     @IBOutlet weak var tagView: UIView!
-    
     
     
     static let identifier = "DetailCrewTitleTVCell"

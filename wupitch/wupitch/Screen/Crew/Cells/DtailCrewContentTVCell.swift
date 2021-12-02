@@ -7,14 +7,15 @@
 
 import UIKit
 
-class DtailCrewContentCVCell: UICollectionViewCell {
+class DtailCrewContentTVCell: UITableViewCell {
 
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    static let identifier = "DtailCrewContentCVCell"
+    
+    static let identifier = "DtailCrewContentTVCell"
     
     static func nib() -> UINib {
-        return UINib(nibName: "DtailCrewContentCVCell", bundle: nil)
+        return UINib(nibName: "DtailCrewContentTVCell", bundle: nil)
     }
     
     override func awakeFromNib() {

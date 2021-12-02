@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCrewInquireCVCell" rowHeight="339" id="KGk-i7-Jjw" customClass="DetailCrewInquireCVCell" customModule="wupitch" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="398" height="339"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="398" height="339"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jHc-Vq-x5W">
+                        <rect key="frame" x="0.0" y="0.0" width="398" height="8"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="8" id="BCa-Dw-0BR"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안내사항" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCG-mh-SWJ">
+                        <rect key="frame" x="20" y="28" width="59" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="•" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3Z-Je-ceU">
+                        <rect key="frame" x="20" y="56" width="8" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRQ-rM-DGu">
+                        <rect key="frame" x="38" y="56" width="340" height="61"/>
+                        <string key="text">가입 신청 및 손님 참여 신청 취소는 마이페이지 – 참여 신청한 크루 및 번개에서 가능합니다. 
+(단, 손님 신청의 경우 운동 하루 전까지 취소 가능)</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="•" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AH-h2-Nea">
+                        <rect key="frame" x="20" y="147" width="19.5" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="가입 신청 및 손님 참여 신청 현황은 마이페이지 – 참여 신청한 크루 및 번개에서 확인 가능합니다." lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHJ-WE-A3O">
+                        <rect key="frame" x="49.5" y="147" width="328.5" height="41"/>
+                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="•" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vf-DA-hcG">
+                        <rect key="frame" x="20" y="218" width="8" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" text="크루 가입 신청 승인 시 푸시 알림을 통해 알려드리며, 승인 시부터 내 활동에서 가입한 크루의 소식을 확인 가능합니다." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fkp-hs-Urf">
+                        <rect key="frame" x="38" y="218" width="340" height="61"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Fkp-hs-Urf" firstAttribute="top" secondItem="hHJ-WE-A3O" secondAttribute="bottom" constant="30" id="4Gx-Ko-BLu"/>
+                    <constraint firstItem="5AH-h2-Nea" firstAttribute="leading" secondItem="f3Z-Je-ceU" secondAttribute="leading" id="DRB-Ke-5K1"/>
+                    <constraint firstItem="jHc-Vq-x5W" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="GTV-y6-2KF"/>
+                    <constraint firstItem="f3Z-Je-ceU" firstAttribute="top" secondItem="rCG-mh-SWJ" secondAttribute="bottom" constant="12" id="HIA-6g-Hln"/>
+                    <constraint firstAttribute="trailing" secondItem="jHc-Vq-x5W" secondAttribute="trailing" id="HsS-64-m0W"/>
+                    <constraint firstItem="Fkp-hs-Urf" firstAttribute="top" secondItem="8vf-DA-hcG" secondAttribute="top" id="Jph-dQ-r1s"/>
+                    <constraint firstItem="jHc-Vq-x5W" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Ouc-Lj-In3"/>
+                    <constraint firstItem="qRQ-rM-DGu" firstAttribute="leading" secondItem="f3Z-Je-ceU" secondAttribute="trailing" constant="10" id="QVf-eb-3bw"/>
+                    <constraint firstAttribute="bottom" secondItem="Fkp-hs-Urf" secondAttribute="bottom" constant="60" id="T0B-Eb-XLO"/>
+                    <constraint firstAttribute="trailing" secondItem="hHJ-WE-A3O" secondAttribute="trailing" constant="20" id="YFs-TW-bfv"/>
+                    <constraint firstAttribute="trailing" secondItem="qRQ-rM-DGu" secondAttribute="trailing" constant="20" id="ZI9-HQ-CFq"/>
+                    <constraint firstAttribute="trailing" secondItem="Fkp-hs-Urf" secondAttribute="trailing" constant="20" id="cw7-qi-mmR"/>
+                    <constraint firstItem="hHJ-WE-A3O" firstAttribute="top" secondItem="5AH-h2-Nea" secondAttribute="top" id="eNf-4G-700"/>
+                    <constraint firstItem="8vf-DA-hcG" firstAttribute="leading" secondItem="5AH-h2-Nea" secondAttribute="leading" id="foa-Iw-wqf"/>
+                    <constraint firstItem="Fkp-hs-Urf" firstAttribute="leading" secondItem="8vf-DA-hcG" secondAttribute="trailing" constant="10" id="hqz-ew-spl"/>
+                    <constraint firstItem="rCG-mh-SWJ" firstAttribute="top" secondItem="jHc-Vq-x5W" secondAttribute="bottom" constant="20" id="jTe-jr-g3E"/>
+                    <constraint firstItem="qRQ-rM-DGu" firstAttribute="top" secondItem="f3Z-Je-ceU" secondAttribute="top" id="kWa-UF-2IH"/>
+                    <constraint firstItem="hHJ-WE-A3O" firstAttribute="top" secondItem="qRQ-rM-DGu" secondAttribute="bottom" constant="30" id="lDe-R0-T6J"/>
+                    <constraint firstItem="f3Z-Je-ceU" firstAttribute="leading" secondItem="rCG-mh-SWJ" secondAttribute="leading" id="svS-xJ-XZV"/>
+                    <constraint firstItem="hHJ-WE-A3O" firstAttribute="leading" secondItem="5AH-h2-Nea" secondAttribute="trailing" constant="10" id="uUp-BR-sd1"/>
+                    <constraint firstItem="rCG-mh-SWJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="zwM-qj-vVs"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="firstcontentLabel" destination="qRQ-rM-DGu" id="eXe-UZ-fGT"/>
+                <outlet property="secondContentLabel" destination="hHJ-WE-A3O" id="zV6-LI-n29"/>
+                <outlet property="thirdContentLabel" destination="Fkp-hs-Urf" id="kAt-RT-cDv"/>
+                <outlet property="titleLabel" destination="rCG-mh-SWJ" id="kJR-ZU-R4n"/>
+            </connections>
+            <point key="canvasLocation" x="192.75362318840581" y="180.46875"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="255"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgBungaeThumb" translatesAutoresizingMaskIntoConstraints="NO" id="wfc-V4-SsX">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgBaskThumb" translatesAutoresizingMaskIntoConstraints="NO" id="wfc-V4-SsX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="255"/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Fl-fD-EI4">
@@ -32,9 +32,9 @@
                 <constraints>
                     <constraint firstItem="4Fl-fD-EI4" firstAttribute="top" secondItem="eZF-37-VLg" secondAttribute="top" constant="12" id="7Bx-xH-aLu"/>
                     <constraint firstItem="wfc-V4-SsX" firstAttribute="leading" secondItem="eZF-37-VLg" secondAttribute="leading" id="Gbt-2r-8vN"/>
-                    <constraint firstAttribute="bottom" secondItem="wfc-V4-SsX" secondAttribute="bottom" id="Ifm-nc-7sO"/>
                     <constraint firstItem="wfc-V4-SsX" firstAttribute="top" secondItem="eZF-37-VLg" secondAttribute="top" id="OhA-gY-UwL"/>
                     <constraint firstAttribute="trailing" secondItem="wfc-V4-SsX" secondAttribute="trailing" id="o5u-r0-qbH"/>
+                    <constraint firstAttribute="bottom" secondItem="wfc-V4-SsX" secondAttribute="bottom" id="qr1-Ws-32V"/>
                     <constraint firstAttribute="trailing" secondItem="4Fl-fD-EI4" secondAttribute="trailing" constant="16" id="zuz-Pt-sym"/>
                 </constraints>
             </tableViewCellContentView>
@@ -46,7 +46,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="imgBungaeThumb" width="375" height="211"/>
+        <image name="imgBaskThumb" width="375" height="211"/>
         <image name="pin" width="24" height="24"/>
     </resources>
 </document>

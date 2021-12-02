@@ -58,7 +58,7 @@ class BungaeDetailVC: BaseVC {
         
         detailCV.register(BungaeTitleCVCell.nib(), forCellWithReuseIdentifier: BungaeTitleCVCell.identifier)
         detailCV.register(BungaeIntroduceCVCell.nib(), forCellWithReuseIdentifier: BungaeIntroduceCVCell.identifier)
-        detailCV.register(DtailCrewContentCVCell.nib(), forCellWithReuseIdentifier: DtailCrewContentCVCell.identifier)
+        //detailCV.register(DtailCrewContentCVCell.nib(), forCellWithReuseIdentifier: DtailCrewContentCVCell.identifier)
     }
     
     func stringDate(doubleDate: Double) -> String {
@@ -130,7 +130,7 @@ extension BungaeDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 6
+        return 7
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -186,20 +186,20 @@ extension BungaeDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, 
             return cell
         }
         else if indexPath.section == 3 {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DtailCrewContentCVCell.identifier, for: indexPath) as? DtailCrewContentCVCell else{
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BungaeIntroduceCVCell.identifier, for: indexPath) as? BungaeIntroduceCVCell else{
                 return UICollectionViewCell()
             }
             cell.titleLabel.text = "준비물"
-            cell.contentLabel.text = detailInfo?.materials
+            //cell.contentLabel.text = detailInfo?.materials
             
             return cell
         }
         else if indexPath.section == 4 {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DtailCrewContentCVCell.identifier, for: indexPath) as? DtailCrewContentCVCell else{
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BungaeIntroduceCVCell.identifier, for: indexPath) as? BungaeIntroduceCVCell else{
                 return UICollectionViewCell()
             }
             cell.titleLabel.text = "문의"
-            cell.contentLabel.text = detailInfo?.inquiries
+            //cell.contentLabel.text = detailInfo?.inquiries
             return cell
         }
         else {

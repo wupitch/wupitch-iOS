@@ -17,9 +17,12 @@ class BungaeVC: BaseVC {
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var selectRegionBtn: UIButton!
     
+    lazy var bungaeAreaFilterDataManager = LookUpBungaeAreaFiletrService()
     lazy var bungaeDataManager = LookUpBungeService()
     var lookUpBungaeResult : LookUpBungaeResult?
     var schedule : LookUpBungaeContent?
+    var bungaeAreaDict = [String:[Any]]()
+    var bungaeAreaName : LookUpBungaeFilterResult?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +34,9 @@ class BungaeVC: BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("유저디폴트", UserDefaults.standard.dictionary(forKey: "bungaeFilterParams"))
+        // 번개 지역 필터 조회
+        bungaeAreaFilterDataManager.getLookUpBungaeAreaFilter(delegate: self)
+        print("번개 필터 파라미터 값 유저디폴트", UserDefaults.standard.dictionary(forKey: "bungaeFilterParams"))
         bungaeDataManager.getLookUpBunge(params: UserDefaults.standard.dictionary(forKey: "bungaeFilterParams") as? [String:[Any]], delegate: self)
     }
     
@@ -187,22 +192,28 @@ extension BungaeVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
 
 // MARK: - Extension (Modal Delegate)
 extension BungaeVC: ModalDelegate {
-    
-    
     // 모달에서 확인 버튼 눌렀을 때 다음 버튼에 생기는 색 변화
     func selectBtnToNextBtn() {
-        //
     }
-    
     // 모달이 dismiss되면서 모달백그라운드 색도 없어짐
     func modalDismiss() {
         modalView.alpha = 0.0
+        bungaeCV.reloadData()
     }
-    
     // textField에 모달에서 선택했던 피커 값 넣어주기
     func textFieldData(data: String) {
         selectRegionBtn.setTitle(data, for: .normal)
-        //SignUpUserInfo.shared.region = data
+        
+        for i in 0...25 {
+            if data == SignUpUserInfo.shared.bungaeAreaName?[i] {
+                bungaeAreaDict["areaId"] = [i+1]
+            }
+        }
+        // 번개 지역 필터 조회
+        UserDefaults.standard.set(bungaeAreaDict, forKey: "areaBungaeParams")
+        print("지역 번개 필터 적용하기", UserDefaults.standard.dictionary(forKey: "areaBungaeParams"))
+        print("지역 번개 필터 파라미터 값 유저디폴트", UserDefaults.standard.dictionary(forKey: "areaBungaeParams"))
+        bungaeDataManager.getLookUpBunge(params: UserDefaults.standard.dictionary(forKey: "areaBungaeParams") as? [String:[Any]], delegate: self)
     }
 }
 
@@ -212,6 +223,15 @@ extension BungaeVC {
         print("번개조회데이터가 성공적으로 들어왔습니다.")
         lookUpBungaeResult = result
         bungaeCV.reloadData()
+    }
+    // 번개 지역 필터 조회 api
+    func didSuccessLookUpBungaeAreaFilter(result: LookUpBungaeFilterResult) {
+        bungaeAreaName = result
+        print("번개 지역 필터 조회 데이터가 성공적으로 들어왔습니다.")
+        // 눌린 지역이 있다면
+        if let name = result.impromptuPickAreaName {
+            selectRegionBtn.setTitle(name, for: .normal)
+        }
     }
     
     func failedToRequest(message: String) {
