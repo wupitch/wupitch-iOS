@@ -112,16 +112,6 @@
                                         <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjj-AD-mHu">
-                                        <rect key="frame" x="365" y="104.5" width="30" height="27"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="tintColor" red="0.70980392160000005" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="보기"/>
-                                        <connections>
-                                            <action selector="touchUpThirdMoreBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cqd-z3-a7Z"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -133,8 +123,6 @@
                                     <constraint firstItem="pb5-mL-xMo" firstAttribute="top" secondItem="27l-Gv-4V1" secondAttribute="top" constant="26" id="Bc1-mb-xNH"/>
                                     <constraint firstItem="2JV-AA-vGA" firstAttribute="leading" secondItem="l9s-fq-TCs" secondAttribute="trailing" constant="8" id="IaD-dN-AHl"/>
                                     <constraint firstItem="KMm-zc-F7B" firstAttribute="leading" secondItem="eef-7l-IxS" secondAttribute="trailing" constant="8" id="Nml-WY-Uhk"/>
-                                    <constraint firstItem="mjj-AD-mHu" firstAttribute="centerY" secondItem="2JV-AA-vGA" secondAttribute="centerY" id="V0o-pH-Xwh"/>
-                                    <constraint firstItem="mjj-AD-mHu" firstAttribute="trailing" secondItem="AAC-cq-HHS" secondAttribute="trailing" id="diN-5R-d4R"/>
                                     <constraint firstItem="lXh-CD-HBY" firstAttribute="centerY" secondItem="pb5-mL-xMo" secondAttribute="centerY" id="fEO-Zj-nRV"/>
                                     <constraint firstItem="2JV-AA-vGA" firstAttribute="centerY" secondItem="l9s-fq-TCs" secondAttribute="centerY" id="hEq-nB-IKL"/>
                                     <constraint firstItem="lXh-CD-HBY" firstAttribute="leading" secondItem="pb5-mL-xMo" secondAttribute="trailing" constant="8" id="hSd-m5-WqU"/>
@@ -209,7 +197,6 @@
                         <outlet property="secMoreBtn" destination="AAC-cq-HHS" id="Dyd-QR-MEk"/>
                         <outlet property="secondLabel" destination="lXh-CD-HBY" id="QWK-Dh-OAC"/>
                         <outlet property="thirdLabel" destination="KMm-zc-F7B" id="dXm-jx-kuS"/>
-                        <outlet property="thirdMoreBtn" destination="mjj-AD-mHu" id="DFY-LO-8np"/>
                         <outlet property="titleLabel" destination="Bjd-AK-Vjq" id="99O-7o-9JJ"/>
                         <outletCollection property="agreeBtn" destination="pb5-mL-xMo" collectionClass="NSMutableArray" id="Vjs-fB-EpX"/>
                         <outletCollection property="agreeBtn" destination="eef-7l-IxS" collectionClass="NSMutableArray" id="65c-Ya-N8i"/>

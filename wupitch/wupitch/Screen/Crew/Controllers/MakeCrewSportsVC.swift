@@ -165,7 +165,7 @@ extension MakeCrewSportsVC {
             SignUpUserInfo.shared.sports?.append(result[i].sportsID)
             // 스포츠 버튼에 아이디값 세팅
             sportsBtns[i].btnId = result[i].sportsID
-        
+            print("스포츠이름",result[i].name)
             print("싱글톤에 스포츠 값 잘 들어가나 확인",SignUpUserInfo.shared.sports)
             print("스포츠 버튼 아이디 값", sportsBtns[i].btnId)
         }

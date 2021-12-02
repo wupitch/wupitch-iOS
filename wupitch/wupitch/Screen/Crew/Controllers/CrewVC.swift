@@ -22,6 +22,7 @@ class CrewVC: BaseVC {
     @IBOutlet weak var selectRegionBtn: UIButton!
     
     lazy var dataManager = AreaService()
+    lazy var crewFilterAreaDataMangaer = LookUpCrewAreaFiletrService()
     lazy var crewDataManager = LookUpCrewService()
     lazy var patchFCMDeviceToken = PatchFCMService()
     var lookUpCrew : [LookUpCrewContent] = []
@@ -36,7 +37,6 @@ class CrewVC: BaseVC {
         // 지역 api
         dataManager.getArea(delegate: self)
         print(UserDefaults.standard.string(forKey: "userToken"))
-        
         if let deviceToken = UserDefaults.standard.string(forKey: "deviceToken") {
             patchFCMDeviceToken.patchFCM(PatchFCMRequest(deviceToken: deviceToken), delegate: self)
         }
@@ -44,6 +44,9 @@ class CrewVC: BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // 크루 지역 필터 조회
+        crewFilterAreaDataMangaer.getLookUpCrewAreaFilter(delegate: self)
         print("크루 필터 파라미터 값 유저디폴트", UserDefaults.standard.dictionary(forKey: "filterParams"))
         crewDataManager.getLookUpCrew(params: UserDefaults.standard.dictionary(forKey: "filterParams") as? [String:[Any]], delegate: self)
     }
@@ -284,7 +287,6 @@ extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
 extension CrewVC: ModalDelegate {
     // 모달에서 확인 버튼 눌렀을 때 다음 버튼에 생기는 색 변화
     func selectBtnToNextBtn() {
-        //crewCV.reloadData()
     }
     // 모달이 dismiss되면서 모달백그라운드 색도 없어짐
     func modalDismiss() {
@@ -329,6 +331,14 @@ extension CrewVC {
         lookUpCrew = result.content
         crewCV.reloadData()
     }
+    // 크루 지역 필터 조회 api
+    func didSuccessLookUpCrewAreaFilter(result: LookUpCrewFilterResult) {
+        print("지역 필터 조회 데이터가 성공적으로 들어왔습니다.")
+        // 눌렸던 지역이 있다면
+        if let areaId = result.crewPickAreaName {
+            selectRegionBtn.setTitle(areaId, for: .normal)
+        }
+    }
     // 디바이스 토큰 수정 api
     func didSuccessPatchFCM(result: PatchFCMData) {
         print("디바이스 토큰 수정 데이터가 성공적으로 들어왔습니다.")
@@ -338,3 +348,5 @@ extension CrewVC {
         print("데이터가 들어오지 않았습니다.")
     }
 }
+
+

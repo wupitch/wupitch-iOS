@@ -64,7 +64,6 @@ class SignUpTermsVC: UIViewController {
         // moreBtns
         firstMoreBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
         secMoreBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
-        thirdMoreBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
     }
     
     // label style
@@ -136,22 +135,18 @@ class SignUpTermsVC: UIViewController {
     
     // 이용약관 '보기' 버튼
     @IBAction func touchUpFirstMoreBtn(_ sender: Any) {
-        // 버튼 클릭 시, 스토리보드 이동
-        let storyboard = UIStoryboard.init(name: "TermsOfUse", bundle: nil)
-        guard let dvc = storyboard.instantiateViewController(identifier: "TermsOfUseVC") as? TermsOfUseVC else {return}
-        self.navigationController?.pushViewController(dvc, animated: true)
+        // 버튼 클릭 시, 해당 url로 이동
+        if let url = URL(string: "https://candle-mulberry-ea5.notion.site/264733a76f5f43eeb396442acc96b600") {
+            UIApplication.shared.open(url, options: [:])
+        }
     }
     
     // 개인정보 수집 및 이용 '보기' 버튼
     @IBAction func touchUpSecondMoreBtn(_ sender: Any) {
-        // 버튼 클릭 시, 스토리보드 이동
-        let storyboard = UIStoryboard.init(name: "TermsOfUse", bundle: nil)
-        guard let dvc = storyboard.instantiateViewController(identifier: "AgreeVC") as? AgreeVC else {return}
-        self.navigationController?.pushViewController(dvc, animated: true)
-    }
-    
-    // 푸시 알람 동의 (선택) '보기' 버튼
-    @IBAction func touchUpThirdMoreBtn(_ sender: Any) {
+        // 버튼 클릭 시, 해당 url로 이동
+        if let url = URL(string: "https://candle-mulberry-ea5.notion.site/a75a7eaaaa5e4ff7b665df903cfe6095") {
+            UIApplication.shared.open(url, options: [:])
+        }
     }
 }
 

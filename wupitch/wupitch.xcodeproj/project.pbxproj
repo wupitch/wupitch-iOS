@@ -143,6 +143,7 @@
 		DD65ABCC275717B800D71055 /* SignInNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65ABCB275717B800D71055 /* SignInNC.swift */; };
 		DD65ABCE2757185F00D71055 /* OnboardingNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65ABCD2757185F00D71055 /* OnboardingNC.swift */; };
 		DD65ABD02757752F00D71055 /* CrewDetailTableViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65ABCF2757752F00D71055 /* CrewDetailTableViewVC.swift */; };
+		DD65ABD3275870DE00D71055 /* LookUpCrewAreaFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65ABD2275870DE00D71055 /* LookUpCrewAreaFilter.swift */; };
 		DD6728352723E582001E1355 /* LocationPickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6728342723E582001E1355 /* LocationPickerData.swift */; };
 		DD67283B27244CE3001E1355 /* AgreeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD67283A27244CE3001E1355 /* AgreeVC.swift */; };
 		DD6728432725563A001E1355 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6728422725563A001E1355 /* UIView.swift */; };
@@ -431,6 +432,7 @@
 		DD65ABCB275717B800D71055 /* SignInNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInNC.swift; sourceTree = "<group>"; };
 		DD65ABCD2757185F00D71055 /* OnboardingNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNC.swift; sourceTree = "<group>"; };
 		DD65ABCF2757752F00D71055 /* CrewDetailTableViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewDetailTableViewVC.swift; sourceTree = "<group>"; };
+		DD65ABD2275870DE00D71055 /* LookUpCrewAreaFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpCrewAreaFilter.swift; sourceTree = "<group>"; };
 		DD6728342723E582001E1355 /* LocationPickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerData.swift; sourceTree = "<group>"; };
 		DD67283A27244CE3001E1355 /* AgreeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeVC.swift; sourceTree = "<group>"; };
 		DD6728422725563A001E1355 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -1314,6 +1316,7 @@
 			isa = PBXGroup;
 			children = (
 				DD485FCE2755EAF70071AE93 /* LookUpCrewFilterService.swift */,
+				DD65ABD2275870DE00D71055 /* LookUpCrewAreaFilter.swift */,
 			);
 			path = LookUpCrewFilter;
 			sourceTree = "<group>";
@@ -2131,6 +2134,7 @@
 				DD1BFC4D2738E8EC0042C51F /* MakeCrewDateVC.swift in Sources */,
 				DD485FD22755EB6F0071AE93 /* LookUpCrewFilterData.swift in Sources */,
 				DDC46B6A2750BD1D0015341E /* ToggleAlarmData.swift in Sources */,
+				DD65ABD3275870DE00D71055 /* LookUpCrewAreaFilter.swift in Sources */,
 				DDC4DAE12741075700D79CC8 /* AreaData.swift in Sources */,
 				DD485F7E27530E7E0071AE93 /* MemberAreaData.swift in Sources */,
 				DD485FAD2755C7B40071AE93 /* IntroductionInfomationService.swift in Sources */,

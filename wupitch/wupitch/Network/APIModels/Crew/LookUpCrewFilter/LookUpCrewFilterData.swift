@@ -8,25 +8,24 @@
 import Foundation
 // MARK: - LookUpCrewFilterData
 struct LookUpCrewFilterData: Codable {
-    let isSuccess: Bool
     let code: Int
+    let isSuccess: Bool
     let message: String
     let result: LookUpCrewFilterResult
 }
 
 // MARK: - LookUpCrewFilterResult
 struct LookUpCrewFilterResult: Codable {
+    let crewPickAgeList: [Int]?
     let crewPickAreaID: Int?
-    let crewPickAgeList, crewPickDays: [Int]?
+    let crewPickAreaName: String?
+    let crewPickDays: [Int]?
     let crewPickMemberCountValue: Int?
     let crewPickSportsList: [Int]?
-//    let isAsc: Bool?
-//    let page: Int
-//    let size: Int
-//    let sortBy: String
 
     enum CodingKeys: String, CodingKey {
+        case crewPickAgeList
         case crewPickAreaID = "crewPickAreaId"
-        case crewPickAgeList, crewPickDays, crewPickMemberCountValue, crewPickSportsList
+        case crewPickAreaName, crewPickDays, crewPickMemberCountValue, crewPickSportsList
     }
 }
