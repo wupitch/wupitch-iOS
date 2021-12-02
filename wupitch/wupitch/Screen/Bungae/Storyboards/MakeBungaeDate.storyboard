@@ -29,8 +29,8 @@
                                     <action selector="touchUpBackBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="rEu-PA-jdk"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="번개 만들기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9R-RV-2qi" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
-                                <rect key="frame" x="168" y="56" width="78" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="번개만들기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9R-RV-2qi" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
+                                <rect key="frame" x="170" y="56" width="74" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -174,12 +174,12 @@
                     <connections>
                         <outlet property="dateBtns" destination="iQp-KR-uas" id="p24-ab-NF9"/>
                         <outlet property="endTimeBtns" destination="2Gv-bN-wAX" id="NFF-uI-Tmk"/>
+                        <outlet property="labelLabel" destination="Mr9-gM-4Z8" id="Oxw-AD-wWb"/>
                         <outlet property="nextBtn" destination="uhh-EN-KhK" id="E58-S9-iYP"/>
                         <outlet property="startTimeBtns" destination="MYa-VM-Hnn" id="DFY-z3-4Gk"/>
                         <outlet property="titleLabel" destination="mw8-te-nke" id="7nw-ab-Hu2"/>
                         <outlet property="toastMessageLabel" destination="5TZ-wA-JgL" id="qvp-rL-gBJ"/>
                         <outlet property="toastView" destination="FSq-7T-0M2" id="YKB-ZE-4Az"/>
-                        <outletCollection property="betweenLabels" destination="Mr9-gM-4Z8" collectionClass="NSMutableArray" id="Afw-T5-Xxg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

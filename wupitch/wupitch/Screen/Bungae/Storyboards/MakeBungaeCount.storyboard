@@ -139,6 +139,7 @@
                         <outlet property="countLabel" destination="n6b-pj-wBc" id="orf-cH-SFl"/>
                         <outlet property="countTextField" destination="ABL-8e-8eA" id="UcL-cq-ht7"/>
                         <outlet property="nextBtn" destination="Dcz-eO-MLq" id="JxD-N6-HZR"/>
+                        <outlet property="titleLabel" destination="O5G-KL-4vZ" id="fLg-67-jAv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

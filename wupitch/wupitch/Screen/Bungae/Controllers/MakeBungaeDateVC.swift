@@ -13,7 +13,7 @@ class MakeBungaeDateVC: UIViewController {
     @IBOutlet weak var nextBtn: NextBtn!
     @IBOutlet weak var toastView: UIView!
     @IBOutlet weak var toastMessageLabel: UILabel!
-    @IBOutlet var betweenLabels: UILabel!
+    @IBOutlet weak var labelLabel: UILabel!
     @IBOutlet var endTimeBtns: DatePickerBtn!
     @IBOutlet var startTimeBtns: DatePickerBtn!
     @IBOutlet var dateBtns: PickerBtn!
@@ -26,9 +26,9 @@ class MakeBungaeDateVC: UIViewController {
         endTimeBtns.datePickerDelegate = self
 
         toastView.alpha = 0.0
-        //betweenLabels.textColor = .gray02
+        labelLabel.textColor = .gray02
 
-        titleLabel.titleLabelFontSize()
+        titleLabel.makeCrewTitleLabel()
         toastView.makeRounded(cornerRadius: 16.adjusted)
         toastMessageLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
     }
@@ -71,7 +71,17 @@ class MakeBungaeDateVC: UIViewController {
     }
     
     @IBAction func touchUpCancelBtn(_ sender: Any) {
-        
+        // 취소 버튼 클릭 시, 팝업 창 띄워줌
+        let storyBoard: UIStoryboard = UIStoryboard(name: "JoinAlert", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinAlertVC") as? JoinAlertVC {
+            dvc.modalPresentationStyle = .overFullScreen
+            dvc.modalTransitionStyle = .crossDissolve
+            dvc.titleLabel = "작성한 모든 기입정보가 삭제됩니다. \n 번개만들기를 그만두시겠습니까?"
+            // 취소버튼 눌렸을 때 효과 나오기위해
+            dvc.alertDelegate = self
+            // present 형태로 띄우기
+            self.present(dvc, animated: true, completion: nil)
+        }
     }
     
     @IBAction func touchUpNextBtn(_ sender: Any) {
@@ -129,7 +139,7 @@ extension MakeBungaeDateVC : DatePickerDelegate {
                 
             case endTimeBtns :
                 value = startTimeBtns.doubleDatePicker(secondDate: dateString, location: false)
-                //betweenLabels.textColor = .main
+                labelLabel.textColor = .main
                 
             default:
                 break
@@ -191,5 +201,21 @@ extension MakeBungaeDateVC : PickerDelegate {
         alertVC.addAction(cancelAction)
         
         present(alertVC, animated: true, completion: nil)
+    }
+}
+
+// MARK: - Delegate
+// 팝업창 Delegate
+extension MakeBungaeDateVC : AlertDelegate {
+    func alertDismiss() {
+        guard let viewControllerStack = self.navigationController?.viewControllers else { return }
+        
+        // 뷰 스택에서 SignInVC를 찾아서 거기까지 pop 합니다.
+        for viewController in viewControllerStack {
+            if let bungaeVC = viewController as? BungaeVC { self.navigationController?.popToViewController(bungaeVC, animated: true)
+                // pop되면서 모든 정보 nil로 초기화
+                // SignUpUserInfo.shared.dispose()
+            }
+        }
     }
 }

@@ -24,6 +24,7 @@ class MakeBungaePhotoVC: UIViewController {
     @IBOutlet weak var materialsTextView: UITextView!
     @IBOutlet weak var questionTextView: UITextView!
     
+    var keyHeight: CGFloat?
     let picker = UIImagePickerController()
     let placeholder = ("어떤 번개인지 소개해주세요",
                        "활동에 꼭 필요한 준비물을 입력해주세요",
@@ -36,11 +37,36 @@ class MakeBungaePhotoVC: UIViewController {
         placeholderSetting()
         tapGesture()
         setBasicImage()
+        setKeyboard()
     }
    
     private func setBasicImage() {
         basicImage = UIImage(named: "imgBungaeThumb")
     }
+    
+    private func setKeyboard() {
+        // 키보드 show
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        // 키보드 hide
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    // 키보드 올라가는거
+    @objc func keyboardWillShow(_ sender: Notification) {
+           let userInfo:NSDictionary = sender.userInfo! as NSDictionary
+           let keyboardFrame:NSValue = userInfo.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue
+           let keyboardRectangle = keyboardFrame.cgRectValue
+           let keyboardHeight = keyboardRectangle.height
+           keyHeight = keyboardHeight
+
+           self.view.frame.size.height -= keyboardHeight
+       }
+    
+    // 키보드 내리는거 (원래 상태로 복귀)
+    @objc func keyboardWillHide(_ sender: Notification) {
+           self.view.frame.size.height += keyHeight!
+       }
     
     private func setStyle() {
         titleTextField.delegate = self
@@ -139,7 +165,17 @@ class MakeBungaePhotoVC: UIViewController {
     }
     
     @IBAction func touchUpCancelBtn(_ sender: Any) {
-        
+        // 취소 버튼 클릭 시, 팝업 창 띄워줌
+        let storyBoard: UIStoryboard = UIStoryboard(name: "JoinAlert", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinAlertVC") as? JoinAlertVC {
+            dvc.modalPresentationStyle = .overFullScreen
+            dvc.modalTransitionStyle = .crossDissolve
+            dvc.titleLabel = "작성한 모든 기입정보가 삭제됩니다. \n 번개만들기를 그만두시겠습니까?"
+            // 취소버튼 눌렸을 때 효과 나오기위해
+            dvc.alertDelegate = self
+            // present 형태로 띄우기
+            self.present(dvc, animated: true, completion: nil)
+        }
     }
     
     @IBAction func touchUpNextBtn(_ sender: Any) {
@@ -286,3 +322,18 @@ extension MakeBungaePhotoVC : UIImagePickerControllerDelegate, UINavigationContr
     }
 }
 
+// MARK: - Delegate
+// 팝업창 Delegate
+extension MakeBungaePhotoVC : AlertDelegate {
+    func alertDismiss() {
+        guard let viewControllerStack = self.navigationController?.viewControllers else { return }
+        
+        // 뷰 스택에서 SignInVC를 찾아서 거기까지 pop 합니다.
+        for viewController in viewControllerStack {
+            if let bungaeVC = viewController as? BungaeVC { self.navigationController?.popToViewController(bungaeVC, animated: true)
+                // pop되면서 모든 정보 nil로 초기화
+                // SignUpUserInfo.shared.dispose()
+            }
+        }
+    }
+}

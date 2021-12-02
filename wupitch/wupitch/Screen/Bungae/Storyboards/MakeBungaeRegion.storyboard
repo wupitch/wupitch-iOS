@@ -38,27 +38,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0P-Yg-uZo">
-                                        <rect key="frame" x="374" y="10" width="24" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="5vx-Yc-edQ"/>
-                                            <constraint firstAttribute="width" constant="24" id="M8u-aU-i3K"/>
-                                        </constraints>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="close"/>
-                                        <connections>
-                                            <action selector="touchUpCancelBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="5MC-0d-vny"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="90P-7p-OqB" firstAttribute="centerY" secondItem="ajh-Fk-INW" secondAttribute="centerY" id="74z-kg-lOW"/>
                                     <constraint firstItem="ajh-Fk-INW" firstAttribute="leading" secondItem="TVR-D6-kFy" secondAttribute="leading" constant="16" id="F3S-oj-n6s"/>
-                                    <constraint firstItem="L0P-Yg-uZo" firstAttribute="centerY" secondItem="90P-7p-OqB" secondAttribute="centerY" id="KqM-vc-w2z"/>
                                     <constraint firstItem="90P-7p-OqB" firstAttribute="centerX" secondItem="TVR-D6-kFy" secondAttribute="centerX" id="KuC-YC-ofv"/>
                                     <constraint firstAttribute="height" constant="44" id="RrX-Ud-HlC"/>
-                                    <constraint firstAttribute="trailing" secondItem="L0P-Yg-uZo" secondAttribute="trailing" constant="16" id="Wv0-J8-mtu"/>
                                     <constraint firstItem="ajh-Fk-INW" firstAttribute="centerY" secondItem="TVR-D6-kFy" secondAttribute="centerY" id="a71-Nr-uO4"/>
                                 </constraints>
                             </view>
@@ -184,7 +170,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="close" width="24" height="24"/>
         <image name="left" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
