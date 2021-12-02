@@ -15,10 +15,22 @@ class GuestCompleteVC: UIViewController {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var alertView: UIView!
     
+    var firstLabel: String?
+    var secondLabel: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setStyle()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let first = firstLabel {
+            self.contentLabel.text = first
+        }
+        if let second = secondLabel {
+            self.contentSubLabel.text = second
+        }
     }
  
     func setStyle() {
@@ -33,7 +45,7 @@ class GuestCompleteVC: UIViewController {
         
         contentSubLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
         contentSubLabel.textColor = .gray02
-        contentSubLabel.setTextWithLineHeight(text: contentSubLabel.text, lineHeight: 20.adjusted)
+        //contentSubLabel.setTextWithLineHeight(text: contentSubLabel.text, lineHeight: 20.adjusted)
     }
 
     @IBAction func touchUpCompleteBtn(_ sender: Any) {

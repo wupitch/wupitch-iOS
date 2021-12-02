@@ -21,6 +21,7 @@ class UserInfoWarningVC: UIViewController {
     @IBOutlet weak var alertView: UIView!
     
     var introducePopUp : IntroduceDelegate?
+    var subLabel: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,22 +29,29 @@ class UserInfoWarningVC: UIViewController {
         setStyle()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let sub = subLabel {
+            self.contentSubLabel.text = sub
+        }
+    }
     
-       func setStyle() {
-           alertView.layer.cornerRadius = 16.adjusted
-           contentLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
-           contentLabel.setTextWithLineHeight(text: contentLabel.text, lineHeight: 24.adjusted)
-           contentLabel.textAlignment = .center
-           completeBtn.backgroundColor = .main
-           completeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
-           completeBtn.tintColor = .wht
-           completeBtn.layer.cornerRadius = 8.adjusted
-           
-           contentSubLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
-           contentSubLabel.textColor = .bk
-           contentSubLabel.setTextWithLineHeight(text: contentSubLabel.text, lineHeight: 24.adjusted)
-           contentSubLabel.textAlignment = .center
-       }
+    
+    func setStyle() {
+        alertView.layer.cornerRadius = 16.adjusted
+        contentLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
+        contentLabel.setTextWithLineHeight(text: contentLabel.text, lineHeight: 24.adjusted)
+        contentLabel.textAlignment = .center
+        completeBtn.backgroundColor = .main
+        completeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
+        completeBtn.tintColor = .wht
+        completeBtn.layer.cornerRadius = 8.adjusted
+        
+        contentSubLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        contentSubLabel.textColor = .bk
+        contentSubLabel.setTextWithLineHeight(text: contentSubLabel.text, lineHeight: 24.adjusted)
+        contentSubLabel.textAlignment = .center
+    }
 
     @IBAction func touchUpCancelBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)

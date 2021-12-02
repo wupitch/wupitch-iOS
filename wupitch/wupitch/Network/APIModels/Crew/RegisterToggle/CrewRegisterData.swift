@@ -6,9 +6,16 @@
 //
 
 import Foundation
+
 // MARK: - CrewRegisterData
 struct CrewRegisterData: Codable {
-    let isSuccess: Bool
     let code: Int
+    let isSuccess: Bool
     let message: String
+    let result: CrewRegisterResult
+}
+
+// MARK: - CrewRegisterResult
+struct CrewRegisterResult: Codable {
+    let result: Bool
 }

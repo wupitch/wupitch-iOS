@@ -46,8 +46,8 @@
                                             <action selector="touchUpCompleteBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gf1-cw-3Ef"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(크루리더와 연락은 페이지 하단의 문의에서 확인하세요)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fro-Cl-MQe">
-                                        <rect key="frame" x="-26" y="123" width="372.5" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(크루리더와 연락은 페이지 하단의 문의에서 확인하세요)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fro-Cl-MQe">
+                                        <rect key="frame" x="-26" y="126" width="372.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -61,7 +61,7 @@
                                     <constraint firstAttribute="trailing" secondItem="47j-es-q28" secondAttribute="trailing" constant="30" id="5bA-DX-ET6"/>
                                     <constraint firstAttribute="bottom" secondItem="47j-es-q28" secondAttribute="bottom" constant="28" id="8CQ-9D-BFs"/>
                                     <constraint firstAttribute="trailing" secondItem="YzJ-Wd-pjO" secondAttribute="trailing" constant="5" id="Dee-3j-PtA"/>
-                                    <constraint firstItem="fro-Cl-MQe" firstAttribute="top" secondItem="YzJ-Wd-pjO" secondAttribute="bottom" constant="2" id="FLN-nV-BfK"/>
+                                    <constraint firstItem="fro-Cl-MQe" firstAttribute="top" secondItem="YzJ-Wd-pjO" secondAttribute="bottom" constant="5" id="FLN-nV-BfK"/>
                                     <constraint firstItem="YzJ-Wd-pjO" firstAttribute="centerX" secondItem="WIK-yu-Ekk" secondAttribute="centerX" id="cZV-Ga-ZNd"/>
                                     <constraint firstAttribute="width" constant="320" id="g5M-Xd-Tdy"/>
                                     <constraint firstItem="YzJ-Wd-pjO" firstAttribute="top" secondItem="WIK-yu-Ekk" secondAttribute="bottom" constant="20" id="qW9-wu-KhV"/>

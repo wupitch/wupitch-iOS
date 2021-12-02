@@ -74,12 +74,13 @@ class BungaeDetailVC: BaseVC {
     
     @IBAction func touchUpRegisterBtn(_ sender: Any) {
         // 사용자의 자기소개 부분이 비어있다면 정보가 부족하다는 알림창을 띄워주고, 그렇지 않다면 가입 신청이 완료되었다는 창 띄워주기
-        if SignUpUserInfo.shared.introduce == nil {
+        if UserDefaults.standard.string(forKey: "introduce") == nil {
             let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
             if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
                 dvc.modalPresentationStyle = .overFullScreen
                 dvc.modalTransitionStyle = .crossDissolve
                 dvc.introducePopUp = self
+                dvc.subLabel = "모든 프로필에 정보가 기입되어야 \n 번개에 신청할 수 있습니다."
                 // present 형태로 띄우기
                 self.present(dvc, animated: true, completion: nil)
             }
@@ -87,11 +88,13 @@ class BungaeDetailVC: BaseVC {
         else {
             
             // 가입 완료 팝업 창 띄워줌
-            let storyBoard: UIStoryboard = UIStoryboard(name: "JoinComplete", bundle: nil)
+            let storyBoard: UIStoryboard = UIStoryboard(name: "GuestComplete", bundle: nil)
             
-            if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinCompleteVC") as? JoinCompleteVC {
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "GuestCompleteVC") as? GuestCompleteVC {
                 dvc.modalPresentationStyle = .overFullScreen
                 dvc.modalTransitionStyle = .crossDissolve
+                dvc.firstLabel = "참여 신청이 완료됐습니다! \n 문의를 통해 번개 리더와 연락할 수 있어요."
+                dvc.secondLabel = "페이지 하단 문의를 통해 번개 리더에게 \n 연락해주세요."
                 
                 // present 형태로 띄우기
                 self.present(dvc, animated: true, completion: nil)

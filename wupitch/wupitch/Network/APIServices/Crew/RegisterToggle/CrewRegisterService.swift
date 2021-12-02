@@ -17,7 +17,7 @@ struct CrewRegisterService {
         
         let urlString : String
                 
-        if let clubId = UserDefaults.standard.string(forKey: "clubId") {
+        if let clubId = UserDefaults.standard.string(forKey: "clubID") {
             urlString = "https://prod.wupitch.site/app/clubs/\(clubId)/participation-toggle"
         }
         else {
