@@ -20,13 +20,22 @@ class JoinAlertVC: UIViewController {
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var continueBtn: UIButton!
     @IBOutlet weak var stopBtn: UIButton!
+    @IBOutlet weak var textLabel: UILabel!
+    
+    var titleLabel: String?
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
        setStyle()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let title = titleLabel {
+            self.textLabel.text = title
+        }
     }
     
     // MARK: - Function
@@ -42,6 +51,10 @@ class JoinAlertVC: UIViewController {
         
         // continueBtn Style
         continueBtn.layer.cornerRadius = 8.adjusted
+        
+        // textLabel
+        textLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        
     }
     
     // MARK: - IBActions

@@ -82,6 +82,15 @@ class ProfileVC: BaseVC {
         self.present(alert, animated: true, completion: nil)
     }
     
+    // 개발자 정보 버튼
+    @IBAction func touchUpClientInfo(_ sender: Any) {
+        // 다음 스토리 보드로 이동
+        let storyboard = UIStoryboard.init(name: "TermsOfUse", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(identifier: "TermsOfUseVC") as? TermsOfUseVC else {return}
+        dvc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(dvc, animated: true)
+    }
+    
     // UIImagePicker
     func openLibrary() {
         picker.sourceType = .photoLibrary

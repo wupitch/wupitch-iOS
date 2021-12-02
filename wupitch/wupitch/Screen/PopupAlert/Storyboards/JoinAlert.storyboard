@@ -125,6 +125,7 @@
                         <outlet property="continueBtn" destination="h0K-vw-dFY" id="lX5-nj-LQW"/>
                         <outlet property="popUpView" destination="DNW-Rl-m8f" id="dlz-Vv-KQQ"/>
                         <outlet property="stopBtn" destination="fJg-Wz-1uA" id="M5M-wQ-iz6"/>
+                        <outlet property="textLabel" destination="PsI-6p-wRu" id="1fR-9U-EA4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

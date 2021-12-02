@@ -106,7 +106,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="NQL-Ft-R5X" secondAttribute="height" multiplier="95:44" id="efw-iv-Z8p"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gga-Na-I1a">
                                 <rect key="frame" x="127" y="185.5" width="15" height="21"/>

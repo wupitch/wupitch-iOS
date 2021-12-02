@@ -38,6 +38,7 @@ class MakeCrewPhotoVC: UIViewController {
         placeholderSetting()
         tapGesture()
         setBasicImage()
+        setKeyboard()
     }
     
     private func setBasicImage() {
@@ -93,6 +94,26 @@ class MakeCrewPhotoVC: UIViewController {
         
         questionTextCountLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
         questionTextCountLabel.textColor = .gray03
+    }
+    
+    private func setKeyboard() {
+        // 키보드 show
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        // 키보드 hide
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    // 키보드 올라가는거
+    @objc
+    func keyboardWillShow(_ sender: Notification) {
+        self.view.frame.origin.y = -150 // Move view 150 points upward
+    }
+    
+    // 키보드 내리는거 (원래 상태로 복귀)
+    @objc
+    func keyboardWillHide(_ sender: Notification) {
+        self.view.frame.origin.y = 0 // Move view to original position
     }
     
     func placeholderSetting() {
@@ -156,7 +177,17 @@ class MakeCrewPhotoVC: UIViewController {
     }
     
     @IBAction func touchUpCancelBtn(_ sender: Any) {
-        
+        // 취소 버튼 클릭 시, 팝업 창 띄워줌
+        let storyBoard: UIStoryboard = UIStoryboard(name: "JoinAlert", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinAlertVC") as? JoinAlertVC {
+            dvc.modalPresentationStyle = .overFullScreen
+            dvc.modalTransitionStyle = .crossDissolve
+            dvc.titleLabel = "작성한 모든 기입정보가 삭제됩니다. \n 크루만들기를 그만두시겠습니까?"
+            // 취소버튼 눌렸을 때 효과 나오기위해
+            dvc.alertDelegate = self
+            // present 형태로 띄우기
+            self.present(dvc, animated: true, completion: nil)
+        }
     }
     
     @IBAction func touchUpNextBtn(_ sender: Any) {
@@ -300,5 +331,21 @@ extension MakeCrewPhotoVC : UIImagePickerControllerDelegate, UINavigationControl
             SignUpUserInfo.shared.photo = nil
         }
         dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: - Delegate
+// 팝업창 Delegate
+extension MakeCrewPhotoVC : AlertDelegate {
+    func alertDismiss() {
+        guard let viewControllerStack = self.navigationController?.viewControllers else { return }
+        
+        // 뷰 스택에서 SignInVC를 찾아서 거기까지 pop 합니다.
+        for viewController in viewControllerStack {
+            if let crewVC = viewController as? CrewVC { self.navigationController?.popToViewController(crewVC, animated: true)
+                // pop되면서 모든 정보 nil로 초기화
+                // SignUpUserInfo.shared.dispose()
+            }
+        }
     }
 }

@@ -131,7 +131,7 @@
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="pi5-cv-Nbm" secondAttribute="height" multiplier="63:44" id="hhx-c9-lSM"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1k-J0-rBU">
                                                 <rect key="frame" x="95" y="265.66666666666669" width="15" height="20.333333333333314"/>

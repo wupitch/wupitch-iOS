@@ -84,6 +84,7 @@ class MakeCrewDateVC: UIViewController {
             dateBtns[index].status = false
             // 알림창 띄우기
             print("중복되었습니다.")
+            showToast(message: "요일을 중복되지 않게 선택해주세요!")
         }
     }
     
@@ -135,6 +136,20 @@ class MakeCrewDateVC: UIViewController {
         UIView.animate(withDuration: 4.0, delay: 0.01, animations: {
             self.toastView.alpha = 0.0
         }, completion: nil)
+    }
+    
+    @IBAction func touchUpCancelBtn(_ sender: Any) {
+        // 취소 버튼 클릭 시, 팝업 창 띄워줌
+        let storyBoard: UIStoryboard = UIStoryboard(name: "JoinAlert", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinAlertVC") as? JoinAlertVC {
+            dvc.modalPresentationStyle = .overFullScreen
+            dvc.modalTransitionStyle = .crossDissolve
+            dvc.titleLabel = "작성한 모든 기입정보가 삭제됩니다. \n 크루만들기를 그만두시겠습니까?"
+            // 취소버튼 눌렸을 때 효과 나오기위해
+            dvc.alertDelegate = self
+            // present 형태로 띄우기
+            self.present(dvc, animated: true, completion: nil)
+        }
     }
     
     @IBAction func touchUpNextBtn(_ sender: Any) {
@@ -198,7 +213,7 @@ class MakeCrewDateVC: UIViewController {
     }
     
     @IBAction func touchUpAddSecondBtn(_ sender: Any) {
-        if firstBgView.isHidden == true && secondBgView.isHidden == false {
+        if firstBgView.isHidden == true && secondBgView.isHidden == false && nextBtn.backgroundColor == .main {
             addBtn[1].setImage(UIImage(named: "subtract"), for: .normal)
             secondBgView.isHidden = true
             plusBtnCheck[1] = true
@@ -244,6 +259,22 @@ extension MakeCrewDateVC : DateDelegate {
             break
         }
         check()
+    }
+}
+
+// MARK: - Delegate
+// 팝업창 Delegate
+extension MakeCrewDateVC : AlertDelegate {
+    func alertDismiss() {
+        guard let viewControllerStack = self.navigationController?.viewControllers else { return }
+        
+        // 뷰 스택에서 SignInVC를 찾아서 거기까지 pop 합니다.
+        for viewController in viewControllerStack {
+            if let crewVC = viewController as? CrewVC { self.navigationController?.popToViewController(crewVC, animated: true)
+                // pop되면서 모든 정보 nil로 초기화
+                // SignUpUserInfo.shared.dispose()
+            }
+        }
     }
 }
 

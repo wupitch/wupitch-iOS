@@ -32,7 +32,7 @@ struct LookUpBungaeContent: Codable {
     let isPinUp: Bool
     let location: String?
     let nowMemberCount, recruitmentCount: Int
-    let startTime, endTime: Double
+    let startTime, endTime: Double?
     let title: String
 
     enum CodingKeys: String, CodingKey {

@@ -33,6 +33,7 @@ class MakeCrewInfoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
+        addDoneButtonOnKeyboard()
         extraDataManager.getExtra(delegate: self)
     }
     
@@ -70,6 +71,23 @@ class MakeCrewInfoVC: UIViewController {
             ageBtns[i].ageInt = i
         }
     }
+    func addDoneButtonOnKeyboard(){
+            let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+            doneToolbar.barStyle = .default
+
+            let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+            let done: UIBarButtonItem = UIBarButtonItem(title: "확인", style: .done, target: self, action: #selector(self.doneButtonAction))
+
+            let items = [flexSpace, done]
+            doneToolbar.items = items
+            doneToolbar.sizeToFit()
+
+        crewCountTextField.inputAccessoryView = doneToolbar
+        }
+
+        @objc func doneButtonAction(){
+            crewCountTextField.resignFirstResponder()
+        }
 
     // MARK: - IBAction
     @IBAction func touchUpFirstBtn(_ sender: Any) {
@@ -152,6 +170,17 @@ class MakeCrewInfoVC: UIViewController {
     }
     
     @IBAction func touchUpCancelBtn(_ sender: Any) {
+        // 취소 버튼 클릭 시, 팝업 창 띄워줌
+        let storyBoard: UIStoryboard = UIStoryboard(name: "JoinAlert", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinAlertVC") as? JoinAlertVC {
+            dvc.modalPresentationStyle = .overFullScreen
+            dvc.modalTransitionStyle = .crossDissolve
+            dvc.titleLabel = "작성한 모든 기입정보가 삭제됩니다. \n 크루만들기를 그만두시겠습니까?"
+            // 취소버튼 눌렸을 때 효과 나오기위해
+            dvc.alertDelegate = self
+            // present 형태로 띄우기
+            self.present(dvc, animated: true, completion: nil)
+        }
     }
     
     // 다음 버튼
@@ -227,6 +256,22 @@ extension MakeCrewInfoVC : UITextFieldDelegate {
             return newLength <= 3
         }
         return true
+    }
+}
+
+// MARK: - Delegate
+// 팝업창 Delegate
+extension MakeCrewInfoVC : AlertDelegate {
+    func alertDismiss() {
+        guard let viewControllerStack = self.navigationController?.viewControllers else { return }
+        
+        // 뷰 스택에서 SignInVC를 찾아서 거기까지 pop 합니다.
+        for viewController in viewControllerStack {
+            if let crewVC = viewController as? CrewVC { self.navigationController?.popToViewController(crewVC, animated: true)
+                // pop되면서 모든 정보 nil로 초기화
+                // SignUpUserInfo.shared.dispose()
+            }
+        }
     }
 }
 

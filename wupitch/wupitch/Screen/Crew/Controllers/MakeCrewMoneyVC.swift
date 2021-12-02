@@ -74,7 +74,17 @@ class MakeCrewMoneyVC: UIViewController {
     }
     
     @IBAction func touchUpCancelBtn(_ sender: Any) {
-        
+        // 취소 버튼 클릭 시, 팝업 창 띄워줌
+        let storyBoard: UIStoryboard = UIStoryboard(name: "JoinAlert", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinAlertVC") as? JoinAlertVC {
+            dvc.modalPresentationStyle = .overFullScreen
+            dvc.modalTransitionStyle = .crossDissolve
+            dvc.titleLabel = "작성한 모든 기입정보가 삭제됩니다. \n 크루만들기를 그만두시겠습니까?"
+            // 취소버튼 눌렸을 때 효과 나오기위해
+            dvc.alertDelegate = self
+            // present 형태로 띄우기
+            self.present(dvc, animated: true, completion: nil)
+        }
     }
     
     @IBAction func touchUpNextBtn(_ sender: Any) {
@@ -126,43 +136,20 @@ extension MakeCrewMoneyVC : UITextFieldDelegate {
         }
         return true
     }
+}
+
+// MARK: - Delegate
+// 팝업창 Delegate
+extension MakeCrewMoneyVC : AlertDelegate {
+    func alertDismiss() {
+        guard let viewControllerStack = self.navigationController?.viewControllers else { return }
         
-// 텍스트필드 값 쉼표구분
-//        // replacementString : 방금 입력된 문자 하나, 붙여넣기 시에는 붙여넣어진 문자열 전체
-//        // return -> 텍스트가 바뀌어야 한다면 true, 아니라면 false
-//        // 이 메소드 내에서 textField.text는 현재 입력된 string이 붙기 전의 string
-//
-//        let formatter = NumberFormatter()
-//        formatter.numberStyle = .decimal // 1,000,000
-//        formatter.locale = Locale.current
-//        formatter.maximumFractionDigits = 0 // 허용하는 소숫점 자리수
-//
-//        // formatter.groupingSeparator // .decimal -> ,
-//
-//        if let removeAllSeprator = textField.text?.replacingOccurrences(of: formatter.groupingSeparator, with: ""){
-//
-//
-//            var beforeForemattedString = removeAllSeprator + string
-//            if formatter.number(from: string) != nil {
-//                if let formattedNumber = formatter.number(from: beforeForemattedString), let formattedString = formatter.string(from: formattedNumber){
-//                    textField.text = formattedString
-//
-//                    return false
-//                }
-//
-//            }else{ // 숫자가 아닐 때먽
-//                if string == "" { // 백스페이스일때
-//                    let lastIndex = beforeForemattedString.index(beforeForemattedString.endIndex, offsetBy: -1)
-//                    beforeForemattedString = String(beforeForemattedString[..<lastIndex])
-//                    if let formattedNumber = formatter.number(from: beforeForemattedString), let formattedString = formatter.string(from: formattedNumber){
-//                        textField.text = formattedString
-//                        return false
-//                    }
-//                }else{ // 문자일 때
-//                    return false
-//                }
-//            }
-//        }
-//        return true
-//    }
+        // 뷰 스택에서 SignInVC를 찾아서 거기까지 pop 합니다.
+        for viewController in viewControllerStack {
+            if let crewVC = viewController as? CrewVC { self.navigationController?.popToViewController(crewVC, animated: true)
+                // pop되면서 모든 정보 nil로 초기화
+                // SignUpUserInfo.shared.dispose()
+            }
+        }
+    }
 }
