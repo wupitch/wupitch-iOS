@@ -91,6 +91,7 @@ extension ProfileSettingsVC {
             UserDefaults.standard.removeObject(forKey: "bungaeFilterParams")
             UserDefaults.standard.removeObject(forKey: "impromptuID")
             UserDefaults.standard.removeObject(forKey: "areaBungaeParams")
+            UserDefaults.standard.removeObject(forKey: "introduce")
             
             let storyboard = UIStoryboard.init(name: "SignIn", bundle: nil)
             guard let dvc = storyboard.instantiateViewController(identifier: "SignInNC") as? SignInNC else {return}

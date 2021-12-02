@@ -24,6 +24,7 @@ class CrewAlertVC: UIViewController {
     private func setDeletate() {
         alertTV.delegate = self
         alertTV.dataSource = self
+        self.alertTV.register(CrewAlertNoTVCell.nib(), forCellReuseIdentifier: CrewAlertNoTVCell.identifier)
     }
     private func setTableViewStyle() {
         // tableview의 기본 선 제거
@@ -47,10 +48,15 @@ class CrewAlertVC: UIViewController {
 
 extension CrewAlertVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        
         return fcmData?.count ?? -99
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
         guard let cell = self.alertTV?.dequeueReusableCell(withIdentifier: CrewAlertTVCell.identifier, for: indexPath) as? CrewAlertTVCell else { return UITableViewCell()
         }
         cell.alertTitleLabel.text = fcmData?[indexPath.row].title
@@ -58,7 +64,9 @@ extension CrewAlertVC : UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
 }
+
 
 // FCM api 연결
 extension CrewAlertVC {

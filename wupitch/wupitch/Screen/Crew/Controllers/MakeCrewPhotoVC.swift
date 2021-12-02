@@ -31,6 +31,7 @@ class MakeCrewPhotoVC: UIViewController {
                        "활동에 꼭 필요한 준비물을 입력해주세요",
                        "문의할 수 있는 연락수단을 입력해주세요. (예: 카카오톡 아이디, 인스타그램 아이디, 휴대폰번호 등)")
     var basicImage: UIImage?
+    var keyHeight: CGFloat?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,6 +97,8 @@ class MakeCrewPhotoVC: UIViewController {
         questionTextCountLabel.textColor = .gray03
     }
     
+    
+    
     private func setKeyboard() {
         // 키보드 show
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -105,16 +108,20 @@ class MakeCrewPhotoVC: UIViewController {
     }
     
     // 키보드 올라가는거
-    @objc
-    func keyboardWillShow(_ sender: Notification) {
-        self.view.frame.origin.y = -150 // Move view 150 points upward
-    }
+    @objc func keyboardWillShow(_ sender: Notification) {
+           let userInfo:NSDictionary = sender.userInfo! as NSDictionary
+           let keyboardFrame:NSValue = userInfo.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue
+           let keyboardRectangle = keyboardFrame.cgRectValue
+           let keyboardHeight = keyboardRectangle.height
+           keyHeight = keyboardHeight
+
+           self.view.frame.size.height -= keyboardHeight
+       }
     
     // 키보드 내리는거 (원래 상태로 복귀)
-    @objc
-    func keyboardWillHide(_ sender: Notification) {
-        self.view.frame.origin.y = 0 // Move view to original position
-    }
+    @objc func keyboardWillHide(_ sender: Notification) {
+           self.view.frame.size.height += keyHeight!
+       }
     
     func placeholderSetting() {
         crewInfoTextView.delegate = self
@@ -247,6 +254,8 @@ extension MakeCrewPhotoVC: UITextViewDelegate, UITextFieldDelegate {
             textView.textColor = .bk
         }
     }
+    
+    
     
     func textViewDidEndEditing(_ textView: UITextView) {
         

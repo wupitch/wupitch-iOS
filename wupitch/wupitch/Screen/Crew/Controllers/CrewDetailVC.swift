@@ -96,7 +96,7 @@ class CrewDetailVC: BaseVC {
     // 가입하기 버튼
     @IBAction func touchUpRegisterBtn(_ sender: Any) {
         // 사용자의 자기소개 부분이 비어있다면 정보가 부족하다는 알림창을 띄워주고, 그렇지 않다면 가입 신청이 완료되었다는 창 띄워주기
-        if SignUpUserInfo.shared.introduce == nil {
+        if UserDefaults.standard.string(forKey: "introduce") == nil {
             let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
             if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
                 dvc.modalPresentationStyle = .overFullScreen
@@ -358,7 +358,7 @@ extension CrewDetailVC: GuestModalDelegate {
     }
     func selectBtnToOpenPopup() {
         // 자기소개가 없으면 정보가 부족하다는 알럿창 띄우고, 있으면 손님으로 가입 되었다는 알림창 띄울 수 있도록
-        if SignUpUserInfo.shared.introduce == nil {
+        if UserDefaults.standard.string(forKey: "introduce") == nil {
             let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
             if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
                 dvc.modalPresentationStyle = .overFullScreen
