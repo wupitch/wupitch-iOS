@@ -150,6 +150,9 @@
 		DD65ABE32758BB5500D71055 /* DetailCrewInquireCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD65ABE12758BB5500D71055 /* DetailCrewInquireCVCell.xib */; };
 		DD65ABEA2759289500D71055 /* CrewAlertNoTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65ABE82759289500D71055 /* CrewAlertNoTVCell.swift */; };
 		DD65ABEB2759289500D71055 /* CrewAlertNoTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD65ABE92759289500D71055 /* CrewAlertNoTVCell.xib */; };
+		DD65ABED2759D35900D71055 /* CrewDetailCellService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65ABEC2759D35900D71055 /* CrewDetailCellService.swift */; };
+		DD65ABF4275A0F1900D71055 /* BungaeInfoCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65ABF2275A0F1900D71055 /* BungaeInfoCVCell.swift */; };
+		DD65ABF5275A0F1900D71055 /* BungaeInfoCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD65ABF3275A0F1900D71055 /* BungaeInfoCVCell.xib */; };
 		DD6728352723E582001E1355 /* LocationPickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6728342723E582001E1355 /* LocationPickerData.swift */; };
 		DD6728432725563A001E1355 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6728422725563A001E1355 /* UIView.swift */; };
 		DD7BEBC327315D3A00DB2F60 /* DetailCrewImgTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BEBC127315D3A00DB2F60 /* DetailCrewImgTVCell.swift */; };
@@ -444,6 +447,9 @@
 		DD65ABE12758BB5500D71055 /* DetailCrewInquireCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCrewInquireCVCell.xib; sourceTree = "<group>"; };
 		DD65ABE82759289500D71055 /* CrewAlertNoTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewAlertNoTVCell.swift; sourceTree = "<group>"; };
 		DD65ABE92759289500D71055 /* CrewAlertNoTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrewAlertNoTVCell.xib; sourceTree = "<group>"; };
+		DD65ABEC2759D35900D71055 /* CrewDetailCellService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewDetailCellService.swift; sourceTree = "<group>"; };
+		DD65ABF2275A0F1900D71055 /* BungaeInfoCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeInfoCVCell.swift; sourceTree = "<group>"; };
+		DD65ABF3275A0F1900D71055 /* BungaeInfoCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BungaeInfoCVCell.xib; sourceTree = "<group>"; };
 		DD6728342723E582001E1355 /* LocationPickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerData.swift; sourceTree = "<group>"; };
 		DD6728422725563A001E1355 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		DD7BEBC127315D3A00DB2F60 /* DetailCrewImgTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCrewImgTVCell.swift; sourceTree = "<group>"; };
@@ -1576,6 +1582,7 @@
 			isa = PBXGroup;
 			children = (
 				DDC46B992752AB550015341E /* CrewDetailService.swift */,
+				DD65ABEC2759D35900D71055 /* CrewDetailCellService.swift */,
 			);
 			path = CrewDetail;
 			sourceTree = "<group>";
@@ -1671,6 +1678,8 @@
 				DDC4DB2B2747791F00D79CC8 /* BungaeTitleCVCell.xib */,
 				DDC4DB2E27478B7200D79CC8 /* BungaeIntroduceCVCell.swift */,
 				DDC4DB2F27478B7200D79CC8 /* BungaeIntroduceCVCell.xib */,
+				DD65ABF2275A0F1900D71055 /* BungaeInfoCVCell.swift */,
+				DD65ABF3275A0F1900D71055 /* BungaeInfoCVCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2048,6 +2057,7 @@
 				DD34220B272F418A005DF6CA /* UserInfoWarning.storyboard in Resources */,
 				DDED012B271C0E5300C2C343 /* SignUpTerms.storyboard in Resources */,
 				DD61E4C4271EBAF5007504DE /* LocationPicker.storyboard in Resources */,
+				DD65ABF5275A0F1900D71055 /* BungaeInfoCVCell.xib in Resources */,
 				DD3E37C7272F928E00C4192E /* CrewCVCell.xib in Resources */,
 				DD3A30F8272E7C4800D711C6 /* CrewApplication.storyboard in Resources */,
 				DD1BFC3727380C760042C51F /* CrewFilter.storyboard in Resources */,
@@ -2110,6 +2120,7 @@
 				DDC4DB3B274B299400D79CC8 /* ExtraData.swift in Sources */,
 				DDC4DB0327440E6700D79CC8 /* SignInService.swift in Sources */,
 				DD1BFC3B2738B2790042C51F /* TextFiledTapPicker.swift in Sources */,
+				DD65ABED2759D35900D71055 /* CrewDetailCellService.swift in Sources */,
 				DDC46B66274FBA7A0015341E /* ActivityTabCVCell.swift in Sources */,
 				DD3A30E6272DAC0300D711C6 /* MyActivityVC.swift in Sources */,
 				DD7BEBC727315D7000DB2F60 /* DetailCrewTitleTVCell.swift in Sources */,
@@ -2240,6 +2251,7 @@
 				DD485F7427530A460071AE93 /* MemberPhoneNumberService.swift in Sources */,
 				DD9EEDDA273FFE9B00E02396 /* CrewSearchCVCell.swift in Sources */,
 				DD3A30C1272AA94100D711C6 /* ModalSportsBtn.swift in Sources */,
+				DD65ABF4275A0F1900D71055 /* BungaeInfoCVCell.swift in Sources */,
 				DDC46B8327522FE60015341E /* ChangePasswordData.swift in Sources */,
 				DD485FD827560A200071AE93 /* BungaeDetailData.swift in Sources */,
 				DD485F8427534F200071AE93 /* LookUpCrewData.swift in Sources */,
@@ -2473,7 +2485,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -2506,7 +2518,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

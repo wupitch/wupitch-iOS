@@ -4,30 +4,29 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BungaeIntroduceCVCell" id="gTV-IL-0wX" customClass="BungaeIntroduceCVCell" customModule="wupitch" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="309" height="657"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BungaeIntroduceCVCell" rowHeight="383" id="nkx-lg-7Ch" customClass="BungaeIntroduceCVCell" customModule="wupitch" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="383"/>
             <autoresizingMask key="autoresizingMask"/>
-            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="309" height="657"/>
-                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nkx-lg-7Ch" id="k9C-tS-VIx">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="383"/>
+                <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="U7c-QE-yYY">
-                        <rect key="frame" x="20" y="24" width="269" height="613"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="z2q-kF-4ha">
+                        <rect key="frame" x="20" y="24" width="374" height="335"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dP0-85-WKn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olo-lk-gnW">
                                 <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="200" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFo-n4-Fo3">
-                                <rect key="frame" x="0.0" y="44.5" width="265" height="568.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="200" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6W-XL-gWe">
+                                <rect key="frame" x="0.0" y="44.5" width="368" height="290.5"/>
                                 <string key="text">동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르고닳도록동해물과백두산이마르</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -36,19 +35,18 @@
                         </subviews>
                     </stackView>
                 </subviews>
-            </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="U7c-QE-yYY" secondAttribute="trailing" constant="20" id="0km-1S-zLD"/>
-                <constraint firstItem="U7c-QE-yYY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="O5V-pb-tT6"/>
-                <constraint firstItem="U7c-QE-yYY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="24" id="jdL-xF-3PH"/>
-            </constraints>
-            <size key="customSize" width="309" height="657"/>
+                <constraints>
+                    <constraint firstItem="z2q-kF-4ha" firstAttribute="top" secondItem="k9C-tS-VIx" secondAttribute="top" constant="24" id="BSE-p5-X09"/>
+                    <constraint firstAttribute="bottom" secondItem="z2q-kF-4ha" secondAttribute="bottom" constant="24" id="IJ5-PB-KIz"/>
+                    <constraint firstAttribute="trailing" secondItem="z2q-kF-4ha" secondAttribute="trailing" constant="20" id="R1h-Sv-t12"/>
+                    <constraint firstItem="z2q-kF-4ha" firstAttribute="leading" secondItem="k9C-tS-VIx" secondAttribute="leading" constant="20" id="bD9-6f-VSL"/>
+                </constraints>
+            </tableViewCellContentView>
             <connections>
-                <outlet property="contentsLabel" destination="NFo-n4-Fo3" id="3g3-8L-NNb"/>
-                <outlet property="titleLabel" destination="dP0-85-WKn" id="iLz-tu-jXa"/>
+                <outlet property="contentsLabel" destination="W6W-XL-gWe" id="9YG-da-r7n"/>
+                <outlet property="titleLabel" destination="Olo-lk-gnW" id="k6i-a5-crt"/>
             </connections>
-            <point key="canvasLocation" x="33" y="23"/>
-        </collectionViewCell>
+            <point key="canvasLocation" x="659.4202898550725" y="-6.3616071428571423"/>
+        </tableViewCell>
     </objects>
 </document>

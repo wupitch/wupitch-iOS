@@ -63,6 +63,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.standard.set(deviceTokenString, forKey: "deviceToken")
         print("디바이스토큰>>>>>>>>>>>>>", UserDefaults.standard.string(forKey: "deviceToken"))
     }
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        
+        // 세로방향 고정
+        return UIInterfaceOrientationMask.portrait
+    }
 }
 
 @available(iOS 10, *)

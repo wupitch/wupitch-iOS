@@ -111,8 +111,8 @@ class MakeCrewGuestVC: UIViewController {
             
             SignUpUserInfo.shared.guestMoney = Int(titleTextField.text ?? "") ?? nil
             print("손님비 >>>>>>>>>>>", SignUpUserInfo.shared.guestMoney)
-            
-            makeCrewDataManager.postMakeCrew(MakeCrewRequest(ageList: SignUpUserInfo.shared.ageList ?? [], areaID: SignUpUserInfo.shared.selectAreaPicker ?? -99, conference: SignUpUserInfo.shared.money ?? -99, extraInfoList: SignUpUserInfo.shared.extraInfoList ?? [], guestConference: SignUpUserInfo.shared.guestMoney ?? -99, inquiries: SignUpUserInfo.shared.question ?? "", introduction: SignUpUserInfo.shared.crewInfo ?? "", location: SignUpUserInfo.shared.location ?? "", sportsID: SignUpUserInfo.shared.clickSportsBtn ?? -99, title: SignUpUserInfo.shared.title ?? "", memberCount: SignUpUserInfo.shared.crewCount ?? -99, materials: SignUpUserInfo.shared.materials ?? "", scheduleList: SignUpUserInfo.shared.schedules ?? []), delegate: self)
+
+            makeCrewDataManager.postMakeCrew(MakeCrewRequest(ageList: SignUpUserInfo.shared.ageList ?? [], areaID: SignUpUserInfo.shared.selectAreaPicker ?? -99, conference: SignUpUserInfo.shared.money ?? 0, extraInfoList: SignUpUserInfo.shared.extraInfoList ?? [], guestConference: SignUpUserInfo.shared.guestMoney ?? 0, inquiries: SignUpUserInfo.shared.question ?? "", introduction: SignUpUserInfo.shared.crewInfo ?? "", location: SignUpUserInfo.shared.location ?? "장소미정", sportsID: SignUpUserInfo.shared.clickSportsBtn ?? -99, title: SignUpUserInfo.shared.title ?? "", memberCount: SignUpUserInfo.shared.crewCount ?? -99, materials: SignUpUserInfo.shared.materials ?? "준비물이 없어요.", scheduleList: SignUpUserInfo.shared.schedules ?? []), delegate: self)
         }
         else {
             nextBtn.backgroundColor = .gray03

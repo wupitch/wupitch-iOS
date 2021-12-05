@@ -16,7 +16,7 @@ struct BungaeRegisterService {
         
         let urlString : String
         
-        if let impromptuId = UserDefaults.standard.string(forKey: "impromptuId") {
+        if let impromptuId = UserDefaults.standard.string(forKey: "impromptuID") {
             urlString = "https://prod.wupitch.site/app/impromptus/\(impromptuId)/participation-toggle"
         }
         else {

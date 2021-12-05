@@ -36,7 +36,7 @@
                                 <rect key="frame" x="118.5" y="150" width="177" height="154"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="154" id="v9g-oq-cvn"/>
-                                    <constraint firstAttribute="width" secondItem="MGf-Wa-cLK" secondAttribute="height" multiplier="177:154" id="wda-aZ-DCi"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" secondItem="MGf-Wa-cLK" secondAttribute="height" multiplier="177:154" priority="250" id="wda-aZ-DCi"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CBC-SY-ata">
@@ -100,7 +100,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bX6-SJ-pSD">
-                                <rect key="frame" x="149.5" y="747.5" width="116" height="14.5"/>
+                                <rect key="frame" x="149.5" y="748" width="116" height="14"/>
                                 <attributedString key="attributedText">
                                     <fragment content="아직 회원이 아니신가요?">
                                         <attributes>

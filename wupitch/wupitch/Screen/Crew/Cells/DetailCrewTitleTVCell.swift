@@ -9,7 +9,6 @@ import UIKit
 
 class DetailCrewTitleTVCell: UITableViewCell {
 
-    
     @IBOutlet weak var dateIcon: UIImageView!
     @IBOutlet weak var moneyIcon: UIImageView!
     @IBOutlet weak var locationIcon: UIImageView!
@@ -20,7 +19,6 @@ class DetailCrewTitleTVCell: UITableViewCell {
     @IBOutlet weak var tagLabel: UILabel!
     @IBOutlet weak var tagView: UIView!
     
-    
     static let identifier = "DetailCrewTitleTVCell"
     
     static func nib() -> UINib {
@@ -30,7 +28,6 @@ class DetailCrewTitleTVCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setStyle()
-        
     }
     
     private func setStyle() {

@@ -4,52 +4,49 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BungaeImageCVCell" id="gTV-IL-0wX" customClass="BungaeImageCVCell" customModule="wupitch" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="294" height="155"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BungaeImageCVCell" rowHeight="178" id="k8F-2J-LMH" customClass="BungaeImageCVCell" customModule="wupitch" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="307" height="178"/>
             <autoresizingMask key="autoresizingMask"/>
-            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="294" height="155"/>
-                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k8F-2J-LMH" id="RVH-vq-K5Z">
+                <rect key="frame" x="0.0" y="0.0" width="307" height="178"/>
+                <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I8s-rj-xl7">
-                        <rect key="frame" x="0.0" y="0.0" width="294" height="155"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b32-MM-lyb">
+                        <rect key="frame" x="0.0" y="0.0" width="307" height="178"/>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNq-q7-dtG">
-                        <rect key="frame" x="254" y="16" width="24" height="24"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEm-zp-bfu">
+                        <rect key="frame" x="267" y="16" width="24" height="24"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="24" id="3mO-pN-Yco"/>
-                            <constraint firstAttribute="width" constant="24" id="Q1R-kF-agI"/>
+                            <constraint firstAttribute="width" constant="24" id="5UY-oj-MOe"/>
+                            <constraint firstAttribute="height" constant="24" id="I0A-XS-blB"/>
                         </constraints>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" image="pin"/>
                         <connections>
-                            <action selector="touchUpPinBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="R1U-Nc-OW8"/>
+                            <action selector="touchUpPinBtn:" destination="k8F-2J-LMH" eventType="touchUpInside" id="F8h-r0-k20"/>
                         </connections>
                     </button>
                 </subviews>
-            </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <constraints>
-                <constraint firstItem="I8s-rj-xl7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2d7-di-U7O"/>
-                <constraint firstAttribute="trailing" secondItem="SNq-q7-dtG" secondAttribute="trailing" constant="16" id="BTj-Rs-CyY"/>
-                <constraint firstItem="I8s-rj-xl7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="HrM-zo-Kir"/>
-                <constraint firstAttribute="bottom" secondItem="I8s-rj-xl7" secondAttribute="bottom" id="k7H-ZA-aHI"/>
-                <constraint firstItem="SNq-q7-dtG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="mYz-Km-BJt"/>
-                <constraint firstAttribute="trailing" secondItem="I8s-rj-xl7" secondAttribute="trailing" id="zMu-Ch-4A7"/>
-            </constraints>
-            <size key="customSize" width="294" height="155"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="EEm-zp-bfu" secondAttribute="trailing" constant="16" id="7cs-1N-1uN"/>
+                    <constraint firstAttribute="trailing" secondItem="b32-MM-lyb" secondAttribute="trailing" id="JNE-kn-P49"/>
+                    <constraint firstItem="b32-MM-lyb" firstAttribute="top" secondItem="RVH-vq-K5Z" secondAttribute="top" id="bgn-aL-bkA"/>
+                    <constraint firstAttribute="bottom" secondItem="b32-MM-lyb" secondAttribute="bottom" id="bzw-FA-M5p"/>
+                    <constraint firstItem="EEm-zp-bfu" firstAttribute="top" secondItem="RVH-vq-K5Z" secondAttribute="top" constant="16" id="gM7-7k-MRy"/>
+                    <constraint firstItem="b32-MM-lyb" firstAttribute="leading" secondItem="RVH-vq-K5Z" secondAttribute="leading" id="zGi-uf-b1C"/>
+                </constraints>
+            </tableViewCellContentView>
             <connections>
-                <outlet property="mainImgView" destination="I8s-rj-xl7" id="EvA-Zf-gfd"/>
-                <outlet property="pinBtn" destination="SNq-q7-dtG" id="jpP-C8-axf"/>
+                <outlet property="mainImgView" destination="b32-MM-lyb" id="3Pe-VK-FaC"/>
+                <outlet property="pinBtn" destination="EEm-zp-bfu" id="adv-gh-VdU"/>
             </connections>
-            <point key="canvasLocation" x="-58" y="70"/>
-        </collectionViewCell>
+            <point key="canvasLocation" x="-197.82608695652175" y="74.330357142857139"/>
+        </tableViewCell>
     </objects>
     <resources>
         <image name="pin" width="24" height="24"/>

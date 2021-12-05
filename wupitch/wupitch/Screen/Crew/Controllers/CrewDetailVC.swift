@@ -1,5 +1,5 @@
 //
-//  CrewDetailTableViewVC.swift
+//  CrewDetailVC.swift
 //  wupitch
 //
 //  Created by 김수정 on 2021/12/01.
@@ -29,13 +29,12 @@ class CrewDetailVC: BaseVC {
         setStyle()
         setDelegate()
         setCellRegister()
-        CrewDetailTV.rowHeight = UITableView.automaticDimension
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         crewDetailDataManager.getCrewDetail(delegate: self)
     }
-    
+
     func setStyle() {
         // 테이블 뷰 경계션 없애기
         CrewDetailTV.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
@@ -61,6 +60,8 @@ class CrewDetailVC: BaseVC {
         registerBtn.tintColor = .wht
         registerBtn.backgroundColor = .main
         registerBtn.makeRounded(cornerRadius: 8.adjusted)
+        
+        
     }
     // 스크롤 시 선 감지
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -157,12 +158,23 @@ extension CrewDetailVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 600
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 211
+        }
+        else {
+            return UITableView.automaticDimension
+        }
+    }
+
     // 셀
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailCrewImgTVCell.identifier) as? DetailCrewImgTVCell else{
                 return UITableViewCell()
             }
+            
             switch detailInfo?.sportsID {
             case 1:
                 if detailInfo?.crewImage == nil {
@@ -173,21 +185,21 @@ extension CrewDetailVC: UITableViewDelegate, UITableViewDataSource {
                 }
             case 2:
                 if detailInfo?.crewImage == nil {
-                    cell.mainImgView.image = UIImage(named: "imgBaskThumb")
+                    cell.mainImgView.image = UIImage(named: "imgBadThumb")
                 }
                 else {
                     cell.mainImgView.sd_setImage(with: URL(string: detailInfo?.crewImage ?? ""))
                 }
             case 3:
                 if detailInfo?.crewImage == nil {
-                    cell.mainImgView.image = UIImage(named: "imgBadThumb")
+                    cell.mainImgView.image = UIImage(named: "imgVollThumb")
                 }
                 else {
                     cell.mainImgView.sd_setImage(with: URL(string: detailInfo?.crewImage ?? ""))
                 }
             case 4:
                 if detailInfo?.crewImage == nil {
-                    cell.mainImgView.image = UIImage(named: "imgVollThumb")
+                    cell.mainImgView.image = UIImage(named: "imgBaskThumb")
                 }
                 else {
                     cell.mainImgView.sd_setImage(with: URL(string: detailInfo?.crewImage ?? ""))
@@ -209,25 +221,38 @@ extension CrewDetailVC: UITableViewDelegate, UITableViewDataSource {
             default:
                 break
             }
+            
+            // 핀업이 됐을 때 안됐을 때
+            if detailInfo?.isPinUp == true {
+                cell.status = true
+                cell.pinBtn.setImage(UIImage(named: "selecPin"), for: .normal)
+            }
+            else {
+                cell.status = false
+                cell.pinBtn.setImage(UIImage(named: "pin"), for: .normal)
+            }
+            
             return cell
-        } else if indexPath.section == 1 {
+        }
+        if indexPath.section == 1 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailCrewTitleTVCell.identifier) as? DetailCrewTitleTVCell else{
                 return UITableViewCell()
             }
+            
             // 스포츠 아이디 라벨에 맞게
             switch detailInfo?.sportsID {
             case 1:
                 cell.tagLabel.text = "축구/풋살"
                 cell.tagView.backgroundColor = .sub04
             case 2:
-                cell.tagLabel.text = "농구"
-                cell.tagView.backgroundColor = .sub02
-            case 3:
                 cell.tagLabel.text = "배드민턴"
                 cell.tagView.backgroundColor = .sub03
-            case 4:
+            case 3:
                 cell.tagLabel.text = "배구"
                 cell.tagView.backgroundColor = .sub01
+            case 4:
+                cell.tagLabel.text = "농구"
+                cell.tagView.backgroundColor = .sub02
             case 5:
                 cell.tagLabel.text = "등산"
                 cell.tagView.backgroundColor = .sub06
@@ -237,13 +262,14 @@ extension CrewDetailVC: UITableViewDelegate, UITableViewDataSource {
             default:
                 break
             }
+            
             // 무조건 있는 값들
             cell.titleLabel.text = detailInfo?.clubTitle
             cell.tagLabel.textColor = .wht
             
             // 지역이 없을 때
             if detailInfo?.areaName == nil {
-                cell.locationLabel.text = "지역미정"
+                cell.locationLabel.text = "장소미정"
             } else {
                 cell.locationLabel.text = detailInfo?.areaName
             }
@@ -254,50 +280,29 @@ extension CrewDetailVC: UITableViewDelegate, UITableViewDataSource {
                 cell.moneyLabel[0].textColor = .bk
             }
             else {
-                cell.moneyLabel[0].text = "정기회비" + " " + String(detailInfo?.dues ?? 0)
+                cell.moneyLabel[0].text = "정기회비" + " " + String(detailInfo?.dues ?? 0) + "원"
             }
-            
+
             // 손님비가 없을 때
             if detailInfo?.guestDues == nil {
                 cell.moneyLabel[1].text = "손님비가 없어요."
             }
             else {
-                cell.moneyLabel[1].text = "손님비" + " " + String(detailInfo?.guestDues ?? 0)
-            }
-            
-            // 스케줄에서 요일이 없다면
-            if detailInfo?.schedules == nil {
-                cell.dayLabel[0].isHidden = true
-                cell.dayLabel[1].isHidden = true
-                cell.dayLabel[2].isHidden = true
-            }
-            else {
-                cell.dayLabel[indexPath.row].isHidden = false
-                cell.dayLabel[indexPath.row].text = String(detailInfo?.schedules?[indexPath.row].day ?? "") + " " + stringDate(doubleDate: detailInfo?.schedules?[indexPath.row].startTime ?? 0) + " - " + stringDate(doubleDate: detailInfo?.schedules?[indexPath.row].endTime ?? 0)
-            }
-           
-            // 정기회비 없을 수 있음
-            if detailInfo?.dues == nil {
-                cell.moneyLabel[0].isHidden = true
-            }
-            else {
-                cell.moneyLabel[0].isHidden = false
-                cell.moneyLabel[0].text = "정기회비" + " " + String(detailInfo?.dues ?? 0) + "원"
-            }
-            // 손님비 없을 수 있음
-            if detailInfo?.guestDues == nil {
-                cell.moneyLabel[1].isHidden = true
-            }
-            else {
-                cell.moneyLabel[1].isHidden = false
                 cell.moneyLabel[1].text = "손님비" + " " + String(detailInfo?.guestDues ?? 0) + "원"
             }
+            
+            
+            cell.dayLabel[indexPath.row].text = String(detailInfo?.schedules?[indexPath.row].day ?? "") + " " + stringDate(doubleDate: detailInfo?.schedules?[indexPath.row].startTime ?? 0) + " - " + stringDate(doubleDate: detailInfo?.schedules?[indexPath.row].endTime ?? 0)
+            
+            cell.dayLabel[1].isHidden = true
+            cell.dayLabel[2].isHidden = true
             
             return cell
         } else if indexPath.section == 2 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailCrewIntroduceTVCell.identifier) as? DetailCrewIntroduceTVCell else{
                 return UITableViewCell()
             }
+            
             cell.titleLabel.text = "소개"
             // 인원이 없을 때
             if detailInfo?.memberCount == nil {
@@ -385,6 +390,8 @@ extension CrewDetailVC {
         print("크루 디테일 조회 데이터가 성공적으로 들어왔습니다.")
 //        UserDefaults.standard.string(forKey: "clubID")
         self.detailInfo = result
+        print("정기회비", result.dues)
+        print("손님비", result.guestDues)
         CrewDetailTV.reloadData()
     }
 

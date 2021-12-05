@@ -42,6 +42,7 @@ class SignUpUserInfo {
     var schedules: [ScheduleList]?
     // 크루만들기 포토부분
     var photo : UIImage?
+    var basicphoto : UIImage?
     var title : String?
     var crewInfo : String?
     var materials : String?
@@ -77,6 +78,7 @@ class SignUpUserInfo {
     // 사진부분
     var bungaeTitle, bungaeIntroduction, bungaeInquiries, bungaeMaterials :  String?
     var bungaePhoto : UIImage?
+    var bungaeBasicPhoto : UIImage?
     //모집인원
     var bungaeCount : Int?
     // 참여비

@@ -14,8 +14,7 @@ struct BungaeDetailService {
     func getBungaeDetail(delegate: BungaeDetailVC) {
 
         let urlString : String
-        
-        if let impromptuId = UserDefaults.standard.string(forKey: "impromptuId") {
+        if let impromptuId = UserDefaults.standard.string(forKey: "impromptuID") {
             urlString = "https://prod.wupitch.site/app/impromptus/\(impromptuId)"
         }
         else {

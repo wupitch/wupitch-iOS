@@ -1,9 +1,9 @@
 {
   "images" : [
     {
+      "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "chrt01.png",
-      "idiom" : "universal"
+      "filename" : "chrt01.png"
     },
     {
       "scale" : "2x",
@@ -11,9 +11,9 @@
       "filename" : "chrt01@2x.png"
     },
     {
-      "filename" : "chrt01@3x.png",
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "chrt01@3x.png"
     }
   ],
   "info" : {

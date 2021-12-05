@@ -37,36 +37,14 @@ class MakeBungaePhotoVC: UIViewController {
         placeholderSetting()
         tapGesture()
         setBasicImage()
-        setKeyboard()
+        //setKeyboard()
     }
    
     private func setBasicImage() {
         basicImage = UIImage(named: "imgBungaeThumb")
     }
     
-    private func setKeyboard() {
-        // 키보드 show
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        
-        // 키보드 hide
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    // 키보드 올라가는거
-    @objc func keyboardWillShow(_ sender: Notification) {
-           let userInfo:NSDictionary = sender.userInfo! as NSDictionary
-           let keyboardFrame:NSValue = userInfo.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue
-           let keyboardRectangle = keyboardFrame.cgRectValue
-           let keyboardHeight = keyboardRectangle.height
-           keyHeight = keyboardHeight
-
-           self.view.frame.size.height -= keyboardHeight
-       }
-    
-    // 키보드 내리는거 (원래 상태로 복귀)
-    @objc func keyboardWillHide(_ sender: Notification) {
-           self.view.frame.size.height += keyHeight!
-       }
+   
     
     private func setStyle() {
         titleTextField.delegate = self
@@ -122,7 +100,7 @@ class MakeBungaePhotoVC: UIViewController {
         if let _ = SignUpUserInfo.shared.bungaeIntroduction,
            let _ = SignUpUserInfo.shared.bungaeInquiries,
            let _ = SignUpUserInfo.shared.bungaeTitle,
-           let _ = SignUpUserInfo.shared.bungaePhoto {
+           photoImageView.image != nil {
             nextBtn.backgroundColor = .main
         } else {
             nextBtn.backgroundColor = .gray03
@@ -143,7 +121,7 @@ class MakeBungaePhotoVC: UIViewController {
         }
         let defaultImage = UIAlertAction(title: "기본 이미지 사용", style: .default) { [weak self] _ in
             self?.photoImageView.image = self?.basicImage
-            SignUpUserInfo.shared.bungaePhoto = self?.photoImageView.image
+            SignUpUserInfo.shared.bungaeBasicPhoto = self?.photoImageView.image
             self?.imageLabel.isHidden = true
             self?.plusImageVIew.isHidden = true
         }

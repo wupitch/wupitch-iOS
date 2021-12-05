@@ -228,6 +228,9 @@ class MakeCrewDateVC: UIViewController {
             check()
         }
     }
+    @IBAction func touchUpBackBtn(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 extension MakeCrewDateVC : DateDelegate {

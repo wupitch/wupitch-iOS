@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BungaeTitleCVCell: UICollectionViewCell {
+class BungaeTitleCVCell: UITableViewCell {
 
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var moneyLabel: UILabel!

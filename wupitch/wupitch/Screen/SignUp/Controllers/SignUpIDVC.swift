@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 // 신분증 인증 뷰
 class SignUpIDVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -27,6 +28,16 @@ class SignUpIDVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         setStyle()
     }
     
+    func checkCameraPermission(){
+        AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
+            if granted {
+                print("Camera: 권한 허용")
+            } else {
+                print("Camera: 권한 거부")
+            }
+        })
+     }
+    
     private func setStyle() {
         // title Label
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24.adjusted)
@@ -41,6 +52,8 @@ class SignUpIDVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         // photo Btn
         photoBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
         photoBtn.makeRounded(cornerRadius: 8.adjusted)
+        photoBtn.backgroundColor = .bk
+        photoBtn.tintColor = .wht
         
         // Label
         firstContentsLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
@@ -72,6 +85,7 @@ class SignUpIDVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     // 신분증 인증 버튼
     @IBAction func touchUpPhotoBtn(_ sender: Any) {
+        checkCameraPermission()
         
         let storyboard = UIStoryboard.init(name: "SignUpCamera", bundle: nil)
         guard let dvc = storyboard.instantiateViewController(identifier: "SignUpCameraVC") as? SignUpCameraVC else {return}

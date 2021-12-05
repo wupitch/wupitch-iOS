@@ -28,7 +28,6 @@ class SignUpTermsVC: UIViewController {
     // 보기 버튼
     @IBOutlet weak var firstMoreBtn: UIButton!
     @IBOutlet weak var secMoreBtn: UIButton!
-    @IBOutlet weak var thirdMoreBtn: UIButton!
     
     // 동의 버튼
     @IBOutlet weak var allAgreeBtn: CheckBtn!

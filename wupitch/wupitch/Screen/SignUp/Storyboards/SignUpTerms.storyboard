@@ -132,20 +132,6 @@
                                     <constraint firstItem="l9s-fq-TCs" firstAttribute="leading" secondItem="eef-7l-IxS" secondAttribute="leading" id="uPA-eV-Ph7"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ol7-iP-bZt" customClass="NextBtn" customModule="wupitch" customModuleProvider="target">
-                                <rect key="frame" x="20" y="766" width="375" height="52"/>
-                                <color key="backgroundColor" red="0.76078431372549016" green="0.76084238290786743" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="Pdc-BT-9rp"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="다음 (1/4)"/>
-                                <connections>
-                                    <action selector="touchUpNextBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mJC-ab-86f"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9U-rh-g9c" customClass="CheckBtn" customModule="wupitch" customModuleProvider="target">
                                 <rect key="frame" x="20" y="290.5" width="24" height="24"/>
                                 <constraints>
@@ -161,6 +147,18 @@
                                 <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbr-Wy-rUQ" customClass="NextBtn" customModule="wupitch" customModuleProvider="target">
+                                <rect key="frame" x="20" y="760" width="375" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="STm-RH-XKa"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" secondItem="Lbr-Wy-rUQ" secondAttribute="height" multiplier="336:52" id="tqe-qg-n4M"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="다음 (1/4)"/>
+                                <connections>
+                                    <action selector="touchUpNextBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7NP-IO-WWn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -168,19 +166,19 @@
                             <constraint firstItem="HM5-6j-zjx" firstAttribute="centerY" secondItem="N9U-rh-g9c" secondAttribute="centerY" id="1ka-uK-eSE"/>
                             <constraint firstItem="mfa-Mf-9Lk" firstAttribute="top" secondItem="Bjd-AK-Vjq" secondAttribute="bottom" constant="8" id="2Jn-ub-HCi"/>
                             <constraint firstItem="N9U-rh-g9c" firstAttribute="top" secondItem="mfa-Mf-9Lk" secondAttribute="bottom" constant="73" id="3Tf-tW-CJM"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ol7-iP-bZt" secondAttribute="trailing" constant="19" id="4Rm-aS-u82"/>
                             <constraint firstItem="27l-Gv-4V1" firstAttribute="top" secondItem="HM5-6j-zjx" secondAttribute="bottom" constant="11" id="6wW-Ef-ozy"/>
                             <constraint firstItem="mfa-Mf-9Lk" firstAttribute="leading" secondItem="Bjd-AK-Vjq" secondAttribute="leading" id="7oh-bT-WPh"/>
                             <constraint firstItem="27l-Gv-4V1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="8J6-6B-IUX"/>
                             <constraint firstItem="Bjd-AK-Vjq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Aly-MI-nQn"/>
                             <constraint firstItem="Yo1-WG-g9p" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="DEt-6H-FtS"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Ol7-iP-bZt" secondAttribute="bottom" constant="44" id="Q9a-s5-Ehh"/>
+                            <constraint firstItem="Lbr-Wy-rUQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Dfw-xA-d2w"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Lbr-Wy-rUQ" secondAttribute="bottom" constant="44" id="GN2-TR-KLx"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Lbr-Wy-rUQ" secondAttribute="trailing" constant="19" id="P3G-nS-SrX"/>
                             <constraint firstItem="Bjd-AK-Vjq" firstAttribute="top" secondItem="Yo1-WG-g9p" secondAttribute="bottom" constant="42" id="gPc-pI-0hc"/>
                             <constraint firstItem="pb5-mL-xMo" firstAttribute="leading" secondItem="N9U-rh-g9c" secondAttribute="leading" id="jCl-F3-eFg"/>
                             <constraint firstAttribute="bottom" secondItem="27l-Gv-4V1" secondAttribute="bottom" id="oIZ-WW-l9d"/>
                             <constraint firstItem="HM5-6j-zjx" firstAttribute="leading" secondItem="N9U-rh-g9c" secondAttribute="trailing" constant="8" id="qI6-5W-gKB"/>
                             <constraint firstItem="Yo1-WG-g9p" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="qRN-S9-HGC"/>
-                            <constraint firstItem="Ol7-iP-bZt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="two-y5-ktd"/>
                             <constraint firstItem="27l-Gv-4V1" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ybh-9T-NE1"/>
                             <constraint firstItem="N9U-rh-g9c" firstAttribute="leading" secondItem="mfa-Mf-9Lk" secondAttribute="leading" id="yhE-PF-BZa"/>
                         </constraints>
@@ -193,7 +191,7 @@
                         <outlet property="firstLabel" destination="HM5-6j-zjx" id="s74-Nt-GlM"/>
                         <outlet property="firstMoreBtn" destination="e4w-j8-Hwa" id="RmI-SS-kxg"/>
                         <outlet property="fourthLabel" destination="2JV-AA-vGA" id="3Kt-Ja-xh2"/>
-                        <outlet property="nextBtn" destination="Ol7-iP-bZt" id="lgc-Y7-tJP"/>
+                        <outlet property="nextBtn" destination="Lbr-Wy-rUQ" id="pIu-RP-wlk"/>
                         <outlet property="secMoreBtn" destination="AAC-cq-HHS" id="Dyd-QR-MEk"/>
                         <outlet property="secondLabel" destination="lXh-CD-HBY" id="QWK-Dh-OAC"/>
                         <outlet property="thirdLabel" destination="KMm-zc-F7B" id="dXm-jx-kuS"/>

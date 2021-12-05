@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class BungaeVC: BaseVC {
 
@@ -19,8 +20,8 @@ class BungaeVC: BaseVC {
     
     lazy var bungaeAreaFilterDataManager = LookUpBungaeAreaFiletrService()
     lazy var bungaeDataManager = LookUpBungeService()
-    var lookUpBungaeResult : LookUpBungaeResult?
-    var schedule : LookUpBungaeContent?
+    var lookUpBungaeResult : [LookUpBungaeContent] = []
+//    var schedule : LookUpBungaeContent?
     var bungaeAreaDict = [String:[Any]]()
     var bungaeAreaName : LookUpBungaeFilterResult?
     
@@ -50,6 +51,7 @@ class BungaeVC: BaseVC {
         bungaeCV.delegate = self
         bungaeCV.dataSource = self
         bungaeCV.register(BungaeCVCell.nib(), forCellWithReuseIdentifier: BungaeCVCell.identifier)
+        bungaeCV.register(ReadyCVCell.nib(), forCellWithReuseIdentifier: ReadyCVCell.identifier)
     }
     
     // MARK: FloatingView tap gesture
@@ -121,74 +123,107 @@ class BungaeVC: BaseVC {
 
 extension BungaeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return lookUpBungaeResult?.content.count ?? 0
+        if lookUpBungaeResult.count > 1 {
+            return lookUpBungaeResult.count
+        }
+        else {
+            return 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BungaeCVCell.identifier, for: indexPath) as? BungaeCVCell else{
-            return UICollectionViewCell()
-        }
-        
-        // 디데이 숫자가 1일때만 백그라운드 색 진하게
-        if  lookUpBungaeResult?.content[indexPath.row].dday == 1 {
-            cell.tagNameView.backgroundColor = .bk
-            cell.tagNameLabel.textColor = .wht
+        if lookUpBungaeResult.count > 1 {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BungaeCVCell.identifier, for: indexPath) as? BungaeCVCell else{
+                return UICollectionViewCell()
+            }
+            
+            // 디데이 숫자가 1일때만 백그라운드 색 진하게
+            if  lookUpBungaeResult[indexPath.row].dday == 1 {
+                cell.tagNameView.backgroundColor = .bk
+                cell.tagNameLabel.textColor = .wht
+            }
+            else {
+                cell.tagNameView.backgroundColor = .gray03
+                cell.tagNameLabel.textColor = .wht
+            }
+            
+            // 셀이미지
+            if lookUpBungaeResult[indexPath.row].impromptuImage == nil {
+                cell.imageView.image = UIImage(named: "imgBungae")
+            }
+            else {
+                cell.imageView.sd_setImage(with: URL(string: lookUpBungaeResult[indexPath.row].impromptuImage ?? ""))
+            }
+            
+            cell.tagNameLabel.text = String("D-") + String(lookUpBungaeResult[indexPath.row].dday)
+            
+            cell.titleLabel.text = lookUpBungaeResult[indexPath.row].title
+            cell.dayLabel.text = String(lookUpBungaeResult[indexPath.row].date) + " " + String(lookUpBungaeResult[indexPath.row].day) + " " + stringDate(doubleDate: Double(lookUpBungaeResult[indexPath.row].startTime ?? 0))
+            cell.subLabel.text = lookUpBungaeResult[indexPath.row].location
+            cell.bungaeCountLabel.text = String(lookUpBungaeResult[indexPath.row].nowMemberCount ) + "/" + String(lookUpBungaeResult[indexPath.row].recruitmentCount)
+            
+            // 핀업버튼이 true일 때
+            if lookUpBungaeResult[indexPath.row].isPinUp == true {
+                cell.pinImageView.isHidden = false
+            }
+            else {
+                cell.pinImageView.isHidden = true
+            }
+            return cell
         }
         else {
-            cell.tagNameView.backgroundColor = .gray03
-            cell.tagNameLabel.textColor = .wht
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReadyCVCell.identifier, for: indexPath) as? ReadyCVCell else{
+                return UICollectionViewCell()
+            }
+            cell.readyLabel.text = "번개가 없어요."
+            return cell
         }
-       
-        cell.tagNameLabel.text = String("D-") + String(lookUpBungaeResult?.content[indexPath.row].dday ?? -1)
-        
-        cell.titleLabel.text = lookUpBungaeResult?.content[indexPath.row].title
-        cell.dayLabel.text = String(schedule?.date ?? "21.00.00") + " " + String(schedule?.day ?? "") + " " + stringDate(doubleDate: Double(schedule?.startTime ?? 0))
-        cell.subLabel.text = lookUpBungaeResult?.content[indexPath.row].location
-        cell.bungaeCountLabel.text = String(lookUpBungaeResult?.content[indexPath.row].nowMemberCount ?? -1) + "/" + String(lookUpBungaeResult?.content[indexPath.row].recruitmentCount ?? -1)
-        
-        // 핀업버튼이 true일 때
-        if lookUpBungaeResult?.content[indexPath.row].isPinUp == true {
-            cell.pinImageView.isHidden = false
-        }
-        else {
-            cell.pinImageView.isHidden = true
-        }
-        
-        
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        // 유저디폴트에 번개 아이디 저장
-        UserDefaults.standard.set(lookUpBungaeResult?.content[indexPath.row].impromptuID, forKey: "impromptuID")
-        
-        // cell 누르면 해당 디테일 페이지로 이동
-        let storyboard = UIStoryboard.init(name: "BungaeDetail", bundle: nil)
-        
-        guard let dvc = storyboard.instantiateViewController(identifier: "BungaeDetailVC") as? BungaeDetailVC else {return}
-        
-        dvc.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(dvc, animated: true)
+        if lookUpBungaeResult.count > 1 {
+            // 유저디폴트에 번개 아이디 저장
+            UserDefaults.standard.set(lookUpBungaeResult[indexPath.row].impromptuID, forKey: "impromptuID")
+            
+            // cell 누르면 해당 디테일 페이지로 이동
+            let storyboard = UIStoryboard.init(name: "BungaeDetail", bundle: nil)
+            
+            guard let dvc = storyboard.instantiateViewController(identifier: "BungaeDetailVC") as? BungaeDetailVC else {return}
+            
+            dvc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(dvc, animated: true)
+        }
+        else {
+            print("값이 없어요.")
+        }
     }
     
     // MARK: - collectionView size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = self.view.frame.width
-        //let height =  collectionView.frame.height
-        
-        
-        return CGSize(width: width-40, height: 150)
+        if lookUpBungaeResult.count > 1 {
+            let width = self.view.frame.width
+            return CGSize(width: width-40, height: 150)
+        }
+        else {
+            let width = self.view.frame.width
+            let height =  collectionView.frame.height
+            return CGSize(width: width, height: height)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
                         UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 12, left: 0, bottom: 0, right: 0)
+        if lookUpBungaeResult.count > 1 {
+            return UIEdgeInsets(top: 12, left: 0, bottom: 0, right: 0)
+        }
+        else {
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
     }
 }
-
 
 // MARK: - Extension (Modal Delegate)
 extension BungaeVC: ModalDelegate {
@@ -221,7 +256,7 @@ extension BungaeVC {
     // 번개 조회 api
     func didSuccessLookUpBungae(result: LookUpBungaeResult) {
         print("번개조회데이터가 성공적으로 들어왔습니다.")
-        lookUpBungaeResult = result
+        lookUpBungaeResult = result.content
         bungaeCV.reloadData()
     }
     // 번개 지역 필터 조회 api

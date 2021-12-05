@@ -104,7 +104,7 @@
                                 <rect key="frame" x="0.0" y="89" width="414" height="800"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RNp-w7-hEe">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="937"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1101"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nAJ-yd-ND7">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="213"/>
@@ -270,9 +270,9 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7L-nZ-Pcd">
-                                                <rect key="frame" x="0.0" y="901" width="414" height="36"/>
+                                                <rect key="frame" x="0.0" y="901" width="414" height="200"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="36" id="oIw-Ds-XtC"/>
+                                                    <constraint firstAttribute="height" constant="200" id="oIw-Ds-XtC"/>
                                                 </constraints>
                                             </view>
                                         </subviews>

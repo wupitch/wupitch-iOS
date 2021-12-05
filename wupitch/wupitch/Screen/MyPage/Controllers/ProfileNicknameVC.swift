@@ -85,6 +85,7 @@ class ProfileNicknameVC: UIViewController {
             // 싱글톤에 닉네임, 자기소개 넣어주기
             SignUpUserInfo.shared.nickname = nickNameTextField.text
             SignUpUserInfo.shared.introduce = infoTextView.text
+            UserDefaults.standard.set(infoTextView.text, forKey: "introduce")
             print("닉네임 >>>>>>>>>>", SignUpUserInfo.shared.nickname ?? "값이 없어요!")
             print("자기소개 >>>>>>>>>>", SignUpUserInfo.shared.introduce ?? "값이 없어요!")
             

@@ -38,6 +38,7 @@ class DetailCrewInquireCVCell: UITableViewCell {
         thirdContentLabel.textColor = .bk
         thirdContentLabel.setTextWithLineHeight(text: thirdContentLabel.text, lineHeight: 22.adjusted)
 
+
     }
     
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BungaeIntroduceCVCell: UICollectionViewCell {
+class BungaeIntroduceCVCell: UITableViewCell {
 
     @IBOutlet weak var contentsLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!

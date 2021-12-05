@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Photos
 
 class SignUpCameraVC: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
@@ -38,7 +39,6 @@ class SignUpCameraVC: UIViewController, UIImagePickerControllerDelegate,UINaviga
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         addCameraInView()
         pictureBtn.makeRounded(cornerRadius: nil)
     }

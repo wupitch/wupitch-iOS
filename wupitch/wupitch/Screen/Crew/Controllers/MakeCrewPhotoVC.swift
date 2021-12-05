@@ -39,7 +39,7 @@ class MakeCrewPhotoVC: UIViewController {
         placeholderSetting()
         tapGesture()
         setBasicImage()
-        setKeyboard()
+        //setKeyboard()
     }
     
     private func setBasicImage() {
@@ -99,29 +99,29 @@ class MakeCrewPhotoVC: UIViewController {
     
     
     
-    private func setKeyboard() {
-        // 키보드 show
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        
-        // 키보드 hide
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    // 키보드 올라가는거
-    @objc func keyboardWillShow(_ sender: Notification) {
-           let userInfo:NSDictionary = sender.userInfo! as NSDictionary
-           let keyboardFrame:NSValue = userInfo.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue
-           let keyboardRectangle = keyboardFrame.cgRectValue
-           let keyboardHeight = keyboardRectangle.height
-           keyHeight = keyboardHeight
-
-           self.view.frame.size.height -= keyboardHeight
-       }
-    
-    // 키보드 내리는거 (원래 상태로 복귀)
-    @objc func keyboardWillHide(_ sender: Notification) {
-           self.view.frame.size.height += keyHeight!
-       }
+//    private func setKeyboard() {
+//        // 키보드 show
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+//
+//        // 키보드 hide
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+//    }
+//
+//    // 키보드 올라가는거
+//    @objc func keyboardWillShow(_ sender: Notification) {
+//           let userInfo:NSDictionary = sender.userInfo! as NSDictionary
+//           let keyboardFrame:NSValue = userInfo.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue
+//           let keyboardRectangle = keyboardFrame.cgRectValue
+//           let keyboardHeight = keyboardRectangle.height
+//           keyHeight = keyboardHeight
+//
+//           self.view.frame.size.height -= keyboardHeight
+//       }
+//
+//    // 키보드 내리는거 (원래 상태로 복귀)
+//    @objc func keyboardWillHide(_ sender: Notification) {
+//           self.view.frame.size.height += keyHeight!
+//       }
     
     func placeholderSetting() {
         crewInfoTextView.delegate = self
@@ -140,8 +140,7 @@ class MakeCrewPhotoVC: UIViewController {
     func checkInfoIsFilled() {
         if let _ = SignUpUserInfo.shared.crewInfo,
            let _ = SignUpUserInfo.shared.question,
-           let _ = SignUpUserInfo.shared.title,
-           let _ = SignUpUserInfo.shared.photo {
+           let _ = SignUpUserInfo.shared.title, photoImageView.image != nil {
             nextBtn.backgroundColor = .main
         } else {
             nextBtn.backgroundColor = .gray03
@@ -162,7 +161,7 @@ class MakeCrewPhotoVC: UIViewController {
         }
         let defaultImage = UIAlertAction(title: "기본 이미지 사용", style: .default) { [weak self] _ in
             self?.photoImageView.image = self?.basicImage
-            SignUpUserInfo.shared.photo = self?.photoImageView.image
+            SignUpUserInfo.shared.basicphoto = self?.photoImageView.image
             self?.imageLabel.isHidden = true
             self?.plusImageVIew.isHidden = true
         }

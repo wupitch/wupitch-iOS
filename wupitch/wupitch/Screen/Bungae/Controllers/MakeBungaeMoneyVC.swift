@@ -100,9 +100,9 @@ class MakeBungaeMoneyVC: UIViewController {
             SignUpUserInfo.shared.bungaeDues = Int(titleTextField.text ?? "") ?? nil
             print("참여비 >>>>>>>>>>>>>",SignUpUserInfo.shared.bungaeDues)
             
-            makeBungaeDataManager.postMakeBungae(MakeBungaeRequest(areaID: SignUpUserInfo.shared.bungaeSelectAreaId ?? -99, location: SignUpUserInfo.shared.bungaeLocation ?? "", date: SignUpUserInfo.shared.bungaeDate ?? "", startTime: SignUpUserInfo.shared.bungaeStartTime ?? 0.0, endTime: SignUpUserInfo.shared.bungaeEndTime ?? 0.0, title: SignUpUserInfo.shared.bungaeTitle ?? "", introduction: SignUpUserInfo.shared.bungaeIntroduction ?? "", inquiries: SignUpUserInfo.shared.bungaeInquiries ?? "", materials: SignUpUserInfo.shared.bungaeMaterials ?? "", recruitmentCount: SignUpUserInfo.shared.bungaeCount ?? -99, dues: SignUpUserInfo.shared.bungaeDues ?? -99), delegate: self)
+            makeBungaeDataManager.postMakeBungae(MakeBungaeRequest(areaID: SignUpUserInfo.shared.bungaeSelectAreaId ?? -99, location: SignUpUserInfo.shared.bungaeLocation ?? "", date: SignUpUserInfo.shared.bungaeDate ?? "", startTime: SignUpUserInfo.shared.bungaeStartTime ?? 0.0, endTime: SignUpUserInfo.shared.bungaeEndTime ?? 0.0, title: SignUpUserInfo.shared.bungaeTitle ?? "", introduction: SignUpUserInfo.shared.bungaeIntroduction ?? "", inquiries: SignUpUserInfo.shared.bungaeInquiries ?? "", materials: SignUpUserInfo.shared.bungaeMaterials ?? "준비물이 없어요.", recruitmentCount: SignUpUserInfo.shared.bungaeCount ?? -99, dues: SignUpUserInfo.shared.bungaeDues ?? 0), delegate: self)
             
-            print("제대로 나오나 확인", SignUpUserInfo.shared.bungaeSelectAreaId ?? -99, SignUpUserInfo.shared.bungaeLocation ?? "", SignUpUserInfo.shared.bungaeDate ?? "", SignUpUserInfo.shared.bungaeStartTime ?? 0.0, SignUpUserInfo.shared.bungaeEndTime ?? 0.0, SignUpUserInfo.shared.bungaeTitle ?? "", SignUpUserInfo.shared.bungaeIntroduction ?? "", SignUpUserInfo.shared.bungaeInquiries ?? "", SignUpUserInfo.shared.bungaeMaterials ?? "", SignUpUserInfo.shared.bungaeCount ?? -99, SignUpUserInfo.shared.bungaeDues ?? -99 )
+            print("제대로 나오나 확인", SignUpUserInfo.shared.bungaeSelectAreaId ?? -99, SignUpUserInfo.shared.bungaeLocation ?? "장소미정", SignUpUserInfo.shared.bungaeDate ?? "", SignUpUserInfo.shared.bungaeStartTime ?? 0.0, SignUpUserInfo.shared.bungaeEndTime ?? 0.0, SignUpUserInfo.shared.bungaeTitle ?? "", SignUpUserInfo.shared.bungaeIntroduction ?? "", SignUpUserInfo.shared.bungaeInquiries ?? "", SignUpUserInfo.shared.bungaeMaterials ?? "", SignUpUserInfo.shared.bungaeCount ?? -99, SignUpUserInfo.shared.bungaeDues ?? 0 )
         }
         else {
             nextBtn.backgroundColor = .gray03
@@ -162,6 +162,8 @@ extension MakeBungaeMoneyVC {
         let impromptuId = String(result.impromptuID)
 
         let userImage = SignUpUserInfo.shared.bungaePhoto
+        
+        UserDefaults.standard.set(result.impromptuID, forKey: "impromptuID")
 
         AF.upload(
             multipartFormData: { MultipartFormData in

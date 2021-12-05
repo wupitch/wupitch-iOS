@@ -28,7 +28,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         // 유저 토큰이 있을 때, 홈으로 이동(자동로그인)
-        // 여기다 알림이 왔을때 어떻게 할지도 적자 무조건 자동로그인은안돼!!
         if let userToken = UserDefaults.standard.string(forKey: "userToken") {
             let storyboard = UIStoryboard.init(name: "Tabbar", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "TabbarVC")
@@ -36,17 +35,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window?.rootViewController = vc
             self.window?.makeKeyAndVisible()
         }
-        // 없을 때, 온보딩으로 이동
+        // 자동로그인이 아닐 경우
         else {
-            let storyboard = UIStoryboard.init(name: "Onboarding", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "OnboardingNC")
-            vc.navigationController?.pushViewController(vc, animated: true)
-            self.window?.rootViewController = vc
-            self.window?.makeKeyAndVisible()
-            
-            if UserDefaults.standard.integer(forKey: "skipIndex") > 1 {
+            // 스킵버튼을 한번이상 눌렀다면 로그인 뷰로 이동
+            if UserDefaults.standard.integer(forKey: "skipIndex") >= 1  {
                 let storyboard = UIStoryboard.init(name: "SignIn", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "SignInNC")
+                vc.navigationController?.pushViewController(vc, animated: true)
+                self.window?.rootViewController = vc
+                self.window?.makeKeyAndVisible()
+            }
+            // 스킵 버튼이 한번도 눌리지 않았다면 온보딩 뷰로 이동
+            else {
+                let storyboard = UIStoryboard.init(name: "Onboarding", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "OnboardingNC")
                 vc.navigationController?.pushViewController(vc, animated: true)
                 self.window?.rootViewController = vc
                 self.window?.makeKeyAndVisible()

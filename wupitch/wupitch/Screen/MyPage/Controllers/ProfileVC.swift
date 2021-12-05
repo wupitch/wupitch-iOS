@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import SDWebImage
+import Photos
 
 class ProfileVC: BaseVC {
 
@@ -37,6 +38,7 @@ class ProfileVC: BaseVC {
         super.viewWillAppear(animated)
         memberInfoDataManager.getMemberInfo(delegate: self)
     }
+    
     
     private func setStyle() {
         settingsBtn.forEach {

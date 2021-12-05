@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BungaeImageCVCell: UICollectionViewCell {
+class BungaeImageCVCell: UITableViewCell {
     var status : Bool = false
     lazy var bungaePinUpToggle = BungaePinupToggleService()
     @IBOutlet weak var mainImgView: UIImageView!

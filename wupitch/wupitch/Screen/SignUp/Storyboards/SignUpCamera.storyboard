@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -14,22 +14,22 @@
             <objects>
                 <viewController storyboardIdentifier="SignUpCameraVC" id="Y6W-OH-hqX" customClass="SignUpCameraVC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cTX-o9-edF">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="649.66666666666663"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="675.33333333333337"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5p1-pD-w75">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="649.66666666666663"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="675.33333333333337"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gl5-lE-0PP">
-                                <rect key="frame" x="0.0" y="137" width="375" height="246"/>
+                                <rect key="frame" x="0.0" y="142" width="390" height="256"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgGl" translatesAutoresizingMaskIntoConstraints="NO" id="IFo-5H-0E5">
-                                        <rect key="frame" x="42" y="28" width="291" height="190"/>
+                                        <rect key="frame" x="42" y="28" width="306" height="200"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -42,7 +42,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nix-ah-tqf">
-                                <rect key="frame" x="151.66666666666666" y="662" width="72" height="72"/>
+                                <rect key="frame" x="159" y="694" width="72" height="72"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="dWa-Jv-fik"/>
@@ -54,7 +54,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCl-BG-Nsm">
-                                <rect key="frame" x="335" y="54" width="24" height="24"/>
+                                <rect key="frame" x="350" y="54" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Pqq-nl-lpy"/>
                                     <constraint firstAttribute="width" constant="24" id="zC9-U3-7Xa"/>

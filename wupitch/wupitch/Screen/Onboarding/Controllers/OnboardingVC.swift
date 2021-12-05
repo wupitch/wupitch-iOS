@@ -58,15 +58,13 @@ class OnboardingVC: UIViewController {
     // MARK: - IBActions
     // 건너뛰기 버튼
     @IBAction func touchUpSkipBtn(_ sender: Any) {
+        skipIndex +=  1
+        UserDefaults.standard.set(skipIndex, forKey: "skipIndex")
+        print("스킵인덱스",UserDefaults.standard.integer(forKey: "skipIndex"))
         // 건너뛰기 버튼 누르면 로그인 페이지로 이동
         let storyboard = UIStoryboard.init(name: "SignIn", bundle: nil)
         guard let dvc = storyboard.instantiateViewController(identifier: "SignInVC") as? SignInVC else {return}
-//        skipIndex +=  1
-//        UserDefaults.standard.set(skipIndex, forKey: "skipIndex")
-//        print("스킵인덱스",UserDefaults.standard.integer(forKey: "skipIndex"))
         navigationController?.pushViewController(dvc, animated: true)
-       
-        
     }
 }
 
