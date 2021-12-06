@@ -95,6 +95,8 @@
 		DD3ACE94275D1C2600FF00ED /* FCMTestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACE93275D1C2600FF00ED /* FCMTestService.swift */; };
 		DD3ACE96275D1CCB00FF00ED /* FCMTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACE95275D1CCB00FF00ED /* FCMTestData.swift */; };
 		DD3ACE98275D1CD500FF00ED /* FCMTestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACE97275D1CD500FF00ED /* FCMTestRequest.swift */; };
+		DD3ACE9B275EA2B600FF00ED /* BungaeSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACE9A275EA2B600FF00ED /* BungaeSearchService.swift */; };
+		DD3ACE9E275EA39300FF00ED /* BungaeSearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACE9D275EA39300FF00ED /* BungaeSearchData.swift */; };
 		DD3E37B6272F432A00C4192E /* UserInfoWarningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E37B5272F432A00C4192E /* UserInfoWarningVC.swift */; };
 		DD3E37C6272F928E00C4192E /* CrewCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E37C4272F928E00C4192E /* CrewCVCell.swift */; };
 		DD3E37C7272F928E00C4192E /* CrewCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD3E37C5272F928E00C4192E /* CrewCVCell.xib */; };
@@ -400,6 +402,8 @@
 		DD3ACE93275D1C2600FF00ED /* FCMTestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMTestService.swift; sourceTree = "<group>"; };
 		DD3ACE95275D1CCB00FF00ED /* FCMTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMTestData.swift; sourceTree = "<group>"; };
 		DD3ACE97275D1CD500FF00ED /* FCMTestRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMTestRequest.swift; sourceTree = "<group>"; };
+		DD3ACE9A275EA2B600FF00ED /* BungaeSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeSearchService.swift; sourceTree = "<group>"; };
+		DD3ACE9D275EA39300FF00ED /* BungaeSearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeSearchData.swift; sourceTree = "<group>"; };
 		DD3E37B5272F432A00C4192E /* UserInfoWarningVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoWarningVC.swift; sourceTree = "<group>"; };
 		DD3E37C4272F928E00C4192E /* CrewCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewCVCell.swift; sourceTree = "<group>"; };
 		DD3E37C5272F928E00C4192E /* CrewCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrewCVCell.xib; sourceTree = "<group>"; };
@@ -968,6 +972,22 @@
 				DD3ACE91275CF03400FF00ED /* CrewAlertCell.swift */,
 			);
 			path = CrewAlertCells;
+			sourceTree = "<group>";
+		};
+		DD3ACE99275EA29F00FF00ED /* BungaeSearch */ = {
+			isa = PBXGroup;
+			children = (
+				DD3ACE9A275EA2B600FF00ED /* BungaeSearchService.swift */,
+			);
+			path = BungaeSearch;
+			sourceTree = "<group>";
+		};
+		DD3ACE9C275EA38400FF00ED /* BungaeSearch */ = {
+			isa = PBXGroup;
+			children = (
+				DD3ACE9D275EA39300FF00ED /* BungaeSearchData.swift */,
+			);
+			path = BungaeSearch;
 			sourceTree = "<group>";
 		};
 		DD3E37B7272F49B300C4192E /* Storyboards */ = {
@@ -1570,6 +1590,7 @@
 		DDC46B71275169620015341E /* Bungae */ = {
 			isa = PBXGroup;
 			children = (
+				DD3ACE99275EA29F00FF00ED /* BungaeSearch */,
 				DD65ABD42758870A00D71055 /* LookUpBungaeFileter */,
 				DD485FF0275686190071AE93 /* BungaeRegister */,
 				DD485FEA275682A10071AE93 /* BungaePinUpToggle */,
@@ -1583,6 +1604,7 @@
 		DDC46B72275169690015341E /* Bungae */ = {
 			isa = PBXGroup;
 			children = (
+				DD3ACE9C275EA38400FF00ED /* BungaeSearch */,
 				DD65ABD72758878F00D71055 /* LookUpBungaeFilter */,
 				DD485FF32756863D0071AE93 /* BungaeRegisterData */,
 				DD485FED275682D40071AE93 /* BungaePinUpToggle */,
@@ -2208,6 +2230,7 @@
 				DD3ACBB7272104D300EBC201 /* TermsOfUseVC.swift in Sources */,
 				DDC4DAFA2743D1C000D79CC8 /* SignUpCameraVC.swift in Sources */,
 				DD3ACE87275C632800FF00ED /* GuestRegisterData.swift in Sources */,
+				DD3ACE9E275EA39300FF00ED /* BungaeSearchData.swift in Sources */,
 				DD7BEBCF27315E1900DB2F60 /* DtailCrewContentTVCell.swift in Sources */,
 				DD3A30D5272DA75400D711C6 /* TabbarVC.swift in Sources */,
 				DD6728432725563A001E1355 /* UIView.swift in Sources */,
@@ -2280,6 +2303,7 @@
 				DD3A30CC272DA37100D711C6 /* AppleLoginRequest.swift in Sources */,
 				DD485F7727530A620071AE93 /* MemberPhoneNumberData.swift in Sources */,
 				DDED0124271BDCD700C2C343 /* OnboardingCVCell.swift in Sources */,
+				DD3ACE9B275EA2B600FF00ED /* BungaeSearchService.swift in Sources */,
 				DD3A30F2272DB07500D711C6 /* JoinCompleteVC.swift in Sources */,
 				DD485FC42755DDD80071AE93 /* ProfileNicknameService.swift in Sources */,
 				DD3ACE82275C5F8300FF00ED /* CrewSearchData.swift in Sources */,

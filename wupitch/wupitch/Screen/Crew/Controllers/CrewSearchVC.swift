@@ -21,6 +21,7 @@ class CrewSearchVC: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var backBtn: UIButton!
     
+    lazy var bungaeSearchDataManager = BungaeSearchService()
     lazy var crewSearchDataManager = CrewSearchService()
     var tabPage = [tabEnum.crew, tabEnum.bungae]
     var passwordEyeBtn = UIButton(type: .system)
@@ -33,9 +34,7 @@ class CrewSearchVC: UIViewController, UISearchBarDelegate {
         crewSearchCV.delegate = self
         crewSearchCV.dataSource = self
         searchTextField.delegate = self
-        
-        searchTextField.addTarget(self, action: #selector(searchData), for: .editingChanged)
-        
+                
         self.crewSearchCV.register(CrewSearchCVCell.nib(), forCellWithReuseIdentifier: CrewSearchCVCell.identifier)
 
         crewBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
@@ -51,11 +50,12 @@ class CrewSearchVC: UIViewController, UISearchBarDelegate {
         searchTextField.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
         searchTextField.textColor = .gray03
         searchTextField.addPadding()
+        
+        searchTextField.addTarget(self, action: #selector(searchData), for: .editingChanged)
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    
-
     }
     
 //    override func viewWillAppear(_ animated: Bool) {
@@ -70,7 +70,12 @@ class CrewSearchVC: UIViewController, UISearchBarDelegate {
 //       }
    
     @objc private func searchData() {
-        crewSearchDataManager.getCrewSearch(keyword: searchTextField.text ?? "값없똥", delegate: self)
+        if crewBtn.titleLabel?.font == UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted) {
+            crewSearchDataManager.getCrewSearch(keyword: searchTextField.text ?? "값없똥", delegate: self)
+        }
+        else if bungaeBtn.titleLabel?.font == UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted) {
+            bungaeSearchDataManager.getBungaeSearch(keyword: searchTextField.text ?? "값없똥", delegate: self)
+        }
     }
     
     // cancel btn
@@ -143,11 +148,7 @@ extension CrewSearchVC : UICollectionViewDelegate, UICollectionViewDataSource, U
                    return UICollectionViewCell()
                }
         cell.tabBar = tabPage[indexPath.row]
-        
-        if cell.tabBar == tabPage[0] {
-            
-        }
-//        cell.searchDelegate = self
+
         return cell
     }
     
@@ -181,6 +182,15 @@ extension CrewSearchVC {
         //print("싱글턴갯수", SignUpUserInfo.shared.crewSearchContent.count)
         NotificationCenter.default.post(name: Notification.Name("reloadSection"), object: nil)
     }
+    
+    // 번개 검색 api
+    func didSuccessBungaeSearch(result: BungaeSearchResult) {
+        print("번개 검색 데이터가 성공적으로 들어왔습니다.")
+        SignUpUserInfo.shared.bungaeSearchContent = result.content
+        print("싱글턴", SignUpUserInfo.shared.bungaeSearchContent)
+        NotificationCenter.default.post(name: Notification.Name("reloadBungaeSection"), object: nil)
+    }
+    
     func failedToRequest(message: String) {
         print("데이터가 들어오지 않았습니다.")
     }

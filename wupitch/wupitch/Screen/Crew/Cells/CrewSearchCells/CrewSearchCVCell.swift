@@ -16,7 +16,6 @@ class CrewSearchCVCell: UICollectionViewCell {
     }
     
     @IBOutlet weak var crewSearchCV: UICollectionView!
-//    var searchDelegate : SearchTextDelegate?
     var tabBar : tabEnum?
     var crewSearch : CrewSearchResult?
     
@@ -25,17 +24,22 @@ class CrewSearchCVCell: UICollectionViewCell {
         
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveTestNotification(_:)), name: NSNotification.Name("reloadSection"), object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveNotification(_:)), name: NSNotification.Name("reloadBungaeSection"), object: nil)
+        
         crewSearchCV.delegate = self
         crewSearchCV.dataSource = self
         self.crewSearchCV.register(CrewCVCell.nib(), forCellWithReuseIdentifier: CrewCVCell.identifier)
-        //self.crewSearchCV.register(BungaeCVCell.nib(), forCellWithReuseIdentifier: BungaeCVCell.identifier)
+        self.crewSearchCV.register(BungaeCVCell.nib(), forCellWithReuseIdentifier: BungaeCVCell.identifier)
         self.crewSearchCV.register(ReadyCVCell.nib(), forCellWithReuseIdentifier: ReadyCVCell.identifier)
     }
     
     @objc func didRecieveTestNotification(_ notification: Notification) {
         crewSearchCV.reloadSections(IndexSet(integer: 0))
      }
-     
+    
+    @objc func didRecieveNotification(_ notification: Notification) {
+        crewSearchCV.reloadSections(IndexSet(integer: 0))
+     }
     
     func stringDate(doubleDate: Double) -> String {
         let doubleToString = String(doubleDate)
@@ -52,7 +56,7 @@ extension CrewSearchCVCell : UICollectionViewDelegate, UICollectionViewDelegateF
             return SignUpUserInfo.shared.crewSearchContent.count
         }
         else {
-            return 1
+            return SignUpUserInfo.shared.bungaeSearchContent.count
         }
     }
     
@@ -154,10 +158,42 @@ extension CrewSearchCVCell : UICollectionViewDelegate, UICollectionViewDelegateF
         }
         
         else if tabBar == tabEnum.bungae {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReadyCVCell.identifier, for: indexPath) as? ReadyCVCell else{
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BungaeCVCell.identifier, for: indexPath) as? BungaeCVCell else{
                 return UICollectionViewCell()
             }
             print("번개 눌렸을")
+            // 디데이 숫자가 1일때만 백그라운드 색 진하게
+            if  SignUpUserInfo.shared.bungaeSearchContent[indexPath.row].dday == 1 {
+                cell.tagNameView.backgroundColor = .bk
+                cell.tagNameLabel.textColor = .wht
+            }
+            else {
+                cell.tagNameView.backgroundColor = .gray03
+                cell.tagNameLabel.textColor = .wht
+            }
+            
+            // 셀이미지
+            if SignUpUserInfo.shared.bungaeSearchContent[indexPath.row].impromptuImage == nil {
+                cell.imageView.image = UIImage(named: "imgBungae")
+            }
+            else {
+                cell.imageView.sd_setImage(with: URL(string: SignUpUserInfo.shared.bungaeSearchContent[indexPath.row].impromptuImage ?? ""))
+            }
+            
+            cell.tagNameLabel.text = String("D-") + String(SignUpUserInfo.shared.bungaeSearchContent[indexPath.row].dday)
+            
+            cell.titleLabel.text = SignUpUserInfo.shared.bungaeSearchContent[indexPath.row].title
+            cell.dayLabel.text = String(SignUpUserInfo.shared.bungaeSearchContent[indexPath.row].date) + " " + String(SignUpUserInfo.shared.bungaeSearchContent[indexPath.row].day) + " " + stringDate(doubleDate: Double(SignUpUserInfo.shared.bungaeSearchContent[indexPath.row].startTime))
+            cell.subLabel.text = SignUpUserInfo.shared.bungaeSearchContent[indexPath.row].location
+            cell.bungaeCountLabel.text = String(SignUpUserInfo.shared.bungaeSearchContent[indexPath.row].nowMemberCount ) + "/" + String(SignUpUserInfo.shared.bungaeSearchContent[indexPath.row].recruitmentCount)
+            
+            // 핀업버튼이 true일 때
+            if SignUpUserInfo.shared.bungaeSearchContent[indexPath.row].isPinUp == true {
+                cell.pinImageView.isHidden = false
+            }
+            else {
+                cell.pinImageView.isHidden = true
+            }
             return cell
         }
         
@@ -170,7 +206,7 @@ extension CrewSearchCVCell : UICollectionViewDelegate, UICollectionViewDelegateF
             return CGSize(width: self.frame.width-40, height: 133)
         }
         else {
-            return CGSize(width: self.frame.width, height: self.frame.height)
+            return CGSize(width: self.frame.width-40, height: 150)
         }
     }
     
