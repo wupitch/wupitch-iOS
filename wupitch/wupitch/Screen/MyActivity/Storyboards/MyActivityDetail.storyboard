@@ -13,7 +13,7 @@
         <!--My Activity DetailVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="MyActivityDetail" id="Y6W-OH-hqX" customClass="MyActivityDetailVC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyActivityDetailVC" id="Y6W-OH-hqX" customClass="MyActivityDetailVC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,6 +44,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="more"/>
+                                <connections>
+                                    <action selector="touchUpAlertBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="eAM-v6-TJE"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="LG5-R5-CzJ">
                                 <rect key="frame" x="0.0" y="88" width="414" height="44"/>
@@ -161,6 +164,25 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWY-Sq-yOZ">
+                                <rect key="frame" x="330" y="782" width="56" height="56"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="MkB-j8-bem">
+                                        <rect key="frame" x="16" y="16" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="LwM-vk-Bzo"/>
+                                            <constraint firstAttribute="width" constant="24" id="cUf-t7-i9f"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="84B-ki-W6G"/>
+                                    <constraint firstItem="MkB-j8-bem" firstAttribute="centerY" secondItem="gWY-Sq-yOZ" secondAttribute="centerY" id="E3L-DO-OPS"/>
+                                    <constraint firstItem="MkB-j8-bem" firstAttribute="centerX" secondItem="gWY-Sq-yOZ" secondAttribute="centerX" id="KaG-PU-irw"/>
+                                    <constraint firstAttribute="width" constant="56" id="wGX-Sr-0BM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -169,12 +191,14 @@
                             <constraint firstItem="bc6-Gh-Cxo" firstAttribute="centerY" secondItem="h65-eG-EnI" secondAttribute="centerY" id="8nh-Hz-svI"/>
                             <constraint firstItem="LG5-R5-CzJ" firstAttribute="top" secondItem="h65-eG-EnI" secondAttribute="bottom" constant="10" id="C3a-TN-Z5q"/>
                             <constraint firstItem="h65-eG-EnI" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="DZT-jZ-2sP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gWY-Sq-yOZ" secondAttribute="trailing" constant="28" id="GqM-kO-69E"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="LG5-R5-CzJ" secondAttribute="trailing" id="NVE-gJ-jst"/>
                             <constraint firstItem="FqX-Fy-zIl" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Vfv-io-4cz"/>
                             <constraint firstItem="FqX-Fy-zIl" firstAttribute="centerY" secondItem="h65-eG-EnI" secondAttribute="centerY" id="gLA-sH-r67"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="3ek-MU-RqW" secondAttribute="bottom" id="jIL-us-aSr"/>
                             <constraint firstItem="LG5-R5-CzJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="lx8-AD-7b8"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bc6-Gh-Cxo" secondAttribute="trailing" constant="19" id="mtn-YV-K1t"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="gWY-Sq-yOZ" secondAttribute="bottom" constant="24" id="nXy-Br-mNT"/>
                             <constraint firstItem="3ek-MU-RqW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nf9-cf-tdP"/>
                             <constraint firstItem="3ek-MU-RqW" firstAttribute="top" secondItem="LG5-R5-CzJ" secondAttribute="bottom" id="qqi-Ng-IAR"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3ek-MU-RqW" secondAttribute="trailing" id="xEM-JP-2rX"/>
@@ -188,6 +212,7 @@
                         <outlet property="firstLineView" destination="J3s-W6-4Ot" id="qQP-Fu-a9m"/>
                         <outlet property="fourthBtn" destination="Q0b-AU-BtC" id="lG2-az-u78"/>
                         <outlet property="fourthLineView" destination="b1L-sL-jp9" id="zq7-qY-0Q7"/>
+                        <outlet property="plusVIew" destination="gWY-Sq-yOZ" id="m0H-7L-ncy"/>
                         <outlet property="secondBtn" destination="c97-6o-cJB" id="a2L-r1-6zB"/>
                         <outlet property="secondLineView" destination="HEN-j4-smG" id="7sZ-ad-wgY"/>
                         <outlet property="thirdBtn" destination="lpp-rN-nb4" id="6Yf-rL-YJH"/>
@@ -200,6 +225,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add" width="24" height="24"/>
         <image name="left" width="24" height="24"/>
         <image name="more" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">

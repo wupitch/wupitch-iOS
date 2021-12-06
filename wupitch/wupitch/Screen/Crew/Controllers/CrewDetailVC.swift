@@ -19,7 +19,7 @@ class CrewDetailVC: BaseVC {
     @IBOutlet weak var lineView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var backBtn: UIButton!
-    
+
     lazy var crewDetailDataManager = CrewDetailService()
     lazy var crewRegisterToggle = CrewRegisterService()
     var detailInfo : CrewDetailResult?
@@ -33,6 +33,7 @@ class CrewDetailVC: BaseVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         crewDetailDataManager.getCrewDetail(delegate: self)
+       
     }
 
     func setStyle() {
@@ -392,6 +393,7 @@ extension CrewDetailVC {
         self.detailInfo = result
         print("정기회비", result.dues)
         print("손님비", result.guestDues)
+        
         CrewDetailTV.reloadData()
     }
 
@@ -404,6 +406,11 @@ extension CrewDetailVC {
         print("핀업 토글이 성공적으로 들어옵니다.")
         print(result.message)
         CrewDetailTV.reloadData()
+    }
+    
+    func didSuccessGuestRegister(result: GuestRegisterData) {
+        print("게스트 참여가 성공적으로 들어옵니다.")
+        
     }
 
     func failedToRequest(message: String) {

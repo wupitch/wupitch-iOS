@@ -29,7 +29,10 @@ class ActivityCrewCVCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        setStyle()
+    }
+    
+    func setStyle() {
         tagNameView.makeRounded(cornerRadius: 12.adjusted)
         tagNameLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
         
@@ -51,5 +54,12 @@ class ActivityCrewCVCell: UICollectionViewCell {
         photoBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         crewoneBtn.setTitleColor(.bk, for: .normal)
         crewoneBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+    }
+    
+    @IBAction func touchUpBoardBtn(_ sender: Any) {
+    }
+    @IBAction func touchUpPhotoBtn(_ sender: Any) {
+    }
+    @IBAction func touchUPCrewBtn(_ sender: Any) {
     }
 }

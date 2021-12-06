@@ -58,7 +58,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4J-1o-ie3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4J-1o-ie3" customClass="CheckBtn" customModule="wupitch" customModuleProvider="target">
                                 <rect key="frame" x="20" y="262" width="60" height="24"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title=" 공지" image="grayCheck">
@@ -79,6 +79,14 @@
                                     <action selector="touchUpNextBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ull-xd-wBB"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="공지 제목을 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4AC-j8-ZnS">
+                                <rect key="frame" x="20" y="307" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="HpF-OB-z19"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -89,13 +97,16 @@
                             <constraint firstItem="01P-i2-YcD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="7DG-mv-Qnb"/>
                             <constraint firstItem="QUq-yo-c3A" firstAttribute="centerY" secondItem="fbT-jW-SLK" secondAttribute="centerY" id="BCL-GR-M74"/>
                             <constraint firstItem="fbT-jW-SLK" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="DS3-oQ-CUj"/>
+                            <constraint firstItem="4AC-j8-ZnS" firstAttribute="trailing" secondItem="01P-i2-YcD" secondAttribute="trailing" id="FPh-5M-KMa"/>
                             <constraint firstItem="fbT-jW-SLK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="IIH-xq-xCh"/>
                             <constraint firstItem="mBs-jl-UmR" firstAttribute="top" secondItem="fbT-jW-SLK" secondAttribute="bottom" constant="9" id="TXk-qe-9Ll"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="SOh-kf-z1Z" secondAttribute="bottom" constant="12" id="Yuo-gp-Ig6"/>
                             <constraint firstItem="IZz-h5-7K7" firstAttribute="top" secondItem="01P-i2-YcD" secondAttribute="bottom" constant="4" id="Z3T-tg-h6X"/>
                             <constraint firstItem="IZz-h5-7K7" firstAttribute="trailing" secondItem="01P-i2-YcD" secondAttribute="trailing" id="Z87-MT-dpe"/>
                             <constraint firstItem="mBs-jl-UmR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dbc-eB-BJl"/>
+                            <constraint firstItem="4AC-j8-ZnS" firstAttribute="top" secondItem="W4J-1o-ie3" secondAttribute="bottom" constant="21" id="gCn-qY-viP"/>
                             <constraint firstItem="SOh-kf-z1Z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="hvD-Rh-D3M"/>
+                            <constraint firstItem="4AC-j8-ZnS" firstAttribute="leading" secondItem="W4J-1o-ie3" secondAttribute="leading" id="oi6-2g-nqR"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mBs-jl-UmR" secondAttribute="trailing" id="qqU-X2-DuD"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="01P-i2-YcD" secondAttribute="trailing" constant="19" id="rPm-9U-lPG"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="SOh-kf-z1Z" secondAttribute="trailing" constant="19" id="xwL-8t-U5i"/>
@@ -103,9 +114,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="fbT-jW-SLK" id="xSc-eC-afk"/>
                         <outlet property="boardTextCountLabel" destination="IZz-h5-7K7" id="nc6-TV-zWH"/>
                         <outlet property="boardTextView" destination="01P-i2-YcD" id="5DQ-tY-smW"/>
                         <outlet property="gongjiBtn" destination="W4J-1o-ie3" id="1yi-Bt-cyo"/>
+                        <outlet property="titleTextField" destination="4AC-j8-ZnS" id="Qc5-Cr-fNX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

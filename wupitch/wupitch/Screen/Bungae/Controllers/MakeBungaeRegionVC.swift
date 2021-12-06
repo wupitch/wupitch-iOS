@@ -82,7 +82,17 @@ class MakeBungaeRegionVC: UIViewController {
     }
     
     @IBAction func touchUpCancelBtn(_ sender: Any) {
-        
+        // 취소 버튼 클릭 시, 팝업 창 띄워줌
+        let storyBoard: UIStoryboard = UIStoryboard(name: "JoinAlert", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinAlertVC") as? JoinAlertVC {
+            dvc.modalPresentationStyle = .overFullScreen
+            dvc.modalTransitionStyle = .crossDissolve
+            dvc.titleLabel = "작성한 모든 기입정보가 삭제됩니다. \n 번개만들기를 그만두시겠습니까?"
+            // 취소버튼 눌렸을 때 효과 나오기위해
+            dvc.alertDelegate = self
+            // present 형태로 띄우기
+            self.present(dvc, animated: true, completion: nil)
+        }
     }
     
     // 다음 버튼
@@ -137,3 +147,16 @@ extension MakeBungaeRegionVC : ModalDelegate {
     }
 }
 
+// MARK: - Delegate
+// 팝업창 Delegate
+extension MakeBungaeRegionVC : AlertDelegate {
+    func alertDismiss() {
+        guard let viewControllerStack = self.navigationController?.viewControllers else { return }
+        
+        // 뷰 스택에서 SignInVC를 찾아서 거기까지 pop 합니다.
+        for viewController in viewControllerStack {
+            if let bungaeVC = viewController as? BungaeVC { self.navigationController?.popToViewController(bungaeVC, animated: true)
+            }
+        }
+    }
+}

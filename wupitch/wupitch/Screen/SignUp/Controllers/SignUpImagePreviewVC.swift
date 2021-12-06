@@ -74,7 +74,7 @@ class SignUpImagePreviewVC: UIViewController {
                     
                     // 신분증 인증 전의 회원가입 데이터들을 한번에 보내기
                     if let email = SignUpUserInfo.shared.email,
-                       let introduce = SignUpUserInfo.shared.introduce,
+                       let introduce = UserDefaults.standard.string(forKey: "introduce"),
                        let isPushAgree = SignUpUserInfo.shared.isPushAgree,
                        let nickname = SignUpUserInfo.shared.nickname,
                        let password = SignUpUserInfo.shared.password,
@@ -88,6 +88,14 @@ class SignUpImagePreviewVC: UIViewController {
                     guard let dvc = storyboard.instantiateViewController(identifier: "SignUpCompleteVC") as? SignUpCompleteVC else {return}
                         self.navigationController?.pushViewController(dvc, animated: true)
                     }
+                    print("나와안나와...")
+                    print("이메일",SignUpUserInfo.shared.email ?? "이메일이 없습니다.")
+                    print("자기소개유저디폴트",UserDefaults.standard.string(forKey: "introduce") ?? "자기소개가 없습니다.")
+                    print("자기소개", SignUpUserInfo.shared.introduce ?? "자기소개가없습니다.")
+                    print("푸시알림동의",SignUpUserInfo.shared.isPushAgree ?? "푸시알림동의가없습니다.")
+                    print("닉네임",SignUpUserInfo.shared.nickname ?? "닉네임이 없습니다.")
+                    print("비밀번호",SignUpUserInfo.shared.password ?? "비밀번호가 없습니다,")
+                    print("디바이스토큰",UserDefaults.standard.string(forKey: "deviceToken") ?? "디바이스 토큰이 없습니다.")
                     
                 case .failure(let error):
                     print(error.localizedDescription)

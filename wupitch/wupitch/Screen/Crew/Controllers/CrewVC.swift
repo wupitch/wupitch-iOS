@@ -21,6 +21,7 @@ class CrewVC: BaseVC {
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var selectRegionBtn: UIButton!
     
+    //lazy var testFCM = FCMTestService()
     lazy var dataManager = AreaService()
     lazy var crewFilterAreaDataMangaer = LookUpCrewAreaFiletrService()
     lazy var crewDataManager = LookUpCrewService()
@@ -39,11 +40,16 @@ class CrewVC: BaseVC {
         print(UserDefaults.standard.string(forKey: "userToken"))
         if let deviceToken = UserDefaults.standard.string(forKey: "deviceToken") {
             patchFCMDeviceToken.patchFCM(PatchFCMRequest(deviceToken: deviceToken), delegate: self)
+           
         }
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //if let deviceToken = UserDefaults.standard.string(forKey: "deviceToken") {
+            //estFCM.postFCM(FCMTestRequest(contents: "뭐냥", targetToken: "dZfNlWsIUkD9hjJLeoahu_:APA91bFbDH3MSdu_WMU7QcwMi4099qwvAsVCDb7iql4ysSxOtuLwDrdcfcC10g7glhRGohNL4tvU3AvaDQ8tWjKQNRz3nDUsfDDyW87HJDrUzGWGRG_C0BJA0HIGwiF9dnpnJm0YjkcC", title: "타이틀"), delegate: self)
+        //}
         
         // 크루 지역 필터 조회
         crewFilterAreaDataMangaer.getLookUpCrewAreaFilter(delegate: self)
@@ -345,6 +351,10 @@ extension CrewVC {
         print("디바이스 토큰 수정 데이터가 성공적으로 들어왔습니다.")
         print("디바이스 토큰", UserDefaults.standard.string(forKey: "deviceToken"))
     }
+    // 에프씨엠테스트에이피아이
+//    func didSuccessFCMTest(result: FCMTestData) {
+//        print("fcm test 데이터가 성공적으로 들어왔습니다.")
+//    }
     func failedToRequest(message: String) {
         print("데이터가 들어오지 않았습니다.")
     }

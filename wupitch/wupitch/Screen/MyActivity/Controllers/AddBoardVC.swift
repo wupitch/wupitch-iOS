@@ -9,7 +9,9 @@ import UIKit
 
 class AddBoardVC: UIViewController {
 
-    @IBOutlet weak var gongjiBtn: UIButton!
+    @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var gongjiBtn: CheckBtn!
     @IBOutlet weak var boardTextCountLabel: UILabel!
     @IBOutlet weak var boardTextView: UITextView!
     
@@ -19,15 +21,24 @@ class AddBoardVC: UIViewController {
         super.viewDidLoad()
         setStyle()
         placeholderSetting()
+        titleTextField.delegate = self
     }
     
     private func setStyle() {
+        gongjiBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+        gongjiBtn.setTitleColor(UIColor.gray02, for: .normal)
         boardTextView.makeRounded(cornerRadius: 8.adjusted)
         boardTextView.textContainerInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
         boardTextView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
-        
         boardTextCountLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
         boardTextCountLabel.textColor = .gray03
+        
+        titleTextField.backgroundColor = .gray05
+        titleTextField.borderStyle = .none
+        titleTextField.makeRounded(cornerRadius: 8.adjusted)
+        titleTextField.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        titleTextField.textColor = .gray03
+        titleTextField.addLeftPadding()
     }
     
     func placeholderSetting() {
@@ -37,14 +48,29 @@ class AddBoardVC: UIViewController {
     }
 
     @IBAction func touchUpGongji(_ sender: Any) {
+        if gongjiBtn.status == false {
+            gongjiBtn.colorCheck()
+        }
+        else {
+            gongjiBtn.grayCheck()
+        }
     }
     @IBAction func touchUpNextBtn(_ sender: Any) {
     }
     @IBAction func touchUpBackBtn(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
 }
 
 extension AddBoardVC: UITextViewDelegate, UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.textColor = .bk
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == .gray03 {

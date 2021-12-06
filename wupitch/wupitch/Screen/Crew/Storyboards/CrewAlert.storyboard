@@ -59,7 +59,7 @@
                                 <rect key="frame" x="0.0" y="89" width="414" height="773"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CrewAlertTVCell" rowHeight="110" id="ufZ-6L-Xgo" customClass="CrewAlertTVCell" customModule="wupitch" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CrewAlertCell" rowHeight="110" id="ufZ-6L-Xgo" customClass="CrewAlertCell" customModule="wupitch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ufZ-6L-Xgo" id="A7h-1B-hT8">
@@ -104,9 +104,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="alertImageView" destination="K0z-4C-jDH" id="1Xo-3L-634"/>
-                                            <outlet property="alertTimeLabel" destination="41O-jB-S9k" id="7as-16-ndB"/>
-                                            <outlet property="alertTitleLabel" destination="Wop-4e-ILB" id="6AY-hz-gDG"/>
+                                            <outlet property="alertImageView" destination="K0z-4C-jDH" id="pN6-7z-M3Y"/>
+                                            <outlet property="dateLabel" destination="41O-jB-S9k" id="xy2-or-Vdn"/>
+                                            <outlet property="titleLabel" destination="Wop-4e-ILB" id="2qP-ly-CZV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

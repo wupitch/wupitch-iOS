@@ -60,8 +60,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Messaging.messaging().apnsToken = deviceToken
         
-        UserDefaults.standard.set(deviceTokenString, forKey: "deviceToken")
-        print("디바이스토큰>>>>>>>>>>>>>", UserDefaults.standard.string(forKey: "deviceToken"))
+//        UserDefaults.standard.set(deviceTokenString, forKey: "deviceToken")
+//        print("디바이스토큰>>>>>>>>>>>>>", UserDefaults.standard.string(forKey: "deviceToken"))
     }
     
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
@@ -119,6 +119,9 @@ extension AppDelegate: MessagingDelegate {
             object: nil,
             userInfo: dataDict
         )
+        
+        UserDefaults.standard.set(fcmToken, forKey: "deviceToken")
+        print("디바이스토큰>>>>>>>>>>>>>", UserDefaults.standard.string(forKey: "deviceToken"))
         // TODO: If necessary send token to application server.
         // Note: This callback is fired at each app startup and whenever a new token is generated.
     }

@@ -13,6 +13,7 @@ enum myActivityTab {
 
 class MyActivityDetailVC: UIViewController {
 
+    @IBOutlet weak var plusVIew: UIView!
     @IBOutlet weak var alertBtn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var fourthLineView: UIView!
@@ -29,6 +30,7 @@ class MyActivityDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tapGesture()
         MyActivityCV.delegate = self
         MyActivityCV.dataSource = self
         self.MyActivityCV.register(ActivityTabCVCell.nib(), forCellWithReuseIdentifier: ActivityTabCVCell.identifier)
@@ -37,7 +39,22 @@ class MyActivityDetailVC: UIViewController {
         secondLineView.backgroundColor = .clear
         thirdLineView.backgroundColor = .clear
         fourthLineView.backgroundColor = .clear
-        
+        plusVIew.makeRounded(cornerRadius: nil)
+        plusVIew.isHidden = true
+        tapGesture()
+    }
+    
+    // MARK: FloatingView tap gesture
+    private func tapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action:#selector(self.screenDidTap(_:)))
+        self.plusVIew.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func screenDidTap(_ gesture: UITapGestureRecognizer) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "AddBoard", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "AddBoardVC") as? AddBoardVC {
+            navigationController?.pushViewController(dvc, animated: true)
+        }
     }
     
     @IBAction func touchUpFirstBtn(_ sender: Any) {
@@ -47,6 +64,7 @@ class MyActivityDetailVC: UIViewController {
         thirdBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         fourthBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         
+        plusVIew.isHidden = true
         // 탭바 보이게
         firstLineView.backgroundColor = .bk
         // 번개탭바 안보이게
@@ -63,6 +81,9 @@ class MyActivityDetailVC: UIViewController {
         thirdBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         fourthBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         
+        // 플러스 버튼 보이게
+        plusVIew.isHidden = false
+        
         // 탭바 보이게
         secondLineView.backgroundColor = .bk
         // 번개탭바 안보이게
@@ -77,6 +98,7 @@ class MyActivityDetailVC: UIViewController {
         secondBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         thirdBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
         fourthBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+        plusVIew.isHidden = false
         // 번개탭바 안보이게
         secondLineView.backgroundColor = .clear
         firstLineView.backgroundColor = .clear
@@ -86,6 +108,7 @@ class MyActivityDetailVC: UIViewController {
     }
     
     @IBAction func touchUpFourthBtn(_ sender: Any) {
+        plusVIew.isHidden = true
         MyActivityCV.scrollToItem(at: IndexPath(row: 3, section: 0), at: .centeredHorizontally, animated: true)
         firstBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         secondBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
@@ -102,8 +125,15 @@ class MyActivityDetailVC: UIViewController {
     @IBAction func touchUpBackBtn(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func touchUpAlertBtn(_ sender: Any) {
+        let storyboard = UIStoryboard.init(name: "MyActivityAlert", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityAlertVC") as? MyActivityAlertVC else {return}
+        dvc.modalPresentationStyle = .overFullScreen
+        dvc.modalTransitionStyle = .crossDissolve
+        present(dvc, animated: true, completion: nil)
+    }
 }
-
 extension MyActivityDetailVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return myActivityTabPage.count
@@ -111,14 +141,11 @@ extension MyActivityDetailVC : UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ActivityTabCVCell.identifier, for: indexPath) as? ActivityTabCVCell else{
-                   return UICollectionViewCell()
-               }
+            return UICollectionViewCell()
+        }
         cell.tabBar = myActivityTabPage[indexPath.row]
         return cell
     }
-    
-    
-    
     //MARK: - Cell 사이즈
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {

@@ -32,6 +32,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="" image="bell"/>
+                                <connections>
+                                    <action selector="touchUPAlertBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="PZX-bJ-0MC"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yfh-Xc-IUW">
                                 <rect key="frame" x="0.0" y="95" width="414" height="767"/>
@@ -68,6 +71,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="alertBtn" destination="cFe-jG-YGz" id="9nv-8f-jTg"/>
                         <outlet property="feedCV" destination="yfh-Xc-IUW" id="PlB-Uc-bbS"/>
                         <outlet property="titleLabel" destination="6RN-BW-zz2" id="ML4-TJ-iMG"/>
                     </connections>

@@ -15,6 +15,7 @@ protocol GuestModalDelegate {
 class CrewApplicationVC: UIViewController {
     
     var guestModalDelegate : GuestModalDelegate?
+    lazy var guestRegister = GuestRegisterService()
     
     @IBOutlet weak var popUpBgView: UIView!
     @IBOutlet weak var cancelBtn: UIButton!
@@ -26,7 +27,6 @@ class CrewApplicationVC: UIViewController {
     @IBOutlet weak var secondSubContentLabel: UILabel!
     @IBOutlet weak var secondContentLabel: UILabel!
     @IBOutlet weak var firstContentLabel: UILabel!
-    @IBOutlet var btnsDateLabel: [UILabel]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,17 +63,17 @@ class CrewApplicationVC: UIViewController {
         selectBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
         selectBtn.layer.cornerRadius = 8.adjusted
         
-        btnsDateLabel[0].font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
-        btnsDateLabel[0].setTextWithLineHeight(text: btnsDateLabel[0].text, lineHeight: 22.adjusted)
-        btnsDateLabel[0].textColor = .bk
-        
-        btnsDateLabel[1].font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
-        btnsDateLabel[1].setTextWithLineHeight(text: btnsDateLabel[1].text, lineHeight: 22.adjusted)
-        btnsDateLabel[1].textColor = .bk
-        
-        btnsDateLabel[2].font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
-        btnsDateLabel[2].setTextWithLineHeight(text: btnsDateLabel[2].text, lineHeight: 22.adjusted)
-        btnsDateLabel[2].textColor = .bk
+//        btnsDateLabel[0].font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+//        btnsDateLabel[0].setTextWithLineHeight(text: btnsDateLabel[0].text, lineHeight: 22.adjusted)
+//        btnsDateLabel[0].textColor = .bk
+//
+//        btnsDateLabel[1].font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+//        btnsDateLabel[1].setTextWithLineHeight(text: btnsDateLabel[1].text, lineHeight: 22.adjusted)
+//        btnsDateLabel[1].textColor = .bk
+//
+//        btnsDateLabel[2].font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+//        btnsDateLabel[2].setTextWithLineHeight(text: btnsDateLabel[2].text, lineHeight: 22.adjusted)
+//        btnsDateLabel[2].textColor = .bk
     }
     
     @IBAction func touchUpFirstCircleBtn(_ sender: Any) {
@@ -110,6 +110,7 @@ class CrewApplicationVC: UIViewController {
     
     @IBAction func touchUpSelectBtn(_ sender: Any) {
         if selectBtn.backgroundColor == .bk {
+            //guestRegister.postMakeCrew(GuestRegisterRequest(crewID: UserDefaults.standard.string(forKey: "clubID")), date: "", delegate: self)
             guestModalDelegate?.modalDismiss()
             // 디스미스되고 손님신청완료 팝업 나옴
             dismiss(animated: true, completion: {
@@ -119,5 +120,17 @@ class CrewApplicationVC: UIViewController {
         else {
             selectBtn.backgroundColor = .gray03
         }
+    }
+}
+
+extension CrewApplicationVC {
+    func didSuccessGuestRegister(result: GuestRegisterData) {
+        print("게스트 참여가 성공적으로 들어옵니다.")
+        
+    }
+
+    func failedToRequest(message: String) {
+        print("크루 디테일 조회 데이터가 들어오지 않았습니다.")
+
     }
 }

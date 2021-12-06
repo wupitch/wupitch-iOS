@@ -117,8 +117,6 @@ class BungaeVC: BaseVC {
         
         return stringDate
     }
-    
-    
 }
 
 extension BungaeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

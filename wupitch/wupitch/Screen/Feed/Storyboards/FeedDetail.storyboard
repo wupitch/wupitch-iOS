@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,6 +25,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="" image="whtLeft"/>
+                                <connections>
+                                    <action selector="touchUpBackBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="T6s-AW-p3w"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXD-lA-DzL">
                                 <rect key="frame" x="371" y="54" width="24" height="24"/>
@@ -33,9 +37,13 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="" image="like"/>
+                                <connections>
+                                    <action selector="touchUPHeartBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="BqC-R7-6Lp"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="40o-Ve-aBs">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lTg-M3-FsG">
                                 <rect key="frame" x="0.0" y="88" width="414" height="88"/>
@@ -43,21 +51,21 @@
                                     <constraint firstAttribute="height" constant="88" id="D0u-PK-el9"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G9V-gB-JWm">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="G9V-gB-JWm">
                                 <rect key="frame" x="20" y="112" width="28" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="28" id="LOm-za-aUx"/>
                                     <constraint firstAttribute="height" constant="28" id="hyf-aR-Pfa"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgH-q1-akJ">
-                                <rect key="frame" x="54" y="115.5" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="피치피치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgH-q1-akJ">
+                                <rect key="frame" x="54" y="115.5" width="59" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huF-ab-Nt1">
-                                <rect key="frame" x="353" y="115.5" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19명이 좋아해요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huF-ab-Nt1">
+                                <rect key="frame" x="279" y="115.5" width="116" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -86,7 +94,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="nHN-DX-RoB" id="R4N-Yq-Hn8"/>
+                        <outlet property="feedImageVIew" destination="40o-Ve-aBs" id="4g4-CJ-lcI"/>
                         <outlet property="gradientView" destination="lTg-M3-FsG" id="VXS-G5-brH"/>
+                        <outlet property="heartBtn" destination="ZXD-lA-DzL" id="WzU-oq-g0b"/>
+                        <outlet property="likeLabel" destination="huF-ab-Nt1" id="gjl-K1-5A9"/>
+                        <outlet property="profileImageVIew" destination="G9V-gB-JWm" id="Hg7-E8-Ncl"/>
+                        <outlet property="profileNameLabel" destination="UgH-q1-akJ" id="HcU-Vi-CZL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -96,6 +110,10 @@
     </scenes>
     <resources>
         <image name="like" width="24" height="24"/>
+        <image name="test" width="1024" height="1024"/>
         <image name="whtLeft" width="24" height="24"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

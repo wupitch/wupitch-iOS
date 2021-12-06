@@ -25,8 +25,7 @@ struct SignUpResult: Codable {
 
     enum CodingKeys: String, CodingKey {
         case accountID = "accountId"
-        case email, nickname, jwt, introduce, isPushAgree
+        case email, nickname, jwt, introduce, isPushAgree, deviceToken
         case profileImageURL = "profileImageUrl"
-        case deviceToken
     }
 }

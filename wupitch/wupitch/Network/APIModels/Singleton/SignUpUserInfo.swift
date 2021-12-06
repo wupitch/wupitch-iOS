@@ -98,6 +98,8 @@ class SignUpUserInfo {
     var extraInfo : [Int]?
 
     
+    // 크루 검색에 한번에 넣어줄 값
+    var crewSearchContent: [CrewContent] = []
     
     // ------------------------
     

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Activity AlertVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="MyActivityAlertVC" id="Y6W-OH-hqX" customClass="MyActivityAlertVC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OkS-gK-Ydw">
+                                <rect key="frame" x="47" y="314" width="320" height="268"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HT-R3-hqG">
+                                        <rect key="frame" x="284" y="16" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="MQZ-e0-Dad"/>
+                                            <constraint firstAttribute="width" constant="24" id="gBS-RS-S1n"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="" image="close"/>
+                                        <connections>
+                                            <action selector="touchUpCancelBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="9e2-Ur-zaI"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신고하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hn2-SD-Eti" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
+                                        <rect key="frame" x="130.5" y="36" width="59" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GOY-XX-acy">
+                                        <rect key="frame" x="26" y="71" width="268" height="99"/>
+                                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6O-tV-Kzk" customClass="NextBtn" customModule="wupitch" customModuleProvider="target">
+                                        <rect key="frame" x="26" y="192" width="268" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="wif-aK-syB"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="완료"/>
+                                        <connections>
+                                            <action selector="touchUpNextBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="JeV-Py-1sI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="L6O-tV-Kzk" secondAttribute="trailing" constant="26" id="12G-aO-FE3"/>
+                                    <constraint firstItem="Hn2-SD-Eti" firstAttribute="centerX" secondItem="OkS-gK-Ydw" secondAttribute="centerX" id="1BA-VA-HCN"/>
+                                    <constraint firstItem="L6O-tV-Kzk" firstAttribute="top" secondItem="GOY-XX-acy" secondAttribute="bottom" constant="22" id="2lN-TR-s0L"/>
+                                    <constraint firstItem="1HT-R3-hqG" firstAttribute="top" secondItem="OkS-gK-Ydw" secondAttribute="top" constant="16" id="40v-2B-oad"/>
+                                    <constraint firstAttribute="width" constant="320" id="968-zC-IyS"/>
+                                    <constraint firstItem="GOY-XX-acy" firstAttribute="top" secondItem="Hn2-SD-Eti" secondAttribute="bottom" constant="14" id="9IW-Zm-GRY"/>
+                                    <constraint firstItem="L6O-tV-Kzk" firstAttribute="leading" secondItem="OkS-gK-Ydw" secondAttribute="leading" constant="26" id="LKl-lj-yYP"/>
+                                    <constraint firstAttribute="height" constant="268" id="Won-Xs-8lA"/>
+                                    <constraint firstAttribute="trailing" secondItem="1HT-R3-hqG" secondAttribute="trailing" constant="12" id="ZOa-1r-FwB"/>
+                                    <constraint firstAttribute="bottom" secondItem="L6O-tV-Kzk" secondAttribute="bottom" constant="28" id="lcs-0a-66a"/>
+                                    <constraint firstItem="Hn2-SD-Eti" firstAttribute="top" secondItem="OkS-gK-Ydw" secondAttribute="top" constant="36" id="mPH-OT-WlL"/>
+                                    <constraint firstItem="GOY-XX-acy" firstAttribute="leading" secondItem="OkS-gK-Ydw" secondAttribute="leading" constant="26" id="nmv-a9-ihp"/>
+                                    <constraint firstAttribute="trailing" secondItem="GOY-XX-acy" secondAttribute="trailing" constant="26" id="rma-JY-X5i"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OkS-gK-Ydw" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Nlb-IV-inQ"/>
+                            <constraint firstItem="OkS-gK-Ydw" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="mSe-pD-LTg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alertLabel" destination="Hn2-SD-Eti" id="5wL-pp-rbG"/>
+                        <outlet property="alertTextView" destination="GOY-XX-acy" id="qvg-Ig-hxM"/>
+                        <outlet property="alertView" destination="OkS-gK-Ydw" id="oGS-Hm-67l"/>
+                        <outlet property="cancelBtn" destination="1HT-R3-hqG" id="Sb7-yI-KH5"/>
+                        <outlet property="nextBtn" destination="L6O-tV-Kzk" id="HQU-6J-pKd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="82"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close" width="24" height="24"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
