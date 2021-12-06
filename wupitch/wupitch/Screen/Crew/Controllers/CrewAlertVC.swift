@@ -56,7 +56,7 @@ extension CrewAlertVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = self.alertTV?.dequeueReusableCell(withIdentifier: CrewAlertCell.identifier, for: indexPath) as? CrewAlertCell else { return UITableViewCell()
         }
-        cell.titleLabel.text = fcmData?[indexPath.row].title
+        cell.titleLabel.text = fcmData?[indexPath.row].contents
         cell.dateLabel.text = nowDateFormatter(dateLabel: cell.dateLabel.text ?? "")
         
         return cell

@@ -22,7 +22,7 @@
                                 <rect key="frame" x="20" y="54" width="71" height="24"/>
                                 <fontDescription key="fontDescription" name=".AppleSDGothicNeoI-Regular" family=".Apple SD Gothic NeoI" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="8" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="지역구" image="down">
+                                <state key="normal" title="서울시" image="down">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>

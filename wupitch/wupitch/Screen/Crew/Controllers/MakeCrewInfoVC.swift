@@ -192,13 +192,13 @@ class MakeCrewInfoVC: UIViewController {
             SignUpUserInfo.shared.extraInfoList = []
             for i in 0...4 {
                 if ageBtns[i].status == true {
-                    SignUpUserInfo.shared.ageList?.append(ageBtns[i+1].ageInt!)
+                    SignUpUserInfo.shared.ageList?.append(ageBtns[i].ageInt!)
                     print("연령대 >>>>>>>>>",SignUpUserInfo.shared.ageList)
                 }
             }
             for i in 0...7 {
                 if addInfoBtns[i].status == true {
-                    SignUpUserInfo.shared.extraInfoList?.append(addInfoBtns[i+1].extraId!)
+                    SignUpUserInfo.shared.extraInfoList?.append(addInfoBtns[i].extraId!)
                     print("추가정보 >>>>>>>>>",SignUpUserInfo.shared.extraInfoList)
                 }
             }
