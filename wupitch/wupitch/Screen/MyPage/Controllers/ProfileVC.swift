@@ -56,6 +56,21 @@ class ProfileVC: BaseVC {
         profileImageVIew.makeRounded(cornerRadius: nil)
     }
     
+    func checkAlbumPermission(){
+            PHPhotoLibrary.requestAuthorization( { status in
+                switch status{
+                case .authorized:
+                    print("Album: 권한 허용")
+                case .denied:
+                    print("Album: 권한 거부")
+                case .restricted, .notDetermined:
+                    print("Album: 선택하지 않음")
+                default:
+                    break
+                }
+            })
+        }
+    
     // 메시지 취소 버튼
     @IBAction func touchUpMessageCancelBtn(_ sender: Any) {
         messageModalImageView.alpha = 0.0
@@ -82,6 +97,7 @@ class ProfileVC: BaseVC {
         alert.addAction(library)
         alert.addAction(cancel)
         self.present(alert, animated: true, completion: nil)
+        
     }
     
     // 개발자 정보 버튼
@@ -95,6 +111,7 @@ class ProfileVC: BaseVC {
     
     // UIImagePicker
     func openLibrary() {
+        checkAlbumPermission()
         picker.sourceType = .photoLibrary
         picker.allowsEditing = true
         present(picker, animated: true, completion: nil)
