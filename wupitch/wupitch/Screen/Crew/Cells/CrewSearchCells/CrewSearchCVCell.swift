@@ -132,24 +132,24 @@ extension CrewSearchCVCell : UICollectionViewDelegate, UICollectionViewDelegateF
             // 크루 날짜
             cell.dayLabels[0].text = SignUpUserInfo.shared.crewSearchContent[indexPath.row].schedules[0].day
             // 시작시간 옵셔널이라서 바인딩
-//            if let starTime = SignUpUserInfo.shared.crewSearchContent[indexPath.row].schedules[0].startTime {
-//                cell.dayLabels[1].text = stringDate(doubleDate: starTime)
-//            } else {
-//                cell.dayLabels[1].text = nil
-//            }
-//            // 끝나는시간 옵셔널이라 바인딩
-//            if let endTime = SignUpUserInfo.shared.crewSearchContent[indexPath.row].schedules[0].endTime {
-//                cell.dayLabels[3].text = stringDate(doubleDate: endTime)
-//            } else {
-//                cell.dayLabels[3].text = nil
-//            }
-//            cell.dayLabels[2].text = "-"
-//            // 크루 모이는 날이 많을 경우 '+' 붙여주기
-//            if SignUpUserInfo.shared.crewSearchContent[indexPath.row].schedules.count ?? 0 > 1 {
-//                cell.dayLabels[4].isHidden = false
-//            } else {
-//                cell.dayLabels[4].isHidden = true
-//            }
+            if let starTime = SignUpUserInfo.shared.crewSearchContent[indexPath.row].schedules[0].startTime {
+                cell.dayLabels[1].text = stringDate(doubleDate: starTime)
+            } else {
+                cell.dayLabels[1].text = nil
+            }
+            // 끝나는시간 옵셔널이라 바인딩
+            if let endTime = SignUpUserInfo.shared.crewSearchContent[indexPath.row].schedules[0].endTime {
+                cell.dayLabels[3].text = stringDate(doubleDate: endTime)
+            } else {
+                cell.dayLabels[3].text = nil
+            }
+            cell.dayLabels[2].text = "-"
+            // 크루 모이는 날이 많을 경우 '+' 붙여주기
+            if SignUpUserInfo.shared.crewSearchContent[indexPath.row].schedules.count ?? 0 > 1 {
+                cell.dayLabels[4].isHidden = false
+            } else {
+                cell.dayLabels[4].isHidden = true
+            }
             // 장소가 지정되어있지 않을 경우 "장소미정" 뜨게함
             cell.subLabel.text = SignUpUserInfo.shared.crewSearchContent[indexPath.row].areaName ?? "장소미정"
             print("크루 눌렸음")

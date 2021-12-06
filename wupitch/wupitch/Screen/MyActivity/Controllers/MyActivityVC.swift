@@ -50,104 +50,105 @@ class MyActivityVC: BaseVC {
 extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return 3
-        }
-        else {
-            return 5
-        }
+//        if section == 0 {
+//            return 3
+//        }
+//        else {
+//            return 5
+//        }
+        return 1
     }
     // 섹션 개수 지정
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        //return 1
-        return 2
+        return 1
+        //return 2
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReadyCVCell.identifier, for: indexPath) as? ReadyCVCell else{
-//            return UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReadyCVCell.identifier, for: indexPath) as? ReadyCVCell else{
+            return UICollectionViewCell()
+        }
+        return cell
+    }
+//        if indexPath.section == 0 {
+//            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ActivityCrewCVCell.identifier, for: indexPath) as? ActivityCrewCVCell else{
+//                return UICollectionViewCell()
+//            }
+//            return cell
 //        }
-//        return cell
+//        else if indexPath.section == 1 {
+//            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BungaeCVCell.identifier, for: indexPath) as? BungaeCVCell else{
+//                return UICollectionViewCell()
+//            }
+//            cell.pinImageView.image = UIImage(named: "leader")
+//            return cell
+//        }
+//        return UICollectionViewCell()
+    //}
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        switch kind {
+//        case UICollectionView.elementKindSectionHeader:
+//            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,withReuseIdentifier: "ActivityCrewCRV",for: indexPath) as! ActivityCrewCRV
+//            switch indexPath.section {
+//            case 0:
+//                headerView.frame.size.height = 48.0
+//            case 1:
+//                headerView.frame.size.height = 48.0
+//                headerView.crewLabel.text = "예정된 번개"
+//            default:
+//                headerView.frame.size.height = 0.0
+//            }
+//            return headerView
+//        default:
+//            assert(false, "응 아니야")
+//        }
+//        return UICollectionReusableView()
 //    }
-        if indexPath.section == 0 {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ActivityCrewCVCell.identifier, for: indexPath) as? ActivityCrewCVCell else{
-                return UICollectionViewCell()
-            }
-            return cell
-        }
-        else if indexPath.section == 1 {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BungaeCVCell.identifier, for: indexPath) as? BungaeCVCell else{
-                return UICollectionViewCell()
-            }
-            cell.pinImageView.image = UIImage(named: "leader")
-            return cell
-        }
-        return UICollectionViewCell()
-    }
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionView.elementKindSectionHeader:
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,withReuseIdentifier: "ActivityCrewCRV",for: indexPath) as! ActivityCrewCRV
-            switch indexPath.section {
-            case 0:
-                headerView.frame.size.height = 48.0
-            case 1:
-                headerView.frame.size.height = 48.0
-                headerView.crewLabel.text = "예정된 번개"
-            default:
-                headerView.frame.size.height = 0.0
-            }
-            return headerView
-        default:
-            assert(false, "응 아니야")
-        }
-        return UICollectionReusableView()
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        switch section {
-        case 0:
-            return CGSize(width: collectionView.bounds.width, height: 48)
-        case 1:
-            return CGSize(width: collectionView.bounds.width, height: 48)
-        default:
-            return CGSize(width: collectionView.bounds.width, height: 40)
-        }
-    }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.section == 0 {
-            // cell 누르면 해당 디테일 페이지로 이동
-            let storyboard = UIStoryboard.init(name: "MyActivityDetail", bundle: nil)
-            guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityDetailVC") as? MyActivityDetailVC else {return}
-            dvc.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(dvc, animated: true)
-        }
-        else {
-            // cell 누르면 해당 디테일 페이지로 이동
-            let storyboard = UIStoryboard.init(name: "BungaeDetail", bundle: nil)
-            guard let dvc = storyboard.instantiateViewController(identifier: "BungaeDetailVC") as? BungaeDetailVC else {return}
-            dvc.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(dvc, animated: true)
-        }
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//        switch section {
+//        case 0:
+//            return CGSize(width: collectionView.bounds.width, height: 48)
+//        case 1:
+//            return CGSize(width: collectionView.bounds.width, height: 48)
+//        default:
+//            return CGSize(width: collectionView.bounds.width, height: 40)
+//        }
+//    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        if indexPath.section == 0 {
+//            // cell 누르면 해당 디테일 페이지로 이동
+//            let storyboard = UIStoryboard.init(name: "MyActivityDetail", bundle: nil)
+//            guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityDetailVC") as? MyActivityDetailVC else {return}
+//            dvc.hidesBottomBarWhenPushed = true
+//            self.navigationController?.pushViewController(dvc, animated: true)
+//        }
+//        else {
+//            // cell 누르면 해당 디테일 페이지로 이동
+//            let storyboard = UIStoryboard.init(name: "BungaeDetail", bundle: nil)
+//            guard let dvc = storyboard.instantiateViewController(identifier: "BungaeDetailVC") as? BungaeDetailVC else {return}
+//            dvc.hidesBottomBarWhenPushed = true
+//            self.navigationController?.pushViewController(dvc, animated: true)
+//        }
+//    }
     
     // MARK: - collectionView size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = collectionView.frame.width
-//        let height =  collectionView.frame.height
-//        return CGSize(width: width, height: height)
+        let height =  collectionView.frame.height
+        return CGSize(width: width, height: height)
         
-        if indexPath.section == 0 {
-            return CGSize(width: width-40, height: 170)
-        }
-        else {
-            return CGSize(width: width-40, height: 144)
-        }
+//        if indexPath.section == 0 {
+//            return CGSize(width: width-40, height: 170)
+//        }
+//        else {
+//            return CGSize(width: width-40, height: 144)
+//        }
     }
     
     // 위 아래 간격
-      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-          return 16
-      }
+//      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//          return 16
+//      }
 
       // 옆 간격
       func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
