@@ -16,6 +16,7 @@ class CrewApplicationVC: UIViewController {
     
     var guestModalDelegate : GuestModalDelegate?
     var guestInfoResult : GuestInfoResult?
+    var guest : Bool?
     lazy var guestRegister = GuestRegisterService()
     lazy var guestInfo = GuestInfoService()
     
@@ -119,11 +120,25 @@ class CrewApplicationVC: UIViewController {
                     print("dfd", circleBtns[i].titleLabel?.text)
                 }
             }
+            if guest == false {
+                print("여기 거치니?")
+                let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
+                if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
+                    dvc.modalPresentationStyle = .overFullScreen
+                    dvc.modalTransitionStyle = .crossDissolve
+                    dvc.introducePopUp = self
+                    // present 형태로 띄우기
+                    self.present(dvc, animated: true, completion: nil)
+                }
+            }
+            
+            else {
             guestModalDelegate?.modalDismiss()
             // 디스미스되고 손님신청완료 팝업 나옴
             dismiss(animated: true, completion: {
                 self.guestModalDelegate?.selectBtnToOpenPopup()
             })
+            }
         }
         else {
             selectBtn.backgroundColor = .gray03
@@ -134,6 +149,7 @@ class CrewApplicationVC: UIViewController {
 extension CrewApplicationVC {
     func didSuccessGuestRegister(result: GuestRegisterData) {
         print("게스트 참여가 성공적으로 들어옵니다.")
+        guest = result.isSuccess
     }
     
     func didSuccessGuestInfo(result: GuestInfoResult) {
@@ -161,5 +177,14 @@ extension CrewApplicationVC {
 
     func failedToRequest(message: String) {
         print("크루 디테일 조회 데이터가 들어오지 않았습니다.")
+    }
+}
+
+extension CrewApplicationVC: IntroduceDelegate {
+    func dismissIntroducePopup() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "ProfileDetail", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "ProfileDetailVC") as? ProfileDetailVC {
+            navigationController?.pushViewController(dvc, animated: true)
+        }
     }
 }

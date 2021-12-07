@@ -26,7 +26,6 @@
                                 <state key="normal" title="+ 크루 둘러보기"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tX0-St-XuA" firstAttribute="centerY" secondItem="1Bg-hv-Wnr" secondAttribute="centerY" id="SWx-1H-26D"/>
                             <constraint firstItem="tX0-St-XuA" firstAttribute="centerX" secondItem="1Bg-hv-Wnr" secondAttribute="centerX" id="Z1F-rn-O2g"/>

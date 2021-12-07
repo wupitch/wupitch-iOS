@@ -392,11 +392,7 @@ extension CrewDetailVC: GuestModalDelegate {
 extension CrewDetailVC {
     func didSuccessCrewDetail(result: CrewDetailResult) {
         print("크루 디테일 조회 데이터가 성공적으로 들어왔습니다.")
-//        UserDefaults.standard.string(forKey: "clubID")
         self.detailInfo = result
-        print("정기회비", result.dues)
-        print("손님비", result.guestDues)
-        
         CrewDetailTV.reloadData()
     }
 
@@ -413,7 +409,6 @@ extension CrewDetailVC {
     
     func didSuccessGuestRegister(result: GuestRegisterData) {
         print("게스트 참여가 성공적으로 들어옵니다.")
-        
     }
 
     func failedToRequest(message: String) {
@@ -423,8 +418,8 @@ extension CrewDetailVC {
 }
 extension CrewDetailVC: IntroduceDelegate {
     func dismissIntroducePopup() {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "ProfileNickname", bundle: nil)
-        if let dvc = storyBoard.instantiateViewController(withIdentifier: "ProfileNicknameVC") as? ProfileNicknameVC {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "ProfileDetail", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "ProfileDetailVC") as? ProfileDetailVC {
             navigationController?.pushViewController(dvc, animated: true)
         }
     }

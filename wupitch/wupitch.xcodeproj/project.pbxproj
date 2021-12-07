@@ -99,6 +99,8 @@
 		DD3ACE9E275EA39300FF00ED /* BungaeSearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACE9D275EA39300FF00ED /* BungaeSearchData.swift */; };
 		DD3ACEA0275F788B00FF00ED /* GuestInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACE9F275F788B00FF00ED /* GuestInfoService.swift */; };
 		DD3ACEA2275F790900FF00ED /* GuestInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACEA1275F790900FF00ED /* GuestInfoData.swift */; };
+		DD3ACEA4276009C100FF00ED /* NowRegisterCrewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACEA3276009C100FF00ED /* NowRegisterCrewData.swift */; };
+		DD3ACEA627600BD200FF00ED /* NowRegisterCrewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACEA527600BD200FF00ED /* NowRegisterCrewService.swift */; };
 		DD3E37B6272F432A00C4192E /* UserInfoWarningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E37B5272F432A00C4192E /* UserInfoWarningVC.swift */; };
 		DD3E37C6272F928E00C4192E /* CrewCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E37C4272F928E00C4192E /* CrewCVCell.swift */; };
 		DD3E37C7272F928E00C4192E /* CrewCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD3E37C5272F928E00C4192E /* CrewCVCell.xib */; };
@@ -408,6 +410,8 @@
 		DD3ACE9D275EA39300FF00ED /* BungaeSearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeSearchData.swift; sourceTree = "<group>"; };
 		DD3ACE9F275F788B00FF00ED /* GuestInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestInfoService.swift; sourceTree = "<group>"; };
 		DD3ACEA1275F790900FF00ED /* GuestInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestInfoData.swift; sourceTree = "<group>"; };
+		DD3ACEA3276009C100FF00ED /* NowRegisterCrewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowRegisterCrewData.swift; sourceTree = "<group>"; };
+		DD3ACEA527600BD200FF00ED /* NowRegisterCrewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowRegisterCrewService.swift; sourceTree = "<group>"; };
 		DD3E37B5272F432A00C4192E /* UserInfoWarningVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoWarningVC.swift; sourceTree = "<group>"; };
 		DD3E37C4272F928E00C4192E /* CrewCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewCVCell.swift; sourceTree = "<group>"; };
 		DD3E37C5272F928E00C4192E /* CrewCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrewCVCell.xib; sourceTree = "<group>"; };
@@ -1396,6 +1400,7 @@
 				DD485FDA27565EAE0071AE93 /* CrewRegisterService.swift */,
 				DD3ACE8A275C63AA00FF00ED /* GuestRegisterService.swift */,
 				DD3ACE9F275F788B00FF00ED /* GuestInfoService.swift */,
+				DD3ACEA527600BD200FF00ED /* NowRegisterCrewService.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -1407,6 +1412,7 @@
 				DD3ACE86275C632800FF00ED /* GuestRegisterData.swift */,
 				DD3ACE88275C633B00FF00ED /* GuestRegisterRequest.swift */,
 				DD3ACEA1275F790900FF00ED /* GuestInfoData.swift */,
+				DD3ACEA3276009C100FF00ED /* NowRegisterCrewData.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -2315,6 +2321,7 @@
 				DD3A30F2272DB07500D711C6 /* JoinCompleteVC.swift in Sources */,
 				DD485FC42755DDD80071AE93 /* ProfileNicknameService.swift in Sources */,
 				DD3ACE82275C5F8300FF00ED /* CrewSearchData.swift in Sources */,
+				DD3ACEA627600BD200FF00ED /* NowRegisterCrewService.swift in Sources */,
 				DDC4DB5F274E234400D79CC8 /* FeedCVCell.swift in Sources */,
 				DD3ACBBF2721083700EBC201 /* SignUpProfileVC.swift in Sources */,
 				DD9EEDD0273EC71E00E02396 /* SignInVC.swift in Sources */,
@@ -2362,6 +2369,7 @@
 				DDC46B76275169C00015341E /* MakeBungaeRequest.swift in Sources */,
 				DD65ABD02757752F00D71055 /* CrewDetailVC.swift in Sources */,
 				DDC46B742751698B0015341E /* MakeBungaeData.swift in Sources */,
+				DD3ACEA4276009C100FF00ED /* NowRegisterCrewData.swift in Sources */,
 				DD1BFC5D273927370042C51F /* MakeCrewGuestVC.swift in Sources */,
 				DD485FE7275680FF0071AE93 /* BungaeImageCVCell.swift in Sources */,
 				DD1BFC2D2736DCDC0042C51F /* InformationRequest.swift in Sources */,
