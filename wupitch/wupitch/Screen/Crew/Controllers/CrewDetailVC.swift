@@ -304,6 +304,9 @@ extension CrewDetailVC: UITableViewDelegate, UITableViewDataSource {
                 return UITableViewCell()
             }
             
+            // 디테일 페이지 손님 참여할 때 바텀 시트에 값 넣어주기 위해
+            SignUpUserInfo.shared.bottomDates = detailInfo?.schedules ?? []
+            
             cell.titleLabel.text = "소개"
             // 인원이 없을 때
             if detailInfo?.memberCount == nil {

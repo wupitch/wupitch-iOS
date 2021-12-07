@@ -15,8 +15,11 @@ protocol GuestModalDelegate {
 class CrewApplicationVC: UIViewController {
     
     var guestModalDelegate : GuestModalDelegate?
+    var guestInfoResult : GuestInfoResult?
     lazy var guestRegister = GuestRegisterService()
+    lazy var guestInfo = GuestInfoService()
     
+    @IBOutlet weak var guestDuesLabel: UILabel!
     @IBOutlet weak var popUpBgView: UIView!
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
@@ -30,7 +33,15 @@ class CrewApplicationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        guestInfo.getGuestInfo(delegate: self)
         setStyle()
+    }
+    
+    func stringDate(doubleDate: Double) -> String {
+        let doubleToString = String(doubleDate)
+        let stringChange = doubleToString.split(separator: ".")
+        let stringDate = String(stringChange.first!) + ":" + String(stringChange.last!)
+        return stringDate
     }
     
     private func setStyle() {
@@ -44,36 +55,28 @@ class CrewApplicationVC: UIViewController {
         
         firstContentLabel.textColor = .bk
         firstContentLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
-        firstContentLabel.setTextWithLineHeight(text: firstContentLabel.text, lineHeight: 22.adjusted)
         
         secondContentLabel.textColor = .bk
         secondContentLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
-        secondContentLabel.setTextWithLineHeight(text: secondContentLabel.text, lineHeight: 22.adjusted)
-        secondContentLabel.asColor(targetString: "10,000원", color: .main)
         secondSubContentLabel.textColor = .gray02
         secondSubContentLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+        guestDuesLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
+        guestDuesLabel.textColor = .bk
+        
         secondSubContentLabel.setTextWithLineHeight(text: secondSubContentLabel.text, lineHeight: 22.adjusted)
         
         thirdContentLabel.textColor = .bk
         thirdContentLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
-        thirdContentLabel.setTextWithLineHeight(text: thirdContentLabel.text, lineHeight: 22.adjusted)
         
         selectBtn.backgroundColor = .gray03
         selectBtn.tintColor = .wht
         selectBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
         selectBtn.layer.cornerRadius = 8.adjusted
         
-//        btnsDateLabel[0].font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
-//        btnsDateLabel[0].setTextWithLineHeight(text: btnsDateLabel[0].text, lineHeight: 22.adjusted)
-//        btnsDateLabel[0].textColor = .bk
-//
-//        btnsDateLabel[1].font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
-//        btnsDateLabel[1].setTextWithLineHeight(text: btnsDateLabel[1].text, lineHeight: 22.adjusted)
-//        btnsDateLabel[1].textColor = .bk
-//
-//        btnsDateLabel[2].font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
-//        btnsDateLabel[2].setTextWithLineHeight(text: btnsDateLabel[2].text, lineHeight: 22.adjusted)
-//        btnsDateLabel[2].textColor = .bk
+        for i in 0...2 {
+            circleBtns[i].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+            circleBtns[i].setTitleColor(UIColor.bk, for: .normal)
+        }
     }
     
     @IBAction func touchUpFirstCircleBtn(_ sender: Any) {
@@ -110,13 +113,18 @@ class CrewApplicationVC: UIViewController {
     
     @IBAction func touchUpSelectBtn(_ sender: Any) {
         if selectBtn.backgroundColor == .bk {
-            //guestRegister.postMakeCrew(GuestRegisterRequest(crewID: UserDefaults.standard.string(forKey: "clubID")), date: "", delegate: self)
+            for i in 0...2 {
+                if circleBtns[i].status == true {
+                    guestRegister.postMakeCrew(GuestRegisterRequest(crewID: UserDefaults.standard.integer(forKey: "clubID"), date: circleBtns[i].titleLabel?.text ?? ""), delegate: self)
+                    print("dfd", circleBtns[i].titleLabel?.text)
+                }
+            }
             guestModalDelegate?.modalDismiss()
             // 디스미스되고 손님신청완료 팝업 나옴
             dismiss(animated: true, completion: {
                 self.guestModalDelegate?.selectBtnToOpenPopup()
-            }
-            )}
+            })
+        }
         else {
             selectBtn.backgroundColor = .gray03
         }
@@ -126,11 +134,32 @@ class CrewApplicationVC: UIViewController {
 extension CrewApplicationVC {
     func didSuccessGuestRegister(result: GuestRegisterData) {
         print("게스트 참여가 성공적으로 들어옵니다.")
-        
+    }
+    
+    func didSuccessGuestInfo(result: GuestInfoResult) {
+        print("게스트 참여 정보가 성공적으로 들어옵니다.")
+        guestInfoResult = result
+        guestDuesLabel.text = String(result.guestDue) + "원 입니다."
+        guestDuesLabel.asColor(targetString: String(result.guestDue) + "원", color: .main)
+        if result.localDates.count <= 1 {
+            circleBtns[0].setTitle(result.localDates[0], for: .normal)
+            circleBtns[1].isHidden = true
+            circleBtns[2].isHidden = true
+        }
+        else if result.localDates.count <= 2 {
+            for i in 0...1 {
+                circleBtns[i].setTitle(result.localDates[i], for: .normal)
+                circleBtns[2].isHidden = true
+            }
+        }
+        else if result.localDates.count <= 3 {
+            for i in 0...2 {
+                circleBtns[i].setTitle(result.localDates[i], for: .normal)
+            }
+        }
     }
 
     func failedToRequest(message: String) {
         print("크루 디테일 조회 데이터가 들어오지 않았습니다.")
-
     }
 }

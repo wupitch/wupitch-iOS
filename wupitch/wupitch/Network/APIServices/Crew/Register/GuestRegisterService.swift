@@ -26,12 +26,12 @@ struct GuestRegisterService {
         
         AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: header)
             .responseDecodable(of: GuestRegisterData.self, emptyResponseCodes: [200, 204, 205]) { response in
-                print("크루 만들기 response",response)
+                print("손님 등록 response",response)
                 switch response.result {
                 case .success(let response):
                     delegate.didSuccessGuestRegister(result: response)
                 case .failure(let error):
-                    print("크루 만들기에서 오류가 났습니다",error.localizedDescription)
+                    print("손님 등록에서 오류가 났습니다",error.localizedDescription)
                     delegate.failedToRequest(message: "오류가났습니다.")
                 }
             }

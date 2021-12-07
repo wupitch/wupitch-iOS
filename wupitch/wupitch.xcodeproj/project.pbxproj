@@ -97,6 +97,8 @@
 		DD3ACE98275D1CD500FF00ED /* FCMTestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACE97275D1CD500FF00ED /* FCMTestRequest.swift */; };
 		DD3ACE9B275EA2B600FF00ED /* BungaeSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACE9A275EA2B600FF00ED /* BungaeSearchService.swift */; };
 		DD3ACE9E275EA39300FF00ED /* BungaeSearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACE9D275EA39300FF00ED /* BungaeSearchData.swift */; };
+		DD3ACEA0275F788B00FF00ED /* GuestInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACE9F275F788B00FF00ED /* GuestInfoService.swift */; };
+		DD3ACEA2275F790900FF00ED /* GuestInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACEA1275F790900FF00ED /* GuestInfoData.swift */; };
 		DD3E37B6272F432A00C4192E /* UserInfoWarningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E37B5272F432A00C4192E /* UserInfoWarningVC.swift */; };
 		DD3E37C6272F928E00C4192E /* CrewCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E37C4272F928E00C4192E /* CrewCVCell.swift */; };
 		DD3E37C7272F928E00C4192E /* CrewCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD3E37C5272F928E00C4192E /* CrewCVCell.xib */; };
@@ -404,6 +406,8 @@
 		DD3ACE97275D1CD500FF00ED /* FCMTestRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMTestRequest.swift; sourceTree = "<group>"; };
 		DD3ACE9A275EA2B600FF00ED /* BungaeSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeSearchService.swift; sourceTree = "<group>"; };
 		DD3ACE9D275EA39300FF00ED /* BungaeSearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeSearchData.swift; sourceTree = "<group>"; };
+		DD3ACE9F275F788B00FF00ED /* GuestInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestInfoService.swift; sourceTree = "<group>"; };
+		DD3ACEA1275F790900FF00ED /* GuestInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestInfoData.swift; sourceTree = "<group>"; };
 		DD3E37B5272F432A00C4192E /* UserInfoWarningVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoWarningVC.swift; sourceTree = "<group>"; };
 		DD3E37C4272F928E00C4192E /* CrewCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewCVCell.swift; sourceTree = "<group>"; };
 		DD3E37C5272F928E00C4192E /* CrewCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrewCVCell.xib; sourceTree = "<group>"; };
@@ -1391,6 +1395,7 @@
 			children = (
 				DD485FDA27565EAE0071AE93 /* CrewRegisterService.swift */,
 				DD3ACE8A275C63AA00FF00ED /* GuestRegisterService.swift */,
+				DD3ACE9F275F788B00FF00ED /* GuestInfoService.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -1401,6 +1406,7 @@
 				DD485FDD27565F770071AE93 /* CrewRegisterData.swift */,
 				DD3ACE86275C632800FF00ED /* GuestRegisterData.swift */,
 				DD3ACE88275C633B00FF00ED /* GuestRegisterRequest.swift */,
+				DD3ACEA1275F790900FF00ED /* GuestInfoData.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -2251,6 +2257,7 @@
 				DDED00F82719D02900C2C343 /* UIColor.swift in Sources */,
 				DD485FF92756BBAC0071AE93 /* PatchFCMData.swift in Sources */,
 				DDC4DB0827440F0100D79CC8 /* SignInRequest.swift in Sources */,
+				DD3ACEA2275F790900FF00ED /* GuestInfoData.swift in Sources */,
 				DD3ACE8F275CE6FF00FF00ED /* MyActivityAlertVC.swift in Sources */,
 				DDC46B962752AACD0015341E /* CrewDetailData.swift in Sources */,
 				DD3A30CA272DA33600D711C6 /* AppleLoginData.swift in Sources */,
@@ -2286,6 +2293,7 @@
 				DDC4DB55274D2C9400D79CC8 /* MakeBungaeMoneyVC.swift in Sources */,
 				DD3A30F6272E620B00D711C6 /* AddCrewVC.swift in Sources */,
 				DD65ABDB2758901600D71055 /* LookUpBungaeAreaFilterService.swift in Sources */,
+				DD3ACEA0275F788B00FF00ED /* GuestInfoService.swift in Sources */,
 				DDED011B271B33F800C2C343 /* OnboardingData.swift in Sources */,
 				DD485FF72756BB9E0071AE93 /* PatchFCMService.swift in Sources */,
 				DD485F682752FFDD0071AE93 /* MemberSportsData.swift in Sources */,
@@ -2565,17 +2573,19 @@
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = wupitch/Support/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "신분증 앞면 사진 촬영을 위해 '우피치'가 사용자의 '카메라'에 접근할 수 있어야 합니다. 촬영된 사진은 오직 성별 인증의 목적으로만 사용되며, 촬영 후 24시간 이내 폐기됩니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진, 크루 소개 사진, 번개 소개 사진, 크루 활동 사진 등록 및 변경을 위해 '우피치'가 사용자의 사진 라이브러리에 접근할 수 있어야 합니다. ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Onboarding;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wupitch.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2598,17 +2608,19 @@
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = wupitch/Support/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "신분증 앞면 사진 촬영을 위해 '우피치'가 사용자의 '카메라'에 접근할 수 있어야 합니다. 촬영된 사진은 오직 성별 인증의 목적으로만 사용되며, 촬영 후 24시간 이내 폐기됩니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진, 크루 소개 사진, 번개 소개 사진, 크루 활동 사진 등록 및 변경을 위해 '우피치'가 사용자의 사진 라이브러리에 접근할 수 있어야 합니다. ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Onboarding;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wupitch.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

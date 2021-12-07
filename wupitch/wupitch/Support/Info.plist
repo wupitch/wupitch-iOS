@@ -2,12 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
-	<key>NSCameraUsageDescription</key>
-	<string>신분증 앞면 사진 촬영을 위해 &apos;우피치&apos;가 사용자의 &apos;카메라&apos;에 접근할 수 있어야 합니다. 촬영된 사진은 오직 성별 인증의 목적으로만 사용되며, 촬영 후 24시간 이내 폐기됩니다.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>프로필 사진, 크루 소개 사진, 번개 소개 사진, 크루 활동 사진 등록 및 변경을 위해 &apos;우피치&apos;가 사용자의 사진 라이브러리에 접근할 수 있어야 합니다. </string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>kakaokompassauth</string>
