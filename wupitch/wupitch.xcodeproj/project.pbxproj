@@ -101,6 +101,8 @@
 		DD3ACEA2275F790900FF00ED /* GuestInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACEA1275F790900FF00ED /* GuestInfoData.swift */; };
 		DD3ACEA4276009C100FF00ED /* NowRegisterCrewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACEA3276009C100FF00ED /* NowRegisterCrewData.swift */; };
 		DD3ACEA627600BD200FF00ED /* NowRegisterCrewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACEA527600BD200FF00ED /* NowRegisterCrewService.swift */; };
+		DD3ACEA8276014C600FF00ED /* NowRegisterBungaeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACEA7276014C600FF00ED /* NowRegisterBungaeService.swift */; };
+		DD3ACEAA2760154700FF00ED /* NowRegisterBungaeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACEA92760154700FF00ED /* NowRegisterBungaeData.swift */; };
 		DD3E37B6272F432A00C4192E /* UserInfoWarningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E37B5272F432A00C4192E /* UserInfoWarningVC.swift */; };
 		DD3E37C6272F928E00C4192E /* CrewCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E37C4272F928E00C4192E /* CrewCVCell.swift */; };
 		DD3E37C7272F928E00C4192E /* CrewCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD3E37C5272F928E00C4192E /* CrewCVCell.xib */; };
@@ -412,6 +414,8 @@
 		DD3ACEA1275F790900FF00ED /* GuestInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestInfoData.swift; sourceTree = "<group>"; };
 		DD3ACEA3276009C100FF00ED /* NowRegisterCrewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowRegisterCrewData.swift; sourceTree = "<group>"; };
 		DD3ACEA527600BD200FF00ED /* NowRegisterCrewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowRegisterCrewService.swift; sourceTree = "<group>"; };
+		DD3ACEA7276014C600FF00ED /* NowRegisterBungaeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowRegisterBungaeService.swift; sourceTree = "<group>"; };
+		DD3ACEA92760154700FF00ED /* NowRegisterBungaeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowRegisterBungaeData.swift; sourceTree = "<group>"; };
 		DD3E37B5272F432A00C4192E /* UserInfoWarningVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoWarningVC.swift; sourceTree = "<group>"; };
 		DD3E37C4272F928E00C4192E /* CrewCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewCVCell.swift; sourceTree = "<group>"; };
 		DD3E37C5272F928E00C4192E /* CrewCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrewCVCell.xib; sourceTree = "<group>"; };
@@ -1453,16 +1457,18 @@
 			isa = PBXGroup;
 			children = (
 				DD485FF12756862F0071AE93 /* BungaeRegisterService.swift */,
+				DD3ACEA7276014C600FF00ED /* NowRegisterBungaeService.swift */,
 			);
 			path = BungaeRegister;
 			sourceTree = "<group>";
 		};
-		DD485FF32756863D0071AE93 /* BungaeRegisterData */ = {
+		DD485FF32756863D0071AE93 /* BungaeRegister */ = {
 			isa = PBXGroup;
 			children = (
 				DD485FF42756864E0071AE93 /* BungaeRegisterData.swift */,
+				DD3ACEA92760154700FF00ED /* NowRegisterBungaeData.swift */,
 			);
-			path = BungaeRegisterData;
+			path = BungaeRegister;
 			sourceTree = "<group>";
 		};
 		DD65ABD42758870A00D71055 /* LookUpBungaeFileter */ = {
@@ -1618,7 +1624,7 @@
 			children = (
 				DD3ACE9C275EA38400FF00ED /* BungaeSearch */,
 				DD65ABD72758878F00D71055 /* LookUpBungaeFilter */,
-				DD485FF32756863D0071AE93 /* BungaeRegisterData */,
+				DD485FF32756863D0071AE93 /* BungaeRegister */,
 				DD485FED275682D40071AE93 /* BungaePinUpToggle */,
 				DD485FD3275609F10071AE93 /* BungaeDetail */,
 				DD485FA4275556900071AE93 /* LookUpBungae */,
@@ -2226,6 +2232,7 @@
 				DD1BFC552738E9530042C51F /* MakeCrewMoneyVC.swift in Sources */,
 				DD3E37B6272F432A00C4192E /* UserInfoWarningVC.swift in Sources */,
 				DD1BFC272736DC8C0042C51F /* InformationService.swift in Sources */,
+				DD3ACEA8276014C600FF00ED /* NowRegisterBungaeService.swift in Sources */,
 				DDC4DB5B274DE79A00D79CC8 /* FeedDetailVC.swift in Sources */,
 				DDC4DB64274E2BB100D79CC8 /* ActivityCrewCVCell.swift in Sources */,
 				DD9EEDE12740354200E02396 /* OnboardingVC.swift in Sources */,
@@ -2351,6 +2358,7 @@
 				DD3A30E0272DABC000D711C6 /* BungaeVC.swift in Sources */,
 				DD485FE227566E760071AE93 /* PinUpToggleService.swift in Sources */,
 				DD65ABE22758BB5500D71055 /* DetailCrewInquireCVCell.swift in Sources */,
+				DD3ACEAA2760154700FF00ED /* NowRegisterBungaeData.swift in Sources */,
 				DD3ACBC8272170A800EBC201 /* SignUpCompleteVC.swift in Sources */,
 				DD65ABD9275887A200D71055 /* LookUpBungaeFilterData.swift in Sources */,
 				DDC46B7D2752219F0015341E /* PasswordCheckData.swift in Sources */,

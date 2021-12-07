@@ -17,6 +17,10 @@ class MyActivityVC: BaseVC {
     lazy var nowRegisterCrewDataManager = NowRegisterCrewService()
     var nowRegisterData : [NowRegisterCrewResult] = []
     
+    // 현재 가입한 번개 조회 API
+    lazy var nowRegisterBungaeDataManager = NowRegisterBungaeService()
+    var nowRegisterBungaeData : [NowRegisterBungaeResult] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
@@ -26,6 +30,8 @@ class MyActivityVC: BaseVC {
         super.viewWillAppear(true)
         // 현재 가입한 크루 조회 API
         nowRegisterCrewDataManager.getNowRegisterCrew(delegate: self)
+        // 현재 가입한 번개 조회 API
+        nowRegisterBungaeDataManager.getNowRegisterBungae(delegate: self)
     }
     
     private func setStyle() {
@@ -185,13 +191,18 @@ extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
 }
 
-// MARK: - 현재 가입한 크루 조회 API
+// MARK: - API Extension
 extension MyActivityVC {
+    // 가입한 크루 조회 API
     func didSuccessNowRegister(result: [NowRegisterCrewResult]) {
         print("현재 가입한 크루 정보를 성공적으로 조회하였습니다.")
         nowRegisterData = result
     }
-    
+    // 가입한 번개 조회 API
+    func didSuccessNowRegisterBungae(result: [NowRegisterBungaeResult]) {
+        print("현재 가입한 크루 정보를 성공적으로 조회하였습니다.")
+        nowRegisterBungaeData = result
+    }
     func failedToRequest(message: String) {
         print("현재 가입한 크루 정보 데이터가 들어오지 않습니다.")
     }
