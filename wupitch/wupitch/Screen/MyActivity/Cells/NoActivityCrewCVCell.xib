@@ -20,15 +20,16 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Bg-hv-Wnr">
                         <rect key="frame" x="0.0" y="0.0" width="350" height="158"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tX0-St-XuA">
-                                <rect key="frame" x="127" y="64" width="96" height="30"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="+ 크루 둘러보기"/>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 크루 둘러보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rV-qM-hHw">
+                                <rect key="frame" x="121" y="68.5" width="108" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="tX0-St-XuA" firstAttribute="centerY" secondItem="1Bg-hv-Wnr" secondAttribute="centerY" id="SWx-1H-26D"/>
-                            <constraint firstItem="tX0-St-XuA" firstAttribute="centerX" secondItem="1Bg-hv-Wnr" secondAttribute="centerX" id="Z1F-rn-O2g"/>
+                            <constraint firstItem="6rV-qM-hHw" firstAttribute="centerY" secondItem="1Bg-hv-Wnr" secondAttribute="centerY" id="Mbz-0U-vBa"/>
+                            <constraint firstItem="6rV-qM-hHw" firstAttribute="centerX" secondItem="1Bg-hv-Wnr" secondAttribute="centerX" id="aj9-JF-ixB"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -43,7 +44,7 @@
             <size key="customSize" width="350" height="158"/>
             <connections>
                 <outlet property="bgView" destination="1Bg-hv-Wnr" id="eWB-Vg-lbE"/>
-                <outlet property="lookBtn" destination="tX0-St-XuA" id="0gB-uB-gnf"/>
+                <outlet property="lookLabel" destination="6rV-qM-hHw" id="2Wr-wc-Yiu"/>
             </connections>
             <point key="canvasLocation" x="355.07246376811599" y="133.92857142857142"/>
         </collectionViewCell>

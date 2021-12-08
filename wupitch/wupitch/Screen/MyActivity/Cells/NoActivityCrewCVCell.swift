@@ -9,7 +9,7 @@ import UIKit
 
 class NoActivityCrewCVCell: UICollectionViewCell {
 
-    @IBOutlet weak var lookBtn: UIButton!
+    @IBOutlet weak var lookLabel: UILabel!
     @IBOutlet weak var bgView: UIView!
     static let identifier = "NoActivityCrewCVCell"
     
@@ -23,7 +23,8 @@ class NoActivityCrewCVCell: UICollectionViewCell {
         bgView.layer.borderWidth = 1.adjusted
         bgView.layer.borderColor = UIColor.main.cgColor
         bgView.makeRounded(cornerRadius: 16.adjusted)
-        lookBtn.setTitleColor(.main, for: .normal)
-        lookBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
+        
+        lookLabel.textColor = .main
+        lookLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
     }
 }

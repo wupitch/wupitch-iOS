@@ -45,6 +45,8 @@ class DetailCrewIntroduceTVCell: UITableViewCell {
 
         contentLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
         contentLabel.textColor = .bk
+        contentLabel.setTextWithLineHeight(text: contentLabel.text, lineHeight: 26.adjusted)
+        
 
     }
 }

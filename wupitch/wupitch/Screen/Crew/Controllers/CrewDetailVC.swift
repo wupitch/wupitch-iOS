@@ -33,7 +33,6 @@ class CrewDetailVC: BaseVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         crewDetailDataManager.getCrewDetail(delegate: self)
-       
     }
 
     func setStyle() {
@@ -61,8 +60,6 @@ class CrewDetailVC: BaseVC {
         registerBtn.tintColor = .wht
         registerBtn.backgroundColor = .main
         registerBtn.makeRounded(cornerRadius: 8.adjusted)
-        
-        
     }
     // 스크롤 시 선 감지
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -292,20 +289,30 @@ extension CrewDetailVC: UITableViewDelegate, UITableViewDataSource {
                 cell.moneyLabel[1].text = "손님비" + " " + String(detailInfo?.guestDues ?? 0) + "원"
             }
             
-            
-            cell.dayLabel[indexPath.row].text = String(detailInfo?.schedules?[indexPath.row].day ?? "") + " " + stringDate(doubleDate: detailInfo?.schedules?[indexPath.row].startTime ?? 0) + " - " + stringDate(doubleDate: detailInfo?.schedules?[indexPath.row].endTime ?? 0)
-            
-            cell.dayLabel[1].isHidden = true
-            cell.dayLabel[2].isHidden = true
-            
+            // 스케줄
+            if detailInfo?.schedules.count ?? 0 <= 1 {
+                cell.dayLabel[0].text = String(detailInfo?.schedules[0].day ?? "") + " " + stringDate(doubleDate: detailInfo?.schedules[0].startTime ?? 0) + " - " + stringDate(doubleDate: detailInfo?.schedules[0].endTime ?? 0)
+                cell.dayLabel[1].isHidden = true
+                cell.dayLabel[2].isHidden = true
+            }
+            else if detailInfo?.schedules.count ?? 0 <= 2 {
+                for i in 0...1 {
+                    cell.dayLabel[i].text = String(detailInfo?.schedules[i].day ?? "") + " " + stringDate(doubleDate: detailInfo?.schedules[i].startTime ?? 0) + " - " + stringDate(doubleDate: detailInfo?.schedules[i].endTime ?? 0)
+                }
+                cell.dayLabel[1].isHidden = false
+                cell.dayLabel[2].isHidden = true
+            }
+            else if detailInfo?.schedules.count ?? 0 <= 3 {
+                for i in 0...2 {
+                    cell.dayLabel[i].text = String(detailInfo?.schedules[i].day ?? "") + " " + stringDate(doubleDate: detailInfo?.schedules[i].startTime ?? 0) + " - " + stringDate(doubleDate: detailInfo?.schedules[i].endTime ?? 0)
+                }
+                cell.dayLabel[2].isHidden = false
+            }
             return cell
         } else if indexPath.section == 2 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailCrewIntroduceTVCell.identifier) as? DetailCrewIntroduceTVCell else{
                 return UITableViewCell()
             }
-            
-            // 디테일 페이지 손님 참여할 때 바텀 시트에 값 넣어주기 위해
-            SignUpUserInfo.shared.bottomDates = detailInfo?.schedules ?? []
             
             cell.titleLabel.text = "소개"
             // 인원이 없을 때
@@ -317,11 +324,11 @@ extension CrewDetailVC: UITableViewDelegate, UITableViewDataSource {
                 cell.peopleLabel.text = "인원:" + " " + String(detailInfo?.memberCount ?? 0) + "명"
             }
             // 연령대가 있을 때
-            if let age = detailInfo?.ageTable {
+            print("연령대",detailInfo?.ageTable.count)
+            
+            if var age = detailInfo?.ageTable {
                 cell.ageLabel.isHidden = false
-                for i in age {
-                    cell.ageLabel.text = "연령:" + " " + i
-                }
+                cell.ageLabel.text = "연령:" + " " + age.joined(separator: ", ")
             }
             else {
                 cell.ageLabel.isHidden = true

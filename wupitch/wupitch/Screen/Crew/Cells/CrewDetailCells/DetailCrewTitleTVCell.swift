@@ -37,6 +37,7 @@ class DetailCrewTitleTVCell: UITableViewCell {
         
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 20.adjusted)
         titleLabel.tintColor = .bk
+        titleLabel.setTextWithLineHeight(text: titleLabel.text, lineHeight: 28.adjusted)
         
         for i in 0...2 {
             dayLabel[i].font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)

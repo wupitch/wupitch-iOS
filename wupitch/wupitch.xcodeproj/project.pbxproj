@@ -103,6 +103,10 @@
 		DD3ACEA627600BD200FF00ED /* NowRegisterCrewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACEA527600BD200FF00ED /* NowRegisterCrewService.swift */; };
 		DD3ACEA8276014C600FF00ED /* NowRegisterBungaeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACEA7276014C600FF00ED /* NowRegisterBungaeService.swift */; };
 		DD3ACEAA2760154700FF00ED /* NowRegisterBungaeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACEA92760154700FF00ED /* NowRegisterBungaeData.swift */; };
+		DD3ACEAC2760687C00FF00ED /* MyActivityBungaeDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACEAB2760687C00FF00ED /* MyActivityBungaeDetail.storyboard */; };
+		DD3ACEAE276068C400FF00ED /* MyActivityBungaeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACEAD276068C400FF00ED /* MyActivityBungaeDetailVC.swift */; };
+		DD3ACEB1276075FC00FF00ED /* BungaeActivityTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACEAF276075FC00FF00ED /* BungaeActivityTVCell.swift */; };
+		DD3ACEB2276075FC00FF00ED /* BungaeActivityTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACEB0276075FC00FF00ED /* BungaeActivityTVCell.xib */; };
 		DD3E37B6272F432A00C4192E /* UserInfoWarningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E37B5272F432A00C4192E /* UserInfoWarningVC.swift */; };
 		DD3E37C6272F928E00C4192E /* CrewCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E37C4272F928E00C4192E /* CrewCVCell.swift */; };
 		DD3E37C7272F928E00C4192E /* CrewCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD3E37C5272F928E00C4192E /* CrewCVCell.xib */; };
@@ -416,6 +420,10 @@
 		DD3ACEA527600BD200FF00ED /* NowRegisterCrewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowRegisterCrewService.swift; sourceTree = "<group>"; };
 		DD3ACEA7276014C600FF00ED /* NowRegisterBungaeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowRegisterBungaeService.swift; sourceTree = "<group>"; };
 		DD3ACEA92760154700FF00ED /* NowRegisterBungaeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowRegisterBungaeData.swift; sourceTree = "<group>"; };
+		DD3ACEAB2760687C00FF00ED /* MyActivityBungaeDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyActivityBungaeDetail.storyboard; sourceTree = "<group>"; };
+		DD3ACEAD276068C400FF00ED /* MyActivityBungaeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyActivityBungaeDetailVC.swift; sourceTree = "<group>"; };
+		DD3ACEAF276075FC00FF00ED /* BungaeActivityTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeActivityTVCell.swift; sourceTree = "<group>"; };
+		DD3ACEB0276075FC00FF00ED /* BungaeActivityTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BungaeActivityTVCell.xib; sourceTree = "<group>"; };
 		DD3E37B5272F432A00C4192E /* UserInfoWarningVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoWarningVC.swift; sourceTree = "<group>"; };
 		DD3E37C4272F928E00C4192E /* CrewCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewCVCell.swift; sourceTree = "<group>"; };
 		DD3E37C5272F928E00C4192E /* CrewCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrewCVCell.xib; sourceTree = "<group>"; };
@@ -1076,6 +1084,7 @@
 				DD3A30E3272DABE900D711C6 /* MyActivity.storyboard */,
 				DDC46B49274E4F010015341E /* MyActivityDetail.storyboard */,
 				DDEB65F9274E477200F48DF0 /* AddBoard.storyboard */,
+				DD3ACEAB2760687C00FF00ED /* MyActivityBungaeDetail.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1086,6 +1095,7 @@
 				DD3A30E5272DAC0300D711C6 /* MyActivityVC.swift */,
 				DDC46B4B274E4F0D0015341E /* MyActivityDetailVC.swift */,
 				DDEB65FB274E478900F48DF0 /* AddBoardVC.swift */,
+				DD3ACEAD276068C400FF00ED /* MyActivityBungaeDetailVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1840,6 +1850,8 @@
 				DDD1AD23274E3AB900CCC312 /* NoActivityCrewCVCell.xib */,
 				DDC46B64274FBA7A0015341E /* ActivityTabCVCell.swift */,
 				DDC46B65274FBA7A0015341E /* ActivityTabCVCell.xib */,
+				DD3ACEAF276075FC00FF00ED /* BungaeActivityTVCell.swift */,
+				DD3ACEB0276075FC00FF00ED /* BungaeActivityTVCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2097,6 +2109,7 @@
 				DDC4DAF82743D1B000D79CC8 /* SignUpCamera.storyboard in Resources */,
 				DD7BEBC427315D3A00DB2F60 /* DetailCrewImgTVCell.xib in Resources */,
 				DD3ACBC62721709200EBC201 /* SignUpComplete.storyboard in Resources */,
+				DD3ACEB2276075FC00FF00ED /* BungaeActivityTVCell.xib in Resources */,
 				DD295DAC27181E3D008CFC64 /* LaunchScreen.storyboard in Resources */,
 				DD9EEDDB273FFE9B00E02396 /* CrewSearchCVCell.xib in Resources */,
 				DDED011F271BD96D00C2C343 /* Onboarding.storyboard in Resources */,
@@ -2121,6 +2134,7 @@
 				DDC4DAE6274275E200D79CC8 /* ToastMessage.storyboard in Resources */,
 				DD7BEBCC27315DF800DB2F60 /* DetailCrewIntroduceTVCell.xib in Resources */,
 				DDC4DB60274E234400D79CC8 /* FeedCVCell.xib in Resources */,
+				DD3ACEAC2760687C00FF00ED /* MyActivityBungaeDetail.storyboard in Resources */,
 				DD3A30DC272DAB7B00D711C6 /* Crew.storyboard in Resources */,
 				DDC4DB1F2746415000D79CC8 /* BungaeCVCell.xib in Resources */,
 				DD295DA927181E3D008CFC64 /* Assets.xcassets in Resources */,
@@ -2314,6 +2328,7 @@
 				DD485F8127534C940071AE93 /* LookUpCrewService.swift in Sources */,
 				DD65ABD62758872200D71055 /* LookUpBungaeFilterService.swift in Sources */,
 				DDC4DB45274D2BBA00D79CC8 /* MakeBungaeRegionVC.swift in Sources */,
+				DD3ACEAE276068C400FF00ED /* MyActivityBungaeDetailVC.swift in Sources */,
 				DDC4DB142744B96C00D79CC8 /* MakeCrewRequest.swift in Sources */,
 				DDC4DB0E274432E400D79CC8 /* UIViewController.swift in Sources */,
 				DD3ACE94275D1C2600FF00ED /* FCMTestService.swift in Sources */,
@@ -2378,6 +2393,7 @@
 				DD65ABD02757752F00D71055 /* CrewDetailVC.swift in Sources */,
 				DDC46B742751698B0015341E /* MakeBungaeData.swift in Sources */,
 				DD3ACEA4276009C100FF00ED /* NowRegisterCrewData.swift in Sources */,
+				DD3ACEB1276075FC00FF00ED /* BungaeActivityTVCell.swift in Sources */,
 				DD1BFC5D273927370042C51F /* MakeCrewGuestVC.swift in Sources */,
 				DD485FE7275680FF0071AE93 /* BungaeImageCVCell.swift in Sources */,
 				DD1BFC2D2736DCDC0042C51F /* InformationRequest.swift in Sources */,

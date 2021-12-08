@@ -157,6 +157,7 @@ extension CrewApplicationVC {
         guestInfoResult = result
         guestDuesLabel.text = String(result.guestDue) + "원 입니다."
         guestDuesLabel.asColor(targetString: String(result.guestDue) + "원", color: .main)
+        
         if result.localDates.count <= 1 {
             circleBtns[0].setTitle(result.localDates[0], for: .normal)
             circleBtns[1].isHidden = true

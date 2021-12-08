@@ -74,7 +74,12 @@ extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             }
         }
         else {
-            return 5
+            if nowRegisterBungaeData.count < 1 {
+                return 1
+            }
+            else {
+                return 5
+            }
         }
 //        return 1
     }
@@ -105,11 +110,20 @@ extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             }
         }
         else if indexPath.section == 1 {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BungaeCVCell.identifier, for: indexPath) as? BungaeCVCell else{
-                return UICollectionViewCell()
+            if nowRegisterBungaeData.count < 1 {
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NoActivityCrewCVCell.identifier, for: indexPath) as? NoActivityCrewCVCell else{
+                    return UICollectionViewCell()
+                }
+                cell.lookLabel.text = "+ 번개 둘러보기"
+                return cell
             }
-            cell.pinImageView.image = UIImage(named: "leader")
-            return cell
+            else {
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BungaeCVCell.identifier, for: indexPath) as? BungaeCVCell else{
+                    return UICollectionViewCell()
+                }
+                cell.pinImageView.image = UIImage(named: "leader")
+                return cell
+            }
         }
         return UICollectionViewCell()
     }
@@ -144,18 +158,29 @@ extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            // cell 누르면 해당 디테일 페이지로 이동
-            let storyboard = UIStoryboard.init(name: "MyActivityDetail", bundle: nil)
-            guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityDetailVC") as? MyActivityDetailVC else {return}
-            dvc.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(dvc, animated: true)
+            if nowRegisterData.count < 1 {
+                // cell 누르면 해당 디테일 페이지로 이동
+                self.tabBarController?.selectedIndex = 0
+            }
+            else {
+                // cell 누르면 해당 디테일 페이지로 이동
+                let storyboard = UIStoryboard.init(name: "MyActivityDetail", bundle: nil)
+                guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityDetailVC") as? MyActivityDetailVC else {return}
+                dvc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(dvc, animated: true)
+            }
         }
         else {
-            // cell 누르면 해당 디테일 페이지로 이동
-            let storyboard = UIStoryboard.init(name: "BungaeDetail", bundle: nil)
-            guard let dvc = storyboard.instantiateViewController(identifier: "BungaeDetailVC") as? BungaeDetailVC else {return}
-            dvc.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(dvc, animated: true)
+            if nowRegisterBungaeData.count < 1 {
+                self.tabBarController?.selectedIndex = 1
+            }
+            else {
+                // cell 누르면 해당 디테일 페이지로 이동
+                let storyboard = UIStoryboard.init(name: "BungaeDetail", bundle: nil)
+                guard let dvc = storyboard.instantiateViewController(identifier: "BungaeDetailVC") as? BungaeDetailVC else {return}
+                dvc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(dvc, animated: true)
+            }
         }
     }
     

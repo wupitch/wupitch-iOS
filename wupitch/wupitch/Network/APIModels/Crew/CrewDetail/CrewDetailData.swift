@@ -24,7 +24,7 @@ struct CrewDetailResult: Codable {
     let isPinUp, isSelect: Bool
     let materials: String?
     let memberCount: Int
-    let schedules: [Schedule]?
+    let schedules: [Schedule]
     let sportsID: Int
     let sportsName: String
 
