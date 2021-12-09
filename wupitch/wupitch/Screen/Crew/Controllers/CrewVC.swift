@@ -131,7 +131,7 @@ class CrewVC: BaseVC {
 // MARK: - CollectionView Extension
 extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if lookUpCrew.count > 1 {
+        if lookUpCrew.count > 0 {
             return lookUpCrew.count
         }
         else {
@@ -139,7 +139,7 @@ extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if lookUpCrew.count > 1 {
+        if lookUpCrew.count > 0 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CrewCVCell.identifier, for: indexPath) as? CrewCVCell else{
                 return UICollectionViewCell()
             }
@@ -238,7 +238,7 @@ extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if lookUpCrew.count > 1 {
+        if lookUpCrew.count > 0 {
             // 크루 아이디 저장
             UserDefaults.standard.set(lookUpCrew[indexPath.row].clubID, forKey: "clubID")
             // cell 누르면 해당 디테일 페이지로 이동
@@ -253,19 +253,19 @@ extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
     // collectionView size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if lookUpCrew.count > 1 {
+        if lookUpCrew.count > 0 {
             let width = self.view.frame.width
             return CGSize(width: width-40, height: 133)
         }
         else {
             let width = self.view.frame.width
-            let height =  collectionView.frame.height
+            let height = collectionView.frame.height
             return CGSize(width: width, height: height)
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
                         UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        if lookUpCrew.count > 1 {
+        if lookUpCrew.count > 0 {
             return UIEdgeInsets(top: 12, left: 0, bottom: 0, right: 0)
         }
         else {

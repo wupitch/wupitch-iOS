@@ -160,7 +160,13 @@ extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         if indexPath.section == 0 {
             if nowRegisterData.count < 1 {
                 // cell 누르면 해당 디테일 페이지로 이동
-                self.tabBarController?.selectedIndex = 0
+                //self.tabBarController?.selectedIndex = 0
+                
+                // cell 누르면 해당 디테일 페이지로 이동
+                let storyboard = UIStoryboard.init(name: "MyActivityDetail", bundle: nil)
+                guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityDetailVC") as? MyActivityDetailVC else {return}
+                dvc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(dvc, animated: true)
             }
             else {
                 // cell 누르면 해당 디테일 페이지로 이동
@@ -172,12 +178,18 @@ extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         }
         else {
             if nowRegisterBungaeData.count < 1 {
-                self.tabBarController?.selectedIndex = 1
+                //self.tabBarController?.selectedIndex = 1
+                
+                // cell 누르면 해당 디테일 페이지로 이동
+                let storyboard = UIStoryboard.init(name: "MyActivityBungaeDetail", bundle: nil)
+                guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityBungaeDetailVC") as? MyActivityBungaeDetailVC else {return}
+                dvc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(dvc, animated: true)
             }
             else {
                 // cell 누르면 해당 디테일 페이지로 이동
-                let storyboard = UIStoryboard.init(name: "BungaeDetail", bundle: nil)
-                guard let dvc = storyboard.instantiateViewController(identifier: "BungaeDetailVC") as? BungaeDetailVC else {return}
+                let storyboard = UIStoryboard.init(name: "MyActivityBungaeDetail", bundle: nil)
+                guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityBungaeDetailVC") as? MyActivityBungaeDetailVC else {return}
                 dvc.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(dvc, animated: true)
             }

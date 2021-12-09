@@ -130,6 +130,7 @@ extension SignUpAgeVC {
         print("데이터가 성공적으로 들어왔습니다.")
         
         ageBtns[result.ageIdx].colorSportsBtn()
+        UserDefaults.standard.set(result.age, forKey: "pageAge")
         
     }
     

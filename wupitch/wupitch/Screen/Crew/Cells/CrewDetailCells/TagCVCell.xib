@@ -12,45 +12,47 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TagCVCell" id="gTV-IL-0wX" customClass="TagCVCell" customModule="wupitch" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="68" height="56"/>
+            <rect key="frame" x="0.0" y="0.0" width="106" height="39"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="68" height="56"/>
+                <rect key="frame" x="0.0" y="0.0" width="106" height="39"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="feE-gp-bAJ">
-                        <rect key="frame" x="0.0" y="0.0" width="68" height="56"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLT-bV-OmT">
+                        <rect key="frame" x="0.0" y="0.0" width="65.5" height="28"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VbE-HA-vk5">
-                                <rect key="frame" x="12" y="17.5" width="44" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3v-ZD-RrI">
+                                <rect key="frame" x="12" y="4" width="41.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="GOt-QU-dwl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="VbE-HA-vk5" firstAttribute="centerX" secondItem="feE-gp-bAJ" secondAttribute="centerX" id="9lt-BP-HyO"/>
-                            <constraint firstItem="VbE-HA-vk5" firstAttribute="centerY" secondItem="feE-gp-bAJ" secondAttribute="centerY" id="py6-yG-dEg"/>
-                            <constraint firstAttribute="trailing" secondItem="VbE-HA-vk5" secondAttribute="trailing" constant="12" id="tGW-aI-veD"/>
-                            <constraint firstItem="VbE-HA-vk5" firstAttribute="leading" secondItem="feE-gp-bAJ" secondAttribute="leading" constant="12" id="zdz-hb-6fX"/>
+                            <constraint firstAttribute="height" constant="28" id="96R-e2-IAi"/>
+                            <constraint firstItem="E3v-ZD-RrI" firstAttribute="leading" secondItem="JLT-bV-OmT" secondAttribute="leading" constant="12" id="B2E-J5-xlg"/>
+                            <constraint firstItem="E3v-ZD-RrI" firstAttribute="centerY" secondItem="JLT-bV-OmT" secondAttribute="centerY" id="e1Z-bp-fRr"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="52" id="esm-t9-tUD"/>
+                            <constraint firstItem="E3v-ZD-RrI" firstAttribute="centerX" secondItem="JLT-bV-OmT" secondAttribute="centerX" id="ipD-Yx-nkk"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="ySf-3R-fZq"/>
+                            <constraint firstAttribute="trailing" secondItem="E3v-ZD-RrI" secondAttribute="trailing" constant="12" id="zgW-6d-6Wo"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="feE-gp-bAJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="JC7-XE-2GB"/>
-                <constraint firstAttribute="trailing" secondItem="feE-gp-bAJ" secondAttribute="trailing" id="Op5-dV-qXd"/>
-                <constraint firstAttribute="bottom" secondItem="feE-gp-bAJ" secondAttribute="bottom" id="SWp-fv-Ngo"/>
-                <constraint firstItem="feE-gp-bAJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bJt-57-52V"/>
+                <constraint firstItem="JLT-bV-OmT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2uE-4h-Jcv"/>
+                <constraint firstItem="JLT-bV-OmT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="owF-PD-yBt"/>
             </constraints>
-            <size key="customSize" width="68" height="56"/>
+            <size key="customSize" width="106" height="39"/>
             <connections>
-                <outlet property="tagBgView" destination="feE-gp-bAJ" id="Kfa-qD-fzN"/>
-                <outlet property="tagLabel" destination="VbE-HA-vk5" id="ift-rH-C4D"/>
+                <outlet property="tagBgView" destination="JLT-bV-OmT" id="9iq-iY-dki"/>
+                <outlet property="tagLabel" destination="E3v-ZD-RrI" id="LV9-cu-EMM"/>
             </connections>
-            <point key="canvasLocation" x="-224.63768115942031" y="24.776785714285712"/>
+            <point key="canvasLocation" x="-197.10144927536234" y="19.084821428571427"/>
         </collectionViewCell>
     </objects>
     <resources>

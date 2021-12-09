@@ -26,7 +26,6 @@ struct GenericResponse<T: Codable>: Codable {
         code = (try? values.decode(Int.self, forKey: .code)) ?? -1
         isSuccess = (try? values.decode(Bool.self, forKey: .isSuccess)) ?? false
         message = (try? values.decode(String.self, forKey: .message)) ?? ""
-        print("확인",result)
         result = (try? values.decode(T.self, forKey: .result)) ?? nil
     }
 }

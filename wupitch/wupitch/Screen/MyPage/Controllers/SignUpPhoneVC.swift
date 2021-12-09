@@ -110,6 +110,7 @@ extension SignUpPhoneVC {
         if result.phoneNumber != nil {
             phoneTextField.text = result.phoneNumber
             phoneTextField.textColor = .bk
+            UserDefaults.standard.set(result.phoneNumber, forKey: "pagePhone")
         }
         else {
             print("값이 없어요")

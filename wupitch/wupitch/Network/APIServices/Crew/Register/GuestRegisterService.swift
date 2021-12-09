@@ -29,7 +29,20 @@ struct GuestRegisterService {
                 print("손님 등록 response",response)
                 switch response.result {
                 case .success(let response):
-                    delegate.didSuccessGuestRegister(result: response)
+                    // 성공했을 때
+                    if response.isSuccess {
+                        delegate.didSuccessGuestRegister(result: response)
+                    }
+                    // 실패했을 때
+                    else {
+                        print("손님등록들어와?")
+                        switch response.code {
+                        case 2014: delegate.failedToRequest(message: "필요한 모든 정보를 입력해주세요.")
+                            print("2014")
+                        default: delegate.failedToRequest(message: "")
+                            print("default")
+                        }
+                    }
                 case .failure(let error):
                     print("손님 등록에서 오류가 났습니다",error.localizedDescription)
                     delegate.failedToRequest(message: "오류가났습니다.")

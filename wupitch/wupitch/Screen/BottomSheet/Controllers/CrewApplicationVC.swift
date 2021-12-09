@@ -9,14 +9,15 @@ import UIKit
 
 protocol GuestModalDelegate {
     func modalDismiss()
-    func selectBtnToOpenPopup()
+    func selectBtnToOpenPopup(check:Bool)
+    func toProfile()
 }
 
 class CrewApplicationVC: UIViewController {
     
     var guestModalDelegate : GuestModalDelegate?
     var guestInfoResult : GuestInfoResult?
-    var guest : Bool?
+    var guest : GuestRegisterData?
     lazy var guestRegister = GuestRegisterService()
     lazy var guestInfo = GuestInfoService()
     
@@ -26,6 +27,7 @@ class CrewApplicationVC: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var lineView: UIView!
     @IBOutlet var circleBtns: [GuestDateBtn]!
+    @IBOutlet var dayLabel: [UILabel]!
     @IBOutlet weak var selectBtn: UIButton!
     @IBOutlet weak var thirdContentLabel: UILabel!
     @IBOutlet weak var secondSubContentLabel: UILabel!
@@ -77,6 +79,8 @@ class CrewApplicationVC: UIViewController {
         for i in 0...2 {
             circleBtns[i].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
             circleBtns[i].setTitleColor(UIColor.bk, for: .normal)
+            dayLabel[i].font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+            dayLabel[i].textColor = .bk
         }
     }
     
@@ -117,27 +121,7 @@ class CrewApplicationVC: UIViewController {
             for i in 0...2 {
                 if circleBtns[i].status == true {
                     guestRegister.postMakeCrew(GuestRegisterRequest(crewID: UserDefaults.standard.integer(forKey: "clubID"), date: circleBtns[i].titleLabel?.text ?? ""), delegate: self)
-                    print("dfd", circleBtns[i].titleLabel?.text)
                 }
-            }
-            if guest == false {
-                print("여기 거치니?")
-                let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
-                if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
-                    dvc.modalPresentationStyle = .overFullScreen
-                    dvc.modalTransitionStyle = .crossDissolve
-                    dvc.introducePopUp = self
-                    // present 형태로 띄우기
-                    self.present(dvc, animated: true, completion: nil)
-                }
-            }
-            
-            else {
-            guestModalDelegate?.modalDismiss()
-            // 디스미스되고 손님신청완료 팝업 나옴
-            dismiss(animated: true, completion: {
-                self.guestModalDelegate?.selectBtnToOpenPopup()
-            })
             }
         }
         else {
@@ -149,38 +133,58 @@ class CrewApplicationVC: UIViewController {
 extension CrewApplicationVC {
     func didSuccessGuestRegister(result: GuestRegisterData) {
         print("게스트 참여가 성공적으로 들어옵니다.")
-        guest = result.isSuccess
+        
+        if result.isSuccess == true {
+            guestModalDelegate?.modalDismiss()
+            // 디스미스되고 손님신청완료 팝업 나옴
+            dismiss(animated: true, completion: {
+                self.guestModalDelegate?.selectBtnToOpenPopup(check:true)
+            })
+        }
     }
+
     
     func didSuccessGuestInfo(result: GuestInfoResult) {
         print("게스트 참여 정보가 성공적으로 들어옵니다.")
-        guestInfoResult = result
+        self.guestInfoResult = result
         guestDuesLabel.text = String(result.guestDue) + "원 입니다."
         guestDuesLabel.asColor(targetString: String(result.guestDue) + "원", color: .main)
         
         if result.localDates.count <= 1 {
             circleBtns[0].setTitle(result.localDates[0], for: .normal)
+            dayLabel[0].text = result.days[0]
             circleBtns[1].isHidden = true
             circleBtns[2].isHidden = true
+            dayLabel[1].isHidden = true
+            dayLabel[2].isHidden = true
         }
         else if result.localDates.count <= 2 {
             for i in 0...1 {
                 circleBtns[i].setTitle(result.localDates[i], for: .normal)
+                dayLabel[i].text = result.days[i]
                 circleBtns[2].isHidden = true
+                dayLabel[2].isHidden = true
             }
         }
         else if result.localDates.count <= 3 {
             for i in 0...2 {
                 circleBtns[i].setTitle(result.localDates[i], for: .normal)
+                dayLabel[i].text = result.days[i]
             }
         }
     }
 
     func failedToRequest(message: String) {
-        print("크루 디테일 조회 데이터가 들어오지 않았습니다.")
+        print("안녕하세요")
+        if message == "필요한 모든 정보를 입력해주세요." {
+            guestModalDelegate?.modalDismiss()
+            // 디스미스되고 손님신청완료 팝업 나옴
+            dismiss(animated: true, completion: {
+                self.guestModalDelegate?.selectBtnToOpenPopup(check: false)
+            })
+        }
     }
 }
-
 extension CrewApplicationVC: IntroduceDelegate {
     func dismissIntroducePopup() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "ProfileDetail", bundle: nil)
@@ -189,3 +193,4 @@ extension CrewApplicationVC: IntroduceDelegate {
         }
     }
 }
+

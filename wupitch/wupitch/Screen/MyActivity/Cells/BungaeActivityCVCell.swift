@@ -1,27 +1,24 @@
 //
-//  ActivityTabCVCell.swift
+//  BungaeActivityCVCell.swift
 //  wupitch
 //
-//  Created by 김수정 on 2021/11/25.
+//  Created by 김수정 on 2021/12/09.
 //
 
 import UIKit
 
-class ActivityTabCVCell: UICollectionViewCell {
+class BungaeActivityCVCell: UICollectionViewCell {
 
-    static let identifier = "ActivityTabCVCell"
-    
-    
     @IBOutlet weak var tabTV: UITableView!
-    var tabBar : myActivityTab?
+    var tabBar : myActivityBungaeTab?
+    
+    static let identifier = "BungaeActivityCVCell"
     
     static func nib() -> UINib {
-        return UINib(nibName: "ActivityTabCVCell", bundle: nil)
+        return UINib(nibName: "BungaeActivityCVCell", bundle: nil)
     }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         tabTV.delegate = self
         tabTV.dataSource = self
         self.tabTV.register(BungaeImageCVCell.nib(), forCellReuseIdentifier: BungaeImageCVCell.identifier)
@@ -35,50 +32,41 @@ class ActivityTabCVCell: UICollectionViewCell {
     }
 }
 
-extension ActivityTabCVCell: UITableViewDelegate, UITableViewDataSource {
+extension BungaeActivityCVCell: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tabBar == myActivityTab.introduce {
+        if tabBar == myActivityBungaeTab
+            .bungaeIntroduce {
             return 1
         }
-        else if tabBar == myActivityTab.board {
+        else if tabBar == myActivityBungaeTab.bungaeCrewone {
             return 1
         }
-        
-        else if tabBar == myActivityTab.photo {
-            return 1
-        }
-        
-        else {
-           return 1
-        }
+        return Int()
     }
-    
     // 섹션
     func numberOfSections(in tableView: UITableView) -> Int {
-        if tabBar == myActivityTab.introduce {
-            return 6
-        }
-        else if tabBar == myActivityTab.board {
+        if tabBar == myActivityBungaeTab
+            .bungaeIntroduce {
             return 1
         }
-        
-        else if tabBar == myActivityTab.photo {
+        else if tabBar == myActivityBungaeTab.bungaeCrewone {
             return 1
         }
-        
-        else {
-           return 1
-        }
+        return Int()
     }
     // 사이즈 자동 조정에 기준이 되는 값
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 600
     }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 211
+        if tabBar == myActivityBungaeTab.bungaeIntroduce{
+            if indexPath.section == 0 {
+                return 211
+            }
+            else {
+                return UITableView.automaticDimension
+            }
         }
         else {
             return UITableView.automaticDimension
@@ -86,7 +74,7 @@ extension ActivityTabCVCell: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if tabBar == myActivityTab.introduce {
+        if tabBar == myActivityBungaeTab.bungaeIntroduce {
             if indexPath.section == 0 {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: BungaeImageCVCell.identifier) as? BungaeImageCVCell else{
                     return UITableViewCell()
@@ -178,16 +166,7 @@ extension ActivityTabCVCell: UITableViewDelegate, UITableViewDataSource {
                 return cell
             }
         }
-        else if tabBar == myActivityTab.board {
-            
-        }
-        
-        else if tabBar == myActivityTab.photo {
-            
-        }
-        
-        else {
-           
+        else if tabBar == myActivityBungaeTab.bungaeCrewone {
         }
         return UITableViewCell()
     }

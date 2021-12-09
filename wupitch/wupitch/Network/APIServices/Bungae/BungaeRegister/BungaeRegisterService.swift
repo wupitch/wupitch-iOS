@@ -33,11 +33,26 @@ struct BungaeRegisterService {
         }
         
         AF.request(urlString, method: .post, encoding: JSONEncoding.default, headers: header)
-            .responseDecodable(of: BungaeRegisterData.self) { response in
+            .responseDecodable(of: GenericResponse<BungaeRegisterResult>.self
+            ) { response in
                 print("번개 가입하기 버튼 response",response)
                 switch response.result {
                 case .success(let response):
-                    delegate.didSuccessBungaeRegister(result: response.result)
+                    if response.isSuccess {
+                    print("번개 가입하기 버튼 리스폰즈",response)
+                    guard let data = response.result else {return}
+                    print("번개 가입하기 버튼 나오니?")
+                    delegate.didSuccessBungaeRegister(result: data.self)
+                    }
+                    else {
+                        switch response.code {
+                        case 2014:
+                            delegate.failedToRequest(message: "필요한 모든 정보를 입력해주세요.")
+                        default:
+                            delegate.failedToRequest(message: "")
+                        }
+                    }
+                    
                 case .failure(let error):
                     print("번개 가입하기 버튼에서 오류가 났습니다",error.localizedDescription)
                     delegate.failedToRequest(message: "오류가났습니다.")

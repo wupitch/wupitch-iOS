@@ -34,11 +34,25 @@ struct CrewRegisterService {
         }
         
         AF.request(urlString, method: .post, encoding: JSONEncoding.default, headers: header)
-            .responseDecodable(of: CrewRegisterData.self) { response in
-                print("크루 가입하기 response",response)
+            .responseDecodable(of: GenericResponse<CrewRegisterResult>.self
+            ) { response in
+                print("크루 가입하기 버튼 response",response)
                 switch response.result {
                 case .success(let response):
-                    delegate.didSuccessCrewRegister(result: response)
+                    if response.isSuccess {
+                    print("크루 가입하기 버튼 리스폰즈",response)
+                    guard let data = response.result else {return}
+                    print("크루 가입하기 버튼 나오니?")
+                    delegate.didSuccessCrewRegister(result: data.self)
+                    }
+                    else {
+                        switch response.code {
+                        case 2014:
+                            delegate.failedToRequest(message: "필요한 모든 정보를 입력해주세요.")
+                        default:
+                            delegate.failedToRequest(message: "")
+                        }
+                    }                    
                 case .failure(let error):
                     print("크루 가입하기에서 오류가 났습니다",error.localizedDescription)
                     delegate.failedToRequest(message: "오류가났습니다.")

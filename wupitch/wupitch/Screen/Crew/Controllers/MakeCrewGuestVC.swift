@@ -156,7 +156,7 @@ extension MakeCrewGuestVC : UITextFieldDelegate {
 extension MakeCrewGuestVC {
     func didSuccessMakeCrew(result: MakeCrewResult) {
         print("요청에 성공하셨습니다.")
-        print(result.clubID)
+        print("클럽 아이디",result.clubID)
         
         let url = "https://prod.wupitch.site/app/clubs/image"
         

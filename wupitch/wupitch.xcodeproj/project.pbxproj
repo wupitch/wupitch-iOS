@@ -105,12 +105,12 @@
 		DD3ACEAA2760154700FF00ED /* NowRegisterBungaeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACEA92760154700FF00ED /* NowRegisterBungaeData.swift */; };
 		DD3ACEAC2760687C00FF00ED /* MyActivityBungaeDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACEAB2760687C00FF00ED /* MyActivityBungaeDetail.storyboard */; };
 		DD3ACEAE276068C400FF00ED /* MyActivityBungaeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACEAD276068C400FF00ED /* MyActivityBungaeDetailVC.swift */; };
-		DD3ACEB1276075FC00FF00ED /* BungaeActivityTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3ACEAF276075FC00FF00ED /* BungaeActivityTVCell.swift */; };
-		DD3ACEB2276075FC00FF00ED /* BungaeActivityTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD3ACEB0276075FC00FF00ED /* BungaeActivityTVCell.xib */; };
 		DD3E37B6272F432A00C4192E /* UserInfoWarningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E37B5272F432A00C4192E /* UserInfoWarningVC.swift */; };
 		DD3E37C6272F928E00C4192E /* CrewCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E37C4272F928E00C4192E /* CrewCVCell.swift */; };
 		DD3E37C7272F928E00C4192E /* CrewCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD3E37C5272F928E00C4192E /* CrewCVCell.xib */; };
 		DD3E37C92730180100C4192E /* CrewDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3E37C82730180100C4192E /* CrewDetail.storyboard */; };
+		DD4779822761C8CA00E7AC3F /* BungaeActivityCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4779802761C8CA00E7AC3F /* BungaeActivityCVCell.swift */; };
+		DD4779832761C8CA00E7AC3F /* BungaeActivityCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD4779812761C8CA00E7AC3F /* BungaeActivityCVCell.xib */; };
 		DD485F682752FFDD0071AE93 /* MemberSportsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F672752FFDD0071AE93 /* MemberSportsData.swift */; };
 		DD485F6B275300520071AE93 /* MemberSportsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F6A275300520071AE93 /* MemberSportsService.swift */; };
 		DD485F6E2753042D0071AE93 /* MemberAgeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485F6D2753042D0071AE93 /* MemberAgeService.swift */; };
@@ -422,12 +422,12 @@
 		DD3ACEA92760154700FF00ED /* NowRegisterBungaeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowRegisterBungaeData.swift; sourceTree = "<group>"; };
 		DD3ACEAB2760687C00FF00ED /* MyActivityBungaeDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyActivityBungaeDetail.storyboard; sourceTree = "<group>"; };
 		DD3ACEAD276068C400FF00ED /* MyActivityBungaeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyActivityBungaeDetailVC.swift; sourceTree = "<group>"; };
-		DD3ACEAF276075FC00FF00ED /* BungaeActivityTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeActivityTVCell.swift; sourceTree = "<group>"; };
-		DD3ACEB0276075FC00FF00ED /* BungaeActivityTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BungaeActivityTVCell.xib; sourceTree = "<group>"; };
 		DD3E37B5272F432A00C4192E /* UserInfoWarningVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoWarningVC.swift; sourceTree = "<group>"; };
 		DD3E37C4272F928E00C4192E /* CrewCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewCVCell.swift; sourceTree = "<group>"; };
 		DD3E37C5272F928E00C4192E /* CrewCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrewCVCell.xib; sourceTree = "<group>"; };
 		DD3E37C82730180100C4192E /* CrewDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CrewDetail.storyboard; sourceTree = "<group>"; };
+		DD4779802761C8CA00E7AC3F /* BungaeActivityCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeActivityCVCell.swift; sourceTree = "<group>"; };
+		DD4779812761C8CA00E7AC3F /* BungaeActivityCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BungaeActivityCVCell.xib; sourceTree = "<group>"; };
 		DD485F672752FFDD0071AE93 /* MemberSportsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberSportsData.swift; sourceTree = "<group>"; };
 		DD485F6A275300520071AE93 /* MemberSportsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberSportsService.swift; sourceTree = "<group>"; };
 		DD485F6D2753042D0071AE93 /* MemberAgeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAgeService.swift; sourceTree = "<group>"; };
@@ -1850,8 +1850,8 @@
 				DDD1AD23274E3AB900CCC312 /* NoActivityCrewCVCell.xib */,
 				DDC46B64274FBA7A0015341E /* ActivityTabCVCell.swift */,
 				DDC46B65274FBA7A0015341E /* ActivityTabCVCell.xib */,
-				DD3ACEAF276075FC00FF00ED /* BungaeActivityTVCell.swift */,
-				DD3ACEB0276075FC00FF00ED /* BungaeActivityTVCell.xib */,
+				DD4779802761C8CA00E7AC3F /* BungaeActivityCVCell.swift */,
+				DD4779812761C8CA00E7AC3F /* BungaeActivityCVCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2109,7 +2109,6 @@
 				DDC4DAF82743D1B000D79CC8 /* SignUpCamera.storyboard in Resources */,
 				DD7BEBC427315D3A00DB2F60 /* DetailCrewImgTVCell.xib in Resources */,
 				DD3ACBC62721709200EBC201 /* SignUpComplete.storyboard in Resources */,
-				DD3ACEB2276075FC00FF00ED /* BungaeActivityTVCell.xib in Resources */,
 				DD295DAC27181E3D008CFC64 /* LaunchScreen.storyboard in Resources */,
 				DD9EEDDB273FFE9B00E02396 /* CrewSearchCVCell.xib in Resources */,
 				DDED011F271BD96D00C2C343 /* Onboarding.storyboard in Resources */,
@@ -2117,6 +2116,7 @@
 				DDC4DB2127465BF800D79CC8 /* BungaeDetail.storyboard in Resources */,
 				DD3ACBC227216D2500EBC201 /* SignUpID.storyboard in Resources */,
 				DD7BEBC827315D7000DB2F60 /* DetailCrewTitleTVCell.xib in Resources */,
+				DD4779832761C8CA00E7AC3F /* BungaeActivityCVCell.xib in Resources */,
 				DDC4DB43274D2BA700D79CC8 /* MakeBungaeRegion.storyboard in Resources */,
 				DDC4DB1A274506D500D79CC8 /* SignUpImagePreview.storyboard in Resources */,
 				DD1BFC472738E8AD0042C51F /* MakeCrewInfo.storyboard in Resources */,
@@ -2273,6 +2273,7 @@
 				DD485FBD2755D1F10071AE93 /* PhoneNumberRequest.swift in Sources */,
 				DD485F8E275396FB0071AE93 /* FCMService.swift in Sources */,
 				DD1BFC4D2738E8EC0042C51F /* MakeCrewDateVC.swift in Sources */,
+				DD4779822761C8CA00E7AC3F /* BungaeActivityCVCell.swift in Sources */,
 				DD485FD22755EB6F0071AE93 /* LookUpCrewFilterData.swift in Sources */,
 				DDC46B6A2750BD1D0015341E /* ToggleAlarmData.swift in Sources */,
 				DD65ABD3275870DE00D71055 /* LookUpCrewAreaFilter.swift in Sources */,
@@ -2393,7 +2394,6 @@
 				DD65ABD02757752F00D71055 /* CrewDetailVC.swift in Sources */,
 				DDC46B742751698B0015341E /* MakeBungaeData.swift in Sources */,
 				DD3ACEA4276009C100FF00ED /* NowRegisterCrewData.swift in Sources */,
-				DD3ACEB1276075FC00FF00ED /* BungaeActivityTVCell.swift in Sources */,
 				DD1BFC5D273927370042C51F /* MakeCrewGuestVC.swift in Sources */,
 				DD485FE7275680FF0071AE93 /* BungaeImageCVCell.swift in Sources */,
 				DD1BFC2D2736DCDC0042C51F /* InformationRequest.swift in Sources */,
@@ -2601,7 +2601,7 @@
 				CODE_SIGN_ENTITLEMENTS = wupitch/wupitch.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = wupitch/Support/Info.plist;
@@ -2617,7 +2617,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wupitch.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2636,7 +2636,7 @@
 				CODE_SIGN_ENTITLEMENTS = wupitch/wupitch.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = wupitch/Support/Info.plist;
@@ -2652,7 +2652,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wupitch.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

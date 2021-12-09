@@ -150,7 +150,7 @@ extension MakeBungaeMoneyVC : UITextFieldDelegate {
 extension MakeBungaeMoneyVC {
     func didSuccessMakeBungae(result: MakeBungaeResult) {
         print("요청에 성공하셨습니다.")
-        print(result.impromptuID)
+        print("번개 아이디",result.impromptuID)
 
         let url = "https://prod.wupitch.site/app/impromptu/image"
 

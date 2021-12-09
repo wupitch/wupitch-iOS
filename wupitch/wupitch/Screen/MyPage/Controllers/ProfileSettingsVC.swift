@@ -65,6 +65,15 @@ class ProfileSettingsVC: UIViewController {
             UserDefaults.standard.removeObject(forKey: "impromptuID")
             UserDefaults.standard.removeObject(forKey: "areaBungaeParams")
             UserDefaults.standard.removeObject(forKey: "introduce")
+            UserDefaults.standard.removeObject(forKey: "pageAreaName")
+            UserDefaults.standard.removeObject(forKey: "pageSports")
+            UserDefaults.standard.removeObject(forKey: "pageAge")
+            UserDefaults.standard.removeObject(forKey: "pagePhone")
+            
+            UserDefaults.standard.removeObject(forKey: "pageAreaName")
+            UserDefaults.standard.removeObject(forKey: "pageSports")
+            UserDefaults.standard.removeObject(forKey: "pageAge")
+            UserDefaults.standard.removeObject(forKey: "pagePhone")
             
             let storyboard = UIStoryboard.init(name: "SignIn", bundle: nil)
             guard let dvc = storyboard.instantiateViewController(identifier: "SignInNC") as? SignInNC else {return}
@@ -101,6 +110,13 @@ extension ProfileSettingsVC {
             UserDefaults.standard.removeObject(forKey: "impromptuID")
             UserDefaults.standard.removeObject(forKey: "areaBungaeParams")
             UserDefaults.standard.removeObject(forKey: "introduce")
+        
+            UserDefaults.standard.removeObject(forKey: "pageAreaName")
+            UserDefaults.standard.removeObject(forKey: "pageSports")
+            UserDefaults.standard.removeObject(forKey: "pageAge")
+            UserDefaults.standard.removeObject(forKey: "pagePhone")
+        
+            let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
             
             let storyboard = UIStoryboard.init(name: "SignIn", bundle: nil)
             guard let dvc = storyboard.instantiateViewController(identifier: "SignInNC") as? SignInNC else {return}

@@ -152,11 +152,11 @@ extension SignUpCityVC {
             selectTextField.textColor = .main
             selectTextField.attributedPlaceholder = NSAttributedString(string: result.areaName, attributes: [NSAttributedString.Key.foregroundColor : UIColor.main])
             selectTextField.layer.borderColor = UIColor.main.cgColor
+            UserDefaults.standard.set(result.areaName, forKey: "pageAreaName")
         }
         else {
             print("값이 없어요")
         }
-        
     }
     
     // 회원 수정 에이피아이

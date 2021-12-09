@@ -19,6 +19,7 @@ class BungaeDetailVC: BaseVC {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var backBtn: UIButton!
     
+    var registerCheck : BungaeRegisterData?
     var detailInfo : BungaeDetailResult?
     lazy var bungaeDetailDataManager = BungaeDetailService()
     lazy var bungaeRegisterDataManager = BungaeRegisterService()
@@ -76,32 +77,32 @@ class BungaeDetailVC: BaseVC {
     }
     @IBAction func touchUpRegisterBtn(_ sender: Any) {
         // 사용자의 자기소개 부분이 비어있다면 정보가 부족하다는 알림창을 띄워주고, 그렇지 않다면 가입 신청이 완료되었다는 창 띄워주기
-        if UserDefaults.standard.string(forKey: "introduce") == nil {
-            let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
-            if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
-                dvc.modalPresentationStyle = .overFullScreen
-                dvc.modalTransitionStyle = .crossDissolve
-                dvc.introducePopUp = self
-                dvc.subLabel = "모든 프로필에 정보가 기입되어야 \n 번개에 신청할 수 있습니다."
-                // present 형태로 띄우기
-                self.present(dvc, animated: true, completion: nil)
-            }
-        }
-        else {
-            // 가입 완료 팝업 창 띄워줌
-            let storyBoard: UIStoryboard = UIStoryboard(name: "GuestComplete", bundle: nil)
-            
-            if let dvc = storyBoard.instantiateViewController(withIdentifier: "GuestCompleteVC") as? GuestCompleteVC {
-                dvc.modalPresentationStyle = .overFullScreen
-                dvc.modalTransitionStyle = .crossDissolve
-                dvc.firstLabel = "참여 신청이 완료됐습니다! \n 문의를 통해 번개 리더와 연락할 수 있어요."
-                dvc.secondLabel = "페이지 하단 문의를 통해 번개 리더에게 \n 연락해주세요."
-                
-                // present 형태로 띄우기
-                self.present(dvc, animated: true, completion: nil)
-            }
+//        if UserDefaults.standard.string(forKey: "introduce") == nil && UserDefaults.standard.string(forKey: "pageAreaName") == nil && UserDefaults.standard.string(forKey: "pageSports") == nil && UserDefaults.standard.string(forKey: "pageAge") == nil && UserDefaults.standard.string(forKey: "pagePhone") == nil {
+//            let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
+//            if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
+//                dvc.modalPresentationStyle = .overFullScreen
+//                dvc.modalTransitionStyle = .crossDissolve
+//                dvc.introducePopUp = self
+//                dvc.subLabel = "모든 프로필에 정보가 기입되어야 \n 번개에 신청할 수 있습니다."
+//                // present 형태로 띄우기
+//                self.present(dvc, animated: true, completion: nil)
+//            }
+//        }
+//        else {
+//            // 가입 완료 팝업 창 띄워줌
+//            let storyBoard: UIStoryboard = UIStoryboard(name: "GuestComplete", bundle: nil)
+//
+//            if let dvc = storyBoard.instantiateViewController(withIdentifier: "GuestCompleteVC") as? GuestCompleteVC {
+//                dvc.modalPresentationStyle = .overFullScreen
+//                dvc.modalTransitionStyle = .crossDissolve
+//                dvc.firstLabel = "참여 신청이 완료됐습니다! \n 문의를 통해 번개 리더와 연락할 수 있어요."
+//                dvc.secondLabel = "페이지 하단 문의를 통해 번개 리더에게 \n 연락해주세요."
+//
+//                // present 형태로 띄우기
+//                self.present(dvc, animated: true, completion: nil)
+//            }
             bungaeRegisterDataManager.postBungaeRegisterService(delegate: self)
-        }
+//        }
     }
     // 뒤로가기 버튼
     @IBAction func touchUpBackBtn(_ sender: Any) {
@@ -202,7 +203,6 @@ extension BungaeDetailVC: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailCrewIntroduceTVCell.identifier) as? DetailCrewIntroduceTVCell else{
                 return UITableViewCell()
             }
-            
             cell.titleLabel.text = "소개"
             cell.contentLabel.text = detailInfo?.introduction
             cell.peopleLabel.isHidden = true
@@ -235,8 +235,6 @@ extension BungaeDetailVC: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: BungaeInfoCVCell.identifier) as? BungaeInfoCVCell else{
                 return UITableViewCell()
             }
-            
-            
             return cell
         }
         return UITableViewCell()
@@ -244,36 +242,19 @@ extension BungaeDetailVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension BungaeDetailVC: GuestModalDelegate, IntroduceDelegate {
+    
+    func toProfile() {
+        //
+    }
     func modalDismiss() {
         modalView.alpha = 0.0
     }
-    
-    func selectBtnToOpenPopup() {
-        // 자기소개가 없으면 정보가 부족하다는 알럿창 띄우고, 있으면 손님으로 가입 되었다는 알림창 띄울 수 있도록
-        if SignUpUserInfo.shared.introduce == nil {
-            let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
-            if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
-                dvc.modalPresentationStyle = .overFullScreen
-                dvc.modalTransitionStyle = .crossDissolve
-                dvc.introducePopUp = self
-                // present 형태로 띄우기
-                self.present(dvc, animated: true, completion: nil)
-            }
-        }
-        else {
-            let storyBoard: UIStoryboard = UIStoryboard(name: "GuestComplete", bundle: nil)
-            if let dvc = storyBoard.instantiateViewController(withIdentifier: "GuestCompleteVC") as? GuestCompleteVC {
-                dvc.modalPresentationStyle = .overFullScreen
-                dvc.modalTransitionStyle = .crossDissolve
-                
-                // present 형태로 띄우기
-                self.present(dvc, animated: true, completion: nil)
-            }
-        }
+    func selectBtnToOpenPopup(check:Bool) {
+        //
     }
     func dismissIntroducePopup() {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "ProfileNickname", bundle: nil)
-        if let dvc = storyBoard.instantiateViewController(withIdentifier: "ProfileNicknameVC") as? ProfileNicknameVC {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "ProfileDetail", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "ProfileDetailVC") as? ProfileDetailVC {
             navigationController?.pushViewController(dvc, animated: true)
         }
     }
@@ -288,11 +269,30 @@ extension BungaeDetailVC {
     
     func didSuccessBungaeRegister(result: BungaeRegisterResult) {
         print("번개 등록(가입)이 성공적으로 되었습니다.")
-        print("번개 등록 결과는? ",result.result)
+        // 성공하면 가입 완료 팝업 창 띄워줌
+        let storyBoard: UIStoryboard = UIStoryboard(name: "GuestComplete", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "GuestCompleteVC") as? GuestCompleteVC {
+            dvc.modalPresentationStyle = .overFullScreen
+            dvc.modalTransitionStyle = .crossDissolve
+            dvc.firstLabel = "참여 신청이 완료됐습니다! \n 문의를 통해 번개 리더와 연락할 수 있어요."
+            dvc.secondLabel = "페이지 하단 문의를 통해 번개 리더에게 \n 연락해주세요."
+            
+            // present 형태로 띄우기
+            self.present(dvc, animated: true, completion: nil)
+        }
     }
     
     func failedToRequest(message: String) {
-        print("번개 디테일데이터가 들어오지 않았습니다.")
-        
+        print("데이터가 들어오지 않았습니다.")
+        if message == "필요한 모든 정보를 입력해주세요." {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
+                dvc.modalPresentationStyle = .overFullScreen
+                dvc.modalTransitionStyle = .crossDissolve
+                dvc.introducePopUp = self
+                // present 형태로 띄우기
+                self.present(dvc, animated: true, completion: nil)
+            }
+        }
     }
 }

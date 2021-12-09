@@ -131,6 +131,8 @@ extension SignUpImagePreviewVC {
     
     func failedToRequest(message: String) {
         print("회원가입 데이터가 들어오지 않았습니다.")
+        UserDefaults.standard.removeObject(forKey: "userToken")
+        UserDefaults.standard.removeObject(forKey: "userID")
         
     }
 }

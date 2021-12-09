@@ -94,31 +94,7 @@ class CrewDetailVC: BaseVC {
     // MARK: - IBAction
     // 가입하기 버튼
     @IBAction func touchUpRegisterBtn(_ sender: Any) {
-        // 사용자의 자기소개 부분이 비어있다면 정보가 부족하다는 알림창을 띄워주고, 그렇지 않다면 가입 신청이 완료되었다는 창 띄워주기
-        if UserDefaults.standard.string(forKey: "introduce") == nil {
-            let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
-            if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
-                dvc.modalPresentationStyle = .overFullScreen
-                dvc.modalTransitionStyle = .crossDissolve
-                dvc.introducePopUp = self
-                // present 형태로 띄우기
-                self.present(dvc, animated: true, completion: nil)
-            }
-        }
-        else {
-            
-            // 가입 완료 팝업 창 띄워줌
-            let storyBoard: UIStoryboard = UIStoryboard(name: "JoinComplete", bundle: nil)
-            
-            if let dvc = storyBoard.instantiateViewController(withIdentifier: "JoinCompleteVC") as? JoinCompleteVC {
-                dvc.modalPresentationStyle = .overFullScreen
-                dvc.modalTransitionStyle = .crossDissolve
-                
-                // present 형태로 띄우기
-                self.present(dvc, animated: true, completion: nil)
-            }
-            crewRegisterToggle.postCrewRegisterService(delegate: self)
-        }
+        crewRegisterToggle.postCrewRegisterService(delegate: self)
     }
     // 뒤로가기 버튼
     @IBAction func touchUpBackBtn(_ sender: Any) {
@@ -369,27 +345,31 @@ extension CrewDetailVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 extension CrewDetailVC: GuestModalDelegate {
+    func toProfile() {
+//        let storyBoard: UIStoryboard = UIStoryboard(name: "ProfileDetail", bundle: nil)
+//        if let dvc = storyBoard.instantiateViewController(withIdentifier: "ProfileDetailVC") as? ProfileDetailVC {
+//            navigationController?.pushViewController(dvc, animated: true)
+//        }
+    }
     func modalDismiss() {
         modalView.alpha = 0.0
     }
-    func selectBtnToOpenPopup() {
-        // 자기소개가 없으면 정보가 부족하다는 알럿창 띄우고, 있으면 손님으로 가입 되었다는 알림창 띄울 수 있도록
-        if UserDefaults.standard.string(forKey: "introduce") == nil {
-            let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
-            if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
+    func selectBtnToOpenPopup(check:Bool) {
+        if check == true {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "GuestComplete", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "GuestCompleteVC") as? GuestCompleteVC {
                 dvc.modalPresentationStyle = .overFullScreen
                 dvc.modalTransitionStyle = .crossDissolve
-                dvc.introducePopUp = self
                 // present 형태로 띄우기
                 self.present(dvc, animated: true, completion: nil)
             }
         }
         else {
-            let storyBoard: UIStoryboard = UIStoryboard(name: "GuestComplete", bundle: nil)
-            if let dvc = storyBoard.instantiateViewController(withIdentifier: "GuestCompleteVC") as? GuestCompleteVC {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
                 dvc.modalPresentationStyle = .overFullScreen
                 dvc.modalTransitionStyle = .crossDissolve
-                
+                dvc.introducePopUp = self
                 // present 형태로 띄우기
                 self.present(dvc, animated: true, completion: nil)
             }
@@ -403,9 +383,16 @@ extension CrewDetailVC {
         CrewDetailTV.reloadData()
     }
 
-    func didSuccessCrewRegister(result: CrewRegisterData) {
+    func didSuccessCrewRegister(result: CrewRegisterResult) {
         print("크루 등록 토글이 성공적으로 들어옵니다.")
-        print(result.message)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "GuestComplete", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "GuestCompleteVC") as? GuestCompleteVC {
+            dvc.modalPresentationStyle = .overFullScreen
+            dvc.modalTransitionStyle = .crossDissolve
+            
+            // present 형태로 띄우기
+            self.present(dvc, animated: true, completion: nil)
+        }
     }
 
     func didSuccessPinUpToggle(result: PinUpToggleData) {
@@ -419,8 +406,17 @@ extension CrewDetailVC {
     }
 
     func failedToRequest(message: String) {
-        print("크루 디테일 조회 데이터가 들어오지 않았습니다.")
-
+        print("데이터가 들어오지 않았습니다.")
+        if message == "필요한 모든 정보를 입력해주세요." {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "UserInfoWarning", bundle: nil)
+            if let dvc = storyBoard.instantiateViewController(withIdentifier: "UserInfoWarningVC") as? UserInfoWarningVC {
+                dvc.modalPresentationStyle = .overFullScreen
+                dvc.modalTransitionStyle = .crossDissolve
+                dvc.introducePopUp = self
+                // present 형태로 띄우기
+                self.present(dvc, animated: true, completion: nil)
+            }
+        }
     }
 }
 extension CrewDetailVC: IntroduceDelegate {
