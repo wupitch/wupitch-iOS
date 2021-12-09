@@ -85,7 +85,6 @@ class ProfileNicknameVC: UIViewController {
             // 싱글톤에 닉네임, 자기소개 넣어주기
             SignUpUserInfo.shared.nickname = nickNameTextField.text
             SignUpUserInfo.shared.introduce = infoTextView.text
-            UserDefaults.standard.set(infoTextView.text, forKey: "introduce")
             print("닉네임 >>>>>>>>>>", SignUpUserInfo.shared.nickname ?? "값이 없어요!")
             print("자기소개 >>>>>>>>>>", SignUpUserInfo.shared.introduce ?? "값이 없어요!")
             
@@ -104,12 +103,13 @@ extension ProfileNicknameVC: UITextViewDelegate, UITextFieldDelegate {
 
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == .gray03 {
-            textViewState = true
             textView.text = nil
             textView.textColor = .bk
 
+            print("여기나오나확인", resultIsSuccess?.isSuccess)
             if resultIsSuccess?.isSuccess == true {
                 startBtn.backgroundColor = .main
+                print("여기들어오나확인")
             }
             else {
                 startBtn.backgroundColor = .gray03
@@ -137,6 +137,7 @@ extension ProfileNicknameVC: UITextViewDelegate, UITextFieldDelegate {
         // 엔터버튼 키보드 내려가기
         if text == "\n" {
             textView.resignFirstResponder()
+            textViewState = true
         }
 
         return true

@@ -71,10 +71,9 @@ class SignUpSportsVC: UIViewController {
                 if sportBtns[i].status == true {
                     SignUpUserInfo.shared.sportsListBtn?.append(sportBtns[i].btnId ?? -99)
                 }
-                informationDataManager.patchInformation(InformationRequest(sportsList: SignUpUserInfo.shared.sportsListBtn ?? [-99]), delegate: self)
-                print("스포츠버튼인덱스", SignUpUserInfo.shared.sportsListBtn)
             }
-            
+            informationDataManager.patchInformation(InformationRequest(sportsList: SignUpUserInfo.shared.sportsListBtn ?? [-99]), delegate: self)
+            print("스포츠버튼인덱스", SignUpUserInfo.shared.sportsListBtn)
             navigationController?.popViewController(animated: true)
         }
         else {
