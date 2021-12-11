@@ -21,7 +21,7 @@ struct NowRegisterCrewResult: Codable {
     let areaName: String
     let clubID: Int
     let clubTitle, crewImage, introduction: String?
-    let isPinUp: Bool
+    let isPinUp: Bool?
     let schedules: [NowRegisterCrewSchedule]
     let sportsID: Int
     let sportsName: String

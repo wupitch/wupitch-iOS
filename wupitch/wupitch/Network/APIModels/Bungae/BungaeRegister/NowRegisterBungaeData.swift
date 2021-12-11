@@ -20,8 +20,8 @@ struct NowRegisterBungaeData: Codable {
 struct NowRegisterBungaeResult: Codable {
     let date, day: String
     let dday, impromptuID: Int
-    let impromptuImage: String
-    let isPinUp: Bool
+    let impromptuImage: String?
+    let isPinUp: Bool?
     let location: String
     let nowMemberCount, recruitmentCount: Int
     let endTime, startTime: Double?

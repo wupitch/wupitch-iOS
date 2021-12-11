@@ -66,7 +66,7 @@ extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            if nowRegisterData.count < 1 {
+            if nowRegisterData.count <= 0 {
                 return 1
             }
             else {
@@ -74,7 +74,7 @@ extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             }
         }
         else {
-            if nowRegisterBungaeData.count < 1 {
+            if nowRegisterBungaeData.count <= 0 {
                 return 1
             }
             else {
@@ -95,7 +95,7 @@ extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
 //        return cell
 //    }
         if indexPath.section == 0 {
-            if nowRegisterData.count < 1 {
+            if nowRegisterData.count <= 0 {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NoActivityCrewCVCell.identifier, for: indexPath) as? NoActivityCrewCVCell else {
                     return UICollectionViewCell()
                 }
@@ -110,7 +110,7 @@ extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             }
         }
         else if indexPath.section == 1 {
-            if nowRegisterBungaeData.count < 1 {
+            if nowRegisterBungaeData.count <= 0 {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NoActivityCrewCVCell.identifier, for: indexPath) as? NoActivityCrewCVCell else{
                     return UICollectionViewCell()
                 }
@@ -158,7 +158,7 @@ extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            if nowRegisterData.count < 1 {
+            if nowRegisterData.count <= 0 {
                 // cell 누르면 해당 디테일 페이지로 이동
                 //self.tabBarController?.selectedIndex = 0
                 
@@ -177,7 +177,7 @@ extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             }
         }
         else {
-            if nowRegisterBungaeData.count < 1 {
+            if nowRegisterBungaeData.count <= 0 {
                 //self.tabBarController?.selectedIndex = 1
                 
                 // cell 누르면 해당 디테일 페이지로 이동

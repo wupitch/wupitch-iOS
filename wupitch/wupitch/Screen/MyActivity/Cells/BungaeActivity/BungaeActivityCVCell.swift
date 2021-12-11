@@ -7,10 +7,15 @@
 
 import UIKit
 
+protocol YourCellDelegate: NSObjectProtocol{
+    func didPressCell(sender: Any)
+}
+
 class BungaeActivityCVCell: UICollectionViewCell {
 
     @IBOutlet weak var tabTV: UITableView!
     var tabBar : myActivityBungaeTab?
+    var delegate:YourCellDelegate?
     
     static let identifier = "BungaeActivityCVCell"
     
@@ -27,6 +32,7 @@ class BungaeActivityCVCell: UICollectionViewCell {
         self.tabTV.register(DtailCrewContentTVCell.nib(), forCellReuseIdentifier: DtailCrewContentTVCell.identifier)
         self.tabTV.register(DtailCrewContentTVCell.nib(), forCellReuseIdentifier: DtailCrewContentTVCell.identifier)
         self.tabTV.register(BungaeInfoCVCell.nib(), forCellReuseIdentifier: BungaeInfoCVCell.identifier)
+        self.tabTV.register(BungaeMemberTVCell.nib(), forCellReuseIdentifier: BungaeMemberTVCell.identifier)
         // 테이블 뷰 경계션 없애기
         tabTV.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
     }
@@ -35,12 +41,14 @@ class BungaeActivityCVCell: UICollectionViewCell {
 extension BungaeActivityCVCell: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // 번개 디테일 탭
         if tabBar == myActivityBungaeTab
             .bungaeIntroduce {
             return 1
         }
+        // 번개 멤버 탭
         else if tabBar == myActivityBungaeTab.bungaeCrewone {
-            return 1
+            return 5
         }
         return Int()
     }
@@ -48,7 +56,7 @@ extension BungaeActivityCVCell: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         if tabBar == myActivityBungaeTab
             .bungaeIntroduce {
-            return 1
+            return 6
         }
         else if tabBar == myActivityBungaeTab.bungaeCrewone {
             return 1
@@ -69,7 +77,7 @@ extension BungaeActivityCVCell: UITableViewDelegate, UITableViewDataSource {
             }
         }
         else {
-            return UITableView.automaticDimension
+            return 60
         }
     }
     
@@ -167,7 +175,21 @@ extension BungaeActivityCVCell: UITableViewDelegate, UITableViewDataSource {
             }
         }
         else if tabBar == myActivityBungaeTab.bungaeCrewone {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: BungaeMemberTVCell.identifier) as? BungaeMemberTVCell else{
+                return UITableViewCell()
+            }
+            return cell
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tabBar == myActivityBungaeTab.bungaeIntroduce {
+            
+        }
+        else {
+            // 딜리게이트로 프로필 뷰
+            delegate?.didPressCell(sender: indexPath)
+        }
     }
 }

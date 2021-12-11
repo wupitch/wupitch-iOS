@@ -82,6 +82,7 @@ extension MyActivityBungaeDetailVC : UICollectionViewDelegate, UICollectionViewD
             return UICollectionViewCell()
         }
         cell.tabBar = myActivityTabPage[indexPath.row]
+        cell.delegate = self
         return cell
     }
     //MARK: - Cell 사이즈
@@ -104,3 +105,12 @@ extension MyActivityBungaeDetailVC : UICollectionViewDelegate, UICollectionViewD
     }
 }
 
+extension MyActivityBungaeDetailVC : YourCellDelegate {
+    func didPressCell(sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "BungaeMemberDetail", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "BungaeMemberDetailVC") as? BungaeMemberDetailVC {
+            dvc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(dvc, animated: true)
+        }
+    }
+}

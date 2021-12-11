@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 import SDWebImage
-import Photos
+//import Photos
 
 class ProfileVC: BaseVC {
 

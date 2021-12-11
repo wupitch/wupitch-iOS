@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Activity Photo Pop UpVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="MyActivityPhotoPopUpVC" id="Y6W-OH-hqX" customClass="MyActivityPhotoPopUpVC" customModule="wupitch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OYu-sG-NMf">
+                                <rect key="frame" x="61" y="334" width="292" height="228"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="tXL-DD-RcR">
+                                        <rect key="frame" x="134" y="36" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="IdR-ns-OHW"/>
+                                            <constraint firstAttribute="height" constant="24" id="uMf-kF-Nfe"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYv-w9-Uka">
+                                        <rect key="frame" x="256" y="16" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="8JY-vC-W9z"/>
+                                            <constraint firstAttribute="width" constant="24" id="bUy-L4-GeD"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="close"/>
+                                        <connections>
+                                            <action selector="touchUpCancelBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7CY-Pv-gPN"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2U-Eh-Mc6">
+                                        <rect key="frame" x="30" y="80" width="232" height="54"/>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">‘피드에도 공유하기'를 통해
+</string>
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="14" name="AppleSDGothicNeo-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="크루원 외 유저와 사진을 공유할 수 있어요!  ">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="14" name="AppleSDGothicNeo-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="4AI-Cz-ube">
+                                        <rect key="frame" x="15" y="160" width="262" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRf-vG-ZAr">
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="125" id="JaO-ok-pc9"/>
+                                                    <constraint firstAttribute="height" constant="40" id="gan-0A-VZP"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="크루에서만 보기">
+                                                            <attributes>
+                                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Bold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchUpCrewBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="s58-uU-WHj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rQ-w3-gYL">
+                                                <rect key="frame" x="137" y="0.0" width="125" height="40"/>
+                                                <color key="backgroundColor" red="1" green="0.50980392159999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="피드에도 공유하기">
+                                                            <attributes>
+                                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Bold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchUpFeedBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hyY-ia-lWI"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="4AI-Cz-ube" secondAttribute="bottom" constant="28" id="2ma-Do-JjB"/>
+                                    <constraint firstItem="CYv-w9-Uka" firstAttribute="top" secondItem="OYu-sG-NMf" secondAttribute="top" constant="16" id="6uv-Fk-vPr"/>
+                                    <constraint firstAttribute="width" constant="292" id="Aff-a3-dU1"/>
+                                    <constraint firstItem="tXL-DD-RcR" firstAttribute="top" secondItem="OYu-sG-NMf" secondAttribute="top" constant="36" id="Efc-Wv-itN"/>
+                                    <constraint firstAttribute="trailing" secondItem="CYv-w9-Uka" secondAttribute="trailing" constant="12" id="Fs5-Gd-7Q7"/>
+                                    <constraint firstAttribute="height" constant="228" id="OFp-Le-atR"/>
+                                    <constraint firstItem="4AI-Cz-ube" firstAttribute="centerX" secondItem="OYu-sG-NMf" secondAttribute="centerX" id="SnD-5d-xdX"/>
+                                    <constraint firstItem="e2U-Eh-Mc6" firstAttribute="centerX" secondItem="tXL-DD-RcR" secondAttribute="centerX" id="bSS-14-z7B"/>
+                                    <constraint firstItem="4AI-Cz-ube" firstAttribute="top" secondItem="e2U-Eh-Mc6" secondAttribute="bottom" constant="26" id="lL2-rC-Eo5"/>
+                                    <constraint firstItem="tXL-DD-RcR" firstAttribute="centerX" secondItem="OYu-sG-NMf" secondAttribute="centerX" id="uz4-g1-dfM"/>
+                                    <constraint firstItem="e2U-Eh-Mc6" firstAttribute="top" secondItem="tXL-DD-RcR" secondAttribute="bottom" constant="20" id="yiU-ZS-Ask"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OYu-sG-NMf" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="bKe-Hu-DNK"/>
+                            <constraint firstItem="OYu-sG-NMf" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="p6T-0p-bby"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelBtn" destination="CYv-w9-Uka" id="L1s-ZZ-pXs"/>
+                        <outlet property="crewBtn" destination="LRf-vG-ZAr" id="CzM-NX-b24"/>
+                        <outlet property="feedBtn" destination="0rQ-w3-gYL" id="GOX-fa-beZ"/>
+                        <outlet property="popupContentsLabel" destination="e2U-Eh-Mc6" id="Rl1-Qi-5Cm"/>
+                        <outlet property="popupView" destination="OYu-sG-NMf" id="9hE-B0-fuT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="124.6376811594203" y="58.928571428571423"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera" width="24" height="24"/>
+        <image name="close" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

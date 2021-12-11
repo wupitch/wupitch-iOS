@@ -155,6 +155,16 @@
 		DD485FF72756BB9E0071AE93 /* PatchFCMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FF62756BB9E0071AE93 /* PatchFCMService.swift */; };
 		DD485FF92756BBAC0071AE93 /* PatchFCMData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FF82756BBAC0071AE93 /* PatchFCMData.swift */; };
 		DD485FFB2756BC6E0071AE93 /* PatchFCMRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD485FFA2756BC6E0071AE93 /* PatchFCMRequest.swift */; };
+		DD48ABA6276244B20062E5F8 /* BungaeMemberTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48ABA4276244B20062E5F8 /* BungaeMemberTVCell.swift */; };
+		DD48ABA7276244B20062E5F8 /* BungaeMemberTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD48ABA5276244B20062E5F8 /* BungaeMemberTVCell.xib */; };
+		DD48ABA9276262620062E5F8 /* BungaeMemberDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48ABA8276262620062E5F8 /* BungaeMemberDetailVC.swift */; };
+		DD48ABAB2762629A0062E5F8 /* BungaeMemberDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD48ABAA2762629A0062E5F8 /* BungaeMemberDetail.storyboard */; };
+		DD48ABAE276287650062E5F8 /* BungaeSportsTagCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48ABAC276287650062E5F8 /* BungaeSportsTagCVCell.swift */; };
+		DD48ABAF276287650062E5F8 /* BungaeSportsTagCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD48ABAD276287650062E5F8 /* BungaeSportsTagCVCell.xib */; };
+		DD48ABB22762E5D50062E5F8 /* CrewBoardActivityTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48ABB02762E5D50062E5F8 /* CrewBoardActivityTVCell.swift */; };
+		DD48ABB32762E5D50062E5F8 /* CrewBoardActivityTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD48ABB12762E5D50062E5F8 /* CrewBoardActivityTVCell.xib */; };
+		DD48ABB527645A170062E5F8 /* MyActivityPhotoPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48ABB427645A170062E5F8 /* MyActivityPhotoPopUpVC.swift */; };
+		DD48ABB727645A210062E5F8 /* MyActivityPhotoPopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD48ABB627645A210062E5F8 /* MyActivityPhotoPopUp.storyboard */; };
 		DD61E4B9271D7E50007504DE /* SignUpTermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */; };
 		DD61E4BB271D856E007504DE /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4BA271D856E007504DE /* UILabel.swift */; };
 		DD61E4BD271D8EB8007504DE /* SignUpCity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */; };
@@ -472,6 +482,16 @@
 		DD485FF62756BB9E0071AE93 /* PatchFCMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchFCMService.swift; sourceTree = "<group>"; };
 		DD485FF82756BBAC0071AE93 /* PatchFCMData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchFCMData.swift; sourceTree = "<group>"; };
 		DD485FFA2756BC6E0071AE93 /* PatchFCMRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchFCMRequest.swift; sourceTree = "<group>"; };
+		DD48ABA4276244B20062E5F8 /* BungaeMemberTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeMemberTVCell.swift; sourceTree = "<group>"; };
+		DD48ABA5276244B20062E5F8 /* BungaeMemberTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BungaeMemberTVCell.xib; sourceTree = "<group>"; };
+		DD48ABA8276262620062E5F8 /* BungaeMemberDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeMemberDetailVC.swift; sourceTree = "<group>"; };
+		DD48ABAA2762629A0062E5F8 /* BungaeMemberDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BungaeMemberDetail.storyboard; sourceTree = "<group>"; };
+		DD48ABAC276287650062E5F8 /* BungaeSportsTagCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeSportsTagCVCell.swift; sourceTree = "<group>"; };
+		DD48ABAD276287650062E5F8 /* BungaeSportsTagCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BungaeSportsTagCVCell.xib; sourceTree = "<group>"; };
+		DD48ABB02762E5D50062E5F8 /* CrewBoardActivityTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewBoardActivityTVCell.swift; sourceTree = "<group>"; };
+		DD48ABB12762E5D50062E5F8 /* CrewBoardActivityTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrewBoardActivityTVCell.xib; sourceTree = "<group>"; };
+		DD48ABB427645A170062E5F8 /* MyActivityPhotoPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyActivityPhotoPopUpVC.swift; sourceTree = "<group>"; };
+		DD48ABB627645A210062E5F8 /* MyActivityPhotoPopUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyActivityPhotoPopUp.storyboard; sourceTree = "<group>"; };
 		DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTermsVC.swift; sourceTree = "<group>"; };
 		DD61E4BA271D856E007504DE /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpCity.storyboard; sourceTree = "<group>"; };
@@ -1085,6 +1105,7 @@
 				DDC46B49274E4F010015341E /* MyActivityDetail.storyboard */,
 				DDEB65F9274E477200F48DF0 /* AddBoard.storyboard */,
 				DD3ACEAB2760687C00FF00ED /* MyActivityBungaeDetail.storyboard */,
+				DD48ABAA2762629A0062E5F8 /* BungaeMemberDetail.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1096,6 +1117,7 @@
 				DDC46B4B274E4F0D0015341E /* MyActivityDetailVC.swift */,
 				DDEB65FB274E478900F48DF0 /* AddBoardVC.swift */,
 				DD3ACEAD276068C400FF00ED /* MyActivityBungaeDetailVC.swift */,
+				DD48ABA8276262620062E5F8 /* BungaeMemberDetailVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1481,6 +1503,34 @@
 			path = BungaeRegister;
 			sourceTree = "<group>";
 		};
+		DD48ABA2276243910062E5F8 /* CrewActivity */ = {
+			isa = PBXGroup;
+			children = (
+				DDC4DB62274E2BB100D79CC8 /* ActivityCrewCVCell.swift */,
+				DDC4DB63274E2BB100D79CC8 /* ActivityCrewCVCell.xib */,
+				DDD1AD22274E3AB900CCC312 /* NoActivityCrewCVCell.swift */,
+				DDD1AD23274E3AB900CCC312 /* NoActivityCrewCVCell.xib */,
+				DDC46B64274FBA7A0015341E /* ActivityTabCVCell.swift */,
+				DDC46B65274FBA7A0015341E /* ActivityTabCVCell.xib */,
+				DD48ABB02762E5D50062E5F8 /* CrewBoardActivityTVCell.swift */,
+				DD48ABB12762E5D50062E5F8 /* CrewBoardActivityTVCell.xib */,
+			);
+			path = CrewActivity;
+			sourceTree = "<group>";
+		};
+		DD48ABA3276243CA0062E5F8 /* BungaeActivity */ = {
+			isa = PBXGroup;
+			children = (
+				DD4779802761C8CA00E7AC3F /* BungaeActivityCVCell.swift */,
+				DD4779812761C8CA00E7AC3F /* BungaeActivityCVCell.xib */,
+				DD48ABA4276244B20062E5F8 /* BungaeMemberTVCell.swift */,
+				DD48ABA5276244B20062E5F8 /* BungaeMemberTVCell.xib */,
+				DD48ABAC276287650062E5F8 /* BungaeSportsTagCVCell.swift */,
+				DD48ABAD276287650062E5F8 /* BungaeSportsTagCVCell.xib */,
+			);
+			path = BungaeActivity;
+			sourceTree = "<group>";
+		};
 		DD65ABD42758870A00D71055 /* LookUpBungaeFileter */ = {
 			isa = PBXGroup;
 			children = (
@@ -1844,14 +1894,8 @@
 		DDC4DB61274E2B9100D79CC8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				DDC4DB62274E2BB100D79CC8 /* ActivityCrewCVCell.swift */,
-				DDC4DB63274E2BB100D79CC8 /* ActivityCrewCVCell.xib */,
-				DDD1AD22274E3AB900CCC312 /* NoActivityCrewCVCell.swift */,
-				DDD1AD23274E3AB900CCC312 /* NoActivityCrewCVCell.xib */,
-				DDC46B64274FBA7A0015341E /* ActivityTabCVCell.swift */,
-				DDC46B65274FBA7A0015341E /* ActivityTabCVCell.xib */,
-				DD4779802761C8CA00E7AC3F /* BungaeActivityCVCell.swift */,
-				DD4779812761C8CA00E7AC3F /* BungaeActivityCVCell.xib */,
+				DD48ABA2276243910062E5F8 /* CrewActivity */,
+				DD48ABA3276243CA0062E5F8 /* BungaeActivity */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1883,6 +1927,7 @@
 				DD342206272ED4EB005DF6CA /* GuestComplete.storyboard */,
 				DD34220A272F418A005DF6CA /* UserInfoWarning.storyboard */,
 				DD3ACE8C275CE6DF00FF00ED /* MyActivityAlert.storyboard */,
+				DD48ABB627645A210062E5F8 /* MyActivityPhotoPopUp.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1896,6 +1941,7 @@
 				DD342208272ED504005DF6CA /* GuestCompleteVC.swift */,
 				DD3E37B5272F432A00C4192E /* UserInfoWarningVC.swift */,
 				DD3ACE8E275CE6FF00FF00ED /* MyActivityAlertVC.swift */,
+				DD48ABB427645A170062E5F8 /* MyActivityPhotoPopUpVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -2149,6 +2195,7 @@
 				DDC4DB2D2747791F00D79CC8 /* BungaeTitleCVCell.xib in Resources */,
 				DD1BFC3F2738E6C90042C51F /* MakeCrewSports.storyboard in Resources */,
 				DD1BFC4B2738E8DA0042C51F /* MakeCrewDate.storyboard in Resources */,
+				DD48ABB727645A210062E5F8 /* MyActivityPhotoPopUp.storyboard in Resources */,
 				DDC46B50274F68270015341E /* ProfileDetail.storyboard in Resources */,
 				DD61E4BD271D8EB8007504DE /* SignUpCity.storyboard in Resources */,
 				DDE0EE5C272873EC00C46821 /* SignUpKakaoComplete.storyboard in Resources */,
@@ -2161,6 +2208,7 @@
 				DD9EEDCC273EC6E700E02396 /* SignIn.storyboard in Resources */,
 				DDC4DB332748F2F300D79CC8 /* BungaeFilter.storyboard in Resources */,
 				DDC4DB47274D2BDA00D79CC8 /* MakeBungaeDate.storyboard in Resources */,
+				DD48ABAF276287650062E5F8 /* BungaeSportsTagCVCell.xib in Resources */,
 				DDC4DB59274DE78C00D79CC8 /* FeedDetail.storyboard in Resources */,
 				DD3ACBB92721073E00EBC201 /* SignUpSports.storyboard in Resources */,
 				DD3A30E4272DABE900D711C6 /* MyActivity.storyboard in Resources */,
@@ -2170,15 +2218,18 @@
 				DD3E37C92730180100C4192E /* CrewDetail.storyboard in Resources */,
 				DD3A30F4272E61EB00D711C6 /* AddCrew.storyboard in Resources */,
 				DD485F8A275394AC0071AE93 /* GoogleService-Info.plist in Resources */,
+				DD48ABA7276244B20062E5F8 /* BungaeMemberTVCell.xib in Resources */,
 				DDE0EE6B2729907600C46821 /* SignUpAge.storyboard in Resources */,
 				DDC46B58274F87200015341E /* ProfileSettings.storyboard in Resources */,
 				DD34220B272F418A005DF6CA /* UserInfoWarning.storyboard in Resources */,
+				DD48ABB32762E5D50062E5F8 /* CrewBoardActivityTVCell.xib in Resources */,
 				DDED012B271C0E5300C2C343 /* SignUpTerms.storyboard in Resources */,
 				DD61E4C4271EBAF5007504DE /* LocationPicker.storyboard in Resources */,
 				DD65ABF5275A0F1900D71055 /* BungaeInfoCVCell.xib in Resources */,
 				DD3E37C7272F928E00C4192E /* CrewCVCell.xib in Resources */,
 				DD3A30F8272E7C4800D711C6 /* CrewApplication.storyboard in Resources */,
 				DD1BFC3727380C760042C51F /* CrewFilter.storyboard in Resources */,
+				DD48ABAB2762629A0062E5F8 /* BungaeMemberDetail.storyboard in Resources */,
 				DDC46B4A274E4F010015341E /* MyActivityDetail.storyboard in Resources */,
 				DD3A30E2272DABCC00D711C6 /* Bungae.storyboard in Resources */,
 				DD1BFC532738E9420042C51F /* MakeCrewMoney.storyboard in Resources */,
@@ -2275,6 +2326,7 @@
 				DD1BFC4D2738E8EC0042C51F /* MakeCrewDateVC.swift in Sources */,
 				DD4779822761C8CA00E7AC3F /* BungaeActivityCVCell.swift in Sources */,
 				DD485FD22755EB6F0071AE93 /* LookUpCrewFilterData.swift in Sources */,
+				DD48ABB22762E5D50062E5F8 /* CrewBoardActivityTVCell.swift in Sources */,
 				DDC46B6A2750BD1D0015341E /* ToggleAlarmData.swift in Sources */,
 				DD65ABD3275870DE00D71055 /* LookUpCrewAreaFilter.swift in Sources */,
 				DDC4DAE12741075700D79CC8 /* AreaData.swift in Sources */,
@@ -2328,6 +2380,7 @@
 				DD485FDE27565F770071AE93 /* CrewRegisterData.swift in Sources */,
 				DD485F8127534C940071AE93 /* LookUpCrewService.swift in Sources */,
 				DD65ABD62758872200D71055 /* LookUpBungaeFilterService.swift in Sources */,
+				DD48ABB527645A170062E5F8 /* MyActivityPhotoPopUpVC.swift in Sources */,
 				DDC4DB45274D2BBA00D79CC8 /* MakeBungaeRegionVC.swift in Sources */,
 				DD3ACEAE276068C400FF00ED /* MyActivityBungaeDetailVC.swift in Sources */,
 				DDC4DB142744B96C00D79CC8 /* MakeCrewRequest.swift in Sources */,
@@ -2344,6 +2397,7 @@
 				DD3A30F2272DB07500D711C6 /* JoinCompleteVC.swift in Sources */,
 				DD485FC42755DDD80071AE93 /* ProfileNicknameService.swift in Sources */,
 				DD3ACE82275C5F8300FF00ED /* CrewSearchData.swift in Sources */,
+				DD48ABAE276287650062E5F8 /* BungaeSportsTagCVCell.swift in Sources */,
 				DD3ACEA627600BD200FF00ED /* NowRegisterCrewService.swift in Sources */,
 				DDC4DB5F274E234400D79CC8 /* FeedCVCell.swift in Sources */,
 				DD3ACBBF2721083700EBC201 /* SignUpProfileVC.swift in Sources */,
@@ -2370,6 +2424,7 @@
 				DD65ABEA2759289500D71055 /* CrewAlertNoTVCell.swift in Sources */,
 				DD61E4B9271D7E50007504DE /* SignUpTermsVC.swift in Sources */,
 				DD1BFC3927380C920042C51F /* CrewFilterVC.swift in Sources */,
+				DD48ABA6276244B20062E5F8 /* BungaeMemberTVCell.swift in Sources */,
 				DD3ACE89275C633B00FF00ED /* GuestRegisterRequest.swift in Sources */,
 				DD3A30E0272DABC000D711C6 /* BungaeVC.swift in Sources */,
 				DD485FE227566E760071AE93 /* PinUpToggleService.swift in Sources */,
@@ -2406,6 +2461,7 @@
 				DD1BFC2B2736DCCA0042C51F /* InformationData.swift in Sources */,
 				DD342209272ED504005DF6CA /* GuestCompleteVC.swift in Sources */,
 				DD3ACE98275D1CD500FF00ED /* FCMTestRequest.swift in Sources */,
+				DD48ABA9276262620062E5F8 /* BungaeMemberDetailVC.swift in Sources */,
 				DD485F7B27530E630071AE93 /* MemberAreaService.swift in Sources */,
 				DDC3B51D2736373500FF4959 /* GuestDateBtn.swift in Sources */,
 				DD1BFC352737FFEB0042C51F /* CrewSearchVC.swift in Sources */,
@@ -2601,12 +2657,12 @@
 				CODE_SIGN_ENTITLEMENTS = wupitch/wupitch.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = wupitch/Support/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "신분증 앞면 사진 촬영을 위해 '우피치'가 사용자의 '카메라'에 접근할 수 있어야 합니다. 촬영된 사진은 오직 성별 인증의 목적으로만 사용되며, 촬영 후 24시간 이내 폐기됩니다.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진, 크루 소개 사진, 번개 소개 사진, 크루 활동 사진 등록 및 변경을 위해 '우피치'가 사용자의 사진 라이브러리에 접근할 수 있어야 합니다. ";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진, 크루 소개 사진, 번개 소개 사진, 크루 활동 사진 등록 및 변경을 위해 '우피치'가 사용자의 사진 라이브러리에 접근할 수 있어야 합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Onboarding;
@@ -2636,12 +2692,12 @@
 				CODE_SIGN_ENTITLEMENTS = wupitch/wupitch.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = wupitch/Support/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "신분증 앞면 사진 촬영을 위해 '우피치'가 사용자의 '카메라'에 접근할 수 있어야 합니다. 촬영된 사진은 오직 성별 인증의 목적으로만 사용되며, 촬영 후 24시간 이내 폐기됩니다.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진, 크루 소개 사진, 번개 소개 사진, 크루 활동 사진 등록 및 변경을 위해 '우피치'가 사용자의 사진 라이브러리에 접근할 수 있어야 합니다. ";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진, 크루 소개 사진, 번개 소개 사진, 크루 활동 사진 등록 및 변경을 위해 '우피치'가 사용자의 사진 라이브러리에 접근할 수 있어야 합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Onboarding;

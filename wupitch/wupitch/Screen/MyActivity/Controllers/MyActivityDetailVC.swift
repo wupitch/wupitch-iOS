@@ -26,7 +26,7 @@ class MyActivityDetailVC: UIViewController {
     @IBOutlet weak var firstBtn: UIButton!
     @IBOutlet weak var MyActivityCV: UICollectionView!
     
-    var myActivityTabPage = [myActivityTab.introduce, myActivityTab.board,myActivityTab.photo,myActivityTab.crewone]
+    var myActivityTabPage = [myActivityTab.introduce, myActivityTab.board, myActivityTab.photo, myActivityTab.crewone]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +58,7 @@ class MyActivityDetailVC: UIViewController {
     }
     
     @IBAction func touchUpFirstBtn(_ sender: Any) {
+        print("1")
         MyActivityCV.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
         firstBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
         secondBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
@@ -75,6 +76,7 @@ class MyActivityDetailVC: UIViewController {
     }
     
     @IBAction func touchUpSecondBtn(_ sender: Any) {
+        print("2")
         MyActivityCV.scrollToItem(at: IndexPath(row: 1, section: 0), at: .centeredHorizontally, animated: true)
         firstBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         secondBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
@@ -93,6 +95,7 @@ class MyActivityDetailVC: UIViewController {
     }
     
     @IBAction func touchUpThirdBtn(_ sender: Any) {
+        print("3")
         MyActivityCV.scrollToItem(at: IndexPath(item: 2, section: 0), at: .centeredHorizontally, animated: true)
         firstBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         secondBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
@@ -108,6 +111,7 @@ class MyActivityDetailVC: UIViewController {
     }
     
     @IBAction func touchUpFourthBtn(_ sender: Any) {
+        print("4")
         plusVIew.isHidden = true
         MyActivityCV.scrollToItem(at: IndexPath(row: 3, section: 0), at: .centeredHorizontally, animated: true)
         firstBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
@@ -143,6 +147,7 @@ extension MyActivityDetailVC : UICollectionViewDelegate, UICollectionViewDataSou
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ActivityTabCVCell.identifier, for: indexPath) as? ActivityTabCVCell else{
             return UICollectionViewCell()
         }
+        print("탭바 인뎃그", myActivityTabPage[indexPath.row])
         cell.tabBar = myActivityTabPage[indexPath.row]
         return cell
     }

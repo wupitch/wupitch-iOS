@@ -46,7 +46,7 @@ class TabbarVC: UITabBarController {
         fifthTabNC.tabBarItem.image = UIImage(named: "profile")
         fifthTabNC.tabBarItem.title = "마이페이지"
         
-        let tabs = [firstTabNC, secondTabNC, fifthTabNC]
+        let tabs = [firstTabNC, secondTabNC, thirdTabNC, fourthTabNC, fifthTabNC]
         self.setViewControllers(tabs, animated: true)
     }
     
