@@ -165,6 +165,7 @@
 		DD48ABB32762E5D50062E5F8 /* CrewBoardActivityTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD48ABB12762E5D50062E5F8 /* CrewBoardActivityTVCell.xib */; };
 		DD48ABB527645A170062E5F8 /* MyActivityPhotoPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48ABB427645A170062E5F8 /* MyActivityPhotoPopUpVC.swift */; };
 		DD48ABB727645A210062E5F8 /* MyActivityPhotoPopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD48ABB627645A210062E5F8 /* MyActivityPhotoPopUp.storyboard */; };
+		DD48ABB92764F9360062E5F8 /* CollectionViewLeftAlignFlowLayou.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48ABB82764F9360062E5F8 /* CollectionViewLeftAlignFlowLayou.swift */; };
 		DD61E4B9271D7E50007504DE /* SignUpTermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */; };
 		DD61E4BB271D856E007504DE /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4BA271D856E007504DE /* UILabel.swift */; };
 		DD61E4BD271D8EB8007504DE /* SignUpCity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */; };
@@ -492,6 +493,7 @@
 		DD48ABB12762E5D50062E5F8 /* CrewBoardActivityTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrewBoardActivityTVCell.xib; sourceTree = "<group>"; };
 		DD48ABB427645A170062E5F8 /* MyActivityPhotoPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyActivityPhotoPopUpVC.swift; sourceTree = "<group>"; };
 		DD48ABB627645A210062E5F8 /* MyActivityPhotoPopUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyActivityPhotoPopUp.storyboard; sourceTree = "<group>"; };
+		DD48ABB82764F9360062E5F8 /* CollectionViewLeftAlignFlowLayou.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLeftAlignFlowLayou.swift; sourceTree = "<group>"; };
 		DD61E4B8271D7E50007504DE /* SignUpTermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTermsVC.swift; sourceTree = "<group>"; };
 		DD61E4BA271D856E007504DE /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		DD61E4BC271D8EB8007504DE /* SignUpCity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpCity.storyboard; sourceTree = "<group>"; };
@@ -1118,6 +1120,7 @@
 				DDEB65FB274E478900F48DF0 /* AddBoardVC.swift */,
 				DD3ACEAD276068C400FF00ED /* MyActivityBungaeDetailVC.swift */,
 				DD48ABA8276262620062E5F8 /* BungaeMemberDetailVC.swift */,
+				DD48ABB82764F9360062E5F8 /* CollectionViewLeftAlignFlowLayou.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -2502,6 +2505,7 @@
 				DD485FDB27565EAE0071AE93 /* CrewRegisterService.swift in Sources */,
 				DDC4DB262746A95E00D79CC8 /* SportsData.swift in Sources */,
 				DDC46B8527522FF80015341E /* ChangePasswordRequest.swift in Sources */,
+				DD48ABB92764F9360062E5F8 /* CollectionViewLeftAlignFlowLayou.swift in Sources */,
 				DD485FC72755DE860071AE93 /* ProfileNicknameRequest.swift in Sources */,
 				DDC46B56274F745E0015341E /* ProfileNicknameVC.swift in Sources */,
 				DDC3B51B2735565C00FF4959 /* MainLocationPickerData.swift in Sources */,

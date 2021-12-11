@@ -8,7 +8,7 @@
 import UIKit
 
 enum myActivityTab {
-    case introduce, board, photo, crewone
+    case introduce, board, crewone
 }
 
 // 내 활동 크루 디테일 VC
@@ -18,16 +18,14 @@ class MyActivityDetailVC: UIViewController {
     @IBOutlet weak var alertBtn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var fourthLineView: UIView!
-    @IBOutlet weak var thirdLineView: UIView!
     @IBOutlet weak var secondLineView: UIView!
     @IBOutlet weak var firstLineView: UIView!
     @IBOutlet weak var fourthBtn: UIButton!
-    @IBOutlet weak var thirdBtn: UIButton!
     @IBOutlet weak var secondBtn: UIButton!
     @IBOutlet weak var firstBtn: UIButton!
     @IBOutlet weak var MyActivityCV: UICollectionView!
     
-    var myActivityTabPage = [myActivityTab.introduce, myActivityTab.board, myActivityTab.photo, myActivityTab.crewone]
+    var myActivityTabPage = [myActivityTab.introduce, myActivityTab.board, myActivityTab.crewone]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +36,6 @@ class MyActivityDetailVC: UIViewController {
         
         firstBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
         secondLineView.backgroundColor = .clear
-        thirdLineView.backgroundColor = .clear
         fourthLineView.backgroundColor = .clear
         plusVIew.makeRounded(cornerRadius: nil)
         plusVIew.isHidden = true
@@ -59,78 +56,45 @@ class MyActivityDetailVC: UIViewController {
     }
     
     @IBAction func touchUpFirstBtn(_ sender: Any) {
-        print("1")
         MyActivityCV.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
         firstBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
         secondBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
-        thirdBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         fourthBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
-        
         plusVIew.isHidden = true
         // 탭바 보이게
         firstLineView.backgroundColor = .bk
         // 번개탭바 안보이게
         secondLineView.backgroundColor = .clear
-        thirdLineView.backgroundColor = .clear
         fourthLineView.backgroundColor = .clear
-        
     }
-    
     @IBAction func touchUpSecondBtn(_ sender: Any) {
-        print("2")
         MyActivityCV.scrollToItem(at: IndexPath(row: 1, section: 0), at: .centeredHorizontally, animated: true)
         firstBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         secondBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
-        thirdBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         fourthBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
-        
         // 플러스 버튼 보이게
         plusVIew.isHidden = false
-        
         // 탭바 보이게
         secondLineView.backgroundColor = .bk
         // 번개탭바 안보이게
         firstLineView.backgroundColor = .clear
-        thirdLineView.backgroundColor = .clear
         fourthLineView.backgroundColor = .clear
     }
-    
-    @IBAction func touchUpThirdBtn(_ sender: Any) {
-        print("3")
-        MyActivityCV.scrollToItem(at: IndexPath(item: 2, section: 0), at: .centeredHorizontally, animated: true)
-        firstBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
-        secondBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
-        thirdBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
-        fourthBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
-        plusVIew.isHidden = false
-        // 번개탭바 안보이게
-        secondLineView.backgroundColor = .clear
-        firstLineView.backgroundColor = .clear
-        fourthLineView.backgroundColor = .clear
-        // 탭바 보이게
-        thirdLineView.backgroundColor = .bk
-    }
-    
     @IBAction func touchUpFourthBtn(_ sender: Any) {
-        print("4")
         plusVIew.isHidden = true
-        MyActivityCV.scrollToItem(at: IndexPath(row: 3, section: 0), at: .centeredHorizontally, animated: true)
+        MyActivityCV.scrollToItem(at: IndexPath(row: 2, section: 0), at: .centeredHorizontally, animated: true)
         firstBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         secondBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
-        thirdBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         fourthBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
         // 번개탭바 안보이게
         secondLineView.backgroundColor = .clear
-        thirdLineView.backgroundColor = .clear
         firstLineView.backgroundColor = .clear
         // 탭바 보이게
         fourthLineView.backgroundColor = .bk
     }
-    
     @IBAction func touchUpBackBtn(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-    
     @IBAction func touchUpAlertBtn(_ sender: Any) {
         let storyboard = UIStoryboard.init(name: "MyActivityAlert", bundle: nil)
         guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityAlertVC") as? MyActivityAlertVC else {return}
@@ -143,12 +107,10 @@ extension MyActivityDetailVC : UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return myActivityTabPage.count
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ActivityTabCVCell.identifier, for: indexPath) as? ActivityTabCVCell else{
             return UICollectionViewCell()
         }
-        print("탭바 인뎃그", myActivityTabPage[indexPath.row])
         cell.tabBar = myActivityTabPage[indexPath.row]
         return cell
     }

@@ -11,17 +11,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BungaeSportsTagCVCell" id="gTV-IL-0wX" customClass="BungaeSportsTagCVCell" customModule="wupitch" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="176" height="111"/>
+            <rect key="frame" x="0.0" y="0.0" width="176" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="176" height="111"/>
+                <rect key="frame" x="0.0" y="0.0" width="176" height="44"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UiO-MP-jPP">
-                        <rect key="frame" x="0.0" y="0.0" width="66" height="32"/>
+                        <rect key="frame" x="0.0" y="0.0" width="176" height="44"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1z-j4-z9w">
-                                <rect key="frame" x="12" y="6" width="42" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1z-j4-z9w">
+                                <rect key="frame" x="12" y="7" width="152" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -29,12 +29,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.90196078431372551" green="0.42352941176470588" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="B1z-j4-z9w" secondAttribute="bottom" constant="6" id="05L-ka-JbS"/>
+                            <constraint firstAttribute="bottom" secondItem="B1z-j4-z9w" secondAttribute="bottom" constant="7" id="05L-ka-JbS"/>
                             <constraint firstAttribute="trailing" secondItem="B1z-j4-z9w" secondAttribute="trailing" constant="12" id="3oB-nF-fXq"/>
-                            <constraint firstItem="B1z-j4-z9w" firstAttribute="top" secondItem="UiO-MP-jPP" secondAttribute="top" constant="6" id="61M-NG-I35"/>
+                            <constraint firstItem="B1z-j4-z9w" firstAttribute="top" secondItem="UiO-MP-jPP" secondAttribute="top" constant="7" id="61M-NG-I35"/>
                             <constraint firstItem="B1z-j4-z9w" firstAttribute="centerX" secondItem="UiO-MP-jPP" secondAttribute="centerX" id="EQq-DE-lH7"/>
                             <constraint firstItem="B1z-j4-z9w" firstAttribute="centerY" secondItem="UiO-MP-jPP" secondAttribute="centerY" id="HA5-VJ-W2W"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="oy2-sH-awV"/>
                             <constraint firstItem="B1z-j4-z9w" firstAttribute="leading" secondItem="UiO-MP-jPP" secondAttribute="leading" constant="12" id="v89-jA-h4D"/>
                         </constraints>
                     </view>
@@ -42,15 +41,17 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="UiO-MP-jPP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="XjG-Qc-RTn"/>
-                <constraint firstItem="UiO-MP-jPP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="b4j-Mk-Tfs"/>
+                <constraint firstAttribute="trailing" secondItem="UiO-MP-jPP" secondAttribute="trailing" id="6zw-4j-0di"/>
+                <constraint firstItem="UiO-MP-jPP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="KQ1-kg-810"/>
+                <constraint firstAttribute="bottom" secondItem="UiO-MP-jPP" secondAttribute="bottom" id="lha-nF-Cz0"/>
+                <constraint firstItem="UiO-MP-jPP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wax-JD-Yf8"/>
             </constraints>
-            <size key="customSize" width="176" height="111"/>
+            <size key="customSize" width="176" height="44"/>
             <connections>
                 <outlet property="tagLabel" destination="B1z-j4-z9w" id="sA2-bU-Doj"/>
                 <outlet property="tagView" destination="UiO-MP-jPP" id="6T7-EV-CRu"/>
             </connections>
-            <point key="canvasLocation" x="273.91304347826087" y="106.80803571428571"/>
+            <point key="canvasLocation" x="273.91304347826087" y="84.375"/>
         </collectionViewCell>
     </objects>
 </document>

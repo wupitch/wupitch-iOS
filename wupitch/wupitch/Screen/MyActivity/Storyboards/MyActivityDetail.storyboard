@@ -52,10 +52,10 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="kCN-Gg-qKo">
-                                        <rect key="frame" x="0.0" y="4" width="103.5" height="40"/>
+                                        <rect key="frame" x="0.0" y="4" width="138" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQa-yY-zvE">
-                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="138" height="30"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="소개">
                                                     <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -65,7 +65,7 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J3s-W6-4Ot">
-                                                <rect key="frame" x="0.0" y="37" width="103.5" height="3"/>
+                                                <rect key="frame" x="0.0" y="37" width="138" height="3"/>
                                                 <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="3" id="QUu-Pt-Y4d"/>
@@ -74,10 +74,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="X3B-vh-182">
-                                        <rect key="frame" x="103.5" y="4" width="103.5" height="40"/>
+                                        <rect key="frame" x="138" y="4" width="138" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c97-6o-cJB">
-                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="138" height="30"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="게시판">
                                                     <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -87,7 +87,7 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HEN-j4-smG">
-                                                <rect key="frame" x="0.0" y="37" width="103.5" height="3"/>
+                                                <rect key="frame" x="0.0" y="37" width="138" height="3"/>
                                                 <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="3" id="4AW-8S-fQu"/>
@@ -95,33 +95,11 @@
                                             </view>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="eIB-Ut-Nqr">
-                                        <rect key="frame" x="207" y="4" width="103.5" height="40"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpp-rN-nb4">
-                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="30"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="사진첩">
-                                                    <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="touchUpThirdBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="WxM-lV-sGN"/>
-                                                </connections>
-                                            </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1HV-VB-u6y">
-                                                <rect key="frame" x="0.0" y="37" width="103.5" height="3"/>
-                                                <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="3" id="Lou-pV-MyA"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="GU8-XV-NXK">
-                                        <rect key="frame" x="310.5" y="4" width="103.5" height="40"/>
+                                        <rect key="frame" x="276" y="4" width="138" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0b-AU-BtC">
-                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="138" height="30"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="크루원">
                                                     <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -131,7 +109,7 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1L-sL-jp9">
-                                                <rect key="frame" x="0.0" y="37" width="103.5" height="3"/>
+                                                <rect key="frame" x="0.0" y="37" width="138" height="3"/>
                                                 <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="3" id="QBV-QR-MAP"/>
@@ -215,8 +193,6 @@
                         <outlet property="plusVIew" destination="gWY-Sq-yOZ" id="m0H-7L-ncy"/>
                         <outlet property="secondBtn" destination="c97-6o-cJB" id="a2L-r1-6zB"/>
                         <outlet property="secondLineView" destination="HEN-j4-smG" id="7sZ-ad-wgY"/>
-                        <outlet property="thirdBtn" destination="lpp-rN-nb4" id="6Yf-rL-YJH"/>
-                        <outlet property="thirdLineView" destination="1HV-VB-u6y" id="I8g-g9-d77"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
