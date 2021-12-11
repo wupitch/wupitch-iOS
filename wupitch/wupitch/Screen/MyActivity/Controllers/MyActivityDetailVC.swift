@@ -11,6 +11,7 @@ enum myActivityTab {
     case introduce, board, photo, crewone
 }
 
+// 내 활동 크루 디테일 VC
 class MyActivityDetailVC: UIViewController {
 
     @IBOutlet weak var plusVIew: UIView!
