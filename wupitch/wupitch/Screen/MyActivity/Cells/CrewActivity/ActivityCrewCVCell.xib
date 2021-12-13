@@ -83,8 +83,8 @@
                                     <constraint firstAttribute="height" constant="1" id="72V-xq-KPq"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="gpN-td-T95">
-                                <rect key="frame" x="39" y="141" width="362" height="17"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="gpN-td-T95">
+                                <rect key="frame" x="70" y="141" width="299" height="17"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57e-RT-ezT">
                                         <rect key="frame" x="0.0" y="0.0" width="39" height="17"/>
@@ -95,31 +95,15 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86P-g7-6s4">
-                                        <rect key="frame" x="100" y="0.0" width="1" height="17"/>
+                                        <rect key="frame" x="149" y="0.0" width="1" height="17"/>
                                         <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="p27-Tt-MfI"/>
                                             <constraint firstAttribute="width" constant="1" id="u70-27-JVP"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t67-b3-ZWZ">
-                                        <rect key="frame" x="161.5" y="0.0" width="39" height="17"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="사진첩"/>
-                                        <connections>
-                                            <action selector="touchUpPhotoBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="yOE-C6-JYi"/>
-                                        </connections>
-                                    </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGK-vr-RRO">
-                                        <rect key="frame" x="261.5" y="0.0" width="1" height="17"/>
-                                        <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="17" id="AtZ-RO-eb3"/>
-                                            <constraint firstAttribute="width" constant="1" id="mHX-2d-WyJ"/>
-                                        </constraints>
-                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ccj-HG-HjT">
-                                        <rect key="frame" x="323" y="0.0" width="39" height="17"/>
+                                        <rect key="frame" x="260" y="0.0" width="39" height="17"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="크루원"/>
                                         <connections>
@@ -136,11 +120,10 @@
                             <constraint firstItem="5Cr-P1-sTS" firstAttribute="top" secondItem="891-ca-CiJ" secondAttribute="top" constant="10" id="8bJ-x4-9rx"/>
                             <constraint firstAttribute="height" constant="170" id="Jrc-IE-jNm"/>
                             <constraint firstItem="Xol-aG-OtP" firstAttribute="top" secondItem="891-ca-CiJ" secondAttribute="top" id="QI5-N7-7Ic"/>
-                            <constraint firstAttribute="trailing" secondItem="gpN-td-T95" secondAttribute="trailing" constant="38" id="Sit-DE-2FV"/>
-                            <constraint firstItem="gpN-td-T95" firstAttribute="leading" secondItem="891-ca-CiJ" secondAttribute="leading" constant="39" id="UId-81-mqs"/>
                             <constraint firstItem="ach-DT-8CP" firstAttribute="top" secondItem="5Cr-P1-sTS" secondAttribute="bottom" constant="10" id="YbY-Oj-5De"/>
                             <constraint firstItem="ach-DT-8CP" firstAttribute="leading" secondItem="5Cr-P1-sTS" secondAttribute="leading" id="ewL-D7-x3t"/>
                             <constraint firstItem="jOo-jd-Sq3" firstAttribute="top" secondItem="ach-DT-8CP" secondAttribute="bottom" constant="8" id="gd1-ay-Y3I"/>
+                            <constraint firstItem="gpN-td-T95" firstAttribute="leading" secondItem="891-ca-CiJ" secondAttribute="leading" constant="70" id="glY-94-9uU"/>
                             <constraint firstAttribute="trailing" secondItem="n9U-cF-GRp" secondAttribute="trailing" id="hdD-HJ-d3k"/>
                             <constraint firstAttribute="bottom" secondItem="gpN-td-T95" secondAttribute="bottom" constant="12" id="iGn-E4-7gS"/>
                             <constraint firstAttribute="trailing" secondItem="ach-DT-8CP" secondAttribute="trailing" constant="34" id="knS-0x-d9s"/>
@@ -148,6 +131,7 @@
                             <constraint firstItem="jOo-jd-Sq3" firstAttribute="leading" secondItem="ach-DT-8CP" secondAttribute="leading" id="mZF-MO-anc"/>
                             <constraint firstItem="n9U-cF-GRp" firstAttribute="top" secondItem="jOo-jd-Sq3" secondAttribute="bottom" constant="10" id="oe4-bO-Mk5"/>
                             <constraint firstItem="n9U-cF-GRp" firstAttribute="leading" secondItem="891-ca-CiJ" secondAttribute="leading" id="pc9-gs-pyg"/>
+                            <constraint firstAttribute="trailing" secondItem="gpN-td-T95" secondAttribute="trailing" constant="70" id="psM-P7-DL4"/>
                             <constraint firstItem="5Cr-P1-sTS" firstAttribute="leading" secondItem="Xol-aG-OtP" secondAttribute="trailing" constant="16" id="qj5-yG-vze"/>
                             <constraint firstItem="Xol-aG-OtP" firstAttribute="leading" secondItem="891-ca-CiJ" secondAttribute="leading" id="s7r-Ig-ZM9"/>
                         </constraints>
@@ -167,7 +151,6 @@
                 <outlet property="crewoneBtn" destination="Ccj-HG-HjT" id="hNJ-Ge-dDO"/>
                 <outlet property="dayLabel" destination="yfE-x5-HfU" id="47V-Ig-IA8"/>
                 <outlet property="imageView" destination="Xol-aG-OtP" id="zrJ-s4-gys"/>
-                <outlet property="photoBtn" destination="t67-b3-ZWZ" id="8Ke-DU-2ns"/>
                 <outlet property="subLabel" destination="f0w-Cp-AjF" id="Ukk-ho-Ii9"/>
                 <outlet property="tagNameLabel" destination="QeD-WQ-yt7" id="EkT-GA-XRT"/>
                 <outlet property="tagNameView" destination="5Cr-P1-sTS" id="uAd-cu-Dur"/>

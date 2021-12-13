@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        // 런치 스크린 1초 유지
+        Thread.sleep(forTimeInterval: 1.0)
         FirebaseApp.configure()
         
         if #available(iOS 10.0, *) {

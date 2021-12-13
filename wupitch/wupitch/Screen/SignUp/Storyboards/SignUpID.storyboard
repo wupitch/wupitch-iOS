@@ -51,7 +51,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgIdcard" translatesAutoresizingMaskIntoConstraints="NO" id="KEE-L2-y4z">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgIdcardSe" translatesAutoresizingMaskIntoConstraints="NO" id="KEE-L2-y4z">
                                 <rect key="frame" x="20" y="210" width="375" height="270"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" secondItem="KEE-L2-y4z" secondAttribute="height" multiplier="168:121" id="5Z5-Te-u7E"/>
@@ -180,7 +180,7 @@
     </scenes>
     <resources>
         <image name="close" width="24" height="24"/>
-        <image name="imgIdcard" width="336" height="242"/>
+        <image name="imgIdcardSe" width="280" height="202"/>
         <image name="left" width="24" height="24"/>
         <image name="no1" width="23" height="23"/>
         <image name="no2" width="23" height="23"/>
