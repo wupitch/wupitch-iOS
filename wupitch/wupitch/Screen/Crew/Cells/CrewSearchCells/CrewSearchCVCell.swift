@@ -207,10 +207,10 @@ extension CrewSearchCVCell : UICollectionViewDelegate, UICollectionViewDelegateF
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if tabBar == tabEnum.crew {
-            cellDelegate?.pressCell(sender: SignUpUserInfo.shared.crewSearchContent[indexPath.row])
+            cellDelegate?.pressCell(sender: UserDefaults.standard.set(SignUpUserInfo.shared.crewSearchContent[indexPath.row].clubID, forKey: "clubID"))
         }
         else {
-            cellDelegate?.pressBungaeCell(sender: SignUpUserInfo.shared.bungaeSearchContent[indexPath.row])
+            cellDelegate?.pressBungaeCell(sender: UserDefaults.standard.set(SignUpUserInfo.shared.bungaeSearchContent[indexPath.row].impromptuID, forKey: "impromptuID"))
         }
     }
     // MARK: - collectionView size

@@ -26,7 +26,6 @@ class CrewSearchVC: UIViewController, UISearchBarDelegate {
     var tabPage = [tabEnum.crew, tabEnum.bungae]
     var passwordEyeBtn = UIButton(type: .system)
     var clickBungae : Bool?
-    //var searchText: CrewSearchResult?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,20 +53,17 @@ class CrewSearchVC: UIViewController, UISearchBarDelegate {
         searchTextField.addTarget(self, action: #selector(searchData), for: .editingChanged)
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
     
 //    override func viewWillAppear(_ animated: Bool) {
 //        super.viewWillAppear(animated)
 //        bungaeBtn.sendActions(for: .touchUpInside)
 //    }
 //    override func viewDidAppear(_ animated: Bool) {
-//           super.viewDidAppear(animated)
-//           bungaeBtn.sendActions(for: .touchUpInside)
-//           crewBtn.isUserInteractionEnabled = true
-//           bungaeBtn.isUserInteractionEnabled = true
-//       }
+//        super.viewDidAppear(animated)
+//        bungaeBtn.sendActions(for: .touchUpInside)
+//        crewBtn.isUserInteractionEnabled = true
+//        bungaeBtn.isUserInteractionEnabled = true
+//    }
    
     @objc private func searchData() {
         if crewBtn.titleLabel?.font == UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted) {
@@ -201,6 +197,7 @@ extension CrewSearchVC {
 // MARK: - Cell Extension
 extension CrewSearchVC : CellDelegate {
     func pressBungaeCell(sender: Any) {
+        
         let storyBoard: UIStoryboard = UIStoryboard(name: "BungaeDetail", bundle: nil)
         if let dvc = storyBoard.instantiateViewController(withIdentifier: "BungaeDetailVC") as? BungaeDetailVC {
             navigationController?.pushViewController(dvc, animated: true)
