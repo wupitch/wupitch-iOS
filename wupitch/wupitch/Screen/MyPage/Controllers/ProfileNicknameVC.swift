@@ -106,10 +106,8 @@ extension ProfileNicknameVC: UITextViewDelegate, UITextFieldDelegate {
             textView.text = nil
             textView.textColor = .bk
 
-            print("여기나오나확인", resultIsSuccess?.isSuccess)
             if resultIsSuccess?.isSuccess == true {
                 startBtn.backgroundColor = .main
-                print("여기들어오나확인")
             }
             else {
                 startBtn.backgroundColor = .gray03
@@ -120,9 +118,17 @@ extension ProfileNicknameVC: UITextViewDelegate, UITextFieldDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textViewState = false
-            textView.text = "내용을 입력해주세요."
+            textView.text = "자기소개를 입력해주세요."
             textView.textColor = .gray03
             startBtn.backgroundColor = .gray03
+        }
+        else {
+            if nickNameTextField.textColor == .bk {
+                startBtn.backgroundColor = .main
+                if resultIsSuccess?.isSuccess == false {
+                    startBtn.backgroundColor = .gray03
+                }
+            }
         }
     }
 
