@@ -167,6 +167,16 @@ extension MakeBungaeDateVC : PickerDelegate {
         let alertVC = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
+        datePicker.minimumDate = Date()
+        //datePicker.maximumDate
+        
+        let calendar = Calendar(identifier: .gregorian)
+        var comps = DateComponents()
+        comps.weekday = 28
+        let maxDate = calendar.date(byAdding: comps, to: Date())
+        datePicker.maximumDate = maxDate
+        
+        
         if #available(iOS 13.4, *) {
             datePicker.preferredDatePickerStyle = .wheels
         } else {
