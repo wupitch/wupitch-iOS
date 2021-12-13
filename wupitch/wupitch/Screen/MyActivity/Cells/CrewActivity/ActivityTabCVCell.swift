@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol BoardToLikeOrReport {
+    func boardToReport()
+}
+
 // 내활동 크루 디테일 탭 Cell
 class ActivityTabCVCell: UICollectionViewCell {
     
@@ -21,6 +25,7 @@ class ActivityTabCVCell: UICollectionViewCell {
     
     // MARK: - Variable
     var tabBar : myActivityTab?
+    var boardToLikeOrReport: BoardToLikeOrReport?
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -304,6 +309,9 @@ extension ActivityTabCVCell: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CrewBoardActivityTVCell.identifier) as? CrewBoardActivityTVCell else {
                 return UITableViewCell()
             }
+//            if cell.alertBtn.tag == 1 {
+//                boardToLikeOrReport?.boardToReport()
+//            }
             // 셀 눌렀을 때 색상 없애주기
             cell.selectionStyle = .none
             return cell
@@ -320,3 +328,4 @@ extension ActivityTabCVCell: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
 }
+

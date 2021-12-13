@@ -109,12 +109,9 @@ class BungaeVC: BaseVC {
     }
     
     func stringDate(doubleDate: Double) -> String {
-        let doubleToString = String(doubleDate)
-        
+        let doubleToString = String(format: "%.2f", doubleDate)
         let stringChange = doubleToString.split(separator: ".")
-        
         let stringDate = String(stringChange.first!) + ":" + String(stringChange.last!)
-        
         return stringDate
     }
 }

@@ -112,6 +112,7 @@ extension MyActivityDetailVC : UICollectionViewDelegate, UICollectionViewDataSou
             return UICollectionViewCell()
         }
         cell.tabBar = myActivityTabPage[indexPath.row]
+        cell.boardToLikeOrReport = self
         return cell
     }
     //MARK: - Cell 사이즈
@@ -134,3 +135,12 @@ extension MyActivityDetailVC : UICollectionViewDelegate, UICollectionViewDataSou
     }
 }
 
+extension MyActivityDetailVC: BoardToLikeOrReport {
+    func boardToReport() {
+        let storyboard = UIStoryboard.init(name: "MyActivityAlert", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityAlertVC") as? MyActivityAlertVC else {return}
+        dvc.modalPresentationStyle = .overFullScreen
+        dvc.modalTransitionStyle = .crossDissolve
+        present(dvc, animated: true, completion: nil)
+    }
+}

@@ -56,4 +56,12 @@ class CrewBoardActivityTVCell: UITableViewCell {
         gongjiLabel.textColor = .main
         gongjiLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
     }
+    
+    // 좋아요 버튼
+    @IBAction func touchUpLikeBtn(_ sender: Any) {
+    }
+    // 신고 버튼
+    @IBAction func touchUpReportBtn(_ sender: Any) {
+        alertBtn.tag = 1
+    }
 }

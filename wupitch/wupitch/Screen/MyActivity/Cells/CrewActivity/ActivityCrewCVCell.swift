@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol MyCrewToMyCrewDetail {
+    func didPressBoard()
+    func didPressCrewone()
+}
+
 // 내 활동 '활동중인 크루' 셀
 class ActivityCrewCVCell: UICollectionViewCell {
     
@@ -21,6 +26,9 @@ class ActivityCrewCVCell: UICollectionViewCell {
     @IBOutlet weak var crewoneBtn: UIButton!
     @IBOutlet weak var boardBtn: UIButton!
     
+    // MARK: - Variable
+    var crewToDetailCrewDelegate: MyCrewToMyCrewDetail?
+    
     // MARK: - Cell Identifier & Nib
     static let identifier = "ActivityCrewCVCell"
     static func nib() -> UINib {
@@ -30,6 +38,8 @@ class ActivityCrewCVCell: UICollectionViewCell {
     // MARK: - AwakeFromNib
     override func awakeFromNib() {
         super.awakeFromNib()
+        //boardBtn.layer.zPosition = 999;
+        //crewoneBtn.layer.zPosition = 999;
         setStyle()
     }
     
@@ -61,8 +71,10 @@ class ActivityCrewCVCell: UICollectionViewCell {
     // MARK: - IBAction
     // 게시판 버튼
     @IBAction func touchUpBoardBtn(_ sender: Any) {
+        crewToDetailCrewDelegate?.didPressBoard()
     }
     // 크루원 버튼
     @IBAction func touchUPCrewBtn(_ sender: Any) {
+        crewToDetailCrewDelegate?.didPressCrewone()
     }
 }

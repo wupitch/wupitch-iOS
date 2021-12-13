@@ -68,7 +68,7 @@ class CrewVC: BaseVC {
         crewCV.register(ReadyCVCell.nib(), forCellWithReuseIdentifier: ReadyCVCell.identifier)
     }
     private func stringDate(doubleDate: Double) -> String {
-        let doubleToString = String(doubleDate)
+        let doubleToString = String(format: "%.2f", doubleDate)
         let stringChange = doubleToString.split(separator: ".")
         let stringDate = String(stringChange.first!) + ":" + String(stringChange.last!)
         return stringDate
@@ -294,7 +294,7 @@ extension CrewVC: ModalDelegate {
         }
 //        print("크루지역", UserDefaults.standard.dictionary(forKey: "filterParams"))
 //        UserDefaults.standard.set(dict, forKey: "filterParams")
-        UserDefaults.standard.set(dict, forKey: "areaParamsç")
+        UserDefaults.standard.set(dict, forKey: "areaParams")
       print("지역 필터 파라미터 값 유저디폴트", UserDefaults.standard.dictionary(forKey: "areaParams"))
       crewDataManager.getLookUpCrew(params: UserDefaults.standard.dictionary(forKey: "areaParams") as? [String:[Any]], delegate: self)
     }

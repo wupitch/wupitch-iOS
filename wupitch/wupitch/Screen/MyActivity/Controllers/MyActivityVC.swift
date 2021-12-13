@@ -44,7 +44,7 @@ class MyActivityVC: BaseVC {
     }
     // 더블형 데이터 스트링 값으로 변경하기
     func stringDate(doubleDate: Double) -> String {
-        let doubleToString = String(doubleDate)
+        let doubleToString = String(format: "%.2f", doubleDate)
         let stringChange = doubleToString.split(separator: ".")
         let stringDate = String(stringChange.first!) + ":" + String(stringChange.last!)
         return stringDate
@@ -109,6 +109,7 @@ extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ActivityCrewCVCell.identifier, for: indexPath) as? ActivityCrewCVCell else {
                     return UICollectionViewCell()
                 }
+                cell.crewToDetailCrewDelegate = self
                 // 크루 이름 + 색상 + 크루 기본 이미지
                 switch nowRegisterData[indexPath.row].sportsID {
                 case 1:
@@ -327,5 +328,21 @@ extension MyActivityVC {
     }
     func failedToRequest(message: String) {
         print("현재 가입한 크루 및 번개 정보 데이터가 들어오지 않습니다.")
+    }
+}
+
+// MARK: - Delegate Extension
+extension MyActivityVC: MyCrewToMyCrewDetail {
+    func didPressBoard() {
+        let storyboard = UIStoryboard.init(name: "MyActivityDetail", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityDetailVC") as? MyActivityDetailVC else {return}
+        dvc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(dvc, animated: true)
+    }
+    func didPressCrewone() {
+        let storyboard = UIStoryboard.init(name: "MyActivityDetail", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityDetailVC") as? MyActivityDetailVC else {return}
+        dvc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(dvc, animated: true)
     }
 }
