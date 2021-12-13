@@ -9,6 +9,8 @@ import UIKit
 
 class BungaeMemberDetailVC: UIViewController {
 
+    @IBOutlet weak var guestLabel: UILabel!
+    @IBOutlet weak var guestView: UIView!
     @IBOutlet var betweenDots: [UILabel]!
     @IBOutlet weak var introduceLabel: UILabel!
     @IBOutlet weak var introduceView: UIView!
@@ -49,22 +51,23 @@ class BungaeMemberDetailVC: UIViewController {
         ageLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         cityLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
         phoneLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
-        betweenDots.forEach { UILabel in
-            UILabel.textColor = .gray02
-        }
+        betweenDots.forEach { UILabel in UILabel.textColor = .gray02 }
         ageLabel.textColor = .gray02
         cityLabel.textColor = .gray02
         phoneLabel.textColor = .gray02
         introduceView.makeRounded(cornerRadius: 8.adjusted)
         introduceLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
         introduceLabel.textColor = .bk
+        guestView.makeRounded(cornerRadius: 8.adjusted)
+        guestLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 14.adjusted)
+        guestLabel.textColor = .main
     }
     @IBAction func touchUpBackBtn(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
 }
 
-extension BungaeMemberDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension BungaeMemberDetailVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
@@ -75,26 +78,6 @@ extension BungaeMemberDetailVC: UICollectionViewDelegate, UICollectionViewDataSo
         cell.tagLabel.text = data[indexPath.row]
         return cell
     }
-   
-//    // MARK: - collectionView size
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let width = tagCV.frame.width/4
-//        let height = tagCV.frame.height/2
-//        return CGSize(width: width, height: height)
-//
-//    }
-//    // 위 아래 간격
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 0
-//    }
-//    // 옆 간격
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 0
-//    }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
-//                        UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//    }
 }
 
 

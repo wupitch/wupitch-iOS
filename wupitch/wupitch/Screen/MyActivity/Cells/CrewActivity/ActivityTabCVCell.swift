@@ -105,6 +105,8 @@ extension ActivityTabCVCell: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailCrewImgTVCell.identifier) as? DetailCrewImgTVCell else{
                     return UITableViewCell()
                 }
+                // 셀 눌렀을 때 색상 없애주기
+                cell.selectionStyle = .none
                 // 핀버튼은 없애주자!
                 cell.pinBtn.isHidden = true
                 //                switch detailInfo?.sportsID {
@@ -159,6 +161,8 @@ extension ActivityTabCVCell: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailCrewTitleTVCell.identifier) as? DetailCrewTitleTVCell else{
                     return UITableViewCell()
                 }
+                // 셀 눌렀을 때 색상 없애주기
+                cell.selectionStyle = .none
                 // 스포츠 아이디 라벨에 맞게
                 //                switch detailInfo?.sportsID {
                 //                case 1:
@@ -235,6 +239,8 @@ extension ActivityTabCVCell: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailCrewIntroduceTVCell.identifier) as? DetailCrewIntroduceTVCell else{
                     return UITableViewCell()
                 }
+                // 셀 눌렀을 때 색상 없애주기
+                cell.selectionStyle = .none
                 cell.titleLabel.text = "소개"
                 // 인원이 없을 때
                 //                if detailInfo?.memberCount == nil {
@@ -260,6 +266,8 @@ extension ActivityTabCVCell: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: DtailCrewContentTVCell.identifier) as? DtailCrewContentTVCell else{
                     return UITableViewCell()
                 }
+                // 셀 눌렀을 때 색상 없애주기
+                cell.selectionStyle = .none
                 cell.titleLabel.text = "준비물"
                 //                if detailInfo?.materials == nil {
                 //                    cell.contentLabel.text = "준비물이 없어요."
@@ -272,11 +280,15 @@ extension ActivityTabCVCell: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailCrewFooterTVCell.identifier) as? DetailCrewFooterTVCell else{
                     return UITableViewCell()
                 }
+                // 셀 눌렀을 때 색상 없애주기
+                cell.selectionStyle = .none
                 return cell
             } else if indexPath.section == 5 {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: DtailCrewContentTVCell.identifier) as? DtailCrewContentTVCell else{
                     return UITableViewCell()
                 }
+                // 셀 눌렀을 때 색상 없애주기
+                cell.selectionStyle = .none
                 cell.titleLabel.text = "문의"
                 //                cell.contentLabel.text = detailInfo?.inquiries
                 return cell
@@ -284,17 +296,23 @@ extension ActivityTabCVCell: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailCrewInquireCVCell.identifier) as? DetailCrewInquireCVCell else{
                     return UITableViewCell()
                 }
+                // 셀 눌렀을 때 색상 없애주기
+                cell.selectionStyle = .none
                 return cell
             }
         case .board:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CrewBoardActivityTVCell.identifier) as? CrewBoardActivityTVCell else {
                 return UITableViewCell()
             }
+            // 셀 눌렀을 때 색상 없애주기
+            cell.selectionStyle = .none
             return cell
         case .crewone:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: BungaeMemberTVCell.identifier) as? BungaeMemberTVCell else {
                 return UITableViewCell()
             }
+            // 셀 눌렀을 때 색상 없애주기
+            cell.selectionStyle = .none
             return cell
         default:
             break

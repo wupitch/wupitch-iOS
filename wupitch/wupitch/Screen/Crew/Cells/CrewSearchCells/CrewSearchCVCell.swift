@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol CellDelegate: NSObjectProtocol{
+    func pressCell(sender: Any)
+    func pressBungaeCell(sender: Any)
+}
+
 class CrewSearchCVCell: UICollectionViewCell {
 
     static let identifier = "CrewSearchCVCell"
@@ -18,6 +23,7 @@ class CrewSearchCVCell: UICollectionViewCell {
     @IBOutlet weak var crewSearchCV: UICollectionView!
     var tabBar : tabEnum?
     var crewSearch : CrewSearchResult?
+    var cellDelegate : CellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -198,6 +204,14 @@ extension CrewSearchCVCell : UICollectionViewDelegate, UICollectionViewDelegateF
         }
         
         return UICollectionViewCell()
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if tabBar == tabEnum.crew {
+            cellDelegate?.pressCell(sender: SignUpUserInfo.shared.crewSearchContent[indexPath.row])
+        }
+        else {
+            cellDelegate?.pressBungaeCell(sender: SignUpUserInfo.shared.bungaeSearchContent[indexPath.row])
+        }
     }
     // MARK: - collectionView size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

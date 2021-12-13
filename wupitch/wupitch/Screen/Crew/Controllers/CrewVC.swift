@@ -292,9 +292,11 @@ extension CrewVC: ModalDelegate {
                 dict["crewPickAreaID"] = [i+1]
             }
         }
-        UserDefaults.standard.set(dict, forKey: "filterParams")
-//      print("지역 필터 파라미터 값 유저디폴트", UserDefaults.standard.dictionary(forKey: "areaParams"))
-//      crewDataManager.getLookUpCrew(params: UserDefaults.standard.dictionary(forKey: "areaParams") as? [String:[Any]], delegate: self)
+//        print("크루지역", UserDefaults.standard.dictionary(forKey: "filterParams"))
+//        UserDefaults.standard.set(dict, forKey: "filterParams")
+        UserDefaults.standard.set(dict, forKey: "areaParamsç")
+      print("지역 필터 파라미터 값 유저디폴트", UserDefaults.standard.dictionary(forKey: "areaParams"))
+      crewDataManager.getLookUpCrew(params: UserDefaults.standard.dictionary(forKey: "areaParams") as? [String:[Any]], delegate: self)
     }
 }
 

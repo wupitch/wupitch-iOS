@@ -148,7 +148,7 @@ extension CrewSearchVC : UICollectionViewDelegate, UICollectionViewDataSource, U
                    return UICollectionViewCell()
                }
         cell.tabBar = tabPage[indexPath.row]
-
+        cell.cellDelegate = self
         return cell
     }
     
@@ -183,7 +183,6 @@ extension CrewSearchVC {
         print("크루 검색 데이터가 성공적으로 들어왔습니다.")
         SignUpUserInfo.shared.crewSearchContent = result.content
         print("싱글턴", SignUpUserInfo.shared.crewSearchContent)
-        //print("싱글턴갯수", SignUpUserInfo.shared.crewSearchContent.count)
         NotificationCenter.default.post(name: Notification.Name("reloadSection"), object: nil)
     }
     
@@ -197,6 +196,21 @@ extension CrewSearchVC {
     
     func failedToRequest(message: String) {
         print("데이터가 들어오지 않았습니다.")
+    }
+}
+// MARK: - Cell Extension
+extension CrewSearchVC : CellDelegate {
+    func pressBungaeCell(sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "BungaeDetail", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "BungaeDetailVC") as? BungaeDetailVC {
+            navigationController?.pushViewController(dvc, animated: true)
+        }
+    }
+    func pressCell(sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "CrewDetail", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "CrewDetailVC") as? CrewDetailVC {
+            navigationController?.pushViewController(dvc, animated: true)
+        }
     }
 }
 

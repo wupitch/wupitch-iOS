@@ -133,6 +133,23 @@
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="q5p-tP-JUe" secondAttribute="bottom" constant="12" id="vt6-vK-m6a"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9F-To-e59">
+                                <rect key="frame" x="20" y="464" width="375" height="68"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*21.00.00 수요일에 손님신청을 했습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZL-8o-M6c">
+                                        <rect key="frame" x="46.5" y="24" width="282" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.50980392156862742" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="7jw-fk-YGS"/>
+                                    <constraint firstItem="gZL-8o-M6c" firstAttribute="centerY" secondItem="x9F-To-e59" secondAttribute="centerY" id="nXk-nF-tcl"/>
+                                    <constraint firstItem="gZL-8o-M6c" firstAttribute="centerX" secondItem="x9F-To-e59" secondAttribute="centerX" id="ysn-zX-YYH"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -144,9 +161,12 @@
                             <constraint firstItem="10h-0s-5nl" firstAttribute="centerY" secondItem="baP-ff-1DC" secondAttribute="centerY" id="J6W-By-9h6"/>
                             <constraint firstItem="10h-0s-5nl" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="MhS-a6-YNJ"/>
                             <constraint firstItem="9If-sY-lW8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="PYX-j5-xO3"/>
+                            <constraint firstItem="x9F-To-e59" firstAttribute="leading" secondItem="fdi-sd-XFa" secondAttribute="leading" id="RSU-T6-d0L"/>
                             <constraint firstItem="baP-ff-1DC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="SNm-oV-4RP"/>
                             <constraint firstItem="baP-ff-1DC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="XNd-Kd-def"/>
+                            <constraint firstItem="x9F-To-e59" firstAttribute="trailing" secondItem="fdi-sd-XFa" secondAttribute="trailing" id="bHS-AB-bXN"/>
                             <constraint firstItem="fdi-sd-XFa" firstAttribute="top" secondItem="IQa-48-qGl" secondAttribute="bottom" constant="22" id="bvG-Uq-0ec"/>
+                            <constraint firstItem="x9F-To-e59" firstAttribute="top" secondItem="fdi-sd-XFa" secondAttribute="bottom" constant="24" id="jYS-80-Gme"/>
                             <constraint firstItem="IQa-48-qGl" firstAttribute="top" secondItem="9If-sY-lW8" secondAttribute="bottom" constant="24" id="pI6-5n-zSL"/>
                             <constraint firstItem="Y3a-ma-p05" firstAttribute="centerY" secondItem="9If-sY-lW8" secondAttribute="centerY" id="qmq-pQ-mSa"/>
                             <constraint firstItem="Y3a-ma-p05" firstAttribute="leading" secondItem="9If-sY-lW8" secondAttribute="trailing" constant="16" id="seu-AB-LJZ"/>
@@ -155,6 +175,8 @@
                     <connections>
                         <outlet property="ageLabel" destination="GuD-J4-fSo" id="V0C-yN-x31"/>
                         <outlet property="cityLabel" destination="Bt7-vO-Sjs" id="t6C-ip-GT1"/>
+                        <outlet property="guestLabel" destination="gZL-8o-M6c" id="8nD-PJ-SWJ"/>
+                        <outlet property="guestView" destination="x9F-To-e59" id="pk9-Un-Tlm"/>
                         <outlet property="introduceLabel" destination="q5p-tP-JUe" id="Upx-PN-PQa"/>
                         <outlet property="introduceView" destination="fdi-sd-XFa" id="ovU-I9-6i0"/>
                         <outlet property="nicknameLabel" destination="v3M-uU-hZh" id="Wsn-eC-FeR"/>

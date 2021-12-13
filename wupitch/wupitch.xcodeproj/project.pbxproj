@@ -173,6 +173,8 @@
 		DD61E4C2271EB81D007504DE /* Adjusted.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4C1271EB81C007504DE /* Adjusted.swift */; };
 		DD61E4C4271EBAF5007504DE /* LocationPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD61E4C3271EBAF5007504DE /* LocationPicker.storyboard */; };
 		DD61E4C6271EBCE6007504DE /* LocationPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61E4C5271EBCE6007504DE /* LocationPickerVC.swift */; };
+		DD6555D32766F47200E22EDD /* SignUpEnrollmentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6555D22766F47200E22EDD /* SignUpEnrollmentService.swift */; };
+		DD6555D727671D8A00E22EDD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DD6555D927671D8A00E22EDD /* InfoPlist.strings */; };
 		DD65ABCC275717B800D71055 /* SignInNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65ABCB275717B800D71055 /* SignInNC.swift */; };
 		DD65ABCE2757185F00D71055 /* OnboardingNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65ABCD2757185F00D71055 /* OnboardingNC.swift */; };
 		DD65ABD02757752F00D71055 /* CrewDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65ABCF2757752F00D71055 /* CrewDetailVC.swift */; };
@@ -501,6 +503,10 @@
 		DD61E4C1271EB81C007504DE /* Adjusted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adjusted.swift; sourceTree = "<group>"; };
 		DD61E4C3271EBAF5007504DE /* LocationPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationPicker.storyboard; sourceTree = "<group>"; };
 		DD61E4C5271EBCE6007504DE /* LocationPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerVC.swift; sourceTree = "<group>"; };
+		DD6555D22766F47200E22EDD /* SignUpEnrollmentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEnrollmentService.swift; sourceTree = "<group>"; };
+		DD6555D427671D1000E22EDD /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		DD6555D827671D8A00E22EDD /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DD6555DA27671DD300E22EDD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DD65ABCB275717B800D71055 /* SignInNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInNC.swift; sourceTree = "<group>"; };
 		DD65ABCD2757185F00D71055 /* OnboardingNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNC.swift; sourceTree = "<group>"; };
 		DD65ABCF2757752F00D71055 /* CrewDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewDetailVC.swift; sourceTree = "<group>"; };
@@ -706,6 +712,7 @@
 		DD1BFC212736644D0042C51F /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				DD6555D12766F44100E22EDD /* SignUpEnrollment */,
 				DD485FC92755E00C0071AE93 /* NowMemberInfo */,
 				DD485FC02755DDA30071AE93 /* Nickname */,
 				DDC4DAEF2743833E00D79CC8 /* EmailValidationService.swift */,
@@ -746,6 +753,7 @@
 		DD295D9327181E3B008CFC64 = {
 			isa = PBXGroup;
 			children = (
+				DD6555D927671D8A00E22EDD /* InfoPlist.strings */,
 				DD295D9E27181E3B008CFC64 /* wupitch */,
 				DD295D9D27181E3B008CFC64 /* Products */,
 				5109939557E70AB9AD100BA3 /* Pods */,
@@ -1534,6 +1542,14 @@
 			path = BungaeActivity;
 			sourceTree = "<group>";
 		};
+		DD6555D12766F44100E22EDD /* SignUpEnrollment */ = {
+			isa = PBXGroup;
+			children = (
+				DD6555D22766F47200E22EDD /* SignUpEnrollmentService.swift */,
+			);
+			path = SignUpEnrollment;
+			sourceTree = "<group>";
+		};
 		DD65ABD42758870A00D71055 /* LookUpBungaeFileter */ = {
 			isa = PBXGroup;
 			children = (
@@ -2132,6 +2148,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = DD295D9327181E3B008CFC64;
 			productRefGroup = DD295D9D27181E3B008CFC64 /* Products */;
@@ -2227,6 +2244,7 @@
 				DD34220B272F418A005DF6CA /* UserInfoWarning.storyboard in Resources */,
 				DD48ABB32762E5D50062E5F8 /* CrewBoardActivityTVCell.xib in Resources */,
 				DDED012B271C0E5300C2C343 /* SignUpTerms.storyboard in Resources */,
+				DD6555D727671D8A00E22EDD /* InfoPlist.strings in Resources */,
 				DD61E4C4271EBAF5007504DE /* LocationPicker.storyboard in Resources */,
 				DD65ABF5275A0F1900D71055 /* BungaeInfoCVCell.xib in Resources */,
 				DD3E37C7272F928E00C4192E /* CrewCVCell.xib in Resources */,
@@ -2503,6 +2521,7 @@
 				DDC46B5E274F8BF30015341E /* ProfilePasswordVC.swift in Sources */,
 				DDC46B8C275239700015341E /* ReadyCVCell.swift in Sources */,
 				DD485FDB27565EAE0071AE93 /* CrewRegisterService.swift in Sources */,
+				DD6555D32766F47200E22EDD /* SignUpEnrollmentService.swift in Sources */,
 				DDC4DB262746A95E00D79CC8 /* SportsData.swift in Sources */,
 				DDC46B8527522FF80015341E /* ChangePasswordRequest.swift in Sources */,
 				DD48ABB92764F9360062E5F8 /* CollectionViewLeftAlignFlowLayou.swift in Sources */,
@@ -2529,8 +2548,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				DD295DAB27181E3D008CFC64 /* Base */,
+				DD6555D427671D1000E22EDD /* ko */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DD6555D927671D8A00E22EDD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD6555D827671D8A00E22EDD /* ko */,
+				DD6555DA27671DD300E22EDD /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -2540,6 +2569,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -2601,6 +2631,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

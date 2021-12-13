@@ -148,7 +148,6 @@ extension CrewDetailVC: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailCrewImgTVCell.identifier) as? DetailCrewImgTVCell else{
                 return UITableViewCell()
             }
-            
             switch detailInfo?.sportsID {
             case 1:
                 if detailInfo?.crewImage == nil {
