@@ -139,7 +139,7 @@ extension SignUpProfileVC: UITextViewDelegate, UITextFieldDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textViewState = false
-            textView.text = "내용을 입력해주세요."
+            textView.text = "자기소개를 입력해주세요."
             textView.textColor = .gray03
             startBtn.backgroundColor = .gray03
         }
