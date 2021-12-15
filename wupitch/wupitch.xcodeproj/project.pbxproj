@@ -206,6 +206,8 @@
 		DD81CA3E2769989F0067D33C /* MakeBoardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81CA3D2769989F0067D33C /* MakeBoardRequest.swift */; };
 		DD81CA402769BAAA0067D33C /* LikeToggleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81CA3F2769BAAA0067D33C /* LikeToggleData.swift */; };
 		DD81CA422769BB150067D33C /* LikeBoardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81CA412769BB150067D33C /* LikeBoardService.swift */; };
+		DD81CA442769CE0A0067D33C /* AlertBoardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81CA432769CE0A0067D33C /* AlertBoardService.swift */; };
+		DD81CA462769CE200067D33C /* AlertBoardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81CA452769CE200067D33C /* AlertBoardData.swift */; };
 		DD9EEDBB273A491300E02396 /* CrewAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9EEDBA273A491300E02396 /* CrewAlert.storyboard */; };
 		DD9EEDBD273A492D00E02396 /* CrewAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EEDBC273A492D00E02396 /* CrewAlertVC.swift */; };
 		DD9EEDC7273D095E00E02396 /* DongPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9EEDC6273D095E00E02396 /* DongPicker.storyboard */; };
@@ -545,6 +547,8 @@
 		DD81CA3D2769989F0067D33C /* MakeBoardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBoardRequest.swift; sourceTree = "<group>"; };
 		DD81CA3F2769BAAA0067D33C /* LikeToggleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeToggleData.swift; sourceTree = "<group>"; };
 		DD81CA412769BB150067D33C /* LikeBoardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeBoardService.swift; sourceTree = "<group>"; };
+		DD81CA432769CE0A0067D33C /* AlertBoardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBoardService.swift; sourceTree = "<group>"; };
+		DD81CA452769CE200067D33C /* AlertBoardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBoardData.swift; sourceTree = "<group>"; };
 		DD9EEDBA273A491300E02396 /* CrewAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CrewAlert.storyboard; sourceTree = "<group>"; };
 		DD9EEDBC273A492D00E02396 /* CrewAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewAlertVC.swift; sourceTree = "<group>"; };
 		DD9EEDC6273D095E00E02396 /* DongPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DongPicker.storyboard; sourceTree = "<group>"; };
@@ -1628,6 +1632,7 @@
 				DD81CA37276958A30067D33C /* LookUpBoardService.swift */,
 				DD81CA39276996C00067D33C /* MakeBoardService.swift */,
 				DD81CA412769BB150067D33C /* LikeBoardService.swift */,
+				DD81CA432769CE0A0067D33C /* AlertBoardService.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -1639,6 +1644,7 @@
 				DD81CA3B276996D50067D33C /* MakeBoardData.swift */,
 				DD81CA3D2769989F0067D33C /* MakeBoardRequest.swift */,
 				DD81CA3F2769BAAA0067D33C /* LikeToggleData.swift */,
+				DD81CA452769CE200067D33C /* AlertBoardData.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -2475,11 +2481,13 @@
 				DDC4DB0627440EF700D79CC8 /* SignInData.swift in Sources */,
 				DD485FBF2755D7170071AE93 /* IntroductionInformationRequest.swift in Sources */,
 				DD3A30C4272ADF6200D711C6 /* SignUpUserInfo.swift in Sources */,
+				DD81CA442769CE0A0067D33C /* AlertBoardService.swift in Sources */,
 				DDC46B87275230320015341E /* ChangePasswordService.swift in Sources */,
 				DDC4DB3027478B7200D79CC8 /* BungaeIntroduceCVCell.swift in Sources */,
 				DDC46B81275222B80015341E /* PasswordCheckService.swift in Sources */,
 				DD3A30EE272DAC4F00D711C6 /* ProfileVC.swift in Sources */,
 				DDE0EE5E2728740400C46821 /* SignUpKakaoCompleteVC.swift in Sources */,
+				DD81CA462769CE200067D33C /* AlertBoardData.swift in Sources */,
 				DDE0EE5A2728164E00C46821 /* JoinAlertVC.swift in Sources */,
 				DD65ABEA2759289500D71055 /* CrewAlertNoTVCell.swift in Sources */,
 				DD61E4B9271D7E50007504DE /* SignUpTermsVC.swift in Sources */,

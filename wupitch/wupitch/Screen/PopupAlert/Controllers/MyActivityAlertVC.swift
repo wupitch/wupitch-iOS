@@ -15,6 +15,8 @@ class MyActivityAlertVC: UIViewController {
     @IBOutlet weak var alertLabel: LabelFontSize!
     @IBOutlet weak var alertTextView: UITextView!
     
+    lazy var alertBoardDataManager = AlertBoardService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +40,7 @@ class MyActivityAlertVC: UIViewController {
     }
     
     @IBAction func touchUpNextBtn(_ sender: Any) {
+        alertBoardDataManager.patchAlertBoard(delegate: self)
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -57,5 +60,15 @@ extension MyActivityAlertVC: UITextViewDelegate {
             textView.text = "신고 내용을 입력해주세요."
             textView.textColor = .gray03
         }
+    }
+}
+
+// MARK: - API Extension
+extension MyActivityAlertVC {
+    func didSuccessAlertBoard(result: AlertBoardResult) {
+        print("크루 게시판 신고를 성공적으로 조회하였습니다.")
+    }
+    func failedToRequest(message: String) {
+        print("크루 게시판 신고가 들어오지 않습니다.")
     }
 }
