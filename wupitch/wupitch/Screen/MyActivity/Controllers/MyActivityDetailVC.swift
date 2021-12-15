@@ -42,6 +42,11 @@ class MyActivityDetailVC: UIViewController {
         tapGesture()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //NotificationCenter.default.post(name: Notification.Name("reloadBoardSection"), object: nil)
+    }
+    
     // MARK: FloatingView tap gesture
     private func tapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action:#selector(self.screenDidTap(_:)))
@@ -142,5 +147,8 @@ extension MyActivityDetailVC: BoardToLikeOrReport {
         dvc.modalPresentationStyle = .overFullScreen
         dvc.modalTransitionStyle = .crossDissolve
         present(dvc, animated: true, completion: nil)
+    }
+    func isAccountReportTrue() {
+        presentAlert(title: "신고하기", message: "이미 신고한 게시물입니다.", isCancelActionIncluded: false, preferredStyle: .alert, handler: nil)
     }
 }

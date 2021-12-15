@@ -57,6 +57,7 @@ class AddBoardVC: UIViewController {
         }
     }
     @IBAction func touchUpNextBtn(_ sender: Any) {
+        
         makeBoardDataManager.postMakeBoard(MakeBoardRequest(contents: boardTextView.text, isNotice: gongjiBtn.status, noticeTitle: titleTextField.text),delegate: self)
     }
     
@@ -108,7 +109,7 @@ extension AddBoardVC: UITextViewDelegate, UITextFieldDelegate {
 }
 
 extension AddBoardVC {
-    // 번개 조회 api
+    // 크루 게시글 생성 api
     func didSuccessMakeBoard(result: MakeBoardData) {
         print("게시판 글 생성이 성공적으로 들어왔습니다.")
     }

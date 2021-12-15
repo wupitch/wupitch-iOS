@@ -204,6 +204,8 @@
 		DD81CA3A276996C00067D33C /* MakeBoardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81CA39276996C00067D33C /* MakeBoardService.swift */; };
 		DD81CA3C276996D50067D33C /* MakeBoardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81CA3B276996D50067D33C /* MakeBoardData.swift */; };
 		DD81CA3E2769989F0067D33C /* MakeBoardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81CA3D2769989F0067D33C /* MakeBoardRequest.swift */; };
+		DD81CA402769BAAA0067D33C /* LikeToggleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81CA3F2769BAAA0067D33C /* LikeToggleData.swift */; };
+		DD81CA422769BB150067D33C /* LikeBoardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81CA412769BB150067D33C /* LikeBoardService.swift */; };
 		DD9EEDBB273A491300E02396 /* CrewAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9EEDBA273A491300E02396 /* CrewAlert.storyboard */; };
 		DD9EEDBD273A492D00E02396 /* CrewAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EEDBC273A492D00E02396 /* CrewAlertVC.swift */; };
 		DD9EEDC7273D095E00E02396 /* DongPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9EEDC6273D095E00E02396 /* DongPicker.storyboard */; };
@@ -541,6 +543,8 @@
 		DD81CA39276996C00067D33C /* MakeBoardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBoardService.swift; sourceTree = "<group>"; };
 		DD81CA3B276996D50067D33C /* MakeBoardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBoardData.swift; sourceTree = "<group>"; };
 		DD81CA3D2769989F0067D33C /* MakeBoardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBoardRequest.swift; sourceTree = "<group>"; };
+		DD81CA3F2769BAAA0067D33C /* LikeToggleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeToggleData.swift; sourceTree = "<group>"; };
+		DD81CA412769BB150067D33C /* LikeBoardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeBoardService.swift; sourceTree = "<group>"; };
 		DD9EEDBA273A491300E02396 /* CrewAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CrewAlert.storyboard; sourceTree = "<group>"; };
 		DD9EEDBC273A492D00E02396 /* CrewAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewAlertVC.swift; sourceTree = "<group>"; };
 		DD9EEDC6273D095E00E02396 /* DongPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DongPicker.storyboard; sourceTree = "<group>"; };
@@ -1623,6 +1627,7 @@
 			children = (
 				DD81CA37276958A30067D33C /* LookUpBoardService.swift */,
 				DD81CA39276996C00067D33C /* MakeBoardService.swift */,
+				DD81CA412769BB150067D33C /* LikeBoardService.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -1633,6 +1638,7 @@
 				DD81CA35276958050067D33C /* LookUpBoardData.swift */,
 				DD81CA3B276996D50067D33C /* MakeBoardData.swift */,
 				DD81CA3D2769989F0067D33C /* MakeBoardRequest.swift */,
+				DD81CA3F2769BAAA0067D33C /* LikeToggleData.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -2443,6 +2449,7 @@
 				DD485FCF2755EAF70071AE93 /* LookUpCrewFilterService.swift in Sources */,
 				DD7BEBC327315D3A00DB2F60 /* DetailCrewImgTVCell.swift in Sources */,
 				DD3A30CC272DA37100D711C6 /* AppleLoginRequest.swift in Sources */,
+				DD81CA402769BAAA0067D33C /* LikeToggleData.swift in Sources */,
 				DD485F7727530A620071AE93 /* MemberPhoneNumberData.swift in Sources */,
 				DDED0124271BDCD700C2C343 /* OnboardingCVCell.swift in Sources */,
 				DD3ACE9B275EA2B600FF00ED /* BungaeSearchService.swift in Sources */,
@@ -2502,6 +2509,7 @@
 				DD485F8427534F200071AE93 /* LookUpCrewData.swift in Sources */,
 				DDC3B5102732A68A00FF4959 /* DetailCrewFooterTVCell.swift in Sources */,
 				DDC46B76275169C00015341E /* MakeBungaeRequest.swift in Sources */,
+				DD81CA422769BB150067D33C /* LikeBoardService.swift in Sources */,
 				DD65ABD02757752F00D71055 /* CrewDetailVC.swift in Sources */,
 				DDC46B742751698B0015341E /* MakeBungaeData.swift in Sources */,
 				DD3ACEA4276009C100FF00ED /* NowRegisterCrewData.swift in Sources */,

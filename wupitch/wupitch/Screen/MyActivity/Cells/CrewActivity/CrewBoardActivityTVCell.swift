@@ -10,6 +10,7 @@ import UIKit
 class CrewBoardActivityTVCell: UITableViewCell {
     
     var actionBlock: (() -> Void)? = nil
+    lazy var likeToggleDataManager = LikeToggleService()
 
     @IBOutlet weak var gongjiContentsLabel: UILabel!
     @IBOutlet weak var gongjiLabel: UILabel!
@@ -21,6 +22,8 @@ class CrewBoardActivityTVCell: UITableViewCell {
     @IBOutlet weak var leaderImageView: UIImageView!
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
+    
+    var status : Bool = false
     
     static let identifier = "CrewBoardActivityTVCell"
     
@@ -57,13 +60,48 @@ class CrewBoardActivityTVCell: UITableViewCell {
         gongjiView.layer.borderWidth = 1.adjusted
         gongjiLabel.textColor = .main
         gongjiLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
+        likeBtn.setTitleColor(UIColor.gray03, for: .normal)
+        likeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+    }
+    
+    func colorBtn() {
+        status = true
+        likeBtn.setTitleColor(UIColor.sub04, for: .normal)
+        likeBtn.setImage(UIImage(named: "reactHeart"), for: .normal)
+    }
+    
+    func grayBtn() {
+        status = false
+        likeBtn.setTitleColor(UIColor.gray03, for: .normal)
+        likeBtn.setImage(UIImage(named: "reactHeartInact"), for: .normal)
     }
     
     // 좋아요 버튼
     @IBAction func touchUpLikeBtn(_ sender: Any) {
+        status = !status
+        if status == true {
+            colorBtn()
+        }
+        else {
+            grayBtn()
+        }
+        print(status)
+        likeToggleDataManager.patchLikeToggle(delegate: self)
     }
     // 신고 버튼
     @IBAction func touchUpReportBtn(_ sender: Any) {
         actionBlock?()
+    }
+}
+
+extension CrewBoardActivityTVCell {
+    func didSuccessLikeToggle(result: LikeToggleResult) {
+        print("게시글 좋아요 토글이 성공적으로 들어옵니다.")
+        print("좋아요 토글",result.result)
+    }
+
+    func failedToRequest(message: String) {
+        print("게시글 좋아요 토글 데이터가 들어오지 않았습니다.")
+
     }
 }

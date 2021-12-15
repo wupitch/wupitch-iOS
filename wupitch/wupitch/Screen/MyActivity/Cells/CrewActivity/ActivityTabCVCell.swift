@@ -10,6 +10,7 @@ import SDWebImage
 
 protocol BoardToLikeOrReport {
     func selectedCVCell(_ index: Int)
+    func isAccountReportTrue()
 }
 
 // 내활동 크루 디테일 탭 Cell
@@ -28,6 +29,7 @@ class ActivityTabCVCell: UICollectionViewCell {
     var tabBar : myActivityTab?
     var boardToLikeOrReport: BoardToLikeOrReport?
     var boardData : [LookUpBoardResult] = []
+    lazy var lookUpBoardDataManager = LookUpBoardService()
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -38,6 +40,12 @@ class ActivityTabCVCell: UICollectionViewCell {
         super.awakeFromNib()
         setStyle()
         setDelegate()
+        lookUpBoardDataManager.getLookUpBoard(delegate: self)
+        // 조금더해보자
+        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveNoti(_:)), name: NSNotification.Name("reloadBoardSection"), object: nil)
+    }
+    @objc func didRecieveNoti(_ notification: Notification) {
+        tabTV.reloadData()
     }
     
     // MARK: - Function
@@ -343,17 +351,34 @@ extension ActivityTabCVCell: UITableViewDelegate, UITableViewDataSource {
             }
             // 작성자가 좋아요 눌렀는지 여부
             if boardData[indexPath.row].isAccountLike == true {
-                // 눌렀다면 빨간색 하트
+                cell.status = true
+                cell.likeBtn.setTitle(String(boardData[indexPath.row].likeCount + 1), for: .normal)
             } else {
                 // 안눌렀으면 회색하트
+                cell.status = false
+                cell.likeBtn.setTitle(String(boardData[indexPath.row].likeCount), for: .normal)
             }
-            cell.actionBlock = {
-                if let delegate = self.boardToLikeOrReport {
-                    delegate.selectedCVCell(indexPath.item)
-                    
-                 print(indexPath.item)
+            // 신고를 했는지 여부
+            if boardData[indexPath.row].isAccountReport == true {
+                // 신고를 이미 했다면 알럿창 띄우기
+                cell.actionBlock = {
+                    if let delegate = self.boardToLikeOrReport {
+                        delegate.isAccountReportTrue()
+                     print(indexPath.item)
+                    }
                 }
             }
+            else {
+                // 신고를 안했으면 버튼 눌리게
+                cell.actionBlock = {
+                    if let delegate = self.boardToLikeOrReport {
+                        delegate.selectedCVCell(indexPath.item)
+                     print(indexPath.item)
+                    }
+                }
+            }
+            // postId 저장
+            UserDefaults.standard.set(boardData[indexPath.row].postID, forKey: "postID")
             // 셀 눌렀을 때 색상 없애주기
             cell.selectionStyle = .none
             return cell
