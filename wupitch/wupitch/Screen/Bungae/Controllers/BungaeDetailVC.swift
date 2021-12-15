@@ -178,7 +178,7 @@ extension BungaeDetailVC: UITableViewDelegate, UITableViewDataSource {
             }
             
             // 디데이 숫자가 1일때만 백그라운드 색 진하게
-            if  detailInfo?.dday == 1 {
+            if  detailInfo?.dday ?? 0 <= 1 {
                 cell.tagView.backgroundColor = .bk
                 cell.tagLabel.textColor = .wht
             }

@@ -15,6 +15,7 @@ class AddBoardVC: UIViewController {
     @IBOutlet weak var boardTextCountLabel: UILabel!
     @IBOutlet weak var boardTextView: UITextView!
     
+    lazy var makeBoardDataManager = MakeBoardService()
     let placeholder = ("게시글을 작성해주세요.")
     
     override func viewDidLoad() {
@@ -56,7 +57,9 @@ class AddBoardVC: UIViewController {
         }
     }
     @IBAction func touchUpNextBtn(_ sender: Any) {
+        makeBoardDataManager.postMakeBoard(MakeBoardRequest(contents: boardTextView.text, isNotice: gongjiBtn.status, noticeTitle: titleTextField.text),delegate: self)
     }
+    
     @IBAction func touchUpBackBtn(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
@@ -102,4 +105,14 @@ extension AddBoardVC: UITextViewDelegate, UITextFieldDelegate {
         return true
     }
     
+}
+
+extension AddBoardVC {
+    // 번개 조회 api
+    func didSuccessMakeBoard(result: MakeBoardData) {
+        print("게시판 글 생성이 성공적으로 들어왔습니다.")
+    }
+    func failedToRequest(message: String) {
+        print("데이터가 들어오지 않았습니다.")
+    }
 }

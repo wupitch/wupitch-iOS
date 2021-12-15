@@ -136,7 +136,7 @@ extension MyActivityDetailVC : UICollectionViewDelegate, UICollectionViewDataSou
 }
 
 extension MyActivityDetailVC: BoardToLikeOrReport {
-    func boardToReport() {
+    func selectedCVCell(_ index: Int) {
         let storyboard = UIStoryboard.init(name: "MyActivityAlert", bundle: nil)
         guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityAlertVC") as? MyActivityAlertVC else {return}
         dvc.modalPresentationStyle = .overFullScreen

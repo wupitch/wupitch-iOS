@@ -211,6 +211,13 @@ class CrewFilterVC: BaseVC {
                 print("크루원수",i+1)
             }
         }
+        if let filter = UserDefaults.standard.dictionary(forKey: "filterParams") {
+            
+            // 지역구는 선택한 상태
+            if let areaValue = filter["crewPickAreaID"] {
+                dict["crewPickAreaID"] = [areaValue]
+            }
+        }
         
         UserDefaults.standard.set(dict, forKey: "filterParams")
         print("크루필터적용하기", UserDefaults.standard.dictionary(forKey: "filterParams"))

@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import SDWebImage
 
 protocol BoardToLikeOrReport {
-    func boardToReport()
+    func selectedCVCell(_ index: Int)
 }
 
 // 내활동 크루 디테일 탭 Cell
@@ -26,6 +27,7 @@ class ActivityTabCVCell: UICollectionViewCell {
     // MARK: - Variable
     var tabBar : myActivityTab?
     var boardToLikeOrReport: BoardToLikeOrReport?
+    var boardData : [LookUpBoardResult] = []
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -67,7 +69,7 @@ extension ActivityTabCVCell: UITableViewDelegate, UITableViewDataSource {
         case .introduce:
             return 1
         case .board:
-            return 5
+            return boardData.count
         case .crewone:
             return 5
         default:
@@ -309,9 +311,49 @@ extension ActivityTabCVCell: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CrewBoardActivityTVCell.identifier) as? CrewBoardActivityTVCell else {
                 return UITableViewCell()
             }
-//            if cell.alertBtn.tag == 1 {
-//                boardToLikeOrReport?.boardToReport()
-//            }
+            // 사용자 닉네임
+            cell.nicknameLabel.text = boardData[indexPath.row].nickname
+            // 게시판 내용
+            cell.contentsLabel.text = boardData[indexPath.row].contents
+            // 좋아요 수
+            cell.likeBtn.setTitle(String(boardData[indexPath.row].likeCount), for: .normal)
+            // 작성(수정)날짜
+            cell.dateLabel.text = boardData[indexPath.row].date
+            // 공지 게시글인지 여부
+            if boardData[indexPath.row].isNotice == true {
+                cell.gongjiView.isHidden = false
+                cell.gongjiContentsLabel.text = boardData[indexPath.row].noticeTitle
+            }
+            else {
+                cell.gongjiView.isHidden = true
+            }
+            // 작성자 프로필 이미지
+            // 있을 때
+            if let profileImage = boardData[indexPath.row].accountProfileImage {
+                cell.profileImageView.sd_setImage(with: URL(string: profileImage))
+            // 없을 때
+            } else {
+                cell.profileImageView.image = UIImage(named: "profileBasic")
+            }
+            // 작성자가 크루 리더인지 여부
+            if boardData[indexPath.row].isCreatorCrewLeader == true {
+                cell.leaderImageView.isHidden = false
+            } else {
+                cell.leaderImageView.isHidden = true
+            }
+            // 작성자가 좋아요 눌렀는지 여부
+            if boardData[indexPath.row].isAccountLike == true {
+                // 눌렀다면 빨간색 하트
+            } else {
+                // 안눌렀으면 회색하트
+            }
+            cell.actionBlock = {
+                if let delegate = self.boardToLikeOrReport {
+                    delegate.selectedCVCell(indexPath.item)
+                    
+                 print(indexPath.item)
+                }
+            }
             // 셀 눌렀을 때 색상 없애주기
             cell.selectionStyle = .none
             return cell
@@ -329,3 +371,13 @@ extension ActivityTabCVCell: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+extension ActivityTabCVCell {
+    func didSuccessLookUpBoard(result: [LookUpBoardResult]) {
+        boardData = result
+        tabTV.reloadData()
+        print("크루 게시판 조회 데이터가 성공적으로 들어왔습니다.")
+    }
+    func failedToRequest(message: String) {
+        print("크루 게시판 조회 데이터가 들어오지 않습니다.")
+    }
+}

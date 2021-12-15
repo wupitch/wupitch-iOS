@@ -11,6 +11,7 @@ import Alamofire
 struct MakeCrewService {
     static let shared = MakeCrewService()
     
+    //let url = " https://dev.yogiyo-backend.shop/app/clubs"
     let url = "https://prod.wupitch.site/app/clubs"
     
     func postMakeCrew(_ parameters: MakeCrewRequest, delegate: MakeCrewGuestVC) {

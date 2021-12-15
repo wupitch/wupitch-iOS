@@ -24,6 +24,13 @@ struct GuestInfoService {
         
         let urlString : String
         
+//        if let clubId = UserDefaults.standard.string(forKey: "clubID") {
+//            urlString = "https://dev.yogiyo-backend.shop/app/clubs/\(clubId)/guest-info"
+//        }
+//        else {
+//            urlString = "https://dev.yogiyo-backend.shop/app/clubs"
+//        }
+        
         if let clubId = UserDefaults.standard.string(forKey: "clubID") {
             urlString = "https://prod.wupitch.site/app/clubs/\(clubId)/guest-info"
         }

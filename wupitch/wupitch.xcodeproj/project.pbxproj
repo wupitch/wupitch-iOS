@@ -199,6 +199,11 @@
 		DD7BEBCC27315DF800DB2F60 /* DetailCrewIntroduceTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD7BEBCA27315DF800DB2F60 /* DetailCrewIntroduceTVCell.xib */; };
 		DD7BEBCF27315E1900DB2F60 /* DtailCrewContentTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BEBCD27315E1900DB2F60 /* DtailCrewContentTVCell.swift */; };
 		DD7BEBD027315E1900DB2F60 /* DtailCrewContentTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD7BEBCE27315E1900DB2F60 /* DtailCrewContentTVCell.xib */; };
+		DD81CA36276958050067D33C /* LookUpBoardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81CA35276958050067D33C /* LookUpBoardData.swift */; };
+		DD81CA38276958A30067D33C /* LookUpBoardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81CA37276958A30067D33C /* LookUpBoardService.swift */; };
+		DD81CA3A276996C00067D33C /* MakeBoardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81CA39276996C00067D33C /* MakeBoardService.swift */; };
+		DD81CA3C276996D50067D33C /* MakeBoardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81CA3B276996D50067D33C /* MakeBoardData.swift */; };
+		DD81CA3E2769989F0067D33C /* MakeBoardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81CA3D2769989F0067D33C /* MakeBoardRequest.swift */; };
 		DD9EEDBB273A491300E02396 /* CrewAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9EEDBA273A491300E02396 /* CrewAlert.storyboard */; };
 		DD9EEDBD273A492D00E02396 /* CrewAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EEDBC273A492D00E02396 /* CrewAlertVC.swift */; };
 		DD9EEDC7273D095E00E02396 /* DongPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9EEDC6273D095E00E02396 /* DongPicker.storyboard */; };
@@ -531,6 +536,11 @@
 		DD7BEBCA27315DF800DB2F60 /* DetailCrewIntroduceTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCrewIntroduceTVCell.xib; sourceTree = "<group>"; };
 		DD7BEBCD27315E1900DB2F60 /* DtailCrewContentTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DtailCrewContentTVCell.swift; sourceTree = "<group>"; };
 		DD7BEBCE27315E1900DB2F60 /* DtailCrewContentTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DtailCrewContentTVCell.xib; sourceTree = "<group>"; };
+		DD81CA35276958050067D33C /* LookUpBoardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpBoardData.swift; sourceTree = "<group>"; };
+		DD81CA37276958A30067D33C /* LookUpBoardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpBoardService.swift; sourceTree = "<group>"; };
+		DD81CA39276996C00067D33C /* MakeBoardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBoardService.swift; sourceTree = "<group>"; };
+		DD81CA3B276996D50067D33C /* MakeBoardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBoardData.swift; sourceTree = "<group>"; };
+		DD81CA3D2769989F0067D33C /* MakeBoardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBoardRequest.swift; sourceTree = "<group>"; };
 		DD9EEDBA273A491300E02396 /* CrewAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CrewAlert.storyboard; sourceTree = "<group>"; };
 		DD9EEDBC273A492D00E02396 /* CrewAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewAlertVC.swift; sourceTree = "<group>"; };
 		DD9EEDC6273D095E00E02396 /* DongPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DongPicker.storyboard; sourceTree = "<group>"; };
@@ -1608,6 +1618,25 @@
 			path = CrewDetailCells;
 			sourceTree = "<group>";
 		};
+		DD81CA33276957ED0067D33C /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				DD81CA37276958A30067D33C /* LookUpBoardService.swift */,
+				DD81CA39276996C00067D33C /* MakeBoardService.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		DD81CA34276957F20067D33C /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				DD81CA35276958050067D33C /* LookUpBoardData.swift */,
+				DD81CA3B276996D50067D33C /* MakeBoardData.swift */,
+				DD81CA3D2769989F0067D33C /* MakeBoardRequest.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
 		DD9EEDCA273D614300E02396 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -1969,6 +1998,7 @@
 			isa = PBXGroup;
 			children = (
 				DD485F942753E4320071AE93 /* GenericResponse.swift */,
+				DD81CA33276957ED0067D33C /* Post */,
 				DD485F8B275396E10071AE93 /* FCM */,
 				DD485F7227530A2C0071AE93 /* PhoneNumber */,
 				DD485F6C2753041E0071AE93 /* Age */,
@@ -2041,6 +2071,7 @@
 		DDED0118271B33C200C2C343 /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
+				DD81CA34276957F20067D33C /* Post */,
 				DD485F8C275396EB0071AE93 /* FCM */,
 				DD485F7527530A520071AE93 /* PhoneNumber */,
 				DD485F6F275304340071AE93 /* Age */,
@@ -2417,6 +2448,7 @@
 				DD3ACE9B275EA2B600FF00ED /* BungaeSearchService.swift in Sources */,
 				DD3A30F2272DB07500D711C6 /* JoinCompleteVC.swift in Sources */,
 				DD485FC42755DDD80071AE93 /* ProfileNicknameService.swift in Sources */,
+				DD81CA38276958A30067D33C /* LookUpBoardService.swift in Sources */,
 				DD3ACE82275C5F8300FF00ED /* CrewSearchData.swift in Sources */,
 				DD48ABAE276287650062E5F8 /* BungaeSportsTagCVCell.swift in Sources */,
 				DD3ACEA627600BD200FF00ED /* NowRegisterCrewService.swift in Sources */,
@@ -2449,10 +2481,12 @@
 				DD3ACE89275C633B00FF00ED /* GuestRegisterRequest.swift in Sources */,
 				DD3A30E0272DABC000D711C6 /* BungaeVC.swift in Sources */,
 				DD485FE227566E760071AE93 /* PinUpToggleService.swift in Sources */,
+				DD81CA3C276996D50067D33C /* MakeBoardData.swift in Sources */,
 				DD65ABE22758BB5500D71055 /* DetailCrewInquireCVCell.swift in Sources */,
 				DD3ACEAA2760154700FF00ED /* NowRegisterBungaeData.swift in Sources */,
 				DD3ACBC8272170A800EBC201 /* SignUpCompleteVC.swift in Sources */,
 				DD65ABD9275887A200D71055 /* LookUpBungaeFilterData.swift in Sources */,
+				DD81CA3E2769989F0067D33C /* MakeBoardRequest.swift in Sources */,
 				DDC46B7D2752219F0015341E /* PasswordCheckData.swift in Sources */,
 				DD485F6E2753042D0071AE93 /* MemberAgeService.swift in Sources */,
 				DDC46B63274FAA390015341E /* WithdrawalData.swift in Sources */,
@@ -2463,6 +2497,7 @@
 				DD3A30C1272AA94100D711C6 /* ModalSportsBtn.swift in Sources */,
 				DD65ABF4275A0F1900D71055 /* BungaeInfoCVCell.swift in Sources */,
 				DDC46B8327522FE60015341E /* ChangePasswordData.swift in Sources */,
+				DD81CA36276958050067D33C /* LookUpBoardData.swift in Sources */,
 				DD485FD827560A200071AE93 /* BungaeDetailData.swift in Sources */,
 				DD485F8427534F200071AE93 /* LookUpCrewData.swift in Sources */,
 				DDC3B5102732A68A00FF4959 /* DetailCrewFooterTVCell.swift in Sources */,
@@ -2505,6 +2540,7 @@
 				DDC3B5142733C4D600FF4959 /* VC.swift in Sources */,
 				DD1BFC23273664970042C51F /* NicknameValidationService.swift in Sources */,
 				DD485FAB2755C79C0071AE93 /* AgeInformationService.swift in Sources */,
+				DD81CA3A276996C00067D33C /* MakeBoardService.swift in Sources */,
 				DDC4DAFC2743FBD500D79CC8 /* SignUpService.swift in Sources */,
 				DD485FB82755CAC80071AE93 /* AreaInformationService.swift in Sources */,
 				DDC4DB1E2746415000D79CC8 /* BungaeCVCell.swift in Sources */,

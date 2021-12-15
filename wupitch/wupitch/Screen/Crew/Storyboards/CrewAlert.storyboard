@@ -76,7 +76,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Nld-mR-T5z">
                                                     <rect key="frame" x="84" y="16" width="275" height="78"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가나다라마바사아자차카타파하가나다라마바사아자차카타파가나다라마바사아자dkdkdk" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wop-4e-ILB" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가나다라마바사아자차카타파하가나다라마바사아자차카타파가나다라마바사아자dkdkdk" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wop-4e-ILB" customClass="LabelFontSize" customModule="wupitch" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="275" height="49.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -93,20 +93,29 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldI-wh-5IQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Nld-mR-T5z" secondAttribute="trailing" constant="55" id="72f-jd-PqZ"/>
                                                 <constraint firstItem="K0z-4C-jDH" firstAttribute="leading" secondItem="A7h-1B-hT8" secondAttribute="leading" constant="20" id="8cz-uM-BZh"/>
                                                 <constraint firstItem="K0z-4C-jDH" firstAttribute="top" secondItem="A7h-1B-hT8" secondAttribute="top" constant="16" id="Cjc-FT-Bat"/>
+                                                <constraint firstItem="ldI-wh-5IQ" firstAttribute="top" secondItem="A7h-1B-hT8" secondAttribute="top" id="HJT-jy-ciu"/>
                                                 <constraint firstItem="Nld-mR-T5z" firstAttribute="top" secondItem="K0z-4C-jDH" secondAttribute="top" id="K2s-p7-Emr"/>
+                                                <constraint firstAttribute="trailing" secondItem="ldI-wh-5IQ" secondAttribute="trailing" id="YuP-cD-Tey"/>
+                                                <constraint firstAttribute="bottom" secondItem="ldI-wh-5IQ" secondAttribute="bottom" id="bDs-Bu-Sad"/>
                                                 <constraint firstItem="Nld-mR-T5z" firstAttribute="leading" secondItem="K0z-4C-jDH" secondAttribute="trailing" constant="16" id="bwP-c6-TsE"/>
                                                 <constraint firstAttribute="bottom" secondItem="Nld-mR-T5z" secondAttribute="bottom" constant="16" id="ie6-PA-Efp"/>
+                                                <constraint firstItem="ldI-wh-5IQ" firstAttribute="leading" secondItem="A7h-1B-hT8" secondAttribute="leading" id="lsK-AQ-yfu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="alertImageView" destination="K0z-4C-jDH" id="pN6-7z-M3Y"/>
                                             <outlet property="dateLabel" destination="41O-jB-S9k" id="xy2-or-Vdn"/>
                                             <outlet property="titleLabel" destination="Wop-4e-ILB" id="2qP-ly-CZV"/>
+                                            <outlet property="whiteView" destination="ldI-wh-5IQ" id="7iF-hN-E5N"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

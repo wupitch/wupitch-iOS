@@ -8,7 +8,6 @@
 import UIKit
 import Alamofire
 import SDWebImage
-//import Photos
 
 class ProfileVC: BaseVC {
 
@@ -28,6 +27,7 @@ class ProfileVC: BaseVC {
     lazy var memberInfoDataManager = MemberInfoService()
     let picker = UIImagePickerController()
     var userInfo : MemberInfoResult?
+    var basicImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,21 +56,10 @@ class ProfileVC: BaseVC {
         profileImageVIew.makeRounded(cornerRadius: nil)
     }
     
-//    func checkAlbumPermission(){
-//            PHPhotoLibrary.requestAuthorization( { status in
-//                switch status{
-//                case .authorized:
-//                    print("Album: 권한 허용")
-//                case .denied:
-//                    print("Album: 권한 거부")
-//                case .restricted, .notDetermined:
-//                    print("Album: 선택하지 않음")
-//                default:
-//                    break
-//                }
-//            })
-//        }
-    
+    private func setBasicImage() {
+        basicImage = UIImage(named: "profileBasic")
+    }
+
     // 메시지 취소 버튼
     @IBAction func touchUpMessageCancelBtn(_ sender: Any) {
         messageModalImageView.alpha = 0.0
@@ -93,8 +82,29 @@ class ProfileVC: BaseVC {
         let library = UIAlertAction(title: "사진앨범", style: .default) {(action) in
             self.openLibrary()
         }
+        let defaultImage = UIAlertAction(title: "기본 이미지 사용", style: .default) { [weak self] _ in
+            
+            let url = "https://prod.wupitch.site/app/accounts/image/empty"
+            var header : HTTPHeaders = []
+            if let token = UserDefaults.standard.string(forKey: "userToken") {
+                header = ["Content-Type":"multipart/form-data", "X-ACCESS-TOKEN": token]
+            }
+            AF.request(url, method: .patch, encoding: JSONEncoding.default, headers: header)
+                .responseDecodable(of: PatchFCMData.self) { response in
+                    print("프로필 이미지 삭제response",response)
+                    switch response.result {
+                    case .success(let response):
+                        if response.isSuccess == true {
+                            self?.profileImageVIew.image = self?.basicImage
+                        }
+                    case .failure(let error):
+                        print("프로필 이미지 삭제에서 오류가 났습니다",error.localizedDescription)
+                    }
+                }
+        }
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alert.addAction(library)
+        alert.addAction(defaultImage)
         alert.addAction(cancel)
         self.present(alert, animated: true, completion: nil)
         

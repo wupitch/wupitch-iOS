@@ -68,25 +68,18 @@ extension PickerBtn {
         let firstDateArray = firstDate.split(separator: ":")
         let secondDateArray = secondDate.split(separator: ":")
         
-        let doubleFirstDate = Double(firstDateArray.first!)! + (Double(firstDateArray.last!)! * 0.01)
-        let doubleSecondDate = Double(secondDateArray.first!)! + (Double(secondDateArray.last!)! * 0.01)
+        var doubleFirstDate = Double(firstDateArray.first!)! + (Double(firstDateArray.last!)! * 0.01)
+        var doubleSecondDate = Double(secondDateArray.first!)! + (Double(secondDateArray.last!)! * 0.01)
         
         print("first double형",doubleFirstDate)
         print("second double형",doubleSecondDate)
         
-        
         if location ? doubleFirstDate > doubleSecondDate : doubleFirstDate < doubleSecondDate {
-//            timeLabel = doubleFirstDate
             return true
         }
         return false
     }
-    
-    func stringToDouble() -> Double {
-        guard let firstDate = self.titleLabel?.text else { return 0.0 }
-        let firstDateArray = firstDate.split(separator: ":")
-        return Double(firstDateArray.first!)! + (Double(firstDateArray.last!)! * 0.01)
-    }
+
 }
 
 protocol PickerDelegate {

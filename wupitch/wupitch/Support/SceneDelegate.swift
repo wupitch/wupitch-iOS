@@ -27,8 +27,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
+        
+        
         // 유저 토큰이 있을 때, 홈으로 이동(자동로그인)
-        if let userToken = UserDefaults.standard.string(forKey: "userToken") {
+//        if let userToken = UserDefaults.standard.string(forKey: "userToken") {
+//            let storyboard = UIStoryboard.init(name: "Tabbar", bundle: nil)
+//            let vc = storyboard.instantiateViewController(withIdentifier: "TabbarVC")
+//            vc.navigationController?.pushViewController(vc, animated: true)
+//            self.window?.rootViewController = vc
+//            self.window?.makeKeyAndVisible()
+//        }
+        
+        // 신분증 인증이 완료된 사용자일 경우, 자동로그인
+        if UserDefaults.standard.bool(forKey: "isCheckdeId") == true {
             let storyboard = UIStoryboard.init(name: "Tabbar", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "TabbarVC")
             vc.navigationController?.pushViewController(vc, animated: true)

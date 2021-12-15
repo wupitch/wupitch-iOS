@@ -309,41 +309,34 @@ extension MakeCrewDateVC : DatePickerDelegate {
             var value = true
             
             switch btn {
+                // endtime부터 입력시
                 case startTimeBtns[0] :
                     if endTimeBtns[0].status {
                         value = endTimeBtns[0].doubleDatePicker(secondDate: dateString, location: true)
+                        
                     }
-                    
                 case startTimeBtns[1] :
                     if endTimeBtns[1].status {
                         value = endTimeBtns[1].doubleDatePicker(secondDate: dateString, location: true)
+                        
                     }
-                    
                 case startTimeBtns[2] :
                     if endTimeBtns[2].status {
                         value = endTimeBtns[2].doubleDatePicker(secondDate: dateString, location: true)
                     }
-                    
+                 //-------------------------
                 case endTimeBtns[0] :
                     value = startTimeBtns[0].doubleDatePicker(secondDate: dateString, location: false)
                     betweenLabels[0].textColor = .main
-
-
                 case endTimeBtns[1] :
                     value = startTimeBtns[1].doubleDatePicker(secondDate: dateString, location: false)
                     betweenLabels[1].textColor = .main
-
                 case endTimeBtns[2] :
                     value = startTimeBtns[2].doubleDatePicker(secondDate: dateString, location: false)
                     betweenLabels[2].textColor = .main
-
                 default:
                     break
                 }
-            
-//            else {
-//                showToast(message: "시작시간부터 입력해주세요!")
-//            }
             
             if value == false {
                 showToast(message: "종료시간이 시작시간보다 늦어야 해요!")
@@ -352,9 +345,9 @@ extension MakeCrewDateVC : DatePickerDelegate {
             }
             else {
                 btn.status = true
-                btn.setTitle(dateString, for: .normal)
+                //btn.setTitle(dateString, for: .normal)
                 check()
-            }
+            } 
         }
         alertVC.addAction(okAction)
         let cancelAction = UIAlertAction(title: "취소", style: .cancel)

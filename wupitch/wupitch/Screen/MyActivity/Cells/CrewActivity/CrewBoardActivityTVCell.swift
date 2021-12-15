@@ -8,6 +8,8 @@
 import UIKit
 
 class CrewBoardActivityTVCell: UITableViewCell {
+    
+    var actionBlock: (() -> Void)? = nil
 
     @IBOutlet weak var gongjiContentsLabel: UILabel!
     @IBOutlet weak var gongjiLabel: UILabel!
@@ -62,6 +64,6 @@ class CrewBoardActivityTVCell: UITableViewCell {
     }
     // 신고 버튼
     @IBAction func touchUpReportBtn(_ sender: Any) {
-        alertBtn.tag = 1
+        actionBlock?()
     }
 }

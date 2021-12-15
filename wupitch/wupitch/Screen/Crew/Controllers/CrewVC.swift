@@ -28,7 +28,6 @@ class CrewVC: BaseVC {
     lazy var patchFCMDeviceToken = PatchFCMService()
     var lookUpCrew : [LookUpCrewContent] = []
     var basicImage : UIImage?
-    var dict = [String:[Any]]()
     
     // MARK: - LifeCycle
     // viewDidLoad
@@ -289,14 +288,14 @@ extension CrewVC: ModalDelegate {
         selectRegionBtn.setTitle(data, for: .normal)
         for i in 0...25 {
             if data == SignUpUserInfo.shared.areaName?[i] {
-                dict["crewPickAreaID"] = [i+1]
+                var regionDict : [String:Any] = ["areaId":i+1]
+                if let region = UserDefaults.standard.dictionary(forKey: "filterParams") {
+                    regionDict.merge(region) { (_, new) in new }
+                }
+                UserDefaults.standard.set(regionDict, forKey: "filterParams")
             }
         }
-//        print("크루지역", UserDefaults.standard.dictionary(forKey: "filterParams"))
-//        UserDefaults.standard.set(dict, forKey: "filterParams")
-        UserDefaults.standard.set(dict, forKey: "areaParams")
-      print("지역 필터 파라미터 값 유저디폴트", UserDefaults.standard.dictionary(forKey: "areaParams"))
-      crewDataManager.getLookUpCrew(params: UserDefaults.standard.dictionary(forKey: "areaParams") as? [String:[Any]], delegate: self)
+        print("지역구는?", UserDefaults.standard.dictionary(forKey: "filterParams"))
     }
 }
 

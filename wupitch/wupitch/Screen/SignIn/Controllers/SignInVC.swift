@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import Alamofire
 
 // 로그인 뷰
 class SignInVC: UIViewController {
-
+    
     // MARK: - IBoutlets
     @IBOutlet weak var emailSiginUpBtn: UIButton!
     @IBOutlet weak var loginBtn: UIButton!
@@ -84,7 +85,7 @@ class SignInVC: UIViewController {
     func keyboardWillHide(_ sender: Notification) {
         self.view.frame.origin.y = 0 // Move view to original position
     }
-
+    
     // MARK: - IBActions
     // 로그인버튼
     @IBAction func touchUpSignInBtn(_ sender: Any) {
@@ -101,7 +102,7 @@ class SignInVC: UIViewController {
         let input = SignInRequest(email: email, password: password)
         signInManager.postSignIn(input, delegate: self)
     }
-
+    
     // 이메일로 회원가입 버튼
     @IBAction func touchUpSiginUpBtn(_ sender: Any) {
         // 회원가입 페이지로 이동
@@ -132,12 +133,41 @@ extension SignInVC {
         // 토큰 저장
         UserDefaults.standard.set(result.jwt, forKey: "userToken")
         
-        // 회원가입 페이지로 이동
-        let storyboard = UIStoryboard.init(name: "Tabbar", bundle: nil)
-        guard let dvc = storyboard.instantiateViewController(identifier: "TabbarVC") as? TabbarVC else {return}
-        self.navigationController?.pushViewController(dvc, animated: true)
+        if (UserDefaults.standard.string(forKey: "userToken") != nil) {
+            let url = "https://prod.wupitch.site/app/accounts/auth"
+            
+            var header : HTTPHeaders = []
+            if let token = UserDefaults.standard.string(forKey: "userToken") {
+                header = ["Content-Type":"application/json", "X-ACCESS-TOKEN": token]
+            }
+            else {
+                header = ["Content-Type":"application/json"]
+            }
+            AF.request(url, method: .get, encoding: JSONEncoding.default, headers: header)
+                .responseDecodable(of: MemberInfoData.self) { response in
+                    switch response.result {
+                    case .success(let response):
+                        print("신분증 인증 데이터가 성공적으로 들어왔어요.", response.result)
+                        // 유저디폴트에 신분증 체크여부 저장
+                        UserDefaults.standard.set(response.result.isChecked, forKey: "isCheckdeId")
+                        // 신분증 인증이 승인 났을 때만 홈으로 이동
+                        if response.result.isChecked == true {
+                            print("신분증 인증이 완료된 사용자입니다.", response.result.isChecked)
+                            // 홈으로 이동
+                            let storyboard = UIStoryboard.init(name: "Tabbar", bundle: nil)
+                            guard let dvc = storyboard.instantiateViewController(identifier: "TabbarVC") as? TabbarVC else {return}
+                            self.navigationController?.pushViewController(dvc, animated: true)
+                        }
+                        else {
+                            self.presentAlert(title: "신분증 인증", message: "신분증이 인증되지 않았습니다. 조금만 기다려주세요!", isCancelActionIncluded: false, preferredStyle: .alert, handler: nil)
+                        }
+                        
+                    case .failure(let error):
+                        print("로그인 시 데이터를 가져오는 곳에서 오류가 났습니다",error.localizedDescription)
+                    }
+                }
+        }
     }
-    
     func failedToRequest(message: String) {
         self.presentAlert(title: message)
         print("데이터가 들어오지 않았습니다.")
@@ -145,4 +175,3 @@ extension SignInVC {
         UserDefaults.standard.removeObject(forKey: "userToken")
     }
 }
-

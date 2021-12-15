@@ -23,6 +23,7 @@ struct NowRegisterCrewService {
             header = ["Content-Type":"application/json"]
         }
         
+        //let urlString = "https://dev.yogiyo-backend.shop/app/clubs/accounts/auth"
         let urlString = "https://prod.wupitch.site/app/clubs/accounts/auth"
         
         AF.request(urlString, method: .get, encoding: URLEncoding(destination: .queryString, arrayEncoding: .noBrackets), headers: header)

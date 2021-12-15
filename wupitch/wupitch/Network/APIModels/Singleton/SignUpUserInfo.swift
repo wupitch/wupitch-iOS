@@ -106,7 +106,7 @@ class SignUpUserInfo {
     
     // 크루 디테일 바텀시트에 넣어줄 값
     var bottomDates: [Schedule] = []
-    
+
     // ------------------------
     
     

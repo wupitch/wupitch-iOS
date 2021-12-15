@@ -14,6 +14,7 @@ struct LookUpCrewService {
     
     func getLookUpCrew(params: [String:[Any]]?, delegate: CrewVC) {
         
+        //let urlString = " https://dev.yogiyo-backend.shop/app/clubs"
         let urlString = "https://prod.wupitch.site/app/clubs"
         
         var header : HTTPHeaders = []

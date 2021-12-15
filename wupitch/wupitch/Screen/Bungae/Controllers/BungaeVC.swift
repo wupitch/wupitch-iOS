@@ -133,7 +133,7 @@ extension BungaeVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
             }
             
             // 디데이 숫자가 1일때만 백그라운드 색 진하게
-            if  lookUpBungaeResult[indexPath.row].dday == 1 {
+            if  lookUpBungaeResult[indexPath.row].dday <= 1 {
                 cell.tagNameView.backgroundColor = .bk
                 cell.tagNameLabel.textColor = .wht
             }

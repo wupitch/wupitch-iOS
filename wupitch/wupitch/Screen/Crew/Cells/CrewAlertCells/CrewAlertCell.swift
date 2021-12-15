@@ -8,15 +8,17 @@
 import UIKit
 
 class CrewAlertCell: UITableViewCell {
+
     @IBOutlet weak var titleLabel: LabelFontSize!
     @IBOutlet weak var dateLabel: LabelFontSize!
+    @IBOutlet weak var whiteView: UIView!
     @IBOutlet weak var alertImageView: UIImageView!
     
     static let identifier = "CrewAlertCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        whiteView.isHidden = true
         titleLabel.CrewAlertTitleLabel()
         dateLabel.makeCrewSubTitleLabel()
         alertImageView.makeRounded(cornerRadius: nil)
