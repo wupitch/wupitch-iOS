@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class BungaeMemberDetailVC: UIViewController {
 
@@ -21,13 +22,20 @@ class BungaeMemberDetailVC: UIViewController {
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
     
-    var data : [String] = ["축구", "농구", "배구", "배드민턴", "런닝", "등산"]
+    lazy var crewMemberProfileDataManager = CrewMemberProfileService()
+    lazy var bungaeMemberProfileDataManager = BungaeMemberProfileService()
+    var profileData: [Int]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
         setStyle()
         setCVDelegate()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        bungaeMemberProfileDataManager.getBungaeMemberProfile(delegate: self)
+        crewMemberProfileDataManager.getCrewMemberProfile(delegate: self)
     }
     
     func configure() {
@@ -77,16 +85,139 @@ class BungaeMemberDetailVC: UIViewController {
 
 extension BungaeMemberDetailVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.count
+        print("몇개나와", profileData?.count)
+        return profileData?.count ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BungaeSportsTagCVCell.identifier, for: indexPath) as? BungaeSportsTagCVCell else{
             return UICollectionViewCell()
         }
-        cell.tagLabel.text = data[indexPath.row]
+        // 스포츠 아이디 라벨에 맞게
+        switch profileData?[indexPath.row] {
+        case 1:
+            cell.tagLabel.text = "축구/풋살"
+            cell.tagView.backgroundColor = .sub04
+        case 2:
+            cell.tagLabel.text = "배드민턴"
+            cell.tagView.backgroundColor = .sub03
+        case 3:
+            cell.tagLabel.text = "배구"
+            cell.tagView.backgroundColor = .sub01
+        case 4:
+            cell.tagLabel.text = "농구"
+            cell.tagView.backgroundColor = .sub02
+        case 5:
+            cell.tagLabel.text = "등산"
+            cell.tagView.backgroundColor = .sub06
+        case 6:
+            cell.tagLabel.text = "런닝"
+            cell.tagView.backgroundColor = .sub05
+        default:
+            break
+        }
         return cell
     }
 }
 
+
+extension BungaeMemberDetailVC {
+    func didSuccessBungaeMemberProfile(result: BungaeMemberProfileResult) {
+        print("내활동 번개 멤버 프로필 데이터가 성공적으로 들어왔습니다.")
+        profileData = result.sportsList
+        print("여기는?", profileData)
+        // 값 없으면 컬렉션 뷰 없애기
+        if result.sportsList.count == 0 {
+            tagCV.isHidden = true
+        } else {
+            tagCV.isHidden = false
+        }
+        // 손님일때
+        if result.isGuest == true {
+            guestView.isHidden = false
+            guestLabel.text = result.guestReserveTime
+        } else {
+            guestView.isHidden = true
+        }
+        // 닉네임
+        nicknameLabel.text = result.accountNickname
+        // 나이
+        switch result.ageNum {
+        case 1:
+            ageLabel.text = "10대"
+        case 2:
+            ageLabel.text = "20대"
+        case 3:
+            ageLabel.text = "30대"
+        case 4:
+            ageLabel.text = "40대"
+        case 5:
+            ageLabel.text = "50대 이상"
+        default:
+            break
+        }
+        // 지역구
+        cityLabel.text = result.area
+        // 폰번호
+        phoneLabel.text = result.phoneNumber
+        // 프로필 이미지
+        if let profileImage = result.profileImage {
+            profileImageView.sd_setImage(with: URL(string: profileImage))
+        } else {
+            profileImageView.image = UIImage(named: "profileBasic")
+        }
+        // 자기소개
+        introduceLabel.text = result.introduction
+    }
+    func didSuccessCrewMemberProfile(result: CrewMemberProfileResult) {
+        print("내활동 크루 멤버 프로필 데이터가 성공적으로 들어왔습니다.")
+        profileData = result.sportsList
+        
+        // 값 없으면 컬렉션 뷰 없애기
+        if result.sportsList.count == 0 {
+            tagCV.isHidden = true
+        } else {
+            tagCV.isHidden = false
+        }
+        // 손님일때
+        if result.isGuest == true {
+            guestView.isHidden = false
+            guestLabel.text = result.guestReserveTime
+        } else {
+            guestView.isHidden = true
+        }
+        // 닉네임
+        nicknameLabel.text = result.accountNickname
+        // 나이
+        switch result.ageNum {
+        case 1:
+            ageLabel.text = "10대"
+        case 2:
+            ageLabel.text = "20대"
+        case 3:
+            ageLabel.text = "30대"
+        case 4:
+            ageLabel.text = "40대"
+        case 5:
+            ageLabel.text = "50대 이상"
+        default:
+            break
+        }
+        // 지역구
+        cityLabel.text = result.area
+        // 폰번호
+        phoneLabel.text = result.phoneNumber
+        // 프로필 이미지
+        if let profileImage = result.profileImage {
+            profileImageView.sd_setImage(with: URL(string: profileImage))
+        } else {
+            profileImageView.image = UIImage(named: "profileBasic")
+        }
+        // 자기소개
+        introduceLabel.text = result.introduction
+    }
+    func failedToRequest(message: String) {
+        print("내활동 번개 멤버 프로필 데이터가 들어오지 않습니다.")
+    }
+}
 
 

@@ -18,6 +18,7 @@ class MyActivityBungaeMemberVC: UIViewController, IndicatorInfoProvider {
     // MARK: - Variable
     var bungaeMember: [MyActivityBungaeMemberResult] = []
     lazy var bungaeMemberDataManager = BungaeMemberService()
+    var accountId: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +56,8 @@ extension MyActivityBungaeMemberVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: BungaeMemberTVCell.identifier) as? BungaeMemberTVCell else{
             return UITableViewCell()
         }
+        // accountId 할당
+        accountId = bungaeMember[indexPath.row].accountID
         // 닉네임
         cell.bungaeMemberLabel.text = bungaeMember[indexPath.row].accountNickname
         // 번개리더일때 아닐때
@@ -75,7 +78,13 @@ extension MyActivityBungaeMemberVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        // 멤버 상세 페이지 나오면 여기에 유저디폴트 써주기
+        UserDefaults.standard.set(bungaeMember[indexPath.row].accountID, forKey: "accountID")
+        let storyBoard: UIStoryboard = UIStoryboard(name: "BungaeMemberDetail", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(withIdentifier: "BungaeMemberDetailVC") as? BungaeMemberDetailVC {
+            dvc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(dvc, animated: true)
+        }
     }
 }
 

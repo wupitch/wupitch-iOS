@@ -82,7 +82,7 @@ extension MyActivityDetailCrewMemberVC: UITableViewDelegate, UITableViewDataSour
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 멤버 상세 페이지 나오면 여기에 유저디폴트 써주기
+        UserDefaults.standard.set(crewMember[indexPath.row].accountID, forKey: "accountID")
         let storyBoard: UIStoryboard = UIStoryboard(name: "BungaeMemberDetail", bundle: nil)
         if let dvc = storyBoard.instantiateViewController(withIdentifier: "BungaeMemberDetailVC") as? BungaeMemberDetailVC {
             dvc.hidesBottomBarWhenPushed = true

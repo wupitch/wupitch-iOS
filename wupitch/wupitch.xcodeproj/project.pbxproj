@@ -227,6 +227,10 @@
 		DD81CA6A276BA2180067D33C /* MyActivityBungaeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81CA69276BA2180067D33C /* MyActivityBungaeService.swift */; };
 		DD81CA6D276BA8640067D33C /* BungaeMemberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81CA6C276BA8640067D33C /* BungaeMemberService.swift */; };
 		DD81CA70276BAA0B0067D33C /* BungaeMemberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81CA6F276BAA0B0067D33C /* BungaeMemberData.swift */; };
+		DD81CA72276BB1140067D33C /* BungaeMemberProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81CA71276BB1140067D33C /* BungaeMemberProfileData.swift */; };
+		DD81CA74276BB1830067D33C /* BungaeMemberProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81CA73276BB1830067D33C /* BungaeMemberProfileService.swift */; };
+		DD81CA76276BE85C0067D33C /* CrewMemberProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81CA75276BE85C0067D33C /* CrewMemberProfileService.swift */; };
+		DD81CA78276BE9290067D33C /* CrewMemberProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81CA77276BE9290067D33C /* CrewMemberProfileData.swift */; };
 		DD9EEDBB273A491300E02396 /* CrewAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9EEDBA273A491300E02396 /* CrewAlert.storyboard */; };
 		DD9EEDBD273A492D00E02396 /* CrewAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EEDBC273A492D00E02396 /* CrewAlertVC.swift */; };
 		DD9EEDC7273D095E00E02396 /* DongPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9EEDC6273D095E00E02396 /* DongPicker.storyboard */; };
@@ -587,6 +591,10 @@
 		DD81CA69276BA2180067D33C /* MyActivityBungaeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyActivityBungaeService.swift; sourceTree = "<group>"; };
 		DD81CA6C276BA8640067D33C /* BungaeMemberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeMemberService.swift; sourceTree = "<group>"; };
 		DD81CA6F276BAA0B0067D33C /* BungaeMemberData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeMemberData.swift; sourceTree = "<group>"; };
+		DD81CA71276BB1140067D33C /* BungaeMemberProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeMemberProfileData.swift; sourceTree = "<group>"; };
+		DD81CA73276BB1830067D33C /* BungaeMemberProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BungaeMemberProfileService.swift; sourceTree = "<group>"; };
+		DD81CA75276BE85C0067D33C /* CrewMemberProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewMemberProfileService.swift; sourceTree = "<group>"; };
+		DD81CA77276BE9290067D33C /* CrewMemberProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewMemberProfileData.swift; sourceTree = "<group>"; };
 		DD9EEDBA273A491300E02396 /* CrewAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CrewAlert.storyboard; sourceTree = "<group>"; };
 		DD9EEDBC273A492D00E02396 /* CrewAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewAlertVC.swift; sourceTree = "<group>"; };
 		DD9EEDC6273D095E00E02396 /* DongPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DongPicker.storyboard; sourceTree = "<group>"; };
@@ -1168,9 +1176,14 @@
 			isa = PBXGroup;
 			children = (
 				DD3A30E3272DABE900D711C6 /* MyActivity.storyboard */,
-				DDC46B49274E4F010015341E /* MyActivityDetail.storyboard */,
+				DD81CA47276A9BF70067D33C /* MyActivityDetailTab.storyboard */,
+				DD81CA4B276AA2850067D33C /* MyActivityDetailIntroduction.storyboard */,
+				DD81CA4F276AA2DC0067D33C /* MyActivityDetailBoard.storyboard */,
+				DD81CA53276AA3160067D33C /* MyActivityDetailCrewMember.storyboard */,
+				DD81CA5D276B90E90067D33C /* MyActivityBungaeTab.storyboard */,
+				DD81CA61276B9EA10067D33C /* MyActivityBungaeIntroduction.storyboard */,
+				DD81CA65276B9EC80067D33C /* MyActivityBungaeMember.storyboard */,
 				DDEB65F9274E477200F48DF0 /* AddBoard.storyboard */,
-				DD3ACEAB2760687C00FF00ED /* MyActivityBungaeDetail.storyboard */,
 				DD48ABAA2762629A0062E5F8 /* BungaeMemberDetail.storyboard */,
 			);
 			path = Storyboards;
@@ -1179,12 +1192,17 @@
 		DD3E37BC272F4A1500C4192E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DD3A30E5272DAC0300D711C6 /* MyActivityVC.swift */,
-				DDC46B4B274E4F0D0015341E /* MyActivityDetailVC.swift */,
-				DDEB65FB274E478900F48DF0 /* AddBoardVC.swift */,
-				DD3ACEAD276068C400FF00ED /* MyActivityBungaeDetailVC.swift */,
-				DD48ABA8276262620062E5F8 /* BungaeMemberDetailVC.swift */,
 				DD48ABB82764F9360062E5F8 /* CollectionViewLeftAlignFlowLayou.swift */,
+				DD3A30E5272DAC0300D711C6 /* MyActivityVC.swift */,
+				DD81CA49276A9C1F0067D33C /* MyActivityDetailTabVC.swift */,
+				DD81CA4D276AA29A0067D33C /* MyActivityDetailIntroductionVC.swift */,
+				DD81CA51276AA2EE0067D33C /* MyActivityDetailBoardVC.swift */,
+				DD81CA55276AA3280067D33C /* MyActivityDetailCrewMemberVC.swift */,
+				DD81CA5F276B90FE0067D33C /* MyActivityBungaeTabVC.swift */,
+				DD81CA63276B9EAE0067D33C /* MyActivityBungaeIntroductionVC.swift */,
+				DD81CA67276B9ED20067D33C /* MyActivityBungaeMemberVC.swift */,
+				DDEB65FB274E478900F48DF0 /* AddBoardVC.swift */,
+				DD48ABA8276262620062E5F8 /* BungaeMemberDetailVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1673,6 +1691,7 @@
 				DD81CA412769BB150067D33C /* LikeBoardService.swift */,
 				DD81CA432769CE0A0067D33C /* AlertBoardService.swift */,
 				DD81CA59276AE3900067D33C /* MyActivityCrewMemberService.swift */,
+				DD81CA75276BE85C0067D33C /* CrewMemberProfileService.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -1686,6 +1705,7 @@
 				DD81CA3F2769BAAA0067D33C /* LikeToggleData.swift */,
 				DD81CA452769CE200067D33C /* AlertBoardData.swift */,
 				DD81CA5B276B01EB0067D33C /* MyActivityCrewMemberData.swift */,
+				DD81CA77276BE9290067D33C /* CrewMemberProfileData.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -1694,6 +1714,7 @@
 			isa = PBXGroup;
 			children = (
 				DD81CA6C276BA8640067D33C /* BungaeMemberService.swift */,
+				DD81CA73276BB1830067D33C /* BungaeMemberProfileService.swift */,
 			);
 			path = BungaeMember;
 			sourceTree = "<group>";
@@ -1702,6 +1723,7 @@
 			isa = PBXGroup;
 			children = (
 				DD81CA6F276BAA0B0067D33C /* BungaeMemberData.swift */,
+				DD81CA71276BB1140067D33C /* BungaeMemberProfileData.swift */,
 			);
 			path = BungaeMember;
 			sourceTree = "<group>";
@@ -1745,13 +1767,8 @@
 			isa = PBXGroup;
 			children = (
 				DDE0EE5B272873EB00C46821 /* SignUpKakaoComplete.storyboard */,
-				DD81CA47276A9BF70067D33C /* MyActivityDetailTab.storyboard */,
-				DD81CA4B276AA2850067D33C /* MyActivityDetailIntroduction.storyboard */,
-				DD81CA4F276AA2DC0067D33C /* MyActivityDetailBoard.storyboard */,
-				DD81CA53276AA3160067D33C /* MyActivityDetailCrewMember.storyboard */,
-				DD81CA5D276B90E90067D33C /* MyActivityBungaeTab.storyboard */,
-				DD81CA61276B9EA10067D33C /* MyActivityBungaeIntroduction.storyboard */,
-				DD81CA65276B9EC80067D33C /* MyActivityBungaeMember.storyboard */,
+				DDC46B49274E4F010015341E /* MyActivityDetail.storyboard */,
+				DD3ACEAB2760687C00FF00ED /* MyActivityBungaeDetail.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1761,13 +1778,8 @@
 			children = (
 				DDED0120271BD98400C2C343 /* OnbordingSocialVC.swift */,
 				DDE0EE5D2728740400C46821 /* SignUpKakaoCompleteVC.swift */,
-				DD81CA49276A9C1F0067D33C /* MyActivityDetailTabVC.swift */,
-				DD81CA4D276AA29A0067D33C /* MyActivityDetailIntroductionVC.swift */,
-				DD81CA51276AA2EE0067D33C /* MyActivityDetailBoardVC.swift */,
-				DD81CA55276AA3280067D33C /* MyActivityDetailCrewMemberVC.swift */,
-				DD81CA5F276B90FE0067D33C /* MyActivityBungaeTabVC.swift */,
-				DD81CA63276B9EAE0067D33C /* MyActivityBungaeIntroductionVC.swift */,
-				DD81CA67276B9ED20067D33C /* MyActivityBungaeMemberVC.swift */,
+				DDC46B4B274E4F0D0015341E /* MyActivityDetailVC.swift */,
+				DD3ACEAD276068C400FF00ED /* MyActivityBungaeDetailVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -2442,6 +2454,7 @@
 				DD1BFC552738E9530042C51F /* MakeCrewMoneyVC.swift in Sources */,
 				DD3E37B6272F432A00C4192E /* UserInfoWarningVC.swift in Sources */,
 				DD1BFC272736DC8C0042C51F /* InformationService.swift in Sources */,
+				DD81CA74276BB1830067D33C /* BungaeMemberProfileService.swift in Sources */,
 				DD3ACEA8276014C600FF00ED /* NowRegisterBungaeService.swift in Sources */,
 				DDC4DB5B274DE79A00D79CC8 /* FeedDetailVC.swift in Sources */,
 				DDC4DB64274E2BB100D79CC8 /* ActivityCrewCVCell.swift in Sources */,
@@ -2577,6 +2590,7 @@
 				DD1BFC3927380C920042C51F /* CrewFilterVC.swift in Sources */,
 				DD48ABA6276244B20062E5F8 /* BungaeMemberTVCell.swift in Sources */,
 				DD3ACE89275C633B00FF00ED /* GuestRegisterRequest.swift in Sources */,
+				DD81CA76276BE85C0067D33C /* CrewMemberProfileService.swift in Sources */,
 				DD3A30E0272DABC000D711C6 /* BungaeVC.swift in Sources */,
 				DD485FE227566E760071AE93 /* PinUpToggleService.swift in Sources */,
 				DD81CA3C276996D50067D33C /* MakeBoardData.swift in Sources */,
@@ -2598,12 +2612,14 @@
 				DD81CA36276958050067D33C /* LookUpBoardData.swift in Sources */,
 				DD485FD827560A200071AE93 /* BungaeDetailData.swift in Sources */,
 				DD485F8427534F200071AE93 /* LookUpCrewData.swift in Sources */,
+				DD81CA78276BE9290067D33C /* CrewMemberProfileData.swift in Sources */,
 				DDC3B5102732A68A00FF4959 /* DetailCrewFooterTVCell.swift in Sources */,
 				DDC46B76275169C00015341E /* MakeBungaeRequest.swift in Sources */,
 				DD81CA422769BB150067D33C /* LikeBoardService.swift in Sources */,
 				DD65ABD02757752F00D71055 /* CrewDetailVC.swift in Sources */,
 				DD81CA6A276BA2180067D33C /* MyActivityBungaeService.swift in Sources */,
 				DDC46B742751698B0015341E /* MakeBungaeData.swift in Sources */,
+				DD81CA72276BB1140067D33C /* BungaeMemberProfileData.swift in Sources */,
 				DD3ACEA4276009C100FF00ED /* NowRegisterCrewData.swift in Sources */,
 				DD1BFC5D273927370042C51F /* MakeCrewGuestVC.swift in Sources */,
 				DD485FE7275680FF0071AE93 /* BungaeImageCVCell.swift in Sources */,
