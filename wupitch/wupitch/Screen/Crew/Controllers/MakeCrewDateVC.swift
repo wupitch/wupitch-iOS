@@ -345,7 +345,7 @@ extension MakeCrewDateVC : DatePickerDelegate {
             }
             else {
                 btn.status = true
-                //btn.setTitle(dateString, for: .normal)
+                btn.setTitle(dateString, for: .normal)
                 check()
             } 
         }

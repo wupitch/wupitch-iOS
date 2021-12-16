@@ -11,7 +11,8 @@ import Alamofire
 struct ExtraService {
     static let shared = ExtraService()
     
-    let url = "https://prod.wupitch.site/app/extras"
+    let url = "https://dev.yogiyo-backend.shop/app/extras"
+    //let url = "https://prod.wupitch.site/app/extras"
     
     func getExtra(delegate: MakeCrewInfoVC) {
         

@@ -11,7 +11,8 @@ import Alamofire
 struct MemberInfoProfileService {
     static let shared = MemberInfoProfileService()
     
-    let url = "https://prod.wupitch.site/app/accounts/auth"
+    let url = "https://dev.yogiyo-backend.shop/app/accounts/auth"
+    //let url = "https://prod.wupitch.site/app/accounts/auth"
     
     func getMemberInfo(delegate: ProfileNicknameVC) {
         

@@ -14,7 +14,8 @@ struct LookUpBungeService {
     
     func getLookUpBunge(params: [String:[Any]]?, delegate: BungaeVC) {
         
-        let urlString = "https://prod.wupitch.site/app/impromptus"
+        let urlString = "https://dev.yogiyo-backend.shop/app/impromptus"
+        //let urlString = "https://prod.wupitch.site/app/impromptus"
         
         var header : HTTPHeaders = []
         

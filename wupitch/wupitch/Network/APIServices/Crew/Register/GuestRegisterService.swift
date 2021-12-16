@@ -11,8 +11,8 @@ import Alamofire
 struct GuestRegisterService {
     static let shared = GuestRegisterService()
     
-    //let url = "https://dev.yogiyo-backend.shop/app/clubs/guest-info"
-    let url = "https://prod.wupitch.site/app/clubs/guest-info"
+    let url = "https://dev.yogiyo-backend.shop/app/clubs/guest-info"
+    //let url = "https://prod.wupitch.site/app/clubs/guest-info"
     
     func postMakeCrew(_ parameters: GuestRegisterRequest, delegate: CrewApplicationVC) {
         

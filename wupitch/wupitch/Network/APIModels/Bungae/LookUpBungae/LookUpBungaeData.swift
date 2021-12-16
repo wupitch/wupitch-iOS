@@ -34,11 +34,12 @@ struct LookUpBungaeContent: Codable {
     let nowMemberCount, recruitmentCount: Int
     let startTime, endTime: Double?
     let title: String
+    let isCreate: Bool?
 
     enum CodingKeys: String, CodingKey {
         case date, day, dday, endTime
         case impromptuID = "impromptuId"
-        case impromptuImage, isPinUp, location, nowMemberCount, recruitmentCount, startTime, title
+        case impromptuImage, isPinUp, location, nowMemberCount, recruitmentCount, startTime, title, isCreate
     }
 }
 

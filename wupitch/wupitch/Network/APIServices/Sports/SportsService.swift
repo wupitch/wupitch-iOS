@@ -11,7 +11,8 @@ import Alamofire
 struct SportsService {
     static let shared = SportsService()
     
-    let url = "https://prod.wupitch.site/app/sports"
+    let url = "https://dev.yogiyo-backend.shop/app/sports"
+    //let url = "https://prod.wupitch.site/app/sports"
     
     func getSports(delegate: MakeCrewSportsVC) {
         

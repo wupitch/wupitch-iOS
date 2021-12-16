@@ -12,7 +12,8 @@ import Alamofire
 struct ToggleAlarmService {
     static let shared = ToggleAlarmService()
     
-    let url = "https://prod.wupitch.site/app/accounts/toggle-alarm-info"
+    let url = "https://dev.yogiyo-backend.shop/app/accounts/toggle-alarm-info"
+    //let url = "https://prod.wupitch.site/app/accounts/toggle-alarm-info"
     
     func patchToggleAlarm(delegate: ProfileSettingsVC) {
         

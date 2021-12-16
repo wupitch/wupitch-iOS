@@ -152,7 +152,8 @@ extension MakeBungaeMoneyVC {
         print("요청에 성공하셨습니다.")
         print("번개 아이디",result.impromptuID)
 
-        let url = "https://prod.wupitch.site/app/impromptu/image"
+        let url = "https://dev.yogiyo-backend.shop/app/impromptu/image"
+        //let url = "https://prod.wupitch.site/app/impromptu/image"
 
         var header : HTTPHeaders = []
 

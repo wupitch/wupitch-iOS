@@ -11,7 +11,8 @@ import Alamofire
 struct FCMService {
     static let shared = FCMService()
     
-    let url = "https://prod.wupitch.site/app/fcms/accounts/auth"
+    let url = "https://dev.yogiyo-backend.shop/app/fcms/accounts/auth"
+    //let url = "https://prod.wupitch.site/app/fcms/accounts/auth"
     
     func postFCM(delegate: CrewAlertVC) {
         

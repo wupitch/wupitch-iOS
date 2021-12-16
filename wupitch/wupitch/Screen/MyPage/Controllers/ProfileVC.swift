@@ -84,7 +84,8 @@ class ProfileVC: BaseVC {
         }
         let defaultImage = UIAlertAction(title: "기본 이미지 사용", style: .default) { [weak self] _ in
             
-            let url = "https://prod.wupitch.site/app/accounts/image/empty"
+            let url = "https://dev.yogiyo-backend.shop/app/accounts/image/empty"
+            //let url = "https://prod.wupitch.site/app/accounts/image/empty"
             var header : HTTPHeaders = []
             if let token = UserDefaults.standard.string(forKey: "userToken") {
                 header = ["Content-Type":"multipart/form-data", "X-ACCESS-TOKEN": token]
@@ -173,7 +174,8 @@ extension ProfileVC : UIImagePickerControllerDelegate, UINavigationControllerDel
         {
             profileImageVIew.image = image
             
-            let url = "https://prod.wupitch.site/app/accounts/image"
+            let url = "https://dev.yogiyo-backend.shop/app/accounts/image"
+            //let url = "https://prod.wupitch.site/app/accounts/image"
             
             var header : HTTPHeaders = []
             

@@ -23,12 +23,20 @@ struct AlertBoardService {
         }
         
         let urlString : String
+//        if let postId = UserDefaults.standard.string(forKey: "postID") {
+//            urlString = "https://prod.wupitch.site/app/posts/\(postId)/report-toggle"
+//        }
+//        else {
+//            urlString = "https://prod.wupitch.site/app/posts"
+//        }
+        
         if let postId = UserDefaults.standard.string(forKey: "postID") {
-            urlString = "https://prod.wupitch.site/app/posts/\(postId)/report-toggle"
+            urlString = "https://dev.yogiyo-backend.shop/app/posts/\(postId)/report-toggle"
         }
         else {
-            urlString = "https://prod.wupitch.site/app/posts"
+            urlString = "https://dev.yogiyo-backend.shop/app/posts"
         }
+        
         AF.request(urlString, method: .patch, encoding: JSONEncoding.default, headers: header)
             .responseDecodable(of: AlertBoardData.self, emptyResponseCodes: [200, 204, 205]) { response in
                 print("게시판 좋아요 토글 response",response)

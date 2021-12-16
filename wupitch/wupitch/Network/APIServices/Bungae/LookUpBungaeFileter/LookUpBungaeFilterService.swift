@@ -14,7 +14,8 @@ struct LookUpBungaeFiletrService {
     
     func getLookUpBungaeFilter(delegate: BungaeFilterVC) {
         
-        let urlString = "https://prod.wupitch.site/app/accounts/auth/impromptu-filter"
+        let urlString = "https://dev.yogiyo-backend.shop/app/accounts/auth/impromptu-filter"
+        //let urlString = "https://prod.wupitch.site/app/accounts/auth/impromptu-filter"
         
         var header : HTTPHeaders = []
         

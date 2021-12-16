@@ -23,11 +23,18 @@ struct MakeBoardService {
         }
         
         let urlString : String
+//        if let clubId = UserDefaults.standard.string(forKey: "clubID") {
+//            urlString = "https://prod.wupitch.site/app/posts/crew/\(clubId)"
+//        }
+//        else {
+//            urlString = "https://prod.wupitch.site/app/posts/crew"
+//        }
+        
         if let clubId = UserDefaults.standard.string(forKey: "clubID") {
-            urlString = "https://prod.wupitch.site/app/posts/crew/\(clubId)"
+            urlString = "https://dev.yogiyo-backend.shop/app/posts/crew/\(clubId)"
         }
         else {
-            urlString = "https://prod.wupitch.site/app/posts/crew"
+            urlString = "https://dev.yogiyo-backend.shop/app/posts/crew"
         }
         
         AF.request(urlString, method: .post, parameters: parameters,

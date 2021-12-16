@@ -68,7 +68,7 @@ class MakeCrewInfoVC: UIViewController {
         
         // 연령대 싱글톤 값으로 초기화
         for i in 0...4 {
-            ageBtns[i].ageInt = i
+            ageBtns[i].ageInt = i+1
         }
     }
     func addDoneButtonOnKeyboard(){
@@ -193,15 +193,15 @@ class MakeCrewInfoVC: UIViewController {
             for i in 0...4 {
                 if ageBtns[i].status == true {
                     SignUpUserInfo.shared.ageList?.append(ageBtns[i].ageInt!)
-                    print("연령대 >>>>>>>>>",SignUpUserInfo.shared.ageList)
                 }
             }
+            print("연령대 >>>>>>>>>",SignUpUserInfo.shared.ageList)
             for i in 0...7 {
                 if addInfoBtns[i].status == true {
                     SignUpUserInfo.shared.extraInfoList?.append(addInfoBtns[i].extraId!)
-                    print("추가정보 >>>>>>>>>",SignUpUserInfo.shared.extraInfoList)
                 }
             }
+            print("추가정보 >>>>>>>>>",SignUpUserInfo.shared.extraInfoList)
             // 싱글톤에 값 넣어주기
             SignUpUserInfo.shared.crewName = crewNameTextField.text
             SignUpUserInfo.shared.crewCount = Int(crewCountTextField.text ?? "") ?? 0

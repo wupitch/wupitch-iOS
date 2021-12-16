@@ -14,11 +14,18 @@ struct BungaeDetailService {
     func getBungaeDetail(delegate: BungaeDetailVC) {
 
         let urlString : String
+//        if let impromptuId = UserDefaults.standard.string(forKey: "impromptuID") {
+//            urlString = "https://prod.wupitch.site/app/impromptus/\(impromptuId)"
+//        }
+//        else {
+//            urlString = "https://prod.wupitch.site/app/impromptus"
+//        }
+        
         if let impromptuId = UserDefaults.standard.string(forKey: "impromptuID") {
-            urlString = "https://prod.wupitch.site/app/impromptus/\(impromptuId)"
+            urlString = "https://dev.yogiyo-backend.shop/app/impromptus/\(impromptuId)"
         }
         else {
-            urlString = "https://prod.wupitch.site/app/impromptus"
+            urlString = "https://dev.yogiyo-backend.shop/app/impromptus"
         }
         
         var header : HTTPHeaders = []

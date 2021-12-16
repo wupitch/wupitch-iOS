@@ -23,7 +23,8 @@ struct NowRegisterBungaeService {
             header = ["Content-Type":"application/json"]
         }
         
-        let urlString = "https://prod.wupitch.site/app/impromptus/accounts/auth"
+        let urlString = "https://dev.yogiyo-backend.shop/app/impromptus/accounts/auth"
+        //let urlString = "https://prod.wupitch.site/app/impromptus/accounts/auth"
         
         AF.request(urlString, method: .get, encoding: URLEncoding(destination: .queryString, arrayEncoding: .noBrackets), headers: header)
             .responseDecodable(of: NowRegisterBungaeData.self, emptyResponseCodes: [200, 204, 205]) { response in

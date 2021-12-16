@@ -11,7 +11,8 @@ import Alamofire
 struct AreaService {
     static let shared = AreaService()
 
-    let url = "https://prod.wupitch.site/app/areas"
+    let url = "https://dev.yogiyo-backend.shop/app/areas"
+    //let url = "https://prod.wupitch.site/app/areas"
 
     func getArea(delegate: CrewVC) {
 

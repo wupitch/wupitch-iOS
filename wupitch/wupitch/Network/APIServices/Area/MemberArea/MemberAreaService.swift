@@ -11,7 +11,8 @@ import Alamofire
 struct MemberAreaService {
     static let shared = MemberAreaService()
     
-    let url = "https://prod.wupitch.site/app/accounts/auth/area"
+    let url = "https://dev.yogiyo-backend.shop/app/accounts/auth/area"
+    //let url = "https://prod.wupitch.site/app/accounts/auth/area"
     
     func getMemberArea(delegate: SignUpCityVC) {
         

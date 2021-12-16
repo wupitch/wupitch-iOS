@@ -12,7 +12,8 @@ import Alamofire
 struct WithdrawalService {
     static let shared = WithdrawalService()
     
-    let url = "https://prod.wupitch.site/app/accounts/toggle-status"
+    let url = "https://dev.yogiyo-backend.shop/app/accounts/toggle-status"
+    //let url = "https://prod.wupitch.site/app/accounts/toggle-status"
     
     func patchWithdrawal(delegate: ProfileSettingsVC) {
         

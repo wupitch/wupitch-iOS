@@ -14,8 +14,8 @@ struct LookUpCrewFiletrService {
     
     func getLookUpCrewFilter(delegate: CrewFilterVC) {
         
-        //let urlString = "https://dev.yogiyo-backend.shop/app/accounts/auth/crew-filter"
-        let urlString = "https://prod.wupitch.site/app/accounts/auth/crew-filter"
+        let urlString = "https://dev.yogiyo-backend.shop/app/accounts/auth/crew-filter"
+        //let urlString = "https://prod.wupitch.site/app/accounts/auth/crew-filter"
         
         var header : HTTPHeaders = []
         

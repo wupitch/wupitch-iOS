@@ -109,7 +109,12 @@ class MakeCrewRegionVC: UIViewController {
                      print("지역id >>>>>>>>>>", SignUpUserInfo.shared.selectAreaPicker!)
                 }
             }
-            SignUpUserInfo.shared.location = placeTextField.text
+            if placeTextField.textColor == .bk {
+                SignUpUserInfo.shared.location = placeTextField.text
+            }
+            else {
+                SignUpUserInfo.shared.location = nil
+            }
             print("장소 >>>>>>>>>>",SignUpUserInfo.shared.location ?? "장소미정")
             let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewInfo", bundle: nil)
             if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewInfoVC") as? MakeCrewInfoVC {

@@ -11,7 +11,8 @@ import Alamofire
 struct MemberPhoneNumberService {
     static let shared = MemberPhoneNumberService()
     
-    let url = "https://prod.wupitch.site/app/accounts/auth/phoneNumber"
+    let url = "https://dev.yogiyo-backend.shop/app/accounts/auth/phoneNumber"
+    //let url = "https://prod.wupitch.site/app/accounts/auth/phoneNumber"
     
     func getMemberPhoneNumber(delegate: SignUpPhoneVC) {
         

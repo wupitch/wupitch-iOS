@@ -9,7 +9,8 @@ import UIKit
 
 class BungaeMemberTVCell: UITableViewCell {
 
-    @IBOutlet weak var allowBtn: UIButton!
+    @IBOutlet weak var waitLabel: UILabel!
+    @IBOutlet weak var waitView: UIView!
     @IBOutlet weak var bungaeLeaderImageView: UIImageView!
     @IBOutlet weak var bungaeMemberLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -28,6 +29,8 @@ class BungaeMemberTVCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setStyle()
+        bungaeLeaderImageView.isHidden = true
+        waitView.isHidden = true
     }
     
     private func setStyle() {
@@ -38,10 +41,9 @@ class BungaeMemberTVCell: UITableViewCell {
         // bungaeMember Name
         bungaeMemberLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
         bungaeMemberLabel.textColor = .bk
-        // allowBtn
-        allowBtn.backgroundColor = .main
-        allowBtn.setTitleColor(UIColor.wht, for: .normal)
-        allowBtn.makeRounded(cornerRadius: 8.adjusted)
-        allowBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+        waitView.makeRounded(cornerRadius: 10.adjusted)
+        waitView.backgroundColor = .gray03
+        waitLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12.adjusted)
+        waitLabel.textColor = .wht
     }
 }

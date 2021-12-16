@@ -7,11 +7,18 @@
 
 import UIKit
 
+protocol BoardToLikeOrReport {
+    func selectedCVCell(_ index: Int)
+    func isAccountReportTrue()
+}
+
 class CrewBoardActivityTVCell: UITableViewCell {
     
+    var boardToLikeOrReport: BoardToLikeOrReport?
     var actionBlock: (() -> Void)? = nil
     lazy var likeToggleDataManager = LikeToggleService()
 
+    @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var gongjiContentsLabel: UILabel!
     @IBOutlet weak var gongjiLabel: UILabel!
     @IBOutlet weak var gongjiView: UIView!
@@ -62,6 +69,8 @@ class CrewBoardActivityTVCell: UITableViewCell {
         gongjiLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16.adjusted)
         likeBtn.setTitleColor(UIColor.gray03, for: .normal)
         likeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14.adjusted)
+        gongjiContentsLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16.adjusted)
+        gongjiContentsLabel.textColor = .bk
     }
     
     func colorBtn() {
@@ -86,7 +95,7 @@ class CrewBoardActivityTVCell: UITableViewCell {
             grayBtn()
         }
         print(status)
-        likeToggleDataManager.patchLikeToggle(delegate: self)
+//        likeToggleDataManager.patchLikeToggle(delegate: self)
     }
     // 신고 버튼
     @IBAction func touchUpReportBtn(_ sender: Any) {
@@ -94,14 +103,12 @@ class CrewBoardActivityTVCell: UITableViewCell {
     }
 }
 
-extension CrewBoardActivityTVCell {
-    func didSuccessLikeToggle(result: LikeToggleResult) {
-        print("게시글 좋아요 토글이 성공적으로 들어옵니다.")
-        print("좋아요 토글",result.result)
-    }
-
-    func failedToRequest(message: String) {
-        print("게시글 좋아요 토글 데이터가 들어오지 않았습니다.")
-
-    }
-}
+//extension CrewBoardActivityTVCell {
+//    func didSuccessLikeToggle(result: LikeToggleResult) {
+//        print("게시글 좋아요 토글이 성공적으로 들어옵니다.")
+//        print("좋아요 토글",result.result)
+//    }
+//    func failedToRequest(message: String) {
+//        print("게시글 좋아요 조회 데이터가 들어오지 않습니다.")
+//    }
+//}

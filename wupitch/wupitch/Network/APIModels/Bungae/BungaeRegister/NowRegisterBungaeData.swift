@@ -22,7 +22,7 @@ struct NowRegisterBungaeResult: Codable {
     let dday, impromptuID: Int
     let impromptuImage: String?
     let isPinUp: Bool?
-    let location: String
+    let location: String?
     let nowMemberCount, recruitmentCount: Int
     let endTime, startTime: Double?
     let title: String

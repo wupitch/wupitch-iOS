@@ -102,6 +102,7 @@ extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NoActivityCrewCVCell.identifier, for: indexPath) as? NoActivityCrewCVCell else {
                     return UICollectionViewCell()
                 }
+                cell.lookLabel.text = "+ 크루 둘러보기"
                 return cell
             }
             // 활동중인 크루가 있을 때
@@ -109,7 +110,9 @@ extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ActivityCrewCVCell.identifier, for: indexPath) as? ActivityCrewCVCell else {
                     return UICollectionViewCell()
                 }
-                cell.crewToDetailCrewDelegate = self
+                
+                //cell.crewToDetailCrewDelegate = self
+                
                 // 크루 이름 + 색상 + 크루 기본 이미지
                 switch nowRegisterData[indexPath.row].sportsID {
                 case 1:
@@ -267,8 +270,9 @@ extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
                 self.tabBarController?.selectedIndex = 0
                 // cell 누르면 해당 디테일 페이지로 이동
             } else {
-                let storyboard = UIStoryboard.init(name: "MyActivityDetail", bundle: nil)
-                guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityDetailVC") as? MyActivityDetailVC else {return}
+                UserDefaults.standard.set(nowRegisterData[indexPath.row].clubID, forKey: "clubID")
+                let storyboard = UIStoryboard.init(name: "MyActivityDetailTab", bundle: nil)
+                guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityDetailTabVC") as? MyActivityDetailTabVC else {return}
                 dvc.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(dvc, animated: true)
             }
@@ -280,8 +284,9 @@ extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             }
             // cell 누르면 해당 디테일 페이지로 이동
             else {
-                let storyboard = UIStoryboard.init(name: "MyActivityBungaeDetail", bundle: nil)
-                guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityBungaeDetailVC") as? MyActivityBungaeDetailVC else {return}
+                UserDefaults.standard.set(nowRegisterBungaeData[indexPath.row].impromptuID, forKey: "impromptuID")
+                let storyboard = UIStoryboard.init(name: "MyActivityBungaeTab", bundle: nil)
+                guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityBungaeTabVC") as? MyActivityBungaeTabVC else {return}
                 dvc.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(dvc, animated: true)
             }
@@ -332,17 +337,19 @@ extension MyActivityVC {
 }
 
 // MARK: - Delegate Extension
-extension MyActivityVC: MyCrewToMyCrewDetail {
-    func didPressBoard() {
-        let storyboard = UIStoryboard.init(name: "MyActivityDetail", bundle: nil)
-        guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityDetailVC") as? MyActivityDetailVC else {return}
-        dvc.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(dvc, animated: true)
-    }
-    func didPressCrewone() {
-        let storyboard = UIStoryboard.init(name: "MyActivityDetail", bundle: nil)
-        guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityDetailVC") as? MyActivityDetailVC else {return}
-        dvc.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(dvc, animated: true)
-    }
-}
+//extension MyActivityVC: MyCrewToMyCrewDetail {
+//    func didPressBoard() {
+//        let storyboard = UIStoryboard.init(name: "MyActivityDetailTab", bundle: nil)
+//        guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityDetailTabVC") as? MyActivityDetailTabVC else {return}
+//        dvc.hidesBottomBarWhenPushed = true
+//        dvc.moveToViewController(at: 1, animated: false)
+//        self.navigationController?.pushViewController(dvc, animated: true)
+//    }
+//    func didPressCrewone() {
+//        let storyboard = UIStoryboard.init(name: "MyActivityDetailTab", bundle: nil)
+//        guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityDetailTabVC") as? MyActivityDetailTabVC else {return}
+//        dvc.hidesBottomBarWhenPushed = true
+//        dvc.moveToViewController(at: 2, animated: false)
+//        self.navigationController?.pushViewController(dvc, animated: true)
+//    }
+//}

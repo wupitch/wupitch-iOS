@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -25,51 +26,79 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNt-Jo-EeL">
-                        <rect key="frame" x="66" y="22" width="42" height="21"/>
+                        <rect key="frame" x="66" y="22.5" width="41.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leader" translatesAutoresizingMaskIntoConstraints="NO" id="u5Q-tP-OWz">
-                        <rect key="frame" x="118" y="20.5" width="24" height="24"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IZp-N8-8e8">
+                        <rect key="frame" x="117.5" y="20.5" width="82" height="24"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leader" translatesAutoresizingMaskIntoConstraints="NO" id="u5Q-tP-OWz">
+                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="12g-gF-ZDF"/>
+                                    <constraint firstAttribute="height" constant="24" id="iAZ-qU-mV3"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZXo-Ha-aYW">
+                                <rect key="frame" x="24" y="2" width="58" height="20"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수락대기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCV-zY-8g1">
+                                        <rect key="frame" x="-0.5" y="0.0" width="59" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="58" id="8hy-2g-55N"/>
+                                    <constraint firstItem="yCV-zY-8g1" firstAttribute="centerY" secondItem="ZXo-Ha-aYW" secondAttribute="centerY" id="Z6E-yZ-gcq"/>
+                                    <constraint firstItem="yCV-zY-8g1" firstAttribute="centerX" secondItem="ZXo-Ha-aYW" secondAttribute="centerX" id="g2e-hE-WVG"/>
+                                    <constraint firstAttribute="height" constant="20" id="hYI-9F-I9D"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                    </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxn-KJ-H8f">
+                        <rect key="frame" x="276" y="20.5" width="24" height="24"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="24" id="12g-gF-ZDF"/>
-                            <constraint firstAttribute="height" constant="24" id="iAZ-qU-mV3"/>
-                        </constraints>
-                    </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKX-qE-4PE">
-                        <rect key="frame" x="221" y="15.5" width="80" height="34"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="34" id="YW8-hy-eQQ"/>
-                            <constraint firstAttribute="width" constant="80" id="swO-jb-pNx"/>
+                            <constraint firstAttribute="height" constant="24" id="bmV-Dn-nTJ"/>
+                            <constraint firstAttribute="width" constant="24" id="pyj-Mz-4kw"/>
                         </constraints>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" title="승인"/>
+                        <state key="normal" title="" image="iArrowsChevronBackward"/>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="kKX-qE-4PE" firstAttribute="centerY" secondItem="JNt-Jo-EeL" secondAttribute="centerY" id="C4N-Hb-jCP"/>
+                    <constraint firstAttribute="trailing" secondItem="Gxn-KJ-H8f" secondAttribute="trailing" constant="20" id="2hl-RI-TN3"/>
                     <constraint firstItem="T10-A1-ctK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Jvg-bL-6W2"/>
                     <constraint firstItem="T10-A1-ctK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="28" id="LeR-fi-29l"/>
+                    <constraint firstItem="Gxn-KJ-H8f" firstAttribute="centerY" secondItem="JNt-Jo-EeL" secondAttribute="centerY" id="XLU-7p-XhL"/>
+                    <constraint firstItem="IZp-N8-8e8" firstAttribute="leading" secondItem="JNt-Jo-EeL" secondAttribute="trailing" constant="10" id="Yzs-qw-S3D"/>
                     <constraint firstItem="JNt-Jo-EeL" firstAttribute="leading" secondItem="T10-A1-ctK" secondAttribute="trailing" constant="10" id="ZDF-Mo-0ob"/>
-                    <constraint firstItem="u5Q-tP-OWz" firstAttribute="leading" secondItem="JNt-Jo-EeL" secondAttribute="trailing" constant="10" id="bWy-ED-3Zd"/>
-                    <constraint firstAttribute="trailing" secondItem="kKX-qE-4PE" secondAttribute="trailing" constant="19" id="dPR-At-mEc"/>
-                    <constraint firstItem="u5Q-tP-OWz" firstAttribute="centerY" secondItem="JNt-Jo-EeL" secondAttribute="centerY" id="rA5-cY-TcR"/>
+                    <constraint firstItem="IZp-N8-8e8" firstAttribute="centerY" secondItem="JNt-Jo-EeL" secondAttribute="centerY" id="n2L-w0-cSn"/>
                     <constraint firstItem="JNt-Jo-EeL" firstAttribute="centerY" secondItem="T10-A1-ctK" secondAttribute="centerY" id="wcE-O3-0JN"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="allowBtn" destination="kKX-qE-4PE" id="2DD-8T-YA0"/>
                 <outlet property="bungaeLeaderImageView" destination="u5Q-tP-OWz" id="mx8-bJ-gRe"/>
                 <outlet property="bungaeMemberLabel" destination="JNt-Jo-EeL" id="Lk4-CT-N55"/>
                 <outlet property="profileImageView" destination="T10-A1-ctK" id="1EM-VE-pG2"/>
+                <outlet property="waitLabel" destination="yCV-zY-8g1" id="3hl-zs-LMS"/>
+                <outlet property="waitView" destination="ZXo-Ha-aYW" id="TuK-lE-LMT"/>
             </connections>
-            <point key="canvasLocation" x="133" y="59"/>
+            <point key="canvasLocation" x="131.8840579710145" y="58.59375"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="iArrowsChevronBackward" width="24" height="24"/>
         <image name="leader" width="24" height="24"/>
         <image name="profileBasic" width="64" height="64"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

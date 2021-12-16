@@ -13,7 +13,8 @@ struct IntroductionInformationService {
 
     func patchInformation(_ parameters: IntroductionInformationRequest, delegate: ProfileNicknameVC) {
 
-        let url = "https://prod.wupitch.site/app/accounts/information"
+        let url = "https://dev.yogiyo-backend.shop/app/accounts/information"
+        //let url = "https://prod.wupitch.site/app/accounts/information"
 
         var header : HTTPHeaders = []
         if let token = UserDefaults.standard.string(forKey: "userToken") {

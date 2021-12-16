@@ -15,19 +15,19 @@ struct PinupToggleService {
         
         let urlString : String
         
-//        if let clubId = UserDefaults.standard.string(forKey: "clubID") {
-//            urlString = "https://dev.yogiyo-backend.shop/app/clubs/\(clubId)/pinUp-toggle"
-//        }
-//        else {
-//            urlString = "https://dev.yogiyo-backend.shop/app/clubs"
-//        }
-        
         if let clubId = UserDefaults.standard.string(forKey: "clubID") {
-            urlString = "https://prod.wupitch.site/app/clubs/\(clubId)/pinUp-toggle"
+            urlString = "https://dev.yogiyo-backend.shop/app/clubs/\(clubId)/pinUp-toggle"
         }
         else {
-            urlString = "https://prod.wupitch.site/app/clubs"
+            urlString = "https://dev.yogiyo-backend.shop/app/clubs"
         }
+        
+//        if let clubId = UserDefaults.standard.string(forKey: "clubID") {
+//            urlString = "https://prod.wupitch.site/app/clubs/\(clubId)/pinUp-toggle"
+//        }
+//        else {
+//            urlString = "https://prod.wupitch.site/app/clubs"
+//        }
         
         var header : HTTPHeaders = []
         

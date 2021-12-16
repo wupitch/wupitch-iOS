@@ -14,7 +14,8 @@ struct BungaeSearchService {
     
     func getBungaeSearch(keyword: String, delegate: CrewSearchVC) {
         
-        let urlString = "https://prod.wupitch.site/app/impromptus/title"
+        let urlString = "https://dev.yogiyo-backend.shop/app/impromptus/title"
+        //let urlString = "https://prod.wupitch.site/app/impromptus/title"
         
         var header : HTTPHeaders = []
         

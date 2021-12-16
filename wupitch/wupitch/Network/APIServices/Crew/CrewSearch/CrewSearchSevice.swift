@@ -14,8 +14,8 @@ struct CrewSearchService {
     
     func getCrewSearch(keyword: String, delegate: CrewSearchVC) {
         
-        //let urlString = "https://dev.yogiyo-backend.shop/app/clubs/title"
-        let urlString = "https://prod.wupitch.site/app/clubs/title"
+        let urlString = "https://dev.yogiyo-backend.shop/app/clubs/title"
+        //let urlString = "https://prod.wupitch.site/app/clubs/title"
         
         var header : HTTPHeaders = []
         

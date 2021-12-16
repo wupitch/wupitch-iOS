@@ -20,12 +20,12 @@ struct SignUpData: Codable {
 struct SignUpResult: Codable {
     let accountID: Int
     let email, nickname, jwt, introduce: String
-    let isPushAgree: Bool
+    let isPushAgree, isChecked: Bool
     let profileImageURL, deviceToken: String?
 
     enum CodingKeys: String, CodingKey {
         case accountID = "accountId"
-        case email, nickname, jwt, introduce, isPushAgree, deviceToken
+        case email, nickname, jwt, introduce, isPushAgree, deviceToken, isChecked
         case profileImageURL = "profileImageUrl"
     }
 }

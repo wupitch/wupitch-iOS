@@ -48,7 +48,8 @@ class SignUpImagePreviewVC: UIViewController {
     
     @IBAction func touchUpUsePhotoBtn(_ sender: Any) {
         
-        let url = "https://prod.wupitch.site/app/accounts/identification"
+        let url = "https://dev.yogiyo-backend.shop/app/accounts/identification"
+        //let url = "https://prod.wupitch.site/app/accounts/identification"
         
         var header : HTTPHeaders = []
         
@@ -73,7 +74,7 @@ class SignUpImagePreviewVC: UIViewController {
                     print("데이터가 성공적으로 들어왔어요", response)
                     
                     // 신분증 인증 전의 회원가입 데이터들을 한번에 보내기
-                    if let email = SignUpUserInfo.shared.email,
+                    if let email = UserDefaults.standard.string(forKey: "email"),
                        let introduce = UserDefaults.standard.string(forKey: "introduce"),
                        let isPushAgree = SignUpUserInfo.shared.isPushAgree,
                        let nickname = SignUpUserInfo.shared.nickname,

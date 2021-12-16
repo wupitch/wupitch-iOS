@@ -12,7 +12,7 @@ import Alamofire
 struct LikeToggleService {
     static let shared = LikeToggleService()
 
-    func patchLikeToggle(delegate: CrewBoardActivityTVCell) {
+    func patchLikeToggle(delegate: MyActivityDetailBoardVC) {
 
         var header : HTTPHeaders = []
         if let token = UserDefaults.standard.string(forKey: "userToken") {
@@ -23,11 +23,18 @@ struct LikeToggleService {
         }
         
         let urlString : String
+//        if let postId = UserDefaults.standard.string(forKey: "postID") {
+//            urlString = "https://prod.wupitch.site/app/posts/\(postId)/like-toggle"
+//        }
+//        else {
+//            urlString = "https://prod.wupitch.site/app/posts"
+//        }
+        
         if let postId = UserDefaults.standard.string(forKey: "postID") {
-            urlString = "https://prod.wupitch.site/app/posts/\(postId)/like-toggle"
+            urlString = "https://dev.yogiyo-backend.shop/app/posts/\(postId)/like-toggle"
         }
         else {
-            urlString = "https://prod.wupitch.site/app/posts"
+            urlString = "https://dev.yogiyo-backend.shop/app/posts"
         }
         
         AF.request(urlString, method: .patch, encoding: JSONEncoding.default, headers: header)

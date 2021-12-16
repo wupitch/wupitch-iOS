@@ -11,7 +11,8 @@ import Alamofire
 struct MakeBungaeService {
     static let shared = MakeBungaeService()
     
-    let url = "https://prod.wupitch.site/app/impromptus"
+    let url = "https://dev.yogiyo-backend.shop/app/impromptus"
+    //let url = "https://prod.wupitch.site/app/impromptus"
     
     func postMakeBungae(_ parameters: MakeBungaeRequest, delegate: MakeBungaeMoneyVC) {
         

@@ -15,11 +15,17 @@ struct BungaePinupToggleService {
         
         let urlString : String
         
+//        if let impromptuId = UserDefaults.standard.string(forKey: "impromptuID") {
+//            urlString = "https://prod.wupitch.site/app/impromptus/\(impromptuId)/pinUp-toggle"
+//        }
+//        else {
+//            urlString = "https://prod.wupitch.site/app/impromptus"
+//        }
         if let impromptuId = UserDefaults.standard.string(forKey: "impromptuID") {
-            urlString = "https://prod.wupitch.site/app/impromptus/\(impromptuId)/pinUp-toggle"
+            urlString = "https://dev.yogiyo-backend.shop/app/impromptus/\(impromptuId)/pinUp-toggle"
         }
         else {
-            urlString = "https://prod.wupitch.site/app/impromptus"
+            urlString = "https://dev.yogiyo-backend.shop/app/impromptus"
         }
         
         var header : HTTPHeaders = []

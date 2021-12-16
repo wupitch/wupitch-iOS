@@ -134,7 +134,8 @@ extension SignInVC {
         UserDefaults.standard.set(result.jwt, forKey: "userToken")
         
         if (UserDefaults.standard.string(forKey: "userToken") != nil) {
-            let url = "https://prod.wupitch.site/app/accounts/auth"
+            let url = "https://dev.yogiyo-backend.shop/app/accounts/auth"
+            //let url = "https://prod.wupitch.site/app/accounts/auth"
             
             var header : HTTPHeaders = []
             if let token = UserDefaults.standard.string(forKey: "userToken") {

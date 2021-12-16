@@ -13,7 +13,8 @@ struct AreaInformationService {
 
     func patchInformation(_ parameters: AreaInformationRequest, delegate: SignUpCityVC) {
 
-        let url = "https://prod.wupitch.site/app/accounts/information"
+        let url = "https://dev.yogiyo-backend.shop/app/accounts/information"
+        //let url = "https://prod.wupitch.site/app/accounts/information"
 
         var header : HTTPHeaders = []
         if let token = UserDefaults.standard.string(forKey: "userToken") {

@@ -165,7 +165,6 @@ extension BungaeActivityCVCell: UITableViewDelegate, UITableViewDataSource {
                 return UITableViewCell()
             }
             cell.selectionStyle = .none
-            cell.allowBtn.isHidden = true
             return cell
         }
         return UITableViewCell()

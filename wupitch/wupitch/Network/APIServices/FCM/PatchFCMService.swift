@@ -12,7 +12,8 @@ import Alamofire
 struct PatchFCMService {
     static let shared = PatchFCMService()
     
-    let url = "https://prod.wupitch.site/app/device-token"
+    let url = "https://dev.yogiyo-backend.shop/app/device-token"
+    //let url = "https://prod.wupitch.site/app/device-token"
     
     func patchFCM(_ parameters: PatchFCMRequest, delegate: CrewVC) {
         

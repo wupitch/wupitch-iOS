@@ -11,7 +11,8 @@ import Alamofire
 struct NicknameValidationService {
     static let shared = NicknameValidationService()
     
-    let url = "https://prod.wupitch.site/app/accounts/nickname/validation"
+    let url = "https://dev.yogiyo-backend.shop/app/accounts/nickname/validation"
+    //let url = "https://prod.wupitch.site/app/accounts/nickname/validation"
     
     func postNicknameValidation(_ parameters: NicknameValidationRequest, delegate: SignUpProfileVC) {
         

@@ -11,7 +11,8 @@ import Alamofire
 struct PasswordCheckService {
     static let shared = PasswordCheckService()
     
-    let url = "https://prod.wupitch.site/app/accounts/auth/password/check"
+    let url = "https://dev.yogiyo-backend.shop/app/accounts/auth/password/check"
+    //let url = "https://prod.wupitch.site/app/accounts/auth/password/check"
     
     func postPasswordCheck(_ parameters: PasswordCheckRequest, delegate: ProfilePasswordVC) {
         

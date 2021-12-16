@@ -112,7 +112,19 @@ class MakeCrewGuestVC: UIViewController {
             SignUpUserInfo.shared.guestMoney = Int(titleTextField.text ?? "") ?? nil
             print("손님비 >>>>>>>>>>>", SignUpUserInfo.shared.guestMoney)
 
-            makeCrewDataManager.postMakeCrew(MakeCrewRequest(ageList: SignUpUserInfo.shared.ageList ?? [], areaID: SignUpUserInfo.shared.selectAreaPicker ?? -99, conference: SignUpUserInfo.shared.money ?? 0, extraInfoList: SignUpUserInfo.shared.extraInfoList ?? [], guestConference: SignUpUserInfo.shared.guestMoney ?? 0, inquiries: SignUpUserInfo.shared.question ?? "", introduction: SignUpUserInfo.shared.crewInfo ?? "", location: SignUpUserInfo.shared.location ?? "장소미정", sportsID: SignUpUserInfo.shared.clickSportsBtn ?? -99, title: SignUpUserInfo.shared.title ?? "", memberCount: SignUpUserInfo.shared.crewCount ?? -99, materials: SignUpUserInfo.shared.materials ?? "준비물이 없어요.", scheduleList: SignUpUserInfo.shared.schedules ?? []), delegate: self)
+            makeCrewDataManager.postMakeCrew(MakeCrewRequest(ageList: SignUpUserInfo.shared.ageList!, areaID: SignUpUserInfo.shared.selectAreaPicker!, conference: SignUpUserInfo.shared.money ?? 0, extraInfoList: SignUpUserInfo.shared.extraInfoList ?? [], guestConference: SignUpUserInfo.shared.guestMoney ?? 0, inquiries: SignUpUserInfo.shared.question!, introduction: SignUpUserInfo.shared.crewInfo!, location: SignUpUserInfo.shared.location ?? "장소미정", sportsID: SignUpUserInfo.shared.clickSportsBtn!, title: SignUpUserInfo.shared.title!, memberCount: SignUpUserInfo.shared.crewCount!, materials: SignUpUserInfo.shared.materials ?? "준비물이 없어요.", scheduleList: SignUpUserInfo.shared.schedules ?? []), delegate: self)
+            
+            print("연령대", SignUpUserInfo.shared.ageList)
+            print("지역아이디", SignUpUserInfo.shared.selectAreaPicker)
+            print("회비", SignUpUserInfo.shared.money)
+            print("손님비", SignUpUserInfo.shared.guestMoney)
+            print("소개", SignUpUserInfo.shared.crewInfo)
+            print("위치", SignUpUserInfo.shared.location)
+            print("스포츠아이디", SignUpUserInfo.shared.clickSportsBtn)
+            print("타이틀", SignUpUserInfo.shared.title)
+            print("멤버수", SignUpUserInfo.shared.crewCount)
+            print("준비물", SignUpUserInfo.shared.materials)
+            print("스케줄", SignUpUserInfo.shared.schedules)
         }
         else {
             nextBtn.backgroundColor = .gray03
@@ -158,7 +170,8 @@ extension MakeCrewGuestVC {
         print("요청에 성공하셨습니다.")
         print("클럽 아이디",result.clubID)
         
-        let url = "https://prod.wupitch.site/app/clubs/image"
+        let url = "https://dev.yogiyo-backend.shop/app/clubs/image"
+        //let url = "https://prod.wupitch.site/app/clubs/image"
         
         var header : HTTPHeaders = []
         

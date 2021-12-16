@@ -24,19 +24,19 @@ struct GuestInfoService {
         
         let urlString : String
         
-//        if let clubId = UserDefaults.standard.string(forKey: "clubID") {
-//            urlString = "https://dev.yogiyo-backend.shop/app/clubs/\(clubId)/guest-info"
-//        }
-//        else {
-//            urlString = "https://dev.yogiyo-backend.shop/app/clubs"
-//        }
-        
         if let clubId = UserDefaults.standard.string(forKey: "clubID") {
-            urlString = "https://prod.wupitch.site/app/clubs/\(clubId)/guest-info"
+            urlString = "https://dev.yogiyo-backend.shop/app/clubs/\(clubId)/guest-info"
         }
         else {
-            urlString = "https://prod.wupitch.site/app/clubs"
+            urlString = "https://dev.yogiyo-backend.shop/app/clubs"
         }
+        
+//        if let clubId = UserDefaults.standard.string(forKey: "clubID") {
+//            urlString = "https://prod.wupitch.site/app/clubs/\(clubId)/guest-info"
+//        }
+//        else {
+//            urlString = "https://prod.wupitch.site/app/clubs"
+//        }
         
         AF.request(urlString, method: .get, encoding: URLEncoding(destination: .queryString, arrayEncoding: .noBrackets), headers: header)
             .responseDecodable(of: GuestInfoData.self, emptyResponseCodes: [200, 204, 205]) { response in

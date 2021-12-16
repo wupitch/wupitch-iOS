@@ -25,11 +25,12 @@ struct NowRegisterCrewResult: Codable {
     let schedules: [NowRegisterCrewSchedule]
     let sportsID: Int
     let sportsName: String
+    let isCreate: Bool?
 
     enum CodingKeys: String, CodingKey {
         case areaName
         case clubID = "clubId"
-        case clubTitle, crewImage, introduction, isPinUp, schedules
+        case clubTitle, crewImage, introduction, isPinUp, schedules, isCreate
         case sportsID = "sportsId"
         case sportsName
     }

@@ -10,27 +10,34 @@ import Alamofire
 // 크루 게시판 조회
 struct LookUpBoardService {
     static let shared = LookUpBoardService()
-        
-    func getLookUpBoard(delegate: ActivityTabCVCell) {
-        
+
+    func getLookUpBoard(delegate: MyActivityDetailBoardVC) {
+
         let urlString : String
-        
+
+//        if let clubId = UserDefaults.standard.string(forKey: "clubID") {
+//            urlString = "https://prod.wupitch.site/app/posts/crew/\(clubId)"
+//        }
+//        else {
+//            urlString = "https://prod.wupitch.site/app/posts/crew"
+//        }
+
         if let clubId = UserDefaults.standard.string(forKey: "clubID") {
-            urlString = "https://prod.wupitch.site/app/posts/crew/\(clubId)"
+            urlString = "https://dev.yogiyo-backend.shop/app/posts/crew/\(clubId)"
         }
         else {
-            urlString = "https://prod.wupitch.site/app/posts/crew"
+            urlString = "https://dev.yogiyo-backend.shop/app/posts/crew"
         }
-        
+
         var header : HTTPHeaders = []
-        
+
         if let token = UserDefaults.standard.string(forKey: "userToken") {
             header = ["Content-Type":"application/json", "X-ACCESS-TOKEN": token]
         }
         else {
             header = ["Content-Type":"application/json"]
         }
-        
+
         AF.request(urlString, method: .get, encoding: URLEncoding.default, headers: header)
             .responseDecodable(of: LookUpBoardData.self, emptyResponseCodes: [200, 204, 205]) { response in
                 print("게시판 크루 조회 response",response)

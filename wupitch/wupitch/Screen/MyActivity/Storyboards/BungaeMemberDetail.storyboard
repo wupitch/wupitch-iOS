@@ -150,6 +150,18 @@
                                     <constraint firstItem="gZL-8o-M6c" firstAttribute="centerX" secondItem="x9F-To-e59" secondAttribute="centerX" id="ysn-zX-YYH"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2N-s1-NDa">
+                                <rect key="frame" x="371" y="54" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="kSi-MA-O33"/>
+                                    <constraint firstAttribute="height" constant="24" id="o4B-SK-ZPz"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="more"/>
+                                <connections>
+                                    <action selector="touchUpAlertBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="BhM-LR-Jva"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -162,11 +174,13 @@
                             <constraint firstItem="10h-0s-5nl" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="MhS-a6-YNJ"/>
                             <constraint firstItem="9If-sY-lW8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="PYX-j5-xO3"/>
                             <constraint firstItem="x9F-To-e59" firstAttribute="leading" secondItem="fdi-sd-XFa" secondAttribute="leading" id="RSU-T6-d0L"/>
+                            <constraint firstItem="a2N-s1-NDa" firstAttribute="centerY" secondItem="10h-0s-5nl" secondAttribute="centerY" id="Rw5-NN-Tq8"/>
                             <constraint firstItem="baP-ff-1DC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="SNm-oV-4RP"/>
                             <constraint firstItem="baP-ff-1DC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="XNd-Kd-def"/>
                             <constraint firstItem="x9F-To-e59" firstAttribute="trailing" secondItem="fdi-sd-XFa" secondAttribute="trailing" id="bHS-AB-bXN"/>
                             <constraint firstItem="fdi-sd-XFa" firstAttribute="top" secondItem="IQa-48-qGl" secondAttribute="bottom" constant="22" id="bvG-Uq-0ec"/>
                             <constraint firstItem="x9F-To-e59" firstAttribute="top" secondItem="fdi-sd-XFa" secondAttribute="bottom" constant="24" id="jYS-80-Gme"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="a2N-s1-NDa" secondAttribute="trailing" constant="19" id="jfO-pk-UXc"/>
                             <constraint firstItem="IQa-48-qGl" firstAttribute="top" secondItem="9If-sY-lW8" secondAttribute="bottom" constant="24" id="pI6-5n-zSL"/>
                             <constraint firstItem="Y3a-ma-p05" firstAttribute="centerY" secondItem="9If-sY-lW8" secondAttribute="centerY" id="qmq-pQ-mSa"/>
                             <constraint firstItem="Y3a-ma-p05" firstAttribute="leading" secondItem="9If-sY-lW8" secondAttribute="trailing" constant="16" id="seu-AB-LJZ"/>
@@ -194,6 +208,7 @@
     </scenes>
     <resources>
         <image name="left" width="24" height="24"/>
+        <image name="more" width="24" height="24"/>
         <image name="profileBasic" width="64" height="64"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

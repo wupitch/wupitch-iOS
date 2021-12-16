@@ -63,7 +63,8 @@ extension CrewAlertVC : UITableViewDelegate, UITableViewDataSource {
         UserDefaults.standard.set(fcmData?[indexPath.row].fcmID, forKey: "fcmID")
         
         let url : String
-        url = "https://prod.wupitch.site/app/fcms/\(UserDefaults.standard.integer(forKey: "fcmID"))/view"
+        url = "https://dev.yogiyo-backend.shop/app/fcms/\(UserDefaults.standard.integer(forKey: "fcmID"))/view"
+        //url = "https://prod.wupitch.site/app/fcms/\(UserDefaults.standard.integer(forKey: "fcmID"))/view"
         
         var header : HTTPHeaders = []
         if let token = UserDefaults.standard.string(forKey: "userToken") {

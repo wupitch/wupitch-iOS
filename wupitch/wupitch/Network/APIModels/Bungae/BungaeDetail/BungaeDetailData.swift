@@ -18,7 +18,9 @@ struct BungaeDetailData: Codable {
 // MARK: - BungaeDetailResult
 struct BungaeDetailResult: Codable {
     let date, day: String
-    let dday, dues, impromptuID: Int
+    let creatorAccountID: Int
+    let creatorAccountNickname: String
+    let dday, dues, impromptuID: Int?
     let impromptuImage, inquiries, introduction: String?
     let isPinUp, isSelect: Bool
     let location, materials: String?
@@ -27,8 +29,10 @@ struct BungaeDetailResult: Codable {
     let endTime, startTime: Double?
 
     enum CodingKeys: String, CodingKey {
-        case date, day, dday, dues, endTime
+        case creatorAccountID = "creatorAccountId"
+        case date, day, dday, dues, endTime, creatorAccountNickname
         case impromptuID = "impromptuId"
         case impromptuImage, inquiries, introduction, isPinUp, isSelect, location, materials, nowMemberCount, recruitmentCount, startTime, title
     }
 }
+

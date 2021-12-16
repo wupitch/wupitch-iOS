@@ -11,7 +11,8 @@ import Alamofire
 struct SignInService {
     static let shared = SignInService()
     
-    let url = "https://prod.wupitch.site/app/sign-in"
+    let url = "https://dev.yogiyo-backend.shop/app/sign-in"
+    //let url = "https://prod.wupitch.site/app/sign-in"
     
     func postSignIn(_ parameters: SignInRequest, delegate: SignInVC) {
         

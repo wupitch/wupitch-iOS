@@ -65,6 +65,14 @@ class BungaeMemberDetailVC: UIViewController {
     @IBAction func touchUpBackBtn(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func touchUpAlertBtn(_ sender: Any) {
+        let storyboard = UIStoryboard.init(name: "MyActivityAlert", bundle: nil)
+        guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityAlertVC") as? MyActivityAlertVC else {return}
+        dvc.modalPresentationStyle = .overFullScreen
+        dvc.modalTransitionStyle = .crossDissolve
+        present(dvc, animated: true, completion: nil)
+    }
 }
 
 extension BungaeMemberDetailVC: UICollectionViewDelegate, UICollectionViewDataSource {

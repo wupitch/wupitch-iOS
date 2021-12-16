@@ -11,7 +11,8 @@ import Alamofire
 struct PwValidationService {
     static let shared = PwValidationService()
     
-    let url = "https://prod.wupitch.site/app/accounts/password/validation"
+    let url = "https://dev.yogiyo-backend.shop/app/accounts/password/validation"
+    //let url = "https://prod.wupitch.site/app/accounts/password/validation"
     
     func postPwValidation(_ parameters: PwValidationRequest, delegate: SignUpEmailPwVC) {
         

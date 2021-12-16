@@ -248,20 +248,28 @@ extension CrewDetailVC: UITableViewDelegate, UITableViewDataSource {
                 cell.locationLabel.text = detailInfo?.areaName
             }
             
-            // 정기회비가 없을 때
-            if detailInfo?.dues == nil {
-                cell.moneyLabel[0].text = "정기회비가 없어요."
-                cell.moneyLabel[0].textColor = .bk
-            }
-            else {
+            // 정기회비랑 손님비가 없을 때
+            if detailInfo?.dues == nil && detailInfo?.guestDues == nil {
+                cell.moneyLabel[0].isHidden = true
+                cell.moneyLabel[1].isHidden = true
+                cell.moneyIcon.isHidden = true
+            // 정기회비는 있고 손님비가 없을 때
+            } else if detailInfo?.dues != nil && detailInfo?.guestDues == nil {
+                cell.moneyLabel[0].isHidden = false
+                cell.moneyIcon.isHidden = true
+                cell.moneyLabel[1].isHidden = false
                 cell.moneyLabel[0].text = "정기회비" + " " + String(detailInfo?.dues ?? 0) + "원"
-            }
-
-            // 손님비가 없을 때
-            if detailInfo?.guestDues == nil {
-                cell.moneyLabel[1].text = "손님비가 없어요."
-            }
-            else {
+            // 정기회비는 없고 손님비는 있을 때
+            } else if detailInfo?.dues == nil && detailInfo?.guestDues != nil {
+                cell.moneyLabel[0].isHidden = false
+                cell.moneyLabel[1].isHidden = true
+                cell.moneyIcon.isHidden = false
+                cell.moneyLabel[0].text = "손님비" + " " + String(detailInfo?.guestDues ?? 0) + "원"
+            } else {
+                cell.moneyLabel[0].isHidden = false
+                cell.moneyLabel[1].isHidden = false
+                cell.moneyIcon.isHidden = false
+                cell.moneyLabel[0].text = "정기회비" + " " + String(detailInfo?.dues ?? 0) + "원"
                 cell.moneyLabel[1].text = "손님비" + " " + String(detailInfo?.guestDues ?? 0) + "원"
             }
             
@@ -282,6 +290,7 @@ extension CrewDetailVC: UITableViewDelegate, UITableViewDataSource {
                 for i in 0...2 {
                     cell.dayLabel[i].text = String(detailInfo?.schedules[i].day ?? "") + " " + stringDate(doubleDate: detailInfo?.schedules[i].startTime ?? 0) + " - " + stringDate(doubleDate: detailInfo?.schedules[i].endTime ?? 0)
                 }
+                cell.dayLabel[1].isHidden = false
                 cell.dayLabel[2].isHidden = false
             }
             return cell

@@ -13,7 +13,8 @@ struct InformationService {
 
     func patchInformation(_ parameters: InformationRequest, delegate: SignUpSportsVC) {
 
-        let url = "https://prod.wupitch.site/app/accounts/information"
+        let url = "https://dev.yogiyo-backend.shop/app/accounts/information"
+        //let url = "https://prod.wupitch.site/app/accounts/information"
 
         var header : HTTPHeaders = []
         

@@ -11,7 +11,8 @@ import Alamofire
 struct EmailValidationService {
     static let shared = EmailValidationService()
     
-    let url = "https://prod.wupitch.site/app/accounts/email/validation"
+    let url = "https://dev.yogiyo-backend.shop/app/accounts/email/validation"
+    //let url = "https://prod.wupitch.site/app/accounts/email/validation"
     
     func postEmailValidation(_ parameters: EmailValidationRequest, delegate: SignUpEmailPwVC) {
         

@@ -16,11 +16,17 @@ struct BungaeRegisterService {
         
         let urlString : String
         
+//        if let impromptuId = UserDefaults.standard.string(forKey: "impromptuID") {
+//            urlString = "https://prod.wupitch.site/app/impromptus/\(impromptuId)/participation-toggle"
+//        }
+//        else {
+//            urlString = "https://prod.wupitch.site/app/impromptus"
+//        }
         if let impromptuId = UserDefaults.standard.string(forKey: "impromptuID") {
-            urlString = "https://prod.wupitch.site/app/impromptus/\(impromptuId)/participation-toggle"
+            urlString = "https://dev.yogiyo-backend.shop/app/impromptus/\(impromptuId)/participation-toggle"
         }
         else {
-            urlString = "https://prod.wupitch.site/app/impromptus"
+            urlString = "https://dev.yogiyo-backend.shop/app/impromptus"
         }
         
         var header : HTTPHeaders = []

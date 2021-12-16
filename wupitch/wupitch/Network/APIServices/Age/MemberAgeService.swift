@@ -11,7 +11,8 @@ import Alamofire
 struct MemberAgeService {
     static let shared = MemberAgeService()
     
-    let url = "https://prod.wupitch.site/app/accounts/auth/age"
+    let url = "https://dev.yogiyo-backend.shop/app/accounts/auth/age"
+    //let url = "https://prod.wupitch.site/app/accounts/auth/age"
     
     func getMemberAge(delegate: SignUpAgeVC) {
         

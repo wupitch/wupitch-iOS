@@ -11,7 +11,8 @@ import Alamofire
 struct ChangePasswordService {
     static let shared = ChangePasswordService()
     
-    let url = "https://prod.wupitch.site/app/accounts/auth/password"
+    let url = "https://dev.yogiyo-backend.shop/app/accounts/auth/password"
+    //let url = "https://prod.wupitch.site/app/accounts/auth/password"
     
     func patchChangePassword(_ parameters: ChangePasswordRequest, delegate: ProfilePasswordVC) {
         

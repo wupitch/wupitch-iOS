@@ -110,6 +110,7 @@ class SignUpEmailPwVC: UIViewController {
         if  nextBtn.backgroundColor == .main {
             
             // 다음 버튼 클릭 시, 싱글톤에 이메일, 패스워드 넣어주기
+            UserDefaults.standard.set(emailTextField.text, forKey: "email")
             SignUpUserInfo.shared.email = emailTextField.text
             SignUpUserInfo.shared.password = passwordTextField.text
             print("이메일 >>>>>>>>>>",SignUpUserInfo.shared.email ?? "값이 없어요!")
@@ -154,14 +155,11 @@ extension SignUpEmailPwVC : UITextFieldDelegate {
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         if emailTextField.resignFirstResponder() {
-            if let email = emailTextField.text {
-                emailValidationManage.postEmailValidation(EmailValidationRequest(email: email), delegate: self)
-            }
+            emailValidationManage.postEmailValidation(EmailValidationRequest(email: emailTextField.text ?? "값없어요"), delegate: self)
         }
         else {
-            if let password = passwordTextField.text {
-                pwValidationManage.postPwValidation(PwValidationRequest(password: password), delegate: self)
-            }
+            pwValidationManage.postPwValidation(PwValidationRequest(password: passwordTextField.text ?? "값없어요"), delegate: self)
+            
         }
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

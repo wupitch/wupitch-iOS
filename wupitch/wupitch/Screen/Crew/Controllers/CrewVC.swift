@@ -288,7 +288,7 @@ extension CrewVC: ModalDelegate {
         selectRegionBtn.setTitle(data, for: .normal)
         for i in 0...25 {
             if data == SignUpUserInfo.shared.areaName?[i] {
-                var regionDict : [String:Any] = ["areaId":i+1]
+                var regionDict : [String:Any] = ["areaId":i+2]
                 if let region = UserDefaults.standard.dictionary(forKey: "filterParams") {
                     regionDict.merge(region) { (_, new) in new }
                 }

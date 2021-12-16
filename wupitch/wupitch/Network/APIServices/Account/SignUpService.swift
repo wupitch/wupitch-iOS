@@ -11,7 +11,8 @@ import Alamofire
 struct SignUpService {
     static let shared = SignUpService()
     
-    let url = "https://prod.wupitch.site/app/sign-up"
+    let url = "https://dev.yogiyo-backend.shop/app/sign-up"
+    //let url = "https://prod.wupitch.site/app/sign-up"
     
     func postSignUp(_ parameters: SignUpRequest, delegate: SignUpImagePreviewVC) {
         
@@ -36,18 +37,3 @@ struct SignUpService {
                    }
     }
 }
-
-        
-//        AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: ["Content-Type":"application/json"])
-//            .responseDecodable(of: SignUpData.self, emptyResponseCodes: [200, 204, 205]) { response in
-//                print("회원가입 response",response)
-//                switch response.result {
-//                case .success(let response):
-//                    delegate.didSuccessSignUp(result: response.result)
-//                case .failure(let error):
-//                    print("회원가입에서 오류가 났습니다",error.localizedDescription)
-//                    delegate.failedToRequest(message: "오류가 났습니다.")
-//                }
-//            }
-//    }
-//}

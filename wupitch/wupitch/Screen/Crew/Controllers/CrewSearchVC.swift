@@ -52,7 +52,9 @@ class CrewSearchVC: UIViewController, UISearchBarDelegate {
         
         searchTextField.addTarget(self, action: #selector(searchData), for: .editingChanged)
         
+        
     }
+    
     
 //    override func viewWillAppear(_ animated: Bool) {
 //        super.viewWillAppear(animated)
