@@ -208,6 +208,7 @@
                 <outlet property="bottomDateLabel" destination="UH5-de-8Pk" id="6rV-jZ-INL"/>
                 <outlet property="countLabel" destination="Yu2-Fp-Ohp" id="OhT-4T-DjG"/>
                 <outlet property="locationLabel" destination="0sT-Eu-RIt" id="UWA-WL-0rg"/>
+                <outlet property="moneyIcon" destination="wCT-PC-1md" id="BGI-3B-rzf"/>
                 <outlet property="moneyLabel" destination="Kye-wG-gcX" id="kdd-Yc-5sq"/>
                 <outlet property="tagLabel" destination="oKs-zN-c7f" id="Apf-jl-r2N"/>
                 <outlet property="tagView" destination="eDl-Bj-Lti" id="lOb-Cb-gOK"/>

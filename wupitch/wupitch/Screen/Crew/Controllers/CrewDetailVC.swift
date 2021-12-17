@@ -272,23 +272,22 @@ extension CrewDetailVC: UITableViewDelegate, UITableViewDataSource {
             // 스케줄
             if let detail = detailInfo {
                 if detail.schedules.count == 1 {
-                    cell.dayLabel[0].text = String(detail.schedules[0].day) + " " + stringDate(doubleDate: detail.schedules[0].startTime!) + " - " + stringDate(doubleDate: detail.schedules[0].endTime!)
+                    cell.dayLabel[0].text = String(detail.schedules[0].day) + " " + stringDate(doubleDate: detail.schedules[0].startTime!) + " - " + stringDate(doubleDate: detail.schedules[0].endTime ?? 0)
                     cell.dayLabel[1].isHidden = true
                     cell.dayLabel[2].isHidden = true
                 } else if detail.schedules.count == 2 {
                     for i in 0...1 {
-                        cell.dayLabel[i].text = String(detail.schedules[i].day) + " " + stringDate(doubleDate: detail.schedules[i].startTime!) + " - " + stringDate(doubleDate: detail.schedules[i].endTime!)
+                        cell.dayLabel[i].text = String(detail.schedules[i].day) + " " + stringDate(doubleDate: detail.schedules[i].startTime!) + " - " + stringDate(doubleDate: detail.schedules[i].endTime ?? 0)
                     }
                     cell.dayLabel[1].isHidden = false
                     cell.dayLabel[2].isHidden = true
                 } else if detail.schedules.count == 3 {
                     for i in 0...2 {
-                        cell.dayLabel[i].text = String(detail.schedules[i].day) + " " + stringDate(doubleDate: detail.schedules[i].startTime!) + " - " + stringDate(doubleDate: detail.schedules[i].endTime!)
+                        cell.dayLabel[i].text = String(detail.schedules[i].day) + " " + stringDate(doubleDate: detail.schedules[i].startTime!) + " - " + stringDate(doubleDate: detail.schedules[i].endTime ?? 0)
                     }
                     cell.dayLabel[1].isHidden = false
                     cell.dayLabel[2].isHidden = false
                 }
-                
             }
             return cell
         } else if indexPath.section == 2 {

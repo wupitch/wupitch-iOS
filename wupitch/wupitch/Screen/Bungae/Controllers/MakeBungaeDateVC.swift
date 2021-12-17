@@ -87,7 +87,7 @@ class MakeBungaeDateVC: UIViewController {
     @IBAction func touchUpNextBtn(_ sender: Any) {
         if nextBtn.backgroundColor == .main {
             // 날짜
-            SignUpUserInfo.shared.bungaeDate = dateBtns.titleLabel?.text
+            SignUpUserInfo.shared.bungaeDate = dateBtns.titleLabel?.text ?? ""
             // 시간
             SignUpUserInfo.shared.bungaeStartTime = startTimeBtns.stringToDouble()
             SignUpUserInfo.shared.bungaeEndTime = endTimeBtns.stringToDouble()

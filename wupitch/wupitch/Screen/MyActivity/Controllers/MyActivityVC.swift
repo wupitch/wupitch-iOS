@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SDWebImage
+
 // 내활동 VC
 class MyActivityVC: BaseVC {
     // MARK: - IBOutlet
@@ -171,16 +173,19 @@ extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
                 // 크루 시간 + 요일
                 if let startTime = nowRegisterData[indexPath.row].schedules[0].startTime,
                    let endTime = nowRegisterData[indexPath.row].schedules[0].endTime {
+                    
                     if nowRegisterData[indexPath.row].schedules.count > 1 {
                         cell.dayLabel.text = nowRegisterData[indexPath.row].schedules[0].day + " " + stringDate(doubleDate: startTime) + " - " + stringDate(doubleDate: endTime) + " +"
                     } else {
                         cell.dayLabel.text = nowRegisterData[indexPath.row].schedules[0].day + " " + stringDate(doubleDate: startTime) + " - " + stringDate(doubleDate: endTime)
                     }
-                } else {
-                    print("값이 없어요!")
                 }
-                // 크루 장소
-                cell.subLabel.text = nowRegisterData[indexPath.row].areaName
+                // 장소가 지정되어있지 않을 경우 "장소미정" 뜨게함
+                if nowRegisterData[indexPath.row].areaName == nil {
+                    cell.subLabel.text = "장소미정"
+                } else {
+                    cell.subLabel.text = nowRegisterData[indexPath.row].areaName
+                }
                 return cell
             }
         }
@@ -224,8 +229,13 @@ extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
                 cell.titleLabel.text = nowRegisterBungaeData[indexPath.row].title
                 // 요일 + 시간
                 cell.dayLabel.text = String(nowRegisterBungaeData[indexPath.row].date) + " " + String(nowRegisterBungaeData[indexPath.row].day) + " " + stringDate(doubleDate: Double(nowRegisterBungaeData[indexPath.row].startTime ?? 0))
+                
                 // 장소
-                cell.subLabel.text = nowRegisterBungaeData[indexPath.row].location
+                if nowRegisterBungaeData[indexPath.row].location == nil {
+                    cell.subLabel.text = "장소미정"
+                } else {
+                    cell.subLabel.text = nowRegisterBungaeData[indexPath.row].location
+                }
                 // 현재인원 / 모집인원
                 cell.bungaeCountLabel.text = String(nowRegisterBungaeData[indexPath.row].nowMemberCount ) + "/" + String(nowRegisterBungaeData[indexPath.row].recruitmentCount)
                 return cell

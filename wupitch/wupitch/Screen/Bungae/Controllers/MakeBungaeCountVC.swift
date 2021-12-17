@@ -67,7 +67,7 @@ class MakeBungaeCountVC: UIViewController {
     
     @IBAction func touchUpNextBtn(_ sender: Any) {
         if nextBtn.backgroundColor == .main {
-            SignUpUserInfo.shared.bungaeCount = Int(countTextField.text ?? "") ?? nil
+            SignUpUserInfo.shared.bungaeCount = Int(countTextField.text ?? "") ?? 0
             print("모집인원 >>>>>>>>>>>>>>>", SignUpUserInfo.shared.bungaeCount)
             
             let storyBoard: UIStoryboard = UIStoryboard(name: "MakeBungaeMoney", bundle: nil)

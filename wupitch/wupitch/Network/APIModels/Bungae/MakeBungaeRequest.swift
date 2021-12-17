@@ -10,10 +10,12 @@ import Foundation
 // MARK: - MakeBungaeRequest
 struct MakeBungaeRequest: Codable {
     let areaID: Int
-    let location, date: String
+    let location, materials, title: String?
+    let date: String
     let startTime, endTime: Double
-    let title, introduction, inquiries, materials: String
-    let recruitmentCount, dues: Int
+    let introduction, inquiries: String
+    let recruitmentCount: Int
+    let dues: Int?
 
     enum CodingKeys: String, CodingKey {
         case areaID = "areaId"

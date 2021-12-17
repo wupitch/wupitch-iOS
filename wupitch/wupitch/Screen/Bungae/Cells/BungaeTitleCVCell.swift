@@ -9,6 +9,7 @@ import UIKit
 
 class BungaeTitleCVCell: UITableViewCell {
 
+    @IBOutlet weak var moneyIcon: UIImageView!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var moneyLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!

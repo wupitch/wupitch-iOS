@@ -127,7 +127,7 @@ extension BungaeVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if lookUpBungaeResult.count > 1 {
+        if lookUpBungaeResult.count > 0 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BungaeCVCell.identifier, for: indexPath) as? BungaeCVCell else{
                 return UICollectionViewCell()
             }

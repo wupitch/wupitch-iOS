@@ -199,7 +199,12 @@ extension BungaeDetailVC: UITableViewDelegate, UITableViewDataSource {
             } else {
                 cell.locationLabel.text = detailInfo?.location
             }
-            cell.moneyLabel.text = "참여비" + " " + String(detailInfo?.dues ?? 0) + "원"
+            // 참여비
+            if detailInfo?.dues == nil {
+                cell.moneyLabel.text = "참여비가 없어요."
+            } else {
+                cell.moneyLabel.text = "참여비" + " " + String(detailInfo?.dues ?? 0) + "원"
+            }
             cell.countLabel.text = String(detailInfo?.nowMemberCount ?? 0) + "/" + String(detailInfo?.recruitmentCount ?? 0) + "명 참여"
             
             return cell

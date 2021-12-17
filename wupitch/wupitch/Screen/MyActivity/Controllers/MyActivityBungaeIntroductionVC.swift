@@ -7,6 +7,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import SDWebImage
 
 class MyActivityBungaeIntroductionVC: UIViewController, IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -112,8 +113,19 @@ extension MyActivityBungaeIntroductionVC: UITableViewDelegate, UITableViewDataSo
                 cell.tagLabel.text = String("D-") + String(detailInfo?.dday ?? 0)
                 cell.topDateLabel.text = String(detailInfo?.date ?? "") + " " + String(detailInfo?.day ?? "")
                 cell.bottomDateLabel.text = stringDate(doubleDate: detailInfo?.startTime ?? -1.0) + " - " + stringDate(doubleDate: detailInfo?.endTime ?? -1.0)
-                cell.locationLabel.text = detailInfo?.location
-                cell.moneyLabel.text = "참여비" + " " + String(detailInfo?.dues ?? 0) + "원"
+                
+                if detailInfo?.location == nil {
+                    cell.locationLabel.text = "장소미정"
+                } else {
+                    cell.locationLabel.text = detailInfo?.location
+                }
+                
+                // 참여비
+                if detailInfo?.dues == nil {
+                    cell.moneyLabel.text = "참여비가 없어요."
+                } else {
+                    cell.moneyLabel.text = "참여비" + " " + String(detailInfo?.dues ?? 0) + "원"
+                }
                 cell.countLabel.text = String(detailInfo?.nowMemberCount ?? 0) + "/" + String(detailInfo?.recruitmentCount ?? 0) + "명 참여"
                 return cell
             } else if indexPath.section == 2 {
@@ -128,7 +140,12 @@ extension MyActivityBungaeIntroductionVC: UITableViewDelegate, UITableViewDataSo
                     return UITableViewCell()
                 }
                 cell.titleLabel.text = "준비물"
-                cell.contentLabel.text = detailInfo?.materials
+                // 준비물
+                if detailInfo?.materials == nil {
+                    cell.contentLabel.text = "준비물이 없어요."
+                } else {
+                    cell.contentLabel.text = detailInfo?.materials
+                }
                 return cell
             } else if indexPath.section == 4 {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: DtailCrewContentTVCell.identifier) as? DtailCrewContentTVCell else{

@@ -7,6 +7,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import SDWebImage
 
 // 내 활동 크루디테일 소개 탭
 class MyActivityDetailIntroductionVC: UIViewController, IndicatorInfoProvider {

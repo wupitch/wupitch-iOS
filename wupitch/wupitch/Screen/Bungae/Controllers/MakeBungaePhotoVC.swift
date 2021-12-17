@@ -97,9 +97,9 @@ class MakeBungaePhotoVC: UIViewController {
     }
     
     func checkInfoIsFilled() {
-        if let _ = SignUpUserInfo.shared.bungaeIntroduction,
-           let _ = SignUpUserInfo.shared.bungaeInquiries,
-           let _ = SignUpUserInfo.shared.bungaeTitle,
+        if SignUpUserInfo.shared.bungaeIntroduction != nil &&
+           SignUpUserInfo.shared.bungaeInquiries != nil &&
+           SignUpUserInfo.shared.bungaeTitle != nil &&
            photoImageView.image != nil {
             nextBtn.backgroundColor = .main
         } else {
@@ -122,6 +122,7 @@ class MakeBungaePhotoVC: UIViewController {
         let defaultImage = UIAlertAction(title: "기본 이미지 사용", style: .default) { [weak self] _ in
             self?.photoImageView.image = self?.basicImage
             SignUpUserInfo.shared.bungaeBasicPhoto = self?.photoImageView.image
+            SignUpUserInfo.shared.bungaePhoto = nil
             self?.imageLabel.isHidden = true
             self?.plusImageVIew.isHidden = true
         }
@@ -160,11 +161,11 @@ class MakeBungaePhotoVC: UIViewController {
         if nextBtn.backgroundColor == .main {
             
             // 번개제목
-            SignUpUserInfo.shared.bungaeTitle = titleTextField.text
+            SignUpUserInfo.shared.bungaeTitle = titleTextField.text ?? ""
             // 번개소개
-            SignUpUserInfo.shared.bungaeIntroduction = crewInfoTextView.text
+            SignUpUserInfo.shared.bungaeIntroduction = crewInfoTextView.text ?? ""
             // 문의처
-            SignUpUserInfo.shared.bungaeInquiries = questionTextView.text
+            SignUpUserInfo.shared.bungaeInquiries = questionTextView.text ?? ""
             
             // 번개준비물 (선택)
             if materialsTextView.textColor != .bk {
@@ -219,7 +220,6 @@ extension MakeBungaePhotoVC: UITextViewDelegate, UITextFieldDelegate {
         if crewInfoTextView.text.isEmpty {
             crewInfoTextView.text = placeholder.0
             crewInfoTextView.textColor = .gray03
-            SignUpUserInfo.shared.bungaeIntroduction = nil
         } else {
             if crewInfoTextView.text != placeholder.0 {
                 SignUpUserInfo.shared.bungaeIntroduction = crewInfoTextView.text
@@ -235,7 +235,6 @@ extension MakeBungaePhotoVC: UITextViewDelegate, UITextFieldDelegate {
         if questionTextView.text.isEmpty {
             questionTextView.text = placeholder.2
             questionTextView.textColor = .gray03
-            SignUpUserInfo.shared.bungaeInquiries = nil
         } else {
             if questionTextView.text != placeholder.2 {
                 SignUpUserInfo.shared.bungaeInquiries = questionTextView.text
@@ -287,6 +286,7 @@ extension MakeBungaePhotoVC : UIImagePickerControllerDelegate, UINavigationContr
         {
             photoImageView.image = image
             SignUpUserInfo.shared.bungaePhoto = photoImageView.image
+            SignUpUserInfo.shared.bungaeBasicPhoto = nil
             print(info)
             imageLabel.isHidden = true
             plusImageVIew.isHidden = true

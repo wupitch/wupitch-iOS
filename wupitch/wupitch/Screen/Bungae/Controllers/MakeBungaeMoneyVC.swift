@@ -100,9 +100,9 @@ class MakeBungaeMoneyVC: UIViewController {
             SignUpUserInfo.shared.bungaeDues = Int(titleTextField.text ?? "") ?? nil
             print("참여비 >>>>>>>>>>>>>",SignUpUserInfo.shared.bungaeDues)
             
-            makeBungaeDataManager.postMakeBungae(MakeBungaeRequest(areaID: SignUpUserInfo.shared.bungaeSelectAreaId ?? -99, location: SignUpUserInfo.shared.bungaeLocation ?? "", date: SignUpUserInfo.shared.bungaeDate ?? "", startTime: SignUpUserInfo.shared.bungaeStartTime ?? 0.0, endTime: SignUpUserInfo.shared.bungaeEndTime ?? 0.0, title: SignUpUserInfo.shared.bungaeTitle ?? "", introduction: SignUpUserInfo.shared.bungaeIntroduction ?? "", inquiries: SignUpUserInfo.shared.bungaeInquiries ?? "", materials: SignUpUserInfo.shared.bungaeMaterials ?? "준비물이 없어요.", recruitmentCount: SignUpUserInfo.shared.bungaeCount ?? -99, dues: SignUpUserInfo.shared.bungaeDues ?? 0), delegate: self)
+            makeBungaeDataManager.postMakeBungae(MakeBungaeRequest(areaID: SignUpUserInfo.shared.bungaeSelectAreaId, location: SignUpUserInfo.shared.bungaeLocation, materials: SignUpUserInfo.shared.bungaeMaterials, title: SignUpUserInfo.shared.bungaeTitle, date: SignUpUserInfo.shared.bungaeDate, startTime: SignUpUserInfo.shared.bungaeStartTime, endTime: SignUpUserInfo.shared.bungaeEndTime, introduction: SignUpUserInfo.shared.bungaeIntroduction, inquiries: SignUpUserInfo.shared.bungaeInquiries, recruitmentCount: SignUpUserInfo.shared.bungaeCount, dues: SignUpUserInfo.shared.bungaeDues), delegate: self)
             
-            print("제대로 나오나 확인", SignUpUserInfo.shared.bungaeSelectAreaId ?? -99, SignUpUserInfo.shared.bungaeLocation ?? "장소미정", SignUpUserInfo.shared.bungaeDate ?? "", SignUpUserInfo.shared.bungaeStartTime ?? 0.0, SignUpUserInfo.shared.bungaeEndTime ?? 0.0, SignUpUserInfo.shared.bungaeTitle ?? "", SignUpUserInfo.shared.bungaeIntroduction ?? "", SignUpUserInfo.shared.bungaeInquiries ?? "", SignUpUserInfo.shared.bungaeMaterials ?? "", SignUpUserInfo.shared.bungaeCount ?? -99, SignUpUserInfo.shared.bungaeDues ?? 0 )
+            print("제대로 나오나 확인", SignUpUserInfo.shared.bungaeSelectAreaId , SignUpUserInfo.shared.bungaeLocation ?? "장소미정", SignUpUserInfo.shared.bungaeDate , SignUpUserInfo.shared.bungaeStartTime , SignUpUserInfo.shared.bungaeEndTime , SignUpUserInfo.shared.bungaeTitle ?? "", SignUpUserInfo.shared.bungaeIntroduction , SignUpUserInfo.shared.bungaeInquiries ?? "", SignUpUserInfo.shared.bungaeMaterials ?? "", SignUpUserInfo.shared.bungaeCount , SignUpUserInfo.shared.bungaeDues ?? 0 )
         }
         else {
             nextBtn.backgroundColor = .gray03
@@ -151,7 +151,9 @@ extension MakeBungaeMoneyVC {
     func didSuccessMakeBungae(result: MakeBungaeResult) {
         print("요청에 성공하셨습니다.")
         print("번개 아이디",result.impromptuID)
+        UserDefaults.standard.set(result.impromptuID, forKey: "impromptuID")
 
+        if SignUpUserInfo.shared.bungaePhoto != nil && SignUpUserInfo.shared.bungaeBasicPhoto == nil {
         let url = "https://dev.yogiyo-backend.shop/app/impromptu/image"
         //let url = "https://prod.wupitch.site/app/impromptu/image"
 
@@ -163,8 +165,6 @@ extension MakeBungaeMoneyVC {
         let impromptuId = String(result.impromptuID)
 
         let userImage = SignUpUserInfo.shared.bungaePhoto
-        
-        UserDefaults.standard.set(result.impromptuID, forKey: "impromptuID")
 
         AF.upload(
             multipartFormData: { MultipartFormData in
@@ -200,8 +200,22 @@ extension MakeBungaeMoneyVC {
                     print(error.localizedDescription)
                 }
             }
+        } else {
+            guard let viewControllerStack = self.navigationController?.viewControllers else { return }
+            // 뷰 스택에서 crewVC를 찾아서 거기까지 pop 합니다. 후에 bungaeDetailVC를 찾아서 push 합니다.
+            for viewController in viewControllerStack {
+                if let bungaeVC = viewController as? BungaeVC {
+                    self.navigationController?.popToViewController(bungaeVC, animated: true)
+
+                    let storyBoard: UIStoryboard = UIStoryboard(name: "BungaeDetail", bundle: nil)
+                    if let dvc = storyBoard.instantiateViewController(withIdentifier: "BungaeDetailVC") as? BungaeDetailVC {
+                        dvc.hidesBottomBarWhenPushed = true
+                        self.navigationController?.pushViewController(dvc, animated: true)
+                    }
+                }
+            }
+        }
     }
-    
     func failedToRequest(message: String) {
         print("데이터가 들어오지 않습니다.")
     }

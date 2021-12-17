@@ -73,19 +73,27 @@ class SignUpUserInfo {
     // -----------------------
     
     // 번개생성에 한번에 넣어줄 값
+    // 무조건 있어야 하는 값
     // 지역
-    var bungaeSelectAreaId : Int?
-    var bungaeLocation : String?
+    var bungaeSelectAreaId : Int = 0
     // 날짜,시간
-    var bungaeDate : String?
-    var bungaeStartTime : Double?
-    var bungaeEndTime : Double?
+    var bungaeDate : String = ""
+    var bungaeStartTime : Double = 0
+    var bungaeEndTime : Double = 0
     // 사진부분
-    var bungaeTitle, bungaeIntroduction, bungaeInquiries, bungaeMaterials :  String?
+    var bungaeIntroduction: String = ""
+    var bungaeInquiries: String = ""
+    //모집인원
+    var bungaeCount : Int = 0
+    
+    // 없어도 되는 값
+    // 지역
+    var bungaeLocation : String?
+    // 사진부분
+    var bungaeTitle: String?
+    var bungaeMaterials :  String?
     var bungaePhoto : UIImage?
     var bungaeBasicPhoto : UIImage?
-    //모집인원
-    var bungaeCount : Int?
     // 참여비
     var bungaeDues : Int?
     
