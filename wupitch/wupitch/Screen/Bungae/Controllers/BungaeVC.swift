@@ -150,11 +150,18 @@ extension BungaeVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
                 cell.imageView.sd_setImage(with: URL(string: lookUpBungaeResult[indexPath.row].impromptuImage ?? ""))
             }
             
+            
             cell.tagNameLabel.text = String("D-") + String(lookUpBungaeResult[indexPath.row].dday)
             
             cell.titleLabel.text = lookUpBungaeResult[indexPath.row].title
             cell.dayLabel.text = String(lookUpBungaeResult[indexPath.row].date) + " " + String(lookUpBungaeResult[indexPath.row].day) + " " + stringDate(doubleDate: Double(lookUpBungaeResult[indexPath.row].startTime ?? 0))
-            cell.subLabel.text = lookUpBungaeResult[indexPath.row].location
+            // 장소
+            if lookUpBungaeResult[indexPath.row].location == nil {
+                cell.subLabel.text = "장소미정"
+            } else {
+                cell.subLabel.text = lookUpBungaeResult[indexPath.row].location
+            }
+            
             cell.bungaeCountLabel.text = String(lookUpBungaeResult[indexPath.row].nowMemberCount ) + "/" + String(lookUpBungaeResult[indexPath.row].recruitmentCount)
             
             // 핀업버튼이 true일 때

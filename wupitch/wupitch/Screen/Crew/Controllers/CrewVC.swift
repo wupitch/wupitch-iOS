@@ -53,7 +53,6 @@ class CrewVC: BaseVC {
         print("크루 필터 파라미터 값 유저디폴트", UserDefaults.standard.dictionary(forKey: "filterParams"))
         crewDataManager.getLookUpCrew(params: UserDefaults.standard.dictionary(forKey: "filterParams") as? [String:[Any]], delegate: self)
     }
-    
     // MARK: - Functions
     private func setStyle() {
         modalView.alpha = 0.0
@@ -209,14 +208,10 @@ extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             // 시작시간 옵셔널이라서 바인딩
             if let starTime = lookUpCrew[indexPath.row].schedules[0].startTime {
                 cell.dayLabels[1].text = stringDate(doubleDate: starTime)
-            } else {
-                cell.dayLabels[1].text = nil
             }
             // 끝나는시간 옵셔널이라 바인딩
             if let endTime = lookUpCrew[indexPath.row].schedules[0].endTime {
                 cell.dayLabels[3].text = stringDate(doubleDate: endTime)
-            } else {
-                cell.dayLabels[3].text = nil
             }
             cell.dayLabels[2].text = "-"
             // 크루 모이는 날이 많을 경우 '+' 붙여주기
@@ -226,7 +221,11 @@ extension CrewVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
                 cell.dayLabels[4].isHidden = true
             }
             // 장소가 지정되어있지 않을 경우 "장소미정" 뜨게함
-            cell.subLabel.text = lookUpCrew[indexPath.row].areaName ?? "장소미정"
+            if lookUpCrew[indexPath.row].areaName == nil {
+                cell.subLabel.text = "장소미정"
+            } else {
+                cell.subLabel.text = lookUpCrew[indexPath.row].areaName
+            }
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReadyCVCell.identifier, for: indexPath) as? ReadyCVCell else{
@@ -288,14 +287,16 @@ extension CrewVC: ModalDelegate {
         selectRegionBtn.setTitle(data, for: .normal)
         for i in 0...25 {
             if data == SignUpUserInfo.shared.areaName?[i] {
-                var regionDict : [String:Any] = ["areaId":i+2]
+                print("뭐나와", SignUpUserInfo.shared.areas?[i])
+                print("데이터", data)
+                var regionDict : [String:Any] = ["areaId":i+1]
                 if let region = UserDefaults.standard.dictionary(forKey: "filterParams") {
                     regionDict.merge(region) { (_, new) in new }
                 }
                 UserDefaults.standard.set(regionDict, forKey: "filterParams")
+                print("지역구는?", UserDefaults.standard.dictionary(forKey: "filterParams"))
             }
         }
-        print("지역구는?", UserDefaults.standard.dictionary(forKey: "filterParams"))
     }
 }
 

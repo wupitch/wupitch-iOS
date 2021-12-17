@@ -214,8 +214,8 @@ class CrewFilterVC: BaseVC {
         if let filter = UserDefaults.standard.dictionary(forKey: "filterParams") {
             
             // 지역구는 선택한 상태
-            if let areaValue = filter["crewPickAreaID"] {
-                dict["crewPickAreaID"] = [areaValue]
+            if let areaValue = filter["areaId"] {
+                dict["areaId"] = [areaValue]
             }
         }
         

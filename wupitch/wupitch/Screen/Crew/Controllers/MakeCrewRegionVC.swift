@@ -105,8 +105,8 @@ class MakeCrewRegionVC: UIViewController {
             for i in 0...25 {
                 if regionTextField.text ==  SignUpUserInfo.shared.areaName?[i] {
                      // 값을 싱글톤에 저장
-                     SignUpUserInfo.shared.selectAreaPicker = SignUpUserInfo.shared.areas?[i]
-                     print("지역id >>>>>>>>>>", SignUpUserInfo.shared.selectAreaPicker!)
+                    SignUpUserInfo.shared.selectAreaPicker = SignUpUserInfo.shared.areas?[i] ?? 0
+                     print("지역id >>>>>>>>>>", SignUpUserInfo.shared.selectAreaPicker)
                 }
             }
             if placeTextField.textColor == .bk {
@@ -115,7 +115,7 @@ class MakeCrewRegionVC: UIViewController {
             else {
                 SignUpUserInfo.shared.location = nil
             }
-            print("장소 >>>>>>>>>>",SignUpUserInfo.shared.location ?? "장소미정")
+            print("장소 >>>>>>>>>>",SignUpUserInfo.shared.location)
             let storyBoard: UIStoryboard = UIStoryboard(name: "MakeCrewInfo", bundle: nil)
             if let dvc = storyBoard.instantiateViewController(withIdentifier: "MakeCrewInfoVC") as? MakeCrewInfoVC {
                 navigationController?.pushViewController(dvc, animated: true)

@@ -20,7 +20,7 @@ struct SignUpData: Codable {
 struct SignUpResult: Codable {
     let accountID: Int
     let email, nickname, jwt, introduce: String
-    let isPushAgree, isChecked: Bool
+    let isPushAgree, isChecked: Bool?
     let profileImageURL, deviceToken: String?
 
     enum CodingKeys: String, CodingKey {

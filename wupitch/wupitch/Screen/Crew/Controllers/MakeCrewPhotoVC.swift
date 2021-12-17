@@ -162,6 +162,7 @@ class MakeCrewPhotoVC: UIViewController {
         let defaultImage = UIAlertAction(title: "기본 이미지 사용", style: .default) { [weak self] _ in
             self?.photoImageView.image = self?.basicImage
             SignUpUserInfo.shared.basicphoto = self?.photoImageView.image
+            SignUpUserInfo.shared.photo = nil
             self?.imageLabel.isHidden = true
             self?.plusImageVIew.isHidden = true
         }
@@ -254,8 +255,6 @@ extension MakeCrewPhotoVC: UITextViewDelegate, UITextFieldDelegate {
         }
     }
     
-    
-    
     func textViewDidEndEditing(_ textView: UITextView) {
         
         if crewInfoTextView.text.isEmpty {
@@ -329,6 +328,7 @@ extension MakeCrewPhotoVC : UIImagePickerControllerDelegate, UINavigationControl
         {
             photoImageView.image = image
             SignUpUserInfo.shared.photo = photoImageView.image
+            SignUpUserInfo.shared.basicphoto = nil
             print(info)
             imageLabel.isHidden = true
             plusImageVIew.isHidden = true

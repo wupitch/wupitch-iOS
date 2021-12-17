@@ -12,7 +12,7 @@ import Alamofire
 struct LikeToggleService {
     static let shared = LikeToggleService()
 
-    func patchLikeToggle(delegate: MyActivityDetailBoardVC) {
+    func patchLikeToggle(delegate: CrewBoardActivityTVCell) {
 
         var header : HTTPHeaders = []
         if let token = UserDefaults.standard.string(forKey: "userToken") {

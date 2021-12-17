@@ -79,12 +79,13 @@ extension MyActivityDetailBoardVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CrewBoardActivityTVCell.identifier) as? CrewBoardActivityTVCell else {
             return UITableViewCell()
         }
+        cell.postId = boardData[indexPath.row].postID
         // 사용자 닉네임
         cell.nicknameLabel.text = boardData[indexPath.row].nickname
         // 게시판 내용
         cell.contentsLabel.text = boardData[indexPath.row].contents
         // 좋아요 수
-        cell.likeBtn.setTitle(String(boardData[indexPath.row].likeCount), for: .normal)
+        cell.likeLabel.text = String(boardData[indexPath.row].likeCount)
         // 작성(수정)날짜
         cell.dateLabel.text = boardData[indexPath.row].date
         // 공지 게시글인지 여부
@@ -111,43 +112,45 @@ extension MyActivityDetailBoardVC: UITableViewDelegate, UITableViewDataSource {
         }
         // 작성자가 좋아요 눌렀는지 여부
         if boardData[indexPath.row].isAccountLike == true {
-            cell.status = true
-            cell.likeBtn.setTitle(String(boardData[indexPath.row].likeCount + 1), for: .normal)
-            // 하트 누르면 눌렀다는 에이피아이 호출
-            //cell.likeBtn.addTarget(self, action: #selector(selectLikeBtn), for: .touchUpInside)
+            cell.colorBtn()
         } else {
             // 안눌렀으면 회색하트
-            cell.status = false
-            cell.likeBtn.setTitle(String(boardData[indexPath.row].likeCount), for: .normal)
+            cell.grayBtn()
         }
         // 신고를 했는지 여부
         if boardData[indexPath.row].isAccountReport == true {
             // 신고를 이미 했다면 알럿창 띄우기
-            cell.actionBlock = {
-                if let delegate = cell.boardToLikeOrReport {
-                    delegate.isAccountReportTrue()
-                    print(indexPath.item)
-                }
-            }
+            presentAlert(title: "신고하기", message: "이미 신고한 게시물입니다.", isCancelActionIncluded: false, preferredStyle: .alert, handler: nil)
+//            cell.actionBlock = {
+//                if let delegate = cell.boardToLikeOrReport {
+//                    delegate.isAccountReportTrue()
+//                    print(indexPath.item)
+//                }
+//            }
         }
         else {
             // 신고를 안했으면 버튼 눌리게
-            cell.actionBlock = {
-                if let delegate = cell.boardToLikeOrReport {
-                    delegate.selectedCVCell(indexPath.item)
-                    print(indexPath.item)
-                }
-            }
+            // cell.BoardToLikeOrReport = self
         }
-        // postId 저장
-        UserDefaults.standard.set(boardData[indexPath.row].postID, forKey: "postID")
         // 셀 눌렀을 때 색상 없애주기
         cell.selectionStyle = .none
         return cell
     }
-    @objc func selectLikeBtn() {
-        likeToggleDataManager.patchLikeToggle(delegate: self)
+}
+
+extension MyActivityDetailBoardVC: BoardToLikeOrReport {
+    func likeBtnTouched(_ index: Int) {
+//        UserDefaults.standard.set(index, forKey: "postID")
+//        likeToggleDataManager.patchLikeToggle(delegate: self)
     }
+    
+//    func selectedCVCell(_ index: Int) {
+//        let storyboard = UIStoryboard.init(name: "MyActivityAlert", bundle: nil)
+//        guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityAlertVC") as? MyActivityAlertVC else {return}
+//        dvc.modalPresentationStyle = .overFullScreen
+//        dvc.modalTransitionStyle = .crossDissolve
+//        present(dvc, animated: true, completion: nil)
+//    }
 }
 
 extension MyActivityDetailBoardVC {
@@ -156,25 +159,9 @@ extension MyActivityDetailBoardVC {
         tabTV.reloadData()
         print("크루 게시판 조회 데이터가 성공적으로 들어왔습니다.")
     }
-    func didSuccessLikeToggle(result: LikeToggleResult) {
-        print("게시글 좋아요 토글이 성공적으로 들어옵니다.")
-        print("좋아요 토글",result.result)
-    }
     func failedToRequest(message: String) {
         print("크루 게시판 조회 데이터가 들어오지 않습니다.")
     }
 }
 
-extension MyActivityDetailBoardVC: BoardToLikeOrReport {
-    func selectedCVCell(_ index: Int) {
-        let storyboard = UIStoryboard.init(name: "MyActivityAlert", bundle: nil)
-        guard let dvc = storyboard.instantiateViewController(identifier: "MyActivityAlertVC") as? MyActivityAlertVC else {return}
-        dvc.modalPresentationStyle = .overFullScreen
-        dvc.modalTransitionStyle = .crossDissolve
-        present(dvc, animated: true, completion: nil)
-    }
-    func isAccountReportTrue() {
-        presentAlert(title: "신고하기", message: "이미 신고한 게시물입니다.", isCancelActionIncluded: false, preferredStyle: .alert, handler: nil)
-    }
-}
 

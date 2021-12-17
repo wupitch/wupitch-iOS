@@ -74,14 +74,9 @@ class SignUpImagePreviewVC: UIViewController {
                     print("데이터가 성공적으로 들어왔어요", response)
                     
                     // 신분증 인증 전의 회원가입 데이터들을 한번에 보내기
-                    if let email = UserDefaults.standard.string(forKey: "email"),
-                       let introduce = UserDefaults.standard.string(forKey: "introduce"),
-                       let isPushAgree = SignUpUserInfo.shared.isPushAgree,
-                       let nickname = SignUpUserInfo.shared.nickname,
-                       let password = SignUpUserInfo.shared.password,
+                    if let isPushAgree = SignUpUserInfo.shared.isPushAgree,
                        let deviceToken = UserDefaults.standard.string(forKey: "deviceToken") {
-                        
-                        signUpManager.postSignUp(SignUpRequest(email: email, introduce: introduce, isPushAgree: isPushAgree, nickname: nickname, password: password, deviceToken: deviceToken), delegate: self)
+                        signUpManager.postSignUp(SignUpRequest(email: SignUpUserInfo.shared.email, introduce: SignUpUserInfo.shared.introduce, isPushAgree: isPushAgree, nickname: SignUpUserInfo.shared.nickname, password: SignUpUserInfo.shared.password, deviceToken: deviceToken), delegate: self)
                     
                      print("디바이스토큰 >>>>>>>>>",UserDefaults.standard.string(forKey: "deviceToken"))
                     //버튼 클릭 시, 다음 스토리보드로 이동
@@ -90,12 +85,11 @@ class SignUpImagePreviewVC: UIViewController {
                         self.navigationController?.pushViewController(dvc, animated: true)
                     }
                     print("나와안나와...")
-                    print("이메일",SignUpUserInfo.shared.email ?? "이메일이 없습니다.")
-                    print("자기소개유저디폴트",UserDefaults.standard.string(forKey: "introduce") ?? "자기소개가 없습니다.")
-                    print("자기소개", SignUpUserInfo.shared.introduce ?? "자기소개가없습니다.")
+                    print("이메일",SignUpUserInfo.shared.email)
+                    print("자기소개", SignUpUserInfo.shared.introduce)
                     print("푸시알림동의",SignUpUserInfo.shared.isPushAgree ?? "푸시알림동의가없습니다.")
-                    print("닉네임",SignUpUserInfo.shared.nickname ?? "닉네임이 없습니다.")
-                    print("비밀번호",SignUpUserInfo.shared.password ?? "비밀번호가 없습니다,")
+                    print("닉네임",SignUpUserInfo.shared.nickname)
+                    print("비밀번호",SignUpUserInfo.shared.password)
                     print("디바이스토큰",UserDefaults.standard.string(forKey: "deviceToken") ?? "디바이스 토큰이 없습니다.")
                     
                 case .failure(let error):

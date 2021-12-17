@@ -82,30 +82,30 @@ class ProfileVC: BaseVC {
         let library = UIAlertAction(title: "사진앨범", style: .default) {(action) in
             self.openLibrary()
         }
-        let defaultImage = UIAlertAction(title: "기본 이미지 사용", style: .default) { [weak self] _ in
-            
-            let url = "https://dev.yogiyo-backend.shop/app/accounts/image/empty"
-            //let url = "https://prod.wupitch.site/app/accounts/image/empty"
-            var header : HTTPHeaders = []
-            if let token = UserDefaults.standard.string(forKey: "userToken") {
-                header = ["Content-Type":"multipart/form-data", "X-ACCESS-TOKEN": token]
-            }
-            AF.request(url, method: .patch, encoding: JSONEncoding.default, headers: header)
-                .responseDecodable(of: PatchFCMData.self) { response in
-                    print("프로필 이미지 삭제response",response)
-                    switch response.result {
-                    case .success(let response):
-                        if response.isSuccess == true {
-                            self?.profileImageVIew.image = self?.basicImage
-                        }
-                    case .failure(let error):
-                        print("프로필 이미지 삭제에서 오류가 났습니다",error.localizedDescription)
-                    }
-                }
-        }
+//        let defaultImage = UIAlertAction(title: "기본 이미지 사용", style: .default) { [weak self] _ in
+//
+//            let url = "https://dev.yogiyo-backend.shop/app/accounts/image/empty"
+//            //let url = "https://prod.wupitch.site/app/accounts/image/empty"
+//            var header : HTTPHeaders = []
+//            if let token = UserDefaults.standard.string(forKey: "userToken") {
+//                header = ["Content-Type":"multipart/form-data", "X-ACCESS-TOKEN": token]
+//            }
+//            AF.request(url, method: .patch, encoding: JSONEncoding.default, headers: header)
+//                .responseDecodable(of: PatchFCMData.self) { response in
+//                    print("프로필 이미지 삭제response",response)
+//                    switch response.result {
+//                    case .success(let response):
+//                        if response.isSuccess == true {
+//                            self?.profileImageVIew.image = self?.basicImage
+//                        }
+//                    case .failure(let error):
+//                        print("프로필 이미지 삭제에서 오류가 났습니다",error.localizedDescription)
+//                    }
+//                }
+//        }
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alert.addAction(library)
-        alert.addAction(defaultImage)
+//        alert.addAction(defaultImage)
         alert.addAction(cancel)
         self.present(alert, animated: true, completion: nil)
         

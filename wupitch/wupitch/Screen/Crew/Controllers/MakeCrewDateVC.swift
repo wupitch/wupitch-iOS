@@ -40,7 +40,7 @@ class MakeCrewDateVC: UIViewController {
         setTimeBtn()
         
         for i in 0...20 {
-            dateBtns[i].dayId = i
+            dateBtns[i].dayId = i+1
         }
     }
     
@@ -60,14 +60,14 @@ class MakeCrewDateVC: UIViewController {
                 if (sectionTwo % 7) == idx { isDuplicate = true }
             }
             if let sectionThree = (14...20).first(where: { dateBtns[$0].status == true }) {
-                if (sectionThree % 7) == idx { isDuplicate = true }
+                if (sectionThree % 14) == idx { isDuplicate = true }
             }
         case 1:
             if let sectionOne = (0...6).first(where: { dateBtns[$0].status == true }) {
                 if sectionOne == idx { isDuplicate = true }
             }
             if let sectionThree = (14...20).first(where: { dateBtns[$0].status == true }) {
-                if (sectionThree % 7) == idx { isDuplicate = true }
+                if (sectionThree % 14) == idx { isDuplicate = true }
             }
         case 2:
             if let sectionOne = (0...6).first(where: { dateBtns[$0].status == true }) {
@@ -161,7 +161,6 @@ class MakeCrewDateVC: UIViewController {
                     guard let date = dateBtns[i].dayId else { return }
                     let start = startTimeBtns[0].stringToDouble()
                     let end = endTimeBtns[0].stringToDouble()
-            
                     SignUpUserInfo.shared.schedules?.append(ScheduleList(dayIdx: date, startTime: start, endTime: end))
                 }
             }
@@ -180,7 +179,7 @@ class MakeCrewDateVC: UIViewController {
                     guard let date = dateBtns[i].dayId else { return }
                     let start = startTimeBtns[2].stringToDouble()
                     let end = endTimeBtns[2].stringToDouble()
-                    SignUpUserInfo.shared.schedules?.append(ScheduleList(dayIdx: (date % 7), startTime: start, endTime: end))
+                    SignUpUserInfo.shared.schedules?.append(ScheduleList(dayIdx: (date % 14), startTime: start, endTime: end))
                 }
             }
             print("뭐들어와???", SignUpUserInfo.shared.schedules)

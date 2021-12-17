@@ -10,15 +10,16 @@ import Foundation
 // MARK: - MakeCrewRequest
 struct MakeCrewRequest: Codable {
     let ageList: [Int]
-    let areaID, conference: Int
-    let extraInfoList: [Int]
-    let guestConference: Int
-    let inquiries, introduction, location: String
+    let areaID: Int
+    let extraInfoList: [Int]?
+    let guestConference, conference: Int?
+    let inquiries, introduction: String?
+    let location: String?
     let sportsID: Int
-    let title: String
+    let title: String?
     let memberCount: Int
-    let materials: String
-    let scheduleList: [ScheduleList]
+    let materials: String?
+    let scheduleList: [ScheduleList]?
 
     enum CodingKeys: String, CodingKey {
         case ageList

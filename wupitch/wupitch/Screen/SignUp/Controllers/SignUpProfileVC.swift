@@ -99,12 +99,10 @@ class SignUpProfileVC: UIViewController {
     @IBAction func touchUpStartBtn(_ sender: Any) {
         if startBtn.backgroundColor == .main {
             // 싱글톤에 닉네임, 자기소개 넣어주기
-            SignUpUserInfo.shared.nickname = nickNameTextField.text
-            SignUpUserInfo.shared.introduce = infoTextView.text
-            // 유저디폴트에 값 저장
-            UserDefaults.standard.set(infoTextView.text, forKey: "introduce")
-            print("닉네임 >>>>>>>>>>", SignUpUserInfo.shared.nickname ?? "값이 없어요!")
-            print("자기소개 >>>>>>>>>>", SignUpUserInfo.shared.introduce ?? "값이 없어요!")
+            SignUpUserInfo.shared.nickname = nickNameTextField.text ?? ""
+            SignUpUserInfo.shared.introduce = infoTextView.text ?? ""
+            print("닉네임 >>>>>>>>>>", SignUpUserInfo.shared.nickname)
+            print("자기소개 >>>>>>>>>>", SignUpUserInfo.shared.introduce)
             
             // 다음 스토리 보드로 이동
             let storyboard = UIStoryboard.init(name: "SignUpID", bundle: nil)

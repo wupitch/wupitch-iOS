@@ -192,7 +192,7 @@ class MakeCrewInfoVC: UIViewController {
             SignUpUserInfo.shared.extraInfoList = []
             for i in 0...4 {
                 if ageBtns[i].status == true {
-                    SignUpUserInfo.shared.ageList?.append(ageBtns[i].ageInt!)
+                    SignUpUserInfo.shared.ageList.append(ageBtns[i].ageInt!)
                 }
             }
             print("연령대 >>>>>>>>>",SignUpUserInfo.shared.ageList)
@@ -203,7 +203,7 @@ class MakeCrewInfoVC: UIViewController {
             }
             print("추가정보 >>>>>>>>>",SignUpUserInfo.shared.extraInfoList)
             // 싱글톤에 값 넣어주기
-            SignUpUserInfo.shared.crewName = crewNameTextField.text
+            SignUpUserInfo.shared.crewName = crewNameTextField.text ?? ""
             SignUpUserInfo.shared.crewCount = Int(crewCountTextField.text ?? "") ?? 0
             print("크루이름 >>>>>>>>>",SignUpUserInfo.shared.crewName ?? "크루이름이 없습니다.")
             print("현재 크루원 수 >>>>>>>>>",SignUpUserInfo.shared.crewCount ?? "현재 크루원 수가 없습니다.")

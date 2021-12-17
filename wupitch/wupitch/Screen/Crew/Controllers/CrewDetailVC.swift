@@ -89,7 +89,6 @@ class CrewDetailVC: BaseVC {
         let stringChange = doubleToString.split(separator: ".")
         let stringDate = String(stringChange.first!) + ":" + String(stringChange.last!)
         return stringDate
-        //"%02d"
     }
     
     // MARK: - IBAction
@@ -240,14 +239,12 @@ extension CrewDetailVC: UITableViewDelegate, UITableViewDataSource {
             // 무조건 있는 값들
             cell.titleLabel.text = detailInfo?.clubTitle
             cell.tagLabel.textColor = .wht
-            
             // 지역이 없을 때
             if detailInfo?.areaName == nil {
                 cell.locationLabel.text = "장소미정"
             } else {
                 cell.locationLabel.text = detailInfo?.areaName
             }
-            
             // 정기회비랑 손님비가 없을 때
             if detailInfo?.dues == nil && detailInfo?.guestDues == nil {
                 cell.moneyLabel[0].isHidden = true
@@ -272,26 +269,26 @@ extension CrewDetailVC: UITableViewDelegate, UITableViewDataSource {
                 cell.moneyLabel[0].text = "정기회비" + " " + String(detailInfo?.dues ?? 0) + "원"
                 cell.moneyLabel[1].text = "손님비" + " " + String(detailInfo?.guestDues ?? 0) + "원"
             }
-            
             // 스케줄
-            if detailInfo?.schedules.count ?? 0 <= 1 {
-                cell.dayLabel[0].text = String(detailInfo?.schedules[0].day ?? "") + " " + stringDate(doubleDate: detailInfo?.schedules[0].startTime ?? 0) + " - " + stringDate(doubleDate: detailInfo?.schedules[0].endTime ?? 0)
-                cell.dayLabel[1].isHidden = true
-                cell.dayLabel[2].isHidden = true
-            }
-            else if detailInfo?.schedules.count ?? 0 <= 2 {
-                for i in 0...1 {
-                    cell.dayLabel[i].text = String(detailInfo?.schedules[i].day ?? "") + " " + stringDate(doubleDate: detailInfo?.schedules[i].startTime ?? 0) + " - " + stringDate(doubleDate: detailInfo?.schedules[i].endTime ?? 0)
+            if let detail = detailInfo {
+                if detail.schedules.count == 1 {
+                    cell.dayLabel[0].text = String(detail.schedules[0].day) + " " + stringDate(doubleDate: detail.schedules[0].startTime!) + " - " + stringDate(doubleDate: detail.schedules[0].endTime!)
+                    cell.dayLabel[1].isHidden = true
+                    cell.dayLabel[2].isHidden = true
+                } else if detail.schedules.count == 2 {
+                    for i in 0...1 {
+                        cell.dayLabel[i].text = String(detail.schedules[i].day) + " " + stringDate(doubleDate: detail.schedules[i].startTime!) + " - " + stringDate(doubleDate: detail.schedules[i].endTime!)
+                    }
+                    cell.dayLabel[1].isHidden = false
+                    cell.dayLabel[2].isHidden = true
+                } else if detail.schedules.count == 3 {
+                    for i in 0...2 {
+                        cell.dayLabel[i].text = String(detail.schedules[i].day) + " " + stringDate(doubleDate: detail.schedules[i].startTime!) + " - " + stringDate(doubleDate: detail.schedules[i].endTime!)
+                    }
+                    cell.dayLabel[1].isHidden = false
+                    cell.dayLabel[2].isHidden = false
                 }
-                cell.dayLabel[1].isHidden = false
-                cell.dayLabel[2].isHidden = true
-            }
-            else if detailInfo?.schedules.count ?? 0 <= 3 {
-                for i in 0...2 {
-                    cell.dayLabel[i].text = String(detailInfo?.schedules[i].day ?? "") + " " + stringDate(doubleDate: detailInfo?.schedules[i].startTime ?? 0) + " - " + stringDate(doubleDate: detailInfo?.schedules[i].endTime ?? 0)
-                }
-                cell.dayLabel[1].isHidden = false
-                cell.dayLabel[2].isHidden = false
+                
             }
             return cell
         } else if indexPath.section == 2 {

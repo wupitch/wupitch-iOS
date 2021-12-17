@@ -21,37 +21,42 @@ class SignUpUserInfo {
     // -------------------
     // 회원가입 에이피아이에 한번에 넣어줄 값
     var isPushAgree : Bool?
-    var email : String?
-    var password : String?
-    var nickname : String?
-    var introduce : String?
+    var email : String = ""
+    var password : String = ""
+    var nickname : String = ""
+    var introduce : String = ""
     
     // 크루 생성하는 에이피아이에 한번에 넣어줄 값 싱글톤으로 받기
+    // 무조건 있어야하는 값 + 0번은 다 없는 값이니까 이걸로 초기화
     // 스포츠 버튼 눌렸을 때 전달할 값
-    var clickSportsBtn : Int?
+    var clickSportsBtn : Int = 0
     // 피커로 지역선택하면 전달할 값
-    var selectAreaPicker : Int?
-    var location : String?
+    var selectAreaPicker : Int = 0
     // 크루만들기 기본정보
-    var crewName : String?
-    var crewCount : Int?
-    var ageList : [Int]?
-    var extraInfoList : [Int]?
+    var crewName : String = ""
+    var crewCount : Int = 0
+    var ageList : [Int] = []
     // 정기일정정보
     var date: Int?
-    var schedules: [ScheduleList]?
-    // 크루만들기 포토부분
-    var photo : UIImage?
-    var basicphoto : UIImage?
+    
+    // nil로 보내야 하는 값
+    // 지역과 장소 고르는 곳에서 장소
+    var location : String?
+    // 크루 기본정보에서 추가정보(선택)
+    var extraInfoList : [Int]?
+    // 크루 만들기 포토 부분
     var title : String?
     var crewInfo : String?
-    var materials : String?
     var question : String?
+    var photo : UIImage?
+    var basicphoto : UIImage?
+    var materials : String?
     // 크루만들기 회비
     var money : Int?
     // 크루만들기 손님비
     var guestMoney : Int?
-    
+    // 정기 일정 스케줄
+    var schedules: [ScheduleList]?
     
     // 크루조회
     var ageListBtn: [Int]?

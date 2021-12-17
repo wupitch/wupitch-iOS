@@ -8,14 +8,17 @@
 import UIKit
 
 protocol BoardToLikeOrReport {
-    func selectedCVCell(_ index: Int)
-    func isAccountReportTrue()
+    //func selectedCVCell(_ index: Int)
+    func likeBtnTouched(_ index: Int)
 }
 
 class CrewBoardActivityTVCell: UITableViewCell {
     
+    var postId : Int?
+    var likeCount : Int = 0
     var boardToLikeOrReport: BoardToLikeOrReport?
-    var actionBlock: (() -> Void)? = nil
+    //var actionBlock: (() -> Void)? = nil
+    var buttonAction: ((Any) -> Void)?
     lazy var likeToggleDataManager = LikeToggleService()
 
     @IBOutlet weak var likeLabel: UILabel!
@@ -77,12 +80,16 @@ class CrewBoardActivityTVCell: UITableViewCell {
         status = true
         likeBtn.setTitleColor(UIColor.sub04, for: .normal)
         likeBtn.setImage(UIImage(named: "reactHeart"), for: .normal)
+//        likeCount += 1
+//        likeLabel.text = String(likeCount)
     }
     
     func grayBtn() {
         status = false
         likeBtn.setTitleColor(UIColor.gray03, for: .normal)
         likeBtn.setImage(UIImage(named: "reactHeartInact"), for: .normal)
+//        likeCount -= 1
+//        likeLabel.text = String(likeCount)
     }
     
     // 좋아요 버튼
@@ -95,20 +102,20 @@ class CrewBoardActivityTVCell: UITableViewCell {
             grayBtn()
         }
         print(status)
-//        likeToggleDataManager.patchLikeToggle(delegate: self)
+        UserDefaults.standard.set(postId, forKey: "postID")
+        likeToggleDataManager.patchLikeToggle(delegate: self)
     }
     // 신고 버튼
     @IBAction func touchUpReportBtn(_ sender: Any) {
-        actionBlock?()
     }
 }
 
-//extension CrewBoardActivityTVCell {
-//    func didSuccessLikeToggle(result: LikeToggleResult) {
-//        print("게시글 좋아요 토글이 성공적으로 들어옵니다.")
-//        print("좋아요 토글",result.result)
-//    }
-//    func failedToRequest(message: String) {
-//        print("게시글 좋아요 조회 데이터가 들어오지 않습니다.")
-//    }
-//}
+extension CrewBoardActivityTVCell {
+    func didSuccessLikeToggle(result: LikeToggleResult) {
+        print("게시글 좋아요 토글이 성공적으로 들어옵니다.")
+        print("좋아요 토글",result.result)
+    }
+    func failedToRequest(message: String) {
+        print("게시글 좋아요 조회 데이터가 들어오지 않습니다.")
+    }
+}

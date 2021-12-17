@@ -59,7 +59,7 @@ class SignUpAgeVC: UIViewController {
             ageBtns[2].defaultSportsBtn()
             ageBtns[3].defaultSportsBtn()
             ageBtns[4].defaultSportsBtn()
-            SignUpUserInfo.shared.age = 0
+            SignUpUserInfo.shared.age = 1
         }
     }
     
@@ -71,7 +71,7 @@ class SignUpAgeVC: UIViewController {
             ageBtns[2].defaultSportsBtn()
             ageBtns[3].defaultSportsBtn()
             ageBtns[4].defaultSportsBtn()
-            SignUpUserInfo.shared.age = 1
+            SignUpUserInfo.shared.age = 2
         }
     }
     
@@ -83,7 +83,7 @@ class SignUpAgeVC: UIViewController {
             ageBtns[1].defaultSportsBtn()
             ageBtns[3].defaultSportsBtn()
             ageBtns[4].defaultSportsBtn()
-            SignUpUserInfo.shared.age = 2
+            SignUpUserInfo.shared.age = 3
         }
     }
     
@@ -95,7 +95,7 @@ class SignUpAgeVC: UIViewController {
             ageBtns[1].defaultSportsBtn()
             ageBtns[2].defaultSportsBtn()
             ageBtns[4].defaultSportsBtn()
-            SignUpUserInfo.shared.age = 3
+            SignUpUserInfo.shared.age = 4
         }
     }
     
@@ -107,7 +107,7 @@ class SignUpAgeVC: UIViewController {
             ageBtns[1].defaultSportsBtn()
             ageBtns[2].defaultSportsBtn()
             ageBtns[3].defaultSportsBtn()
-            SignUpUserInfo.shared.age = 4
+            SignUpUserInfo.shared.age = 5
         }
     }
 }
@@ -119,7 +119,6 @@ extension SignUpAgeVC : AlertDelegate {
         // 뷰 스택에서 OnbordingVC를 찾아서 거기까지 pop 합니다.
         for viewController in viewControllerStack {
             if let onboardingVC = viewController as? OnbordingVC { self.navigationController?.popToViewController(onboardingVC, animated: true)
-                SignUpUserInfo.shared.dispose()
             }
         }
     }
@@ -129,7 +128,7 @@ extension SignUpAgeVC {
     func didSuccessMemberAge(result: MemberAgeResult) {
         print("데이터가 성공적으로 들어왔습니다.")
         
-        ageBtns[result.ageIdx].colorSportsBtn()
+        ageBtns[result.ageIdx-1].colorSportsBtn()
     }
     
     // 회원 수정 에이피아이

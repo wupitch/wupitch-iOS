@@ -18,7 +18,7 @@ struct NowRegisterCrewData: Codable {
 
 // MARK: - NowRegisterCrewResult
 struct NowRegisterCrewResult: Codable {
-    let areaName: String
+    let areaName: String?
     let clubID: Int
     let clubTitle, crewImage, introduction: String?
     let isPinUp: Bool?

@@ -192,7 +192,13 @@ extension BungaeDetailVC: UITableViewDelegate, UITableViewDataSource {
             cell.tagLabel.text = String("D-") + String(detailInfo?.dday ?? 0)
             cell.topDateLabel.text = String(detailInfo?.date ?? "") + " " + String(detailInfo?.day ?? "")
             cell.bottomDateLabel.text = stringDate(doubleDate: detailInfo?.startTime ?? -1.0) + " - " + stringDate(doubleDate: detailInfo?.endTime ?? -1.0)
-            cell.locationLabel.text = detailInfo?.location
+            
+            // 장소
+            if detailInfo?.location == nil {
+                cell.locationLabel.text = "장소미정"
+            } else {
+                cell.locationLabel.text = detailInfo?.location
+            }
             cell.moneyLabel.text = "참여비" + " " + String(detailInfo?.dues ?? 0) + "원"
             cell.countLabel.text = String(detailInfo?.nowMemberCount ?? 0) + "/" + String(detailInfo?.recruitmentCount ?? 0) + "명 참여"
             
@@ -217,7 +223,12 @@ extension BungaeDetailVC: UITableViewDelegate, UITableViewDataSource {
             }
             
             cell.titleLabel.text = "준비물"
-            cell.contentLabel.text = detailInfo?.materials
+            // 준비물
+            if detailInfo?.materials == nil {
+                cell.contentLabel.text = "준비물이 없어요."
+            } else {
+                cell.contentLabel.text = detailInfo?.materials
+            }
             
             return cell
         }

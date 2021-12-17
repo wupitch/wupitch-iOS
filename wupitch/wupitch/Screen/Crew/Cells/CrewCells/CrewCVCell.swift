@@ -24,6 +24,11 @@ class CrewCVCell: UICollectionViewCell {
         return UINib(nibName: "CrewCVCell", bundle: nil)
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

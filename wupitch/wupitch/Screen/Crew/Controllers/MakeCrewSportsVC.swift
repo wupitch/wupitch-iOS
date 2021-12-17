@@ -140,7 +140,7 @@ class MakeCrewSportsVC: UIViewController {
             for i in 0...5 {
                 if sportsBtns[i].status == true {
                     // 눌린 버튼 싱글톤에 넣어주기
-                    SignUpUserInfo.shared.clickSportsBtn = sportsBtns[i].btnId
+                    SignUpUserInfo.shared.clickSportsBtn = sportsBtns[i].btnId ?? 0
                     print("현재 눌린 버튼 확인>>>>>>>>>",SignUpUserInfo.shared.clickSportsBtn ?? -99)
                 }
             }

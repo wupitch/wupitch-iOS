@@ -27,11 +27,14 @@ struct CrewDetailResult: Codable {
     let schedules: [Schedule]
     let sportsID: Int
     let sportsName: String
+    let creatorAccountID: Int
+    let creatorAccountNickname: String
 
     enum CodingKeys: String, CodingKey {
         case ageTable, areaName
+        case creatorAccountID = "creatorAccountId"
         case clubID = "clubId"
-        case clubTitle, crewImage, crewName, dues, extraList, guestDues, inquiries, introduction, isPinUp, isSelect, materials, memberCount, schedules
+        case creatorAccountNickname, clubTitle, crewImage, crewName, dues, extraList, guestDues, inquiries, introduction, isPinUp, isSelect, materials, memberCount, schedules
         case sportsID = "sportsId"
         case sportsName
     }

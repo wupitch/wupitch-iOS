@@ -200,7 +200,8 @@ extension MyActivityVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
                     return UICollectionViewCell()
                 }
                 // 자기가 생성한 번개일 때 아닐 때 에이피아이에 주면 추가하기
-                cell.pinImageView.image = UIImage(named: "leader")
+                //cell.pinImageView.image = UIImage(named: "leader")
+                cell.pinImageView.isHidden = true
                 // 디데이 숫자가 1일때만 백그라운드 색 진하게
                 if nowRegisterBungaeData[indexPath.row].dday <= 1 {
                     cell.tagNameView.backgroundColor = .bk

@@ -111,10 +111,10 @@ class SignUpEmailPwVC: UIViewController {
             
             // 다음 버튼 클릭 시, 싱글톤에 이메일, 패스워드 넣어주기
             UserDefaults.standard.set(emailTextField.text, forKey: "email")
-            SignUpUserInfo.shared.email = emailTextField.text
-            SignUpUserInfo.shared.password = passwordTextField.text
-            print("이메일 >>>>>>>>>>",SignUpUserInfo.shared.email ?? "값이 없어요!")
-            print("비밀번호 >>>>>>>>>>",SignUpUserInfo.shared.password ?? "값이 없어요!")
+            SignUpUserInfo.shared.email = emailTextField.text ?? ""
+            SignUpUserInfo.shared.password = passwordTextField.text ?? ""
+            print("이메일 >>>>>>>>>>",SignUpUserInfo.shared.email)
+            print("비밀번호 >>>>>>>>>>",SignUpUserInfo.shared.password)
             
             //버튼 클릭 시, 다음 스토리보드로 이동
             let storyboard = UIStoryboard.init(name: "SignUpProfile", bundle: nil)
